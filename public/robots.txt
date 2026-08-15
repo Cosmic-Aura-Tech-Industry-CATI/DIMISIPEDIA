@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /search
+Disallow: /seo-audit
+Disallow: /api/
+
+Sitemap: https://dimisipedia.me/sitemap.xml
