@@ -7,6 +7,23 @@ type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
 };
 
+function applySecurityHeaders(response: Response): Response {
+  const next = new Response(response.body, response);
+
+  // Keep this policy narrow so it hardens clickjacking and MIME handling
+  // without breaking TanStack Start runtime assets.
+  next.headers.set("X-Content-Type-Options", "nosniff");
+  next.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+  next.headers.set("X-Frame-Options", "DENY");
+  next.headers.set("Permissions-Policy", "camera=(), microphone=(), geolocation=()");
+  next.headers.set(
+    "Content-Security-Policy",
+    "base-uri 'self'; frame-ancestors 'none'; object-src 'none'; form-action 'self'; upgrade-insecure-requests",
+  );
+
+  return next;
+}
+
 let serverEntryPromise: Promise<ServerEntry> | undefined;
 
 async function getServerEntry(): Promise<ServerEntry> {
@@ -49,13 +66,13 @@ export default {
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
+      return applySecurityHeaders(await normalizeCatastrophicSsrResponse(response));
     } catch (error) {
       console.error(error);
-      return new Response(renderErrorPage(), {
+      return applySecurityHeaders(new Response(renderErrorPage(), {
         status: 500,
         headers: { "content-type": "text/html; charset=utf-8" },
-      });
+      }));
     }
   },
 };

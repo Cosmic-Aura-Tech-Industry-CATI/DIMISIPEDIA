@@ -14,6 +14,7 @@ import {
   resolveAuthor,
 } from "@/data/articles";
 import { articleHead, pageHead } from "@/lib/seo";
+import { EXTERNAL_REL_UNTRUSTED, safeExternalHref } from "@/lib/url-safety";
 
 const trailFor = (title: string) => [
   { label: "DIMISIPEDIA", to: "/" },
@@ -134,11 +135,11 @@ function ArticlePage() {
                   <li key={s.id} className="border-l border-rule pl-4">
                     <p className="text-sm">
                       <span className="font-mono text-xs text-muted-foreground">[{i + 1}]</span>{" "}
-                      {s.url ? (
+                      {safeExternalHref(s.url) ? (
                         <a
-                          href={s.url}
+                          href={safeExternalHref(s.url)!}
                           target="_blank"
-                          rel="noreferrer noopener"
+                          rel={EXTERNAL_REL_UNTRUSTED}
                           className="underline underline-offset-4"
                         >
                           {s.title}

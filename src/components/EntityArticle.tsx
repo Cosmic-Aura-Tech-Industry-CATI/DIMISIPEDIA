@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { StatusChip, isPublicStatus } from "./StatusChip";
 import { getSources, relationsFor, type Entity } from "@/data/knowledge";
 import { VerificationBadge } from "./VerificationBadge";
+import { EXTERNAL_REL_UNTRUSTED, safeExternalHref } from "@/lib/url-safety";
 
 function ReadingProgress() {
   const [pct, setPct] = useState(0);
@@ -278,8 +279,13 @@ export function EntityArticle({
                     <li key={s.id} id={`source-${i + 1}`} className="scroll-mt-24 border-l border-rule pl-4">
                       <p className="text-sm">
                         <span className="font-mono text-xs text-muted-foreground">[{i + 1}]</span>{" "}
-                        {s.url ? (
-                          <a href={s.url} target="_blank" rel="noreferrer noopener" className="underline underline-offset-4">
+                        {safeExternalHref(s.url) ? (
+                          <a
+                            href={safeExternalHref(s.url)!}
+                            target="_blank"
+                            rel={EXTERNAL_REL_UNTRUSTED}
+                            className="underline underline-offset-4"
+                          >
                             {s.title}
                           </a>
                         ) : (
@@ -421,11 +427,11 @@ export function EntityArticle({
                 <ul className="divide-y divide-rule">
                   {entity.externalProfiles.map((p) => (
                     <li key={p.label} className="px-4 py-3">
-                      {p.url ? (
+                      {safeExternalHref(p.url) ? (
                         <a
-                          href={p.url}
+                          href={safeExternalHref(p.url)!}
                           target="_blank"
-                          rel="noreferrer noopener me"
+                          rel={EXTERNAL_REL_UNTRUSTED}
                           className="flex items-center justify-between text-sm underline underline-offset-4"
                         >
                           {p.label}
@@ -453,15 +459,21 @@ export function EntityArticle({
                 <ul className="divide-y divide-rule">
                   {entity.officialLinks.map((l) => (
                     <li key={l.url}>
-                      <a
-                        href={l.url}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        className="flex items-center justify-between px-4 py-3 text-sm transition-colors hover:bg-muted"
-                      >
-                        {l.label}
-                        <ArrowUpRight className="size-3.5 text-muted-foreground" aria-hidden />
-                      </a>
+                      {safeExternalHref(l.url) ? (
+                        <a
+                          href={safeExternalHref(l.url)!}
+                          target="_blank"
+                          rel={EXTERNAL_REL_UNTRUSTED}
+                          className="flex items-center justify-between px-4 py-3 text-sm transition-colors hover:bg-muted"
+                        >
+                          {l.label}
+                          <ArrowUpRight className="size-3.5 text-muted-foreground" aria-hidden />
+                        </a>
+                      ) : (
+                        <span className="flex items-center justify-between px-4 py-3 text-sm text-muted-foreground">
+                          {l.label}
+                        </span>
+                      )}
                     </li>
                   ))}
                 </ul>

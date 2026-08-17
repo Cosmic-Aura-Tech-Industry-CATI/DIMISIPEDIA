@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { StatusChip } from "./StatusChip";
 import { assessClaim } from "@/data/evidence";
 import { statusLabel, type InfoStatus } from "@/data/knowledge";
+import { EXTERNAL_REL_UNTRUSTED, safeExternalHref } from "@/lib/url-safety";
 import {
   Dialog,
   DialogContent,
@@ -115,11 +116,11 @@ export function VerificationBadge({
                     <span className="uppercase tracking-[0.1em]">Supports: </span>
                     {e.source.claim}
                   </p>
-                  {e.source.url ? (
+                  {safeExternalHref(e.source.url) ? (
                     <a
-                      href={e.source.url}
+                      href={safeExternalHref(e.source.url)!}
                       target="_blank"
-                      rel="noreferrer noopener"
+                      rel={EXTERNAL_REL_UNTRUSTED}
                       className="mt-2 inline-flex items-center gap-1 text-xs text-primary underline underline-offset-4"
                     >
                       View source

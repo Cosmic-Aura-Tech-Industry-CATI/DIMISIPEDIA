@@ -6,6 +6,7 @@ import { EntityLink } from "@/components/EntityLink";
 import { StatusChip } from "@/components/StatusChip";
 import { tierOf, tierProfiles, type SourceTier } from "@/data/evidence";
 import { entities, getEntity, sources, type Source } from "@/data/knowledge";
+import { EXTERNAL_REL_UNTRUSTED, safeExternalHref } from "@/lib/url-safety";
 
 const trail = [{ label: "DIMISIPEDIA", to: "/" }, { label: "Sources" }];
 
@@ -62,11 +63,11 @@ function SourceCard({ source, index }: { source: Source; index: number }) {
         [{index}] {source.type}
       </p>
       <h3 className="mt-2 text-xl">
-        {source.url ? (
+        {safeExternalHref(source.url) ? (
           <a
-            href={source.url}
+            href={safeExternalHref(source.url)!}
             target="_blank"
-            rel="noreferrer noopener"
+            rel={EXTERNAL_REL_UNTRUSTED}
             className="inline-flex items-center gap-1.5 underline underline-offset-4"
           >
             {source.title}

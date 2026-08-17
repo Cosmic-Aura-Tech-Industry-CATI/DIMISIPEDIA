@@ -3,6 +3,7 @@ import { StatusChip } from "./StatusChip";
 import { EntityLink } from "./EntityLink";
 import { relationsFor, timeline, type Entity } from "@/data/knowledge";
 import { articlesByAuthor, articlesForEntity, articlePath } from "@/data/articles";
+import { EXTERNAL_REL_UNTRUSTED, safeExternalHref } from "@/lib/url-safety";
 
 /**
  * Encyclopedia sections derived from the knowledge graph for a person entity.
@@ -184,18 +185,28 @@ export function PersonSections({ entity }: { entity: Entity }) {
             <ul className="mt-5 grid gap-px border border-border bg-rule sm:grid-cols-2">
               {writing.map((w) => (
                 <li key={w.label}>
-                  <a
-                    href={w.url}
-                    target="_blank"
-                    rel="me noopener noreferrer"
-                    className="block h-full bg-surface px-4 py-4 transition-colors hover:bg-muted"
-                  >
-                    <span className="label-mono">Publishing profile</span>
-                    <span className="mt-1 block font-serif text-lg">{w.label}</span>
-                    {w.note ? (
-                      <span className="mt-0.5 block text-xs text-muted-foreground">{w.note}</span>
-                    ) : null}
-                  </a>
+                  {safeExternalHref(w.url) ? (
+                    <a
+                      href={safeExternalHref(w.url)!}
+                      target="_blank"
+                      rel={EXTERNAL_REL_UNTRUSTED}
+                      className="block h-full bg-surface px-4 py-4 transition-colors hover:bg-muted"
+                    >
+                      <span className="label-mono">Publishing profile</span>
+                      <span className="mt-1 block font-serif text-lg">{w.label}</span>
+                      {w.note ? (
+                        <span className="mt-0.5 block text-xs text-muted-foreground">{w.note}</span>
+                      ) : null}
+                    </a>
+                  ) : (
+                    <div className="block h-full bg-surface px-4 py-4">
+                      <span className="label-mono">Publishing profile</span>
+                      <span className="mt-1 block font-serif text-lg">{w.label}</span>
+                      {w.note ? (
+                        <span className="mt-0.5 block text-xs text-muted-foreground">{w.note}</span>
+                      ) : null}
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>
