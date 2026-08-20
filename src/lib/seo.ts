@@ -394,8 +394,8 @@ export function buildProjectSchema(entity: Entity): Json {
     publisher: creatorOrg ? { "@id": entityId(creatorOrg.entity) } : undefined,
     keywords: tech.map((r) => r.entity.name),
     creativeWorkStatus: entity.lifecycle,
-    dateCreated: entity.createdAt,
-    dateModified: entity.updatedAt,
+    dateCreated: toIsoDateTime(entity.createdAt),
+    dateModified: toIsoDateTime(entity.updatedAt),
     citation: sourceCitations(entity),
   };
 
@@ -433,6 +433,15 @@ export function buildTechnologySchema(entity: Entity): Json {
   });
 }
 
+export function toIsoDateTime(d: string | undefined): string | undefined {
+  if (!d) return undefined;
+  if (d.includes("T")) return d;
+  if (/^\d{4}-\d{2}-\d{2}$/.test(d)) {
+    return `${d}T00:00:00+05:30`;
+  }
+  return d;
+}
+
 export function buildEntitySchema(entity: Entity): Json {
   switch (entity.entityType) {
     case "person":
@@ -457,8 +466,8 @@ export function buildEntityPageSchema(entity: Entity): Json {
     description: entity.shortDescription,
     inLanguage: "en",
     isPartOf: { "@id": `${SITE_URL}/#website` },
-    dateCreated: entity.createdAt,
-    dateModified: entity.updatedAt,
+    dateCreated: toIsoDateTime(entity.createdAt),
+    dateModified: toIsoDateTime(entity.updatedAt),
     breadcrumb: { "@id": `${abs(entity.path)}#breadcrumb` },
     primaryImageOfPage: entity.image
       ? {
@@ -645,8 +654,8 @@ export function buildArticleSchema(article: Article): Json {
     description: article.excerpt,
     url: abs(articlePath(article)),
     mainEntityOfPage: { "@id": pageId(articlePath(article)) },
-    datePublished: article.datePublished,
-    dateModified: article.dateModified,
+    datePublished: toIsoDateTime(article.datePublished),
+    dateModified: toIsoDateTime(article.dateModified),
     articleSection: article.category,
     keywords: article.tags,
     image: article.coverImage ? abs(article.coverImage) : undefined,
@@ -688,8 +697,8 @@ export function articleHead(article: Article, trail: { label: string; to?: strin
             isPartOf: { "@id": `${SITE_URL}/#website` },
             breadcrumb: { "@id": `${abs(path)}#breadcrumb` },
             mainEntity: { "@id": articleId(article) },
-            datePublished: article.datePublished,
-            dateModified: article.dateModified,
+            datePublished: toIsoDateTime(article.datePublished),
+            dateModified: toIsoDateTime(article.dateModified),
           }),
           buildBreadcrumbSchema(trail, path),
           buildArticleSchema(article),
