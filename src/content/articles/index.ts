@@ -13,5 +13,16 @@ import type { Article } from "@/data/articles";
 
 import { article as verification } from "./how-dimisipedia-verifies-information";
 import { article as kaleshTechnology } from "./kalesh-technology-stack";
+import { article as whoIsShikhar } from "./who-is-shikhar-dixit";
+import { article as whatIsKalesh } from "./what-is-kalesh";
+import { article as historyDimisi } from "./history-of-dimisi-technologies";
+import { article as timelineDimisi } from "./timeline-of-dimisi-technologies";
 
-export const articleRegistry: Article[] = [verification, kaleshTechnology];
+export const articleRegistry: Article[] = [
+  whoIsShikhar,
+  whatIsKalesh,
+  historyDimisi,
+  timelineDimisi,
+  verification,
+  kaleshTechnology,
+];

@@ -1588,32 +1588,98 @@ export interface SearchResult {
 export function searchKnowledge(q: string): SearchResult[] {
   const query = q.trim().toLowerCase();
   if (!query) return [];
-  const results: SearchResult[] = [];
+
+  interface ScoredResult {
+    result: SearchResult;
+    score: number;
+  }
+
+  const scored: ScoredResult[] = [];
+
   for (const e of entities) {
-    const haystack = `${e.name} ${e.subtitle} ${e.shortDescription} ${e.answer}`.toLowerCase();
-    if (haystack.includes(query)) {
-      results.push({
-        name: e.name,
-        type: e.entityType.toUpperCase(),
-        description: e.shortDescription,
-        path: e.path,
+    const nameLower = e.name.toLowerCase();
+    const subtitleLower = (e.subtitle || "").toLowerCase();
+    const descLower = (e.shortDescription || "").toLowerCase();
+    const answerLower = (e.answer || "").toLowerCase();
+
+    let score = 0;
+    if (nameLower === query) {
+      score += 100;
+    } else if (nameLower.startsWith(query)) {
+      score += 70;
+    } else if (nameLower.includes(query)) {
+      score += 50;
+    } else if (subtitleLower.includes(query)) {
+      score += 35;
+    } else if (descLower.includes(query) || answerLower.includes(query)) {
+      score += 20;
+    }
+
+    if (score > 0) {
+      scored.push({
+        result: {
+          name: e.name,
+          type: e.entityType.toUpperCase(),
+          description: e.shortDescription,
+          path: e.path,
+        },
+        score,
       });
     }
   }
+
   for (const t of timeline) {
-    if (`${t.title} ${t.description}`.toLowerCase().includes(query)) {
-      results.push({
-        name: t.title,
-        type: "TIMELINE",
-        description: t.displayDate,
-        path: "/timeline",
+    const titleLower = t.title.toLowerCase();
+    const descLower = t.description.toLowerCase();
+
+    let score = 0;
+    if (titleLower.startsWith(query)) {
+      score += 45;
+    } else if (titleLower.includes(query)) {
+      score += 30;
+    } else if (descLower.includes(query)) {
+      score += 15;
+    }
+
+    if (score > 0) {
+      scored.push({
+        result: {
+          name: t.title,
+          type: "TIMELINE",
+          description: t.displayDate,
+          path: "/timeline",
+        },
+        score,
       });
     }
   }
+
   for (const s of sources) {
-    if (`${s.title} ${s.publisher}`.toLowerCase().includes(query)) {
-      results.push({ name: s.title, type: "SOURCE", description: s.publisher, path: "/sources" });
+    const titleLower = s.title.toLowerCase();
+    const pubLower = s.publisher.toLowerCase();
+
+    let score = 0;
+    if (titleLower.startsWith(query)) {
+      score += 40;
+    } else if (titleLower.includes(query) || pubLower.includes(query)) {
+      score += 25;
+    }
+
+    if (score > 0) {
+      scored.push({
+        result: {
+          name: s.title,
+          type: "SOURCE",
+          description: s.publisher,
+          path: "/sources",
+        },
+        score,
+      });
     }
   }
-  return results.slice(0, 12);
+
+  return scored
+    .sort((a, b) => b.score - a.score)
+    .map((s) => s.result)
+    .slice(0, 12);
 }

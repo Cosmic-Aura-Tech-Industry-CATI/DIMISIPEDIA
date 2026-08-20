@@ -372,23 +372,44 @@ export function buildOrganizationSchema(entity: Entity): Json {
 export function buildProjectSchema(entity: Entity): Json {
   const related = relationsFor(entity.id);
   const creatorOrg = related.find((r) => r.entity.entityType === "organization");
+  const people = related.filter((r) => r.entity.entityType === "person");
+  const creatorPerson = people.find((r) => /Founder|Creator|Product|Lead/i.test(r.type));
   const tech = related.filter((r) => r.entity.entityType === "technology");
-  return clean({
-    "@type": "CreativeWork",
+
+  const isSoftwareApp = entity.id === "kalesh" || entity.id === "dimisipedia";
+
+  const baseSchema: Json = {
+    "@type": isSoftwareApp ? "SoftwareApplication" : "CreativeWork",
     "@id": entityId(entity),
     name: entity.name,
     alternateName: entity.subtitle || undefined,
     description: entity.answer || entity.shortDescription,
     url: abs(entity.path),
     mainEntityOfPage: { "@id": pageId(entity.path) },
-    creator: creatorOrg ? { "@id": entityId(creatorOrg.entity) } : undefined,
+    creator: creatorPerson
+      ? { "@id": entityId(creatorPerson.entity) }
+      : creatorOrg
+        ? { "@id": entityId(creatorOrg.entity) }
+        : undefined,
     publisher: creatorOrg ? { "@id": entityId(creatorOrg.entity) } : undefined,
     keywords: tech.map((r) => r.entity.name),
     creativeWorkStatus: entity.lifecycle,
     dateCreated: entity.createdAt,
     dateModified: entity.updatedAt,
     citation: sourceCitations(entity),
-  });
+  };
+
+  if (isSoftwareApp) {
+    baseSchema["applicationCategory"] = "SocialNetworkingApplication";
+    baseSchema["operatingSystem"] = "Web, iOS, Android";
+    baseSchema["offers"] = {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "INR",
+    };
+  }
+
+  return clean(baseSchema);
 }
 
 export function buildTechnologySchema(entity: Entity): Json {
@@ -439,6 +460,14 @@ export function buildEntityPageSchema(entity: Entity): Json {
     dateCreated: entity.createdAt,
     dateModified: entity.updatedAt,
     breadcrumb: { "@id": `${abs(entity.path)}#breadcrumb` },
+    primaryImageOfPage: entity.image
+      ? {
+          "@type": "ImageObject",
+          contentUrl: abs(entity.image),
+          caption: `${entity.name} — DIMISIPEDIA documentation`,
+          representativeOfPage: true,
+        }
+      : undefined,
     mainEntity: { "@id": entityId(entity) },
     about: { "@id": entityId(entity) },
     citation: sourceCitations(entity),
