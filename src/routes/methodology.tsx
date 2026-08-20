@@ -105,16 +105,26 @@ function MethodologyPage() {
             <caption className="sr-only">DIMISIPEDIA source authority tiers</caption>
             <thead>
               <tr className="border-y border-rule">
-                <th scope="col" className="py-3 pr-4 label-mono font-normal">Tier</th>
-                <th scope="col" className="py-3 pr-4 label-mono font-normal">Character</th>
-                <th scope="col" className="py-3 pr-4 label-mono font-normal">Authority</th>
-                <th scope="col" className="py-3 label-mono font-normal">Examples</th>
+                <th scope="col" className="py-3 pr-4 label-mono font-normal">
+                  Tier
+                </th>
+                <th scope="col" className="py-3 pr-4 label-mono font-normal">
+                  Character
+                </th>
+                <th scope="col" className="py-3 pr-4 label-mono font-normal">
+                  Authority
+                </th>
+                <th scope="col" className="py-3 label-mono font-normal">
+                  Examples
+                </th>
               </tr>
             </thead>
             <tbody>
               {Object.values(tierProfiles).map((t) => (
                 <tr key={t.tier} className="border-b border-rule align-top">
-                  <th scope="row" className="py-3 pr-4 font-normal">Tier {t.tier}</th>
+                  <th scope="row" className="py-3 pr-4 font-normal">
+                    Tier {t.tier}
+                  </th>
                   <td className="py-3 pr-4">{t.label}</td>
                   <td className="py-3 pr-4 font-mono text-xs">{t.authority}/5</td>
                   <td className="py-3 text-muted-foreground">{t.description}</td>
@@ -153,8 +163,8 @@ function MethodologyPage() {
           </p>
           <p>
             Editorial judgement can lower a published status below what the evidence would allow,
-            but it can never raise it. Internal authority scores are not emitted as structured
-            data; the page's structured data describes only what is visible on the page.
+            but it can never raise it. Internal authority scores are not emitted as structured data;
+            the page's structured data describes only what is visible on the page.
           </p>
         </div>
       </section>
@@ -164,22 +174,21 @@ function MethodologyPage() {
         <div className="prose-editorial mt-3">
           <p>
             The evidence model above runs on every claim, but public entity pages show only the
-            positive end of the scale. A claim supported by a source displays{" "}
-            <em>source-backed</em> or <em>verified</em>; a claim that is disputed says so. Claims
-            held internally as <em>needs verification</em> or <em>unverified</em> display no badge
-            at all, and sections with no recorded evidence — including references — are omitted
-            from the page rather than shown empty.
+            positive end of the scale. A claim supported by a source displays <em>source-backed</em>{" "}
+            or <em>verified</em>; a claim that is disputed says so. Claims held internally as{" "}
+            <em>needs verification</em> or <em>unverified</em> display no badge at all, and sections
+            with no recorded evidence — including references — are omitted from the page rather than
+            shown empty.
           </p>
           <p>
             Every visible badge is interactive. Selecting it opens the evidence panel for that
             claim, listing each recorded source with its tier, its independence, the date it was
-            added and the reason the status was derived. The complete five-state scale and the
-            tier table stay available here and on the credibility page, so nothing is removed from
-            the record — only negative labelling is kept out of the article surface.
+            added and the reason the status was derived. The complete five-state scale and the tier
+            table stay available here and on the credibility page, so nothing is removed from the
+            record — only negative labelling is kept out of the article surface.
           </p>
         </div>
       </section>
-
     </div>
   );
 }

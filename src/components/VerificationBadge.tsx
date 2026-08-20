@@ -89,14 +89,14 @@ export function VerificationBadge({
           <p className="text-sm text-muted-foreground">{a.rationale}</p>
         ) : (
           <p className="text-sm text-muted-foreground">
-            One or more sources are attached to this claim. DIMISIPEDIA lists them below so
-            readers can assess the evidence directly.
+            One or more sources are attached to this claim. DIMISIPEDIA lists them below so readers
+            can assess the evidence directly.
           </p>
         )}
 
         <div>
           <p className="label-mono">Evidence</p>
-          {(
+          {
             <ol className="mt-3 divide-y divide-rule border-y border-rule">
               {a.evidence.map((e, i) => (
                 <li key={e.source.id} className="py-3">
@@ -130,7 +130,7 @@ export function VerificationBadge({
                 </li>
               ))}
             </ol>
-          )}
+          }
         </div>
 
         <dl className="grid grid-cols-2 gap-3 text-xs">

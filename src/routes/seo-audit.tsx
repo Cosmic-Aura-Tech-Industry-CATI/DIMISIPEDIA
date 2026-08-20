@@ -31,7 +31,8 @@ function audit(): { rows: Row[]; duplicates: string[] } {
     if (!e.seoTitle) issues.push("missing title");
     if (!e.seoDescription) issues.push("missing meta description");
     if (e.seoTitle && e.seoTitle.length > 65) issues.push("title over 65 chars");
-    if (e.seoDescription && e.seoDescription.length > 165) issues.push("description over 165 chars");
+    if (e.seoDescription && e.seoDescription.length > 165)
+      issues.push("description over 165 chars");
     if (!e.shortDescription) issues.push("missing summary");
     if (!e.answer) issues.push("missing answer-first statement");
     if (!e.sections.length) issues.push("no body sections");
@@ -57,15 +58,14 @@ function AuditPage() {
     <div className="mx-auto max-w-4xl px-5 py-10">
       <h1 className="text-3xl">SEO diagnostics</h1>
       <p className="mt-2 text-sm text-muted-foreground">
-        {entities.length} entities · {failing.length} with warnings ·{" "}
-        {duplicates.length} duplicate canonical paths
+        {entities.length} entities · {failing.length} with warnings · {duplicates.length} duplicate
+        canonical paths
       </p>
       <ul className="mt-8 divide-y divide-rule border border-border bg-surface">
         {rows.map((r) => (
           <li key={r.path} className="px-4 py-3 text-sm">
             <p className="font-medium">
-              {r.name}{" "}
-              <span className="text-muted-foreground">{abs(r.path)}</span>
+              {r.name} <span className="text-muted-foreground">{abs(r.path)}</span>
             </p>
             <p className="mt-1 text-xs text-muted-foreground">
               @id {entityId(entities.find((e) => e.path === r.path)!)}

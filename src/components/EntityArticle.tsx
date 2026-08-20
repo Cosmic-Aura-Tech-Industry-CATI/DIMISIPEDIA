@@ -20,7 +20,10 @@ function ReadingProgress() {
   }, []);
   return (
     <div className="fixed inset-x-0 top-0 z-50 h-px bg-transparent" aria-hidden>
-      <div className="h-px bg-primary transition-[width] duration-150" style={{ width: `${pct}%` }} />
+      <div
+        className="h-px bg-primary transition-[width] duration-150"
+        style={{ width: `${pct}%` }}
+      />
     </div>
   );
 }
@@ -48,7 +51,11 @@ function Cited({ text }: { text: string }) {
   );
 }
 
-function SectionImageGallery({ images }: { images: { src: string; alt: string; caption?: string }[] }) {
+function SectionImageGallery({
+  images,
+}: {
+  images: { src: string; alt: string; caption?: string }[];
+}) {
   if (images.length === 0) return null;
   const gridClass =
     images.length === 1
@@ -68,7 +75,9 @@ function SectionImageGallery({ images }: { images: { src: string; alt: string; c
             className="aspect-video w-full object-cover"
           />
           {img.caption ? (
-            <figcaption className="px-3 py-2 text-xs text-muted-foreground">{img.caption}</figcaption>
+            <figcaption className="px-3 py-2 text-xs text-muted-foreground">
+              {img.caption}
+            </figcaption>
           ) : null}
         </figure>
       ))}
@@ -76,10 +85,12 @@ function SectionImageGallery({ images }: { images: { src: string; alt: string; c
   );
 }
 
-
 export function Breadcrumbs({ trail }: { trail: { label: string; to?: string }[] }) {
   return (
-    <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1.5 text-xs text-muted-foreground">
+    <nav
+      aria-label="Breadcrumb"
+      className="flex flex-wrap items-center gap-1.5 text-xs text-muted-foreground"
+    >
       {trail.map((t, i) => (
         <span key={t.label} className="flex items-center gap-1.5">
           {i > 0 ? <ChevronRight className="size-3 opacity-50" aria-hidden /> : null}
@@ -119,16 +130,18 @@ export function EntityArticle({
 
         <header className="mt-6 flex flex-col-reverse gap-6 border-b border-rule pb-8 sm:flex-row sm:items-start sm:justify-between">
           <div className="min-w-0 flex-1">
-          <p className="label-mono">{entity.subtitle}</p>
-          <h1 className="mt-2 text-4xl leading-tight sm:text-5xl">{entity.name}</h1>
-          <p className="mt-4 max-w-2xl text-lg text-muted-foreground">{entity.shortDescription}</p>
-          <div className="mt-5 flex flex-wrap items-center gap-2">
-            {entity.lifecycle ? <StatusChip status="documented" /> : null}
-            <span className="label-mono">
-              Last reviewed {entity.verifiedAt ?? entity.updatedAt}
-              {claimCount > 0 ? ` · ${claimCount} claims reviewed` : ""}
-            </span>
-          </div>
+            <p className="label-mono">{entity.subtitle}</p>
+            <h1 className="mt-2 text-4xl leading-tight sm:text-5xl">{entity.name}</h1>
+            <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
+              {entity.shortDescription}
+            </p>
+            <div className="mt-5 flex flex-wrap items-center gap-2">
+              {entity.lifecycle ? <StatusChip status="documented" /> : null}
+              <span className="label-mono">
+                Last reviewed {entity.verifiedAt ?? entity.updatedAt}
+                {claimCount > 0 ? ` · ${claimCount} claims reviewed` : ""}
+              </span>
+            </div>
           </div>
           {entity.image ? (
             <figure className="shrink-0">
@@ -154,7 +167,9 @@ export function EntityArticle({
               className="border-l-2 border-primary bg-surface px-5 py-5"
             >
               <h2 id="direct-answer" className="text-base font-medium">
-                {entity.entityType === "person" ? `Who is ${entity.name}?` : `What is ${entity.name}?`}
+                {entity.entityType === "person"
+                  ? `Who is ${entity.name}?`
+                  : `What is ${entity.name}?`}
               </h2>
               <p className="mt-2 max-w-2xl text-[15px] leading-relaxed">{entity.answer}</p>
             </section>
@@ -180,7 +195,11 @@ export function EntityArticle({
 
             <div className="prose-editorial mt-10">
               {entity.sections.map((s) => (
-                <section key={s.id} id={s.id} className="scroll-mt-24 border-b border-rule pb-8 pt-2 last:border-0">
+                <section
+                  key={s.id}
+                  id={s.id}
+                  className="scroll-mt-24 border-b border-rule pb-8 pt-2 last:border-0"
+                >
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <h2 className="text-2xl">{s.heading}</h2>
                     {s.status ? <StatusChip status={s.status} /> : null}
@@ -197,21 +216,25 @@ export function EntityArticle({
               ))}
             </div>
 
-
             {children}
 
-            {entity.questions && entity.questions.length > 0 ? (
+            {(entity.faqs && entity.faqs.length > 0) ||
+            (entity.questions && entity.questions.length > 0) ? (
               <section id="questions" className="mt-12 scroll-mt-24">
-                <h2 className="text-2xl">Common questions</h2>
+                <h2 className="text-2xl">Frequently asked questions</h2>
                 <dl className="mt-5 divide-y divide-rule border-y border-rule">
-                  {entity.questions.map((q) => (
-                    <div key={q.q} className="py-4">
-                      <dt className="text-[15px] font-medium">{q.q}</dt>
-                      <dd className="mt-1.5 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
-                        {q.a}
-                      </dd>
-                    </div>
-                  ))}
+                  {(entity.faqs ?? entity.questions ?? []).map((item) => {
+                    const qText = "question" in item ? item.question : item.q;
+                    const aText = "answer" in item ? item.answer : item.a;
+                    return (
+                      <div key={qText} className="py-4">
+                        <dt className="text-[15px] font-medium">{qText}</dt>
+                        <dd className="mt-1.5 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
+                          {aText}
+                        </dd>
+                      </div>
+                    );
+                  })}
                 </dl>
               </section>
             ) : null}
@@ -224,9 +247,14 @@ export function EntityArticle({
               </p>
               <dl className="mt-5 divide-y divide-rule border-y border-rule">
                 {entity.coverage.map((c) => (
-                  <div key={c.area} className="grid gap-2 py-3 sm:grid-cols-[10rem_11rem_1fr] sm:items-center">
+                  <div
+                    key={c.area}
+                    className="grid gap-2 py-3 sm:grid-cols-[10rem_11rem_1fr] sm:items-center"
+                  >
                     <dt className="text-sm font-medium">{c.area}</dt>
-                    <dd><StatusChip status={c.status} /></dd>
+                    <dd>
+                      <StatusChip status={c.status} />
+                    </dd>
                     <dd className="text-sm text-muted-foreground">{c.note}</dd>
                   </div>
                 ))}
@@ -251,7 +279,9 @@ export function EntityArticle({
                           sourceIds={c.sourceIds}
                           declared={c.verification}
                           {...(c.disputed ? { disputed: true } : {})}
-                          {...(c.lastVerified ? { lastReviewed: c.lastVerified } : { lastReviewed: c.dateAdded })}
+                          {...(c.lastVerified
+                            ? { lastReviewed: c.lastVerified }
+                            : { lastReviewed: c.dateAdded })}
                         />
                         <span className="text-xs text-muted-foreground">
                           {c.sourceIds
@@ -269,38 +299,41 @@ export function EntityArticle({
               </section>
             ) : null}
 
-
             <section id="sources" className="mt-12 scroll-mt-24">
               {srcs.length === 0 ? null : (
                 <>
-                <h2 className="text-2xl">References &amp; sources</h2>
-                <ol className="mt-5 space-y-4">
-                  {srcs.map((s, i) => (
-                    <li key={s.id} id={`source-${i + 1}`} className="scroll-mt-24 border-l border-rule pl-4">
-                      <p className="text-sm">
-                        <span className="font-mono text-xs text-muted-foreground">[{i + 1}]</span>{" "}
-                        {safeExternalHref(s.url) ? (
-                          <a
-                            href={safeExternalHref(s.url)!}
-                            target="_blank"
-                            rel={EXTERNAL_REL_UNTRUSTED}
-                            className="underline underline-offset-4"
-                          >
-                            {s.title}
-                          </a>
-                        ) : (
-                          s.title
-                        )}
-                        <span className="text-muted-foreground"> — {s.publisher}</span>
-                      </p>
-                      <p className="mt-1 text-sm text-muted-foreground">{s.claim}</p>
-                      <div className="mt-2 flex flex-wrap items-center gap-2">
-                        <span className="label-mono">{s.type}</span>
-                        <StatusChip status={s.status} />
-                      </div>
-                    </li>
-                  ))}
-                </ol>
+                  <h2 className="text-2xl">References &amp; sources</h2>
+                  <ol className="mt-5 space-y-4">
+                    {srcs.map((s, i) => (
+                      <li
+                        key={s.id}
+                        id={`source-${i + 1}`}
+                        className="scroll-mt-24 border-l border-rule pl-4"
+                      >
+                        <p className="text-sm">
+                          <span className="font-mono text-xs text-muted-foreground">[{i + 1}]</span>{" "}
+                          {safeExternalHref(s.url) ? (
+                            <a
+                              href={safeExternalHref(s.url)!}
+                              target="_blank"
+                              rel={EXTERNAL_REL_UNTRUSTED}
+                              className="underline underline-offset-4"
+                            >
+                              {s.title}
+                            </a>
+                          ) : (
+                            s.title
+                          )}
+                          <span className="text-muted-foreground"> — {s.publisher}</span>
+                        </p>
+                        <p className="mt-1 text-sm text-muted-foreground">{s.claim}</p>
+                        <div className="mt-2 flex flex-wrap items-center gap-2">
+                          <span className="label-mono">{s.type}</span>
+                          <StatusChip status={s.status} />
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
                 </>
               )}
             </section>
@@ -391,7 +424,9 @@ export function EntityArticle({
                           <StatusChip status={e.status} />
                         </div>
                       ) : null}
-                      {e.note ? <p className="mt-2 text-xs text-muted-foreground">{e.note}</p> : null}
+                      {e.note ? (
+                        <p className="mt-2 text-xs text-muted-foreground">{e.note}</p>
+                      ) : null}
                     </li>
                   ))}
                 </ul>
@@ -414,7 +449,9 @@ export function EntityArticle({
                           <StatusChip status={x.status} />
                         </div>
                       ) : null}
-                      {x.note ? <p className="mt-2 text-xs text-muted-foreground">{x.note}</p> : null}
+                      {x.note ? (
+                        <p className="mt-2 text-xs text-muted-foreground">{x.note}</p>
+                      ) : null}
                     </li>
                   ))}
                 </ul>
@@ -445,13 +482,14 @@ export function EntityArticle({
                           <StatusChip status="verified" />
                         </div>
                       ) : null}
-                      {p.note ? <p className="mt-2 text-xs text-muted-foreground">{p.note}</p> : null}
+                      {p.note ? (
+                        <p className="mt-2 text-xs text-muted-foreground">{p.note}</p>
+                      ) : null}
                     </li>
                   ))}
                 </ul>
               </div>
             ) : null}
-
 
             {entity.officialLinks.length > 0 ? (
               <div className="mt-6 border border-border bg-surface">
@@ -486,10 +524,15 @@ export function EntityArticle({
                 <ul className="divide-y divide-rule">
                   {rels.map((r, i) => (
                     <li key={`${i}-${r.type}-${r.entity.id}`}>
-                      <Link to={r.entity.path} className="block px-4 py-3 transition-colors hover:bg-muted">
+                      <Link
+                        to={r.entity.path}
+                        className="block px-4 py-3 transition-colors hover:bg-muted"
+                      >
                         <span className="label-mono">{r.type}</span>
                         <span className="mt-0.5 block font-serif text-base">{r.entity.name}</span>
-                        <span className="block text-xs text-muted-foreground">{r.entity.subtitle}</span>
+                        <span className="block text-xs text-muted-foreground">
+                          {r.entity.subtitle}
+                        </span>
                       </Link>
                     </li>
                   ))}

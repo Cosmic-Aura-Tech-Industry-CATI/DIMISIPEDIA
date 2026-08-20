@@ -34,7 +34,10 @@ function ProjectsIndex() {
       <ul className="mt-8 grid gap-px border border-border bg-rule md:grid-cols-2">
         {projectEntities.map((p) => (
           <li key={p.id}>
-            <EntityLink to={p.path} className="block h-full bg-surface px-5 py-6 transition-colors hover:bg-muted">
+            <EntityLink
+              to={p.path}
+              className="block h-full bg-surface px-5 py-6 transition-colors hover:bg-muted"
+            >
               <span className="label-mono">Project</span>
               <span className="mt-1 block font-serif text-2xl">{p.name}</span>
               <span className="mt-2 block text-sm text-muted-foreground">{p.shortDescription}</span>

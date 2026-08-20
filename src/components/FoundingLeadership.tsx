@@ -34,12 +34,13 @@ export function FoundingLeadership() {
               <span className="label-mono">Person</span>
               <span className="mt-1 font-serif text-xl leading-snug">{f.entity.name}</span>
               <span className="mt-1 text-sm text-muted-foreground">{f.roles}</span>
-              <span className="mt-4 text-sm">
-                {(f.entity.areas ?? []).join(" · ")}
-              </span>
+              <span className="mt-4 text-sm">{(f.entity.areas ?? []).join(" · ")}</span>
               <span className="mt-6 flex items-center gap-1.5 text-sm text-primary">
                 View profile
-                <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden />
+                <ArrowRight
+                  className="size-3.5 transition-transform group-hover:translate-x-0.5"
+                  aria-hidden
+                />
               </span>
             </Link>
           </li>
@@ -53,9 +54,15 @@ export function FoundingLeadership() {
           </caption>
           <thead>
             <tr className="border-y border-rule">
-              <th scope="col" className="py-3 pr-4 label-mono font-normal">Person</th>
-              <th scope="col" className="py-3 pr-4 label-mono font-normal">Core roles</th>
-              <th scope="col" className="py-3 label-mono font-normal">Documented areas</th>
+              <th scope="col" className="py-3 pr-4 label-mono font-normal">
+                Person
+              </th>
+              <th scope="col" className="py-3 pr-4 label-mono font-normal">
+                Core roles
+              </th>
+              <th scope="col" className="py-3 label-mono font-normal">
+                Documented areas
+              </th>
             </tr>
           </thead>
           <tbody>

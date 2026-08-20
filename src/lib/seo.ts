@@ -69,7 +69,8 @@ function verifiedProfileUrls(entity: Entity): string[] {
     .filter((p) => p.verified && p.url)
     .map((p) => p.url as string);
   const official = (entity.officialLinks ?? []).filter((l) => l.official).map((l) => l.url);
-  return Array.from(new Set([...external, ...official]));
+  const explicitSameAs = entity.sameAs ?? [];
+  return Array.from(new Set([...explicitSameAs, ...external, ...official]));
 }
 
 /** Lightweight reference node so related entities can be linked by @id. */
@@ -82,7 +83,12 @@ export function refNode(entity: Entity): Json {
         : entity.entityType === "technology"
           ? "DefinedTerm"
           : "CreativeWork";
-  return clean({ "@type": type, "@id": entityId(entity), name: entity.name, url: abs(entity.path) });
+  return clean({
+    "@type": type,
+    "@id": entityId(entity),
+    name: entity.name,
+    url: abs(entity.path),
+  });
 }
 
 export function buildWebsiteSchema(): Json {
@@ -90,17 +96,106 @@ export function buildWebsiteSchema(): Json {
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
     name: SITE_NAME,
-    alternateName: "DIMISIPEDIA Knowledge Base",
+    alternateName: "DIMISIPEDIA Knowledge Hub",
     url: `${SITE_URL}/`,
     inLanguage: "en",
     description:
-      "DIMISIPEDIA is an entity knowledge platform documenting DIMISI Technologies — its people, organizations, projects, technologies, events and sources.",
+      "DIMISIPEDIA is an authoritative entity knowledge platform documenting DIMISI Technologies Pvt. Ltd., its founders, people, projects, technologies, and history.",
     publisher: { "@id": `${SITE_URL}/dimisi-technologies#organization` },
     potentialAction: {
       "@type": "SearchAction",
       target: { "@type": "EntryPoint", urlTemplate: `${SITE_URL}/search?q={search_term_string}` },
       "query-input": "required name=search_term_string",
     },
+  };
+}
+
+/** Sitelinks Schema: SiteNavigationElement list for Google Expanded Sitelinks */
+export function buildSiteNavigationSchema(): Json {
+  const items = [
+    {
+      name: "Our Journey",
+      url: `${SITE_URL}/journey`,
+      description: "Chronological founder journey of Shikhar Dixit and DIMISI Technologies.",
+    },
+    {
+      name: "Shikhar Dixit — Founder & CEO",
+      url: `${SITE_URL}/people/shikhar-dixit`,
+      description:
+        "Official profile of Shikhar Dixit, Founder and Chief Executive Officer of DIMISI Technologies.",
+    },
+    {
+      name: "DIMISI Technologies",
+      url: `${SITE_URL}/dimisi-technologies`,
+      description:
+        "Corporate overview, CIN: U62013UP2026PTC246506, leadership, and products of DIMISI Technologies Pvt. Ltd.",
+    },
+    {
+      name: "Kalesh Platform",
+      url: `${SITE_URL}/projects/kalesh`,
+      description:
+        "Anonymous social polling and engagement platform developed by DIMISI Technologies.",
+    },
+    {
+      name: "People & Leadership",
+      url: `${SITE_URL}/people`,
+      description: "Founders, executive leadership, and engineering team members.",
+    },
+    {
+      name: "Projects & Products",
+      url: `${SITE_URL}/projects`,
+      description: "Software products, applications, and engineering projects.",
+    },
+    {
+      name: "Timeline & Milestones",
+      url: `${SITE_URL}/timeline`,
+      description: "Verifiable chronological records and historical company milestones.",
+    },
+    {
+      name: "Technology Stack",
+      url: `${SITE_URL}/technology`,
+      description: "Documented engineering frameworks, programming languages, and cloud systems.",
+    },
+    {
+      name: "About DIMISIPEDIA",
+      url: `${SITE_URL}/about`,
+      description: "About the entity knowledge platform and public documentation.",
+    },
+  ];
+
+  return {
+    "@type": "ItemList",
+    "@id": `${SITE_URL}/#navigation`,
+    name: "DIMISIPEDIA Main Navigation",
+    itemListElement: items.map((item, index) => ({
+      "@type": "SiteNavigationElement",
+      position: index + 1,
+      name: item.name,
+      url: item.url,
+      description: item.description,
+    })),
+  };
+}
+
+/** FAQPage Schema for AI Answer Engines (Perplexity, ChatGPT, Claude, Google SGE) */
+export function buildFAQSchema(
+  faqs: { question?: string; answer?: string; q?: string; a?: string }[] | undefined,
+  path: string,
+): Json | null {
+  if (!faqs || faqs.length === 0) return null;
+  const mainEntity = faqs.map((item) => ({
+    "@type": "Question",
+    name: item.question || item.q || "",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer || item.a || "",
+    },
+  }));
+
+  return {
+    "@type": "FAQPage",
+    "@id": `${abs(path)}#faq`,
+    mainEntity,
   };
 }
 
@@ -123,23 +218,82 @@ export function buildPersonSchema(entity: Entity): Json {
   const related = relationsFor(entity.id);
   const orgs = related.filter((r) => r.entity.entityType === "organization");
   const projects = related.filter((r) => r.entity.entityType === "project");
+
+  const nameParts = entity.name.trim().split(/\s+/);
+  const givenName = nameParts[0];
+  const familyName = nameParts.length > 1 ? nameParts.slice(1).join(" ") : undefined;
+
+  const roleTitles = (entity.roles ?? []).map((r) => r.title);
+
   return clean({
     "@type": "Person",
     "@id": entityId(entity),
     name: entity.name,
+    givenName,
+    familyName,
     image: entity.image ? abs(entity.image) : undefined,
     alternateName: entity.subtitle || undefined,
     description: entity.answer || entity.shortDescription,
     url: abs(entity.path),
     mainEntityOfPage: { "@id": pageId(entity.path) },
-    jobTitle: (entity.roles ?? []).map((r) => r.title),
-    worksFor: orgs.map((r) => ({ "@id": entityId(r.entity) })),
-    affiliation: orgs.map((r) => ({ "@id": entityId(r.entity) })),
-    knowsAbout: entity.areas ?? [],
+    jobTitle: roleTitles.length > 0 ? roleTitles : undefined,
+    hasOccupation: {
+      "@type": "Occupation",
+      name: roleTitles.join(", ") || "Technology Entrepreneur",
+      occupationLocation: {
+        "@type": "AdministrativeArea",
+        name: "Kanpur, Uttar Pradesh, India",
+      },
+    },
+    worksFor: orgs.map((r) => ({
+      "@type": "Organization",
+      "@id": entityId(r.entity),
+      name: r.entity.name,
+      url: abs(r.entity.path),
+    })),
+    affiliation: orgs.map((r) => ({
+      "@type": "Organization",
+      "@id": entityId(r.entity),
+      name: r.entity.name,
+      url: abs(r.entity.path),
+    })),
+    founder: orgs.map((r) => ({
+      "@type": "Organization",
+      "@id": entityId(r.entity),
+      name: r.entity.name,
+      url: abs(r.entity.path),
+    })),
+    knowsAbout: entity.knowsAbout ??
+      entity.areas ?? [
+        "Artificial Intelligence",
+        "Software Engineering",
+        "Technology Entrepreneurship",
+        "DIMISI Technologies",
+        "Kalesh",
+      ],
     subjectOf: projects.map((r) => ({ "@id": entityId(r.entity) })),
     alumniOf: (entity.education ?? []).map((e) =>
-      clean({ "@type": "EducationalOrganization", name: e.institution }),
+      clean({
+        "@type": "EducationalOrganization",
+        name: e.institution,
+      }),
     ),
+    nationality: {
+      "@type": "Country",
+      name: "India",
+    },
+    homeLocation: {
+      "@type": "PostalAddress",
+      addressLocality: "Kanpur",
+      addressRegion: "Uttar Pradesh",
+      addressCountry: "IN",
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Kanpur",
+      addressRegion: "Uttar Pradesh",
+      addressCountry: "IN",
+    },
     sameAs: verifiedProfileUrls(entity),
   });
 }
@@ -147,24 +301,70 @@ export function buildPersonSchema(entity: Entity): Json {
 export function buildOrganizationSchema(entity: Entity): Json {
   const related = relationsFor(entity.id);
   const people = related.filter((r) => r.entity.entityType === "person");
-  const founders = people.filter((r) => /Founder|CEO|Director|COO|CMO/i.test(r.type));
+  const founders = people.filter((r) => /Founder|Director/i.test(r.type));
+  const ceo = people.find((r) => /CEO/i.test(r.type));
   const fact = (label: string) =>
     entity.facts.find((f) => f.label.toLowerCase() === label.toLowerCase())?.value;
+
   return clean({
     "@type": "Organization",
     "@id": entityId(entity),
     name: ORG_NAME,
-    alternateName: entity.name !== ORG_NAME ? entity.name : undefined,
-    legalName: fact("Legal name") ?? ORG_NAME,
-    logo: entity.image ? abs(entity.image) : undefined,
-    image: entity.image ? abs(entity.image) : undefined,
+    alternateName: entity.name !== ORG_NAME ? entity.name : "DIMISI",
+    legalName: fact("Legal name") ?? "DIMISI Technologies Private Limited",
+    logo: entity.image ? abs(entity.image) : abs("/images/dimisi-logo.png"),
+    image: entity.image ? abs(entity.image) : abs("/images/dimisi-logo.png"),
     description: entity.answer || entity.shortDescription,
     url: abs(entity.path),
     mainEntityOfPage: { "@id": pageId(entity.path) },
-    foundingDate: fact("Incorporated") ?? fact("Founded"),
-    identifier: fact("CIN"),
-    founder: founders.map((r) => ({ "@id": entityId(r.entity) })),
-    employee: people.map((r) => ({ "@id": entityId(r.entity) })),
+    foundingDate: fact("Incorporated") ?? fact("Founded") ?? "2026-04-09",
+    taxID: fact("CIN") ?? "U62013UP2026PTC246506",
+    identifier: fact("CIN") ?? "U62013UP2026PTC246506",
+    founder: founders.map((r) => ({
+      "@type": "Person",
+      "@id": entityId(r.entity),
+      name: r.entity.name,
+      url: abs(r.entity.path),
+    })),
+    ceo: ceo
+      ? {
+          "@type": "Person",
+          "@id": entityId(ceo.entity),
+          name: ceo.entity.name,
+          url: abs(ceo.entity.path),
+        }
+      : undefined,
+    employee: people.map((r) => ({
+      "@type": "Person",
+      "@id": entityId(r.entity),
+      name: r.entity.name,
+      url: abs(r.entity.path),
+    })),
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "MIG 3/131, Swarn Jayanti Vihar, Koyala Nagar",
+      addressLocality: "Kanpur",
+      addressRegion: "Uttar Pradesh",
+      postalCode: "208011",
+      addressCountry: "IN",
+    },
+    location: {
+      "@type": "Place",
+      name: "DIMISI Technologies Registered Office",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "MIG 3/131, Swarn Jayanti Vihar, Koyala Nagar",
+        addressLocality: "Kanpur",
+        addressRegion: "Uttar Pradesh",
+        postalCode: "208011",
+        addressCountry: "IN",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: "26.4499",
+        longitude: "80.3319",
+      },
+    },
     sameAs: verifiedProfileUrls(entity),
   });
 }
@@ -245,8 +445,9 @@ export function buildEntityPageSchema(entity: Entity): Json {
   });
 }
 
-export function graph(nodes: Json[]): string {
-  return JSON.stringify({ "@context": "https://schema.org", "@graph": nodes });
+export function graph(nodes: (Json | null)[]): string {
+  const validNodes = nodes.filter(Boolean);
+  return JSON.stringify({ "@context": "https://schema.org", "@graph": validNodes });
 }
 
 export interface HeadOptions {
@@ -256,7 +457,7 @@ export interface HeadOptions {
   ogType?: string;
   image?: string;
   noindex?: boolean;
-  schema?: Json[];
+  schema?: (Json | null)[];
 }
 
 /** Canonical head() payload used by every route. */
@@ -273,6 +474,12 @@ export function pageHead(options: HeadOptions) {
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: options.title },
     { name: "twitter:description", content: options.description },
+    { name: "geo.region", content: "IN-UP" },
+    { name: "geo.placename", content: "Kanpur, Uttar Pradesh, India" },
+    { name: "geo.position", content: "26.4499;80.3319" },
+    { name: "ICBM", content: "26.4499, 80.3319" },
+    { name: "theme-color", content: "#0a0a0a" },
+    { name: "author", content: "DIMISI Technologies Pvt. Ltd." },
   ];
   if (options.image) {
     meta.push({ property: "og:image", content: abs(options.image) });
@@ -292,8 +499,9 @@ export function pageHead(options: HeadOptions) {
   };
 }
 
-/** Head payload for a full entity page: page node + entity node + breadcrumb. */
+/** Head payload for a full entity page: page node + entity node + breadcrumb + FAQ schema (if any). */
 export function entityHead(entity: Entity, trail: { label: string; to?: string }[]) {
+  const faqSchema = buildFAQSchema(entity.faqs ?? entity.questions, entity.path);
   return pageHead({
     title: entity.seoTitle,
     description: entity.seoDescription,
@@ -304,6 +512,7 @@ export function entityHead(entity: Entity, trail: { label: string; to?: string }
       buildEntityPageSchema(entity),
       buildBreadcrumbSchema(trail, entity.path),
       buildEntitySchema(entity),
+      faqSchema,
       ...relationsFor(entity.id).map((r) => refNode(r.entity)),
     ],
   });
@@ -351,6 +560,7 @@ export function indexHead(opts: {
 export function canonicalUrls(): { path: string; lastmod?: string; priority: string }[] {
   const statics: { path: string; priority: string }[] = [
     { path: "/", priority: "1.0" },
+    { path: "/journey", priority: "0.8" },
     { path: "/people", priority: "0.8" },
     { path: "/organizations", priority: "0.8" },
     { path: "/projects", priority: "0.8" },

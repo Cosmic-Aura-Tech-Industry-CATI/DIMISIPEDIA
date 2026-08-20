@@ -6,7 +6,8 @@ export const Route = createFileRoute("/privacy")({
   head: () =>
     pageHead({
       title: "Privacy | DIMISIPEDIA",
-      description: "How DIMISIPEDIA, operated by DIMISI Technologies Pvt. Ltd., handles visitor information.",
+      description:
+        "How DIMISIPEDIA, operated by DIMISI Technologies Pvt. Ltd., handles visitor information.",
       path: "/privacy",
       schema: [
         buildBreadcrumbSchema(

@@ -7,7 +7,8 @@ export const Route = createFileRoute("/credibility")({
   head: () =>
     pageHead({
       title: "How DIMISIPEDIA Establishes Information",
-      description: "How DIMISIPEDIA sources, labels and verifies information about DIMISI Technologies — and how it distinguishes documented, source-backed, historical and unverified claims.",
+      description:
+        "How DIMISIPEDIA sources, labels and verifies information about DIMISI Technologies — and how it distinguishes documented, source-backed, historical and unverified claims.",
       path: "/credibility",
       schema: [
         buildBreadcrumbSchema(
@@ -57,7 +58,8 @@ function CredibilityPage() {
         <h2 className="mt-10 text-2xl">Information status labels</h2>
         <p>
           DIMISIPEDIA does not publish a credibility percentage. A decorative number would tell a
-          reader nothing. Instead each claim carries a status, and each status has a defined meaning.
+          reader nothing. Instead each claim carries a status, and each status has a defined
+          meaning.
         </p>
       </div>
 

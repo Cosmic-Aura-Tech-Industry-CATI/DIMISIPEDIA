@@ -151,9 +151,7 @@ function ArticlesIndex() {
             ) : null}
 
             {filtered.length === 0 ? (
-              <p className="mt-8 text-sm text-muted-foreground">
-                No articles match that filter.
-              </p>
+              <p className="mt-8 text-sm text-muted-foreground">No articles match that filter.</p>
             ) : (
               <ul className="mt-6 grid gap-px border border-border bg-rule sm:grid-cols-2">
                 {filtered.map((a) => (

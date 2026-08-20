@@ -1,5 +1,5 @@
 import { buildBreadcrumbSchema, pageHead } from "@/lib/seo";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Breadcrumbs } from "@/components/EntityArticle";
 import { EntityLink } from "@/components/EntityLink";
 import { StatusChip } from "@/components/StatusChip";
@@ -9,7 +9,8 @@ export const Route = createFileRoute("/timeline")({
   head: () =>
     pageHead({
       title: "Timeline of DIMISI Technologies | DIMISIPEDIA",
-      description: "Chronological record of documented DIMISI Technologies milestones, beginning with the incorporation date recorded as 9 April 2026.",
+      description:
+        "Chronological record of documented DIMISI Technologies milestones, from the initial spark in October 2024 to incorporation and modern platform releases.",
       path: "/timeline",
       schema: [
         buildBreadcrumbSchema(
@@ -26,11 +27,15 @@ function TimelinePage() {
     <div className="mx-auto max-w-4xl px-5 py-10">
       <Breadcrumbs trail={[{ label: "DIMISIPEDIA", to: "/" }, { label: "Timeline" }]} />
       <header className="mt-6 border-b border-rule pb-8">
-        <p className="label-mono">Chronological record</p>
+        <p className="label-mono">Chronological record · {timeline.length} Documented Milestones</p>
         <h1 className="mt-2 text-4xl">Timeline</h1>
         <p className="mt-4 max-w-2xl text-muted-foreground">
-          The recorded history of DIMISI Technologies. Entries appear here only when a date and a
-          documented description exist; each carries its own verification status.
+          The recorded history of DIMISI Technologies. Entries appear here when a date and a
+          documented description exist; each carries its own verification status. For the detailed
+          first-person narrative, read{" "}
+          <Link to="/journey" className="text-primary underline underline-offset-4">
+            The Founder's Entrepreneurship Journey →
+          </Link>
         </p>
       </header>
 

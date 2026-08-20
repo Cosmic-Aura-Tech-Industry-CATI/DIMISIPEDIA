@@ -33,7 +33,10 @@ function TechIndex() {
       <ul className="mt-8 grid gap-px border border-border bg-rule sm:grid-cols-2 lg:grid-cols-3">
         {technologyEntities.map((t) => (
           <li key={t.id}>
-            <EntityLink to={t.path} className="block h-full bg-surface px-5 py-5 transition-colors hover:bg-muted">
+            <EntityLink
+              to={t.path}
+              className="block h-full bg-surface px-5 py-5 transition-colors hover:bg-muted"
+            >
               <span className="font-serif text-lg">{t.name}</span>
               <span className="mt-1 block text-sm text-muted-foreground">{t.facts[1]?.value}</span>
             </EntityLink>

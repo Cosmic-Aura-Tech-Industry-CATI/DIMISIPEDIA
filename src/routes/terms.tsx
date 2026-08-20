@@ -6,7 +6,8 @@ export const Route = createFileRoute("/terms")({
   head: () =>
     pageHead({
       title: "Terms of Use | DIMISIPEDIA",
-      description: "Terms governing the use of DIMISIPEDIA, the knowledge platform operated by DIMISI Technologies Pvt. Ltd.",
+      description:
+        "Terms governing the use of DIMISIPEDIA, the knowledge platform operated by DIMISI Technologies Pvt. Ltd.",
       path: "/terms",
       schema: [
         buildBreadcrumbSchema(
@@ -26,8 +27,8 @@ function Terms() {
       <div className="prose-editorial mt-6">
         <p>
           DIMISIPEDIA is published by DIMISI Technologies Pvt. Ltd. Entries are provided for
-          information and reference. Each entry states the status of its information; entries
-          marked as needing verification should not be treated as confirmed statements of fact.
+          information and reference. Each entry states the status of its information; entries marked
+          as needing verification should not be treated as confirmed statements of fact.
         </p>
         <p>
           Content, names, marks and graphics on this site belong to DIMISI Technologies Pvt. Ltd.

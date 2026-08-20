@@ -13,7 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader, SiteFooter } from "../components/SiteChrome";
 import { SiteSearch } from "../components/SiteSearch";
-import { buildWebsiteSchema } from "../lib/seo";
+import { buildWebsiteSchema, buildSiteNavigationSchema } from "../lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -85,12 +85,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "DIMISIPEDIA documents DIMISI Technologies Pvt. Ltd. — its people, projects, technology, history and sources.",
+          "DIMISIPEDIA documents DIMISI Technologies Pvt. Ltd. — its founders, people, projects, technology, history and sources.",
       },
       { name: "author", content: "DIMISI Technologies Pvt. Ltd." },
+      { name: "geo.region", content: "IN-UP" },
+      { name: "geo.placename", content: "Kanpur, Uttar Pradesh, India" },
+      { name: "geo.position", content: "26.4499;80.3319" },
+      { name: "ICBM", content: "26.4499, 80.3319" },
+      { name: "theme-color", content: "#0a0a0a" },
       { property: "og:site_name", content: "DIMISIPEDIA" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -101,13 +107,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:wght@400;500;600&display=swap",
       },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/favicon.png" },
     ],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@graph": [buildWebsiteSchema()],
+          "@graph": [buildWebsiteSchema(), buildSiteNavigationSchema()],
         }),
       },
     ],

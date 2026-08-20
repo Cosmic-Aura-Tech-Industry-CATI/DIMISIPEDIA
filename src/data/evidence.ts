@@ -114,7 +114,8 @@ export function assessClaim(options: {
 
   // A source only counts once it has itself been checked.
   const confirmedPrimary = evidence.filter(
-    (e) => e.profile.tier === "A" && (e.source.status === "verified" || e.source.status === "official"),
+    (e) =>
+      e.profile.tier === "A" && (e.source.status === "verified" || e.source.status === "official"),
   ).length;
 
   let derived: InfoStatus;
@@ -154,8 +155,7 @@ export function assessClaim(options: {
     verified: 3,
   };
   const declared = options.declared;
-  const status =
-    declared && (rank[declared] ?? 0) < (rank[derived] ?? 0) ? declared : derived;
+  const status = declared && (rank[declared] ?? 0) < (rank[derived] ?? 0) ? declared : derived;
 
   const level: VerificationLevel =
     status === "verified"

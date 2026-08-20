@@ -87,11 +87,7 @@ function publicationsFor(entity: Entity) {
   });
 }
 
-function LinkList({
-  items,
-}: {
-  items: { type: string; entity: Entity }[];
-}) {
+function LinkList({ items }: { items: { type: string; entity: Entity }[] }) {
   return (
     <ul className="mt-5 grid gap-px border border-border bg-rule sm:grid-cols-2">
       {items.map((r, i) => (
@@ -212,23 +208,23 @@ export function PersonSections({ entity }: { entity: Entity }) {
             </ul>
           ) : null}
           {pubs.length > 0 ? (
-          <ul className="mt-5 divide-y divide-rule border-y border-rule">
-            {pubs.map((a) => (
-              <li key={a.slug} className="py-4">
-                <EntityLink
-                  to={articlePath(a)}
-                  className="font-serif text-lg underline-offset-4 hover:underline"
-                >
-                  {a.title}
-                </EntityLink>
-                <p className="mt-1 text-sm text-muted-foreground">{a.excerpt}</p>
-                <p className="mt-2 label-mono">
-                  {a.category} · {a.datePublished}
-                  {a.status === "draft" ? " · Draft" : ""}
-                </p>
-              </li>
-            ))}
-          </ul>
+            <ul className="mt-5 divide-y divide-rule border-y border-rule">
+              {pubs.map((a) => (
+                <li key={a.slug} className="py-4">
+                  <EntityLink
+                    to={articlePath(a)}
+                    className="font-serif text-lg underline-offset-4 hover:underline"
+                  >
+                    {a.title}
+                  </EntityLink>
+                  <p className="mt-1 text-sm text-muted-foreground">{a.excerpt}</p>
+                  <p className="mt-2 label-mono">
+                    {a.category} · {a.datePublished}
+                    {a.status === "draft" ? " · Draft" : ""}
+                  </p>
+                </li>
+              ))}
+            </ul>
           ) : null}
         </Block>
       ) : null}

@@ -85,8 +85,7 @@ function ArticlePage() {
             <span>By {author.name}</span>
           )}
           <span className="label-mono">
-            Published{" "}
-            <time dateTime={article.datePublished}>{article.datePublished}</time>
+            Published <time dateTime={article.datePublished}>{article.datePublished}</time>
           </span>
           <span className="label-mono">
             Updated <time dateTime={article.dateModified}>{article.dateModified}</time>

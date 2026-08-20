@@ -6,7 +6,8 @@ export const Route = createFileRoute("/editorial-policy")({
   head: () =>
     pageHead({
       title: "Editorial Policy | DIMISIPEDIA",
-      description: "How DIMISIPEDIA pages are created, verified, corrected and archived, how sources are evaluated, and how revisions are tracked.",
+      description:
+        "How DIMISIPEDIA pages are created, verified, corrected and archived, how sources are evaluated, and how revisions are tracked.",
       path: "/editorial-policy",
       schema: [
         buildBreadcrumbSchema(

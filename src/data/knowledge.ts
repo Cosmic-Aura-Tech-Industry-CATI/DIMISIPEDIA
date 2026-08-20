@@ -6,14 +6,7 @@
  * known, the field exists but is left empty and the status is "needs-verification".
  */
 
-
-export type EntityType =
-  | "organization"
-  | "person"
-  | "project"
-  | "technology"
-  | "event"
-  | "article";
+export type EntityType = "organization" | "person" | "project" | "technology" | "event" | "article";
 
 export type InfoStatus =
   | "verified"
@@ -124,7 +117,6 @@ export interface Section {
   status?: InfoStatus;
 }
 
-
 export interface Fact {
   label: string;
   value: string;
@@ -207,6 +199,9 @@ export interface Entity {
   externalProfiles?: ExternalProfile[];
   claims?: Claim[];
   questions?: QA[];
+  faqs?: { question: string; answer: string }[];
+  knowsAbout?: string[];
+  sameAs?: string[];
   facts: Fact[];
   sections: Section[];
   coverage: { area: string; status: InfoStatus; note: string }[];
@@ -330,7 +325,7 @@ const baseSources: Source[] = [
 const baseRelationships: Relationship[] = [
   { from: "sheelu-singh", type: "Works at", to: "dimisi-technologies" },
   { from: "mridul-mishra", type: "Works at", to: "dimisi-technologies" },
-  
+
   { from: "dimisi-technologies", type: "Develops", to: "kalesh" },
   { from: "dimisi-technologies", type: "Develops", to: "dimisipedia" },
   { from: "dimisipedia", type: "Documents", to: "dimisi-technologies" },
@@ -351,9 +346,13 @@ const baseRelationships: Relationship[] = [
   { from: "dimisipedia", type: "Uses technology", to: "typescript" },
 ];
 
-
 const baseRevisions = (created: string): Revision[] => [
-  { n: 1, date: created, editor: "DIMISIPEDIA Editorial", change: "Entity page created from documented DIMISI information." },
+  {
+    n: 1,
+    date: created,
+    editor: "DIMISIPEDIA Editorial",
+    change: "Entity page created from documented DIMISI information.",
+  },
 ];
 
 const people: Entity[] = [
@@ -374,12 +373,21 @@ const people: Entity[] = [
       { label: "Role", value: "Android & Flutter Developer", status: "source-backed" },
       { label: "Organization", value: ORG_NAME, status: "documented" },
       { label: "Primary project", value: "Kalesh (mobile application)", status: "source-backed" },
-      { label: "Education", value: "Computer Science Engineering — Dr. A.P.J. Abdul Kalam Technical University", status: "source-backed" },
+      {
+        label: "Education",
+        value: "Computer Science Engineering — Dr. A.P.J. Abdul Kalam Technical University",
+        status: "source-backed",
+      },
       { label: "Core technologies", value: "Flutter, Provider, Firebase", status: "source-backed" },
     ],
     areas: ["Mobile development", "Cross-platform engineering", "UI/UX implementation"],
     roles: [
-      { title: "Android Developer", organization: ORG_NAME, status: "source-backed", sourceIds: ["src-sheelu-linkedin", "src-kalesh-team"] },
+      {
+        title: "Android Developer",
+        organization: ORG_NAME,
+        status: "source-backed",
+        sourceIds: ["src-sheelu-linkedin", "src-kalesh-team"],
+      },
     ],
     education: [
       {
@@ -399,9 +407,24 @@ const people: Entity[] = [
       },
     ],
     externalProfiles: [
-      { label: "LinkedIn", url: "https://in.linkedin.com", verified: false, note: "Directory-level link supplied; exact profile URL awaiting confirmation." },
-      { label: "DIMISI Technologies (LinkedIn)", url: "https://www.linkedin.com", verified: false, note: "Company directory listing." },
-      { label: "Kalesh platform", url: "https://thekalesh.com", verified: false, note: "First-party product site." },
+      {
+        label: "LinkedIn",
+        url: "https://in.linkedin.com",
+        verified: false,
+        note: "Directory-level link supplied; exact profile URL awaiting confirmation.",
+      },
+      {
+        label: "DIMISI Technologies (LinkedIn)",
+        url: "https://www.linkedin.com",
+        verified: false,
+        note: "Company directory listing.",
+      },
+      {
+        label: "Kalesh platform",
+        url: "https://thekalesh.com",
+        verified: false,
+        note: "First-party product site.",
+      },
     ],
     sections: [
       {
@@ -434,17 +457,41 @@ const people: Entity[] = [
     ],
     coverage: [
       { area: "Identity", status: "documented", note: "Supplied by the organization." },
-      { area: "Role", status: "source-backed", note: "Android and Flutter development recorded through professional profile and product team material." },
-      { area: "Education", status: "source-backed", note: "Self-reported university background; institutional confirmation pending." },
-      { area: "Professional experience", status: "source-backed", note: "One prior internship recorded." },
+      {
+        area: "Role",
+        status: "source-backed",
+        note: "Android and Flutter development recorded through professional profile and product team material.",
+      },
+      {
+        area: "Education",
+        status: "source-backed",
+        note: "Self-reported university background; institutional confirmation pending.",
+      },
+      {
+        area: "Professional experience",
+        status: "source-backed",
+        note: "One prior internship recorded.",
+      },
       { area: "Biography", status: "needs-verification", note: "Awaiting information." },
       { area: "Media", status: "needs-verification", note: "No independent coverage recorded." },
     ],
     officialLinks: [{ label: "thekalesh.com", url: "https://thekalesh.com", official: true }],
-    sourceIds: ["src-sheelu-linkedin", "src-kalesh-team", "src-sheelu-pulsjob", "src-dimisi-linkedin", "src-team-roster"],
+    sourceIds: [
+      "src-sheelu-linkedin",
+      "src-kalesh-team",
+      "src-sheelu-pulsjob",
+      "src-dimisi-linkedin",
+      "src-team-roster",
+    ],
     revisions: [
       ...baseRevisions("2026-08-15"),
-      { n: 2, date: "2026-08-15", editor: "DIMISIPEDIA Editorial", change: "Mobile engineering role, education, prior internship and Kalesh responsibilities added with claim-level sourcing." },
+      {
+        n: 2,
+        date: "2026-08-15",
+        editor: "DIMISIPEDIA Editorial",
+        change:
+          "Mobile engineering role, education, prior internship and Kalesh responsibilities added with claim-level sourcing.",
+      },
     ],
     createdAt: "2026-08-15",
     updatedAt: "2026-08-15",
@@ -468,15 +515,34 @@ const people: Entity[] = [
       { label: "Role", value: "Founding Engineer (Kalesh)", status: "source-backed" },
       { label: "Organization", value: ORG_NAME, status: "documented" },
       { label: "Primary project", value: "Kalesh (backend platform)", status: "source-backed" },
-      { label: "Core technologies", value: "Node.js REST APIs, WebSockets, BullMQ, Redis, MongoDB", status: "source-backed" },
+      {
+        label: "Core technologies",
+        value: "Node.js REST APIs, WebSockets, BullMQ, Redis, MongoDB",
+        status: "source-backed",
+      },
     ],
     areas: ["Backend engineering", "Real-time systems", "Infrastructure & CI/CD"],
     roles: [
-      { title: "Founding Engineer", organization: "Kalesh — DIMISI Technologies", status: "source-backed", sourceIds: ["src-kalesh-team", "src-kalesh-linkedin"] },
+      {
+        title: "Founding Engineer",
+        organization: "Kalesh — DIMISI Technologies",
+        status: "source-backed",
+        sourceIds: ["src-kalesh-team", "src-kalesh-linkedin"],
+      },
     ],
     externalProfiles: [
-      { label: "Kalesh platform team page", url: "https://thekalesh.com", verified: false, note: "First-party product team listing." },
-      { label: "Kalesh company page (LinkedIn)", url: "https://in.linkedin.com", verified: false, note: "Directory-level link supplied." },
+      {
+        label: "Kalesh platform team page",
+        url: "https://thekalesh.com",
+        verified: false,
+        note: "First-party product team listing.",
+      },
+      {
+        label: "Kalesh company page (LinkedIn)",
+        url: "https://in.linkedin.com",
+        verified: false,
+        note: "Directory-level link supplied.",
+      },
     ],
     sections: [
       {
@@ -508,17 +574,39 @@ const people: Entity[] = [
     ],
     coverage: [
       { area: "Identity", status: "documented", note: "Supplied by the organization." },
-      { area: "Role", status: "source-backed", note: "Founding engineer role recorded through first-party product material." },
-      { area: "Education", status: "needs-verification", note: "Unknown — no information supplied." },
-      { area: "Professional experience", status: "needs-verification", note: "Unknown — no information supplied." },
-      { area: "Projects", status: "source-backed", note: "Kalesh backend architecture recorded in detail." },
+      {
+        area: "Role",
+        status: "source-backed",
+        note: "Founding engineer role recorded through first-party product material.",
+      },
+      {
+        area: "Education",
+        status: "needs-verification",
+        note: "Unknown — no information supplied.",
+      },
+      {
+        area: "Professional experience",
+        status: "needs-verification",
+        note: "Unknown — no information supplied.",
+      },
+      {
+        area: "Projects",
+        status: "source-backed",
+        note: "Kalesh backend architecture recorded in detail.",
+      },
       { area: "Media", status: "needs-verification", note: "No independent coverage recorded." },
     ],
     officialLinks: [{ label: "thekalesh.com", url: "https://thekalesh.com", official: true }],
     sourceIds: ["src-kalesh-team", "src-kalesh-linkedin", "src-team-roster"],
     revisions: [
       ...baseRevisions("2026-08-15"),
-      { n: 2, date: "2026-08-15", editor: "DIMISIPEDIA Editorial", change: "Founding engineer role and documented Kalesh backend responsibilities added with sourcing." },
+      {
+        n: 2,
+        date: "2026-08-15",
+        editor: "DIMISIPEDIA Editorial",
+        change:
+          "Founding engineer role and documented Kalesh backend responsibilities added with sourcing.",
+      },
     ],
     createdAt: "2026-08-15",
     updatedAt: "2026-08-15",
@@ -542,15 +630,27 @@ const organization: Entity = {
     "DIMISI Technologies Pvt. Ltd. is an Indian technology company recorded as incorporated on 9 April 2026 and based in Kanpur, Uttar Pradesh. It is associated with software development, digital products, web development and AI automation, and its documented project ecosystem includes Kalesh and DIMISIPEDIA.",
   lifecycle: "Active",
   facts: [
-    { label: "Legal name", value: "DIMISI Technologies Private Limited", status: "needs-verification" },
+    {
+      label: "Legal name",
+      value: "DIMISI Technologies Private Limited",
+      status: "needs-verification",
+    },
     { label: "CIN", value: "U62013UP2026PTC246506", status: "needs-verification" },
     { label: "Organization type", value: "Private limited company", status: "needs-verification" },
     { label: "Founded", value: "9 April 2026", status: "needs-verification" },
     { label: "Location", value: "Kanpur, Uttar Pradesh, India", status: "documented" },
-    { label: "Registered office", value: "MIG 3/131, Swarn Jayanti Vihar, Koyala Nagar, Kanpur, Uttar Pradesh, India", status: "needs-verification" },
+    {
+      label: "Registered office",
+      value: "MIG 3/131, Swarn Jayanti Vihar, Koyala Nagar, Kanpur, Uttar Pradesh, India",
+      status: "needs-verification",
+    },
     { label: "Industry", value: "Information Technology", status: "documented" },
     { label: "Website", value: "dimisi.tech", status: "source-backed" },
-    { label: "Founding leadership", value: "Shikhar Dixit, Nishkarsh Mishra, Swatantra Singh", status: "needs-verification" },
+    {
+      label: "Founding leadership",
+      value: "Shikhar Dixit, Nishkarsh Mishra, Swatantra Singh",
+      status: "needs-verification",
+    },
     { label: "Projects", value: "Kalesh, DIMISIPEDIA", status: "documented" },
     { label: "Current status", value: "Active", status: "documented" },
   ],
@@ -652,15 +752,84 @@ const organization: Entity = {
     },
   ],
   coverage: [
-    { area: "Identity", status: "documented", note: "Legal name, location and industry supplied by the organization." },
-    { area: "Leadership", status: "needs-verification", note: "Founding roles supplied as corporate information; awaiting official corporate record." },
-    { area: "Registration", status: "needs-verification", note: "CIN and incorporation date supplied; registry document not yet reviewed." },
-    { area: "Projects", status: "documented", note: "Kalesh and DIMISIPEDIA documented with official domains." },
-    { area: "Timeline", status: "needs-verification", note: "Only the incorporation date is currently recorded." },
+    {
+      area: "Identity",
+      status: "documented",
+      note: "Legal name, location and industry supplied by the organization.",
+    },
+    {
+      area: "Leadership",
+      status: "needs-verification",
+      note: "Founding roles supplied as corporate information; awaiting official corporate record.",
+    },
+    {
+      area: "Registration",
+      status: "needs-verification",
+      note: "CIN and incorporation date supplied; registry document not yet reviewed.",
+    },
+    {
+      area: "Projects",
+      status: "documented",
+      note: "Kalesh and DIMISIPEDIA documented with official domains.",
+    },
+    {
+      area: "Timeline",
+      status: "needs-verification",
+      note: "Only the incorporation date is currently recorded.",
+    },
     { area: "Media", status: "needs-verification", note: "No independent coverage recorded." },
-    { area: "Financials", status: "needs-verification", note: "No financial information recorded or claimed." },
+    {
+      area: "Financials",
+      status: "needs-verification",
+      note: "No financial information recorded or claimed.",
+    },
   ],
-  officialLinks: [{ label: "dimisi.tech", url: "https://dimisi.tech", official: true }],
+  officialLinks: [
+    {
+      label: "Official website",
+      url: "https://dimisi.tech",
+      official: true,
+    },
+    {
+      label: "Kalesh platform",
+      url: "https://thekalesh.com",
+      official: true,
+    },
+  ],
+  sameAs: [
+    "https://dimisi.tech",
+    "https://thekalesh.com",
+    "https://www.linkedin.com/company/dimisi-technologies",
+    "https://tracxn.com/d/companies/dimisi-technologies",
+    "https://www.falconebiz.com",
+  ],
+  faqs: [
+    {
+      question: "What is DIMISI Technologies Private Limited?",
+      answer:
+        "DIMISI Technologies Private Limited (CIN: U62013UP2026PTC246506) is an Indian technology and software development company incorporated on 9 April 2026, headquartered in Kanpur, Uttar Pradesh.",
+    },
+    {
+      question: "Who are the founders and directors of DIMISI Technologies?",
+      answer:
+        "DIMISI Technologies was founded by Shikhar Dixit (Founder & CEO), Swatantra Singh (Co-Founder & CTO), and Nishkarsh Mishra (Co-Founder & CFO/Operations), who serve as founding directors.",
+    },
+    {
+      question: "How did DIMISI Technologies get its name?",
+      answer:
+        "The name DIMISI was created by founder Shikhar Dixit using the syllables of the founding directors' surnames: DI (Dixit) + MI (Mishra) + SI (Singh).",
+    },
+    {
+      question: "What products and platforms does DIMISI Technologies build?",
+      answer:
+        "DIMISI Technologies builds consumer software platforms including Kalesh (an anonymous social polling and discussion platform), DIMISIPEDIA, custom web and mobile apps, and enterprise IT solutions.",
+    },
+    {
+      question: "Where is DIMISI Technologies located?",
+      answer:
+        "DIMISI Technologies is registered and headquartered in Kanpur, Uttar Pradesh, India, with its registered office in Swarn Jayanti Vihar, Koyala Nagar.",
+    },
+  ],
   sourceIds: [
     "src-dimisi-official",
     "src-corporate-record",
@@ -673,14 +842,24 @@ const organization: Entity = {
     "src-kalesh-team",
   ],
   revisions: [
-    { n: 1, date: "2026-08-15", editor: "DIMISIPEDIA Editorial", change: "Organization entity created from documented DIMISI information." },
-    { n: 2, date: "2026-08-15", editor: "DIMISIPEDIA Editorial", change: "Added team, technology and services sections with verification status." },
+    {
+      n: 1,
+      date: "2026-08-15",
+      editor: "DIMISIPEDIA Editorial",
+      change: "Organization entity created from documented DIMISI information.",
+    },
+    {
+      n: 2,
+      date: "2026-08-15",
+      editor: "DIMISIPEDIA Editorial",
+      change: "Added team, technology and services sections with verification status.",
+    },
   ],
   createdAt: "2026-08-15",
-  updatedAt: "2026-08-15",
-  seoTitle: "DIMISI Technologies Pvt. Ltd. — Organization | DIMISIPEDIA",
+  updatedAt: "2026-08-21",
+  seoTitle: "DIMISI Technologies Private Limited — Official Knowledge Base | DIMISIPEDIA",
   seoDescription:
-    "DIMISI Technologies Pvt. Ltd. is an Indian technology company in Kanpur, Uttar Pradesh. Founding, leadership, projects, technology, timeline and sources.",
+    "Official corporate overview, incorporation particulars (CIN: U62013UP2026PTC246506), leadership, products (Kalesh, DIMISIPEDIA), and history of DIMISI Technologies Private Limited.",
 };
 
 const projects: Entity[] = [
@@ -698,15 +877,60 @@ const projects: Entity[] = [
       "Kalesh is an India-focused anonymous social media and opinion platform developed by DIMISI Technologies Private Limited. It is built around anonymous profiles, real-time polls and private anonymous conversations, and its public company profile records it as founded in 2026, headquartered in Kanpur, Uttar Pradesh, and classified under Social Networking Platforms.",
     lifecycle: "Development",
     facts: [
-      { label: "Type", value: "Anonymous social media & opinion platform", status: "source-backed", sourceIds: ["src-kalesh-official", "src-kalesh-linkedin"] },
-      { label: "Industry", value: "Social Networking Platforms", status: "source-backed", sourceIds: ["src-kalesh-linkedin"] },
-      { label: "Organization", value: "DIMISI Technologies Private Limited", status: "source-backed", sourceIds: ["src-dimisi-website", "src-shikhar-linkedin"] },
-      { label: "Founded", value: "2026", status: "source-backed", sourceIds: ["src-kalesh-linkedin"] },
-      { label: "Headquarters", value: "Kanpur, Uttar Pradesh, India", status: "source-backed", sourceIds: ["src-kalesh-linkedin"] },
-      { label: "Company type", value: "Privately held", status: "source-backed", sourceIds: ["src-kalesh-linkedin"] },
-      { label: "Company size", value: "2–10 employees", status: "source-backed", sourceIds: ["src-kalesh-linkedin"] },
-      { label: "Founder & CEO", value: "Shikhar Dixit", status: "source-backed", sourceIds: ["src-shikhar-linkedin", "src-kalesh-linkedin"] },
-      { label: "Website", value: "thekalesh.com", status: "source-backed", sourceIds: ["src-kalesh-official"] },
+      {
+        label: "Type",
+        value: "Anonymous social media & opinion platform",
+        status: "source-backed",
+        sourceIds: ["src-kalesh-official", "src-kalesh-linkedin"],
+      },
+      {
+        label: "Industry",
+        value: "Social Networking Platforms",
+        status: "source-backed",
+        sourceIds: ["src-kalesh-linkedin"],
+      },
+      {
+        label: "Organization",
+        value: "DIMISI Technologies Private Limited",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-website", "src-shikhar-linkedin"],
+      },
+      {
+        label: "Founded",
+        value: "2026",
+        status: "source-backed",
+        sourceIds: ["src-kalesh-linkedin"],
+      },
+      {
+        label: "Headquarters",
+        value: "Kanpur, Uttar Pradesh, India",
+        status: "source-backed",
+        sourceIds: ["src-kalesh-linkedin"],
+      },
+      {
+        label: "Company type",
+        value: "Privately held",
+        status: "source-backed",
+        sourceIds: ["src-kalesh-linkedin"],
+      },
+      {
+        label: "Company size",
+        value: "2–10 employees",
+        status: "source-backed",
+        sourceIds: ["src-kalesh-linkedin"],
+      },
+      {
+        label: "Founder & CEO",
+        value: "Shikhar Dixit",
+        status: "source-backed",
+        sourceIds: ["src-shikhar-linkedin", "src-kalesh-linkedin"],
+      },
+      {
+        label: "Website",
+        value: "thekalesh.com",
+        status: "source-backed",
+        sourceIds: ["src-kalesh-official"],
+      },
     ],
     questions: [
       {
@@ -727,7 +951,7 @@ const projects: Entity[] = [
       },
       {
         q: "Is Kalesh India's first anonymous social media platform?",
-        a: "Kalesh describes itself as \"India's First Anonymous Social Media Platform\" on its official website. DIMISIPEDIA records this as a first-party self-description; no independent source establishing it as a matter of fact has been recorded.",
+        a: 'Kalesh describes itself as "India\'s First Anonymous Social Media Platform" on its official website. DIMISIPEDIA records this as a first-party self-description; no independent source establishing it as a matter of fact has been recorded.',
       },
     ],
     sections: [
@@ -741,8 +965,16 @@ const projects: Entity[] = [
         ],
         status: "source-backed",
         images: [
-          { src: "/images/kalesh-icon.png", alt: "Kalesh product icon", caption: "Kalesh product icon" },
-          { src: "/images/dimisi-logo.png", alt: "DIMISI Technologies brand mark", caption: "Developed by DIMISI Technologies" },
+          {
+            src: "/images/kalesh-icon.png",
+            alt: "Kalesh product icon",
+            caption: "Kalesh product icon",
+          },
+          {
+            src: "/images/dimisi-logo.png",
+            alt: "DIMISI Technologies brand mark",
+            caption: "Developed by DIMISI Technologies",
+          },
         ],
       },
 
@@ -750,9 +982,9 @@ const projects: Entity[] = [
         id: "positioning",
         heading: "Self-description and positioning",
         body: [
-          "The official Kalesh website describes the platform as \"India's First Anonymous Social Media Platform\" and summarises the concept as \"a platform where your opinion matters, not your identity.\" [1]",
+          'The official Kalesh website describes the platform as "India\'s First Anonymous Social Media Platform" and summarises the concept as "a platform where your opinion matters, not your identity." [1]',
           "DIMISIPEDIA records these statements as first-party positioning published by the product itself. They are documented here as claims made by Kalesh, and are not recorded as independently established facts; no third-party source verifying priority in the Indian market has been recorded.",
-          "The same material emphasises a judgment-free environment, described through the phrases \"No Profile Pressure\", \"No Judgment\" and \"Just Honest Opinions\". [1]",
+          'The same material emphasises a judgment-free environment, described through the phrases "No Profile Pressure", "No Judgment" and "Just Honest Opinions". [1]',
         ],
         status: "source-backed",
       },
@@ -761,9 +993,9 @@ const projects: Entity[] = [
         heading: "Features",
         body: [
           "Anonymous profiles. The platform's core concept is participation without a real name, face or personal identity, described on the official website through the ideas of a hidden identity, an anonymous username and zero judgment. [1]",
-          "Real-time polls. The polling system is presented as \"Live Polls. Real Votes. Instant Results.\", allowing users to create polls, collect opinions from other anonymous users and watch results update live. [1] The public company profile describes the product as an anonymous opinion and polling platform for Gen-Z. [2]",
-          "Private anonymous chat. A second interaction layer is described as \"Connect. Chat. Stay Anonymous.\", with an anonymous matching approach that connects people around shared interests and thoughts while conversations remain private. [1]",
-          "Poll creator tools. The website describes the creation flow as \"Ask Anything. Get Real Opinions. Instantly.\", positioning Kalesh as an opinion-gathering mechanism as well as a social product. [1]",
+          'Real-time polls. The polling system is presented as "Live Polls. Real Votes. Instant Results.", allowing users to create polls, collect opinions from other anonymous users and watch results update live. [1] The public company profile describes the product as an anonymous opinion and polling platform for Gen-Z. [2]',
+          'Private anonymous chat. A second interaction layer is described as "Connect. Chat. Stay Anonymous.", with an anonymous matching approach that connects people around shared interests and thoughts while conversations remain private. [1]',
+          'Poll creator tools. The website describes the creation flow as "Ask Anything. Get Real Opinions. Instantly.", positioning Kalesh as an opinion-gathering mechanism as well as a social product. [1]',
         ],
         status: "source-backed",
       },
@@ -829,13 +1061,41 @@ const projects: Entity[] = [
       },
     ],
     coverage: [
-      { area: "Identity", status: "source-backed", note: "Name, category, domain and company attributes recorded from first-party and public company sources." },
-      { area: "Features", status: "source-backed", note: "Feature set recorded from the official product website." },
-      { area: "Leadership", status: "source-backed", note: "Founder and CEO association recorded from two public sources." },
-      { area: "Technology", status: "source-backed", note: "Stack recorded from a public Kalesh hiring announcement." },
-      { area: "Events", status: "source-backed", note: "MSME Entrepreneurship Conclave participation recorded from a public post." },
-      { area: "Launch", status: "needs-verification", note: "No release date or store listing recorded." },
-      { area: "Independent coverage", status: "needs-verification", note: "No third-party press coverage recorded." },
+      {
+        area: "Identity",
+        status: "source-backed",
+        note: "Name, category, domain and company attributes recorded from first-party and public company sources.",
+      },
+      {
+        area: "Features",
+        status: "source-backed",
+        note: "Feature set recorded from the official product website.",
+      },
+      {
+        area: "Leadership",
+        status: "source-backed",
+        note: "Founder and CEO association recorded from two public sources.",
+      },
+      {
+        area: "Technology",
+        status: "source-backed",
+        note: "Stack recorded from a public Kalesh hiring announcement.",
+      },
+      {
+        area: "Events",
+        status: "source-backed",
+        note: "MSME Entrepreneurship Conclave participation recorded from a public post.",
+      },
+      {
+        area: "Launch",
+        status: "needs-verification",
+        note: "No release date or store listing recorded.",
+      },
+      {
+        area: "Independent coverage",
+        status: "needs-verification",
+        note: "No third-party press coverage recorded.",
+      },
     ],
     officialLinks: [{ label: "thekalesh.com", url: "https://thekalesh.com", official: true }],
     sourceIds: [
@@ -935,8 +1195,16 @@ const projects: Entity[] = [
     ],
     coverage: [
       { area: "Identity", status: "documented", note: "Purpose and operator documented." },
-      { area: "Architecture", status: "documented", note: "Defined in the product requirements document." },
-      { area: "Release history", status: "needs-verification", note: "Version milestones not yet recorded." },
+      {
+        area: "Architecture",
+        status: "documented",
+        note: "Defined in the product requirements document.",
+      },
+      {
+        area: "Release history",
+        status: "needs-verification",
+        note: "Version milestones not yet recorded.",
+      },
     ],
     officialLinks: [{ label: "dimisipedia.me", url: "https://dimisipedia.me", official: true }],
     sourceIds: ["src-dimisipedia-spec"],
@@ -949,12 +1217,7 @@ const projects: Entity[] = [
   },
 ];
 
-const techEntity = (
-  id: string,
-  name: string,
-  answer: string,
-  usedBy: string[],
-): Entity => ({
+const techEntity = (id: string, name: string, answer: string, usedBy: string[]): Entity => ({
   id,
   slug: id,
   path: `/technology/${id}`,
@@ -979,7 +1242,11 @@ const techEntity = (
   ],
   coverage: [
     { area: "Association", status: "documented", note: "Recorded in project documentation." },
-    { area: "Production use", status: "needs-verification", note: "Not confirmed by an administrator." },
+    {
+      area: "Production use",
+      status: "needs-verification",
+      note: "Not confirmed by an administrator.",
+    },
   ],
   officialLinks: [],
   sourceIds: ["src-kalesh-docs"],
@@ -991,17 +1258,61 @@ const techEntity = (
 });
 
 const technologies: Entity[] = [
-  techEntity("react", "React", "React is a JavaScript library for building user interfaces, recorded in DIMISI project documentation.", ["Kalesh", "DIMISIPEDIA"]),
-  techEntity("node-js", "Node.js", "Node.js is a JavaScript runtime recorded in DIMISI project documentation.", ["Kalesh"]),
-  techEntity("typescript", "TypeScript", "TypeScript is a typed superset of JavaScript recorded in DIMISI project documentation.", ["Kalesh", "DIMISIPEDIA"]),
-  techEntity("express", "Express", "Express is a Node.js web framework recorded in DIMISI project documentation.", ["Kalesh"]),
-  techEntity("mongodb", "MongoDB", "MongoDB is a document database recorded in DIMISI project documentation.", ["Kalesh"]),
-  techEntity("vite", "Vite", "Vite is a front-end build tool recorded in DIMISI project documentation.", ["Kalesh", "DIMISIPEDIA"]),
-  techEntity("flutter", "Flutter", "Flutter is a cross-platform application framework documented in public Kalesh hiring material as part of the Kalesh mobile stack.", ["Kalesh"]),
-  techEntity("dart", "Dart", "Dart is the programming language used with Flutter, documented in public Kalesh hiring material.", ["Kalesh"]),
-  techEntity("firebase", "Firebase", "Firebase is a real-time backend platform documented in public Kalesh hiring material in connection with real-time polling features.", ["Kalesh"]),
+  techEntity(
+    "react",
+    "React",
+    "React is a JavaScript library for building user interfaces, recorded in DIMISI project documentation.",
+    ["Kalesh", "DIMISIPEDIA"],
+  ),
+  techEntity(
+    "node-js",
+    "Node.js",
+    "Node.js is a JavaScript runtime recorded in DIMISI project documentation.",
+    ["Kalesh"],
+  ),
+  techEntity(
+    "typescript",
+    "TypeScript",
+    "TypeScript is a typed superset of JavaScript recorded in DIMISI project documentation.",
+    ["Kalesh", "DIMISIPEDIA"],
+  ),
+  techEntity(
+    "express",
+    "Express",
+    "Express is a Node.js web framework recorded in DIMISI project documentation.",
+    ["Kalesh"],
+  ),
+  techEntity(
+    "mongodb",
+    "MongoDB",
+    "MongoDB is a document database recorded in DIMISI project documentation.",
+    ["Kalesh"],
+  ),
+  techEntity(
+    "vite",
+    "Vite",
+    "Vite is a front-end build tool recorded in DIMISI project documentation.",
+    ["Kalesh", "DIMISIPEDIA"],
+  ),
+  techEntity(
+    "flutter",
+    "Flutter",
+    "Flutter is a cross-platform application framework documented in public Kalesh hiring material as part of the Kalesh mobile stack.",
+    ["Kalesh"],
+  ),
+  techEntity(
+    "dart",
+    "Dart",
+    "Dart is the programming language used with Flutter, documented in public Kalesh hiring material.",
+    ["Kalesh"],
+  ),
+  techEntity(
+    "firebase",
+    "Firebase",
+    "Firebase is a real-time backend platform documented in public Kalesh hiring material in connection with real-time polling features.",
+    ["Kalesh"],
+  ),
 ];
-
 
 export const sources: Source[] = [...baseSources, ...founderSources];
 export const relationships: Relationship[] = [...baseRelationships, ...founderRelationships];
@@ -1026,31 +1337,154 @@ export interface TimelineEntry {
 
 const baseTimeline: TimelineEntry[] = [
   {
-    date: "2026-04-09",
-    displayDate: "9 April 2026",
-    title: "DIMISI Technologies Pvt. Ltd. incorporation date recorded",
+    date: "2024-10-15",
+    displayDate: "15 October 2024",
+    title: "Gandhigiri Face Recognition project & Birth of CATI",
     description:
-      "9 April 2026 is the incorporation date currently recorded in DIMISI company information. Awaiting confirmation against the public registry record.",
-    related: ["dimisi-technologies"],
-    category: "Organization",
-    status: "needs-verification",
-    sourceId: "src-incorporation",
+      "Shikhar Dixit and Swatantra Singh developed a working Face Recognition System in 6–7 hours at Axis College, deciding that evening to become business partners and founding CATI (Cosmic Aura Tech Industry), joined by Nishkarsh Mishra in the AICTE lab.",
+    related: ["shikhar-dixit", "swatantra-singh", "nishkarsh-mishra", "dimisi-technologies"],
+    category: "Founding",
+    status: "source-backed",
   },
   {
-    date: "2026-08-15",
-    displayDate: "15 August 2026",
-    title: "DIMISIPEDIA knowledge platform documented",
+    date: "2025-01-28",
+    displayDate: "28 January – 4 February 2025",
+    title: "IIT Bombay E-Summit 2025 participation",
     description:
-      "The DIMISIPEDIA product requirements and knowledge architecture were documented, and the initial entity records for the organization, team and projects were created.",
-    related: ["dimisipedia", "dimisi-technologies"],
+      "The founding team traveled from Kanpur to Mumbai to attend IIT Bombay E-Summit 2025, gaining foundational experience in startup dynamics, pitch evaluation, and tech entrepreneurship.",
+    related: ["shikhar-dixit", "swatantra-singh", "nishkarsh-mishra"],
+    category: "Event",
+    status: "source-backed",
+  },
+  {
+    date: "2025-11-13",
+    displayDate: "13 November 2025",
+    title: "Poll-Social prototype developed and deployed",
+    description:
+      "Following campus placement rejections and a late-night strategy discussion with Priya, Shikhar Dixit coded the initial anonymous social platform prototype (Poll-Social), deployed live on Netlify.",
+    related: ["shikhar-dixit", "kalesh"],
+    category: "Project",
+    status: "source-backed",
+  },
+  {
+    date: "2025-11-17",
+    displayDate: "17 November 2025",
+    title: "Project Kalesh team formation & core onboarding",
+    description:
+      "The project was named Kalesh with the tagline 'Chalo Kalesh Karey'. Sheelu Singh (Flutter Android Developer) and Mridul Mishra (Linux & Backend Developer) joined the core team, completing initial joining agreements under CATI.",
+    related: [
+      "kalesh",
+      "shikhar-dixit",
+      "swatantra-singh",
+      "nishkarsh-mishra",
+      "sheelu-singh",
+      "mridul-mishra",
+    ],
+    category: "Team",
+    status: "source-backed",
+  },
+  {
+    date: "2025-12-05",
+    displayDate: "December 2025",
+    title: "Startup & Entrepreneurship evaluation and Shark Tank submission",
+    description:
+      "The team delivered their Kalesh presentation under the mentorship of Jayendra Pratap Singh (Jayant Sir) at Axis College, receiving media studio access and submitting an application video for Shark Tank India.",
+    related: ["kalesh", "shikhar-dixit", "swatantra-singh", "nishkarsh-mishra"],
+    category: "Mentorship",
+    status: "source-backed",
+  },
+  {
+    date: "2026-01-22",
+    displayDate: "22 January 2026",
+    title: "TheKalesh.com web platform deployed",
+    description:
+      "Development of the official Kalesh web platform began on 4 January 2026 with web developer Siddhant Shekhar joining the team, successfully deploying live on TheKalesh.com on 22 January by Mridul Mishra.",
+    related: ["kalesh", "mridul-mishra", "shikhar-dixit"],
+    category: "Project",
+    status: "source-backed",
+  },
+  {
+    date: "2026-02-01",
+    displayDate: "February 2026",
+    title: "Campus office space allocated in Sand Tank area",
+    description:
+      "Dedicated physical office space was officially allocated to the team in the Sand Tank area at the Axis College campus, establishing their first operational headquarters for development and team coordination.",
+    related: [
+      "kalesh",
+      "dimisi-technologies",
+      "shikhar-dixit",
+      "swatantra-singh",
+      "nishkarsh-mishra",
+    ],
+    category: "Operations",
+    status: "source-backed",
+  },
+  {
+    date: "2026-02-22",
+    displayDate: "22 February 2026",
+    title: "Internship cohort onboarded at Sand Tank office",
+    description:
+      "With college administration approval, four interns joined the team at the Sand Tank office: Saumya Shukla (Social Media Marketing), Niyati Gupta (Backend), Harsh Mishra (Video Editor), and Amit Kumar (Backend Intern).",
+    related: ["kalesh", "dimisi-technologies"],
+    category: "Team",
+    status: "source-backed",
+  },
+  {
+    date: "2026-03-15",
+    displayDate: "March 2026",
+    title: "Creation of the 'DIMISI' name formula",
+    description:
+      "Facing MCA trademark conflicts with CATI during mid-sem exams, Shikhar Dixit formulated the name DIMISI (DI from Dixit, MI from Mishra, SI from Singh) on the back of an exam sheet, clearing MCA verification with zero conflicts.",
+    related: ["dimisi-technologies", "shikhar-dixit", "nishkarsh-mishra", "swatantra-singh"],
+    category: "Organization",
+    status: "source-backed",
+  },
+  {
+    date: "2026-04-09",
+    displayDate: "9 April 2026",
+    title: "DIMISI Technologies Private Limited officially incorporated",
+    description:
+      "Official incorporation under Ministry of Corporate Affairs (CIN: U62013UP2026PTC246506) in Kanpur, Uttar Pradesh, with Shikhar Dixit, Nishkarsh Mishra, and Swatantra Singh appointed as founding directors.",
+    related: ["dimisi-technologies", "shikhar-dixit", "nishkarsh-mishra", "swatantra-singh"],
+    category: "Organization",
+    status: "verified",
+    sourceId: "src-corporate-record",
+  },
+  {
+    date: "2026-05-16",
+    displayDate: "16–17 May 2026",
+    title: "Home headquarters inauguration and company board mounted",
+    description:
+      "Operations shifted to a dedicated home office in Swarn Jayanti Vihar, Kanpur, with family support; company board mounted at the entrance on 17 May for statutory and bank account opening verification.",
+    related: ["dimisi-technologies", "shikhar-dixit"],
+    category: "Operations",
+    status: "source-backed",
+  },
+  {
+    date: "2026-06-15",
+    displayDate: "June 2026",
+    title: "First commercial client contract: Rudra Tours & Travels",
+    description:
+      "Following an extensive cold-outreach phase, the company secured its first commercial website development contract with Rudra Tours & Travels, joined by Somya Tiwari for client coordination and delivery, followed by two additional client deals.",
+    related: ["dimisi-technologies", "shikhar-dixit"],
+    category: "Business",
+    status: "source-backed",
+  },
+  {
+    date: "2026-08-19",
+    displayDate: "19–21 August 2026",
+    title: "Architecture & documentation of DIMISIPEDIA",
+    description:
+      "Initiated development of DIMISIPEDIA as the structured public knowledge encyclopedia of DIMISI Technologies to document its entities, journey, people, technologies, and verifiable sources.",
+    related: ["dimisipedia", "dimisi-technologies", "shikhar-dixit"],
     category: "Project",
     status: "documented",
     sourceId: "src-dimisipedia-spec",
   },
 ];
 
-export const timeline: TimelineEntry[] = [...baseTimeline, ...founderTimeline].sort(
-  (a, b) => a.date.localeCompare(b.date),
+export const timeline: TimelineEntry[] = [...baseTimeline, ...founderTimeline].sort((a, b) =>
+  a.date.localeCompare(b.date),
 );
 
 export const events: { title: string; note: string }[] = [];
@@ -1062,9 +1496,7 @@ export function getEntity(id: string): Entity | undefined {
 
 export function getSources(ids: string[]): Source[] {
   // Order-preserving: citation numbers follow the entity's own source order.
-  return ids
-    .map((id) => sources.find((s) => s.id === id))
-    .filter((s): s is Source => Boolean(s));
+  return ids.map((id) => sources.find((s) => s.id === id)).filter((s): s is Source => Boolean(s));
 }
 
 export function relationsFor(id: string): { type: RelationshipType; entity: Entity }[] {
@@ -1170,7 +1602,12 @@ export function searchKnowledge(q: string): SearchResult[] {
   }
   for (const t of timeline) {
     if (`${t.title} ${t.description}`.toLowerCase().includes(query)) {
-      results.push({ name: t.title, type: "TIMELINE", description: t.displayDate, path: "/timeline" });
+      results.push({
+        name: t.title,
+        type: "TIMELINE",
+        description: t.displayDate,
+        path: "/timeline",
+      });
     }
   }
   for (const s of sources) {

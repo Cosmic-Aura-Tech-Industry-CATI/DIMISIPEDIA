@@ -154,10 +154,10 @@ function SourcesPage() {
         <p className="label-mono">Source registry · {sources.length} records</p>
         <h1 className="mt-2 text-4xl">Sources</h1>
         <p className="mt-4 max-w-2xl text-muted-foreground">
-          Every claim in DIMISIPEDIA traces to a record here. Sources are grouped by authority
-          tier, and a source counts towards a claim only where it actually supports that claim.
-          Where no source exists, the related information is published as unverified rather than
-          quietly asserted.
+          Every claim in DIMISIPEDIA traces to a record here. Sources are grouped by authority tier,
+          and a source counts towards a claim only where it actually supports that claim. Where no
+          source exists, the related information is published as unverified rather than quietly
+          asserted.
         </p>
         <p className="mt-4 text-sm">
           <Link to="/methodology" className="text-primary underline underline-offset-4">

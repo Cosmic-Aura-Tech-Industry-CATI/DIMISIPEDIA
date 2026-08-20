@@ -35,7 +35,9 @@ export const Route = createFileRoute("/api/public/indexnow")({
         }
 
         const raw = (body as { urls?: unknown })?.urls;
-        const urlList = Array.isArray(raw) ? raw.filter((u): u is string => typeof u === "string") : [];
+        const urlList = Array.isArray(raw)
+          ? raw.filter((u): u is string => typeof u === "string")
+          : [];
         const urls = urlList.filter((u) => {
           try {
             return new URL(u).hostname === SITE_HOST;

@@ -6,13 +6,11 @@ export const Route = createFileRoute("/events")({
   head: () =>
     pageHead({
       title: "Events — DIMISI Technologies | DIMISIPEDIA",
-      description: "Documented events involving DIMISI Technologies. No events have been recorded in DIMISIPEDIA yet.",
+      description:
+        "Documented events involving DIMISI Technologies. No events have been recorded in DIMISIPEDIA yet.",
       path: "/events",
       schema: [
-        buildBreadcrumbSchema(
-          [{ label: "DIMISIPEDIA", to: "/" }, { label: "Events" }],
-          "/events",
-        ),
+        buildBreadcrumbSchema([{ label: "DIMISIPEDIA", to: "/" }, { label: "Events" }], "/events"),
       ],
     }),
   component: EventsPage,

@@ -60,7 +60,9 @@ export function ArticleBody({ content }: { content: Block[] }) {
                   className="w-full border border-rule object-cover"
                 />
                 {b.caption ? (
-                  <figcaption className="mt-2 text-xs text-muted-foreground">{b.caption}</figcaption>
+                  <figcaption className="mt-2 text-xs text-muted-foreground">
+                    {b.caption}
+                  </figcaption>
                 ) : null}
               </figure>
             );

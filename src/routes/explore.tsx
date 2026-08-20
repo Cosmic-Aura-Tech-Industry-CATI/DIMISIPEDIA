@@ -1,5 +1,5 @@
 import { buildBreadcrumbSchema, pageHead } from "@/lib/seo";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Breadcrumbs } from "@/components/EntityArticle";
 import { EntityLink } from "@/components/EntityLink";
@@ -10,7 +10,8 @@ export const Route = createFileRoute("/explore")({
   head: () =>
     pageHead({
       title: "Explore the DIMISI knowledge graph | DIMISIPEDIA",
-      description: "An interactive map of the DIMISI Technologies ecosystem: the organization, its people, projects and technologies, and the relationships between them.",
+      description:
+        "An interactive map of the DIMISI Technologies ecosystem: the organization, its people, projects and technologies, and the relationships between them.",
       path: "/explore",
       schema: [
         buildBreadcrumbSchema(
@@ -50,7 +51,11 @@ const activeProjects = ["KAND", "DIMISI Ops", "DIMISI official site", "DIMISIPED
 
 const glance = [
   { label: "Founded", value: "9 April 2026", note: "DIMISI Technologies Pvt. Ltd." },
-  { label: "Active projects", value: String(activeProjects.length), note: activeProjects.join(" · ") },
+  {
+    label: "Active projects",
+    value: String(activeProjects.length),
+    note: activeProjects.join(" · "),
+  },
   { label: "Clients dealt with", value: "10+", note: "Reported by DIMISI Technologies" },
 ];
 
@@ -74,12 +79,19 @@ function ExplorePage() {
         <p className="label-mono">Knowledge graph</p>
         <h1 className="mt-2 text-4xl">Explore</h1>
         <p className="mt-4 max-w-2xl text-muted-foreground">
-          Every subject in DIMISIPEDIA is an entity, and every entity is connected. Select an
-          entity to focus the graph on its documented relationships.
+          Every subject in DIMISIPEDIA is an entity, and every entity is connected. Select an entity
+          to focus the graph on its documented relationships, or{" "}
+          <Link to="/journey" className="text-primary underline underline-offset-4">
+            read the full founder journey chronicle
+          </Link>
+          .
         </p>
       </header>
 
-      <section aria-label="DIMISI at a glance" className="mt-8 grid gap-px border border-border bg-rule sm:grid-cols-3">
+      <section
+        aria-label="DIMISI at a glance"
+        className="mt-8 grid gap-px border border-border bg-rule sm:grid-cols-3"
+      >
         {glance.map((g) => (
           <div key={g.label} className="bg-surface px-5 py-5">
             <p className="label-mono">{g.label}</p>
@@ -92,12 +104,14 @@ function ExplorePage() {
       <div className="relative mt-8 grid gap-10 border border-border bg-surface p-6 lg:grid-cols-[minmax(0,1fr)_20rem]">
         <KnowledgeField density={22} />
         <div className="relative grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-
           {groups.map((g) => (
             <div key={g.type}>
               <p className="label-mono border-b border-rule pb-2">{g.label}</p>
               <ul className="mt-3 space-y-1.5">
-                {orderEntities(entities.filter((e) => e.entityType === g.type), g.type).map((e) => (
+                {orderEntities(
+                  entities.filter((e) => e.entityType === g.type),
+                  g.type,
+                ).map((e) => (
                   <li key={e.id}>
                     <button
                       type="button"
@@ -111,14 +125,15 @@ function ExplorePage() {
                     >
                       {e.name}
                       {peopleRoles[e.id] ? (
-                        <span className="block text-xs text-muted-foreground">{peopleRoles[e.id]}</span>
+                        <span className="block text-xs text-muted-foreground">
+                          {peopleRoles[e.id]}
+                        </span>
                       ) : null}
                     </button>
                   </li>
                 ))}
               </ul>
             </div>
-
           ))}
         </div>
 
@@ -138,7 +153,9 @@ function ExplorePage() {
           <p className="border-y border-rule px-4 py-3 label-mono">Relationships</p>
           <ul className="divide-y divide-rule">
             {rels.length === 0 ? (
-              <li className="px-4 py-3 text-sm text-muted-foreground">No relationships recorded.</li>
+              <li className="px-4 py-3 text-sm text-muted-foreground">
+                No relationships recorded.
+              </li>
             ) : (
               rels.map((r) => (
                 <li key={r.type + r.entity.id} className="px-4 py-3">

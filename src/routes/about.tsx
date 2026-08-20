@@ -6,7 +6,8 @@ export const Route = createFileRoute("/about")({
   head: () =>
     pageHead({
       title: "About DIMISIPEDIA",
-      description: "DIMISIPEDIA is the official public knowledge and documentation platform of DIMISI Technologies Pvt. Ltd. What it is, who operates it and how it is structured.",
+      description:
+        "DIMISIPEDIA is the official public knowledge and documentation platform of DIMISI Technologies Pvt. Ltd. What it is, who operates it and how it is structured.",
       path: "/about",
       schema: [
         buildBreadcrumbSchema(
@@ -36,8 +37,8 @@ function About() {
         <p>
           It is a first-party publication: operated by DIMISI Technologies, about DIMISI
           Technologies. Its value therefore rests on discipline rather than distance — every claim
-          carries a status, every status has a definition, and every entry carries a public
-          revision history.
+          carries a status, every status has a definition, and every entry carries a public revision
+          history.
         </p>
         <h2 className="mt-10 text-2xl">Contact</h2>
         <p>

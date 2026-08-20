@@ -48,7 +48,8 @@ function PeopleIndex() {
     const query = q.trim().toLowerCase();
     return sorted.filter((p) => {
       const matchesLetter = letter === "All" || p.name.toUpperCase().startsWith(letter);
-      const hay = `${p.name} ${p.subtitle} ${p.shortDescription} ${primaryRole(p.slug)}`.toLowerCase();
+      const hay =
+        `${p.name} ${p.subtitle} ${p.shortDescription} ${primaryRole(p.slug)}`.toLowerCase();
       return matchesLetter && (!query || hay.includes(query));
     });
   }, [q, letter]);
