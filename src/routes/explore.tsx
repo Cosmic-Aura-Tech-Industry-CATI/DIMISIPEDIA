@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Breadcrumbs } from "@/components/EntityArticle";
 import { EntityLink } from "@/components/EntityLink";
 import { KnowledgeField } from "@/components/KnowledgeField";
+import { KnowledgeGraphVisualizer } from "@/components/KnowledgeGraphVisualizer";
 import { entities, relationsFor, type Entity } from "@/data/knowledge";
 
 export const Route = createFileRoute("/explore")({
@@ -100,6 +101,8 @@ function ExplorePage() {
           </div>
         ))}
       </section>
+
+      <KnowledgeGraphVisualizer />
 
       <div className="relative mt-8 grid gap-10 border border-border bg-surface p-6 lg:grid-cols-[minmax(0,1fr)_20rem]">
         <KnowledgeField density={22} />

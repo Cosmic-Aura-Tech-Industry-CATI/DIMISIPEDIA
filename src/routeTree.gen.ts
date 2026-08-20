@@ -38,6 +38,9 @@ import { Route as ProjectsSlugRouteImport } from './routes/projects.$slug'
 import { Route as TechnologyIndexRouteImport } from './routes/technology.index'
 import { Route as TechnologySlugRouteImport } from './routes/technology.$slug'
 import { Route as ApiPublicIndexnowRouteImport } from './routes/api/public/indexnow'
+import { Route as ApiV1EntitiesRouteImport } from './routes/api/v1/entities'
+import { Route as ApiV1SourcesRouteImport } from './routes/api/v1/sources'
+import { Route as ApiV1TimelineRouteImport } from './routes/api/v1/timeline'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -184,6 +187,21 @@ const ApiPublicIndexnowRoute = ApiPublicIndexnowRouteImport.update({
   path: '/api/public/indexnow',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiV1EntitiesRoute = ApiV1EntitiesRouteImport.update({
+  id: '/api/v1/entities',
+  path: '/api/v1/entities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiV1SourcesRoute = ApiV1SourcesRouteImport.update({
+  id: '/api/v1/sources',
+  path: '/api/v1/sources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiV1TimelineRoute = ApiV1TimelineRouteImport.update({
+  id: '/api/v1/timeline',
+  path: '/api/v1/timeline',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -215,6 +233,9 @@ export interface FileRoutesByFullPath {
   '/projects/': typeof ProjectsIndexRoute
   '/technology/': typeof TechnologyIndexRoute
   '/api/public/indexnow': typeof ApiPublicIndexnowRoute
+  '/api/v1/entities': typeof ApiV1EntitiesRoute
+  '/api/v1/sources': typeof ApiV1SourcesRoute
+  '/api/v1/timeline': typeof ApiV1TimelineRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -246,6 +267,9 @@ export interface FileRoutesByTo {
   '/projects': typeof ProjectsIndexRoute
   '/technology': typeof TechnologyIndexRoute
   '/api/public/indexnow': typeof ApiPublicIndexnowRoute
+  '/api/v1/entities': typeof ApiV1EntitiesRoute
+  '/api/v1/sources': typeof ApiV1SourcesRoute
+  '/api/v1/timeline': typeof ApiV1TimelineRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -278,6 +302,9 @@ export interface FileRoutesById {
   '/projects/': typeof ProjectsIndexRoute
   '/technology/': typeof TechnologyIndexRoute
   '/api/public/indexnow': typeof ApiPublicIndexnowRoute
+  '/api/v1/entities': typeof ApiV1EntitiesRoute
+  '/api/v1/sources': typeof ApiV1SourcesRoute
+  '/api/v1/timeline': typeof ApiV1TimelineRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -311,6 +338,9 @@ export interface FileRouteTypes {
     | '/projects/'
     | '/technology/'
     | '/api/public/indexnow'
+    | '/api/v1/entities'
+    | '/api/v1/sources'
+    | '/api/v1/timeline'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -342,6 +372,9 @@ export interface FileRouteTypes {
     | '/projects'
     | '/technology'
     | '/api/public/indexnow'
+    | '/api/v1/entities'
+    | '/api/v1/sources'
+    | '/api/v1/timeline'
   id:
     | '__root__'
     | '/'
@@ -373,6 +406,9 @@ export interface FileRouteTypes {
     | '/projects/'
     | '/technology/'
     | '/api/public/indexnow'
+    | '/api/v1/entities'
+    | '/api/v1/sources'
+    | '/api/v1/timeline'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -405,6 +441,9 @@ export interface RootRouteChildren {
   ProjectsIndexRoute: typeof ProjectsIndexRoute
   TechnologyIndexRoute: typeof TechnologyIndexRoute
   ApiPublicIndexnowRoute: typeof ApiPublicIndexnowRoute
+  ApiV1EntitiesRoute: typeof ApiV1EntitiesRoute
+  ApiV1SourcesRoute: typeof ApiV1SourcesRoute
+  ApiV1TimelineRoute: typeof ApiV1TimelineRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -612,6 +651,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicIndexnowRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/v1/entities': {
+      id: '/api/v1/entities'
+      path: '/api/v1/entities'
+      fullPath: '/api/v1/entities'
+      preLoaderRoute: typeof ApiV1EntitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/v1/sources': {
+      id: '/api/v1/sources'
+      path: '/api/v1/sources'
+      fullPath: '/api/v1/sources'
+      preLoaderRoute: typeof ApiV1SourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/v1/timeline': {
+      id: '/api/v1/timeline'
+      path: '/api/v1/timeline'
+      fullPath: '/api/v1/timeline'
+      preLoaderRoute: typeof ApiV1TimelineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -645,6 +705,9 @@ const rootRouteChildren: RootRouteChildren = {
   ProjectsIndexRoute: ProjectsIndexRoute,
   TechnologyIndexRoute: TechnologyIndexRoute,
   ApiPublicIndexnowRoute: ApiPublicIndexnowRoute,
+  ApiV1EntitiesRoute: ApiV1EntitiesRoute,
+  ApiV1SourcesRoute: ApiV1SourcesRoute,
+  ApiV1TimelineRoute: ApiV1TimelineRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

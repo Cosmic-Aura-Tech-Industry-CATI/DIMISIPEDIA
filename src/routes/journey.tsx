@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import {
   Calendar,
   Compass,
@@ -7,8 +8,10 @@ import {
   ArrowRight,
   Heart,
   CheckCircle2,
+  Maximize2,
 } from "lucide-react";
 import { Breadcrumbs } from "@/components/EntityArticle";
+import { ImageLightbox, type LightboxImage } from "@/components/ImageLightbox";
 import { buildBreadcrumbSchema, pageHead } from "@/lib/seo";
 
 const trail = [{ label: "DIMISIPEDIA", to: "/" }, { label: "Our Journey" }];
@@ -391,20 +394,43 @@ const phases: Phase[] = [
   },
 ];
 
-function PhaseImageCard({ image, phaseNumber }: { image: PhaseImage; phaseNumber: string }) {
+function PhaseImageCard({
+  image,
+  phaseNumber,
+  onZoom,
+}: {
+  image: PhaseImage;
+  phaseNumber: string;
+  onZoom?: () => void;
+}) {
   if (image.src) {
     return (
-      <figure className="my-8 overflow-hidden border border-rule bg-surface shadow-xs">
-        <div className="flex max-h-[540px] w-full items-center justify-center bg-muted/20 dark:bg-muted/10">
+      <figure className="my-8 overflow-hidden border border-rule bg-surface shadow-xs group">
+        <div
+          onClick={onZoom}
+          className="relative flex max-h-[540px] w-full items-center justify-center bg-muted/20 dark:bg-muted/10 cursor-pointer overflow-hidden"
+          title="Click to view full-resolution image"
+        >
           <img
             src={image.src}
             alt={image.alt}
             loading="lazy"
-            className="max-h-[540px] w-full object-contain transition-transform duration-300 hover:scale-[1.005]"
+            className="max-h-[540px] w-full object-contain transition-transform duration-300 group-hover:scale-[1.01]"
           />
+          <div className="absolute bottom-3 right-3 flex items-center gap-1.5 bg-black/75 px-3 py-1.5 text-xs font-mono text-white opacity-0 transition-opacity group-hover:opacity-100 backdrop-blur-xs">
+            <Maximize2 className="size-3.5" />
+            <span>Click to Zoom</span>
+          </div>
         </div>
-        <figcaption className="border-t border-rule bg-surface px-4 py-2.5 font-mono text-xs text-muted-foreground">
-          {image.caption}
+        <figcaption className="border-t border-rule bg-surface px-4 py-2.5 font-mono text-xs text-muted-foreground flex items-center justify-between">
+          <span>{image.caption}</span>
+          <button
+            type="button"
+            onClick={onZoom}
+            className="text-primary hover:underline font-mono text-[11px] cursor-pointer"
+          >
+            Full View →
+          </button>
         </figcaption>
       </figure>
     );
@@ -429,6 +455,27 @@ function PhaseImageCard({ image, phaseNumber }: { image: PhaseImage; phaseNumber
 }
 
 function JourneyPage() {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const galleryImages: LightboxImage[] = phases
+    .filter((p) => Boolean(p.image.src))
+    .map((p) => ({
+      src: p.image.src!,
+      alt: p.image.alt,
+      caption: p.image.caption,
+      phaseNumber: p.number,
+      title: p.title,
+    }));
+
+  const openLightboxForPhase = (phaseNumberStr: string) => {
+    const idx = galleryImages.findIndex((img) => img.phaseNumber === phaseNumberStr);
+    if (idx >= 0) {
+      setLightboxIndex(idx);
+      setLightboxOpen(true);
+    }
+  };
+
   return (
     <div className="mx-auto max-w-5xl px-5 py-10">
       <Breadcrumbs trail={trail} />
@@ -514,7 +561,11 @@ function JourneyPage() {
             <p className="mt-2 text-lg text-muted-foreground">{phase.subtitle}</p>
 
             {/* Image Placeholder / Photo for this phase */}
-            <PhaseImageCard image={phase.image} phaseNumber={phase.number} />
+            <PhaseImageCard
+              image={phase.image}
+              phaseNumber={phase.number}
+              onZoom={() => openLightboxForPhase(phase.number)}
+            />
 
             {/* Pull Quote */}
             {phase.quote ? (
@@ -592,6 +643,15 @@ function JourneyPage() {
           </Link>
         </div>
       </section>
+
+      {/* Full-Screen Interactive Lightbox */}
+      <ImageLightbox
+        images={galleryImages}
+        currentIndex={lightboxIndex}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        onNavigate={(idx) => setLightboxIndex(idx)}
+      />
     </div>
   );
 }

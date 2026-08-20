@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { StatusChip, isPublicStatus } from "./StatusChip";
 import { getSources, relationsFor, type Entity } from "@/data/knowledge";
 import { VerificationBadge } from "./VerificationBadge";
+import { CiteModal } from "./CiteModal";
 import { EXTERNAL_REL_UNTRUSTED, safeExternalHref } from "@/lib/url-safety";
 
 function ReadingProgress() {
@@ -135,12 +136,13 @@ export function EntityArticle({
             <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
               {entity.shortDescription}
             </p>
-            <div className="mt-5 flex flex-wrap items-center gap-2">
+            <div className="mt-5 flex flex-wrap items-center gap-3">
               {entity.lifecycle ? <StatusChip status="documented" /> : null}
               <span className="label-mono">
                 Last reviewed {entity.verifiedAt ?? entity.updatedAt}
                 {claimCount > 0 ? ` · ${claimCount} claims reviewed` : ""}
               </span>
+              <CiteModal entity={entity} />
             </div>
           </div>
           {entity.image ? (
