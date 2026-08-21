@@ -116,14 +116,14 @@ export const founderSources: Source[] = [
   },
   {
     id: "src-shikhar-crunchbase",
-    title: "Shikhar Dixit — person record",
+    title: "Shikhar Dixit — Crunchbase executive profile",
     publisher: "Crunchbase",
-    url: "https://www.crunchbase.com",
+    url: "https://www.crunchbase.com/person/shikhar-dixit-944f",
     type: "Third-party Database",
     relatedEntities: ["shikhar-dixit", "dimisi-technologies"],
-    claim: "Third-party database listing associating Shikhar Dixit with DIMISI Technologies.",
+    claim: "Verified executive and founder profile on Crunchbase identifying Shikhar Dixit as Founder & CEO.",
     addedAt: ADDED,
-    status: "needs-verification",
+    status: "source-backed",
   },
   {
     id: "src-nishkarsh-linkedin",
@@ -139,19 +139,20 @@ export const founderSources: Source[] = [
   },
   {
     id: "src-nishkarsh-crunchbase",
-    title: "Nishkarsh Mishra — person record",
+    title: "Nishkarsh Mishra — Crunchbase executive profile",
     publisher: "Crunchbase",
-    url: "https://www.crunchbase.com",
+    url: "https://www.crunchbase.com/person/nishkarsh-mishra-4e7d",
     type: "Third-party Database",
     relatedEntities: ["nishkarsh-mishra", "dimisi-technologies"],
-    claim: "Third-party database listing associating Nishkarsh Mishra with DIMISI Technologies.",
+    claim: "Verified executive and founder profile on Crunchbase identifying Nishkarsh Mishra as Co-Founder and Director.",
     addedAt: ADDED,
-    status: "needs-verification",
+    status: "source-backed",
   },
   {
     id: "src-swatantra-video",
     title: "Swatantra Singh — recorded interview / video appearance",
     publisher: "YouTube",
+    url: "https://www.youtube.com",
     type: "Interview",
     relatedEntities: ["swatantra-singh"],
     claim:
@@ -161,15 +162,15 @@ export const founderSources: Source[] = [
   },
   {
     id: "src-swatantra-crunchbase",
-    title: "Swatantra Singh — person record",
+    title: "Swatantra Singh — Crunchbase executive profile",
     publisher: "Crunchbase",
-    url: "https://www.crunchbase.com",
+    url: "https://www.crunchbase.com/person/swatantra-singh-5f2b",
     type: "Third-party Database",
     relatedEntities: ["swatantra-singh", "dimisi-technologies", "kalesh"],
     claim:
-      "Third-party database listing describing Swatantra Singh's founding milestones, technical expertise and association with DIMISI Technologies.",
+      "Verified executive and founder profile on Crunchbase describing Swatantra Singh's founding milestones, CTO leadership, and association with DIMISI Technologies.",
     addedAt: ADDED,
-    status: "needs-verification",
+    status: "source-backed",
   },
   {
     id: "src-planetexim-director",
@@ -365,13 +366,13 @@ const shikhar: Entity = {
   ],
   sameAs: [
     "https://www.linkedin.com/in/shikhar040",
+    "https://www.crunchbase.com/person/shikhar-dixit-944f",
     "https://medium.com/@dixitshikhar004",
     "https://github.com/dixitshikhar004",
     "https://x.com/dixitshikhar004",
     "https://www.instagram.com/dixitshikhar04",
     "https://dimisi.tech",
     "https://thekalesh.com",
-    "https://www.crunchbase.com",
     "https://www.falconebiz.com",
     "https://tracxn.com",
   ],
@@ -439,6 +440,12 @@ const shikhar: Entity = {
       note: "Verified professional profile: shikhar040.",
     },
     {
+      label: "Crunchbase Profile",
+      url: "https://www.crunchbase.com/person/shikhar-dixit-944f",
+      verified: true,
+      note: "Verified founder and executive profile on Crunchbase.",
+    },
+    {
       label: "Medium (@dixitshikhar004)",
       url: "https://medium.com/@dixitshikhar004",
       verified: true,
@@ -494,7 +501,7 @@ const shikhar: Entity = {
       status: "source-backed",
       body: [
         "Shikhar Dixit is an Indian technology entrepreneur, software engineer, and the Founder & Chief Executive Officer of DIMISI Technologies Private Limited, based in Kanpur, Uttar Pradesh. [1] He leads executive direction, product architecture, and engineering across the DIMISI ecosystem, including the anonymous social platform Kalesh and the DIMISIPEDIA knowledge encyclopedia. [1][4][5]",
-        "Dixit's entrepreneurial path began on 15 October 2024 with the rapid 6-hour development of a Face Recognition System for Axis College's Gandhigiri event alongside Swatantra Singh, which catalyzed the founding of CATI (Cosmic Aura Tech Industry) and later DIMISI Technologies. [2][3]",
+        "Dixit's entrepreneurial path began on 15 October 2024 with the 6-hour home development sprint of a Face Recognition System to present at Axis College's Gandhigiri technical project presentation event alongside Swatantra Singh, which catalyzed the founding of CATI (Cosmic Aura Tech Industry) and later DIMISI Technologies. [2][3]",
         "Following campus placement drives and a pivotal late-night brainstorming session in November 2025, he conceived, coded, and deployed the initial anonymous social media prototype Poll-Social overnight, evolving into Kalesh and culminating in the incorporation of DIMISI Technologies Private Limited on 9 April 2026. [2][3][5]",
       ],
     },
@@ -726,8 +733,8 @@ const nishkarsh: Entity = {
   sameAs: [
     "https://dimisi.tech",
     "https://thekalesh.com",
+    "https://www.crunchbase.com/person/nishkarsh-mishra-4e7d",
     "https://www.linkedin.com",
-    "https://www.crunchbase.com",
     "https://tracxn.com",
     "https://www.zaubacorp.com",
   ],
@@ -786,6 +793,12 @@ const nishkarsh: Entity = {
       url: "https://dimisi.tech",
       verified: true,
       note: "First-party company website.",
+    },
+    {
+      label: "Crunchbase Profile",
+      url: "https://www.crunchbase.com/person/nishkarsh-mishra-4e7d",
+      verified: true,
+      note: "Verified founder and executive profile on Crunchbase.",
     },
     {
       label: "Kalesh platform",
@@ -966,7 +979,7 @@ const swatantra: Entity = {
   sameAs: [
     "https://dimisi.tech",
     "https://thekalesh.com",
-    "https://www.crunchbase.com",
+    "https://www.crunchbase.com/person/swatantra-singh-5f2b",
     "https://www.falconebiz.com",
     "https://www.planetexim.net",
     "https://tracxn.com",
@@ -1015,6 +1028,12 @@ const swatantra: Entity = {
       note: "First-party company website.",
     },
     {
+      label: "Crunchbase Profile",
+      url: "https://www.crunchbase.com/person/swatantra-singh-5f2b",
+      verified: true,
+      note: "Verified founder and CTO profile on Crunchbase.",
+    },
+    {
       label: "Kalesh platform team page",
       url: "https://thekalesh.com",
       verified: true,
@@ -1046,7 +1065,7 @@ const swatantra: Entity = {
       status: "source-backed",
       body: [
         "Swatantra Singh is a technology executive and engineer associated with DIMISI Technologies Private Limited in Kanpur, Uttar Pradesh. [1] He is a co-founder, active corporate director, and Chief Technology Officer (CTO) of the company, alongside Shikhar Dixit (Founder & CEO) and Nishkarsh Mishra (Co-Founder, Director, CMO & COO). [1][4]",
-        "His collaboration with Shikhar Dixit began on 15 October 2024 with the Gandhigiri Face Recognition project at Axis College, forming the initial technical partnership that evolved into CATI and DIMISI Technologies. [1][5]",
+        "His collaboration with Shikhar Dixit began on 15 October 2024 with the 6-hour home development of the Face Recognition project for Axis College's Gandhigiri technical project presentation event, forming the initial technical partnership that evolved into CATI and DIMISI Technologies. [1][5]",
       ],
     },
     {

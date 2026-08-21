@@ -109,6 +109,8 @@
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    text-size-adjust: 100%;
   }
 
   body {
@@ -117,6 +119,23 @@
     font-family: var(--font-sans);
     font-size: 1rem;
     line-height: 1.65;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  span,
+  a,
+  li,
+  dt,
+  dd,
+  blockquote {
+    overflow-wrap: break-word;
   }
 
   h1,
@@ -184,3 +203,37 @@
     text-decoration-color: var(--color-primary);
   }
 }
+
+/* -------------------------------------------------------------------------- */
+/* Clean styling for Whole-Website Translation Engine                         */
+/* -------------------------------------------------------------------------- */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame,
+iframe.goog-te-banner-frame {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+body {
+  top: 0px !important;
+  position: static !important;
+}
+
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+#google_translate_element {
+  display: none !important;
+}
+
+.skiptranslate iframe {
+  display: none !important;
+}
+

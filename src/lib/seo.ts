@@ -617,11 +617,17 @@ export function canonicalUrls(): { path: string; lastmod?: string; priority: str
   ];
   return [
     ...statics,
-    ...entities.map((e) => ({
-      path: e.path,
-      lastmod: e.updatedAt,
-      priority: e.entityType === "organization" ? "0.9" : "0.8",
-    })),
+    ...entities.map((e) => {
+      let priority = "0.8";
+      if (e.id === "shikhar-dixit") priority = "1.0";
+      else if (e.entityType === "organization" || e.id === "kalesh") priority = "0.9";
+      else if (e.id === "swatantra-singh" || e.id === "nishkarsh-mishra") priority = "0.85";
+      return {
+        path: e.path,
+        lastmod: e.updatedAt,
+        priority,
+      };
+    }),
     ...articleUrls(),
   ];
 }

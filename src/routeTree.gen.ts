@@ -41,6 +41,7 @@ import { Route as ApiPublicIndexnowRouteImport } from './routes/api/public/index
 import { Route as ApiV1EntitiesRouteImport } from './routes/api/v1/entities'
 import { Route as ApiV1SourcesRouteImport } from './routes/api/v1/sources'
 import { Route as ApiV1TimelineRouteImport } from './routes/api/v1/timeline'
+import { Route as ApiV1VerifySourcesRouteImport } from './routes/api/v1/verify-sources'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -202,6 +203,11 @@ const ApiV1TimelineRoute = ApiV1TimelineRouteImport.update({
   path: '/api/v1/timeline',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiV1VerifySourcesRoute = ApiV1VerifySourcesRouteImport.update({
+  id: '/api/v1/verify-sources',
+  path: '/api/v1/verify-sources',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -236,6 +242,7 @@ export interface FileRoutesByFullPath {
   '/api/v1/entities': typeof ApiV1EntitiesRoute
   '/api/v1/sources': typeof ApiV1SourcesRoute
   '/api/v1/timeline': typeof ApiV1TimelineRoute
+  '/api/v1/verify-sources': typeof ApiV1VerifySourcesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -270,6 +277,7 @@ export interface FileRoutesByTo {
   '/api/v1/entities': typeof ApiV1EntitiesRoute
   '/api/v1/sources': typeof ApiV1SourcesRoute
   '/api/v1/timeline': typeof ApiV1TimelineRoute
+  '/api/v1/verify-sources': typeof ApiV1VerifySourcesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -305,6 +313,7 @@ export interface FileRoutesById {
   '/api/v1/entities': typeof ApiV1EntitiesRoute
   '/api/v1/sources': typeof ApiV1SourcesRoute
   '/api/v1/timeline': typeof ApiV1TimelineRoute
+  '/api/v1/verify-sources': typeof ApiV1VerifySourcesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -341,6 +350,7 @@ export interface FileRouteTypes {
     | '/api/v1/entities'
     | '/api/v1/sources'
     | '/api/v1/timeline'
+    | '/api/v1/verify-sources'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -375,6 +385,7 @@ export interface FileRouteTypes {
     | '/api/v1/entities'
     | '/api/v1/sources'
     | '/api/v1/timeline'
+    | '/api/v1/verify-sources'
   id:
     | '__root__'
     | '/'
@@ -409,6 +420,7 @@ export interface FileRouteTypes {
     | '/api/v1/entities'
     | '/api/v1/sources'
     | '/api/v1/timeline'
+    | '/api/v1/verify-sources'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -444,6 +456,7 @@ export interface RootRouteChildren {
   ApiV1EntitiesRoute: typeof ApiV1EntitiesRoute
   ApiV1SourcesRoute: typeof ApiV1SourcesRoute
   ApiV1TimelineRoute: typeof ApiV1TimelineRoute
+  ApiV1VerifySourcesRoute: typeof ApiV1VerifySourcesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -672,6 +685,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiV1TimelineRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/v1/verify-sources': {
+      id: '/api/v1/verify-sources'
+      path: '/api/v1/verify-sources'
+      fullPath: '/api/v1/verify-sources'
+      preLoaderRoute: typeof ApiV1VerifySourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -708,6 +728,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiV1EntitiesRoute: ApiV1EntitiesRoute,
   ApiV1SourcesRoute: ApiV1SourcesRoute,
   ApiV1TimelineRoute: ApiV1TimelineRoute,
+  ApiV1VerifySourcesRoute: ApiV1VerifySourcesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

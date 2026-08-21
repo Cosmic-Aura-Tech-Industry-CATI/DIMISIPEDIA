@@ -8,7 +8,7 @@ export const article: Article = {
   slug: "history-of-dimisi-technologies",
   title: "The History of DIMISI Technologies Private Limited",
   excerpt:
-    "A chronological history of DIMISI Technologies: from a 2024 college face recognition hackathon to Cosmic Aura Tech Industry (CATI), campus incubator office allocation, and corporate incorporation.",
+    "A chronological history of DIMISI Technologies: from a 2024 home engineering sprint for Axis College's Gandhigiri technical presenting event to Cosmic Aura Tech Industry (CATI), campus incubator office allocation, and corporate incorporation.",
   authorId: "editorial",
   category: "Startup",
   tags: ["DIMISI Technologies", "Corporate History", "CATI", "Shikhar Dixit", "Swatantra Singh", "Nishkarsh Mishra", "Kanpur"],
@@ -24,7 +24,7 @@ export const article: Article = {
     { type: "h2", id: "origins-cati", text: "Phase 1: Cosmic Aura Tech Industry (CATI)" },
     {
       type: "p",
-      text: "On 15 October 2024, computer science undergraduates Shikhar Dixit and Swatantra Singh developed an operational Face Recognition System in under seven hours for a college event at Axis College, Kanpur. Inspired by their execution capability, they founded Cosmic Aura Tech Industry (CATI) alongside peer Nishkarsh Mishra.",
+      text: "On 15 October 2024, computer science undergraduates Shikhar Dixit and Swatantra Singh engineered an operational Face Recognition System in six hours at Shikhar's home to present at Axis College's Gandhigiri technical project presentation event in Kanpur. Inspired by their rapid execution capability, they founded Cosmic Aura Tech Industry (CATI) alongside peer Nishkarsh Mishra.",
     },
     { type: "h2", id: "mumbai-journey", text: "Phase 2: IIT Bombay E-Summit & Strategic Validation" },
     {

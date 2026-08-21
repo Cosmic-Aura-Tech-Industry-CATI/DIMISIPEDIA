@@ -1,0 +1,26 @@
+{
+  "name": "DIMISIPEDIA — Knowledge Base of DIMISI Technologies",
+  "short_name": "DIMISIPEDIA",
+  "description": "The definitive, source-backed knowledge platform and verified entity repository for DIMISI Technologies Private Limited, its founder Shikhar Dixit, and platforms.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "business", "reference", "news"],
+  "lang": "en"
+}

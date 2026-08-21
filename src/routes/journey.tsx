@@ -9,9 +9,13 @@ import {
   Heart,
   CheckCircle2,
   Maximize2,
+  Languages,
 } from "lucide-react";
 import { Breadcrumbs } from "@/components/EntityArticle";
+import { AudioNarrationBar } from "@/components/AudioNarrationBar";
 import { ImageLightbox, type LightboxImage } from "@/components/ImageLightbox";
+import { useLanguage, type LanguageOption } from "@/components/LanguageSelector";
+import { journeyTranslations } from "@/data/translations";
 import { buildBreadcrumbSchema, pageHead } from "@/lib/seo";
 
 const trail = [{ label: "DIMISIPEDIA", to: "/" }, { label: "Our Journey" }];
@@ -21,7 +25,7 @@ export const Route = createFileRoute("/journey")({
     pageHead({
       title: "The Entrepreneurship Journey — Shikhar Dixit & DIMISI Technologies | DIMISIPEDIA",
       description:
-        "The complete, unfiltered story of DIMISI Technologies: from a six-hour hackathon project in college to CATI, Kalesh, the Sinister Six, incorporation, and DIMISIPEDIA.",
+        "The complete, unfiltered story of DIMISI Technologies: from a 6-hour home development sprint for Axis College's Gandhigiri technical project presentation event to CATI, Kalesh, the Sinister Six, incorporation, and DIMISIPEDIA.",
       path: "/journey",
       schema: [
         buildBreadcrumbSchema(trail, "/journey"),
@@ -30,7 +34,7 @@ export const Route = createFileRoute("/journey")({
           "@id": "https://dimisipedia.me/journey#article",
           headline: "The Entrepreneurship Journey of Shikhar Dixit and DIMISI Technologies",
           description:
-            "From a 6-hour college hackathon to CATI, Kalesh, the Sinister Six, incorporation, and DIMISIPEDIA — an unfiltered founder narrative by Shikhar Dixit.",
+            "From a 6-hour home project sprint for Gandhigiri to CATI, Kalesh, the Sinister Six, incorporation, and DIMISIPEDIA — an unfiltered founder narrative by Shikhar Dixit.",
           author: {
             "@type": "Person",
             "@id": "https://dimisipedia.me/people/shikhar-dixit#person",
@@ -80,30 +84,31 @@ const phases: Phase[] = [
     number: "01",
     title: "The Six-Hour Project & The Spark of CATI",
     subtitle:
-      "How an urgent hackathon at Axis College ignited the dream of building an IT company.",
+      "How building an urgent Face Recognition system at home in six hours for Axis College's Gandhigiri technical project presentation event sparked the dream of an IT company.",
     date: "15 October 2024",
-    location: "Axis College, Kanpur",
+    location: "Kanpur (Home & Axis College)",
     quote: {
-      text: "If we could build a working face recognition system in six hours, why couldn't we build our own IT company?",
+      text: "If we could engineer a working AI face recognition system at home in six hours, why couldn't we build our own IT company?",
       author: "Shikhar & Swatantra",
     },
     narrative: [
-      "It all began on 15 October 2024. Swatantra and I were sitting together at Axis College, where we were pursuing our B.Tech in Computer Science and Engineering, scrambling to complete an urgent project: a Face Recognition System for the college's Gandhigiri event.",
-      "In about six to seven intense hours, we managed to build a fully functional Face Recognition System from scratch. Around 8 or 9 in the evening, while catching our breath and reflecting on what we had just pulled off, a bigger question struck us: If we could engineer something like this in a single afternoon, why couldn't we start our own startup and software company?",
+      "It all began on 15 October 2024. Swatantra and I were sitting together at my home in Kanpur, working relentlessly to complete an urgent technical showcase: an automated Face Recognition System to present at Axis College's Gandhigiri technical project presentation event.",
+      "In about six to seven intense continuous hours of development at home, we engineered a fully functional Face Recognition system from scratch. Around 8 or 9 in the evening, after successfully running the build and reflecting on what we had just pulled off, a bigger question struck us: If we could build a working AI technology at home in a single six-hour sprint, why couldn't we start our own software enterprise?",
       "Swatantra was in immediately. He was the kind of brother and friend who would jump into a well if I were jumping in. Right then and there, we shook hands and decided to become business partners. Within minutes, we chose our very first company name: CATI — Cosmic Aura Tech Industry.",
-      "Soon after, in the lab of the AICTE Virtual Android Development Internship, we pitched the idea to Nishkarsh. He agreed on the spot to join our journey. Back then, we had no concrete product roadmap or business playbook — our vague initial plan was simply to get campus jobs first, save up, and then pursue our startup dream after graduation.",
+      "We presented the Face Recognition system at Axis College for the Gandhigiri event to great acclaim. Soon after, in the AICTE Virtual Android Development lab, we pitched the startup vision to Nishkarsh. He agreed on the spot to join our journey. Back then, we had no outside funding — just sheer technical grit and a shared dream.",
     ],
     highlights: [
-      "Built a full Face Recognition System in 6–7 hours for Gandhigiri event",
+      "Engineered Face Recognition System in 6–7 hours at home",
+      "Presented the system at Axis College's Gandhigiri technical project event",
       "Founded partnership between Shikhar Dixit and Swatantra Singh",
       "Invented original company name: CATI (Cosmic Aura Tech Industry)",
       "Nishkarsh Mishra joined the founding trio in the AICTE Android lab",
     ],
     image: {
       src: "/images/the urgent project.jpeg",
-      alt: "Gandhigiri event Face Recognition project and early CATI founding team at Axis College",
+      alt: "Gandhigiri technical project presentation event Face Recognition project and early CATI founding team",
       caption:
-        "Phase 1 Archive · 15 Oct 2024 — The working Face Recognition setup and the birth of CATI at Axis College.",
+        "Phase 1 Archive · 15 Oct 2024 — The Face Recognition system developed at home in 6 hours and presented at Axis College's Gandhigiri event.",
     },
   },
   {
@@ -193,10 +198,10 @@ const phases: Phase[] = [
       "Founding agreement and paperwork completed on 17 November 2025",
     ],
     image: {
-      src: "/images/chalo kalesh karey.jpeg",
-      alt: "Kalesh early branding sketch and core engineering team gathering in the lab",
+      src: "/images/shikhar Nishkarsh Swatantra.jpeg",
+      alt: "Founders Shikhar Dixit, Nishkarsh Mishra, and Swatantra Singh in Axis College uniform assembling Project Kalesh",
       caption:
-        "Phase 4 Archive · Mid-Nov 2025 — Team formation and the official naming of Project Kalesh.",
+        "Phase 4 Archive · Mid-Nov 2025 — The founding trio (Nishkarsh, Shikhar, Swatantra) assembling the core team at Axis College.",
     },
   },
   {
@@ -324,9 +329,9 @@ const phases: Phase[] = [
     ],
     image: {
       src: "/images/bringing dimisi home.jpeg",
-      alt: "The DIMISI Technologies company board on the office gate and home workstation setup",
+      alt: "The DIMISI team with the official DIMISI Technologies Pvt. Ltd. banner (CIN: U62013UP2026PTC246506) at the home headquarters in Kanpur",
       caption:
-        "Phase 8 Archive · May 2026 — The official DIMISI Technologies office in Swarn Jayanti Vihar, Kanpur.",
+        "Phase 8 Archive · 16–17 May 2026 — Inaugurating the DIMISI Technologies home headquarters under the official corporate banner in Kanpur.",
     },
   },
   {
@@ -387,9 +392,9 @@ const phases: Phase[] = [
     ],
     image: {
       src: "/images/the road ahead.jpeg",
-      alt: "The DIMISIPEDIA Knowledge Hub launch and the team looking toward the horizon",
+      alt: "Founder Shikhar Dixit looking forward into the future and the road ahead for DIMISI Technologies",
       caption:
-        "Phase 10 Archive · August 2026 — DIMISIPEDIA launched as the official knowledge archive.",
+        "Phase 10 Archive · August 2026 — Founder Shikhar Dixit looking forward to the road ahead for DIMISI Technologies.",
     },
   },
 ];
@@ -455,10 +460,41 @@ function PhaseImageCard({
 }
 
 function JourneyPage() {
+  const { lang, changeLanguage } = useLanguage();
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
-  const galleryImages: LightboxImage[] = phases
+  const activePhases = phases.map((p) => {
+    if (lang === "hinglish") {
+      const t = journeyTranslations.hinglish[p.id];
+      if (t) {
+        return {
+          ...p,
+          title: t.title,
+          subtitle: t.subtitle,
+          quote: p.quote ? { ...p.quote, text: t.quoteText } : undefined,
+          narrative: t.narrative,
+          highlights: t.highlights,
+        };
+      }
+    }
+    if (lang === "hi") {
+      const t = journeyTranslations.hi[p.id];
+      if (t) {
+        return {
+          ...p,
+          title: t.title,
+          subtitle: t.subtitle,
+          quote: p.quote ? { ...p.quote, text: t.quoteText } : undefined,
+          narrative: t.narrative,
+          highlights: t.highlights,
+        };
+      }
+    }
+    return p;
+  });
+
+  const galleryImages: LightboxImage[] = activePhases
     .filter((p) => Boolean(p.image.src))
     .map((p) => ({
       src: p.image.src!,
@@ -482,18 +518,54 @@ function JourneyPage() {
 
       {/* Hero Header */}
       <header className="mt-6 border-b border-rule pb-10">
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/8 px-3 py-1 font-mono text-xs uppercase tracking-[0.12em] text-primary">
-            <Compass className="size-3.5" /> Founder's Chronicle
-          </span>
-          <span className="label-mono">October 2024 – Present</span>
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/8 px-3 py-1 font-mono text-xs uppercase tracking-[0.12em] text-primary">
+              <Compass className="size-3.5" /> Founder's Chronicle
+            </span>
+            <span className="label-mono">October 2024 – Present</span>
+          </div>
+
+          {/* Inline Language Selector Chips */}
+          <div className="flex items-center gap-1.5 border border-border bg-surface p-1">
+            <span className="px-2 font-mono text-[11px] text-muted-foreground flex items-center gap-1">
+              <Languages className="size-3" /> Language:
+            </span>
+            {(
+              [
+                { id: "en", label: "English", flag: "🌐" },
+                { id: "hinglish", label: "Hinglish", flag: "🇮🇳" },
+                { id: "hi", label: "हिन्दी", flag: "🕉️" },
+              ] as const
+            ).map((opt) => (
+              <button
+                key={opt.id}
+                onClick={() => changeLanguage(opt.id)}
+                className={`px-2.5 py-1 font-mono text-xs transition-colors cursor-pointer ${
+                  lang === opt.id
+                    ? "bg-primary text-primary-foreground font-medium"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {opt.flag} {opt.label}
+              </button>
+            ))}
+          </div>
         </div>
+
         <h1 className="mt-4 font-serif text-4xl leading-[1.12] sm:text-5xl lg:text-6xl">
-          The Entrepreneurship Journey of Shikhar Dixit &amp; DIMISI Technologies
+          {lang === "hinglish"
+            ? "Shikhar Dixit Aur DIMISI Technologies Ka Entrepreneurship Safar"
+            : lang === "hi"
+              ? "शिखर दीक्षित एवं डिमिशी टेक्नोलॉजीज की उद्यमिता यात्रा"
+              : "The Entrepreneurship Journey of Shikhar Dixit & DIMISI Technologies"}
         </h1>
         <p className="mt-5 max-w-3xl font-serif text-xl leading-relaxed text-muted-foreground sm:text-2xl">
-          From a six-hour college hackathon to CATI, Kalesh, the Sinister Six, incorporation, and
-          DIMISIPEDIA — an unfiltered personal narrative.
+          {lang === "hinglish"
+            ? "Ghar par 6 ghante me bane Face Recognition project se lekar CATI, Kalesh, Sinister Six, MCA incorporation aur DIMISIPEDIA tak — ek sachhi aur unfiltered kahani."
+            : lang === "hi"
+              ? "घर पर 6 घंटे में बने फेस रिकॉग्निशन प्रोजेक्ट से लेकर CATI, कलेश, सिनिस्टर सिक्स, निगमन और डिमिशीपीडिया तक — एक निष्पक्ष एवं वास्तविक आख्यान।"
+              : "From a six-hour home engineering sprint for Axis College's Gandhigiri technical project presentation event to CATI, Kalesh, the Sinister Six, incorporation, and DIMISIPEDIA — an unfiltered personal narrative."}
         </p>
 
         <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
@@ -507,14 +579,30 @@ function JourneyPage() {
         </div>
       </header>
 
+      {/* Browser Speech Audio Narration */}
+      <AudioNarrationBar
+        title={
+          lang === "hinglish"
+            ? "Shikhar Dixit Aur DIMISI Technologies Ka Entrepreneurship Safar"
+            : lang === "hi"
+              ? "शिखर दीक्षित एवं डिमिशी टेक्नोलॉजीज की उद्यमिता यात्रा"
+              : "The Entrepreneurship Journey of Shikhar Dixit & DIMISI Technologies"
+        }
+        phases={activePhases.map((p) => ({
+          number: p.number,
+          title: p.title,
+          narrative: p.narrative,
+        }))}
+      />
+
       {/* Quick Summary / Chapter Index */}
       <section aria-label="Journey Phases" className="mt-10 border border-border bg-surface p-6">
         <div className="flex items-center justify-between border-b border-rule pb-3">
-          <p className="label-mono">Chronological Phases</p>
+          <p className="label-mono">Chronological Phases ({lang.toUpperCase()})</p>
           <span className="font-mono text-xs text-muted-foreground">2024 — 2026</span>
         </div>
         <ol className="mt-4 grid gap-3 sm:grid-cols-2">
-          {phases.map((p) => (
+          {activePhases.map((p) => (
             <li key={p.id}>
               <a
                 href={`#${p.id}`}
@@ -533,7 +621,7 @@ function JourneyPage() {
 
       {/* Main Narrative Phases */}
       <div className="mt-16 space-y-20">
-        {phases.map((phase) => (
+        {activePhases.map((phase) => (
           <article
             key={phase.id}
             id={phase.id}

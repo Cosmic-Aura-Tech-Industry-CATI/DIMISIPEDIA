@@ -17,8 +17,10 @@ import { article as whoIsShikhar } from "./who-is-shikhar-dixit";
 import { article as whatIsKalesh } from "./what-is-kalesh";
 import { article as historyDimisi } from "./history-of-dimisi-technologies";
 import { article as timelineDimisi } from "./timeline-of-dimisi-technologies";
+import { article as foundingBrotherhood } from "./the-founding-brotherhood";
 
 export const articleRegistry: Article[] = [
+  foundingBrotherhood,
   whoIsShikhar,
   whatIsKalesh,
   historyDimisi,

@@ -799,6 +799,7 @@ const organization: Entity = {
   sameAs: [
     "https://dimisi.tech",
     "https://thekalesh.com",
+    "https://www.crunchbase.com/organization/dimisi-technologies-private-limited",
     "https://www.linkedin.com/company/dimisi-technologies",
     "https://tracxn.com/d/companies/dimisi-technologies",
     "https://www.falconebiz.com",
@@ -1341,7 +1342,7 @@ const baseTimeline: TimelineEntry[] = [
     displayDate: "15 October 2024",
     title: "Gandhigiri Face Recognition project & Birth of CATI",
     description:
-      "Shikhar Dixit and Swatantra Singh developed a working Face Recognition System in 6–7 hours at Axis College, deciding that evening to become business partners and founding CATI (Cosmic Aura Tech Industry), joined by Nishkarsh Mishra in the AICTE lab.",
+      "Shikhar Dixit and Swatantra Singh developed a working Face Recognition System in 6–7 hours at home to present at Axis College's Gandhigiri technical project presentation event, deciding that evening to become business partners and founding CATI (Cosmic Aura Tech Industry), joined by Nishkarsh Mishra in the AICTE lab.",
     related: ["shikhar-dixit", "swatantra-singh", "nishkarsh-mishra", "dimisi-technologies"],
     category: "Founding",
     status: "source-backed",
@@ -1468,6 +1469,16 @@ const baseTimeline: TimelineEntry[] = [
       "Following an extensive cold-outreach phase, the company secured its first commercial website development contract with Rudra Tours & Travels, joined by Somya Tiwari for client coordination and delivery, followed by two additional client deals.",
     related: ["dimisi-technologies", "shikhar-dixit"],
     category: "Business",
+    status: "source-backed",
+  },
+  {
+    date: "2026-08-15",
+    displayDate: "15 August 2026",
+    title: "LinkedIn 30-Day Kalesh Promotion Contest & Awards Ceremony",
+    description:
+      "Culmination of the 30-day viral LinkedIn creator challenge for Kalesh with an official felicitation ceremony in Kanpur presenting the 1st Prize Winner with a Certificate of Achievement.",
+    related: ["kalesh", "dimisi-technologies", "shikhar-dixit", "swatantra-singh", "nishkarsh-mishra"],
+    category: "Campaign",
     status: "source-backed",
   },
   {

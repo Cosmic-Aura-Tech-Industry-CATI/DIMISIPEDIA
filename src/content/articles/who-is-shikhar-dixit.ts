@@ -29,7 +29,7 @@ export const article: Article = {
     { type: "h2", id: "founding-spark", text: "The Gandhigiri Project and Birth of CATI" },
     {
       type: "p",
-      text: "On 15 October 2024, during the college Gandhigiri event, Shikhar Dixit teamed up with classmate Swatantra Singh to build an urgent Face Recognition System. Completing the fully functional system in under seven hours sparked the realization that they could build their own technology enterprise. Joined by Nishkarsh Mishra in the college AICTE lab, they founded Cosmic Aura Tech Industry (CATI), the operational precursor to DIMISI Technologies.",
+      text: "On 15 October 2024, to prepare an urgent technical showcase for Axis College's Gandhigiri event, Shikhar Dixit teamed up with classmate Swatantra Singh at home to build a Face Recognition System. Completing the fully functional AI system in six hours of continuous engineering sparked the realization that they could build their own technology enterprise. Successfully presenting the project at the college and joined by Nishkarsh Mishra in the AICTE lab, they founded Cosmic Aura Tech Industry (CATI), the operational precursor to DIMISI Technologies.",
     },
     { type: "h2", id: "kalesh-creation", text: "Creation and Architecture of Kalesh" },
     {

@@ -25,7 +25,7 @@ export const article: Article = {
     {
       type: "ul",
       items: [
-        "15 October 2024 — Gandhigiri Face Recognition Project: Shikhar Dixit and Swatantra Singh engineer an automated face recognition system in under 7 hours, leading to the formation of Cosmic Aura Tech Industry (CATI) with Nishkarsh Mishra.",
+        "15 October 2024 — Gandhigiri Face Recognition Project: Shikhar Dixit and Swatantra Singh engineer an automated face recognition system in 6 hours at home to present at Axis College's Gandhigiri technical project presentation event, leading to the formation of Cosmic Aura Tech Industry (CATI) with Nishkarsh Mishra.",
         "October 2024 — AICTE IDEA Lab Prototyping: The early team utilizes campus laboratory hardware to experiment with image processing and scalable web services.",
       ],
     },

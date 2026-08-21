@@ -6,6 +6,7 @@ import { StatusChip, isPublicStatus } from "./StatusChip";
 import { getSources, relationsFor, type Entity } from "@/data/knowledge";
 import { VerificationBadge } from "./VerificationBadge";
 import { CiteModal } from "./CiteModal";
+import { PrintFactsheetButton } from "./PrintFactsheetButton";
 import { EXTERNAL_REL_UNTRUSTED, safeExternalHref } from "@/lib/url-safety";
 
 function ReadingProgress() {
@@ -143,6 +144,7 @@ export function EntityArticle({
                 {claimCount > 0 ? ` · ${claimCount} claims reviewed` : ""}
               </span>
               <CiteModal entity={entity} />
+              <PrintFactsheetButton entity={entity} />
             </div>
           </div>
           {entity.image ? (
@@ -162,82 +164,95 @@ export function EntityArticle({
           ) : null}
         </header>
 
-        <div className="mt-10 grid gap-12 lg:grid-cols-[minmax(0,1fr)_20rem]">
-          <div>
-            <section
-              aria-labelledby="direct-answer"
-              className="border-l-2 border-primary bg-surface px-5 py-5"
-            >
-              <h2 id="direct-answer" className="text-base font-medium">
-                {entity.entityType === "person"
-                  ? `Who is ${entity.name}?`
-                  : `What is ${entity.name}?`}
-              </h2>
-              <p className="mt-2 max-w-2xl text-[15px] leading-relaxed">{entity.answer}</p>
-            </section>
+        {entity.lifecycle && !isPublicStatus(entity.lifecycle) ? (
+          <aside
+            aria-label="Editorial notice"
+            className="my-6 border-l-2 border-primary bg-surface/80 px-4 py-3"
+          >
+            <p className="font-serif text-sm">
+              <strong className="font-semibold">Notice:</strong> This entry is an editorial
+              document in progress. Claims are being reviewed against documented sources.
+            </p>
+          </aside>
+        ) : null}
 
-            <nav aria-label="Table of contents" className="mt-10 border-y border-rule py-5">
+        <div className="mt-8 grid gap-10 lg:grid-cols-[1fr_18rem]">
+          <div className="min-w-0 space-y-12">
+            {entity.answer ? (
+              <section
+                aria-label="Direct answer"
+                className="border border-border bg-surface p-5 leading-relaxed"
+              >
+                <p className="label-mono text-primary">Key Summary</p>
+                <p className="mt-2 font-serif text-lg text-foreground">{entity.answer}</p>
+              </section>
+            ) : null}
+
+            <nav aria-label="Table of contents" className="border-y border-rule py-4">
               <p className="label-mono">Contents</p>
-              <ol className="mt-3 grid gap-1.5 text-sm sm:grid-cols-2">
+              <ol className="mt-2.5 grid gap-1.5 text-sm sm:grid-cols-2">
                 {[
                   ...entity.sections.map((s) => ({ id: s.id, heading: s.heading })),
                   ...(tocExtra ?? []),
+                  ...((entity.faqs && entity.faqs.length > 0) || (entity.questions && entity.questions.length > 0)
+                    ? [{ id: "questions", heading: "Frequently Asked Questions" }]
+                    : []),
+                  { id: "coverage", heading: "Information coverage" },
+                  { id: "references", heading: "References & evidence" },
                 ].map((s, i) => (
                   <li key={s.id}>
                     <a
                       href={`#${s.id}`}
                       className="text-muted-foreground transition-colors hover:text-foreground"
                     >
-                      <span className="font-mono text-xs">{i + 1}.</span> {s.heading}
+                      <span className="font-mono text-xs text-primary">{i + 1}.</span> {s.heading}
                     </a>
                   </li>
                 ))}
               </ol>
             </nav>
 
-            <div className="prose-editorial mt-10">
-              {entity.sections.map((s) => (
-                <section
-                  key={s.id}
-                  id={s.id}
-                  className="scroll-mt-24 border-b border-rule pb-8 pt-2 last:border-0"
-                >
-                  <div className="flex flex-wrap items-center justify-between gap-3">
-                    <h2 className="text-2xl">{s.heading}</h2>
-                    {s.status ? <StatusChip status={s.status} /> : null}
-                  </div>
-                  {s.images && s.images.length > 0 ? (
-                    <SectionImageGallery images={s.images} />
-                  ) : null}
-                  {s.body.map((p, i) => (
+            {entity.sections.map((section) => (
+              <section key={section.id} id={section.id} className="scroll-mt-24">
+                <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-rule pb-2">
+                  <h2 className="text-2xl">{section.heading}</h2>
+                  {section.status ? <StatusChip status={section.status} /> : null}
+                </div>
+                <div className="prose-editorial mt-4 space-y-4">
+                  {section.body.map((para, i) => (
                     <p key={i}>
-                      <Cited text={p} />
+                      <Cited text={para} />
                     </p>
                   ))}
-                </section>
-              ))}
-            </div>
+                </div>
+              </section>
+            ))}
 
             {children}
 
             {(entity.faqs && entity.faqs.length > 0) ||
             (entity.questions && entity.questions.length > 0) ? (
               <section id="questions" className="mt-12 scroll-mt-24">
-                <h2 className="text-2xl">Frequently asked questions</h2>
-                <dl className="mt-5 divide-y divide-rule border-y border-rule">
-                  {(entity.faqs ?? entity.questions ?? []).map((item) => {
-                    const qText = "question" in item ? item.question : item.q;
-                    const aText = "answer" in item ? item.answer : item.a;
+                <h2 className="text-2xl">Frequently Asked Questions</h2>
+                <div className="mt-5 divide-y divide-rule border-y border-rule">
+                  {(entity.faqs ?? entity.questions ?? []).map((item, idx) => {
+                    const qText = ("question" in item ? item.question : item.q) ?? "";
+                    const aText = ("answer" in item ? item.answer : item.a) ?? "";
                     return (
-                      <div key={qText} className="py-4">
-                        <dt className="text-[15px] font-medium">{qText}</dt>
-                        <dd className="mt-1.5 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
+                      <details key={qText || `faq-${idx}`} className="group py-4 cursor-pointer">
+                        <summary className="flex items-center justify-between text-[15px] font-medium text-foreground list-none group-hover:text-primary transition-colors">
+                          <span>{qText}</span>
+                          <span className="ml-2 text-muted-foreground transition-transform duration-200 group-open:rotate-90">
+                            →
+                          </span>
+                        </summary>
+                        <p className="mt-2.5 max-w-2xl text-[14px] leading-relaxed text-muted-foreground pl-1">
                           {aText}
-                        </dd>
-                      </div>
+                        </p>
+                      </details>
                     );
                   })}
-                </dl>
+                </div>
               </section>
             ) : null}
 

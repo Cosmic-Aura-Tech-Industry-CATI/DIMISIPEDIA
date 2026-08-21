@@ -70,7 +70,7 @@ function Home() {
                 The Entrepreneurship Journey of Shikhar Dixit &amp; DIMISI Technologies
               </h2>
               <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
-                From a six-hour hackathon project at Axis College to CATI, the Mumbai train ride,
+                From a six-hour home engineering sprint for Axis College's Gandhigiri technical project presentation event to CATI, the Mumbai train ride,
                 placement rejections, the late-night spark of Kalesh, incorporating on 9 April 2026,
                 and landing the first client — an unfiltered founder narrative.
               </p>

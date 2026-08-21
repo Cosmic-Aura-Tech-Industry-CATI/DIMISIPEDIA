@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Moon, Search, Sun, X, Menu } from "lucide-react";
 import { useEffect, useState } from "react";
+import { LanguageSelector } from "./LanguageSelector";
 import { SiteSearch, useKeyboardSearchShortcut } from "./SiteSearch";
 
 const nav = [
@@ -13,18 +14,32 @@ const nav = [
   { to: "/timeline", label: "Timeline" },
   { to: "/events", label: "Events" },
   { to: "/articles", label: "Articles" },
-  { to: "/sources", label: "Sources" },
-  { to: "/methodology", label: "Methodology" },
 ];
 
 function ThemeToggle() {
   const [dark, setDark] = useState(false);
 
   useEffect(() => {
+    const getSystemTheme = () =>
+      typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches;
+
     const stored = localStorage.getItem("dp-theme");
-    const isDark = stored ? stored === "dark" : false;
+    const isDark = stored ? stored === "dark" : getSystemTheme();
     setDark(isDark);
     document.documentElement.classList.toggle("dark", isDark);
+
+    // Listen to real-time OS/system theme changes if no manual override
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleChange = (e: MediaQueryListEvent) => {
+      const currentStored = localStorage.getItem("dp-theme");
+      if (!currentStored) {
+        setDark(e.matches);
+        document.documentElement.classList.toggle("dark", e.matches);
+      }
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
   const toggle = () => {
@@ -39,7 +54,7 @@ function ThemeToggle() {
       type="button"
       onClick={toggle}
       aria-label={dark ? "Switch to light reading mode" : "Switch to dark archive mode"}
-      className="grid size-9 place-items-center border border-border text-muted-foreground transition-colors hover:border-primary hover:text-foreground"
+      className="grid size-9 place-items-center border border-border text-muted-foreground transition-colors hover:border-primary hover:text-foreground cursor-pointer"
     >
       {dark ? <Sun className="size-4" /> : <Moon className="size-4" />}
     </button>
@@ -151,9 +166,18 @@ export function SiteFooter() {
             The Knowledge Encyclopedia of DIMISI Technologies — documenting the organization, its
             people, projects, technology and history through source-backed information.
           </p>
+
+          <div className="mt-6 flex flex-col gap-2">
+            <p className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
+              Reading Language &amp; Translation
+            </p>
+            <div className="inline-block">
+              <LanguageSelector />
+            </div>
+          </div>
         </div>
         <div>
-          <p className="label-mono">Platform</p>
+          <p className="label-mono">Platform &amp; Evidence</p>
           <ul className="mt-3 space-y-2 text-sm">
             <li>
               <Link to="/journey" className="text-muted-foreground hover:text-foreground">
@@ -166,23 +190,23 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link to="/sources" className="text-muted-foreground hover:text-foreground">
+                Sources Registry
+              </Link>
+            </li>
+            <li>
+              <Link to="/methodology" className="text-muted-foreground hover:text-foreground">
+                Verification Methodology
+              </Link>
+            </li>
+            <li>
               <Link to="/editorial-policy" className="text-muted-foreground hover:text-foreground">
                 Editorial Policy
               </Link>
             </li>
             <li>
-              <Link to="/methodology" className="text-muted-foreground hover:text-foreground">
-                Methodology
-              </Link>
-            </li>
-            <li>
               <Link to="/credibility" className="text-muted-foreground hover:text-foreground">
-                Credibility
-              </Link>
-            </li>
-            <li>
-              <Link to="/sources" className="text-muted-foreground hover:text-foreground">
-                Sources
+                Credibility Standards
               </Link>
             </li>
           </ul>
