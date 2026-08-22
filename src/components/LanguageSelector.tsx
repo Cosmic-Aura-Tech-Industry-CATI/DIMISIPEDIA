@@ -29,7 +29,13 @@ interface LangItem {
 
 const languages: LangItem[] = [
   { id: "en", label: "English", sub: "Official / Global", flag: "🌐", group: "featured" },
-  { id: "hinglish", label: "Hinglish", sub: "देसी टेक (Conversational)", flag: "🇮🇳", group: "featured" },
+  {
+    id: "hinglish",
+    label: "Hinglish",
+    sub: "देसी टेक (Conversational)",
+    flag: "🇮🇳",
+    group: "featured",
+  },
   { id: "hi", label: "हिन्दी", sub: "Hindi", flag: "🕉️", group: "featured" },
 
   // Indian Languages
@@ -67,7 +73,8 @@ declare global {
 function setTranslateCookie(targetLang: string) {
   if (typeof document === "undefined") return;
 
-  const cookieVal = targetLang === "en" || targetLang === "hinglish" ? "/en/en" : `/en/${targetLang}`;
+  const cookieVal =
+    targetLang === "en" || targetLang === "hinglish" ? "/en/en" : `/en/${targetLang}`;
   const hostname = window.location.hostname;
 
   document.cookie = `googtrans=${cookieVal}; path=/;`;
@@ -225,7 +232,9 @@ export function LanguageSelector({ placement = "top" }: { placement?: "top" | "b
                   type="button"
                   onClick={() => setTab("all")}
                   className={`flex-1 py-1 text-center transition-colors cursor-pointer ${
-                    tab === "all" ? "bg-primary text-primary-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+                    tab === "all"
+                      ? "bg-primary text-primary-foreground font-medium"
+                      : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   All ({languages.length})
@@ -234,7 +243,9 @@ export function LanguageSelector({ placement = "top" }: { placement?: "top" | "b
                   type="button"
                   onClick={() => setTab("indian")}
                   className={`flex-1 py-1 text-center transition-colors cursor-pointer ${
-                    tab === "indian" ? "bg-primary text-primary-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+                    tab === "indian"
+                      ? "bg-primary text-primary-foreground font-medium"
+                      : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   🇮🇳 Indian
@@ -243,7 +254,9 @@ export function LanguageSelector({ placement = "top" }: { placement?: "top" | "b
                   type="button"
                   onClick={() => setTab("global")}
                   className={`flex-1 py-1 text-center transition-colors cursor-pointer ${
-                    tab === "global" ? "bg-primary text-primary-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+                    tab === "global"
+                      ? "bg-primary text-primary-foreground font-medium"
+                      : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   🌍 Global
@@ -286,7 +299,8 @@ export function LanguageSelector({ placement = "top" }: { placement?: "top" | "b
             </div>
 
             <div className="border-t border-rule bg-background/50 p-2.5 text-[10px] text-muted-foreground leading-snug">
-              Translates the entire platform — all articles, leadership profiles, timeline, and company records.
+              Translates the entire platform — all articles, leadership profiles, timeline, and
+              company records.
             </div>
           </div>
         </>

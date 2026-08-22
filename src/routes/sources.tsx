@@ -152,7 +152,11 @@ function SourcesPage() {
       setAuditData(json);
     } catch {
       setAuditData({
-        metrics: { liveLinksVerified: sources.filter(s => s.url).length, statutoryRecords: sources.filter(s => !s.url).length, healthScore: "100%" },
+        metrics: {
+          liveLinksVerified: sources.filter((s) => s.url).length,
+          statutoryRecords: sources.filter((s) => !s.url).length,
+          healthScore: "100%",
+        },
         durationMs: 42,
       });
     } finally {
@@ -187,7 +191,9 @@ function SourcesPage() {
         <div className="mt-6 border border-border bg-surface p-4">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
-              <p className="font-serif text-sm font-semibold">Live Serverless Evidence &amp; Link Health</p>
+              <p className="font-serif text-sm font-semibold">
+                Live Serverless Evidence &amp; Link Health
+              </p>
               <p className="text-xs text-muted-foreground">
                 Audit external URLs (Crunchbase, MCA, LinkedIn, GitHub) via serverless edge bot.
               </p>
@@ -205,7 +211,9 @@ function SourcesPage() {
             <div className="mt-4 grid grid-cols-3 gap-3 border-t border-rule pt-3 text-xs">
               <div>
                 <span className="text-muted-foreground">Live Links Verified:</span>{" "}
-                <strong className="text-verified">✓ {auditData.metrics.liveLinksVerified} Live</strong>
+                <strong className="text-verified">
+                  ✓ {auditData.metrics.liveLinksVerified} Live
+                </strong>
               </div>
               <div>
                 <span className="text-muted-foreground">Statutory Records:</span>{" "}
@@ -213,7 +221,9 @@ function SourcesPage() {
               </div>
               <div>
                 <span className="text-muted-foreground">Edge Health:</span>{" "}
-                <strong className="text-primary">{auditData.metrics.healthScore} ({auditData.durationMs}ms)</strong>
+                <strong className="text-primary">
+                  {auditData.metrics.healthScore} ({auditData.durationMs}ms)
+                </strong>
               </div>
             </div>
           ) : null}

@@ -5,53 +5,55 @@
 
 const DICTIONARY: Record<string, string> = {
   // Navigation & Branding
-  "DIMISIPEDIA": "DIMISIPEDIA",
+  DIMISIPEDIA: "DIMISIPEDIA",
   "Knowledge Encyclopedia": "Gyaan Aur Facts Ka Digital Encyclopedia",
-  "The Knowledge Encyclopedia of DIMISI Technologies": "DIMISI Technologies Ka Official Knowledge Encyclopedia",
-  "Explore": "Explore",
-  "Journey": "Hamara Safar",
-  "People": "Founders & Team",
-  "Organizations": "Organizations",
-  "Projects": "Projects & Apps",
-  "Technology": "Tech Stack",
-  "Timeline": "Timeline",
-  "Events": "Events & Milestones",
-  "Articles": "Articles",
-  "Sources": "Sources & Evidence",
-  "Methodology": "Verification Methodology",
+  "The Knowledge Encyclopedia of DIMISI Technologies":
+    "DIMISI Technologies Ka Official Knowledge Encyclopedia",
+  Explore: "Explore",
+  Journey: "Hamara Safar",
+  People: "Founders & Team",
+  Organizations: "Organizations",
+  Projects: "Projects & Apps",
+  Technology: "Tech Stack",
+  Timeline: "Timeline",
+  Events: "Events & Milestones",
+  Articles: "Articles",
+  Sources: "Sources & Evidence",
+  Methodology: "Verification Methodology",
   "Our Journey": "Hamara Safar",
-  "About": "DIMISIPEDIA Ke Baare Me",
+  About: "DIMISIPEDIA Ke Baare Me",
   "Editorial Policy": "Editorial Policy",
   "Credibility Standards": "Credibility Standards",
   "Sources Registry": "Sources Registry",
   "DIMISI Technologies": "DIMISI Technologies",
-  "Privacy": "Privacy Policy",
-  "Terms": "Terms of Use",
+  Privacy: "Privacy Policy",
+  Terms: "Terms of Use",
   "Designed & Developed By": "Design Aur Develop Kiya Gaya Hai",
-  "Operated by DIMISI Technologies Pvt. Ltd. · Kanpur, Uttar Pradesh, India": "DIMISI Technologies Pvt. Ltd. Dwara Sanchalit · Kanpur, UP, India",
+  "Operated by DIMISI Technologies Pvt. Ltd. · Kanpur, Uttar Pradesh, India":
+    "DIMISI Technologies Pvt. Ltd. Dwara Sanchalit · Kanpur, UP, India",
   "Reading Language & Translation": "Reading Language Aur Bhasha Chunein",
 
   // Common UI Controls
   "Search DIMISIPEDIA": "DIMISIPEDIA Par Kuch Bhi Search Karein...",
   "Key Summary": "Quick Summary Aur Main Points",
-  "Contents": "Is Page Par Kya Hai (Contents)",
+  Contents: "Is Page Par Kya Hai (Contents)",
   "Frequently Asked Questions": "Zaroori Sawaal Aur Unke Jawaab (FAQs)",
   "References & evidence": "Official Saboot Aur References",
   "Information coverage": "Coverage Aur Reliability Score",
   "Related Entities": "Jude Huye Founders Aur Projects",
   "Last Updated": "Aakhri Baar Update Hua",
-  "Verified": "Verified / 100% Sach",
-  "Sourced": "Sourced / Documented",
-  "Active": "Chalu / Active",
-  "Inactive": "Band / Inactive",
+  Verified: "Verified / 100% Sach",
+  Sourced: "Sourced / Documented",
+  Active: "Chalu / Active",
+  Inactive: "Band / Inactive",
   "Canonical Record": "Official MCA Record",
   "Confidence Score": "Fact Check Score",
   "Download JSON": "JSON Download Karein",
   "Copy Citation": "Citation Copy Karein",
-  "Cite": "Cite Karein",
-  "Share": "Share Karein",
+  Cite: "Cite Karein",
+  Share: "Share Karein",
   "Back to Top": "Upar Jayein",
-  "Overview": "Overview Aur Parichay",
+  Overview: "Overview Aur Parichay",
   "Key Takeaways": "Main Points Aur Seekh",
   "Chronological Phases": "Safar Ke 10 Main Phases",
   "Founder's Chronicle": "Founder Ki Zubani",
@@ -79,7 +81,7 @@ const DICTIONARY: Record<string, string> = {
   "Co-Founder & CSO": "Co-Founder & Chief Strategy Officer",
   "Incorporation Date": "Company Registration Date",
   "Corporate Identification Number (CIN)": "Corporate ID Number (CIN)",
-  "Headquarters": "Main Office (Headquarters)",
+  Headquarters: "Main Office (Headquarters)",
   "Primary Technology Stack": "Main Tech Stack Aur Frameworks",
 };
 
@@ -101,7 +103,7 @@ const SUBSTRINGS: [RegExp, string][] = [
 ];
 
 let observer: MutationObserver | null = null;
-let originalNodes = new WeakMap<Node, string>();
+const originalNodes = new WeakMap<Node, string>();
 
 /** Translate a single text string into Hinglish */
 export function translateToHinglishText(text: string): string {

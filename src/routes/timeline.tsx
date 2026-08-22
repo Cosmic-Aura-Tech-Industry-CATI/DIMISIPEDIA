@@ -37,7 +37,8 @@ function TimelinePage() {
   const filteredTimeline = useMemo(() => {
     return timeline.filter((t) => {
       const yearMatch = selectedYear === "all" || t.date.startsWith(selectedYear);
-      const catMatch = selectedCategory === "all" || t.category.toLowerCase() === selectedCategory.toLowerCase();
+      const catMatch =
+        selectedCategory === "all" || t.category.toLowerCase() === selectedCategory.toLowerCase();
       return yearMatch && catMatch;
     });
   }, [selectedYear, selectedCategory]);
@@ -114,7 +115,9 @@ function TimelinePage() {
               {t.displayDate} · {t.category}
             </p>
             <h2 className="mt-2 text-2xl">{t.title}</h2>
-            <p className="mt-2 max-w-2xl text-[15px] text-muted-foreground leading-relaxed">{t.description}</p>
+            <p className="mt-2 max-w-2xl text-[15px] text-muted-foreground leading-relaxed">
+              {t.description}
+            </p>
             <div className="mt-3 flex flex-wrap items-center gap-2">
               <StatusChip status={t.status} />
               {t.related.map((id) => {

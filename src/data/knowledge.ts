@@ -1477,7 +1477,13 @@ const baseTimeline: TimelineEntry[] = [
     title: "LinkedIn 30-Day Kalesh Promotion Contest & Awards Ceremony",
     description:
       "Culmination of the 30-day viral LinkedIn creator challenge for Kalesh with an official felicitation ceremony in Kanpur presenting the 1st Prize Winner with a Certificate of Achievement.",
-    related: ["kalesh", "dimisi-technologies", "shikhar-dixit", "swatantra-singh", "nishkarsh-mishra"],
+    related: [
+      "kalesh",
+      "dimisi-technologies",
+      "shikhar-dixit",
+      "swatantra-singh",
+      "nishkarsh-mishra",
+    ],
     category: "Campaign",
     status: "source-backed",
   },

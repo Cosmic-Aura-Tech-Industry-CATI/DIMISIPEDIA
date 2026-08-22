@@ -82,27 +82,45 @@ function PeopleIndex() {
               </div>
               <h2 className="mt-4 font-serif text-3xl font-medium">The Founding Leadership</h2>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                DIMISI Technologies was founded by <strong>Shikhar Dixit</strong> (Founder &amp; CEO), <strong>Nishkarsh Mishra</strong> (Co-Founder &amp; COO/CMO), and <strong>Swatantra Singh</strong> (Co-Founder &amp; CTO). The company name reflects the syllables of their surnames.
+                DIMISI Technologies was founded by <strong>Shikhar Dixit</strong> (Founder &amp;
+                CEO), <strong>Nishkarsh Mishra</strong> (Co-Founder &amp; COO/CMO), and{" "}
+                <strong>Swatantra Singh</strong> (Co-Founder &amp; CTO). The company name reflects
+                the syllables of their surnames.
               </p>
 
               <div className="mt-6 grid grid-cols-3 gap-3 border-t border-rule pt-4">
                 <EntityLink to="/people/shikhar-dixit" className="group">
-                  <p className="font-serif text-sm font-medium group-hover:text-primary transition-colors">Shikhar Dixit</p>
-                  <p className="font-mono text-[10px] text-muted-foreground">Founder &amp; CEO (DI)</p>
+                  <p className="font-serif text-sm font-medium group-hover:text-primary transition-colors">
+                    Shikhar Dixit
+                  </p>
+                  <p className="font-mono text-[10px] text-muted-foreground">
+                    Founder &amp; CEO (DI)
+                  </p>
                 </EntityLink>
                 <EntityLink to="/people/nishkarsh-mishra" className="group">
-                  <p className="font-serif text-sm font-medium group-hover:text-primary transition-colors">Nishkarsh Mishra</p>
-                  <p className="font-mono text-[10px] text-muted-foreground">Co-Founder &amp; COO (MI)</p>
+                  <p className="font-serif text-sm font-medium group-hover:text-primary transition-colors">
+                    Nishkarsh Mishra
+                  </p>
+                  <p className="font-mono text-[10px] text-muted-foreground">
+                    Co-Founder &amp; COO (MI)
+                  </p>
                 </EntityLink>
                 <EntityLink to="/people/swatantra-singh" className="group">
-                  <p className="font-serif text-sm font-medium group-hover:text-primary transition-colors">Swatantra Singh</p>
-                  <p className="font-mono text-[10px] text-muted-foreground">Co-Founder &amp; CTO (SI)</p>
+                  <p className="font-serif text-sm font-medium group-hover:text-primary transition-colors">
+                    Swatantra Singh
+                  </p>
+                  <p className="font-mono text-[10px] text-muted-foreground">
+                    Co-Founder &amp; CTO (SI)
+                  </p>
                 </EntityLink>
               </div>
             </div>
 
             <div className="mt-6 pt-4 border-t border-rule flex items-center justify-between">
-              <Link to="/journey" className="inline-flex items-center gap-1.5 font-mono text-xs text-primary hover:underline">
+              <Link
+                to="/journey"
+                className="inline-flex items-center gap-1.5 font-mono text-xs text-primary hover:underline"
+              >
                 <span>Read the Founder's Chronicle</span>
                 <ArrowRight className="size-3.5" />
               </Link>

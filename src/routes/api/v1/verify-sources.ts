@@ -52,7 +52,10 @@ export const Route = createFileRoute("/api/v1/verify-sources")({
                 id: s.id,
                 title: s.title,
                 url: s.url,
-                status: res.ok || res.status < 400 || res.status === 403 || res.status === 405 ? "verified_live" : "unreachable",
+                status:
+                  res.ok || res.status < 400 || res.status === 403 || res.status === 405
+                    ? "verified_live"
+                    : "unreachable",
                 httpStatus: res.status,
                 latencyMs: Date.now() - reqStart,
                 scheme,

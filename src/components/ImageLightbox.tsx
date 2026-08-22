@@ -36,7 +36,8 @@ export function ImageLightbox({
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
       else if (e.key === "ArrowRight") onNavigate((currentIndex + 1) % images.length);
-      else if (e.key === "ArrowLeft") onNavigate((currentIndex - 1 + images.length) % images.length);
+      else if (e.key === "ArrowLeft")
+        onNavigate((currentIndex - 1 + images.length) % images.length);
     };
 
     window.addEventListener("keydown", handleKeyDown);

@@ -170,8 +170,8 @@ export function EntityArticle({
             className="my-6 border-l-2 border-primary bg-surface/80 px-4 py-3"
           >
             <p className="font-serif text-sm">
-              <strong className="font-semibold">Notice:</strong> This entry is an editorial
-              document in progress. Claims are being reviewed against documented sources.
+              <strong className="font-semibold">Notice:</strong> This entry is an editorial document
+              in progress. Claims are being reviewed against documented sources.
             </p>
           </aside>
         ) : null}
@@ -194,7 +194,8 @@ export function EntityArticle({
                 {[
                   ...entity.sections.map((s) => ({ id: s.id, heading: s.heading })),
                   ...(tocExtra ?? []),
-                  ...((entity.faqs && entity.faqs.length > 0) || (entity.questions && entity.questions.length > 0)
+                  ...((entity.faqs && entity.faqs.length > 0) ||
+                  (entity.questions && entity.questions.length > 0)
                     ? [{ id: "questions", heading: "Frequently Asked Questions" }]
                     : []),
                   { id: "coverage", heading: "Information coverage" },

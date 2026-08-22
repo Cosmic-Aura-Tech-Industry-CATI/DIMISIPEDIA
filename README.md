@@ -20,6 +20,7 @@ The name **DIMISI** is a brand identity created by founder Shikhar Dixit using t
 $$\text{DI (Dixit)} + \text{MI (Mishra)} + \text{SI (Singh)} = \textbf{DIMISI}$$
 
 ### Founding Leadership
+
 - **Shikhar Dixit** — Founder, Chief Executive Officer (CEO) & Director
 - **Swatantra Singh** — Co-Founder, Chief Technology Officer (CTO) & Director
 - **Nishkarsh Mishra** — Co-Founder, Director, Chief Operating Officer (COO) & Chief Marketing Officer (CMO)
@@ -30,21 +31,26 @@ $$\text{DI (Dixit)} + \text{MI (Mishra)} + \text{SI (Singh)} = \textbf{DIMISI}$$
 ## 📖 Key Sections & Architecture
 
 ### 1. Founder Journey (`/journey`)
+
 An unfiltered, 10-phase chronological founder narrative documenting the journey from a 6-hour hackathon project at Axis College to CATI, Mumbai, placement rejections, the late-night inception of Kalesh, campus office allocation in the Sand Tank area, incorporation, and first client deals.
 
 ### 2. Entity Knowledge Graph (`/people`, `/organizations`, `/projects`, `/technology`)
+
 - **People Profiles**: Granular, source-attributed profiles for founders and engineers with educational records, verified career milestones, and knowledge domains.
 - **Organization Entity**: Corporate records, registration identifiers, registered office coordinates, and founding leadership.
 - **Projects**: Architectural documentation for **Kalesh** (anonymous social polling platform) and **DIMISIPEDIA**.
 - **Technology Stack**: Documented frameworks, programming languages, databases, and deployment infrastructure.
 
 ### 3. Chronological Milestone Registry (`/timeline`)
+
 A verified timeline of dated milestones spanning October 2024 to present, complete with verification status indicators:
+
 - `source-backed` (backed by verified third-party records or publications)
 - `documented` (supported by first-party company records)
 - `needs-verification` (subject to ongoing editorial confirmation)
 
 ### 4. Search & Answer Engine Optimization (SEO / AEO / GEO)
+
 - **Schema.org Knowledge Graph**: Deeply connected `Person`, `ProfilePage`, `Organization`, `CreativeWork`, `DefinedTerm`, `BreadcrumbList`, and `ItemPage` nodes.
 - **Google Expanded Sitelinks**: Registered `SiteNavigationElement` list and `SearchAction` searchbox endpoint.
 - **AI Answer Engines (AEO)**: Comprehensive `FAQPage` JSON-LD schemas crafted for Perplexity, ChatGPT Search, Claude, and Google AI Overviews.
@@ -54,43 +60,49 @@ A verified timeline of dated milestones spanning October 2024 to present, comple
 
 ## 🛠️ Technology Stack
 
-| Layer | Technologies |
-|---|---|
-| **Framework** | [TanStack Start](https://tanstack.com/start) / [React 18](https://react.dev/) |
+| Layer               | Technologies                                                                                 |
+| ------------------- | -------------------------------------------------------------------------------------------- |
+| **Framework**       | [TanStack Start](https://tanstack.com/start) / [React 18](https://react.dev/)                |
 | **Routing & State** | [TanStack Router](https://tanstack.com/router), [TanStack Query](https://tanstack.com/query) |
-| **Language** | [TypeScript](https://www.typescriptlang.org/) (Strict Mode) |
-| **Styling & UI** | [Tailwind CSS](https://tailwindcss.com/), Radix UI Primitives, Lucide Icons |
-| **Typography** | Spectral (Serif), IBM Plex Sans, IBM Plex Mono |
-| **Metadata & SEO** | Schema.org JSON-LD `@graph`, OpenGraph, Twitter Cards, Sitemap 0.9 |
+| **Language**        | [TypeScript](https://www.typescriptlang.org/) (Strict Mode)                                  |
+| **Styling & UI**    | [Tailwind CSS](https://tailwindcss.com/), Radix UI Primitives, Lucide Icons                  |
+| **Typography**      | Spectral (Serif), IBM Plex Sans, IBM Plex Mono                                               |
+| **Metadata & SEO**  | Schema.org JSON-LD `@graph`, OpenGraph, Twitter Cards, Sitemap 0.9                           |
 
 ---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - [Node.js](https://nodejs.org/) (version 18.x or higher)
 - `npm` or `pnpm`
 
 ### Local Development
 
 1. **Clone the repository**:
+
    ```bash
    git clone https://github.com/Cosmic-Aura-Tech-Industry-CATI/DIMISIPEDIA.git
    cd DIMISIPEDIA
    ```
 
 2. **Install dependencies**:
+
    ```bash
    npm install
    ```
 
 3. **Run the local development server**:
+
    ```bash
    npm run dev
    ```
+
    Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 4. **Type Check & Lint**:
+
    ```bash
    npx tsc --noEmit
    npm run lint

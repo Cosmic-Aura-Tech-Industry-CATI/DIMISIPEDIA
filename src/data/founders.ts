@@ -121,7 +121,8 @@ export const founderSources: Source[] = [
     url: "https://www.crunchbase.com/person/shikhar-dixit-944f",
     type: "Third-party Database",
     relatedEntities: ["shikhar-dixit", "dimisi-technologies"],
-    claim: "Verified executive and founder profile on Crunchbase identifying Shikhar Dixit as Founder & CEO.",
+    claim:
+      "Verified executive and founder profile on Crunchbase identifying Shikhar Dixit as Founder & CEO.",
     addedAt: ADDED,
     status: "source-backed",
   },
@@ -144,7 +145,8 @@ export const founderSources: Source[] = [
     url: "https://www.crunchbase.com/person/nishkarsh-mishra-4e7d",
     type: "Third-party Database",
     relatedEntities: ["nishkarsh-mishra", "dimisi-technologies"],
-    claim: "Verified executive and founder profile on Crunchbase identifying Nishkarsh Mishra as Co-Founder and Director.",
+    claim:
+      "Verified executive and founder profile on Crunchbase identifying Nishkarsh Mishra as Co-Founder and Director.",
     addedAt: ADDED,
     status: "source-backed",
   },

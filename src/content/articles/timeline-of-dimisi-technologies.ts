@@ -11,7 +11,14 @@ export const article: Article = {
     "A structured chronological review of all major milestones in the development of DIMISI Technologies and its ecosystem products, from initial hackathons to corporate incorporation.",
   authorId: "editorial",
   category: "Startup",
-  tags: ["Timeline", "Milestones", "DIMISI Technologies", "Kalesh", "Corporate Records", "Founders"],
+  tags: [
+    "Timeline",
+    "Milestones",
+    "DIMISI Technologies",
+    "Kalesh",
+    "Corporate Records",
+    "Founders",
+  ],
   datePublished: "2026-08-21",
   dateModified: "2026-08-21",
   status: "published",
@@ -38,7 +45,11 @@ export const article: Article = {
         "17 November 2025 — Team Onboarding & 'Chalo Kalesh Karey': Rebranded as Kalesh, Sheelu Singh (Flutter) and Mridul Mishra (Linux/Backend) join core development.",
       ],
     },
-    { type: "h2", id: "milestones-2026", text: "2026: Workspace Allocation, Branding & Incorporation" },
+    {
+      type: "h2",
+      id: "milestones-2026",
+      text: "2026: Workspace Allocation, Branding & Incorporation",
+    },
     {
       type: "ul",
       items: [
@@ -49,7 +60,11 @@ export const article: Article = {
       ],
     },
     { type: "h2", id: "entities", text: "Documented Entity Relationships" },
-    { type: "entity", entityId: "dimisi-technologies", note: "The central corporate organization." },
+    {
+      type: "entity",
+      entityId: "dimisi-technologies",
+      note: "The central corporate organization.",
+    },
     { type: "entity", entityId: "shikhar-dixit", note: "Founder, CEO & Director." },
     { type: "entity", entityId: "kalesh", note: "Flagship social platform." },
   ],

@@ -70,9 +70,10 @@ function Home() {
                 The Entrepreneurship Journey of Shikhar Dixit &amp; DIMISI Technologies
               </h2>
               <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
-                From a six-hour home engineering sprint for Axis College's Gandhigiri technical project presentation event to CATI, the Mumbai train ride,
-                placement rejections, the late-night spark of Kalesh, incorporating on 9 April 2026,
-                and landing the first client — an unfiltered founder narrative.
+                From a six-hour home engineering sprint for Axis College's Gandhigiri technical
+                project presentation event to CATI, the Mumbai train ride, placement rejections, the
+                late-night spark of Kalesh, incorporating on 9 April 2026, and landing the first
+                client — an unfiltered founder narrative.
               </p>
             </div>
             <Link
@@ -189,7 +190,9 @@ function Home() {
                     )}
                     <div>
                       <span className="font-serif text-lg font-medium leading-tight">{p.name}</span>
-                      <span className="mt-0.5 block text-xs text-muted-foreground">{p.subtitle}</span>
+                      <span className="mt-0.5 block text-xs text-muted-foreground">
+                        {p.subtitle}
+                      </span>
                     </div>
                   </div>
                   <p className="mt-3 text-xs leading-relaxed text-muted-foreground line-clamp-2">

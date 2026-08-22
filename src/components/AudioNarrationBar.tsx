@@ -54,9 +54,12 @@ export function AudioNarrationBar({ title, phases }: AudioNarrationBarProps) {
 
     // Pick natural English voice if available
     const voices = synthRef.current.getVoices();
-    const englishVoice = voices.find(
-      (v) => v.lang.startsWith("en") && (v.name.includes("Natural") || v.name.includes("Google") || v.name.includes("India"))
-    ) || voices.find((v) => v.lang.startsWith("en"));
+    const englishVoice =
+      voices.find(
+        (v) =>
+          v.lang.startsWith("en") &&
+          (v.name.includes("Natural") || v.name.includes("Google") || v.name.includes("India")),
+      ) || voices.find((v) => v.lang.startsWith("en"));
 
     if (englishVoice) {
       utterance.voice = englishVoice;

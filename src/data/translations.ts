@@ -12,8 +12,10 @@ export const journeyTranslations: Record<"hinglish" | "hi", Record<string, Phase
   hinglish: {
     "phase-1": {
       title: "Ghar Par 6 Ghante Ka Sprint Aur CATI Ki Shuruat",
-      subtitle: "Axis College ke Gandhigiri technical presenting event ke liye ghar par 6 ghante me bane Face Recognition system ne IT company ki aag lagayi.",
-      quoteText: "Agar hum ghar baithe 6 ghante me working face recognition system bana sakte hain, toh apni IT company kyu nahi?",
+      subtitle:
+        "Axis College ke Gandhigiri technical presenting event ke liye ghar par 6 ghante me bane Face Recognition system ne IT company ki aag lagayi.",
+      quoteText:
+        "Agar hum ghar baithe 6 ghante me working face recognition system bana sakte hain, toh apni IT company kyu nahi?",
       narrative: [
         "Ye sab shuru hua 15 October 2024 ko. Main aur Swatantra mere ghar par baithe the jahan hum Axis College ke 'Gandhigiri' technical project presentation event ke liye ek urgent project bana rahe the: Face Recognition System.",
         "Lagbhag 6 se 7 ghante ki continuous mehnat ke baad, humne scratch se ek fully functional Face Recognition system khada kar diya. Shaam ke lagbhag 8-9 baje jab hum dono ne dekha ki humne kitni jaldi ye ready kar diya, tab dimag me ek bada sawal aaya: Jab hum ghar par ek hi dopahar me aisi AI technology bana sakte hain, toh hum apni khud ki IT startup kyu nahi shuru kar sakte?",
@@ -31,7 +33,8 @@ export const journeyTranslations: Record<"hinglish" | "hi", Record<string, Phase
     "phase-2": {
       title: "IIT Bombay Ka E-Summit Aur Real Reality Check",
       subtitle: "Mumbai ki overnight train aur asali startup ecosystem ka pehla anubhav.",
-      quoteText: "Mumbai ki us trip ne hume pehli baar startup world ki asali reality ka aaina dikhaya.",
+      quoteText:
+        "Mumbai ki us trip ne hume pehli baar startup world ki asali reality ka aaina dikhaya.",
       narrative: [
         "4 January 2025 ko mujhe LinkedIn par IIT Bombay E-Summit 2025 ki post mili. Wahan job fair ke sath-sath real entrepreneurship sikhne ka bada mauka tha.",
         "Hum teeno ne turant discuss kiya. Final year me student budget tight tha aur achanak Mumbai ki train ticket book karna challenging tha, lekin event 1 aur 2 February ko tha. Humne faisla kiya ki wahan physically jana zaroori hai.",
@@ -47,7 +50,8 @@ export const journeyTranslations: Record<"hinglish" | "hi", Record<string, Phase
     "phase-3": {
       title: "5th Placement Rejection Aur Raat Ka Call",
       subtitle: "Ghar ke bahar akele sadak par chalte waqt Poll-Social ka idea aana.",
-      quoteText: "Agar tumhare paas achhe partners hain, toh placement rejection ke baad CATI pe kaam karne ka yahi sahi waqt hai.",
+      quoteText:
+        "Agar tumhare paas achhe partners hain, toh placement rejection ke baad CATI pe kaam karne ka yahi sahi waqt hai.",
       narrative: [
         "13 November 2025 ki shaam ko, main apne ghar ke bahar sadak par akela ghoom raha tha. Pura mann dukhi tha kyunki sari skills hone ke bawajood main lagatar 5 placement drives me reject ho chuka tha.",
         "Tabhi Priya ka call aaya. Usne meri pareshani aur doubts ko shanti se suna.",
@@ -64,7 +68,8 @@ export const journeyTranslations: Record<"hinglish" | "hi", Record<string, Phase
     "phase-4": {
       title: "“Chalo Kalesh Karey” Aur Core Team Ka Banna",
       subtitle: "Kalesh naam ka idea, lab me discussions, aur Sheelu-Mridul ka team me aana.",
-      quoteText: "Jab log anonymous honge aur sach bolenge toh kalesh toh hoga hi. Toh app ka naam Kalesh kyu nahi?",
+      quoteText:
+        "Jab log anonymous honge aur sach bolenge toh kalesh toh hoga hi. Toh app ka naam Kalesh kyu nahi?",
       narrative: [
         "Agli subah AICTE Infosys lab me maine Swatantra aur Nishkarsh ko prototype dikhaya. Swatantra ready ho gaya, lekin Nishkarsh ne practical sawal daage: Android app kaise banega? Backend kaise scale hoga? Maine usse bharosa dilaya ki main best team assemble karunga.",
         "Usi shaam Priya ka dubara call aaya. Jab maine naam ke bare me bataya toh usne achanak kaha: 'Kyu na iska naam Kalesh rakhein? Anonymous log jab sach bolenge toh kalesh hi toh hoga!' Pehle mujhe mazaak laga, par wo serious thi.",
@@ -81,7 +86,8 @@ export const journeyTranslations: Record<"hinglish" | "hi", Record<string, Phase
     "phase-5": {
       title: "Library Ka Intezaar Aur Shark Tank Pitch",
       subtitle: "Jayant Sir se milne ke liye 2 ghante intezaar aur studio me pitch recording.",
-      quoteText: "Shayad Sir hamara patience test kar rahe hain. Chalo yahan ruko aur intezaar karo.",
+      quoteText:
+        "Shayad Sir hamara patience test kar rahe hain. Chalo yahan ruko aur intezaar karo.",
       narrative: [
         "Semester exams ke dauran Jayendra Pratap Singh (Jayant Sir) ke Startup practical me humne Kalesh ka pitch diya. Baaki students ke mukable hum genuinely startup banana chahte the.",
         "December 2025 me Nishkarsh aur main college library pahuche. Humne bahar 2 ghante intezaar kiya. Jab main irritate hone laga toh Nishkarsh ne kaha: 'Shayad Sir hamara patience test kar rahe hain.'",
@@ -96,7 +102,8 @@ export const journeyTranslations: Record<"hinglish" | "hi", Record<string, Phase
     "phase-6": {
       title: "Sinister Six, Sand Tank Office Aur TheKalesh.com",
       subtitle: "Website deployment, campus office allocation aur first interns ki hiring.",
-      quoteText: "Hum 6 college developers the — Sinister Six — jo Sand Tank office se code push kar rahe the.",
+      quoteText:
+        "Hum 6 college developers the — Sinister Six — jo Sand Tank office se code push kar rahe the.",
       narrative: [
         "4 January 2026 se Kalesh ki full development shuru hui aur 22 January ko Mridul ne TheKalesh.com live deploy kiya. Is dauran Siddhant Shekhar frontend developer ke roop me jude.",
         "Hamari core 6 logo ki team ban gayi — 'The Sinister Six': Shikhar (CEO), Swatantra (CTO), Nishkarsh (CFO/COO), Mridul (Backend), Sheelu (Android), Siddhant (Web).",
@@ -111,7 +118,8 @@ export const journeyTranslations: Record<"hinglish" | "hi", Record<string, Phase
     },
     "phase-7": {
       title: "Exam Hall Formula Aur DIMISI Ka Janam",
-      subtitle: "Exam paper ke peeche 'DI + MI + SI' ka formula banna aur Private Limited incorporation.",
+      subtitle:
+        "Exam paper ke peeche 'DI + MI + SI' ka formula banna aur Private Limited incorporation.",
       quoteText: "Dixit ka DI, Mishra ka MI, Singh ka SI. Saath me: DIMISI.",
       narrative: [
         "Jab hum official company register karane gaye toh pata chala ki CATI naam MCA portal par pehle se registered entities ke karan conflict me tha. Us waqt mid-sem exams chal rahe the.",
@@ -128,7 +136,8 @@ export const journeyTranslations: Record<"hinglish" | "hi", Record<string, Phase
     "phase-8": {
       title: "Office Ko Ghar Lana Aur Junior Energy",
       subtitle: "Family ke sath ghar me office setup aur 17 May 2026 ko company board lagna.",
-      quoteText: "17 May 2026 ko gate par company ka board lag gaya. DIMISI ko apna ghar mil chuka tha.",
+      quoteText:
+        "17 May 2026 ko gate par company ka board lag gaya. DIMISI ko apna ghar mil chuka tha.",
       narrative: [
         "College khatam hone ke baad team dynamics badle: Sheelu remote chala gaya aur naye passionate juniors jude: Prashant, Amrit, Anushka, Nisha, Vinay.",
         "Parents ke support se humne Kanpur ke Swarn Jayanti Vihar wale ghar ke ek kamre ko official headquarters banaya.",
@@ -143,7 +152,8 @@ export const journeyTranslations: Record<"hinglish" | "hi", Record<string, Phase
     "phase-9": {
       title: "Raat Ki Walk Aur Pehla Client Deal",
       subtitle: "100+ cold calls ke baad Rudra Tours & Travels ka pehla commercial contract milna.",
-      quoteText: "100+ cold calls ke baad, raat ki ek casual walk ne hume hamara pehla commercial contract diya.",
+      quoteText:
+        "100+ cold calls ke baad, raat ki ek casual walk ne hume hamara pehla commercial contract diya.",
       narrative: [
         "Revenue ke bina company chalana tough tha. 100 se zyada cold calls aur meetings ke baad bhi koi deal nahi mil rahi thi.",
         "Ek raat frustrated hokar main ghar ke bahar ghoom raha tha. Pados ke ek vyakti ne poocha: 'Kya aapki company websites banati hai? Meri tours and travels agency ke liye website chahiye.'",
@@ -157,8 +167,10 @@ export const journeyTranslations: Record<"hinglish" | "hi", Record<string, Phase
     },
     "phase-10": {
       title: "DIMISIPEDIA Aur Aage Ka Safar",
-      subtitle: "Apni sachhi history ko document karna aur har us shakhs ka shukriya ada karna jo sath khada raha.",
-      quoteText: "Ye kahani ka ant nahi hai, bas aaj tak ka safar hai. Un sabka dil se shukriya jinhone humpe vishwas kiya.",
+      subtitle:
+        "Apni sachhi history ko document karna aur har us shakhs ka shukriya ada karna jo sath khada raha.",
+      quoteText:
+        "Ye kahani ka ant nahi hai, bas aaj tak ka safar hai. Un sabka dil se shukriya jinhone humpe vishwas kiya.",
       narrative: [
         "19 August 2026 ko humne DIMISIPEDIA banana shuru kiya taaki hamari technology, people aur unfiltered journey sabke samne source-backed tarike se ho.",
         "Aaj 21 August 2026 ko peeche mudkar dekhte hain toh Axis College ke classroom se lekar MCA registration aur client deals tak ka safar behad yaadgaar raha hai.",
@@ -175,8 +187,10 @@ export const journeyTranslations: Record<"hinglish" | "hi", Record<string, Phase
   hi: {
     "phase-1": {
       title: "घर पर 6 घंटे का प्रोजेक्ट एवं CATI का उद्भव",
-      subtitle: "एक्सिस कॉलेज के 'गांधीगीरी' तकनीकी प्रोजेक्ट प्रस्तुति आयोजन हेतु घर पर 6 घंटे में बने फेस रिकॉग्निशन सिस्टम ने स्टार्टअप की नींव रखी।",
-      quoteText: "यदि हम घर बैठकर छह घंटे में कार्यशील फेस रिकॉग्निशन प्रणाली बना सकते हैं, तो अपनी आईटी कंपनी क्यों नहीं?",
+      subtitle:
+        "एक्सिस कॉलेज के 'गांधीगीरी' तकनीकी प्रोजेक्ट प्रस्तुति आयोजन हेतु घर पर 6 घंटे में बने फेस रिकॉग्निशन सिस्टम ने स्टार्टअप की नींव रखी।",
+      quoteText:
+        "यदि हम घर बैठकर छह घंटे में कार्यशील फेस रिकॉग्निशन प्रणाली बना सकते हैं, तो अपनी आईटी कंपनी क्यों नहीं?",
       narrative: [
         "यह यात्रा 15 अक्टूबर 2024 को आरंभ हुई। शिखर दीक्षित और स्वतंत्र सिंह ने कानपुर स्थित घर पर बैठकर एक्सिस कॉलेज के 'गांधीगीरी' तकनीकी प्रोजेक्ट प्रस्तुति आयोजन हेतु एक स्वचालित फेस रिकॉग्निशन प्रणाली तैयार की।",
         "मात्र छह से सात घंटों के सघन विकास कार्य में एक संपूर्ण कार्यशील प्रणाली तैयार कर ली गई। शाम को दोनों ने विचार किया कि जब घर पर कुछ ही घंटों में ऐसी जटिल एआई तकनीक तैयार की जा सकती है, तो अपनी स्वयं की आईटी कंपनी क्यों न स्थापित की जाए। स्वतंत्र सिंह तुरंत सहमत हुए और उन्होंने CATI (कॉस्मिक ऑरा टेक इंडस्ट्री) की नींव रखी।",
@@ -192,7 +206,8 @@ export const journeyTranslations: Record<"hinglish" | "hi", Record<string, Phase
     },
     "phase-2": {
       title: "आईआईटी बॉम्बे ई-समिट और उद्यमिता की वास्तविकता",
-      subtitle: "मुंबई यात्रा एवं राष्ट्रीय स्तर के स्टार्टअप पारिस्थितिकी तंत्र का प्रत्यक्ष अनुभव।",
+      subtitle:
+        "मुंबई यात्रा एवं राष्ट्रीय स्तर के स्टार्टअप पारिस्थितिकी तंत्र का प्रत्यक्ष अनुभव।",
       quoteText: "उस यात्रा ने हमें उद्यमिता की वास्तविक चुनौतियों और संभावनाओं से परिचित कराया।",
       narrative: [
         "4 जनवरी 2025 को आईआईटी बॉम्बे ई-समिट 2025 की सूचना प्राप्त होने पर तीनों संस्थापकों ने कानपुर से मुंबई की रेल यात्रा की। 28 जनवरी से 4 फरवरी 2025 तक चले इस अनुभव ने राष्ट्रीय स्तर के संस्थापकों, तकनीकी प्रस्तुतियों और कार्यप्रणाली से दल को प्रेरित किया।",
@@ -219,7 +234,8 @@ export const journeyTranslations: Record<"hinglish" | "hi", Record<string, Phase
     "phase-4": {
       title: "“चलो कलेश करें” और कोर दल का गठन",
       subtitle: "कलेश नामकरण, लैब परिचर्चा एवं शीलू सिंह तथा मृदुल मिश्रा का आगमन।",
-      quoteText: "अनाम एवं निष्पक्ष संवाद में स्वाभाविक रूप से विचार-विमर्श होता है, अतः 'कलेश' सर्वथा उपयुक्त नाम है।",
+      quoteText:
+        "अनाम एवं निष्पक्ष संवाद में स्वाभाविक रूप से विचार-विमर्श होता है, अतः 'कलेश' सर्वथा उपयुक्त नाम है।",
       narrative: [
         "लैब में प्रोटोटाइप देखने के उपरांत स्वतंत्र उत्साहित हुए, जबकि निष्कर्ष ने तकनीकी एवं व्यावहारिक पक्षों पर प्रश्न किए। प्रिया द्वारा 'कलेश' नाम प्रस्तावित किया गया जिसे स्वतंत्र ने 'चलो कलेश करें' के उद्घोष के साथ स्वीकारा।",
         "शीलू सिंह को मोबाइल लीड (फ़्लटर) और मृदुल मिश्रा को बैकएंड एवं लिनक्स लीड के रूप में दल में सम्मिलित किया गया।",
@@ -248,10 +264,7 @@ export const journeyTranslations: Record<"hinglish" | "hi", Record<string, Phase
       narrative: [
         "22 जनवरी 2026 को TheKalesh.com का लोकार्पण हुआ। सिद्धांत शेखर वेब डेवलपर के रूप में जुड़े और 'सिनिस्टर सिक्स' का गठन हुआ। फरवरी 2026 में सैंड टैंक में कार्यालय प्राप्त हुआ तथा चार प्रशिक्षुओं का चयन किया गया।",
       ],
-      highlights: [
-        "22 जनवरी 2026 को TheKalesh.com लाइव",
-        "सैंड टैंक परिसर कार्यालय का आवंटन",
-      ],
+      highlights: ["22 जनवरी 2026 को TheKalesh.com लाइव", "सैंड टैंक परिसर कार्यालय का आवंटन"],
     },
     "phase-7": {
       title: "परीक्षा कक्ष सूत्र और डिमिशी (DIMISI) का प्रादुर्भाव",
@@ -272,10 +285,7 @@ export const journeyTranslations: Record<"hinglish" | "hi", Record<string, Phase
       narrative: [
         "परिवार के सहयोग से कानपुर स्थित गृह परिसर में कार्यालय स्थापित किया गया। कनिष्ठ सदस्यों (प्रशांत, अमृत, अनुष्का, निशा, विनय) ने सहयोग दिया और 17 मई 2026 को बोर्ड लगाया गया।",
       ],
-      highlights: [
-        "कानपुर में मुख्यालय की स्थापना",
-        "कनिष्ठ सहयोगियों का दल में स्वागत",
-      ],
+      highlights: ["कानपुर में मुख्यालय की स्थापना", "कनिष्ठ सहयोगियों का दल में स्वागत"],
     },
     "phase-9": {
       title: "रात्रि भ्रमण और प्रथम व्यावसायिक अनुबंध",
@@ -284,10 +294,7 @@ export const journeyTranslations: Record<"hinglish" | "hi", Record<string, Phase
       narrative: [
         "अथक प्रयासों के उपरांत रुद्रा टूर्स एंड ट्रेवल्स के साथ प्रथम वेबसाइट निर्माण का अनुबंध प्राप्त हुआ। सौम्या तिवारी के सहयोग से परियोजना सफलतापूर्वक वितरित की गई।",
       ],
-      highlights: [
-        "प्रथम व्यावसायिक ग्राहक का अनुबंध",
-        "सफलतापूर्वक तकनीकी समाधान का वितरण",
-      ],
+      highlights: ["प्रथम व्यावसायिक ग्राहक का अनुबंध", "सफलतापूर्वक तकनीकी समाधान का वितरण"],
     },
     "phase-10": {
       title: "डिमिशीपीडिया (DIMISIPEDIA) और भावी क्षितिज",
