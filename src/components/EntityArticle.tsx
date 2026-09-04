@@ -7,7 +7,7 @@ import { getSources, relationsFor, type Entity } from "@/data/knowledge";
 import { VerificationBadge } from "./VerificationBadge";
 import { CiteModal } from "./CiteModal";
 import { PrintFactsheetButton } from "./PrintFactsheetButton";
-import { EXTERNAL_REL_UNTRUSTED, safeExternalHref } from "@/lib/url-safety";
+import { EXTERNAL_REL_UNTRUSTED, EXTERNAL_REL_VERIFIED, safeExternalHref } from "@/lib/url-safety";
 
 function ReadingProgress() {
   const [pct, setPct] = useState(0);
@@ -132,7 +132,14 @@ export function EntityArticle({
 
         <header className="mt-6 flex flex-col-reverse gap-6 border-b border-rule pb-8 sm:flex-row sm:items-start sm:justify-between">
           <div className="min-w-0 flex-1">
-            <p className="label-mono">{entity.subtitle}</p>
+            <div className="flex flex-wrap items-center gap-2">
+              <p className="label-mono">{entity.subtitle}</p>
+              {entity.category ? (
+                <span className="rounded-full border border-primary/30 bg-primary/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-primary">
+                  {entity.category}
+                </span>
+              ) : null}
+            </div>
             <h1 className="mt-2 text-4xl leading-tight sm:text-5xl">{entity.name}</h1>
             <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
               {entity.shortDescription}
@@ -148,17 +155,39 @@ export function EntityArticle({
             </div>
           </div>
           {entity.image ? (
-            <figure className="shrink-0">
+            <figure
+              className="shrink-0"
+              itemScope
+              itemType="https://schema.org/ImageObject"
+            >
               <img
                 src={entity.image}
-                alt={`${entity.entityType === "person" ? "Portrait" : "Visual mark"} of ${entity.name}`}
+                alt={
+                  entity.entityType === "person"
+                    ? `Official photograph of ${entity.name} — ${entity.subtitle || "DIMISI Technologies"} | Founder & Leadership`
+                    : `Official visual mark for ${entity.name} — DIMISI Technologies`
+                }
+                title={`${entity.name} — Official Image | DIMISI Technologies`}
                 width={176}
                 height={176}
                 loading="eager"
-                className="size-32 border border-rule bg-surface object-cover sm:size-44"
+                fetchPriority="high"
+                itemProp="contentUrl"
+                className={`size-32 border border-rule bg-surface sm:size-44 ${
+                  entity.entityType === "person" ? "object-cover" : "object-contain p-2"
+                }`}
               />
-              <figcaption className="mt-2 max-w-44 text-[11px] leading-snug text-muted-foreground">
-                {entity.name} — image supplied by DIMISI Technologies.
+              <meta itemProp="url" content={entity.image} />
+              <meta itemProp="name" content={`${entity.name} — Official Image`} />
+              <meta itemProp="creditText" content="DIMISI Technologies Private Limited" />
+              <meta itemProp="copyrightNotice" content="© DIMISI Technologies Private Limited" />
+              <meta itemProp="acquireLicensePage" content={`https://dimisipedia.me${entity.path}`} />
+              <meta itemProp="license" content="https://dimisipedia.me/editorial-policy" />
+              <figcaption
+                itemProp="caption"
+                className="mt-2 max-w-44 text-[11px] leading-snug text-muted-foreground"
+              >
+                {entity.name} — official portrait supplied by DIMISI Technologies.
               </figcaption>
             </figure>
           ) : null}
@@ -486,7 +515,7 @@ export function EntityArticle({
                         <a
                           href={safeExternalHref(p.url)!}
                           target="_blank"
-                          rel={EXTERNAL_REL_UNTRUSTED}
+                          rel={p.verified ? EXTERNAL_REL_VERIFIED : EXTERNAL_REL_UNTRUSTED}
                           className="flex items-center justify-between text-sm underline underline-offset-4"
                         >
                           {p.label}
@@ -519,7 +548,7 @@ export function EntityArticle({
                         <a
                           href={safeExternalHref(l.url)!}
                           target="_blank"
-                          rel={EXTERNAL_REL_UNTRUSTED}
+                          rel={l.official ? EXTERNAL_REL_VERIFIED : EXTERNAL_REL_UNTRUSTED}
                           className="flex items-center justify-between px-4 py-3 text-sm transition-colors hover:bg-muted"
                         >
                           {l.label}

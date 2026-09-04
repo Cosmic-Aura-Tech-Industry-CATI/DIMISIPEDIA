@@ -557,14 +557,14 @@ function JourneyPage() {
           {lang === "hinglish"
             ? "Shikhar Dixit Aur DIMISI Technologies Ka Entrepreneurship Safar"
             : lang === "hi"
-              ? "शिखर दीक्षित एवं डिमिशी टेक्नोलॉजीज की उद्यमिता यात्रा"
+              ? "शिखर दीक्षित एवं DIMISI Technologies की उद्यमिता यात्रा"
               : "The Entrepreneurship Journey of Shikhar Dixit & DIMISI Technologies"}
         </h1>
         <p className="mt-5 max-w-3xl font-serif text-xl leading-relaxed text-muted-foreground sm:text-2xl">
           {lang === "hinglish"
             ? "Ghar par 6 ghante me bane Face Recognition project se lekar CATI, Kalesh, Sinister Six, MCA incorporation aur DIMISIPEDIA tak — ek sachhi aur unfiltered kahani."
             : lang === "hi"
-              ? "घर पर 6 घंटे में बने फेस रिकॉग्निशन प्रोजेक्ट से लेकर CATI, कलेश, सिनिस्टर सिक्स, निगमन और डिमिशीपीडिया तक — एक निष्पक्ष एवं वास्तविक आख्यान।"
+              ? "घर पर 6 घंटे में बने फेस रिकॉग्निशन प्रोजेक्ट से लेकर CATI, Kalesh, सिनिस्टर सिक्स, निगमन और DIMISIPEDIA तक — एक निष्पक्ष एवं वास्तविक आख्यान।"
               : "From a six-hour home engineering sprint for Axis College's Gandhigiri technical project presentation event to CATI, Kalesh, the Sinister Six, incorporation, and DIMISIPEDIA — an unfiltered personal narrative."}
         </p>
 
@@ -585,7 +585,7 @@ function JourneyPage() {
           lang === "hinglish"
             ? "Shikhar Dixit Aur DIMISI Technologies Ka Entrepreneurship Safar"
             : lang === "hi"
-              ? "शिखर दीक्षित एवं डिमिशी टेक्नोलॉजीज की उद्यमिता यात्रा"
+              ? "शिखर दीक्षित एवं DIMISI Technologies की उद्यमिता यात्रा"
               : "The Entrepreneurship Journey of Shikhar Dixit & DIMISI Technologies"
         }
         phases={activePhases.map((p) => ({

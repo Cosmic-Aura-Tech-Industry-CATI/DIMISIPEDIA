@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://dimisipedia.me/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://dimisipedia.me/images/dimisipedia-logo.png</image:loc>
+      <image:title>DIMISIPEDIA — Official Knowledge Engine of DIMISI Technologies</image:title>
+      <image:caption>DIMISIPEDIA authoritative knowledge base and entity registry</image:caption>
+      <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
+      <image:license>https://dimisipedia.me/editorial-policy</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://dimisipedia.me/journey</loc>
@@ -90,24 +97,52 @@
     <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dimisipedia.me/images/dimisipedia-logo.png</image:loc>
+      <image:title>DIMISI Technologies Private Limited — Official Logo</image:title>
+      <image:caption>Official corporate insignia of DIMISI Technologies Private Limited</image:caption>
+      <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
+      <image:license>https://dimisipedia.me/editorial-policy</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://dimisipedia.me/people/shikhar-dixit</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://dimisipedia.me/images/shikhar-dixit.png</image:loc>
+      <image:title>Shikhar Dixit — Founder &amp; CEO, DIMISI Technologies</image:title>
+      <image:caption>Official photograph of Shikhar Dixit, Founder, Chief Executive Officer and Product Architect at DIMISI Technologies Private Limited</image:caption>
+      <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
+      <image:license>https://dimisipedia.me/editorial-policy</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://dimisipedia.me/people/nishkarsh-mishra</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://dimisipedia.me/images/nishkarsh-mishra.png</image:loc>
+      <image:title>Nishkarsh Mishra — Co-Founder &amp; COO, DIMISI Technologies</image:title>
+      <image:caption>Official photograph of Nishkarsh Mishra, Co-Founder and Chief Operating Officer at DIMISI Technologies Private Limited</image:caption>
+      <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
+      <image:license>https://dimisipedia.me/editorial-policy</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://dimisipedia.me/people/swatantra-singh</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://dimisipedia.me/images/swatantra-singh.png</image:loc>
+      <image:title>Swatantra Singh — Co-Founder &amp; CTO, DIMISI Technologies</image:title>
+      <image:caption>Official photograph of Swatantra Singh, Co-Founder and Chief Technology Officer at DIMISI Technologies Private Limited</image:caption>
+      <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
+      <image:license>https://dimisipedia.me/editorial-policy</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://dimisipedia.me/people/sheelu-singh</loc>
@@ -122,6 +157,58 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://dimisipedia.me/people/siddhant-shekhar</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://dimisipedia.me/images/siddhant-shekhar.png</image:loc>
+      <image:title>Siddhant Shekhar — Vice President, Public Relations &amp; Strategic Operations</image:title>
+      <image:caption>Official photograph of Siddhant Shekhar at DIMISI Technologies Private Limited</image:caption>
+      <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
+      <image:license>https://dimisipedia.me/editorial-policy</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dimisipedia.me/people/prashant-umrao</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://dimisipedia.me/images/prashant-umrao.png</image:loc>
+      <image:title>Prashant Umrao — Full Stack Developer Intern &amp; Tester</image:title>
+      <image:caption>Official photograph of Prashant Umrao at DIMISI Technologies Private Limited</image:caption>
+      <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
+      <image:license>https://dimisipedia.me/editorial-policy</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dimisipedia.me/people/amrat-awasthi</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://dimisipedia.me/images/amrat-awasthi.png</image:loc>
+      <image:title>Amrat Awasthi — Android Developer Intern (Flutter / Dart)</image:title>
+      <image:caption>Official photograph of Amrat Awasthi at DIMISI Technologies Private Limited</image:caption>
+      <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
+      <image:license>https://dimisipedia.me/editorial-policy</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dimisipedia.me/people/amit-kumar</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://dimisipedia.me/images/amit-kumar.png</image:loc>
+      <image:title>Amit Kumar — Backend Development Intern</image:title>
+      <image:caption>Official photograph of Amit Kumar at DIMISI Technologies Private Limited</image:caption>
+      <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
+      <image:license>https://dimisipedia.me/editorial-policy</image:license>
+    </image:image>
+  </url>
+  <url>
     <loc>https://dimisipedia.me/projects/kalesh</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -130,6 +217,38 @@
   <url>
     <loc>https://dimisipedia.me/projects/dimisipedia</loc>
     <lastmod>2026-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dimisipedia.me/projects/kaand</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://dimisipedia.me/images/kaand-logo.png</image:loc>
+      <image:title>KAAND — Next-Generation Mobile News &amp; Media Platform</image:title>
+      <image:caption>Official visual mark for KAAND mobile platform (Android &amp; iOS)</image:caption>
+      <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
+      <image:license>https://dimisipedia.me/editorial-policy</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dimisipedia.me/projects/dimisi-ops</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://dimisipedia.me/images/dimisi-ops-logo.jpg</image:loc>
+      <image:title>DIMISI-OPS — Internal Operations &amp; Task Assignment System</image:title>
+      <image:caption>Official visual mark for DIMISI-OPS internal management platform</image:caption>
+      <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
+      <image:license>https://dimisipedia.me/editorial-policy</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dimisipedia.me/projects/cati-khelghar</loc>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

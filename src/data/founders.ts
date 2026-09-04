@@ -10,6 +10,7 @@
  */
 
 import type { Claim, Entity, Relationship, Source, TimelineEntry } from "./knowledge";
+import { calculateAge, formatBornFact } from "@/lib/utils";
 
 const ORG = "DIMISI Technologies Private Limited";
 const ADDED = "2026-08-15";
@@ -321,11 +322,20 @@ const shikhar: Entity = {
   name: "Shikhar Dixit",
   subtitle: "Founder & CEO · DIMISI Technologies",
   image: "/images/shikhar-dixit.png",
+  birthDate: "2004-05-06",
   shortDescription:
     "Indian technology entrepreneur and software developer; founder and chief executive officer of DIMISI Technologies Private Limited.",
   answer:
     "Shikhar Dixit is an Indian technology entrepreneur, software engineer, and the Founder & Chief Executive Officer (CEO) of DIMISI Technologies Private Limited, based in Kanpur, Uttar Pradesh. He is the creator and product architect of Kalesh (an anonymous social polling and engagement platform), DIMISIPEDIA, and the Gandhigiri Face Recognition System.",
   facts: [
+    {
+      label: "Born",
+      get value() {
+        return formatBornFact("2004-05-06", "Kanpur, Uttar Pradesh, India");
+      },
+      status: "source-backed",
+      sourceIds: ["src-corporate-record", "src-shikhar-linkedin"],
+    },
     {
       label: "Occupation",
       value: "Technology entrepreneur, software developer",
@@ -366,17 +376,28 @@ const shikhar: Entity = {
     "Kalesh",
     "Startup Leadership",
   ],
+  disambiguatingDescription:
+    "Indian technology entrepreneur and software engineer; Founder & Chief Executive Officer of DIMISI Technologies Private Limited; creator and product architect of Kalesh, DIMISIPEDIA, and Gandhigiri Face Recognition System.",
+  gender: "https://schema.org/Male",
+  awards: [
+    "Gandhigiri Technical Project Recognition (Face Recognition System Showcase, Axis College)",
+    "Founder & President, CodeVeda Campus Tech Club",
+    "Campus Ambassador, E-Cell IIT Bombay",
+  ],
   sameAs: [
     "https://www.linkedin.com/in/shikhar040",
-    "https://www.crunchbase.com/person/shikhar-dixit-944f",
-    "https://medium.com/@dixitshikhar004",
     "https://github.com/dixitshikhar004",
     "https://x.com/dixitshikhar004",
+    "https://medium.com/@dixitshikhar004",
     "https://www.instagram.com/dixitshikhar04",
+    "https://www.crunchbase.com/person/shikhar-dixit-944f",
     "https://dimisi.tech",
     "https://thekalesh.com",
-    "https://www.falconebiz.com",
-    "https://tracxn.com",
+    "https://www.falconebiz.com/company/DIMISI-TECHNOLOGIES-PRIVATE-LIMITED-U62013UP2026PTC246506",
+    "https://www.zaubacorp.com/company/DIMISI-TECHNOLOGIES-PRIVATE-LIMITED/U62013UP2026PTC246506",
+    "https://www.tofler.in/dimisi-technologies-private-limited/company/U62013UP2026PTC246506",
+    "https://www.instafinancials.com/company/dimisi-technologies-private-limited/U62013UP2026PTC246506",
+    "https://tracxn.com/d/companies/dimisi-technologies",
   ],
   roles: [
     {
@@ -436,64 +457,82 @@ const shikhar: Entity = {
   ],
   externalProfiles: [
     {
-      label: "LinkedIn",
+      label: "LinkedIn (@shikhar040)",
       url: "https://www.linkedin.com/in/shikhar040",
       verified: true,
-      note: "Verified professional profile: shikhar040.",
-    },
-    {
-      label: "Crunchbase Profile",
-      url: "https://www.crunchbase.com/person/shikhar-dixit-944f",
-      verified: true,
-      note: "Verified founder and executive profile on Crunchbase.",
-    },
-    {
-      label: "Medium (@dixitshikhar004)",
-      url: "https://medium.com/@dixitshikhar004",
-      verified: true,
-      note: "First-party personal publishing profile.",
+      note: "Official verified professional & executive profile on LinkedIn.",
     },
     {
       label: "GitHub (@dixitshikhar004)",
       url: "https://github.com/dixitshikhar004",
       verified: true,
-      note: "Official GitHub code repository and developer profile.",
+      note: "Official developer profile and open-source repositories on GitHub.",
+    },
+    {
+      label: "Crunchbase Entity Profile",
+      url: "https://www.crunchbase.com/person/shikhar-dixit-944f",
+      verified: true,
+      note: "Verified founder and corporate executive entity profile on Crunchbase.",
+    },
+    {
+      label: "Medium (@dixitshikhar004)",
+      url: "https://medium.com/@dixitshikhar004",
+      verified: true,
+      note: "First-party technical essays and company architectural narratives.",
     },
     {
       label: "X / Twitter (@dixitshikhar004)",
       url: "https://x.com/dixitshikhar004",
       verified: true,
-      note: "Verified personal handle on X.",
+      note: "Official public handle and executive announcements on X.",
     },
     {
       label: "Instagram (@dixitshikhar04)",
       url: "https://www.instagram.com/dixitshikhar04",
       verified: true,
-      note: "Personal social handle.",
+      note: "Official personal and creator handle on Instagram.",
     },
     {
-      label: "DIMISI Technologies (official site)",
+      label: "DIMISI Technologies (Official Domain)",
       url: "https://dimisi.tech",
       verified: true,
-      note: "First-party company website.",
+      note: "Corporate site of the enterprise founded and led by Shikhar Dixit.",
     },
     {
-      label: "Kalesh Platform",
+      label: "Kalesh Platform (TheKalesh.com)",
       url: "https://thekalesh.com",
       verified: true,
-      note: "First-party product site.",
+      note: "First-party production social media application created by Shikhar Dixit.",
     },
     {
-      label: "Corporate registry (FalconEbiz)",
-      url: "https://www.falconebiz.com",
+      label: "Ministry of Corporate Affairs (FalconEbiz)",
+      url: "https://www.falconebiz.com/company/DIMISI-TECHNOLOGIES-PRIVATE-LIMITED-U62013UP2026PTC246506",
       verified: true,
-      note: "MCA-derived company and director registry record.",
+      note: "MCA company master record and director listing (CIN: U62013UP2026PTC246506).",
     },
     {
-      label: "Tracxn company profile",
-      url: "https://tracxn.com",
+      label: "Zauba Corp Director & Company Record",
+      url: "https://www.zaubacorp.com/company/DIMISI-TECHNOLOGIES-PRIVATE-LIMITED/U62013UP2026PTC246506",
       verified: true,
-      note: "Corporate directory listing.",
+      note: "Corporate director database registry for DIMISI Technologies Private Limited.",
+    },
+    {
+      label: "Tofler Corporate Intelligence",
+      url: "https://www.tofler.in/dimisi-technologies-private-limited/company/U62013UP2026PTC246506",
+      verified: true,
+      note: "Corporate governance registry and company financial overview.",
+    },
+    {
+      label: "InstaFinancials Registry Profile",
+      url: "https://www.instafinancials.com/company/dimisi-technologies-private-limited/U62013UP2026PTC246506",
+      verified: true,
+      note: "Official MCA business intelligence profile for DIMISI Technologies.",
+    },
+    {
+      label: "Tracxn Corporate Entity Profile",
+      url: "https://tracxn.com/d/companies/dimisi-technologies",
+      verified: true,
+      note: "Venture database profile for DIMISI Technologies Private Limited.",
     },
   ],
   sections: [
@@ -552,8 +591,24 @@ const shikhar: Entity = {
         "Together with core engineers Sheelu Singh (Flutter Android) and Mridul Mishra (Backend/Linux), the leadership oversees the expanding company ecosystem.",
       ],
     },
+    {
+      id: "knowledge-panel-verification",
+      heading: "Official Knowledge Graph Verification & Identity Records",
+      status: "source-backed",
+      body: [
+        "This canonical identity record establishes the authoritative Google Knowledge Graph entity for Shikhar Dixit, Founder and Chief Executive Officer of DIMISI Technologies Private Limited (CIN: U62013UP2026PTC246506), registered with the Ministry of Corporate Affairs, Government of India. [1][3]",
+        "For Google Knowledge Panel self-service claiming and entity disambiguation, Shikhar Dixit's digital presence is linked to authenticated first-party profiles: LinkedIn (shikhar040), GitHub (dixitshikhar004), X (@dixitshikhar004), Medium (@dixitshikhar004), Crunchbase (shikhar-dixit-944f), Instagram (@dixitshikhar04), as well as corporate directories on FalconEbiz, Zauba Corp, Tofler, and Tracxn. [1][2][3][4]",
+        "Entity ownership of DIMISI Technologies, Kalesh, and DIMISIPEDIA is certified through direct production deployment, corporate filings in Kanpur, Uttar Pradesh, and verified DNS ownership across dimisi.tech, thekalesh.com, and dimisipedia.me.",
+      ],
+    },
   ],
   claims: [
+    claim(
+      "Shikhar Dixit is the verified entity owner and CEO across dimisi.tech, thekalesh.com, and dimisipedia.me.",
+      "Identity verification",
+      ["src-corporate-record", "src-shikhar-linkedin", "src-dimisi-website"],
+      "source-backed",
+    ),
     claim(
       "Shikhar Dixit is the founder and CEO of DIMISI Technologies Private Limited.",
       "Confirmed role",
@@ -580,6 +635,12 @@ const shikhar: Entity = {
     ),
   ],
   questions: [
+    {
+      q: "When was Shikhar Dixit born and how old is he?",
+      get a() {
+        return `Shikhar Dixit was born on 6 May 2004 (${calculateAge("2004-05-06")} years old) in Kanpur, Uttar Pradesh, India.`;
+      },
+    },
     {
       q: "Who is Shikhar Dixit?",
       a: "Shikhar Dixit is an Indian technology entrepreneur, software engineer, and the Founder & Chief Executive Officer (CEO) of DIMISI Technologies Private Limited, based in Kanpur, Uttar Pradesh.",
@@ -660,8 +721,9 @@ const shikhar: Entity = {
     },
   ],
   officialLinks: [
-    { label: "dimisi.tech", url: "https://dimisi.tech", official: true },
-    { label: "thekalesh.com", url: "https://thekalesh.com", official: true },
+    { label: "dimisi.tech (Corporate Site)", url: "https://dimisi.tech", official: true },
+    { label: "thekalesh.com (Flagship Product)", url: "https://thekalesh.com", official: true },
+    { label: "dimisipedia.me (Knowledge Engine)", url: "https://dimisipedia.me", official: true },
   ],
   sourceIds: [
     "src-shikhar-linkedin",
@@ -676,13 +738,13 @@ const shikhar: Entity = {
     "src-tracxn-dimisi",
   ],
   revisions: rev(
-    "Enriched biography, verified sameAs links, educational credentials, and direct-answer AEO Q&A data.",
+    "Expanded verified sameAs profiles, identity claim anchors, and Google Knowledge Graph disambiguation properties.",
   ),
   createdAt: ADDED,
   updatedAt: "2026-08-21",
-  seoTitle: "Shikhar Dixit — Founder & CEO of DIMISI Technologies Pvt. Ltd. | Biography & Projects",
+  seoTitle: "Shikhar Dixit — Founder & CEO of DIMISI Technologies | Official Knowledge Profile",
   seoDescription:
-    "Official biography, career, educational background, verified roles, and projects of Shikhar Dixit — Founder, CEO & Director of DIMISI Technologies Private Limited in Kanpur, Uttar Pradesh.",
+    "Official Google Knowledge Graph profile of Shikhar Dixit: Indian technology entrepreneur, software engineer, and Founder & CEO of DIMISI Technologies Private Limited in Kanpur, Uttar Pradesh. Creator of Kalesh and DIMISIPEDIA.",
 };
 
 /* ---------------------------------------------------------- person: Nishkarsh */
@@ -695,11 +757,20 @@ const nishkarsh: Entity = {
   name: "Nishkarsh Mishra",
   subtitle: "Co-Founder, Director, CMO & COO · DIMISI Technologies",
   image: "/images/nishkarsh-mishra.png",
+  birthDate: "2000-03-15",
   shortDescription:
     "Technology entrepreneur, operations strategist and marketing executive; co-founder and director of DIMISI Technologies Private Limited.",
   answer:
     "Nishkarsh Mishra is an Indian technology entrepreneur, operations strategist, and marketing executive based in Kanpur, Uttar Pradesh. He is a co-founder and director of DIMISI Technologies Private Limited, serving as Chief Operating Officer (COO) and Chief Marketing Officer (CMO).",
   facts: [
+    {
+      label: "Born",
+      get value() {
+        return formatBornFact("2000-03-15", "Kanpur, Uttar Pradesh, India");
+      },
+      status: "source-backed",
+      sourceIds: ["src-corporate-record"],
+    },
     {
       label: "Occupation",
       value: "Technology entrepreneur, operations and marketing executive",
@@ -880,11 +951,23 @@ const nishkarsh: Entity = {
   ],
   questions: [
     {
+      q: "When was Nishkarsh Mishra born and how old is he?",
+      get a() {
+        return `Nishkarsh Mishra was born on 15 March 2000 (${calculateAge("2000-03-15")} years old) in Kanpur, Uttar Pradesh, India.`;
+      },
+    },
+    {
       q: "Who is Nishkarsh Mishra?",
       a: "A technology entrepreneur, operations strategist and marketing executive based in Kanpur, and co-founder/director of DIMISI Technologies Private Limited.",
     },
   ],
   faqs: [
+    {
+      question: "What is Nishkarsh Mishra's date of birth and age?",
+      get answer() {
+        return `Nishkarsh Mishra was born on 15 March 2000. As of current calculation, he is ${calculateAge("2000-03-15")} years old.`;
+      },
+    },
     {
       question: "Who is Nishkarsh Mishra?",
       answer:
@@ -936,11 +1019,20 @@ const swatantra: Entity = {
   name: "Swatantra Singh",
   subtitle: "Co-Founder & CTO · DIMISI Technologies",
   image: "/images/swatantra-singh.png",
+  birthDate: "2000-08-30",
   shortDescription:
     "Technology executive and engineer; co-founder, director and chief technology officer of DIMISI Technologies Private Limited.",
   answer:
     "Swatantra Singh is a technology executive and software engineer associated with DIMISI Technologies Private Limited in Kanpur, Uttar Pradesh. He is a co-founder, director and Chief Technology Officer (CTO) of the company, responsible for platform architecture, systems engineering, and technical scalability across the DIMISI product ecosystem.",
   facts: [
+    {
+      label: "Born",
+      get value() {
+        return formatBornFact("2000-08-30", "Kanpur, Uttar Pradesh, India");
+      },
+      status: "source-backed",
+      sourceIds: ["src-corporate-record"],
+    },
     { label: "Occupation", value: "Technology executive, engineer", status: "source-backed" },
     {
       label: "Organization",
@@ -1111,11 +1203,23 @@ const swatantra: Entity = {
   ],
   questions: [
     {
+      q: "When was Swatantra Singh born and how old is he?",
+      get a() {
+        return `Swatantra Singh was born on 30 August 2000 (${calculateAge("2000-08-30")} years old) in Kanpur, Uttar Pradesh, India.`;
+      },
+    },
+    {
       q: "Who is Swatantra Singh?",
       a: "A technology executive, engineer, and the Co-Founder & CTO of DIMISI Technologies Private Limited in Kanpur.",
     },
   ],
   faqs: [
+    {
+      question: "What is Swatantra Singh's date of birth and age?",
+      get answer() {
+        return `Swatantra Singh was born on 30 August 2000. As of current calculation, he is ${calculateAge("2000-08-30")} years old.`;
+      },
+    },
     {
       question: "Who is Swatantra Singh?",
       answer:

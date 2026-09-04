@@ -10,6 +10,24 @@ interface AudioNarrationBarProps {
   }[];
 }
 
+/**
+ * Normalizes company and brand names for browser SpeechSynthesis
+ * to ensure accurate native pronunciation:
+ * - "DIMISI" -> "Dih-mee-see" (prevents TTS engines from mispronouncing as "demise")
+ * - "DIMISIPEDIA" -> "Dih-mee-see peedia"
+ * - "Kalesh" -> "Kaa-laysh"
+ * - "CATI" -> "C.A.T.I."
+ */
+function phoneticallyNormalizeForSpeech(text: string): string {
+  return text
+    .replace(/\bDIMISIPEDIA\b/gi, "Dih-mee-see peedia")
+    .replace(/\bDIMISI\b/g, "Dih-mee-see")
+    .replace(/\bDimisi\b/g, "Dih-mee-see")
+    .replace(/\bKalesh\b/g, "Kaa-laysh")
+    .replace(/\bCATI\b/g, "C.A.T.I.")
+    .replace(/[—–]/g, ", ");
+}
+
 export function AudioNarrationBar({ title, phases }: AudioNarrationBarProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
@@ -49,7 +67,8 @@ export function AudioNarrationBar({ title, phases }: AudioNarrationBarProps) {
     const phase = phases[index];
     if (!phase) return;
 
-    const textToRead = `Phase ${phase.number}. ${phase.title}. ${phase.narrative.join(" ")}`;
+    const rawText = `Phase ${phase.number}. ${phase.title}. ${phase.narrative.join(" ")}`;
+    const textToRead = phoneticallyNormalizeForSpeech(rawText);
     const utterance = new SpeechSynthesisUtterance(textToRead);
 
     // Pick natural English voice if available

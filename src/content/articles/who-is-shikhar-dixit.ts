@@ -32,7 +32,7 @@ export const article: Article = {
     { type: "h2", id: "early-life-education", text: "Early Life and Academic Background" },
     {
       type: "p",
-      text: "Shikhar Dixit pursued his Bachelor of Technology (B.Tech) in Computer Science and Engineering at Axis College, Kanpur, affiliated with Dr. A.P.J. Abdul Kalam Technical University (AKTU), Lucknow. During his undergraduate studies, he focused on applied software development, artificial intelligence, face recognition algorithms, and scalable web architectures.",
+      text: "Shikhar Dixit was born on 6 May 2004 in Kanpur, Uttar Pradesh, India. He pursued his Bachelor of Technology (B.Tech) in Computer Science and Engineering at Axis College, Kanpur, affiliated with Dr. A.P.J. Abdul Kalam Technical University (AKTU), Lucknow. During his undergraduate studies, he focused on applied software development, artificial intelligence, face recognition algorithms, and scalable web architectures.",
     },
     { type: "h2", id: "founding-spark", text: "The Gandhigiri Project and Birth of CATI" },
     {
@@ -56,7 +56,16 @@ export const article: Article = {
     { type: "h2", id: "leadership-philosophy", text: "Leadership Philosophy and Public Profiles" },
     {
       type: "p",
-      text: "Shikhar Dixit advocates for source-first transparency, aggressive execution speed, and transparent verification standards. His verified external profiles include LinkedIn (shikhar040), Medium (@dixitshikhar004), GitHub (dixitshikhar004), and X (@dixitshikhar004).",
+      text: "Shikhar Dixit advocates for source-first transparency, aggressive execution speed, and transparent verification standards. His verified external profiles include LinkedIn (shikhar040), GitHub (dixitshikhar004), Crunchbase (shikhar-dixit-944f), Medium (@dixitshikhar004), X (@dixitshikhar004), and Instagram (@dixitshikhar04).",
+    },
+    {
+      type: "h2",
+      id: "knowledge-panel-verification",
+      text: "Knowledge Graph Identity & Official Digital Footprint",
+    },
+    {
+      type: "p",
+      text: "To establish unambiguous entity reconciliation and support Google Knowledge Panel claiming for searches on 'Shikhar Dixit', his digital identity is verified across official first-party platforms (dimisi.tech, thekalesh.com, dimisipedia.me), professional developer registries (LinkedIn shikhar040, GitHub dixitshikhar004, Crunchbase shikhar-dixit-944f), personal publication channels (Medium @dixitshikhar004, X @dixitshikhar004, Instagram @dixitshikhar04), and corporate director registries under CIN U62013UP2026PTC246506 on FalconEbiz, Zauba Corp, and Tofler.",
     },
     { type: "h2", id: "entities", text: "Documented Entity Relationships" },
     { type: "entity", entityId: "shikhar-dixit", note: "Founder, CEO & Director profile." },

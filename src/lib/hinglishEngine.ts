@@ -6,6 +6,12 @@
 const DICTIONARY: Record<string, string> = {
   // Navigation & Branding
   DIMISIPEDIA: "DIMISIPEDIA",
+  DIMISI: "DIMISI",
+  Kalesh: "Kalesh",
+  "Project Kalesh": "Project Kalesh",
+  "TheKalesh.com": "TheKalesh.com",
+  CATI: "CATI",
+  "Cosmic Aura Tech Industry": "Cosmic Aura Tech Industry",
   "Knowledge Encyclopedia": "Gyaan Aur Facts Ka Digital Encyclopedia",
   "The Knowledge Encyclopedia of DIMISI Technologies":
     "DIMISI Technologies Ka Official Knowledge Encyclopedia",

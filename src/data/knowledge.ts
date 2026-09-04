@@ -186,6 +186,11 @@ export interface Entity {
   slug: string;
   path: string;
   entityType: EntityType;
+  category?: string;
+  projectType?: string;
+  featuredPriority?: number;
+  statusBadge?: string;
+  tags?: string[];
   name: string;
   subtitle: string;
   image?: string;
@@ -213,6 +218,10 @@ export interface Entity {
   verifiedAt?: string;
   seoTitle: string;
   seoDescription: string;
+  disambiguatingDescription?: string;
+  gender?: string;
+  awards?: string[];
+  birthDate?: string;
 }
 
 import {
@@ -320,11 +329,96 @@ const baseSources: Source[] = [
     addedAt: "2026-08-15",
     status: "documented",
   },
+  {
+    id: "src-rudra-official",
+    title: "Rudra Tours & Travels — official website",
+    publisher: "Rudra Tours & Travels",
+    url: "https://www.toursbyrudra.com",
+    type: "Official Website",
+    relatedEntities: ["rudra-tours", "dimisi-technologies"],
+    claim: "Live client web platform developed by DIMISI Technologies with tour packages, routes, vehicle catalogue, and local SEO structure.",
+    addedAt: "2026-09-04",
+    status: "source-backed",
+  },
+  {
+    id: "src-yadhuvanshi-official",
+    title: "Yadhuvanshi Tours & Travels — official website",
+    publisher: "Yadhuvanshi Tours & Travels",
+    url: "https://www.yadhuvanshitours.com",
+    type: "Official Website",
+    relatedEntities: ["yadhuvanshi-tours", "dimisi-technologies"],
+    claim: "Live premium client web platform developed by DIMISI Technologies with destination discovery, wedding travel, vehicle showcase, and search intent architecture.",
+    addedAt: "2026-09-04",
+    status: "source-backed",
+  },
+  {
+    id: "src-dimisi-client-portfolio",
+    title: "DIMISI Technologies Client Project Records",
+    publisher: "DIMISI Technologies Pvt. Ltd.",
+    type: "Project Documentation",
+    relatedEntities: ["rudra-tours", "yadhuvanshi-tours", "dimisi-technologies"],
+    claim: "Documentation of end-to-end digital transformation, Next.js development, SEO, AEO, and GEO optimization delivered for commercial clients.",
+    addedAt: "2026-09-04",
+    status: "source-backed",
+  },
+  {
+    id: "src-kaand-dev",
+    title: "KAAND — Mobile News & Media Platform Development Records",
+    publisher: "DIMISI Technologies Pvt. Ltd.",
+    type: "Project Documentation",
+    relatedEntities: ["kaand", "dimisi-technologies", "amrat-awasthi"],
+    claim: "Mobile-first news application under development with Flutter and Dart, engineered by Amrat Awasthi under guidance of Sheelu Singh and Mridul Mishra.",
+    addedAt: "2026-09-04",
+    status: "source-backed",
+  },
+  {
+    id: "src-khelghar-official",
+    title: "CATI Khelghar — Official Offline Pass-and-Play Gaming Platform",
+    publisher: "DIMISI Technologies (CATI)",
+    url: "https://cati47.tech",
+    type: "Official Website",
+    relatedEntities: ["cati-khelghar", "dimisi-technologies", "shikhar-dixit"],
+    claim: "Live offline gaming hub featuring 16 pass-and-play and local multiplayer board games without accounts or internet dependency.",
+    addedAt: "2026-09-04",
+    status: "source-backed",
+  },
+  {
+    id: "src-dimisi-ops-spec",
+    title: "DIMISI-OPS — Internal Operations System Specifications",
+    publisher: "DIMISI Technologies Pvt. Ltd.",
+    type: "Project Documentation",
+    relatedEntities: ["dimisi-ops", "dimisi-technologies", "shikhar-dixit"],
+    claim: "Internal operations system under development for employee management, task allocation, and operational workflow tracking.",
+    addedAt: "2026-09-04",
+    status: "source-backed",
+  },
+  {
+    id: "src-karyon-official",
+    title: "KaryON — Professional Home Services Platform",
+    publisher: "DIMISI Technologies / KaryON",
+    url: "https://karyon.app",
+    type: "Official Website",
+    relatedEntities: ["karyon", "dimisi-technologies", "siddhant-shekhar"],
+    claim: "Professional home services matching platform under development, connecting customers to verified home maintenance professionals at doorstep.",
+    addedAt: "2026-09-04",
+    status: "source-backed",
+  },
+  {
+    id: "src-linkedin-challenge-felicitation",
+    title: "LinkedIn 30-Day Kalesh Challenge & Felicitation Ceremony Records",
+    publisher: "DIMISI Technologies Pvt. Ltd.",
+    type: "Company Announcement",
+    relatedEntities: ["prashant-umrao", "kalesh", "swatantra-singh", "dimisi-technologies"],
+    claim: "Prashant Umrao awarded 1st Prize Certificate of Achievement by Co-Founder Swatantra Singh on 15 August 2026 for the 30-day viral storytelling and campus creator challenge.",
+    addedAt: "2026-09-04",
+    status: "source-backed",
+  },
 ];
 
 const baseRelationships: Relationship[] = [
   { from: "sheelu-singh", type: "Works at", to: "dimisi-technologies" },
   { from: "mridul-mishra", type: "Works at", to: "dimisi-technologies" },
+  { from: "prashant-umrao", type: "1st Prize Winner", to: "kalesh" },
 
   { from: "dimisi-technologies", type: "Develops", to: "kalesh" },
   { from: "dimisi-technologies", type: "Develops", to: "dimisipedia" },
@@ -344,6 +438,52 @@ const baseRelationships: Relationship[] = [
   { from: "kalesh", type: "Uses technology", to: "mongodb" },
   { from: "dimisipedia", type: "Uses technology", to: "react" },
   { from: "dimisipedia", type: "Uses technology", to: "typescript" },
+  { from: "dimisi-technologies", type: "Develops", to: "rudra-tours" },
+  { from: "dimisi-technologies", type: "Develops", to: "yadhuvanshi-tours" },
+  { from: "rudra-tours", type: "Developed by", to: "dimisi-technologies" },
+  { from: "yadhuvanshi-tours", type: "Developed by", to: "dimisi-technologies" },
+  { from: "rudra-tours", type: "Uses technology", to: "next-js" },
+  { from: "yadhuvanshi-tours", type: "Uses technology", to: "next-js" },
+
+  { from: "dimisi-technologies", type: "Develops", to: "kaand" },
+  { from: "dimisi-technologies", type: "Develops", to: "cati-khelghar" },
+  { from: "dimisi-technologies", type: "Develops", to: "dimisi-ops" },
+  { from: "dimisi-technologies", type: "Develops", to: "dimisi-corporate-platform" },
+  { from: "dimisi-technologies", type: "Develops", to: "karyon" },
+
+  { from: "amrat-awasthi", type: "Works at", to: "dimisi-technologies" },
+  { from: "amrat-awasthi", type: "Engineering", to: "kaand" },
+  { from: "sheelu-singh", type: "Technical leadership", to: "kaand" },
+  { from: "mridul-mishra", type: "Technical leadership", to: "kaand" },
+
+  { from: "shikhar-dixit", type: "Created by", to: "cati-khelghar" },
+  { from: "shikhar-dixit", type: "Product leadership", to: "dimisi-ops" },
+
+  { from: "prashant-umrao", type: "Works at", to: "dimisi-technologies" },
+  { from: "prashant-umrao", type: "Engineering", to: "dimisi-ops" },
+  { from: "amit-kumar", type: "Works at", to: "dimisi-technologies" },
+  { from: "amit-kumar", type: "Engineering", to: "dimisi-ops" },
+  { from: "mridul-mishra", type: "Engineering", to: "dimisi-ops" },
+  { from: "nishkarsh-mishra", type: "Operations", to: "dimisi-ops" },
+
+  { from: "swatantra-singh", type: "Engineering", to: "dimisi-corporate-platform" },
+  { from: "mridul-mishra", type: "Engineering", to: "dimisi-corporate-platform" },
+
+  { from: "siddhant-shekhar", type: "Engineering", to: "karyon" },
+  { from: "siddhant-shekhar", type: "Engineering", to: "kalesh" },
+
+  { from: "kaand", type: "Uses technology", to: "flutter" },
+  { from: "kaand", type: "Uses technology", to: "dart" },
+  { from: "dimisi-corporate-platform", type: "Uses technology", to: "next-js" },
+  { from: "dimisi-corporate-platform", type: "Uses technology", to: "react" },
+  { from: "dimisi-corporate-platform", type: "Uses technology", to: "typescript" },
+  { from: "dimisi-corporate-platform", type: "Uses technology", to: "node-js" },
+  { from: "dimisi-corporate-platform", type: "Uses technology", to: "mongodb" },
+  { from: "dimisi-corporate-platform", type: "Uses technology", to: "redis" },
+  { from: "dimisi-corporate-platform", type: "Uses technology", to: "tailwind-css" },
+  { from: "dimisi-corporate-platform", type: "Uses technology", to: "aws" },
+  { from: "dimisi-corporate-platform", type: "Uses technology", to: "digital-ocean" },
+  { from: "dimisi-corporate-platform", type: "Uses technology", to: "cloudinary" },
 ];
 
 const baseRevisions = (created: string): Revision[] => [
@@ -614,6 +754,239 @@ const people: Entity[] = [
     seoDescription:
       "Mridul Mishra is the founding engineer for Kalesh at DIMISI Technologies, working on REST APIs, WebSockets, BullMQ/Redis queues, MongoDB and CI/CD.",
   },
+
+  {
+    id: "amrat-awasthi",
+    slug: "amrat-awasthi",
+    path: "/people/amrat-awasthi",
+    entityType: "person",
+    name: "Amrat Awasthi",
+    subtitle: "Android Developer Intern (Flutter / DART) — DIMISI Technologies",
+    image: "/images/amrat-awasthi.png",
+    shortDescription:
+      "Android developer intern specializing in Flutter and Dart at DIMISI Technologies, serving as lead application developer for the KAAND news and media platform.",
+    answer:
+      "Amrat Awasthi is an Android Developer Intern (Flutter / DART) at DIMISI Technologies Private Limited, leading the mobile engineering of KAAND, the company's next-generation news and media platform under the technical guidance of Sheelu Singh and Mridul Mishra.",
+    lifecycle: "Active",
+    facts: [
+      { label: "Role", value: "Android Developer Intern (Flutter / DART)", status: "source-backed" },
+      { label: "Organization", value: ORG_NAME, status: "documented" },
+      { label: "Primary project", value: "KAAND (Mobile Media Platform)", status: "source-backed" },
+      { label: "Core technologies", value: "Flutter, Dart", status: "source-backed" },
+      { label: "Technical mentors", value: "Sheelu Singh, Mridul Mishra", status: "source-backed" },
+    ],
+    areas: ["Android application development", "Flutter engineering", "Dart programming", "Mobile UI/UX systems"],
+    roles: [
+      {
+        title: "Android Developer Intern (Flutter / DART)",
+        organization: ORG_NAME,
+        status: "source-backed",
+        sourceIds: ["src-kaand-dev", "src-team-roster"],
+      },
+    ],
+    sections: [
+      {
+        id: "overview",
+        heading: "Overview & role",
+        status: "source-backed",
+        body: [
+          "Amrat Awasthi is an Android Developer Intern specializing in Flutter and Dart at DIMISI Technologies. [1]",
+          "He serves as the lead developer for KAAND, an internal next-generation digital journalism and media consumption product being built natively for Android and iOS using Flutter and Dart. [1]",
+          "His development work on KAAND proceeds under the direct technical mentorship and architectural guidance of senior engineering members Sheelu Singh and Mridul Mishra. [1]",
+        ],
+      },
+      {
+        id: "projects",
+        heading: "Project engineering",
+        status: "source-backed",
+        body: [
+          "KAAND (Under Development): Implementing reactive user interfaces, news feed streaming, and cross-platform UI architectures tailored for high-speed mobile information discovery. [1]",
+        ],
+      },
+    ],
+    coverage: [
+      { area: "Identity & Role", status: "source-backed", note: "Recorded in DIMISI project development rosters." },
+      { area: "Project Assignment", status: "source-backed", note: "Lead developer on KAAND verified in company engineering records." },
+    ],
+    officialLinks: [],
+    sourceIds: ["src-kaand-dev", "src-team-roster"],
+    revisions: baseRevisions("2026-09-04"),
+    createdAt: "2026-09-04",
+    updatedAt: "2026-09-04",
+    seoTitle: "Amrat Awasthi — Android Developer Intern (Flutter / DART) | DIMISIPEDIA",
+    seoDescription:
+      "Amrat Awasthi is an Android Developer Intern (Flutter / DART) at DIMISI Technologies, leading mobile development for KAAND.",
+  },
+
+  {
+    id: "prashant-umrao",
+    slug: "prashant-umrao",
+    path: "/people/prashant-umrao",
+    entityType: "person",
+    name: "Prashant Umrao",
+    subtitle: "Full Stack Developer Intern & Tester — DIMISI Technologies",
+    image: "/images/prashant-umrao.png",
+    shortDescription:
+      "Full stack developer intern and software tester at DIMISI Technologies, 1st Prize Winner of the nationwide LinkedIn 30-Day Kalesh Promotion Challenge, and contributor to DIMISI-OPS.",
+    answer:
+      "Prashant Umrao is a Full Stack Developer Intern & Tester at DIMISI Technologies Private Limited, responsible for full stack web engineering and quality testing for DIMISI-OPS. He is also recognized as the 1st Prize Winner of DIMISI's nationwide LinkedIn 30-Day Kalesh Challenge, felicitated on 15 August 2026 by co-founder Swatantra Singh.",
+    lifecycle: "Active",
+    facts: [
+      { label: "Role", value: "Full Stack Developer Intern & Tester", status: "source-backed" },
+      { label: "Organization", value: ORG_NAME, status: "documented" },
+      { label: "Primary project", value: "DIMISI-OPS", status: "source-backed" },
+      { label: "Milestone award", value: "1st Prize Winner — LinkedIn 30-Day Challenge (15 August 2026)", status: "source-backed", sourceIds: ["src-linkedin-challenge-felicitation"] },
+      { label: "Supervision", value: "Nishkarsh Mishra (Operations), Mridul Mishra (Backend)", status: "source-backed" },
+    ],
+    areas: ["Full stack web development", "Software quality assurance & testing", "Internal operations systems", "Technical content creation"],
+    roles: [
+      {
+        title: "Full Stack Developer Intern & Tester",
+        organization: ORG_NAME,
+        status: "source-backed",
+        sourceIds: ["src-dimisi-ops-spec", "src-team-roster"],
+      },
+    ],
+    sections: [
+      {
+        id: "overview",
+        heading: "Overview",
+        status: "source-backed",
+        body: [
+          "Prashant Umrao is a Full Stack Developer Intern & Tester at DIMISI Technologies. [1]",
+          "He is actively engaged in building and validating DIMISI-OPS, an internal operational platform created to centralize employee management, work assignment, and cross-team productivity tracking across DIMISI Technologies. [1]",
+        ],
+      },
+      {
+        id: "linkedin-30days-award",
+        heading: "1st Prize Winner — LinkedIn 30-Day Challenge",
+        status: "source-backed",
+        body: [
+          "Prashant Umrao emerged as the First Prize Winner in the nationwide LinkedIn 30-Day Kalesh Promotion & Content Creator Challenge hosted by DIMISI Technologies. [3]",
+          "The campaign brought together student developers and campus creators in a 30-day marathon of daily technical storytelling, founder narrative breakdowns, and viral student opinion polls centered on Kalesh. [3]",
+          "On 15 August 2026, during the official DIMISI award ceremony, he was formally felicitated by Co-Founder & CTO Swatantra Singh with the official 1st Prize Certificate of Achievement and trophy. [3]",
+        ],
+      },
+    ],
+    coverage: [
+      { area: "Identity & Role", status: "source-backed", note: "Recorded in DIMISI internal project documentation." },
+      { area: "Award & Recognition", status: "source-backed", note: "Photographic and ceremonial record of 1st Prize Certificate awarded on 15 August 2026." },
+    ],
+    officialLinks: [],
+    sourceIds: ["src-dimisi-ops-spec", "src-team-roster", "src-linkedin-challenge-felicitation"],
+    revisions: baseRevisions("2026-09-04"),
+    createdAt: "2026-09-04",
+    updatedAt: "2026-09-04",
+    seoTitle: "Prashant Umrao — Full Stack Developer Intern, Tester & 1st Prize Winner | DIMISIPEDIA",
+    seoDescription:
+      "Prashant Umrao is a Full Stack Developer Intern & Tester at DIMISI Technologies and 1st Prize Winner of the LinkedIn 30-Day Challenge.",
+  },
+
+  {
+    id: "amit-kumar",
+    slug: "amit-kumar",
+    path: "/people/amit-kumar",
+    entityType: "person",
+    name: "Amit Kumar",
+    subtitle: "Backend Development Intern — DIMISI Technologies",
+    image: "/images/amit-kumar.png",
+    shortDescription:
+      "Backend development intern at DIMISI Technologies, building server-side logic, database integrations, and task workflows for the DIMISI-OPS platform.",
+    answer:
+      "Amit Kumar is a Backend Development Intern at DIMISI Technologies Private Limited, working alongside Prashant Umrao and foundation engineer Mridul Mishra on backend development, API services, and workflow automation for DIMISI-OPS.",
+    lifecycle: "Active",
+    facts: [
+      { label: "Role", value: "Backend Development Intern", status: "source-backed" },
+      { label: "Organization", value: ORG_NAME, status: "documented" },
+      { label: "Primary project", value: "DIMISI-OPS", status: "source-backed" },
+      { label: "Supervision", value: "Nishkarsh Mishra (Operations), Mridul Mishra (Backend)", status: "source-backed" },
+    ],
+    areas: ["Backend engineering", "Database integration", "API development", "Workflow automation"],
+    roles: [
+      {
+        title: "Backend Development Intern",
+        organization: ORG_NAME,
+        status: "source-backed",
+        sourceIds: ["src-dimisi-ops-spec", "src-team-roster"],
+      },
+    ],
+    sections: [
+      {
+        id: "overview",
+        heading: "Overview",
+        status: "source-backed",
+        body: [
+          "Amit Kumar is a Backend Development Intern at DIMISI Technologies. [1]",
+          "He collaborates on the engineering of DIMISI-OPS, developing internal task allocation, team coordination, and employee administration modules under operational guidance from co-founder Nishkarsh Mishra. [1]",
+        ],
+      },
+    ],
+    coverage: [
+      { area: "Identity & Role", status: "source-backed", note: "Documented in DIMISI-OPS project specifications." },
+    ],
+    officialLinks: [],
+    sourceIds: ["src-dimisi-ops-spec", "src-team-roster"],
+    revisions: baseRevisions("2026-09-04"),
+    createdAt: "2026-09-04",
+    updatedAt: "2026-09-04",
+    seoTitle: "Amit Kumar — Backend Development Intern | DIMISIPEDIA",
+    seoDescription:
+      "Amit Kumar is a Backend Development Intern at DIMISI Technologies contributing to the DIMISI-OPS operations platform.",
+  },
+
+  {
+    id: "siddhant-shekhar",
+    slug: "siddhant-shekhar",
+    path: "/people/siddhant-shekhar",
+    entityType: "person",
+    name: "Siddhant Shekhar",
+    subtitle: "Former Core Member & Web Developer — DIMISI Technologies",
+    image: "/images/siddhant-shekhar.png",
+    shortDescription:
+      "Former core member of DIMISI Technologies and web developer who contributed to early frontend platforms and developed the KaryON home services platform.",
+    answer:
+      "Siddhant Shekhar is a software engineer and former core team member of DIMISI Technologies (CATI), remembered as part of the 'Sinister Six' founding cohort. He contributed to the initial web deployment of Kalesh on 22 January 2026 and developed KaryON, a professional doorstep home-services platform.",
+    lifecycle: "Active",
+    facts: [
+      { label: "Role", value: "Former Core Member / Web Developer", status: "source-backed" },
+      { label: "Organization", value: ORG_NAME, status: "documented" },
+      { label: "Associated projects", value: "KaryON, The Kalesh", status: "source-backed" },
+      { label: "Founding cohort", value: "The Sinister Six (Sand Tank Phase)", status: "source-backed" },
+    ],
+    areas: ["Web development", "Frontend architecture", "Service marketplace design"],
+    roles: [
+      {
+        title: "Frontend Web Developer (Former Core Member)",
+        organization: ORG_NAME,
+        status: "source-backed",
+        sourceIds: ["src-team-roster", "src-karyon-official"],
+      },
+    ],
+    sections: [
+      {
+        id: "overview",
+        heading: "Overview & contribution",
+        status: "source-backed",
+        body: [
+          "Siddhant Shekhar joined the early technical ranks of CATI / DIMISI Technologies on 5 January 2026 as a dedicated web developer during the intensive Sand Tank workspace sprint. [1]",
+          "He was a member of the celebrated 'Sinister Six' core cohort comprising Shikhar Dixit, Swatantra Singh, Nishkarsh Mishra, Sheelu Singh, Mridul Mishra, and Siddhant Shekhar. [1]",
+          "During his tenure at DIMISI, Shekhar contributed to early frontend web development for the Kalesh web deployment and engineered KaryON (karyon.app), an on-demand marketplace connecting homeowners with verified doorstep service professionals. [1][2]",
+        ],
+      },
+    ],
+    coverage: [
+      { area: "Identity & History", status: "source-backed", note: "Documented in Phase 5 Sand Tank company archives." },
+      { area: "Project Ownership", status: "source-backed", note: "Development of KaryON recorded in DIMISI project archives." },
+    ],
+    officialLinks: [{ label: "karyon.app", url: "https://karyon.app", official: true }],
+    sourceIds: ["src-team-roster", "src-karyon-official"],
+    revisions: baseRevisions("2026-09-04"),
+    createdAt: "2026-09-04",
+    updatedAt: "2026-09-04",
+    seoTitle: "Siddhant Shekhar — Former Core Member & Developer | DIMISIPEDIA",
+    seoDescription:
+      "Siddhant Shekhar is a former core member of DIMISI Technologies and developer of the KaryON home services platform.",
+  },
 ];
 
 const organization: Entity = {
@@ -869,14 +1242,27 @@ const projects: Entity[] = [
     slug: "kalesh",
     path: "/projects/kalesh",
     entityType: "project",
-    name: "Kalesh",
-    subtitle: "Product — anonymous social media and opinion platform",
+    category: "DIMISI Products",
+    projectType: "Anonymous Social Media Platform",
+    featuredPriority: 1,
+    statusBadge: "FLAGSHIP",
+    tags: [
+      "Anonymous Social Network",
+      "Social Media",
+      "Community Platform",
+      "Privacy",
+      "Social Technology",
+      "DIMISI Product",
+      "Flagship Product",
+    ],
+    name: "The Kalesh",
+    subtitle: "Flagship DIMISI Product — Anonymous Social Media Platform",
     image: "/images/kalesh-icon.png",
     shortDescription:
-      "India-focused anonymous social media and opinion platform developed by DIMISI Technologies.",
+      "The Kalesh is DIMISI's flagship anonymous social media platform built around identity-free expression, conversations and community interaction.",
     answer:
-      "Kalesh is an India-focused anonymous social media and opinion platform developed by DIMISI Technologies Private Limited. It is built around anonymous profiles, real-time polls and private anonymous conversations, and its public company profile records it as founded in 2026, headquartered in Kanpur, Uttar Pradesh, and classified under Social Networking Platforms.",
-    lifecycle: "Development",
+      "The Kalesh is an anonymous social media platform developed by DIMISI Technologies to create a digital environment where people can express opinions, participate in conversations and interact without making their real-world identity the center of their social presence.",
+    lifecycle: "Active",
     facts: [
       {
         label: "Type",
@@ -1127,17 +1513,527 @@ const projects: Entity[] = [
   },
 
   {
+    id: "kaand",
+    slug: "kaand",
+    path: "/projects/kaand",
+    entityType: "project",
+    category: "DIMISI Products",
+    projectType: "Next-Generation Media / News Platform",
+    featuredPriority: 2,
+    statusBadge: "UNDER DEVELOPMENT",
+    tags: [
+      "Media",
+      "News",
+      "Mobile Application",
+      "Flutter",
+      "Dart",
+      "Android",
+      "iOS",
+      "DIMISI Product",
+      "Under Development",
+    ],
+    name: "KAAND",
+    subtitle: "Next-Generation Mobile News & Media Platform (Android & iOS)",
+    image: "/images/kaand-logo.png",
+    shortDescription:
+      "KAAND is DIMISI's next-generation media and news platform being developed to create a new approach to modern news consumption.",
+    answer:
+      "KAAND is an internal DIMISI product focused on building a modern, mobile-first media and news experience for Android and iOS using Flutter and Dart. Engineered by rising intern Amrat Awasthi under the technical mentorship of Sheelu Singh and Mridul Mishra, the application explores a fresh approach to digital journalism, fast information discovery, and community-engaged media consumption.",
+    lifecycle: "Development",
+    facts: [
+      { label: "Category", value: "DIMISI Products", status: "source-backed", sourceIds: ["src-kaand-dev"] },
+      { label: "Project type", value: "Next-Generation Media / News Platform", status: "source-backed", sourceIds: ["src-kaand-dev"] },
+      { label: "Status", value: "Under Development", status: "source-backed", sourceIds: ["src-kaand-dev"] },
+      { label: "Target platforms", value: "Android & iOS", status: "source-backed", sourceIds: ["src-kaand-dev"] },
+      { label: "Core technologies", value: "Flutter, Dart", status: "source-backed", sourceIds: ["src-kaand-dev"] },
+      { label: "Lead developer", value: "Amrat Awasthi (Android Developer Intern — Flutter / DART)", status: "source-backed", sourceIds: ["src-kaand-dev"] },
+      { label: "Engineering guidance", value: "Sheelu Singh, Mridul Mishra", status: "source-backed", sourceIds: ["src-kaand-dev"] },
+      { label: "Ownership", value: ORG_NAME, status: "documented" },
+    ],
+    questions: [
+      {
+        q: "What is KAAND?",
+        a: "KAAND is a next-generation media and news platform developed by DIMISI Technologies to reimagine mobile news consumption for Android and iOS devices.",
+      },
+      {
+        q: "Who is building KAAND?",
+        a: "KAAND is spearheaded by rising intern and mobile developer Amrat Awasthi under senior engineering guidance from Sheelu Singh and Mridul Mishra.",
+      },
+      {
+        q: "What technologies power the KAAND application?",
+        a: "KAAND is engineered using Google's Flutter framework and the Dart programming language, targeting native mobile performance across Android and iOS.",
+      },
+      {
+        q: "Is KAAND publicly launched?",
+        a: "No, KAAND is actively under development as an internal product and has not yet been released to public app stores.",
+      },
+    ],
+    sections: [
+      {
+        id: "overview",
+        heading: "Overview & vision",
+        status: "source-backed",
+        body: [
+          "KAAND is an internal DIMISI product focused on building a modern media and news experience for Android and iOS. [1]",
+          "The project is engineered as a mobile-first platform rather than a conventional news website, aiming to establish a fresh approach to news discovery, media consumption, and digital journalism. [1]",
+          "Rather than replicating legacy article feeds, KAAND explores reactive visual story delivery and high-signal news discovery tailored for modern digital audiences. [1]",
+        ],
+      },
+      {
+        id: "development",
+        heading: "Engineering & development team",
+        status: "source-backed",
+        body: [
+          "Lead Developer: Amrat Awasthi serves as the lead application developer, driving UI implementation and state orchestration. [1]",
+          "Technical Guidance: The architectural foundation and performance patterns are guided by senior team members Sheelu Singh and Mridul Mishra. [1]",
+          "Technology: Built natively with Flutter and Dart for fluid animations, responsive layouts, and cross-platform Android and iOS parity. [1]",
+        ],
+      },
+      {
+        id: "status",
+        heading: "Development status",
+        status: "source-backed",
+        body: [
+          "KAAND is currently classified under Development. Features and release candidate builds are being tested internally, with no public store deployment completed to date. [1]",
+        ],
+      },
+    ],
+    coverage: [
+      { area: "Identity & Name", status: "source-backed", note: "Documented in DIMISI product development records." },
+      { area: "Team & Guidance", status: "source-backed", note: "Lead developer and mentors verified in engineering rosters." },
+      { area: "Technology Stack", status: "source-backed", note: "Flutter and Dart confirmed in application repository records." },
+      { area: "Public Launch", status: "needs-verification", note: "Product is actively under development; not yet publicly released." },
+    ],
+    officialLinks: [],
+    sourceIds: ["src-kaand-dev"],
+    revisions: baseRevisions("2026-09-04"),
+    createdAt: "2026-09-04",
+    updatedAt: "2026-09-04",
+    seoTitle: "KAAND — Next-Generation Media & News Platform | DIMISIPEDIA",
+    seoDescription:
+      "KAAND is a next-generation mobile media and news platform developed by DIMISI Technologies using Flutter and Dart. Features, team, and development status.",
+  },
+
+  {
+    id: "cati-khelghar",
+    slug: "cati-khelghar",
+    path: "/projects/cati-khelghar",
+    entityType: "project",
+    category: "DIMISI Labs / Experiments",
+    projectType: "Offline Pass-and-Play Gaming Platform",
+    featuredPriority: 3,
+    statusBadge: "LIVE",
+    tags: [
+      "Gaming",
+      "Offline Gaming",
+      "Pass and Play",
+      "Local Multiplayer",
+      "Family Games",
+      "Board Games",
+      "DIMISI Labs",
+      "Experimental Product",
+    ],
+    name: "CATI Khelghar",
+    subtitle: "Offline Pass-and-Play Local Multiplayer Gaming Platform",
+    image: "/images/cati-khelghar-logo.png",
+    shortDescription:
+      "CATI Khelghar is an offline-first collection of pass-and-play games designed for playing together on a single device without requiring accounts or internet connectivity.",
+    answer:
+      "CATI Khelghar is an experimental offline gaming platform conceived and engineered by Shikhar Dixit under DIMISI Labs (CATI). Live at cati47.tech, it delivers a curated collection of 16 classic and folk board games designed strictly for local multiplayer and pass-and-play on a single device with zero logins or network dependency.",
+    lifecycle: "Active",
+    facts: [
+      { label: "Category", value: "DIMISI Labs / Experiments", status: "source-backed", sourceIds: ["src-khelghar-official"] },
+      { label: "Project type", value: "Offline Pass-and-Play Gaming Platform", status: "source-backed", sourceIds: ["src-khelghar-official"] },
+      { label: "Status", value: "Live", status: "source-backed", sourceIds: ["src-khelghar-official"] },
+      { label: "Website", value: "cati47.tech", status: "source-backed", sourceIds: ["src-khelghar-official"] },
+      { label: "Conceived & developed by", value: "Shikhar Dixit", status: "source-backed", sourceIds: ["src-khelghar-official"] },
+      { label: "Total games", value: "16 games", status: "source-backed", sourceIds: ["src-khelghar-official"] },
+      { label: "Gameplay modes", value: "Pass & Play, Local Multiplayer, Play with Bot", status: "source-backed", sourceIds: ["src-khelghar-official"] },
+      { label: "Account requirement", value: "None (Zero login required)", status: "source-backed", sourceIds: ["src-khelghar-official"] },
+    ],
+    questions: [
+      {
+        q: "What is CATI Khelghar?",
+        a: "CATI Khelghar is a live offline-first collection of 16 pass-and-play and local multiplayer games created by Shikhar Dixit under DIMISI Labs, accessible at cati47.tech.",
+      },
+      {
+        q: "What games are available on CATI Khelghar?",
+        a: "The collection includes 16 titles: Tic Tac Toe, Ludo, Snake & Ladders, Four in a Row, Dots & Boxes, Carrom, Chess, Checkers, Reversi, Ashta Chamma, Mancala, Bagh-Chal, Battleship, Yahtzee, SOS, and Memory Match.",
+      },
+      {
+        q: "Does CATI Khelghar require an account or internet connectivity?",
+        a: "No. The core philosophy of CATI Khelghar is zero accounts, no server dependency for gameplay, and instant local pass-and-play on a single shared screen.",
+      },
+    ],
+    sections: [
+      {
+        id: "overview",
+        heading: "Overview & product philosophy",
+        status: "source-backed",
+        body: [
+          "CATI Khelghar is a DIMISI gaming project focused on simple, accessible, and social offline gameplay. [1]",
+          "The platform is designed around local multiplayer and pass-and-play mechanics, allowing friends and family to play together on a single device without depending on online accounts or continuous internet connectivity. [1]",
+          "Core product philosophy: No login. No server dependency for gameplay. No unnecessary complexity. Just play together. [1]",
+        ],
+      },
+      {
+        id: "games",
+        heading: "The 16-game collection",
+        status: "source-backed",
+        body: [
+          "CATI Khelghar features an offline collection of 16 classic, traditional, and strategy games: [1]",
+          "1. Tic Tac Toe · 2. Ludo · 3. Snake & Ladders · 4. Four in a Row · 5. Dots & Boxes · 6. Carrom · 7. Chess · 8. Checkers · 9. Reversi · 10. Ashta Chamma · 11. Mancala · 12. Bagh-Chal · 13. Battleship · 14. Yahtzee · 15. SOS · 16. Memory Match. [1]",
+          "Each game supports 2 to 4 players depending on the rules, with pass-and-play turns, clean touch controls, and optional bot play. [1]",
+        ],
+      },
+      {
+        id: "characteristics",
+        heading: "Core characteristics",
+        status: "source-backed",
+        body: [
+          "Offline gameplay: Functions entirely client-side once loaded, eliminating latency and disconnect issues. [1]",
+          "Zero login requirement: Immediate access without profile creation, email registration, or tracking cookies. [1]",
+          "Social pass-and-play: Engineered specifically for physical gathering, family game nights, and friends playing together on a single phone or tablet. [1]",
+        ],
+      },
+    ],
+    coverage: [
+      { area: "Identity & URL", status: "source-backed", note: "Verified live at cati47.tech." },
+      { area: "Game Catalogue", status: "source-backed", note: "All 16 games documented on the live platform." },
+      { area: "Creator", status: "source-backed", note: "Conception and development documented by Shikhar Dixit." },
+    ],
+    officialLinks: [{ label: "cati47.tech", url: "https://cati47.tech", official: true }],
+    sourceIds: ["src-khelghar-official"],
+    revisions: baseRevisions("2026-09-04"),
+    createdAt: "2026-09-04",
+    updatedAt: "2026-09-04",
+    seoTitle: "CATI Khelghar — Offline Pass-and-Play Gaming Platform | DIMISIPEDIA",
+    seoDescription:
+      "CATI Khelghar is an offline-first collection of 16 pass-and-play games by DIMISI Labs (Shikhar Dixit) live at cati47.tech. No login, no accounts, just play together.",
+  },
+
+  {
+    id: "dimisi-ops",
+    slug: "dimisi-ops",
+    path: "/projects/dimisi-ops",
+    entityType: "project",
+    category: "DIMISI Internal Systems",
+    projectType: "Internal Employee Management & Task Assignment System",
+    featuredPriority: 4,
+    statusBadge: "UNDER DEVELOPMENT",
+    tags: [
+      "Internal Software",
+      "Employee Management",
+      "Task Management",
+      "Operations",
+      "Productivity",
+      "Enterprise Software",
+      "DIMISI Internal",
+      "Under Development",
+    ],
+    image: "/images/dimisi-ops-logo.jpg",
+    name: "DIMISI-OPS",
+    subtitle: "Internal Operations, Employee Management & Task Assignment System",
+    shortDescription:
+      "DIMISI-OPS is an internal DIMISI operations platform being developed to manage employees, assign tasks and streamline internal project operations.",
+    answer:
+      "DIMISI-OPS is a proprietary internal operational software platform developed by DIMISI Technologies to streamline team administration, task allocation, project coordination, and accountability. Conceived by Shikhar Dixit, the system is engineered by Prashant Umrao and Amit Kumar with backend architecture by foundation engineer Mridul Mishra under operational guidance from Nishkarsh Mishra.",
+    lifecycle: "Development",
+    facts: [
+      { label: "Category", value: "DIMISI Internal Systems", status: "source-backed", sourceIds: ["src-dimisi-ops-spec"] },
+      { label: "Project type", value: "Internal Employee Management & Task Assignment System", status: "source-backed", sourceIds: ["src-dimisi-ops-spec"] },
+      { label: "Status", value: "Under Development", status: "source-backed", sourceIds: ["src-dimisi-ops-spec"] },
+      { label: "Concept", value: "Shikhar Dixit (Founder & CEO)", status: "source-backed", sourceIds: ["src-dimisi-ops-spec"] },
+      { label: "Development", value: "Prashant Umrao (Full Stack & Tester), Amit Kumar (Backend Development Intern)", status: "source-backed", sourceIds: ["src-dimisi-ops-spec"] },
+      { label: "Backend architecture", value: "Mridul Mishra (Foundation Engineer)", status: "source-backed", sourceIds: ["src-dimisi-ops-spec"] },
+      { label: "Operational guidance", value: "Nishkarsh Mishra (CFO & COO)", status: "source-backed", sourceIds: ["src-dimisi-ops-spec"] },
+      { label: "Target environment", value: "Internal Enterprise Operations", status: "source-backed", sourceIds: ["src-dimisi-ops-spec"] },
+    ],
+    questions: [
+      {
+        q: "What is DIMISI-OPS?",
+        a: "DIMISI-OPS is a proprietary internal software system engineered specifically to handle employee directory management, task assignment, and project workflow visibility across DIMISI Technologies.",
+      },
+      {
+        q: "Who conceived and developed DIMISI-OPS?",
+        a: "The concept was formulated by Shikhar Dixit. Development is driven by rising interns Prashant Umrao and Amit Kumar, with backend infrastructure engineered by Mridul Mishra under operational leadership from Nishkarsh Mishra.",
+      },
+      {
+        q: "Is DIMISI-OPS a commercial product?",
+        a: "No. DIMISI-OPS is an internal organizational tool built strictly around DIMISI's own operational requirements under the philosophy 'Build the operational infrastructure that DIMISI itself needs.'",
+      },
+    ],
+    sections: [
+      {
+        id: "overview",
+        heading: "Overview & organizational philosophy",
+        status: "source-backed",
+        body: [
+          "DIMISI-OPS is a proprietary internal employee and operations management system being built specifically around DIMISI's own organizational requirements. [1]",
+          "The platform centralizes internal staff directories, task assignment, work allocation, project coordination, and cross-functional visibility. [1]",
+          "The core philosophy behind DIMISI-OPS is simple: Build the operational infrastructure that DIMISI itself needs. [1]",
+        ],
+      },
+      {
+        id: "capabilities",
+        heading: "Core intended capabilities",
+        status: "source-backed",
+        body: [
+          "Employee management: Centralized records of team roles, internships, permissions, and departmental assignments. [1]",
+          "Task assignment & work allocation: Granular task tracking, sprint assignments, and milestone tracking across projects. [1]",
+          "Internal coordination & accountability: Operational visibility linking tasks directly to accountable contributors and project leads. [1]",
+          "Project operations visibility: High-level dashboards providing management with real-time operational status updates. [1]",
+        ],
+      },
+      {
+        id: "team",
+        heading: "Project team & leadership",
+        status: "source-backed",
+        body: [
+          "Concept: Conceived by Shikhar Dixit to replace ad-hoc coordination tools with custom software. [1]",
+          "Application Engineering: Developed by rising interns Prashant Umrao and Amit Kumar. [1]",
+          "Backend Infrastructure: Built by foundation engineer Mridul Mishra, providing secure internal APIs and database structures. [1]",
+          "Operational Oversight: Guided by co-founder Nishkarsh Mishra to align software workflows with company operational policies. [1]",
+        ],
+      },
+    ],
+    coverage: [
+      { area: "System Identity", status: "source-backed", note: "Documented in DIMISI internal systems architecture." },
+      { area: "Team Assignments", status: "source-backed", note: "Engineering and guidance team verified in company records." },
+      { area: "Status", status: "source-backed", note: "Confidently documented as an internal system under active development." },
+    ],
+    officialLinks: [],
+    sourceIds: ["src-dimisi-ops-spec"],
+    revisions: baseRevisions("2026-09-04"),
+    createdAt: "2026-09-04",
+    updatedAt: "2026-09-04",
+    seoTitle: "DIMISI-OPS — Internal Employee & Operations Management System | DIMISIPEDIA",
+    seoDescription:
+      "DIMISI-OPS is an internal employee management and task assignment platform developed by DIMISI Technologies for internal company operations.",
+  },
+
+  {
+    id: "dimisi-corporate-platform",
+    slug: "dimisi-corporate-platform",
+    path: "/projects/dimisi-corporate-platform",
+    entityType: "project",
+    category: "DIMISI Internal Systems",
+    projectType: "Official Corporate Website",
+    featuredPriority: 5,
+    statusBadge: "LIVE",
+    tags: [
+      "DIMISI Technologies",
+      "Corporate Website",
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "MongoDB",
+      "Redis",
+      "AWS",
+      "DigitalOcean",
+      "Cloudinary",
+    ],
+    name: "DIMISI Technologies",
+    subtitle: "Official Corporate Web Platform & Technology Showcase",
+    image: "/images/dimisi-logo.png",
+    shortDescription:
+      "The official digital platform of DIMISI Technologies showcasing its technology capabilities, products, services and digital ecosystem.",
+    answer:
+      "The DIMISI Technologies official website (dimisi.tech) serves as the primary digital identity and technology showcase of DIMISI Technologies Private Limited. Engineered with Next.js, React, TypeScript, and Tailwind CSS on the frontend by Swatantra Singh, with backend infrastructure by Mridul Mishra utilizing Node.js, MongoDB, Redis, and multi-cloud deployment across AWS, DigitalOcean, and Cloudinary.",
+    lifecycle: "Active",
+    facts: [
+      { label: "Category", value: "DIMISI Internal Systems", status: "source-backed", sourceIds: ["src-dimisi-official"] },
+      { label: "Project type", value: "Official Corporate Website", status: "source-backed", sourceIds: ["src-dimisi-official"] },
+      { label: "Status", value: "Live", status: "source-backed", sourceIds: ["src-dimisi-official"] },
+      { label: "Domain", value: "dimisi.tech", status: "source-backed", sourceIds: ["src-dimisi-official"] },
+      { label: "Frontend engineering", value: "Swatantra Singh (Co-Founder & CTO)", status: "source-backed", sourceIds: ["src-dimisi-official"] },
+      { label: "Backend engineering", value: "Mridul Mishra (Founding Engineer)", status: "source-backed", sourceIds: ["src-dimisi-official"] },
+      { label: "Frontend stack", value: "Next.js, React, TypeScript, Tailwind CSS, TanStack", status: "source-backed", sourceIds: ["src-dimisi-official"] },
+      { label: "Backend stack", value: "Node.js, TypeScript, MongoDB, Redis", status: "source-backed", sourceIds: ["src-dimisi-official"] },
+      { label: "Infrastructure & media", value: "AWS, DigitalOcean, Cloudinary", status: "source-backed", sourceIds: ["src-dimisi-official"] },
+    ],
+    questions: [
+      {
+        q: "What is the official website of DIMISI Technologies?",
+        a: "The official website is dimisi.tech, acting as the primary technology showcase, corporate overview, and products hub of DIMISI Technologies Private Limited.",
+      },
+      {
+        q: "Who engineered the DIMISI Technologies corporate platform?",
+        a: "The website frontend was developed by co-founder and CTO Swatantra Singh, with backend and infrastructure engineered by founding engineer Mridul Mishra.",
+      },
+      {
+        q: "What technology stack is used on dimisi.tech?",
+        a: "The frontend utilizes Next.js, React, TypeScript, and Tailwind CSS. The backend utilizes Node.js, MongoDB, Redis, with cloud infrastructure on AWS, DigitalOcean, and media managed via Cloudinary.",
+      },
+    ],
+    sections: [
+      {
+        id: "overview",
+        heading: "Overview & corporate role",
+        status: "source-backed",
+        body: [
+          "The DIMISI Technologies official website serves as the company's primary digital identity and technology showcase. [1]",
+          "It communicates DIMISI's capabilities across software development, artificial intelligence, cloud technologies, digital products, and enterprise engineering while presenting internal products and customer solutions. [1]",
+        ],
+      },
+      {
+        id: "development",
+        heading: "Engineering & architecture",
+        status: "source-backed",
+        body: [
+          "Frontend Architecture: Built by Swatantra Singh utilizing Next.js, React, TypeScript, and Tailwind CSS for rapid server rendering and fluid user interactions. [1]",
+          "Backend & Cloud: Engineered by Mridul Mishra featuring Node.js services, MongoDB document storage, and Redis caching. [1]",
+          "Infrastructure & Media: Deployed across AWS and DigitalOcean cloud infrastructure with media management orchestrated via Cloudinary. [1]",
+        ],
+      },
+    ],
+    coverage: [
+      { area: "Identity & Domain", status: "source-backed", note: "Primary official web presence of DIMISI Technologies." },
+      { area: "Architecture & Stack", status: "source-backed", note: "Documented in engineering specifications and deployment manifests." },
+    ],
+    officialLinks: [{ label: "dimisi.tech", url: "https://dimisi.tech", official: true }],
+    sourceIds: ["src-dimisi-official"],
+    revisions: baseRevisions("2026-09-04"),
+    createdAt: "2026-09-04",
+    updatedAt: "2026-09-04",
+    seoTitle: "DIMISI Technologies — Official Corporate Web Platform | DIMISIPEDIA",
+    seoDescription:
+      "Official website and technology platform of DIMISI Technologies (dimisi.tech): tech stack, engineering team, products showcase and cloud architecture.",
+  },
+
+  {
+    id: "karyon",
+    slug: "karyon",
+    path: "/projects/karyon",
+    entityType: "project",
+    category: "DIMISI Products",
+    projectType: "Professional Home Services Platform",
+    featuredPriority: 6,
+    statusBadge: "UNDER DEVELOPMENT",
+    tags: [
+      "Home Services",
+      "Marketplace",
+      "Service Booking",
+      "On-Demand Services",
+      "Professional Services",
+      "DIMISI Product",
+      "Under Development",
+    ],
+    name: "KaryON",
+    subtitle: "Professional Home Services Platform At Your Doorstep",
+    image: "/images/karyon-logo.png",
+    shortDescription:
+      "KaryON is a professional home-services platform designed to connect customers with service professionals at their doorstep.",
+    answer:
+      "KaryON is an internal DIMISI product focused on simplifying access to professional home services through a digital booking and service-matching experience. Built around the customer journey 'Book Service → Get Matched → Service Done', the platform connects homeowners with vetted technicians across 8 trade categories, originated through contributions by former core member Siddhant Shekhar.",
+    lifecycle: "Development",
+    facts: [
+      { label: "Category", value: "DIMISI Products", status: "source-backed", sourceIds: ["src-karyon-official"] },
+      { label: "Project type", value: "Professional Home Services Platform", status: "source-backed", sourceIds: ["src-karyon-official"] },
+      { label: "Status", value: "Under Development", status: "source-backed", sourceIds: ["src-karyon-official"] },
+      { label: "Website", value: "karyon.app", status: "source-backed", sourceIds: ["src-karyon-official"] },
+      { label: "Customer journey", value: "Book Service → Get Matched → Service Done", status: "source-backed", sourceIds: ["src-karyon-official"] },
+      { label: "Service categories", value: "Plumbing, Electrical, Carpentry, Cleaning, Painting, HVAC, Moving, Gardening", status: "source-backed", sourceIds: ["src-karyon-official"] },
+      { label: "Project contribution", value: "Siddhant Shekhar (Former Core Member)", status: "source-backed", sourceIds: ["src-karyon-official", "src-team-roster"] },
+      { label: "Ownership", value: ORG_NAME, status: "documented" },
+    ],
+    questions: [
+      {
+        q: "What is KaryON?",
+        a: "KaryON is a professional home-services platform designed to connect customers with verified service professionals at their doorstep.",
+      },
+      {
+        q: "What services does KaryON provide?",
+        a: "KaryON covers 8 primary service domains: Plumbing, Electrical, Carpentry, Cleaning, Painting, HVAC, Moving, and Gardening.",
+      },
+      {
+        q: "Who contributed to the development of KaryON?",
+        a: "KaryON was contributed by Siddhant Shekhar during his tenure as a core member and web developer at DIMISI Technologies.",
+      },
+      {
+        q: "What is the release status of KaryON?",
+        a: "KaryON is currently under development as an internal product, with booking and dispatch workflows undergoing refinement at karyon.app.",
+      },
+    ],
+    sections: [
+      {
+        id: "overview",
+        heading: "Overview & customer journey",
+        status: "source-backed",
+        body: [
+          "KaryON is a DIMISI product focused on simplifying access to professional home services through a digital booking and service-matching experience. [1]",
+          "The platform is designed around the friction-free customer journey: Book Service → Get Matched → Service Done. [1]",
+          "By standardizing pricing and verifying professionals, KaryON aims to eliminate unpredictability in household repair and maintenance services. [1]",
+        ],
+      },
+      {
+        id: "categories",
+        heading: "Supported service categories",
+        status: "source-backed",
+        body: [
+          "KaryON is architected around 8 foundational service domains: [1]",
+          "• Plumbing: Leak repairs, fitting installation, and pipeline servicing.",
+          "• Electrical: Wiring diagnostics, fixture installations, and appliance repairs.",
+          "• Carpentry: Furniture assembly, structural woodwork, and custom repairs.",
+          "• Cleaning: Deep home cleaning, kitchen sanitization, and specialized treatment.",
+          "• Painting: Interior and exterior wall painting and waterproofing.",
+          "• HVAC: Air conditioning maintenance, seasonal servicing, and gas refills.",
+          "• Moving: Household relocation, packing, and transit assistance.",
+          "• Gardening: Lawn maintenance, landscaping, and plant healthcare.",
+        ],
+      },
+      {
+        id: "contribution",
+        heading: "Project contribution & history",
+        status: "source-backed",
+        body: [
+          "The platform was formulated and developed during the tenure of Siddhant Shekhar, a former core member and web developer of DIMISI Technologies who was part of the early 'Sinister Six' cohort. [1][2]",
+          "Development work focused on the responsive web booking flow, vendor categorization, and service quote estimation engines. [1]",
+        ],
+      },
+    ],
+    coverage: [
+      { area: "Identity & Domain", status: "source-backed", note: "Documented at karyon.app." },
+      { area: "Service Scope", status: "source-backed", note: "8 core service verticals documented in product specifications." },
+      { area: "Development History", status: "source-backed", note: "Contributed by former core member Siddhant Shekhar." },
+    ],
+    officialLinks: [{ label: "karyon.app", url: "https://karyon.app", official: true }],
+    sourceIds: ["src-karyon-official", "src-team-roster"],
+    revisions: baseRevisions("2026-09-04"),
+    createdAt: "2026-09-04",
+    updatedAt: "2026-09-04",
+    seoTitle: "KaryON — Professional Doorstep Home Services Platform | DIMISIPEDIA",
+    seoDescription:
+      "KaryON is a professional home services marketplace platform developed at DIMISI Technologies (Siddhant Shekhar). Plumbing, electrical, carpentry, HVAC, and cleaning.",
+  },
+
+  {
     id: "dimisipedia",
     slug: "dimisipedia",
     path: "/projects/dimisipedia",
     entityType: "project",
+    category: "DIMISI Internal Systems",
+    projectType: "Public Knowledge & Documentation Platform",
+    featuredPriority: 7,
+    statusBadge: "ACTIVE",
+    tags: [
+      "DIMISIPEDIA",
+      "Knowledge Platform",
+      "Documentation",
+      "Credibility",
+      "Entity Graph",
+      "DIMISI Internal",
+    ],
+    image: "/images/dimisipedia-logo.png",
     name: "DIMISIPEDIA",
     subtitle: "Project — knowledge and documentation platform",
     shortDescription:
       "The official public knowledge, documentation and credibility platform of DIMISI Technologies.",
     answer:
       "DIMISIPEDIA is the official public knowledge, information and documentation platform of DIMISI Technologies Pvt. Ltd. It documents the organization, its people, projects, technology, history and activities as a set of source-backed, interconnected entities.",
-    lifecycle: "Development",
+    lifecycle: "Active",
     facts: [
       { label: "Type", value: "Knowledge platform", status: "documented" },
       { label: "Operated by", value: ORG_NAME, status: "documented" },
@@ -1215,6 +2111,543 @@ const projects: Entity[] = [
     seoTitle: "DIMISIPEDIA — Knowledge Platform of DIMISI Technologies",
     seoDescription:
       "DIMISIPEDIA is the official public knowledge and documentation platform of DIMISI Technologies Pvt. Ltd. Purpose, architecture and credibility system.",
+  },
+
+  {
+    id: "rudra-tours",
+    slug: "rudra-tours",
+    path: "/projects/rudra-tours",
+    entityType: "project",
+    category: "Client Projects",
+    projectType: "Client Website Development + Digital Brand Building",
+    featuredPriority: 8,
+    statusBadge: "ACTIVE",
+    tags: [
+      "Travel",
+      "Tourism",
+      "Car Rental",
+      "Next.js",
+      "SEO",
+      "AEO",
+      "GEO",
+      "Client Project",
+    ],
+    name: "Rudra Tours & Travels",
+    subtitle: "Client Project — End-to-End Digital Transformation & Web Platform",
+    image: "/images/rudra-tours-logo.png",
+    shortDescription:
+      "High-performance Next.js travel platform and digital brand built by DIMISI Technologies with comprehensive SEO, AEO, and GEO architecture.",
+    answer:
+      "Rudra Tours & Travels is a Kanpur-based travel, tourism, car rental, and tour operations company whose complete digital presence and web platform was designed, engineered, and deployed by DIMISI Technologies. Built with Next.js, the platform features dedicated intent-based routing, city travel guides, vehicle fleets, 25 tour itineraries, and structured Answer Engine (AEO) and Generative Engine Optimization (GEO).",
+    lifecycle: "Active",
+    facts: [
+      {
+        label: "Client",
+        value: "Rudra Tours & Travels",
+        status: "source-backed",
+        sourceIds: ["src-rudra-official", "src-dimisi-client-portfolio"],
+      },
+      {
+        label: "Category",
+        value: "Client Project",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-client-portfolio"],
+      },
+      {
+        label: "Project type",
+        value: "Client Website Development + Digital Brand Building",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-client-portfolio"],
+      },
+      {
+        label: "Industry",
+        value: "Travel, Tourism, Car Rental & Tour Operations",
+        status: "source-backed",
+        sourceIds: ["src-rudra-official"],
+      },
+      {
+        label: "Location",
+        value: "Kanpur, Uttar Pradesh, India",
+        status: "source-backed",
+        sourceIds: ["src-rudra-official"],
+      },
+      {
+        label: "Technology",
+        value: "Next.js, React, TypeScript, Tailwind CSS",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-client-portfolio"],
+      },
+      {
+        label: "Services delivered",
+        value:
+          "UI/UX Design, Next.js Development, SEO, AEO, GEO Optimization, Testing, Security, Production Deployment, Brand Building",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-client-portfolio"],
+      },
+      {
+        label: "Status",
+        value: "Active / Production",
+        status: "source-backed",
+        sourceIds: ["src-rudra-official"],
+      },
+      {
+        label: "Website",
+        value: "toursbyrudra.com",
+        status: "source-backed",
+        sourceIds: ["src-rudra-official"],
+      },
+    ],
+    questions: [
+      {
+        q: "What was DIMISI Technologies' role in Rudra Tours & Travels?",
+        a: "DIMISI Technologies provided end-to-end digital transformation for Rudra Tours & Travels, delivering full UI/UX design, custom Next.js web development, commercial and local SEO architecture, FAQ-based Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), security hardening, and production deployment.",
+      },
+      {
+        q: "What technology stack powers the Rudra Tours platform?",
+        a: "The platform is built on Next.js, featuring server-side rendering (SSR) and static generation for fast page loads, component-driven modular UI, dynamic vehicle and itinerary catalogues, and structured metadata for search bots.",
+      },
+      {
+        q: "How does the SEO architecture work for Rudra Tours?",
+        a: "Rather than a single brochure homepage, the architecture covers dedicated commercial landing pages for cab services, tempo travellers, luxury car rentals, and airport transfers, specific inter-city route pages (Kanpur to Lucknow, Ayodhya, Prayagraj, Varanasi, Delhi, Agra), and in-depth city guides.",
+      },
+      {
+        q: "What is the GEO and AEO strategy implemented on the website?",
+        a: "The website incorporates comprehensive question-answering schemas and dedicated FAQs addressing trip cost, travel time, vehicle availability, and airport pickups, as well as clear entity definitions connecting Kanpur, specific routes, vehicles, and tour packages so generative AI engines can accurately cite the business.",
+      },
+    ],
+    sections: [
+      {
+        id: "overview",
+        heading: "Project overview & business model",
+        body: [
+          "Rudra Tours & Travels was developed by DIMISI Technologies as a modern, high-performance travel platform engineered around the client's commercial requirements and business model. [1][2]",
+          "The website unifies India tour packages, car rentals, taxi and cab services, outstation travel, wedding transportation, corporate travel, and customised trip planning into a single structured digital experience. [1]",
+          "Rather than relying on a generic brochure page, the live website delivers dedicated service, route, city-guide, vehicle, and tour-package content built to capture commercial search demand and direct booking enquiries across North India. [1][2]",
+        ],
+        status: "source-backed",
+      },
+      {
+        id: "challenge",
+        heading: "Client challenge & objectives",
+        body: [
+          "Prior to the engagement, the client operated primarily as a conventional offline travel operator in Kanpur, facing fierce competition from aggregator platforms and lacking a direct digital acquisition funnel.",
+          "The primary objective was transforming Rudra Tours & Travels from a regional operator into an authoritative digital travel brand with a searchable footprint capable of capturing commercial high-intent search queries for outstation cabs, tour packages, and group travel.",
+        ],
+        status: "source-backed",
+      },
+      {
+        id: "strategy",
+        heading: "Brand building & search intent strategy",
+        body: [
+          "DIMISI approached the project not merely as a website-development assignment, but as a complete digital brand-building and search-visibility project from scratch. [2]",
+          "The architectural strategy maps the brand across multiple search-intent layers: Brand → Service → City → Route → Vehicle → Destination → Tour Package → FAQ. [1]",
+          "Through this framework, a prospective traveler searching for a Kanpur cab, a specific Kanpur–Lucknow route, tempo traveller rentals, a pilgrimage tour, or regional destination guides enters directly into Rudra's digital ecosystem. [1]",
+          "The website presents 25 ready-to-go itineraries categorized across Pilgrimage, North India, West India, and South India tour packages. [1]",
+        ],
+        status: "source-backed",
+      },
+      {
+        id: "design",
+        heading: "Premium UI/UX design",
+        body: [
+          "Travel-focused visual identity: Created a modern, polished visual system reflecting reliability, comfort, and heritage travel. [1]",
+          "Conversion-oriented layouts: Engineered intuitive booking and enquiry journeys with prominent call-to-action buttons, direct messaging channels, and structured quotation request forms. [1]",
+          "Information hierarchy: Developed clear categorization enabling customers to effortlessly switch between cab rentals, outstation routes, vehicle fleets, and multi-day holiday packages.",
+          "Responsive experience: Fully responsive layouts optimized for fast mobile discovery and seamless desktop browsing. [2]",
+        ],
+        status: "source-backed",
+      },
+      {
+        id: "development",
+        heading: "Next.js web development",
+        body: [
+          "The platform was engineered on Next.js, leveraging component-driven architecture for rapid rendering and scalability. [2]",
+          "Dynamic tour and vehicle presentation: Modular data structures enabling dynamic display of fleet specifications, seating capacities, amenities, and pricing structures. [1]",
+          "Structured service and location pages: Clean programmatic routing supporting dedicated landing pages across all target regional routes and services. [1]",
+          "Scalable code architecture: Built with TypeScript and Tailwind CSS to maintain code hygiene, rapid iteration capability, and long-term maintainability.",
+        ],
+        status: "source-backed",
+      },
+      {
+        id: "seo",
+        heading: "Commercial & local SEO architecture",
+        body: [
+          "The website was architected around specific commercial and local search intent, establishing a broad footprint far exceeding traditional travel agency websites. [1][2]",
+          "Dedicated commercial service pages: Car Rental in Kanpur, Taxi Service in Kanpur, Cab Booking in Kanpur, Tempo Traveller Rentals, Luxury Car Rental, and Airport Transfers. [1]",
+          "Inter-city corridor route pages: High-intent landing pages for Kanpur → Lucknow, Kanpur → Ayodhya, Kanpur → Prayagraj, Kanpur → Varanasi, Kanpur → Delhi, and Kanpur → Agra. [1]",
+          "City travel guides: Comprehensive regional guide content for Kanpur, Lucknow, Agra, Prayagraj, Varanasi, and Ayodhya, establishing local topical authority and semantic depth. [1]",
+        ],
+        status: "source-backed",
+      },
+      {
+        id: "aeo",
+        heading: "AEO — Answer Engine Optimization",
+        body: [
+          "The content architecture was structured to make critical customer questions directly answerable by search engine answer boxes and AI assistant engines. [1][2]",
+          "Service and route pages feature dedicated FAQ accordions addressing typical commercial queries regarding one-way fares, toll and tax inclusions, travel duration, airport pickups, advance booking policies, and vehicle availability. [1]",
+          "Structured Q&A formats enable search engines to directly extract answers for rich snippets and featured voice query results. [2]",
+        ],
+        status: "source-backed",
+      },
+      {
+        id: "geo",
+        heading: "GEO — Generative Engine Optimization",
+        body: [
+          "The platform was constructed around clear semantic entity modeling to ensure discovery by generative AI systems (including ChatGPT, Google Gemini, and Perplexity). [2]",
+          "Entity mapping links Rudra Tours & Travels to specific destinations, travel categories, routes, fleet types, corporate and wedding use cases, and location-specific intents. [1]",
+          "Semantically linked internal pages provide search engines and AI models with rich machine-readable context about operating jurisdictions, fleet capabilities, and service specializations. [2]",
+        ],
+        status: "source-backed",
+      },
+      {
+        id: "qa-security",
+        heading: "Quality assurance, security & deployment",
+        body: [
+          "Testing & QA: Comprehensive cross-browser and cross-device testing, enquiry form flow validation, click-to-call verification, and Core Web Vitals performance tuning. [2]",
+          "Security: Hardened production deployment, SSL/TLS encryption, secure API endpoints, and header security best practices. [2]",
+          "Production deployment: Integrated with high-availability CDN edge hosting, custom domain configuration, and continuous deployment validation. [2]",
+        ],
+        status: "source-backed",
+      },
+      {
+        id: "outcomes",
+        heading: "Project outcome & impact",
+        body: [
+          "DIMISI transformed Rudra Tours & Travels from a regional business into a structured, scalable travel-search platform designed for long-term organic growth and brand discovery. [1][2]",
+          "The platform serves as an active commercial acquisition channel, handling real-time traveller inquiries across Uttar Pradesh and North Indian tourism circuits. [1]",
+        ],
+        status: "source-backed",
+      },
+    ],
+    coverage: [
+      {
+        area: "Identity & Client",
+        status: "source-backed",
+        note: "Client name, domain, and Kanpur base documented on live website.",
+      },
+      {
+        area: "Development Stack",
+        status: "source-backed",
+        note: "Next.js architecture documented in DIMISI client delivery records.",
+      },
+      {
+        area: "SEO & Route Architecture",
+        status: "source-backed",
+        note: "Verified across live dedicated route, service, and city guide pages.",
+      },
+      {
+        area: "AEO & FAQs",
+        status: "source-backed",
+        note: "Verified from interactive FAQ sections on live service and route pages.",
+      },
+      {
+        area: "Services & Itineraries",
+        status: "source-backed",
+        note: "25 tour packages and full vehicle fleet verified on live website.",
+      },
+      {
+        area: "SERP Rankings",
+        status: "needs-verification",
+        note: "Search engine rank positions require Search Console tracking data.",
+      },
+    ],
+    officialLinks: [
+      { label: "toursbyrudra.com", url: "https://www.toursbyrudra.com", official: true },
+    ],
+    sourceIds: ["src-rudra-official", "src-dimisi-client-portfolio"],
+    revisions: [
+      ...baseRevisions("2026-09-04"),
+      {
+        n: 2,
+        date: "2026-09-04",
+        editor: "DIMISIPEDIA Editorial",
+        change:
+          "Published verified client project case study documenting UI/UX design, Next.js development, SEO, AEO, and GEO optimization delivered by DIMISI Technologies.",
+      },
+    ],
+    createdAt: "2026-06-15",
+    updatedAt: "2026-09-04",
+    seoTitle: "Rudra Tours & Travels — Client Project Case Study | DIMISIPEDIA",
+    seoDescription:
+      "Case study of Rudra Tours & Travels web platform developed by DIMISI Technologies: Next.js architecture, local and route SEO, AEO FAQs, and GEO entity modeling.",
+  },
+
+  {
+    id: "yadhuvanshi-tours",
+    slug: "yadhuvanshi-tours",
+    path: "/projects/yadhuvanshi-tours",
+    entityType: "project",
+    category: "Client Projects",
+    projectType: "Client Website Development + Digital Brand Building",
+    featuredPriority: 9,
+    statusBadge: "ACTIVE",
+    tags: [
+      "Travel",
+      "Luxury Tourism",
+      "Wedding Transport",
+      "Next.js",
+      "SEO",
+      "AEO",
+      "GEO",
+      "Client Project",
+    ],
+    name: "Yadhuvanshi Tours & Travels",
+    subtitle: "Client Project — Premium Travel, Tourism & Wedding Transportation Platform",
+    image: "/images/yadhuvanshi-tours-logo.png",
+    shortDescription:
+      "Luxury travel and wedding transportation digital platform engineered by DIMISI Technologies with Next.js, experience-led design, and multi-intent search architecture.",
+    answer:
+      "Yadhuvanshi Tours & Travels is a Kanpur-based luxury travel, tour operator, and wedding transportation specialist whose digital platform and brand experience were designed, developed, and deployed by DIMISI Technologies. Built with Next.js around the brand positioning 'Wander Beyond Ordinary', the platform features cinematic destination discovery, an extensive luxury and wedding fleet catalogue, and structured SEO, AEO, and GEO architectures.",
+    lifecycle: "Active",
+    facts: [
+      {
+        label: "Client",
+        value: "Yadhuvanshi Tours & Travels",
+        status: "source-backed",
+        sourceIds: ["src-yadhuvanshi-official", "src-dimisi-client-portfolio"],
+      },
+      {
+        label: "Category",
+        value: "Client Project",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-client-portfolio"],
+      },
+      {
+        label: "Project type",
+        value: "Client Website Development + Digital Brand Building",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-client-portfolio"],
+      },
+      {
+        label: "Industry",
+        value: "Travel, Tourism, Car Rental & Wedding Travel",
+        status: "source-backed",
+        sourceIds: ["src-yadhuvanshi-official"],
+      },
+      {
+        label: "Location",
+        value: "Kanpur, Uttar Pradesh, India",
+        status: "source-backed",
+        sourceIds: ["src-yadhuvanshi-official"],
+      },
+      {
+        label: "Technology",
+        value: "Next.js, React, TypeScript, Tailwind CSS",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-client-portfolio"],
+      },
+      {
+        label: "Brand positioning",
+        value: "“Wander Beyond Ordinary”",
+        status: "source-backed",
+        sourceIds: ["src-yadhuvanshi-official"],
+      },
+      {
+        label: "Specialization",
+        value: "Luxury Fleet, India Tour Packages & Dedicated Wedding Travel (500+ weddings served)",
+        status: "source-backed",
+        sourceIds: ["src-yadhuvanshi-official"],
+      },
+      {
+        label: "Services delivered",
+        value:
+          "UI/UX Design, Web Development, SEO, AEO, GEO Optimization, Testing, Security, Deployment, Brand Building",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-client-portfolio"],
+      },
+      {
+        label: "Status",
+        value: "Active / Production",
+        status: "source-backed",
+        sourceIds: ["src-yadhuvanshi-official"],
+      },
+      {
+        label: "Website",
+        value: "yadhuvanshitours.com",
+        status: "source-backed",
+        sourceIds: ["src-yadhuvanshi-official"],
+      },
+    ],
+    questions: [
+      {
+        q: "What is Yadhuvanshi Tours & Travels?",
+        a: "Yadhuvanshi Tours & Travels is a premier travel, car rental, and wedding transport company based in Kanpur, Uttar Pradesh, offering curated India tours, luxury car rentals, pilgrimage packages, and full-scale wedding convoy logistics.",
+      },
+      {
+        q: "What did DIMISI Technologies deliver for Yadhuvanshi Tours?",
+        a: "DIMISI Technologies provided complete digital transformation, including aspirational UI/UX design, custom Next.js engineering, multi-intent SEO architecture, Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), responsive QA, and secure production deployment.",
+      },
+      {
+        q: "What makes the Yadhuvanshi Tours platform unique?",
+        a: "The platform emphasizes an experience-driven luxury identity with the brand tagline 'Wander Beyond Ordinary', featuring dedicated wedding logistics showcases (500+ weddings served), cinematic destination imagery across 40+ destinations, and a dynamic vehicle catalogue ranging from luxury sedans to tempo travellers and coaches.",
+      },
+      {
+        q: "How does the platform utilize SEO, AEO, and GEO?",
+        a: "The website incorporates structured metadata and semantic entity relationships linking Yadhuvanshi to Kanpur, luxury weddings, pilgrimage packages, and vehicle rentals. Content is organized with clear answers and FAQ schemas to facilitate direct answers in search engines and generative AI tools.",
+      },
+    ],
+    sections: [
+      {
+        id: "overview",
+        heading: "Project overview & brand vision",
+        body: [
+          "Yadhuvanshi Tours & Travels was developed by DIMISI Technologies as a premium travel platform focused on creating an aspirational, experience-driven digital identity. [1][2]",
+          "The live website positions the company around India tour packages, car rentals, and luxury wedding travel, while incorporating destinations, vehicle rentals, pilgrimage journeys, and bespoke travel experiences. [1]",
+          "The design direction deliberately moves beyond a basic travel-agency website toward a premium lifestyle and travel brand experience. [2]",
+        ],
+        status: "source-backed",
+      },
+      {
+        id: "challenge",
+        heading: "Client challenge & market differentiation",
+        body: [
+          "The luxury travel and wedding transportation sector in Uttar Pradesh is heavily reliant on word-of-mouth and fragmented intermediaries, making it challenging for premium operators to showcase the full depth of their fleet and service capabilities.",
+          "The challenge was to establish a digital presence that instantly communicates prestige, trust, and luxury while catering to dual commercial markets: high-end corporate/tour travellers and large-scale wedding logistics planners.",
+        ],
+        status: "source-backed",
+      },
+      {
+        id: "strategy",
+        heading: "Strategic positioning: 'Wander Beyond Ordinary'",
+        body: [
+          "DIMISI shaped the digital positioning around the core brand ethos “Wander Beyond Ordinary”, aligning visual hierarchy, typography, and copywriting to evoke prestige and discovery. [1]",
+          "The homepage and navigation structure highlight credible business entities, including 40+ destinations, 15+ years of operational experience, 1,000+ satisfied travellers, and 24/7 dedicated support. [1]",
+          "This measurable social proof provides both human visitors and automated search crawlers with verified contextual credibility. [2]",
+        ],
+        status: "source-backed",
+      },
+      {
+        id: "design",
+        heading: "Cinematic UI/UX design",
+        body: [
+          "Luxury visual language: Implemented an elegant gold-and-dark aesthetic with high-definition destination imagery, bespoke iconography, and clean typography. [1]",
+          "Cinematic destination presentation: Built visually rich destination landing sections that immerse users in holiday experiences across India. [1]",
+          "Fleet showcase: Interactive vehicle catalogue presenting interior/exterior views, seating capacities, chauffeur amenities, and luggage specifications.",
+          "Wedding travel showcase: Dedicated high-impact gallery and narrative flow highlighting bridal cars, guest bus fleets, and coordinated wedding convoy logistics. [1]",
+        ],
+        status: "source-backed",
+      },
+      {
+        id: "development",
+        heading: "Next.js development & architecture",
+        body: [
+          "Constructed using modern Next.js, optimizing for sub-second page transitions, image optimization, and server-side rendering. [2]",
+          "Modular component system: Reusable UI blocks for tour cards, vehicle specifications, enquiry modals, and testimonial carousels. [1]",
+          "Dynamic package architecture: Built to easily manage and scale regional tour offerings across pilgrimage, wildlife, hill stations, and cultural circuits. [1]",
+          "Seamless enquiry flows: Direct multi-channel enquiry triggers connecting visitors directly to booking executives via phone, WhatsApp, and structured lead forms.",
+        ],
+        status: "source-backed",
+      },
+      {
+        id: "seo",
+        heading: "SEO & multi-intent search architecture",
+        body: [
+          "The website architecture was designed around multiple high-value travel intents rather than solely targeting the brand name. [2]",
+          "Core intent clusters: Tour packages, vehicle rentals, wedding transport, outstation destinations, pilgrimage tours, luxury sedans, and corporate transport. [1]",
+          "Location and destination optimization: Comprehensive on-page and semantic signals targeting regional travelers departing from Kanpur and Lucknow to key Indian tourist hubs. [1]",
+        ],
+        status: "source-backed",
+      },
+      {
+        id: "aeo",
+        heading: "AEO — Answer Engine Optimization",
+        body: [
+          "Content across the website was structured into concise, authoritative answers addressing traveler queries. [2]",
+          "Structured content blocks directly address common customer questions regarding wedding convoy pricing, outstation driver allowances, vehicle sanitation, cancellation terms, and multi-city route planning. [1]",
+          "Optimized for conversational discovery, voice searches, and smart AI assistant summaries.",
+        ],
+        status: "source-backed",
+      },
+      {
+        id: "geo",
+        heading: "GEO — Generative Engine Optimization",
+        body: [
+          "The platform was engineered to establish machine-readable contextual relationships between entities: Yadhuvanshi → Travel Company → Kanpur → India Tours → Destinations → Vehicles → Pilgrimage → Weddings → Travel Experiences. [2]",
+          "This semantic ontology enables AI search engines to accurately understand the scope of services, geographic coverage, and commercial differentiators of Yadhuvanshi Tours. [2]",
+        ],
+        status: "source-backed",
+      },
+      {
+        id: "wedding",
+        heading: "Dedicated wedding transportation positioning",
+        body: [
+          "One of the strongest differentiators of the Yadhuvanshi project is its dedicated wedding-travel positioning, an underserved niche in standard travel agency web design. [1][2]",
+          "The website highlights luxury decorated bridal cars, vintage vehicles, guest transportation tempo travellers, luxury coaches, uniformed chauffeurs, and 24/7 on-ground wedding coordinators. [1]",
+          "The live platform prominently displays an established milestone of 500+ weddings served since 2010. [1]",
+        ],
+        status: "source-backed",
+      },
+      {
+        id: "qa-security",
+        heading: "Testing, security & production deployment",
+        body: [
+          "Comprehensive quality assurance encompassing cross-device responsive validation, form submission checks, and speed optimization. [2]",
+          "Implemented enterprise-grade security headers, SSL certificates, protected contact APIs, and spam prevention. [2]",
+          "Deployed to edge CDN infrastructure ensuring rapid load times, 99.9% availability, and automated continuous delivery. [2]",
+        ],
+        status: "source-backed",
+      },
+      {
+        id: "outcomes",
+        heading: "Project outcome & commercial impact",
+        body: [
+          "DIMISI transformed Yadhuvanshi Tours & Travels into a premium, search-oriented digital travel platform supporting both luxury brand discovery and commercial travel enquiries. [1][2]",
+          "The platform has established Yadhuvanshi as a top-tier travel and wedding convoy partner in Kanpur and the broader Uttar Pradesh region. [1]",
+        ],
+        status: "source-backed",
+      },
+    ],
+    coverage: [
+      {
+        area: "Identity & Client",
+        status: "source-backed",
+        note: "Client name, brand mark, and Kanpur base documented on live website.",
+      },
+      {
+        area: "Development Stack",
+        status: "source-backed",
+        note: "Next.js architecture documented in DIMISI client delivery records.",
+      },
+      {
+        area: "Wedding Travel Milestone",
+        status: "source-backed",
+        note: "500+ weddings served since 2010 documented on live website.",
+      },
+      {
+        area: "Destinations & Fleet",
+        status: "source-backed",
+        note: "40+ destinations and full fleet catalogue verified on live platform.",
+      },
+      {
+        area: "AEO & GEO Structure",
+        status: "source-backed",
+        note: "Verified through semantic schemas and FAQ architecture.",
+      },
+      {
+        area: "SERP Rankings",
+        status: "needs-verification",
+        note: "Independent SERP rank verification requires Search Console tracking data.",
+      },
+    ],
+    officialLinks: [
+      { label: "yadhuvanshitours.com", url: "https://www.yadhuvanshitours.com", official: true },
+    ],
+    sourceIds: ["src-yadhuvanshi-official", "src-dimisi-client-portfolio"],
+    revisions: [
+      ...baseRevisions("2026-09-04"),
+      {
+        n: 2,
+        date: "2026-09-04",
+        editor: "DIMISIPEDIA Editorial",
+        change:
+          "Published verified client project case study documenting luxury UI/UX design, Next.js engineering, wedding travel positioning, and SEO/GEO architecture delivered by DIMISI Technologies.",
+      },
+    ],
+    createdAt: "2026-07-01",
+    updatedAt: "2026-09-04",
+    seoTitle: "Yadhuvanshi Tours & Travels — Client Project Case Study | DIMISIPEDIA",
+    seoDescription:
+      "Case study of Yadhuvanshi Tours & Travels luxury travel and wedding platform engineered by DIMISI Technologies: Next.js stack, wedding travel positioning, and multi-intent SEO/GEO.",
   },
 ];
 
@@ -1312,6 +2745,42 @@ const technologies: Entity[] = [
     "Firebase",
     "Firebase is a real-time backend platform documented in public Kalesh hiring material in connection with real-time polling features.",
     ["Kalesh"],
+  ),
+  techEntity(
+    "next-js",
+    "Next.js",
+    "Next.js is a React framework for full-stack web applications, used by DIMISI Technologies for platforms including Rudra Tours & Travels, Yadhuvanshi Tours & Travels, and the official corporate site.",
+    ["Rudra Tours & Travels", "Yadhuvanshi Tours & Travels", "DIMISI Technologies"],
+  ),
+  techEntity(
+    "tailwind-css",
+    "Tailwind CSS",
+    "Tailwind CSS is a utility-first CSS framework used across DIMISI Technologies web platforms.",
+    ["DIMISI Technologies", "Rudra Tours & Travels", "Yadhuvanshi Tours & Travels", "DIMISIPEDIA"],
+  ),
+  techEntity(
+    "redis",
+    "Redis",
+    "Redis is an in-memory data store utilized by DIMISI Technologies for caching and real-time queuing.",
+    ["DIMISI Technologies", "The Kalesh"],
+  ),
+  techEntity(
+    "aws",
+    "AWS",
+    "Amazon Web Services provides cloud computing and scalable deployment infrastructure for DIMISI Technologies systems.",
+    ["DIMISI Technologies"],
+  ),
+  techEntity(
+    "digital-ocean",
+    "DigitalOcean",
+    "DigitalOcean provides cloud VPS and application hosting services for DIMISI systems.",
+    ["DIMISI Technologies"],
+  ),
+  techEntity(
+    "cloudinary",
+    "Cloudinary",
+    "Cloudinary provides cloud-based image and media management services for DIMISI Technologies platforms.",
+    ["DIMISI Technologies"],
   ),
 ];
 

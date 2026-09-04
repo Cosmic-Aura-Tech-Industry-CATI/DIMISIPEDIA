@@ -71,13 +71,15 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center gap-4 px-5 py-3.5">
         <Link to="/" className="group flex shrink-0 items-center gap-2.5">
           <img
-            src="/images/dimisi-mark.webp"
-            alt="DIMISI Technologies logo"
+            src="/images/dimisipedia-logo.png"
+            alt="DIMISIPEDIA logo"
             width={28}
             height={28}
-            className="size-7 object-contain"
+            className="size-7 object-contain drop-shadow-sm"
           />
-          <span className="font-serif text-lg tracking-[0.02em]">DIMISIPEDIA</span>
+          <span className="font-serif text-lg tracking-[0.02em] notranslate" translate="no">
+            DIMISIPEDIA
+          </span>
           <span className="ml-2 hidden text-[11px] text-muted-foreground sm:inline">
             Knowledge Encyclopedia
           </span>
@@ -154,17 +156,23 @@ export function SiteFooter() {
         <div>
           <div className="flex items-center gap-2.5">
             <img
-              src="/images/dimisi-mark.webp"
-              alt="DIMISI Technologies logo"
+              src="/images/dimisipedia-logo.png"
+              alt="DIMISIPEDIA logo"
               width={32}
               height={32}
-              className="size-8 object-contain"
+              className="size-8 object-contain drop-shadow-sm"
             />
-            <p className="font-serif text-lg">DIMISIPEDIA</p>
+            <p className="font-serif text-lg notranslate" translate="no">
+              DIMISIPEDIA
+            </p>
           </div>
           <p className="mt-2 max-w-sm text-sm text-muted-foreground">
-            The Knowledge Encyclopedia of DIMISI Technologies — documenting the organization, its
-            people, projects, technology and history through source-backed information.
+            The Knowledge Encyclopedia of{" "}
+            <span className="notranslate font-medium text-foreground" translate="no">
+              DIMISI Technologies
+            </span>{" "}
+            — documenting the organization, its people, projects, technology and history through
+            source-backed information.
           </p>
 
           <div className="mt-6 flex flex-col gap-2">
@@ -217,7 +225,8 @@ export function SiteFooter() {
             <li>
               <Link
                 to="/dimisi-technologies"
-                className="text-muted-foreground hover:text-foreground"
+                className="text-muted-foreground hover:text-foreground notranslate"
+                translate="no"
               >
                 DIMISI Technologies
               </Link>
@@ -227,7 +236,8 @@ export function SiteFooter() {
                 href="https://dimisi.tech"
                 rel="noreferrer noopener"
                 target="_blank"
-                className="text-muted-foreground hover:text-foreground"
+                className="text-muted-foreground hover:text-foreground notranslate"
+                translate="no"
               >
                 dimisi.tech
               </a>
@@ -248,7 +258,11 @@ export function SiteFooter() {
       <div className="rule-t">
         <div className="mx-auto flex max-w-6xl flex-col items-start gap-4 px-5 py-5 sm:flex-row sm:items-center sm:justify-between">
           <p className="min-w-0 text-xs text-muted-foreground">
-            Operated by DIMISI Technologies Pvt. Ltd. · Kanpur, Uttar Pradesh, India
+            Operated by{" "}
+            <span className="notranslate" translate="no">
+              DIMISI Technologies Pvt. Ltd.
+            </span>{" "}
+            · Kanpur, Uttar Pradesh, India
           </p>
           <a
             href="https://dimisi.tech"

@@ -16,4 +16,5 @@ export function safeExternalHref(raw?: string | null): string | null {
 }
 
 export const EXTERNAL_REL = "noopener noreferrer external";
+export const EXTERNAL_REL_VERIFIED = "me noopener noreferrer external";
 export const EXTERNAL_REL_UNTRUSTED = "noopener noreferrer external nofollow ugc";

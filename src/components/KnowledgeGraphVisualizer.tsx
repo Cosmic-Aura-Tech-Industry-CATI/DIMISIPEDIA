@@ -128,7 +128,7 @@ export function KnowledgeGraphVisualizer() {
         y: 390,
         r: 34,
         color: "#f59e0b",
-        image: "/images/dimisi-mark.webp",
+        image: "/images/dimisipedia-logo.png",
       },
       // Core Technologies (Outer Orbit)
       {

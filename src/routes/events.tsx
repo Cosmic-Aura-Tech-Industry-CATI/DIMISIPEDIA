@@ -55,20 +55,20 @@ const documentedEvents: EventItem[] = [
       "To drive organic user adoption and nationwide campus awareness for Kalesh (the anonymous social polling and campus engagement platform), the founding team launched an intensive 30-day posting and promotion contest on LinkedIn.",
       "The initiative challenged student creators, engineering campus influencers, and developers to share daily authentic startup stories, viral opinion polls, engineering breakdowns, and campus culture reflections centered around the iconic tagline 'Chalo Kalesh Karey'.",
       "Over the course of 30 days, the campaign generated significant organic impressions across student engineering networks, establishing strong word-of-mouth growth and direct download traffic to TheKalesh.com without paid marketing expenditure.",
-      "On 15 August 2026, at the conclusion of the challenge, the founding directors hosted a celebratory felicitation ceremony, presenting the First Prize Winner with an official DIMISI Technologies Certificate of Achievement and custom awards.",
+      "On 15 August 2026, at the conclusion of the challenge, the founding directors hosted a celebratory felicitation ceremony, presenting 1st Prize Winner Prashant Umrao with an official DIMISI Technologies Certificate of Achievement and custom awards.",
     ],
     highlights: [
       "30 consecutive days of founder storytelling, opinion polls, and viral creator challenges",
-      "Official felicitation ceremony on 15 August 2026 awarding the 1st Prize Winner with a Certificate of Achievement",
+      "Official felicitation ceremony on 15 August 2026 awarding 1st Prize Winner Prashant Umrao with a Certificate of Achievement",
       "Zero-budget organic growth campaign driving student adoption across North Indian colleges",
       "Widespread community engagement around the movement 'Chalo Kalesh Karey'",
     ],
     images: [
       {
         src: "/images/first prize winner 30 days.jpeg",
-        alt: "First prize winner receiving the official DIMISI Technologies Certificate of Achievement and trophy",
+        alt: "Prashant Umrao receiving the official DIMISI Technologies Certificate of Achievement and trophy as first prize winner",
         caption:
-          "Awards Ceremony · 15 August 2026: Co-Founder Swatantra Singh presenting the 1st Prize Certificate of Achievement to the LinkedIn 30-Day Challenge winner.",
+          "Awards Ceremony · 15 August 2026: Co-Founder Swatantra Singh presenting the 1st Prize Certificate of Achievement to Prashant Umrao, winner of the LinkedIn 30-Day Challenge.",
       },
       {
         src: "/images/30 days linkedin.jpeg",
@@ -78,6 +78,7 @@ const documentedEvents: EventItem[] = [
       },
     ],
     relatedEntities: [
+      { label: "Prashant Umrao", to: "/people/prashant-umrao" },
       { label: "Kalesh", to: "/projects/kalesh" },
       { label: "DIMISI Technologies", to: "/dimisi-technologies" },
       { label: "Shikhar Dixit", to: "/people/shikhar-dixit" },

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Check, ChevronDown, Sparkles } from "lucide-react";
 import { setHinglishActive } from "@/lib/hinglishEngine";
+import { protectBrandElements } from "@/lib/brandProtection";
 
 export type LanguageOption =
   | "en"
@@ -147,6 +148,8 @@ export function useLanguage() {
     }
 
     window.dispatchEvent(new CustomEvent("dp-language-change", { detail: newLang }));
+    setTimeout(() => protectBrandElements(), 100);
+    setTimeout(() => protectBrandElements(), 700);
 
     // Trigger Google Translate frame if target is not plain English
     if (newLang !== "en" && newLang !== "hinglish") {

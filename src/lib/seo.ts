@@ -9,6 +9,15 @@
  */
 import type { Entity, Source } from "@/data/knowledge";
 import { ORG_NAME, entities, getSources, relationsFor } from "@/data/knowledge";
+import {
+  articleContents,
+  articleEntities,
+  articlePath,
+  articleSources,
+  publishedArticles,
+  resolveAuthor,
+  type Article,
+} from "@/data/articles";
 
 /** Production origin. Change here if the canonical domain ever changes. */
 export const SITE_URL = "https://dimisipedia.me";
@@ -218,6 +227,7 @@ export function buildPersonSchema(entity: Entity): Json {
   const related = relationsFor(entity.id);
   const orgs = related.filter((r) => r.entity.entityType === "organization");
   const projects = related.filter((r) => r.entity.entityType === "project");
+  const people = related.filter((r) => r.entity.entityType === "person");
 
   const nameParts = entity.name.trim().split(/\s+/);
   const givenName = nameParts[0];
@@ -225,30 +235,78 @@ export function buildPersonSchema(entity: Entity): Json {
 
   const roleTitles = (entity.roles ?? []).map((r) => r.title);
 
+  const imageObj = entity.image
+    ? {
+        "@type": "ImageObject",
+        "@id": `${abs(entity.path)}#primaryimage`,
+        url: abs(entity.image),
+        contentUrl: abs(entity.image),
+        name: `${entity.name} — ${entity.subtitle || "DIMISI Technologies"}`,
+        caption: `Official photograph of ${entity.name}, ${entity.subtitle || "Founding Member"} at DIMISI Technologies Private Limited`,
+        representativeOfPage: true,
+        width: 1024,
+        height: 1024,
+        encodingFormat: entity.image.endsWith(".png") ? "image/png" : "image/jpeg",
+        creditText: "DIMISI Technologies Private Limited",
+        copyrightNotice: "© DIMISI Technologies Private Limited",
+        license: `${SITE_URL}/editorial-policy`,
+        acquireLicensePage: `${SITE_URL}/credibility`,
+      }
+    : undefined;
+
+  // Articles written about or by this entity
+  const aboutArticles = publishedArticles
+    .filter((a) => a.relatedEntities?.includes(entity.id) || a.authorId === entity.slug)
+    .map((a) => ({
+      "@type": "Article",
+      "@id": `${abs(articlePath(a))}#article`,
+      name: a.title,
+      url: abs(articlePath(a)),
+    }));
+
+  const disambiguatingDescription =
+    entity.disambiguatingDescription ||
+    (entity.id === "shikhar-dixit"
+      ? "Indian technology entrepreneur and software engineer; Founder & Chief Executive Officer of DIMISI Technologies Private Limited; creator and product architect of Kalesh, DIMISIPEDIA, and Gandhigiri Face Recognition System."
+      : entity.subtitle || entity.shortDescription);
+
   return clean({
     "@type": "Person",
     "@id": entityId(entity),
     name: entity.name,
     givenName,
     familyName,
-    image: entity.image ? abs(entity.image) : undefined,
+    additionalName: entity.id === "shikhar-dixit" ? ["shikhar040", "dixitshikhar004"] : undefined,
+    gender: entity.gender || "https://schema.org/Male",
+    birthDate: entity.birthDate,
+    disambiguatingDescription,
+    image: imageObj,
+    primaryImageOfPage: imageObj ? { "@id": `${abs(entity.path)}#primaryimage` } : undefined,
     alternateName: entity.subtitle || undefined,
     description: entity.answer || entity.shortDescription,
     url: abs(entity.path),
-    mainEntityOfPage: { "@id": pageId(entity.path) },
+    mainEntityOfPage: {
+      "@type": "ProfilePage",
+      "@id": pageId(entity.path),
+      url: abs(entity.path),
+    },
     jobTitle: roleTitles.length > 0 ? roleTitles : undefined,
     hasOccupation: {
       "@type": "Occupation",
       name: roleTitles.join(", ") || "Technology Entrepreneur",
+      description: `${entity.name} leads executive direction, product architecture, and engineering.`,
       occupationLocation: {
         "@type": "AdministrativeArea",
         name: "Kanpur, Uttar Pradesh, India",
+        sameAs: "https://en.wikipedia.org/wiki/Kanpur",
       },
+      skills: entity.areas ? entity.areas.join(", ") : undefined,
     },
     worksFor: orgs.map((r) => ({
       "@type": "Organization",
       "@id": entityId(r.entity),
       name: r.entity.name,
+      legalName: r.entity.name,
       url: abs(r.entity.path),
     })),
     affiliation: orgs.map((r) => ({
@@ -257,12 +315,20 @@ export function buildPersonSchema(entity: Entity): Json {
       name: r.entity.name,
       url: abs(r.entity.path),
     })),
-    founder: orgs.map((r) => ({
-      "@type": "Organization",
-      "@id": entityId(r.entity),
-      name: r.entity.name,
-      url: abs(r.entity.path),
-    })),
+    founder: [
+      ...orgs.map((r) => ({
+        "@type": "Organization",
+        "@id": entityId(r.entity),
+        name: r.entity.name,
+        url: abs(r.entity.path),
+      })),
+      ...projects.map((r) => ({
+        "@type": "SoftwareApplication",
+        "@id": entityId(r.entity),
+        name: r.entity.name,
+        url: abs(r.entity.path),
+      })),
+    ],
     knowsAbout: entity.knowsAbout ??
       entity.areas ?? [
         "Artificial Intelligence",
@@ -271,16 +337,49 @@ export function buildPersonSchema(entity: Entity): Json {
         "DIMISI Technologies",
         "Kalesh",
       ],
-    subjectOf: projects.map((r) => ({ "@id": entityId(r.entity) })),
-    alumniOf: (entity.education ?? []).map((e) =>
-      clean({
-        "@type": "EducationalOrganization",
+    knows: people.map((r) => ({
+      "@type": "Person",
+      "@id": entityId(r.entity),
+      name: r.entity.name,
+      jobTitle: r.entity.subtitle,
+      url: abs(r.entity.path),
+    })),
+    subjectOf: [
+      ...projects.map((r) => ({ "@id": entityId(r.entity) })),
+      ...aboutArticles,
+    ],
+    alumniOf: (entity.education ?? []).map((e) => {
+      const isAktu = /aktu|abdul kalam/i.test(e.institution);
+      return clean({
+        "@type": isAktu ? "CollegeOrUniversity" : "EducationalOrganization",
         name: e.institution,
+        url: isAktu ? "https://aktu.ac.in" : undefined,
+        sameAs: isAktu
+          ? "https://en.wikipedia.org/wiki/Dr._A.P.J._Abdul_Kalam_Technical_University"
+          : undefined,
+      });
+    }),
+    hasCredential: (entity.education ?? []).map((e) =>
+      clean({
+        "@type": "EducationalOccupationalCredential",
+        name: `${e.qualification}${e.field ? ` in ${e.field}` : ""}`,
+        credentialCategory: "degree",
+        recognizedBy: {
+          "@type": "CollegeOrUniversity",
+          name: e.institution,
+        },
       }),
     ),
     nationality: {
       "@type": "Country",
       name: "India",
+      identifier: "IN",
+      sameAs: "https://en.wikipedia.org/wiki/India",
+    },
+    birthPlace: {
+      "@type": "Place",
+      name: "Kanpur, Uttar Pradesh, India",
+      sameAs: "https://en.wikipedia.org/wiki/Kanpur",
     },
     homeLocation: {
       "@type": "PostalAddress",
@@ -294,7 +393,13 @@ export function buildPersonSchema(entity: Entity): Json {
       addressRegion: "Uttar Pradesh",
       addressCountry: "IN",
     },
+    award: entity.awards,
     sameAs: verifiedProfileUrls(entity),
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${SITE_URL}/explore?q=${encodeURIComponent(entity.name)}`,
+      "query-input": "required name=query",
+    },
   });
 }
 
@@ -384,6 +489,7 @@ export function buildProjectSchema(entity: Entity): Json {
     name: entity.name,
     alternateName: entity.subtitle || undefined,
     description: entity.answer || entity.shortDescription,
+    image: entity.image ? abs(entity.image) : undefined,
     url: abs(entity.path),
     mainEntityOfPage: { "@id": pageId(entity.path) },
     creator: creatorPerson
@@ -458,6 +564,25 @@ export function buildEntitySchema(entity: Entity): Json {
 /** WebPage / ProfilePage wrapper node for an entity page. */
 export function buildEntityPageSchema(entity: Entity): Json {
   const isPerson = entity.entityType === "person";
+  const imageObj = entity.image
+    ? {
+        "@type": "ImageObject",
+        "@id": `${abs(entity.path)}#primaryimage`,
+        url: abs(entity.image),
+        contentUrl: abs(entity.image),
+        name: `${entity.name} — ${entity.subtitle || "DIMISI Technologies"}`,
+        caption: `Official photograph of ${entity.name} — DIMISI Technologies`,
+        representativeOfPage: true,
+        width: 1024,
+        height: 1024,
+        encodingFormat: entity.image.endsWith(".png") ? "image/png" : "image/jpeg",
+        creditText: "DIMISI Technologies Private Limited",
+        copyrightNotice: "© DIMISI Technologies Private Limited",
+        license: `${SITE_URL}/editorial-policy`,
+        acquireLicensePage: `${SITE_URL}/credibility`,
+      }
+    : undefined;
+
   return clean({
     "@type": isPerson ? "ProfilePage" : "WebPage",
     "@id": pageId(entity.path),
@@ -469,14 +594,8 @@ export function buildEntityPageSchema(entity: Entity): Json {
     dateCreated: toIsoDateTime(entity.createdAt),
     dateModified: toIsoDateTime(entity.updatedAt),
     breadcrumb: { "@id": `${abs(entity.path)}#breadcrumb` },
-    primaryImageOfPage: entity.image
-      ? {
-          "@type": "ImageObject",
-          contentUrl: abs(entity.image),
-          caption: `${entity.name} — DIMISIPEDIA documentation`,
-          representativeOfPage: true,
-        }
-      : undefined,
+    primaryImageOfPage: imageObj ? { "@id": `${abs(entity.path)}#primaryimage` } : undefined,
+    image: imageObj,
     mainEntity: { "@id": entityId(entity) },
     about: { "@id": entityId(entity) },
     citation: sourceCitations(entity),
@@ -494,6 +613,7 @@ export interface HeadOptions {
   path: string;
   ogType?: string;
   image?: string;
+  imageAlt?: string;
   noindex?: boolean;
   schema?: (Json | null)[];
 }
@@ -519,10 +639,22 @@ export function pageHead(options: HeadOptions) {
     { name: "theme-color", content: "#0a0a0a" },
     { name: "author", content: "DIMISI Technologies Pvt. Ltd." },
   ];
-  if (options.image) {
-    meta.push({ property: "og:image", content: abs(options.image) });
-    meta.push({ name: "twitter:image", content: abs(options.image) });
-  }
+  const imageToUse = options.image || "/images/dimisipedia-logo.png";
+  const imageUrl = abs(imageToUse);
+  const mimeType = imageToUse.endsWith(".png")
+    ? "image/png"
+    : imageToUse.endsWith(".webp")
+      ? "image/webp"
+      : "image/jpeg";
+  const altText = options.imageAlt || options.title;
+  meta.push({ property: "og:image", content: imageUrl });
+  meta.push({ property: "og:image:secure_url", content: imageUrl });
+  meta.push({ property: "og:image:type", content: mimeType });
+  meta.push({ property: "og:image:width", content: "1024" });
+  meta.push({ property: "og:image:height", content: "1024" });
+  meta.push({ property: "og:image:alt", content: altText });
+  meta.push({ name: "twitter:image", content: imageUrl });
+  meta.push({ name: "twitter:image:alt", content: altText });
   meta.push({
     name: "robots",
     content: options.noindex ? "noindex, follow" : "index, follow, max-image-preview:large",
@@ -540,12 +672,16 @@ export function pageHead(options: HeadOptions) {
 /** Head payload for a full entity page: page node + entity node + breadcrumb + FAQ schema (if any). */
 export function entityHead(entity: Entity, trail: { label: string; to?: string }[]) {
   const faqSchema = buildFAQSchema(entity.faqs ?? entity.questions, entity.path);
+  const imageAlt =
+    entity.entityType === "person"
+      ? `Official photograph of ${entity.name} — ${entity.subtitle || "DIMISI Technologies"} | Founder & Leadership`
+      : `Official visual mark for ${entity.name} — DIMISI Technologies`;
   return pageHead({
     title: entity.seoTitle,
     description: entity.seoDescription,
     path: entity.path,
     ogType: entity.entityType === "person" ? "profile" : "article",
-    ...(entity.image ? { image: entity.image } : {}),
+    ...(entity.image ? { image: entity.image, imageAlt } : {}),
     schema: [
       buildEntityPageSchema(entity),
       buildBreadcrumbSchema(trail, entity.path),
@@ -594,10 +730,33 @@ export function indexHead(opts: {
   });
 }
 
+export interface SitemapUrlEntry {
+  path: string;
+  lastmod?: string;
+  priority: string;
+  image?: {
+    loc: string;
+    title: string;
+    caption: string;
+    geoLocation?: string;
+    license?: string;
+  };
+}
+
 /** Every canonical, indexable URL on the site (used by the sitemap). */
-export function canonicalUrls(): { path: string; lastmod?: string; priority: string }[] {
-  const statics: { path: string; priority: string }[] = [
-    { path: "/", priority: "1.0" },
+export function canonicalUrls(): SitemapUrlEntry[] {
+  const statics: SitemapUrlEntry[] = [
+    {
+      path: "/",
+      priority: "1.0",
+      image: {
+        loc: abs("/images/dimisipedia-logo.png"),
+        title: "DIMISIPEDIA — Official Knowledge Engine of DIMISI Technologies",
+        caption: "DIMISIPEDIA authoritative knowledge base and entity registry",
+        geoLocation: "Kanpur, Uttar Pradesh, India",
+        license: `${SITE_URL}/editorial-policy`,
+      },
+    },
     { path: "/journey", priority: "0.8" },
     { path: "/people", priority: "0.8" },
     { path: "/organizations", priority: "0.8" },
@@ -622,10 +781,34 @@ export function canonicalUrls(): { path: string; lastmod?: string; priority: str
       if (e.id === "shikhar-dixit") priority = "1.0";
       else if (e.entityType === "organization" || e.id === "kalesh") priority = "0.9";
       else if (e.id === "swatantra-singh" || e.id === "nishkarsh-mishra") priority = "0.85";
+
+      let image: SitemapUrlEntry["image"] = undefined;
+      if (e.image) {
+        const isFounder =
+          e.id === "shikhar-dixit" ||
+          e.id === "nishkarsh-mishra" ||
+          e.id === "swatantra-singh";
+        const title = isFounder
+          ? `${e.name} — Co-Founder & Executive Leadership | DIMISI Technologies`
+          : `${e.name} — ${e.subtitle || "DIMISI Technologies"}`;
+        const caption = isFounder
+          ? `Official photograph of ${e.name}, Co-Founder and Executive Leadership at DIMISI Technologies Private Limited`
+          : `Official image of ${e.name} (${e.subtitle || e.entityType}) — DIMISI Technologies`;
+
+        image = {
+          loc: abs(e.image),
+          title,
+          caption,
+          geoLocation: "Kanpur, Uttar Pradesh, India",
+          license: `${SITE_URL}/editorial-policy`,
+        };
+      }
+
       return {
         path: e.path,
         lastmod: e.updatedAt,
         priority,
+        image,
       };
     }),
     ...articleUrls(),
@@ -635,16 +818,6 @@ export function canonicalUrls(): { path: string; lastmod?: string; priority: str
 /* ------------------------------------------------------------------ *
  * Articles (source-controlled, file-backed — see src/content/articles)
  * ------------------------------------------------------------------ */
-
-import {
-  articleContents,
-  articleEntities,
-  articlePath,
-  articleSources,
-  publishedArticles,
-  resolveAuthor,
-  type Article,
-} from "@/data/articles";
 
 export function articleId(article: Article): string {
   return `${abs(articlePath(article))}#article`;
@@ -715,11 +888,22 @@ export function articleHead(article: Article, trail: { label: string; to?: strin
 }
 
 /** Published article URLs for the sitemap. Drafts are excluded by design. */
-export function articleUrls(): { path: string; lastmod: string; priority: string }[] {
+export function articleUrls(): SitemapUrlEntry[] {
   return publishedArticles.map((a) => ({
     path: articlePath(a),
     lastmod: a.dateModified,
     priority: "0.6",
+    ...(a.coverImage
+      ? {
+          image: {
+            loc: abs(a.coverImage),
+            title: a.title,
+            caption: a.excerpt,
+            geoLocation: "Kanpur, Uttar Pradesh, India",
+            license: `${SITE_URL}/editorial-policy`,
+          },
+        }
+      : {}),
   }));
 }
 

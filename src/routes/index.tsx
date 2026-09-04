@@ -219,17 +219,37 @@ function Home() {
           </Link>
         </div>
         <ul className="mt-6 grid gap-px border border-border bg-rule md:grid-cols-2">
-          {projectEntities.map((p) => (
+          {[...projectEntities]
+            .sort((a, b) => (a.featuredPriority ?? 99) - (b.featuredPriority ?? 99))
+            .map((p) => (
             <li key={p.id}>
               <EntityLink
                 to={p.path}
-                className="block h-full bg-surface px-5 py-6 transition-colors hover:bg-muted"
+                className="flex h-full flex-col justify-between bg-surface p-6 transition-colors hover:bg-muted"
               >
-                <span className="label-mono">Project · {p.lifecycle}</span>
-                <span className="mt-1 block font-serif text-xl">{p.name}</span>
-                <span className="mt-2 block text-sm text-muted-foreground">
-                  {p.shortDescription}
-                </span>
+                <div>
+                  <div className="flex items-center gap-3">
+                    {p.image ? (
+                      <div className="flex size-10 shrink-0 items-center justify-center rounded border border-rule bg-surface p-1">
+                        <img
+                          src={p.image}
+                          alt={p.name}
+                          className="size-full object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                    ) : null}
+                    <div>
+                      <span className="label-mono">
+                        {p.category ?? "Project"} · {p.statusBadge ?? p.lifecycle}
+                      </span>
+                      <span className="mt-0.5 block font-serif text-xl">{p.name}</span>
+                    </div>
+                  </div>
+                  <span className="mt-3 block text-sm text-muted-foreground">
+                    {p.shortDescription}
+                  </span>
+                </div>
               </EntityLink>
             </li>
           ))}
