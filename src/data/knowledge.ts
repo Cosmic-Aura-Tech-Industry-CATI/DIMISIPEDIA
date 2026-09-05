@@ -222,6 +222,7 @@ export interface Entity {
   gender?: string;
   awards?: string[];
   birthDate?: string;
+  aliases?: string[];
 }
 
 import {
@@ -366,8 +367,8 @@ const baseSources: Source[] = [
     title: "KAAND — Mobile News & Media Platform Development Records",
     publisher: "DIMISI Technologies Pvt. Ltd.",
     type: "Project Documentation",
-    relatedEntities: ["kaand", "dimisi-technologies", "amrat-awasthi"],
-    claim: "Mobile-first news application under development with Flutter and Dart, engineered by Amrat Awasthi under guidance of Sheelu Singh and Mridul Mishra.",
+    relatedEntities: ["kaand", "dimisi-technologies", "amrit-awasthi"],
+    claim: "Mobile-first news application under development with Flutter and Dart, engineered by Amrit Awasthi under guidance of Sheelu Singh and Mridul Mishra.",
     addedAt: "2026-09-04",
     status: "source-backed",
   },
@@ -451,8 +452,8 @@ const baseRelationships: Relationship[] = [
   { from: "dimisi-technologies", type: "Develops", to: "dimisi-corporate-platform" },
   { from: "dimisi-technologies", type: "Develops", to: "karyon" },
 
-  { from: "amrat-awasthi", type: "Works at", to: "dimisi-technologies" },
-  { from: "amrat-awasthi", type: "Engineering", to: "kaand" },
+  { from: "amrit-awasthi", type: "Works at", to: "dimisi-technologies" },
+  { from: "amrit-awasthi", type: "Engineering", to: "kaand" },
   { from: "sheelu-singh", type: "Technical leadership", to: "kaand" },
   { from: "mridul-mishra", type: "Technical leadership", to: "kaand" },
 
@@ -756,17 +757,18 @@ const people: Entity[] = [
   },
 
   {
-    id: "amrat-awasthi",
-    slug: "amrat-awasthi",
-    path: "/people/amrat-awasthi",
+    id: "amrit-awasthi",
+    slug: "amrit-awasthi",
+    aliases: ["amrat-awasthi"],
+    path: "/people/amrit-awasthi",
     entityType: "person",
-    name: "Amrat Awasthi",
+    name: "Amrit Awasthi",
     subtitle: "Android Developer Intern (Flutter / DART) — DIMISI Technologies",
-    image: "/images/amrat-awasthi.png",
+    image: "/images/amrit-awasthi.png",
     shortDescription:
       "Android developer intern specializing in Flutter and Dart at DIMISI Technologies, serving as lead application developer for the KAAND news and media platform.",
     answer:
-      "Amrat Awasthi is an Android Developer Intern (Flutter / DART) at DIMISI Technologies Private Limited, leading the mobile engineering of KAAND, the company's next-generation news and media platform under the technical guidance of Sheelu Singh and Mridul Mishra.",
+      "Amrit Awasthi is an Android Developer Intern (Flutter / DART) at DIMISI Technologies Private Limited, leading the mobile engineering of KAAND, the company's next-generation news and media platform under the technical guidance of Sheelu Singh and Mridul Mishra.",
     lifecycle: "Active",
     facts: [
       { label: "Role", value: "Android Developer Intern (Flutter / DART)", status: "source-backed" },
@@ -790,7 +792,7 @@ const people: Entity[] = [
         heading: "Overview & role",
         status: "source-backed",
         body: [
-          "Amrat Awasthi is an Android Developer Intern specializing in Flutter and Dart at DIMISI Technologies. [1]",
+          "Amrit Awasthi is an Android Developer Intern specializing in Flutter and Dart at DIMISI Technologies. [1]",
           "He serves as the lead developer for KAAND, an internal next-generation digital journalism and media consumption product being built natively for Android and iOS using Flutter and Dart. [1]",
           "His development work on KAAND proceeds under the direct technical mentorship and architectural guidance of senior engineering members Sheelu Singh and Mridul Mishra. [1]",
         ],
@@ -812,10 +814,10 @@ const people: Entity[] = [
     sourceIds: ["src-kaand-dev", "src-team-roster"],
     revisions: baseRevisions("2026-09-04"),
     createdAt: "2026-09-04",
-    updatedAt: "2026-09-04",
-    seoTitle: "Amrat Awasthi — Android Developer Intern (Flutter / DART) | DIMISIPEDIA",
+    updatedAt: "2026-09-05",
+    seoTitle: "Amrit Awasthi — Android Developer Intern (Flutter / DART) | DIMISIPEDIA",
     seoDescription:
-      "Amrat Awasthi is an Android Developer Intern (Flutter / DART) at DIMISI Technologies, leading mobile development for KAAND.",
+      "Amrit Awasthi is an Android Developer Intern (Flutter / DART) at DIMISI Technologies, leading mobile development for KAAND.",
   },
 
   {
@@ -1538,7 +1540,7 @@ const projects: Entity[] = [
     shortDescription:
       "KAAND is DIMISI's next-generation media and news platform being developed to create a new approach to modern news consumption.",
     answer:
-      "KAAND is an internal DIMISI product focused on building a modern, mobile-first media and news experience for Android and iOS using Flutter and Dart. Engineered by rising intern Amrat Awasthi under the technical mentorship of Sheelu Singh and Mridul Mishra, the application explores a fresh approach to digital journalism, fast information discovery, and community-engaged media consumption.",
+      "KAAND is an internal DIMISI product focused on building a modern, mobile-first media and news experience for Android and iOS using Flutter and Dart. Engineered by rising intern Amrit Awasthi under the technical mentorship of Sheelu Singh and Mridul Mishra, the application explores a fresh approach to digital journalism, fast information discovery, and community-engaged media consumption.",
     lifecycle: "Development",
     facts: [
       { label: "Category", value: "DIMISI Products", status: "source-backed", sourceIds: ["src-kaand-dev"] },
@@ -1546,7 +1548,7 @@ const projects: Entity[] = [
       { label: "Status", value: "Under Development", status: "source-backed", sourceIds: ["src-kaand-dev"] },
       { label: "Target platforms", value: "Android & iOS", status: "source-backed", sourceIds: ["src-kaand-dev"] },
       { label: "Core technologies", value: "Flutter, Dart", status: "source-backed", sourceIds: ["src-kaand-dev"] },
-      { label: "Lead developer", value: "Amrat Awasthi (Android Developer Intern — Flutter / DART)", status: "source-backed", sourceIds: ["src-kaand-dev"] },
+      { label: "Lead developer", value: "Amrit Awasthi (Android Developer Intern — Flutter / DART)", status: "source-backed", sourceIds: ["src-kaand-dev"] },
       { label: "Engineering guidance", value: "Sheelu Singh, Mridul Mishra", status: "source-backed", sourceIds: ["src-kaand-dev"] },
       { label: "Ownership", value: ORG_NAME, status: "documented" },
     ],
@@ -1557,7 +1559,7 @@ const projects: Entity[] = [
       },
       {
         q: "Who is building KAAND?",
-        a: "KAAND is spearheaded by rising intern and mobile developer Amrat Awasthi under senior engineering guidance from Sheelu Singh and Mridul Mishra.",
+        a: "KAAND is spearheaded by rising intern and mobile developer Amrit Awasthi under senior engineering guidance from Sheelu Singh and Mridul Mishra.",
       },
       {
         q: "What technologies power the KAAND application?",
@@ -1584,7 +1586,7 @@ const projects: Entity[] = [
         heading: "Engineering & development team",
         status: "source-backed",
         body: [
-          "Lead Developer: Amrat Awasthi serves as the lead application developer, driving UI implementation and state orchestration. [1]",
+          "Lead Developer: Amrit Awasthi serves as the lead application developer, driving UI implementation and state orchestration. [1]",
           "Technical Guidance: The architectural foundation and performance patterns are guided by senior team members Sheelu Singh and Mridul Mishra. [1]",
           "Technology: Built natively with Flutter and Dart for fluid animations, responsive layouts, and cross-platform Android and iOS parity. [1]",
         ],

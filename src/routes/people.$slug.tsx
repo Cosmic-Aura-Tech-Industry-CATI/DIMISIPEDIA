@@ -12,7 +12,9 @@ const trailFor = (name: string) => [
 
 export const Route = createFileRoute("/people/$slug")({
   loader: ({ params }) => {
-    const person = peopleEntities.find((p) => p.slug === params.slug);
+    const person = peopleEntities.find(
+      (p) => p.slug === params.slug || p.id === params.slug || p.aliases?.includes(params.slug),
+    );
     if (!person) throw notFound();
     return { person };
   },
