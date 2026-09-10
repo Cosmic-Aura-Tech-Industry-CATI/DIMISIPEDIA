@@ -39,7 +39,7 @@ export const founderSources: Source[] = [
     id: "src-falconebiz-registry",
     title: "DIMISI Technologies Private Limited — corporate registry listing (MCA-derived)",
     publisher: "FalconEbiz",
-    url: "https://www.falconebiz.com",
+    url: "https://www.falconebiz.com/company/DIMISI-TECHNOLOGIES-PRIVATE-LIMITED-U62013UP2026PTC246506",
     type: "Government Record",
     relatedEntities: [
       "dimisi-technologies",
@@ -56,7 +56,7 @@ export const founderSources: Source[] = [
     id: "src-tracxn-dimisi",
     title: "DIMISI Technologies — company profile and director listing",
     publisher: "Tracxn",
-    url: "https://tracxn.com",
+    url: "https://tracxn.com/d/companies/dimisi-technologies",
     type: "Third-party Database",
     relatedEntities: [
       "dimisi-technologies",
@@ -84,7 +84,7 @@ export const founderSources: Source[] = [
     id: "src-dimisi-linkedin",
     title: "DIMISI Technologies — company profile",
     publisher: "LinkedIn",
-    url: "https://www.linkedin.com",
+    url: "https://www.linkedin.com/company/dimisi-technologies",
     type: "Social Profile",
     relatedEntities: ["dimisi-technologies", "shikhar-dixit"],
     claim: "Company description and leadership listing published by DIMISI Technologies.",
@@ -95,7 +95,7 @@ export const founderSources: Source[] = [
     id: "src-shikhar-linkedin",
     title: "Shikhar Dixit — professional profile",
     publisher: "LinkedIn",
-    url: "https://in.linkedin.com",
+    url: "https://www.linkedin.com/in/shikhar040",
     type: "Social Profile",
     relatedEntities: ["shikhar-dixit"],
     claim:
@@ -131,7 +131,6 @@ export const founderSources: Source[] = [
     id: "src-nishkarsh-linkedin",
     title: "Nishkarsh Mishra — professional profile",
     publisher: "LinkedIn",
-    url: "https://www.linkedin.com",
     type: "Social Profile",
     relatedEntities: ["nishkarsh-mishra"],
     claim:
@@ -154,8 +153,7 @@ export const founderSources: Source[] = [
   {
     id: "src-swatantra-video",
     title: "Swatantra Singh — recorded interview / video appearance",
-    publisher: "YouTube",
-    url: "https://www.youtube.com",
+    publisher: "DIMISI Video Archive",
     type: "Interview",
     relatedEntities: ["swatantra-singh"],
     claim:
@@ -179,7 +177,6 @@ export const founderSources: Source[] = [
     id: "src-planetexim-director",
     title: "Swatantra Singh — director profile (MCA-derived)",
     publisher: "PlanetExim",
-    url: "https://www.planetexim.net",
     type: "Government Record",
     relatedEntities: ["swatantra-singh", "dimisi-technologies"],
     claim:
@@ -191,7 +188,7 @@ export const founderSources: Source[] = [
     id: "src-zaubacorp-dimisi",
     title: "DIMISI Technologies Private Limited — company database record",
     publisher: "ZaubaCorp",
-    url: "https://www.zaubacorp.com",
+    url: "https://www.zaubacorp.com/company/DIMISI-TECHNOLOGIES-PRIVATE-LIMITED/U62013UP2026PTC246506",
     type: "Government Record",
     relatedEntities: [
       "dimisi-technologies",
@@ -220,7 +217,7 @@ export const founderSources: Source[] = [
     id: "src-kalesh-linkedin",
     title: "Kalesh — company page",
     publisher: "LinkedIn",
-    url: "https://in.linkedin.com",
+    url: "https://www.linkedin.com/company/dimisi-technologies",
     type: "Social Profile",
     relatedEntities: ["kalesh", "swatantra-singh", "mridul-mishra"],
     claim:
@@ -232,7 +229,6 @@ export const founderSources: Source[] = [
     id: "src-sheelu-linkedin",
     title: "Sheelu Singh — professional profile",
     publisher: "LinkedIn",
-    url: "https://in.linkedin.com",
     type: "Social Profile",
     relatedEntities: ["sheelu-singh"],
     claim:
@@ -244,7 +240,6 @@ export const founderSources: Source[] = [
     id: "src-sheelu-pulsjob",
     title: "Sheelu Singh — developer listing",
     publisher: "PulsJob",
-    url: "https://www.pulsjob.com",
     type: "Third-party Database",
     relatedEntities: ["sheelu-singh"],
     claim: "Third-party listing describing mobile development skills attributed to Sheelu Singh.",
@@ -723,7 +718,7 @@ const shikhar: Entity = {
   officialLinks: [
     { label: "dimisi.tech (Corporate Site)", url: "https://dimisi.tech", official: true },
     { label: "thekalesh.com (Flagship Product)", url: "https://thekalesh.com", official: true },
-    { label: "dimisipedia.me (Knowledge Engine)", url: "https://dimisipedia.me", official: true },
+    { label: "dimisipedia.me (Knowledge Engine)", url: "https://www.dimisipedia.me", official: true },
   ],
   sourceIds: [
     "src-shikhar-linkedin",
@@ -807,9 +802,8 @@ const nishkarsh: Entity = {
     "https://dimisi.tech",
     "https://thekalesh.com",
     "https://www.crunchbase.com/person/nishkarsh-mishra-4e7d",
-    "https://www.linkedin.com",
-    "https://tracxn.com",
-    "https://www.zaubacorp.com",
+    "https://tracxn.com/d/companies/dimisi-technologies",
+    "https://www.zaubacorp.com/company/DIMISI-TECHNOLOGIES-PRIVATE-LIMITED/U62013UP2026PTC246506",
   ],
   roles: [
     {
@@ -881,13 +875,13 @@ const nishkarsh: Entity = {
     },
     {
       label: "Tracxn company profile",
-      url: "https://tracxn.com",
+      url: "https://tracxn.com/d/companies/dimisi-technologies",
       verified: true,
       note: "Third-party corporate directory listing of DIMISI directors.",
     },
     {
       label: "ZaubaCorp company record",
-      url: "https://www.zaubacorp.com",
+      url: "https://www.zaubacorp.com/company/DIMISI-TECHNOLOGIES-PRIVATE-LIMITED/U62013UP2026PTC246506",
       verified: true,
       note: "MCA-derived company database record.",
     },
@@ -1074,9 +1068,8 @@ const swatantra: Entity = {
     "https://dimisi.tech",
     "https://thekalesh.com",
     "https://www.crunchbase.com/person/swatantra-singh-5f2b",
-    "https://www.falconebiz.com",
-    "https://www.planetexim.net",
-    "https://tracxn.com",
+    "https://www.falconebiz.com/company/DIMISI-TECHNOLOGIES-PRIVATE-LIMITED-U62013UP2026PTC246506",
+    "https://tracxn.com/d/companies/dimisi-technologies",
   ],
   roles: [
     {
@@ -1135,19 +1128,13 @@ const swatantra: Entity = {
     },
     {
       label: "Corporate registry (FalconEbiz)",
-      url: "https://www.falconebiz.com",
+      url: "https://www.falconebiz.com/company/DIMISI-TECHNOLOGIES-PRIVATE-LIMITED-U62013UP2026PTC246506",
       verified: true,
       note: "MCA-derived registry listing.",
     },
     {
-      label: "Director profile (PlanetExim)",
-      url: "https://www.planetexim.net",
-      verified: true,
-      note: "MCA-derived director listing.",
-    },
-    {
       label: "Tracxn company profile",
-      url: "https://tracxn.com",
+      url: "https://tracxn.com/d/companies/dimisi-technologies",
       verified: true,
       note: "Third-party corporate directory listing of DIMISI directors.",
     },

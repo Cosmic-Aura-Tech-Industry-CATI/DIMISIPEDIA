@@ -20,7 +20,7 @@ import {
 } from "@/data/articles";
 
 /** Production origin. Change here if the canonical domain ever changes. */
-export const SITE_URL = "https://dimisipedia.me";
+export const SITE_URL = "https://www.dimisipedia.me";
 export const SITE_NAME = "DIMISIPEDIA";
 
 /** Absolute, trailing-slash-free canonical URL for an internal path. */
@@ -425,11 +425,11 @@ export function buildOrganizationSchema(entity: Entity): Json {
     foundingDate: fact("Incorporated") ?? fact("Founded") ?? "2026-04-09",
     taxID: fact("CIN") ?? "U62013UP2026PTC246506",
     identifier: fact("CIN") ?? "U62013UP2026PTC246506",
-    founder: founders.map((r) => ({
+    founder: Array.from(new Map(founders.map((r) => [r.entity.id, r.entity])).values()).map((e) => ({
       "@type": "Person",
-      "@id": entityId(r.entity),
-      name: r.entity.name,
-      url: abs(r.entity.path),
+      "@id": entityId(e),
+      name: e.name,
+      url: abs(e.path),
     })),
     ceo: ceo
       ? {
@@ -439,11 +439,11 @@ export function buildOrganizationSchema(entity: Entity): Json {
           url: abs(ceo.entity.path),
         }
       : undefined,
-    employee: people.map((r) => ({
+    employee: Array.from(new Map(people.map((r) => [r.entity.id, r.entity])).values()).map((e) => ({
       "@type": "Person",
-      "@id": entityId(r.entity),
-      name: r.entity.name,
-      url: abs(r.entity.path),
+      "@id": entityId(e),
+      name: e.name,
+      url: abs(e.path),
     })),
     address: {
       "@type": "PostalAddress",

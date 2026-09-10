@@ -181,8 +181,8 @@ export function EntityArticle({
               <meta itemProp="name" content={`${entity.name} — Official Image`} />
               <meta itemProp="creditText" content="DIMISI Technologies Private Limited" />
               <meta itemProp="copyrightNotice" content="© DIMISI Technologies Private Limited" />
-              <meta itemProp="acquireLicensePage" content={`https://dimisipedia.me${entity.path}`} />
-              <meta itemProp="license" content="https://dimisipedia.me/editorial-policy" />
+              <meta itemProp="acquireLicensePage" content={`https://www.dimisipedia.me${entity.path}`} />
+              <meta itemProp="license" content="https://www.dimisipedia.me/editorial-policy" />
               <figcaption
                 itemProp="caption"
                 className="mt-2 max-w-44 text-[11px] leading-snug text-muted-foreground"

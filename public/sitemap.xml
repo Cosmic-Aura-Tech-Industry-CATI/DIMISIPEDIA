@@ -1,343 +1,343 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://dimisipedia.me/</loc>
+    <loc>https://www.dimisipedia.me/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://dimisipedia.me/images/dimisipedia-logo.png</image:loc>
+      <image:loc>https://www.dimisipedia.me/images/dimisipedia-logo.png</image:loc>
       <image:title>DIMISIPEDIA — Official Knowledge Engine of DIMISI Technologies</image:title>
       <image:caption>DIMISIPEDIA authoritative knowledge base and entity registry</image:caption>
       <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
-      <image:license>https://dimisipedia.me/editorial-policy</image:license>
+      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
     </image:image>
   </url>
   <url>
-    <loc>https://dimisipedia.me/journey</loc>
+    <loc>https://www.dimisipedia.me/journey</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/people</loc>
+    <loc>https://www.dimisipedia.me/people</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/organizations</loc>
+    <loc>https://www.dimisipedia.me/organizations</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/projects</loc>
+    <loc>https://www.dimisipedia.me/projects</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/technology</loc>
+    <loc>https://www.dimisipedia.me/technology</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/timeline</loc>
+    <loc>https://www.dimisipedia.me/timeline</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/explore</loc>
+    <loc>https://www.dimisipedia.me/explore</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/events</loc>
+    <loc>https://www.dimisipedia.me/events</loc>
     <changefreq>weekly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/articles</loc>
+    <loc>https://www.dimisipedia.me/articles</loc>
     <changefreq>weekly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/sources</loc>
+    <loc>https://www.dimisipedia.me/sources</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/methodology</loc>
+    <loc>https://www.dimisipedia.me/methodology</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/credibility</loc>
+    <loc>https://www.dimisipedia.me/credibility</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/editorial-policy</loc>
+    <loc>https://www.dimisipedia.me/editorial-policy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/about</loc>
+    <loc>https://www.dimisipedia.me/about</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/privacy</loc>
+    <loc>https://www.dimisipedia.me/privacy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/terms</loc>
+    <loc>https://www.dimisipedia.me/terms</loc>
     <changefreq>weekly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/dimisi-technologies</loc>
+    <loc>https://www.dimisipedia.me/dimisi-technologies</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://dimisipedia.me/images/dimisipedia-logo.png</image:loc>
+      <image:loc>https://www.dimisipedia.me/images/dimisipedia-logo.png</image:loc>
       <image:title>DIMISI Technologies Private Limited — Official Logo</image:title>
       <image:caption>Official corporate insignia of DIMISI Technologies Private Limited</image:caption>
       <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
-      <image:license>https://dimisipedia.me/editorial-policy</image:license>
+      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
     </image:image>
   </url>
   <url>
-    <loc>https://dimisipedia.me/people/shikhar-dixit</loc>
+    <loc>https://www.dimisipedia.me/people/shikhar-dixit</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://dimisipedia.me/images/shikhar-dixit.png</image:loc>
+      <image:loc>https://www.dimisipedia.me/images/shikhar-dixit.png</image:loc>
       <image:title>Shikhar Dixit — Founder &amp; CEO, DIMISI Technologies</image:title>
       <image:caption>Official photograph of Shikhar Dixit, Founder, Chief Executive Officer and Product Architect at DIMISI Technologies Private Limited</image:caption>
       <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
-      <image:license>https://dimisipedia.me/editorial-policy</image:license>
+      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
     </image:image>
   </url>
   <url>
-    <loc>https://dimisipedia.me/people/nishkarsh-mishra</loc>
+    <loc>https://www.dimisipedia.me/people/nishkarsh-mishra</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://dimisipedia.me/images/nishkarsh-mishra.png</image:loc>
+      <image:loc>https://www.dimisipedia.me/images/nishkarsh-mishra.png</image:loc>
       <image:title>Nishkarsh Mishra — Co-Founder &amp; COO, DIMISI Technologies</image:title>
       <image:caption>Official photograph of Nishkarsh Mishra, Co-Founder and Chief Operating Officer at DIMISI Technologies Private Limited</image:caption>
       <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
-      <image:license>https://dimisipedia.me/editorial-policy</image:license>
+      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
     </image:image>
   </url>
   <url>
-    <loc>https://dimisipedia.me/people/swatantra-singh</loc>
+    <loc>https://www.dimisipedia.me/people/swatantra-singh</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://dimisipedia.me/images/swatantra-singh.png</image:loc>
+      <image:loc>https://www.dimisipedia.me/images/swatantra-singh.png</image:loc>
       <image:title>Swatantra Singh — Co-Founder &amp; CTO, DIMISI Technologies</image:title>
       <image:caption>Official photograph of Swatantra Singh, Co-Founder and Chief Technology Officer at DIMISI Technologies Private Limited</image:caption>
       <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
-      <image:license>https://dimisipedia.me/editorial-policy</image:license>
+      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
     </image:image>
   </url>
   <url>
-    <loc>https://dimisipedia.me/people/sheelu-singh</loc>
+    <loc>https://www.dimisipedia.me/people/sheelu-singh</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/people/mridul-mishra</loc>
+    <loc>https://www.dimisipedia.me/people/mridul-mishra</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/people/siddhant-shekhar</loc>
+    <loc>https://www.dimisipedia.me/people/siddhant-shekhar</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://dimisipedia.me/images/siddhant-shekhar.png</image:loc>
+      <image:loc>https://www.dimisipedia.me/images/siddhant-shekhar.png</image:loc>
       <image:title>Siddhant Shekhar — Vice President, Public Relations &amp; Strategic Operations</image:title>
       <image:caption>Official photograph of Siddhant Shekhar at DIMISI Technologies Private Limited</image:caption>
       <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
-      <image:license>https://dimisipedia.me/editorial-policy</image:license>
+      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
     </image:image>
   </url>
   <url>
-    <loc>https://dimisipedia.me/people/prashant-umrao</loc>
+    <loc>https://www.dimisipedia.me/people/prashant-umrao</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://dimisipedia.me/images/prashant-umrao.png</image:loc>
+      <image:loc>https://www.dimisipedia.me/images/prashant-umrao.png</image:loc>
       <image:title>Prashant Umrao — Full Stack Developer Intern &amp; Tester</image:title>
       <image:caption>Official photograph of Prashant Umrao at DIMISI Technologies Private Limited</image:caption>
       <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
-      <image:license>https://dimisipedia.me/editorial-policy</image:license>
+      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
     </image:image>
   </url>
   <url>
-    <loc>https://dimisipedia.me/people/amrit-awasthi</loc>
+    <loc>https://www.dimisipedia.me/people/amrit-awasthi</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://dimisipedia.me/images/amrit-awasthi.png</image:loc>
+      <image:loc>https://www.dimisipedia.me/images/amrit-awasthi.png</image:loc>
       <image:title>Amrit Awasthi — Android Developer Intern (Flutter / Dart)</image:title>
       <image:caption>Official photograph of Amrit Awasthi at DIMISI Technologies Private Limited</image:caption>
       <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
-      <image:license>https://dimisipedia.me/editorial-policy</image:license>
+      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
     </image:image>
   </url>
   <url>
-    <loc>https://dimisipedia.me/people/amit-kumar</loc>
+    <loc>https://www.dimisipedia.me/people/amit-kumar</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://dimisipedia.me/images/amit-kumar.png</image:loc>
+      <image:loc>https://www.dimisipedia.me/images/amit-kumar.png</image:loc>
       <image:title>Amit Kumar — Backend Development Intern</image:title>
       <image:caption>Official photograph of Amit Kumar at DIMISI Technologies Private Limited</image:caption>
       <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
-      <image:license>https://dimisipedia.me/editorial-policy</image:license>
+      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
     </image:image>
   </url>
   <url>
-    <loc>https://dimisipedia.me/projects/kalesh</loc>
+    <loc>https://www.dimisipedia.me/projects/kalesh</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/projects/dimisipedia</loc>
+    <loc>https://www.dimisipedia.me/projects/dimisipedia</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/projects/kaand</loc>
+    <loc>https://www.dimisipedia.me/projects/kaand</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://dimisipedia.me/images/kaand-logo.png</image:loc>
+      <image:loc>https://www.dimisipedia.me/images/kaand-logo.png</image:loc>
       <image:title>KAAND — Next-Generation Mobile News &amp; Media Platform</image:title>
       <image:caption>Official visual mark for KAAND mobile platform (Android &amp; iOS)</image:caption>
       <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
-      <image:license>https://dimisipedia.me/editorial-policy</image:license>
+      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
     </image:image>
   </url>
   <url>
-    <loc>https://dimisipedia.me/projects/dimisi-ops</loc>
+    <loc>https://www.dimisipedia.me/projects/dimisi-ops</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://dimisipedia.me/images/dimisi-ops-logo.jpg</image:loc>
+      <image:loc>https://www.dimisipedia.me/images/dimisi-ops-logo.jpg</image:loc>
       <image:title>DIMISI-OPS — Internal Operations &amp; Task Assignment System</image:title>
       <image:caption>Official visual mark for DIMISI-OPS internal management platform</image:caption>
       <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
-      <image:license>https://dimisipedia.me/editorial-policy</image:license>
+      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
     </image:image>
   </url>
   <url>
-    <loc>https://dimisipedia.me/projects/cati-khelghar</loc>
+    <loc>https://www.dimisipedia.me/projects/cati-khelghar</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/technology/react</loc>
+    <loc>https://www.dimisipedia.me/technology/react</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/technology/node-js</loc>
+    <loc>https://www.dimisipedia.me/technology/node-js</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/technology/typescript</loc>
+    <loc>https://www.dimisipedia.me/technology/typescript</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/technology/express</loc>
+    <loc>https://www.dimisipedia.me/technology/express</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/technology/mongodb</loc>
+    <loc>https://www.dimisipedia.me/technology/mongodb</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/technology/vite</loc>
+    <loc>https://www.dimisipedia.me/technology/vite</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/technology/flutter</loc>
+    <loc>https://www.dimisipedia.me/technology/flutter</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/technology/dart</loc>
+    <loc>https://www.dimisipedia.me/technology/dart</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/technology/firebase</loc>
+    <loc>https://www.dimisipedia.me/technology/firebase</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/articles/the-founding-brotherhood</loc>
-    <lastmod>2026-08-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dimisipedia.me/articles/who-is-shikhar-dixit</loc>
+    <loc>https://www.dimisipedia.me/articles/the-founding-brotherhood</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/articles/what-is-kalesh</loc>
+    <loc>https://www.dimisipedia.me/articles/who-is-shikhar-dixit</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/articles/history-of-dimisi-technologies</loc>
+    <loc>https://www.dimisipedia.me/articles/what-is-kalesh</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/articles/timeline-of-dimisi-technologies</loc>
+    <loc>https://www.dimisipedia.me/articles/history-of-dimisi-technologies</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dimisipedia.me/articles/how-dimisipedia-verifies-information</loc>
+    <loc>https://www.dimisipedia.me/articles/timeline-of-dimisi-technologies</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.dimisipedia.me/articles/how-dimisipedia-verifies-information</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>

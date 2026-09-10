@@ -22,5 +22,5 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://dimisipedia.me/sitemap.xml
+Sitemap: https://www.dimisipedia.me/sitemap.xml
 

@@ -12,7 +12,7 @@ import { createFileRoute } from "@tanstack/react-router";
  *
  * IndexNow aids discovery/freshness only; it does not guarantee indexing.
  */
-const SITE_HOST = "dimisipedia.me";
+const SITE_HOST = "www.dimisipedia.me";
 
 export const Route = createFileRoute("/api/public/indexnow")({
   server: {
@@ -40,7 +40,8 @@ export const Route = createFileRoute("/api/public/indexnow")({
           : [];
         const urls = urlList.filter((u) => {
           try {
-            return new URL(u).hostname === SITE_HOST;
+            const h = new URL(u).hostname;
+            return h === SITE_HOST || h === "dimisipedia.me";
           } catch {
             return false;
           }

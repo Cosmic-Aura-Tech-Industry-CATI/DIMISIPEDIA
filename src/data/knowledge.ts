@@ -1177,7 +1177,7 @@ const organization: Entity = {
     "https://www.crunchbase.com/organization/dimisi-technologies-private-limited",
     "https://www.linkedin.com/company/dimisi-technologies",
     "https://tracxn.com/d/companies/dimisi-technologies",
-    "https://www.falconebiz.com",
+    "https://www.falconebiz.com/company/DIMISI-TECHNOLOGIES-PRIVATE-LIMITED-U62013UP2026PTC246506",
   ],
   faqs: [
     {
@@ -2105,7 +2105,7 @@ const projects: Entity[] = [
         note: "Version milestones not yet recorded.",
       },
     ],
-    officialLinks: [{ label: "dimisipedia.me", url: "https://dimisipedia.me", official: true }],
+    officialLinks: [{ label: "dimisipedia.me", url: "https://www.dimisipedia.me", official: true }],
     sourceIds: ["src-dimisipedia-spec"],
     revisions: baseRevisions("2026-08-15"),
     createdAt: "2026-08-15",

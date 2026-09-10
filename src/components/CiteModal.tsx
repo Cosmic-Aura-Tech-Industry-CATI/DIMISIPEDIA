@@ -27,7 +27,7 @@ export function CiteModal({ entity }: CiteModalProps) {
 
   const citations: Record<Format, { label: string; text: string }> = {
     wikipedia: {
-      label: "Wikipedia Template",
+      label: "MediaWiki / Wikipedia Syntax",
       text: `{{cite web |url=${canonicalUrl} |title=${cleanTitle} |website=DIMISIPEDIA — Knowledge Base of DIMISI Technologies |access-date=${today}}}`,
     },
     apa: {
@@ -82,7 +82,7 @@ export function CiteModal({ entity }: CiteModalProps) {
         <DialogHeader>
           <DialogTitle className="font-serif text-xl">Cite this DIMISIPEDIA Entry</DialogTitle>
           <DialogDescription className="text-xs text-muted-foreground">
-            Copy citation code formatted for Wikipedia, research papers, or media references.
+            Copy citation syntax formatted for research papers, MediaWiki references, or external publications.
           </DialogDescription>
         </DialogHeader>
 
@@ -127,12 +127,15 @@ export function CiteModal({ entity }: CiteModalProps) {
           </button>
         </div>
 
-        <div className="mt-4 border-t border-rule pt-3 text-[11px] text-muted-foreground">
+        <div className="mt-4 border-t border-rule pt-3 text-[11px] text-muted-foreground space-y-1">
           <p>
             Canonical Source URI: <span className="font-mono text-foreground">{canonicalUrl}</span>
           </p>
-          <p className="mt-0.5">
-            Maintained by DIMISI Technologies Pvt. Ltd. · Verification Tier A/B Source Backed.
+          <p>
+            Maintained by DIMISI Technologies Pvt. Ltd. (CIN: U62013UP2026PTC246506).
+          </p>
+          <p className="text-[10px] text-muted-foreground/80">
+            DIMISIPEDIA is an independent knowledge archive and corporate repository. It is not affiliated with, endorsed by, or associated with the Wikimedia Foundation or Wikipedia.
           </p>
         </div>
       </DialogContent>

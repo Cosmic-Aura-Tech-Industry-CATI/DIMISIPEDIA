@@ -40,6 +40,11 @@ function About() {
           carries a status, every status has a definition, and every entry carries a public revision
           history.
         </p>
+        <h2 className="mt-10 text-2xl">Independence &amp; Non-Affiliation</h2>
+        <p>
+          DIMISIPEDIA is an independent corporate knowledge platform owned and operated exclusively by DIMISI Technologies Pvt. Ltd. (CIN: U62013UP2026PTC246506).
+          DIMISIPEDIA is not affiliated with, endorsed by, sponsored by, or associated with the Wikimedia Foundation, Wikipedia, or any government department or registrar.
+        </p>
         <h2 className="mt-10 text-2xl">Contact</h2>
         <p>
           For corrections, additions or verification requests, contact DIMISI Technologies through{" "}

@@ -257,13 +257,18 @@ export function SiteFooter() {
       </div>
       <div className="rule-t">
         <div className="mx-auto flex max-w-6xl flex-col items-start gap-4 px-5 py-5 sm:flex-row sm:items-center sm:justify-between">
-          <p className="min-w-0 text-xs text-muted-foreground">
-            Operated by{" "}
-            <span className="notranslate" translate="no">
-              DIMISI Technologies Pvt. Ltd.
-            </span>{" "}
-            · Kanpur, Uttar Pradesh, India
-          </p>
+          <div className="min-w-0 space-y-1">
+            <p className="text-xs text-muted-foreground">
+              Operated by{" "}
+              <span className="notranslate" translate="no">
+                DIMISI Technologies Pvt. Ltd.
+              </span>{" "}
+              (CIN: U62013UP2026PTC246506) · Kanpur, Uttar Pradesh, India
+            </p>
+            <p className="text-[11px] text-muted-foreground/75 leading-relaxed">
+              DIMISIPEDIA is an independent corporate knowledge repository. It is not affiliated with, sponsored by, or endorsed by the Wikimedia Foundation, Wikipedia, or any government portal.
+            </p>
+          </div>
           <a
             href="https://dimisi.tech"
             target="_blank"

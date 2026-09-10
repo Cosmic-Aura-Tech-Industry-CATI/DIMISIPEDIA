@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import { Check, ChevronDown, Sparkles } from "lucide-react";
+import { Check, ChevronDown, ExternalLink } from "lucide-react";
 import { setHinglishActive } from "@/lib/hinglishEngine";
-import { protectBrandElements } from "@/lib/brandProtection";
 
 export type LanguageOption =
   | "en"
@@ -56,56 +55,15 @@ const languages: LangItem[] = [
   { id: "ru", label: "Русский", sub: "Russian", flag: "🇷🇺", group: "global" },
 ];
 
-declare global {
-  interface Window {
-    google?: {
-      translate?: {
-        TranslateElement: new (
-          options: { pageLanguage: string; autoDisplay?: boolean; includedLanguages?: string },
-          containerId: string,
-        ) => void;
-      };
-    };
-    googleTranslateElementInit?: () => void;
-  }
-}
-
-/** Helper to set cookies for Google Translate DOM bridge */
-function setTranslateCookie(targetLang: string) {
+/** Clears any legacy Google Translate cookies if previously stored */
+function clearLegacyTranslateCookies() {
   if (typeof document === "undefined") return;
-
-  const cookieVal =
-    targetLang === "en" || targetLang === "hinglish" ? "/en/en" : `/en/${targetLang}`;
   const hostname = window.location.hostname;
-
-  document.cookie = `googtrans=${cookieVal}; path=/;`;
-  document.cookie = `googtrans=${cookieVal}; path=/; domain=${hostname};`;
+  document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${hostname};`;
   if (hostname.includes(".")) {
     const rootDomain = hostname.split(".").slice(-2).join(".");
-    document.cookie = `googtrans=${cookieVal}; path=/; domain=.${rootDomain};`;
-  }
-}
-
-/** Injects Google Translate Element script if not already present */
-function ensureTranslateScript() {
-  if (typeof window === "undefined" || typeof document === "undefined") return;
-
-  if (!document.getElementById("google-translate-script")) {
-    window.googleTranslateElementInit = () => {
-      if (window.google?.translate?.TranslateElement) {
-        new window.google.translate.TranslateElement(
-          { pageLanguage: "en", autoDisplay: false },
-          "google_translate_element",
-        );
-      }
-    };
-
-    const script = document.createElement("script");
-    script.id = "google-translate-script";
-    script.type = "text/javascript";
-    script.async = true;
-    script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-    document.body.appendChild(script);
+    document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${rootDomain};`;
   }
 }
 
@@ -113,11 +71,13 @@ export function useLanguage() {
   const [lang, setLang] = useState<LanguageOption>("en");
 
   useEffect(() => {
+    clearLegacyTranslateCookies();
     const stored = (localStorage.getItem("dp-lang") as LanguageOption) || "en";
     setLang(stored);
-    ensureTranslateScript();
     if (stored === "hinglish") {
       setHinglishActive(true);
+    } else {
+      setHinglishActive(false);
     }
 
     const handler = (e: Event) => {
@@ -139,7 +99,6 @@ export function useLanguage() {
   const changeLanguage = (newLang: LanguageOption) => {
     setLang(newLang);
     localStorage.setItem("dp-lang", newLang);
-    setTranslateCookie(newLang);
 
     if (newLang === "hinglish") {
       setHinglishActive(true);
@@ -148,33 +107,12 @@ export function useLanguage() {
     }
 
     window.dispatchEvent(new CustomEvent("dp-language-change", { detail: newLang }));
-    setTimeout(() => protectBrandElements(), 100);
-    setTimeout(() => protectBrandElements(), 700);
 
-    // Trigger Google Translate frame if target is not plain English
-    if (newLang !== "en" && newLang !== "hinglish") {
-      ensureTranslateScript();
-      const select = document.querySelector<HTMLSelectElement>(".goog-te-combo");
-      if (select) {
-        select.value = newLang;
-        select.dispatchEvent(new Event("change"));
-      } else {
-        // Trigger reload to apply cookie across the whole page
-        setTimeout(() => {
-          const sel = document.querySelector<HTMLSelectElement>(".goog-te-combo");
-          if (sel) {
-            sel.value = newLang;
-            sel.dispatchEvent(new Event("change"));
-          }
-        }, 600);
-      }
-    } else {
-      // Return to original English / native Hinglish
-      const select = document.querySelector<HTMLSelectElement>(".goog-te-combo");
-      if (select) {
-        select.value = "en";
-        select.dispatchEvent(new Event("change"));
-      }
+    // For languages other than English & Hinglish, offer safe official web translation
+    if (newLang !== "en" && newLang !== "hinglish" && typeof window !== "undefined") {
+      const currentUrl = window.location.href;
+      const webTranslateUrl = `https://translate.google.com/translate?sl=en&tl=${newLang}&u=${encodeURIComponent(currentUrl)}`;
+      window.open(webTranslateUrl, "_blank", "noopener,noreferrer");
     }
   };
 
@@ -197,9 +135,6 @@ export function LanguageSelector({ placement = "top" }: { placement?: "top" | "b
 
   return (
     <div className="relative inline-block">
-      {/* Hidden container for Google Translate Element */}
-      <div id="google_translate_element" className="hidden" aria-hidden="true" />
-
       <button
         type="button"
         onClick={() => setIsOpen((v) => !v)}
@@ -222,10 +157,10 @@ export function LanguageSelector({ placement = "top" }: { placement?: "top" | "b
             <div className="p-3 border-b border-rule bg-background/50">
               <div className="flex items-center justify-between">
                 <span className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
-                  Whole-Website Language
+                  Reading Language
                 </span>
-                <span className="label-mono flex items-center gap-1 text-[10px] text-primary">
-                  <Sparkles className="size-3" /> Live
+                <span className="label-mono text-[10px] text-primary">
+                  Native
                 </span>
               </div>
 
@@ -296,14 +231,17 @@ export function LanguageSelector({ placement = "top" }: { placement?: "top" | "b
                       </div>
                     </div>
                   </div>
-                  {lang === l.id && <Check className="size-3.5" />}
+                  {lang === l.id ? (
+                    <Check className="size-3.5" />
+                  ) : l.id !== "en" && l.id !== "hinglish" ? (
+                    <ExternalLink className="size-3 text-muted-foreground opacity-60" />
+                  ) : null}
                 </button>
               ))}
             </div>
 
             <div className="border-t border-rule bg-background/50 p-2.5 text-[10px] text-muted-foreground leading-snug">
-              Translates the entire platform — all articles, leadership profiles, timeline, and
-              company records.
+              English &amp; Hinglish are rendered natively in-app. International languages open official secure web translations.
             </div>
           </div>
         </>

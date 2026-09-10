@@ -142,8 +142,7 @@ export function applyHinglishToDOM(root: Node = document.body) {
         tag === "code" ||
         tag === "pre" ||
         parent.isContentEditable ||
-        parent.closest(".notranslate") ||
-        parent.closest("#google_translate_element")
+        parent.closest(".notranslate")
       ) {
         return NodeFilter.FILTER_REJECT;
       }

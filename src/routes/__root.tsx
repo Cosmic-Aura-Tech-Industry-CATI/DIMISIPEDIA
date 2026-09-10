@@ -14,7 +14,6 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader, SiteFooter } from "../components/SiteChrome";
 import { SiteSearch } from "../components/SiteSearch";
 import { buildWebsiteSchema, buildSiteNavigationSchema } from "../lib/seo";
-import { initBrandProtection } from "../lib/brandProtection";
 
 function NotFoundComponent() {
   return (
@@ -146,10 +145,6 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-
-  useEffect(() => {
-    initBrandProtection();
-  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>

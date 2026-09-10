@@ -31,25 +31,25 @@ export const Route = createFileRoute("/journey")({
         buildBreadcrumbSchema(trail, "/journey"),
         {
           "@type": "Article",
-          "@id": "https://dimisipedia.me/journey#article",
+          "@id": "https://www.dimisipedia.me/journey#article",
           headline: "The Entrepreneurship Journey of Shikhar Dixit and DIMISI Technologies",
           description:
             "From a 6-hour home project sprint for Gandhigiri to CATI, Kalesh, the Sinister Six, incorporation, and DIMISIPEDIA — an unfiltered founder narrative by Shikhar Dixit.",
           author: {
             "@type": "Person",
-            "@id": "https://dimisipedia.me/people/shikhar-dixit#person",
+            "@id": "https://www.dimisipedia.me/people/shikhar-dixit#person",
             name: "Shikhar Dixit",
             jobTitle: "Founder & CEO",
-            url: "https://dimisipedia.me/people/shikhar-dixit",
+            url: "https://www.dimisipedia.me/people/shikhar-dixit",
           },
           publisher: {
-            "@id": "https://dimisipedia.me/dimisi-technologies#organization",
+            "@id": "https://www.dimisipedia.me/dimisi-technologies#organization",
           },
           about: [
-            { "@id": "https://dimisipedia.me/people/shikhar-dixit#person" },
-            { "@id": "https://dimisipedia.me/dimisi-technologies#organization" },
+            { "@id": "https://www.dimisipedia.me/people/shikhar-dixit#person" },
+            { "@id": "https://www.dimisipedia.me/dimisi-technologies#organization" },
           ],
-          mainEntityOfPage: "https://dimisipedia.me/journey",
+          mainEntityOfPage: "https://www.dimisipedia.me/journey",
           datePublished: "2026-08-21",
           dateModified: "2026-08-21",
         },
