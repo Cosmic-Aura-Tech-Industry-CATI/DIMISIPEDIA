@@ -344,10 +344,7 @@ export function buildPersonSchema(entity: Entity): Json {
       jobTitle: r.entity.subtitle,
       url: abs(r.entity.path),
     })),
-    subjectOf: [
-      ...projects.map((r) => ({ "@id": entityId(r.entity) })),
-      ...aboutArticles,
-    ],
+    subjectOf: [...projects.map((r) => ({ "@id": entityId(r.entity) })), ...aboutArticles],
     alumniOf: (entity.education ?? []).map((e) => {
       const isAktu = /aktu|abdul kalam/i.test(e.institution);
       return clean({
@@ -425,12 +422,14 @@ export function buildOrganizationSchema(entity: Entity): Json {
     foundingDate: fact("Incorporated") ?? fact("Founded") ?? "2026-04-09",
     taxID: fact("CIN") ?? "U62013UP2026PTC246506",
     identifier: fact("CIN") ?? "U62013UP2026PTC246506",
-    founder: Array.from(new Map(founders.map((r) => [r.entity.id, r.entity])).values()).map((e) => ({
-      "@type": "Person",
-      "@id": entityId(e),
-      name: e.name,
-      url: abs(e.path),
-    })),
+    founder: Array.from(new Map(founders.map((r) => [r.entity.id, r.entity])).values()).map(
+      (e) => ({
+        "@type": "Person",
+        "@id": entityId(e),
+        name: e.name,
+        url: abs(e.path),
+      }),
+    ),
     ceo: ceo
       ? {
           "@type": "Person",
@@ -785,9 +784,7 @@ export function canonicalUrls(): SitemapUrlEntry[] {
       let image: SitemapUrlEntry["image"] = undefined;
       if (e.image) {
         const isFounder =
-          e.id === "shikhar-dixit" ||
-          e.id === "nishkarsh-mishra" ||
-          e.id === "swatantra-singh";
+          e.id === "shikhar-dixit" || e.id === "nishkarsh-mishra" || e.id === "swatantra-singh";
         const title = isFounder
           ? `${e.name} — Co-Founder & Executive Leadership | DIMISI Technologies`
           : `${e.name} — ${e.subtitle || "DIMISI Technologies"}`;

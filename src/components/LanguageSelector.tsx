@@ -159,9 +159,7 @@ export function LanguageSelector({ placement = "top" }: { placement?: "top" | "b
                 <span className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
                   Reading Language
                 </span>
-                <span className="label-mono text-[10px] text-primary">
-                  Native
-                </span>
+                <span className="label-mono text-[10px] text-primary">Native</span>
               </div>
 
               {/* Group Tabs */}
@@ -241,7 +239,8 @@ export function LanguageSelector({ placement = "top" }: { placement?: "top" | "b
             </div>
 
             <div className="border-t border-rule bg-background/50 p-2.5 text-[10px] text-muted-foreground leading-snug">
-              English &amp; Hinglish are rendered natively in-app. International languages open official secure web translations.
+              English &amp; Hinglish are rendered natively in-app. International languages open
+              official secure web translations.
             </div>
           </div>
         </>

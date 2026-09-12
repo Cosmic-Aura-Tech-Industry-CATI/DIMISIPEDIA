@@ -281,6 +281,13 @@ const baseSources: Source[] = [
       "swatantra-singh",
       "sheelu-singh",
       "mridul-mishra",
+      "amrit-awasthi",
+      "prashant-umrao",
+      "amit-kumar",
+      "harsh-mishra",
+      "somya-tiwari",
+      "anushka-tripathi",
+      "nisha-chaudhary",
     ],
     claim: "Names and current roles of DIMISI Technologies team members.",
     addedAt: "2026-08-15",
@@ -337,7 +344,8 @@ const baseSources: Source[] = [
     url: "https://www.toursbyrudra.com",
     type: "Official Website",
     relatedEntities: ["rudra-tours", "dimisi-technologies"],
-    claim: "Live client web platform developed by DIMISI Technologies with tour packages, routes, vehicle catalogue, and local SEO structure.",
+    claim:
+      "Live client web platform developed by DIMISI Technologies with tour packages, routes, vehicle catalogue, and local SEO structure.",
     addedAt: "2026-09-04",
     status: "source-backed",
   },
@@ -348,7 +356,8 @@ const baseSources: Source[] = [
     url: "https://www.yadhuvanshitours.com",
     type: "Official Website",
     relatedEntities: ["yadhuvanshi-tours", "dimisi-technologies"],
-    claim: "Live premium client web platform developed by DIMISI Technologies with destination discovery, wedding travel, vehicle showcase, and search intent architecture.",
+    claim:
+      "Live premium client web platform developed by DIMISI Technologies with destination discovery, wedding travel, vehicle showcase, and search intent architecture.",
     addedAt: "2026-09-04",
     status: "source-backed",
   },
@@ -358,7 +367,8 @@ const baseSources: Source[] = [
     publisher: "DIMISI Technologies Pvt. Ltd.",
     type: "Project Documentation",
     relatedEntities: ["rudra-tours", "yadhuvanshi-tours", "dimisi-technologies"],
-    claim: "Documentation of end-to-end digital transformation, Next.js development, SEO, AEO, and GEO optimization delivered for commercial clients.",
+    claim:
+      "Documentation of end-to-end digital transformation, Next.js development, SEO, AEO, and GEO optimization delivered for commercial clients.",
     addedAt: "2026-09-04",
     status: "source-backed",
   },
@@ -368,7 +378,8 @@ const baseSources: Source[] = [
     publisher: "DIMISI Technologies Pvt. Ltd.",
     type: "Project Documentation",
     relatedEntities: ["kaand", "dimisi-technologies", "amrit-awasthi"],
-    claim: "Mobile-first news application under development with Flutter and Dart, engineered by Amrit Awasthi under guidance of Sheelu Singh and Mridul Mishra.",
+    claim:
+      "Mobile-first news application under development with Flutter and Dart, engineered by Amrit Awasthi under guidance of Sheelu Singh and Mridul Mishra.",
     addedAt: "2026-09-04",
     status: "source-backed",
   },
@@ -379,7 +390,8 @@ const baseSources: Source[] = [
     url: "https://cati47.tech",
     type: "Official Website",
     relatedEntities: ["cati-khelghar", "dimisi-technologies", "shikhar-dixit"],
-    claim: "Live offline gaming hub featuring 16 pass-and-play and local multiplayer board games without accounts or internet dependency.",
+    claim:
+      "Live offline gaming hub featuring 16 pass-and-play and local multiplayer board games without accounts or internet dependency.",
     addedAt: "2026-09-04",
     status: "source-backed",
   },
@@ -389,7 +401,8 @@ const baseSources: Source[] = [
     publisher: "DIMISI Technologies Pvt. Ltd.",
     type: "Project Documentation",
     relatedEntities: ["dimisi-ops", "dimisi-technologies", "shikhar-dixit"],
-    claim: "Internal operations system under development for employee management, task allocation, and operational workflow tracking.",
+    claim:
+      "Internal operations system under development for employee management, task allocation, and operational workflow tracking.",
     addedAt: "2026-09-04",
     status: "source-backed",
   },
@@ -400,7 +413,8 @@ const baseSources: Source[] = [
     url: "https://karyon.app",
     type: "Official Website",
     relatedEntities: ["karyon", "dimisi-technologies", "siddhant-shekhar"],
-    claim: "Professional home services matching platform under development, connecting customers to verified home maintenance professionals at doorstep.",
+    claim:
+      "Professional home services matching platform under development, connecting customers to verified home maintenance professionals at doorstep.",
     addedAt: "2026-09-04",
     status: "source-backed",
   },
@@ -409,8 +423,18 @@ const baseSources: Source[] = [
     title: "LinkedIn 30-Day Kalesh Challenge & Felicitation Ceremony Records",
     publisher: "DIMISI Technologies Pvt. Ltd.",
     type: "Company Announcement",
-    relatedEntities: ["prashant-umrao", "kalesh", "swatantra-singh", "dimisi-technologies"],
-    claim: "Prashant Umrao awarded 1st Prize Certificate of Achievement by Co-Founder Swatantra Singh on 15 August 2026 for the 30-day viral storytelling and campus creator challenge.",
+    relatedEntities: [
+      "prashant-umrao",
+      "harsh-mishra",
+      "somya-tiwari",
+      "anushka-tripathi",
+      "amrit-awasthi",
+      "kalesh",
+      "swatantra-singh",
+      "dimisi-technologies",
+    ],
+    claim:
+      "Official results and felicitation records for the nationwide LinkedIn 30-Day Kalesh Promotion Challenge: 1st Position Prashant Umrao (Winner), 2nd Position Harsh Mishra, 3rd Position Somya Tiwari, 4th Position Anushka Tripathi, and 5th Position Amrit Awasthi.",
     addedAt: "2026-09-04",
     status: "source-backed",
   },
@@ -420,6 +444,15 @@ const baseRelationships: Relationship[] = [
   { from: "sheelu-singh", type: "Works at", to: "dimisi-technologies" },
   { from: "mridul-mishra", type: "Works at", to: "dimisi-technologies" },
   { from: "prashant-umrao", type: "1st Prize Winner", to: "kalesh" },
+  { from: "harsh-mishra", type: "Works at", to: "dimisi-technologies" },
+  { from: "harsh-mishra", type: "Participated in", to: "kalesh" },
+  { from: "somya-tiwari", type: "Works at", to: "dimisi-technologies" },
+  { from: "somya-tiwari", type: "Participated in", to: "kalesh" },
+  { from: "somya-tiwari", type: "Engineering", to: "rudra-tours" },
+  { from: "anushka-tripathi", type: "Works at", to: "dimisi-technologies" },
+  { from: "anushka-tripathi", type: "Participated in", to: "kalesh" },
+  { from: "nisha-chaudhary", type: "Works at", to: "dimisi-technologies" },
+  { from: "amrit-awasthi", type: "Participated in", to: "kalesh" },
 
   { from: "dimisi-technologies", type: "Develops", to: "kalesh" },
   { from: "dimisi-technologies", type: "Develops", to: "dimisipedia" },
@@ -647,7 +680,7 @@ const people: Entity[] = [
     entityType: "person",
     name: "Mridul Mishra",
     subtitle: "Founding Engineer — Kalesh, DIMISI Technologies",
-    image: "/images/mridul-mishra.png",
+    image: "/images/mridul-mishra.jpg",
     shortDescription:
       "Backend engineer and founding engineer for Kalesh, DIMISI Technologies' consumer social platform.",
     answer:
@@ -748,9 +781,15 @@ const people: Entity[] = [
         change:
           "Founding engineer role and documented Kalesh backend responsibilities added with sourcing.",
       },
+      {
+        n: 3,
+        date: "2026-09-12",
+        editor: "DIMISIPEDIA Editorial",
+        change: "Updated official portrait photograph.",
+      },
     ],
     createdAt: "2026-08-15",
-    updatedAt: "2026-08-15",
+    updatedAt: "2026-09-12",
     seoTitle: "Mridul Mishra — Founding Engineer, Kalesh (DIMISI Technologies) | DIMISIPEDIA",
     seoDescription:
       "Mridul Mishra is the founding engineer for Kalesh at DIMISI Technologies, working on REST APIs, WebSockets, BullMQ/Redis queues, MongoDB and CI/CD.",
@@ -771,13 +810,28 @@ const people: Entity[] = [
       "Amrit Awasthi is an Android Developer Intern (Flutter / DART) at DIMISI Technologies Private Limited, leading the mobile engineering of KAAND, the company's next-generation news and media platform under the technical guidance of Sheelu Singh and Mridul Mishra.",
     lifecycle: "Active",
     facts: [
-      { label: "Role", value: "Android Developer Intern (Flutter / DART)", status: "source-backed" },
+      {
+        label: "Role",
+        value: "Android Developer Intern (Flutter / DART)",
+        status: "source-backed",
+      },
       { label: "Organization", value: ORG_NAME, status: "documented" },
       { label: "Primary project", value: "KAAND (Mobile Media Platform)", status: "source-backed" },
       { label: "Core technologies", value: "Flutter, Dart", status: "source-backed" },
       { label: "Technical mentors", value: "Sheelu Singh, Mridul Mishra", status: "source-backed" },
+      {
+        label: "Milestone award",
+        value: "5th Position — LinkedIn 30-Day Challenge",
+        status: "source-backed",
+        sourceIds: ["src-linkedin-challenge-felicitation"],
+      },
     ],
-    areas: ["Android application development", "Flutter engineering", "Dart programming", "Mobile UI/UX systems"],
+    areas: [
+      "Android application development",
+      "Flutter engineering",
+      "Dart programming",
+      "Mobile UI/UX systems",
+    ],
     roles: [
       {
         title: "Android Developer Intern (Flutter / DART)",
@@ -786,6 +840,7 @@ const people: Entity[] = [
         sourceIds: ["src-kaand-dev", "src-team-roster"],
       },
     ],
+    awards: ["5th Position — 30-Day LinkedIn Challenge"],
     sections: [
       {
         id: "overview",
@@ -805,19 +860,49 @@ const people: Entity[] = [
           "KAAND (Under Development): Implementing reactive user interfaces, news feed streaming, and cross-platform UI architectures tailored for high-speed mobile information discovery. [1]",
         ],
       },
+      {
+        id: "linkedin-30days-award",
+        heading: "5th Position — 30-Day LinkedIn Challenge",
+        status: "source-backed",
+        body: [
+          "Amrit Awasthi achieved 5th Position in the nationwide LinkedIn 30-Day Kalesh Promotion & Content Creator Challenge hosted by DIMISI Technologies. [3]",
+          "The initiative engaged campus creators and engineering interns in daily technical storytelling, platform narrative breakdowns, and viral student engagement centered around Kalesh. [3]",
+        ],
+      },
     ],
     coverage: [
-      { area: "Identity & Role", status: "source-backed", note: "Recorded in DIMISI project development rosters." },
-      { area: "Project Assignment", status: "source-backed", note: "Lead developer on KAAND verified in company engineering records." },
+      {
+        area: "Identity & Role",
+        status: "source-backed",
+        note: "Recorded in DIMISI project development rosters.",
+      },
+      {
+        area: "Project Assignment",
+        status: "source-backed",
+        note: "Lead developer on KAAND verified in company engineering records.",
+      },
+      {
+        area: "Milestones & Challenges",
+        status: "source-backed",
+        note: "5th Position in nationwide LinkedIn 30-Day Challenge documented in company felicitation records.",
+      },
     ],
     officialLinks: [],
-    sourceIds: ["src-kaand-dev", "src-team-roster"],
-    revisions: baseRevisions("2026-09-04"),
+    sourceIds: ["src-kaand-dev", "src-team-roster", "src-linkedin-challenge-felicitation"],
+    revisions: [
+      ...baseRevisions("2026-09-04"),
+      {
+        n: 2,
+        date: "2026-09-12",
+        editor: "DIMISIPEDIA Editorial",
+        change: "Documented 5th Position ranking in the 30-Day LinkedIn Challenge.",
+      },
+    ],
     createdAt: "2026-09-04",
-    updatedAt: "2026-09-05",
+    updatedAt: "2026-09-12",
     seoTitle: "Amrit Awasthi — Android Developer Intern (Flutter / DART) | DIMISIPEDIA",
     seoDescription:
-      "Amrit Awasthi is an Android Developer Intern (Flutter / DART) at DIMISI Technologies, leading mobile development for KAAND.",
+      "Amrit Awasthi is an Android Developer Intern (Flutter / DART) at DIMISI Technologies, leading mobile development for KAAND and 5th Position holder in the 30-Day LinkedIn Challenge.",
   },
 
   {
@@ -837,10 +922,24 @@ const people: Entity[] = [
       { label: "Role", value: "Full Stack Developer Intern & Tester", status: "source-backed" },
       { label: "Organization", value: ORG_NAME, status: "documented" },
       { label: "Primary project", value: "DIMISI-OPS", status: "source-backed" },
-      { label: "Milestone award", value: "1st Prize Winner — LinkedIn 30-Day Challenge (15 August 2026)", status: "source-backed", sourceIds: ["src-linkedin-challenge-felicitation"] },
-      { label: "Supervision", value: "Nishkarsh Mishra (Operations), Mridul Mishra (Backend)", status: "source-backed" },
+      {
+        label: "Milestone award",
+        value: "1st Prize Winner — LinkedIn 30-Day Challenge (15 August 2026)",
+        status: "source-backed",
+        sourceIds: ["src-linkedin-challenge-felicitation"],
+      },
+      {
+        label: "Supervision",
+        value: "Nishkarsh Mishra (Operations), Mridul Mishra (Backend)",
+        status: "source-backed",
+      },
     ],
-    areas: ["Full stack web development", "Software quality assurance & testing", "Internal operations systems", "Technical content creation"],
+    areas: [
+      "Full stack web development",
+      "Software quality assurance & testing",
+      "Internal operations systems",
+      "Technical content creation",
+    ],
     roles: [
       {
         title: "Full Stack Developer Intern & Tester",
@@ -871,15 +970,24 @@ const people: Entity[] = [
       },
     ],
     coverage: [
-      { area: "Identity & Role", status: "source-backed", note: "Recorded in DIMISI internal project documentation." },
-      { area: "Award & Recognition", status: "source-backed", note: "Photographic and ceremonial record of 1st Prize Certificate awarded on 15 August 2026." },
+      {
+        area: "Identity & Role",
+        status: "source-backed",
+        note: "Recorded in DIMISI internal project documentation.",
+      },
+      {
+        area: "Award & Recognition",
+        status: "source-backed",
+        note: "Photographic and ceremonial record of 1st Prize Certificate awarded on 15 August 2026.",
+      },
     ],
     officialLinks: [],
     sourceIds: ["src-dimisi-ops-spec", "src-team-roster", "src-linkedin-challenge-felicitation"],
     revisions: baseRevisions("2026-09-04"),
     createdAt: "2026-09-04",
     updatedAt: "2026-09-04",
-    seoTitle: "Prashant Umrao — Full Stack Developer Intern, Tester & 1st Prize Winner | DIMISIPEDIA",
+    seoTitle:
+      "Prashant Umrao — Full Stack Developer Intern, Tester & 1st Prize Winner | DIMISIPEDIA",
     seoDescription:
       "Prashant Umrao is a Full Stack Developer Intern & Tester at DIMISI Technologies and 1st Prize Winner of the LinkedIn 30-Day Challenge.",
   },
@@ -901,9 +1009,18 @@ const people: Entity[] = [
       { label: "Role", value: "Backend Development Intern", status: "source-backed" },
       { label: "Organization", value: ORG_NAME, status: "documented" },
       { label: "Primary project", value: "DIMISI-OPS", status: "source-backed" },
-      { label: "Supervision", value: "Nishkarsh Mishra (Operations), Mridul Mishra (Backend)", status: "source-backed" },
+      {
+        label: "Supervision",
+        value: "Nishkarsh Mishra (Operations), Mridul Mishra (Backend)",
+        status: "source-backed",
+      },
     ],
-    areas: ["Backend engineering", "Database integration", "API development", "Workflow automation"],
+    areas: [
+      "Backend engineering",
+      "Database integration",
+      "API development",
+      "Workflow automation",
+    ],
     roles: [
       {
         title: "Backend Development Intern",
@@ -924,7 +1041,11 @@ const people: Entity[] = [
       },
     ],
     coverage: [
-      { area: "Identity & Role", status: "source-backed", note: "Documented in DIMISI-OPS project specifications." },
+      {
+        area: "Identity & Role",
+        status: "source-backed",
+        note: "Documented in DIMISI-OPS project specifications.",
+      },
     ],
     officialLinks: [],
     sourceIds: ["src-dimisi-ops-spec", "src-team-roster"],
@@ -934,6 +1055,356 @@ const people: Entity[] = [
     seoTitle: "Amit Kumar — Backend Development Intern | DIMISIPEDIA",
     seoDescription:
       "Amit Kumar is a Backend Development Intern at DIMISI Technologies contributing to the DIMISI-OPS operations platform.",
+  },
+
+  {
+    id: "harsh-mishra",
+    slug: "harsh-mishra",
+    path: "/people/harsh-mishra",
+    entityType: "person",
+    name: "Harsh Mishra",
+    subtitle: "Full Stack Web Developer — DIMISI Technologies",
+    image: "/images/harsh-mishra.jpg",
+    shortDescription:
+      "Full Stack Web Developer at DIMISI Technologies and 2nd Position holder in the 30-Day LinkedIn Challenge, with previous experience as Video Editor & Social Media Marketing Intern.",
+    answer:
+      "Harsh Mishra is a Full Stack Web Developer at DIMISI Technologies Private Limited. He secured 2nd Position in the nationwide LinkedIn 30-Day Challenge and previously contributed as Video Editor & Social Media Marketing Intern at the company's Sand Tank office.",
+    lifecycle: "Active",
+    facts: [
+      { label: "Role", value: "Full Stack Web Developer", status: "source-backed" },
+      { label: "Organization", value: ORG_NAME, status: "documented" },
+      {
+        label: "Previous role",
+        value: "Video Editor & Social Media Marketing Intern",
+        status: "source-backed",
+      },
+      {
+        label: "Milestone award",
+        value: "2nd Position — LinkedIn 30-Day Challenge",
+        status: "source-backed",
+        sourceIds: ["src-linkedin-challenge-felicitation"],
+      },
+    ],
+    areas: [
+      "Full stack web development",
+      "Frontend engineering",
+      "Video production & editing",
+      "Social media marketing",
+    ],
+    roles: [
+      {
+        title: "Full Stack Web Developer",
+        organization: ORG_NAME,
+        status: "source-backed",
+        sourceIds: ["src-team-roster"],
+      },
+    ],
+    experience: [
+      {
+        organization: ORG_NAME,
+        role: "Video Editor & Social Media Marketing Intern",
+        status: "source-backed",
+        note: "Previous organizational experience assisting with video production, Shark Tank India pitch editing, and social media marketing at the Sand Tank office.",
+      },
+    ],
+    awards: ["2nd Position — 30-Day LinkedIn Challenge"],
+    sections: [
+      {
+        id: "overview",
+        heading: "Overview & role",
+        status: "source-backed",
+        body: [
+          "Harsh Mishra is a Full Stack Web Developer at DIMISI Technologies. [1]",
+          "He contributes to web platform development, digital interface engineering, and software solutions across DIMISI Technologies projects. [1]",
+        ],
+      },
+      {
+        id: "previous-experience",
+        heading: "Previous organizational experience",
+        status: "source-backed",
+        body: [
+          "Harsh Mishra previously served as Video Editor & Social Media Marketing Intern, joining on 22 February 2026 during the foundational Sand Tank office phase alongside fellow interns Saumya Shukla, Niyati Gupta, and Amit Kumar. [1]",
+          "In this previous capacity, he assisted with visual media production, creative communications, and the editing of the founders' Shark Tank India pitch video. [1]",
+        ],
+      },
+      {
+        id: "linkedin-30days-award",
+        heading: "2nd Position — 30-Day LinkedIn Challenge",
+        status: "source-backed",
+        body: [
+          "Harsh Mishra secured the 2nd Position in the nationwide LinkedIn 30-Day Kalesh Promotion & Content Creator Challenge hosted by DIMISI Technologies. [2]",
+          "The 30-day initiative challenged creator contributors and developers to drive organic community engagement, narrative storytelling, and viral campus adoption for Kalesh.",
+        ],
+      },
+    ],
+    coverage: [
+      {
+        area: "Identity & Role",
+        status: "source-backed",
+        note: "Recorded in DIMISI internal project documentation.",
+      },
+      {
+        area: "Previous Experience",
+        status: "source-backed",
+        note: "Recorded in Sand Tank office intern roster and founder chronicles.",
+      },
+      {
+        area: "Milestones & Challenges",
+        status: "source-backed",
+        note: "2nd Position in LinkedIn 30-Day Challenge recorded in DIMISI campaign documentation.",
+      },
+    ],
+    officialLinks: [],
+    sourceIds: ["src-team-roster", "src-linkedin-challenge-felicitation"],
+    revisions: baseRevisions("2026-09-12"),
+    createdAt: "2026-09-12",
+    updatedAt: "2026-09-12",
+    seoTitle: "Harsh Mishra — Full Stack Web Developer & 2nd Position Holder | DIMISIPEDIA",
+    seoDescription:
+      "Harsh Mishra is a Full Stack Web Developer at DIMISI Technologies, 2nd Position holder in the 30-Day LinkedIn Challenge, and former Video Editor & Social Media Marketing Intern.",
+  },
+
+  {
+    id: "somya-tiwari",
+    slug: "somya-tiwari",
+    path: "/people/somya-tiwari",
+    entityType: "person",
+    name: "Somya Tiwari",
+    subtitle: "Full Stack Developer & Client Project Manager — DIMISI Technologies",
+    image: "/images/somya-tiwari.jpg",
+    shortDescription:
+      "Full Stack Developer and Client Project Manager at DIMISI Technologies, 3rd Position holder in the 30-Day LinkedIn Challenge, and coordinator for commercial client deliveries.",
+    answer:
+      "Somya Tiwari is a Full Stack Developer & Client Project Manager at DIMISI Technologies Private Limited, leading client management and web delivery for commercial projects such as Rudra Tours & Travels, and holding 3rd Position in the 30-Day LinkedIn Challenge.",
+    lifecycle: "Active",
+    facts: [
+      {
+        label: "Role",
+        value: "Full Stack Developer & Client Project Manager",
+        status: "source-backed",
+      },
+      { label: "Organization", value: ORG_NAME, status: "documented" },
+      {
+        label: "Key client delivery",
+        value: "Rudra Tours & Travels (Web Delivery)",
+        status: "source-backed",
+      },
+      {
+        label: "Milestone award",
+        value: "3rd Position — LinkedIn 30-Day Challenge",
+        status: "source-backed",
+        sourceIds: ["src-linkedin-challenge-felicitation"],
+      },
+    ],
+    areas: [
+      "Full stack web development",
+      "Client project management",
+      "Commercial web delivery",
+      "Client relations & coordination",
+    ],
+    roles: [
+      {
+        title: "Full Stack Developer & Client Project Manager",
+        organization: ORG_NAME,
+        status: "source-backed",
+        sourceIds: ["src-team-roster", "src-rudra-official"],
+      },
+    ],
+    awards: ["3rd Position — 30-Day LinkedIn Challenge"],
+    sections: [
+      {
+        id: "overview",
+        heading: "Overview & commercial delivery",
+        status: "source-backed",
+        body: [
+          "Somya Tiwari is a Full Stack Developer & Client Project Manager at DIMISI Technologies. [1]",
+          "She joined the company's delivery team to assist with client management and frontend development, playing an instrumental role in successfully executing DIMISI's first commercial website contracts, including Rudra Tours & Travels and subsequent client deals. [2]",
+        ],
+      },
+      {
+        id: "linkedin-30days-award",
+        heading: "3rd Position — 30-Day LinkedIn Challenge",
+        status: "source-backed",
+        body: [
+          "Somya Tiwari achieved 3rd Position in the nationwide LinkedIn 30-Day Kalesh Promotion & Content Creator Challenge organized by DIMISI Technologies. [3]",
+          "The campaign brought student builders and contributors together in a month-long sprint of daily storytelling, campus polls, and organic product promotion.",
+        ],
+      },
+    ],
+    coverage: [
+      {
+        area: "Identity & Role",
+        status: "source-backed",
+        note: "Recorded in DIMISI internal project documentation.",
+      },
+      {
+        area: "Commercial Delivery",
+        status: "source-backed",
+        note: "Client management on Rudra Tours & Travels documented in commercial contracts record.",
+      },
+      {
+        area: "Milestones & Challenges",
+        status: "source-backed",
+        note: "3rd Position in LinkedIn 30-Day Challenge recorded in DIMISI campaign documentation.",
+      },
+    ],
+    officialLinks: [],
+    sourceIds: ["src-team-roster", "src-rudra-official", "src-linkedin-challenge-felicitation"],
+    revisions: baseRevisions("2026-09-12"),
+    createdAt: "2026-09-12",
+    updatedAt: "2026-09-12",
+    seoTitle: "Somya Tiwari — Full Stack Developer & Client Project Manager | DIMISIPEDIA",
+    seoDescription:
+      "Somya Tiwari is a Full Stack Developer & Client Project Manager at DIMISI Technologies and 3rd Position holder in the 30-Day LinkedIn Challenge.",
+  },
+
+  {
+    id: "anushka-tripathi",
+    slug: "anushka-tripathi",
+    path: "/people/anushka-tripathi",
+    entityType: "person",
+    name: "Anushka Tripathi",
+    subtitle: "Full Stack Web Developer Intern — DIMISI Technologies",
+    image: "/images/anushka-tripathi.jpg",
+    shortDescription:
+      "Full Stack Web Developer Intern at DIMISI Technologies and 4th Position holder in the nationwide 30-Day LinkedIn Challenge.",
+    answer:
+      "Anushka Tripathi is a Full Stack Web Developer Intern at DIMISI Technologies Private Limited, contributing to full stack web engineering and recognized as the 4th Position holder in DIMISI's 30-Day LinkedIn Challenge.",
+    lifecycle: "Active",
+    facts: [
+      { label: "Role", value: "Full Stack Web Developer Intern", status: "source-backed" },
+      { label: "Organization", value: ORG_NAME, status: "documented" },
+      {
+        label: "Milestone award",
+        value: "4th Position — LinkedIn 30-Day Challenge",
+        status: "source-backed",
+        sourceIds: ["src-linkedin-challenge-felicitation"],
+      },
+    ],
+    areas: [
+      "Full stack web development",
+      "Web engineering",
+      "Frontend development",
+      "Component architecture",
+    ],
+    roles: [
+      {
+        title: "Full Stack Web Developer Intern",
+        organization: ORG_NAME,
+        status: "source-backed",
+        sourceIds: ["src-team-roster"],
+      },
+    ],
+    awards: ["4th Position — 30-Day LinkedIn Challenge"],
+    sections: [
+      {
+        id: "overview",
+        heading: "Overview & engineering contributions",
+        status: "source-backed",
+        body: [
+          "Anushka Tripathi is a Full Stack Web Developer Intern at DIMISI Technologies. [1]",
+          "She joined the development cohort supporting web engineering across DIMISI's software initiatives at the company's Kanpur headquarters. [1]",
+        ],
+      },
+      {
+        id: "linkedin-30days-award",
+        heading: "4th Position — 30-Day LinkedIn Challenge",
+        status: "source-backed",
+        body: [
+          "Anushka Tripathi achieved 4th Position in the nationwide LinkedIn 30-Day Kalesh Promotion & Content Creator Challenge organized by DIMISI Technologies. [2]",
+          "The campaign mobilized creators and student builders to share daily startup narratives, engineering takeaways, and viral student opinion polls centered around Kalesh.",
+        ],
+      },
+    ],
+    coverage: [
+      {
+        area: "Identity & Role",
+        status: "source-backed",
+        note: "Recorded in DIMISI internal project documentation.",
+      },
+      {
+        area: "Milestones & Challenges",
+        status: "source-backed",
+        note: "4th Position in LinkedIn 30-Day Challenge recorded in DIMISI campaign documentation.",
+      },
+    ],
+    officialLinks: [],
+    sourceIds: ["src-team-roster", "src-linkedin-challenge-felicitation"],
+    revisions: baseRevisions("2026-09-12"),
+    createdAt: "2026-09-12",
+    updatedAt: "2026-09-12",
+    seoTitle: "Anushka Tripathi — Full Stack Web Developer Intern | DIMISIPEDIA",
+    seoDescription:
+      "Anushka Tripathi is a Full Stack Web Developer Intern at DIMISI Technologies and 4th Position holder in the 30-Day LinkedIn Challenge.",
+  },
+
+  {
+    id: "nisha-chaudhary",
+    slug: "nisha-chaudhary",
+    path: "/people/nisha-chaudhary",
+    entityType: "person",
+    name: "Nisha Chaudhary",
+    subtitle: "Market Research & Analysis Intern — DIMISI Technologies",
+    image: "/images/nisha-chaudhary.jpg",
+    shortDescription:
+      "Market Research & Analysis Intern at DIMISI Technologies, specializing in market intelligence, user behavior analysis, and product insights.",
+    answer:
+      "Nisha Chaudhary is a Market Research & Analysis Intern at DIMISI Technologies Private Limited, focusing on market research, user survey analysis, and competitor intelligence.",
+    lifecycle: "Active",
+    facts: [
+      { label: "Role", value: "Market Research & Analysis Intern", status: "source-backed" },
+      { label: "Organization", value: ORG_NAME, status: "documented" },
+      {
+        label: "Focus areas",
+        value: "Market research, user feedback analysis, competitor intelligence",
+        status: "source-backed",
+      },
+    ],
+    areas: [
+      "Market research",
+      "Market analysis",
+      "User behavior study",
+      "Competitive intelligence",
+    ],
+    roles: [
+      {
+        title: "Market Research & Analysis Intern",
+        organization: ORG_NAME,
+        status: "source-backed",
+        sourceIds: ["src-team-roster"],
+      },
+    ],
+    sections: [
+      {
+        id: "overview",
+        heading: "Overview & market analysis",
+        status: "source-backed",
+        body: [
+          "Nisha Chaudhary is a Market Research & Analysis Intern at DIMISI Technologies. [1]",
+          "She joined the company's contributor cohort in Kanpur, conducting market research, user surveys, and competitive intelligence to inform product strategy and user adoption initiatives. [1]",
+        ],
+      },
+    ],
+    coverage: [
+      {
+        area: "Identity & Role",
+        status: "source-backed",
+        note: "Recorded in DIMISI internal project documentation.",
+      },
+      {
+        area: "Research Scope",
+        status: "source-backed",
+        note: "Market research and analysis assignments recorded in internal team rosters.",
+      },
+    ],
+    officialLinks: [],
+    sourceIds: ["src-team-roster"],
+    revisions: baseRevisions("2026-09-12"),
+    createdAt: "2026-09-12",
+    updatedAt: "2026-09-12",
+    seoTitle: "Nisha Chaudhary — Market Research & Analysis Intern | DIMISIPEDIA",
+    seoDescription:
+      "Nisha Chaudhary is a Market Research & Analysis Intern at DIMISI Technologies, focusing on market research, user analysis, and product insights.",
   },
 
   {
@@ -953,7 +1424,11 @@ const people: Entity[] = [
       { label: "Role", value: "Former Core Member / Web Developer", status: "source-backed" },
       { label: "Organization", value: ORG_NAME, status: "documented" },
       { label: "Associated projects", value: "KaryON, The Kalesh", status: "source-backed" },
-      { label: "Founding cohort", value: "The Sinister Six (Sand Tank Phase)", status: "source-backed" },
+      {
+        label: "Founding cohort",
+        value: "The Sinister Six (Sand Tank Phase)",
+        status: "source-backed",
+      },
     ],
     areas: ["Web development", "Frontend architecture", "Service marketplace design"],
     roles: [
@@ -977,8 +1452,16 @@ const people: Entity[] = [
       },
     ],
     coverage: [
-      { area: "Identity & History", status: "source-backed", note: "Documented in Phase 5 Sand Tank company archives." },
-      { area: "Project Ownership", status: "source-backed", note: "Development of KaryON recorded in DIMISI project archives." },
+      {
+        area: "Identity & History",
+        status: "source-backed",
+        note: "Documented in Phase 5 Sand Tank company archives.",
+      },
+      {
+        area: "Project Ownership",
+        status: "source-backed",
+        note: "Development of KaryON recorded in DIMISI project archives.",
+      },
     ],
     officialLinks: [{ label: "karyon.app", url: "https://karyon.app", official: true }],
     sourceIds: ["src-team-roster", "src-karyon-official"],
@@ -1543,13 +2026,48 @@ const projects: Entity[] = [
       "KAAND is an internal DIMISI product focused on building a modern, mobile-first media and news experience for Android and iOS using Flutter and Dart. Engineered by rising intern Amrit Awasthi under the technical mentorship of Sheelu Singh and Mridul Mishra, the application explores a fresh approach to digital journalism, fast information discovery, and community-engaged media consumption.",
     lifecycle: "Development",
     facts: [
-      { label: "Category", value: "DIMISI Products", status: "source-backed", sourceIds: ["src-kaand-dev"] },
-      { label: "Project type", value: "Next-Generation Media / News Platform", status: "source-backed", sourceIds: ["src-kaand-dev"] },
-      { label: "Status", value: "Under Development", status: "source-backed", sourceIds: ["src-kaand-dev"] },
-      { label: "Target platforms", value: "Android & iOS", status: "source-backed", sourceIds: ["src-kaand-dev"] },
-      { label: "Core technologies", value: "Flutter, Dart", status: "source-backed", sourceIds: ["src-kaand-dev"] },
-      { label: "Lead developer", value: "Amrit Awasthi (Android Developer Intern — Flutter / DART)", status: "source-backed", sourceIds: ["src-kaand-dev"] },
-      { label: "Engineering guidance", value: "Sheelu Singh, Mridul Mishra", status: "source-backed", sourceIds: ["src-kaand-dev"] },
+      {
+        label: "Category",
+        value: "DIMISI Products",
+        status: "source-backed",
+        sourceIds: ["src-kaand-dev"],
+      },
+      {
+        label: "Project type",
+        value: "Next-Generation Media / News Platform",
+        status: "source-backed",
+        sourceIds: ["src-kaand-dev"],
+      },
+      {
+        label: "Status",
+        value: "Under Development",
+        status: "source-backed",
+        sourceIds: ["src-kaand-dev"],
+      },
+      {
+        label: "Target platforms",
+        value: "Android & iOS",
+        status: "source-backed",
+        sourceIds: ["src-kaand-dev"],
+      },
+      {
+        label: "Core technologies",
+        value: "Flutter, Dart",
+        status: "source-backed",
+        sourceIds: ["src-kaand-dev"],
+      },
+      {
+        label: "Lead developer",
+        value: "Amrit Awasthi (Android Developer Intern — Flutter / DART)",
+        status: "source-backed",
+        sourceIds: ["src-kaand-dev"],
+      },
+      {
+        label: "Engineering guidance",
+        value: "Sheelu Singh, Mridul Mishra",
+        status: "source-backed",
+        sourceIds: ["src-kaand-dev"],
+      },
       { label: "Ownership", value: ORG_NAME, status: "documented" },
     ],
     questions: [
@@ -1601,10 +2119,26 @@ const projects: Entity[] = [
       },
     ],
     coverage: [
-      { area: "Identity & Name", status: "source-backed", note: "Documented in DIMISI product development records." },
-      { area: "Team & Guidance", status: "source-backed", note: "Lead developer and mentors verified in engineering rosters." },
-      { area: "Technology Stack", status: "source-backed", note: "Flutter and Dart confirmed in application repository records." },
-      { area: "Public Launch", status: "needs-verification", note: "Product is actively under development; not yet publicly released." },
+      {
+        area: "Identity & Name",
+        status: "source-backed",
+        note: "Documented in DIMISI product development records.",
+      },
+      {
+        area: "Team & Guidance",
+        status: "source-backed",
+        note: "Lead developer and mentors verified in engineering rosters.",
+      },
+      {
+        area: "Technology Stack",
+        status: "source-backed",
+        note: "Flutter and Dart confirmed in application repository records.",
+      },
+      {
+        area: "Public Launch",
+        status: "needs-verification",
+        note: "Product is actively under development; not yet publicly released.",
+      },
     ],
     officialLinks: [],
     sourceIds: ["src-kaand-dev"],
@@ -1644,14 +2178,54 @@ const projects: Entity[] = [
       "CATI Khelghar is an experimental offline gaming platform conceived and engineered by Shikhar Dixit under DIMISI Labs (CATI). Live at cati47.tech, it delivers a curated collection of 16 classic and folk board games designed strictly for local multiplayer and pass-and-play on a single device with zero logins or network dependency.",
     lifecycle: "Active",
     facts: [
-      { label: "Category", value: "DIMISI Labs / Experiments", status: "source-backed", sourceIds: ["src-khelghar-official"] },
-      { label: "Project type", value: "Offline Pass-and-Play Gaming Platform", status: "source-backed", sourceIds: ["src-khelghar-official"] },
-      { label: "Status", value: "Live", status: "source-backed", sourceIds: ["src-khelghar-official"] },
-      { label: "Website", value: "cati47.tech", status: "source-backed", sourceIds: ["src-khelghar-official"] },
-      { label: "Conceived & developed by", value: "Shikhar Dixit", status: "source-backed", sourceIds: ["src-khelghar-official"] },
-      { label: "Total games", value: "16 games", status: "source-backed", sourceIds: ["src-khelghar-official"] },
-      { label: "Gameplay modes", value: "Pass & Play, Local Multiplayer, Play with Bot", status: "source-backed", sourceIds: ["src-khelghar-official"] },
-      { label: "Account requirement", value: "None (Zero login required)", status: "source-backed", sourceIds: ["src-khelghar-official"] },
+      {
+        label: "Category",
+        value: "DIMISI Labs / Experiments",
+        status: "source-backed",
+        sourceIds: ["src-khelghar-official"],
+      },
+      {
+        label: "Project type",
+        value: "Offline Pass-and-Play Gaming Platform",
+        status: "source-backed",
+        sourceIds: ["src-khelghar-official"],
+      },
+      {
+        label: "Status",
+        value: "Live",
+        status: "source-backed",
+        sourceIds: ["src-khelghar-official"],
+      },
+      {
+        label: "Website",
+        value: "cati47.tech",
+        status: "source-backed",
+        sourceIds: ["src-khelghar-official"],
+      },
+      {
+        label: "Conceived & developed by",
+        value: "Shikhar Dixit",
+        status: "source-backed",
+        sourceIds: ["src-khelghar-official"],
+      },
+      {
+        label: "Total games",
+        value: "16 games",
+        status: "source-backed",
+        sourceIds: ["src-khelghar-official"],
+      },
+      {
+        label: "Gameplay modes",
+        value: "Pass & Play, Local Multiplayer, Play with Bot",
+        status: "source-backed",
+        sourceIds: ["src-khelghar-official"],
+      },
+      {
+        label: "Account requirement",
+        value: "None (Zero login required)",
+        status: "source-backed",
+        sourceIds: ["src-khelghar-official"],
+      },
     ],
     questions: [
       {
@@ -1701,8 +2275,16 @@ const projects: Entity[] = [
     ],
     coverage: [
       { area: "Identity & URL", status: "source-backed", note: "Verified live at cati47.tech." },
-      { area: "Game Catalogue", status: "source-backed", note: "All 16 games documented on the live platform." },
-      { area: "Creator", status: "source-backed", note: "Conception and development documented by Shikhar Dixit." },
+      {
+        area: "Game Catalogue",
+        status: "source-backed",
+        note: "All 16 games documented on the live platform.",
+      },
+      {
+        area: "Creator",
+        status: "source-backed",
+        note: "Conception and development documented by Shikhar Dixit.",
+      },
     ],
     officialLinks: [{ label: "cati47.tech", url: "https://cati47.tech", official: true }],
     sourceIds: ["src-khelghar-official"],
@@ -1742,14 +2324,54 @@ const projects: Entity[] = [
       "DIMISI-OPS is a proprietary internal operational software platform developed by DIMISI Technologies to streamline team administration, task allocation, project coordination, and accountability. Conceived by Shikhar Dixit, the system is engineered by Prashant Umrao and Amit Kumar with backend architecture by foundation engineer Mridul Mishra under operational guidance from Nishkarsh Mishra.",
     lifecycle: "Development",
     facts: [
-      { label: "Category", value: "DIMISI Internal Systems", status: "source-backed", sourceIds: ["src-dimisi-ops-spec"] },
-      { label: "Project type", value: "Internal Employee Management & Task Assignment System", status: "source-backed", sourceIds: ["src-dimisi-ops-spec"] },
-      { label: "Status", value: "Under Development", status: "source-backed", sourceIds: ["src-dimisi-ops-spec"] },
-      { label: "Concept", value: "Shikhar Dixit (Founder & CEO)", status: "source-backed", sourceIds: ["src-dimisi-ops-spec"] },
-      { label: "Development", value: "Prashant Umrao (Full Stack & Tester), Amit Kumar (Backend Development Intern)", status: "source-backed", sourceIds: ["src-dimisi-ops-spec"] },
-      { label: "Backend architecture", value: "Mridul Mishra (Foundation Engineer)", status: "source-backed", sourceIds: ["src-dimisi-ops-spec"] },
-      { label: "Operational guidance", value: "Nishkarsh Mishra (CFO & COO)", status: "source-backed", sourceIds: ["src-dimisi-ops-spec"] },
-      { label: "Target environment", value: "Internal Enterprise Operations", status: "source-backed", sourceIds: ["src-dimisi-ops-spec"] },
+      {
+        label: "Category",
+        value: "DIMISI Internal Systems",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-ops-spec"],
+      },
+      {
+        label: "Project type",
+        value: "Internal Employee Management & Task Assignment System",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-ops-spec"],
+      },
+      {
+        label: "Status",
+        value: "Under Development",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-ops-spec"],
+      },
+      {
+        label: "Concept",
+        value: "Shikhar Dixit (Founder & CEO)",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-ops-spec"],
+      },
+      {
+        label: "Development",
+        value: "Prashant Umrao (Full Stack & Tester), Amit Kumar (Backend Development Intern)",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-ops-spec"],
+      },
+      {
+        label: "Backend architecture",
+        value: "Mridul Mishra (Foundation Engineer)",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-ops-spec"],
+      },
+      {
+        label: "Operational guidance",
+        value: "Nishkarsh Mishra (CFO & COO)",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-ops-spec"],
+      },
+      {
+        label: "Target environment",
+        value: "Internal Enterprise Operations",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-ops-spec"],
+      },
     ],
     questions: [
       {
@@ -1800,9 +2422,21 @@ const projects: Entity[] = [
       },
     ],
     coverage: [
-      { area: "System Identity", status: "source-backed", note: "Documented in DIMISI internal systems architecture." },
-      { area: "Team Assignments", status: "source-backed", note: "Engineering and guidance team verified in company records." },
-      { area: "Status", status: "source-backed", note: "Confidently documented as an internal system under active development." },
+      {
+        area: "System Identity",
+        status: "source-backed",
+        note: "Documented in DIMISI internal systems architecture.",
+      },
+      {
+        area: "Team Assignments",
+        status: "source-backed",
+        note: "Engineering and guidance team verified in company records.",
+      },
+      {
+        area: "Status",
+        status: "source-backed",
+        note: "Confidently documented as an internal system under active development.",
+      },
     ],
     officialLinks: [],
     sourceIds: ["src-dimisi-ops-spec"],
@@ -1846,15 +2480,60 @@ const projects: Entity[] = [
       "The DIMISI Technologies official website (dimisi.tech) serves as the primary digital identity and technology showcase of DIMISI Technologies Private Limited. Engineered with Next.js, React, TypeScript, and Tailwind CSS on the frontend by Swatantra Singh, with backend infrastructure by Mridul Mishra utilizing Node.js, MongoDB, Redis, and multi-cloud deployment across AWS, DigitalOcean, and Cloudinary.",
     lifecycle: "Active",
     facts: [
-      { label: "Category", value: "DIMISI Internal Systems", status: "source-backed", sourceIds: ["src-dimisi-official"] },
-      { label: "Project type", value: "Official Corporate Website", status: "source-backed", sourceIds: ["src-dimisi-official"] },
-      { label: "Status", value: "Live", status: "source-backed", sourceIds: ["src-dimisi-official"] },
-      { label: "Domain", value: "dimisi.tech", status: "source-backed", sourceIds: ["src-dimisi-official"] },
-      { label: "Frontend engineering", value: "Swatantra Singh (Co-Founder & CTO)", status: "source-backed", sourceIds: ["src-dimisi-official"] },
-      { label: "Backend engineering", value: "Mridul Mishra (Founding Engineer)", status: "source-backed", sourceIds: ["src-dimisi-official"] },
-      { label: "Frontend stack", value: "Next.js, React, TypeScript, Tailwind CSS, TanStack", status: "source-backed", sourceIds: ["src-dimisi-official"] },
-      { label: "Backend stack", value: "Node.js, TypeScript, MongoDB, Redis", status: "source-backed", sourceIds: ["src-dimisi-official"] },
-      { label: "Infrastructure & media", value: "AWS, DigitalOcean, Cloudinary", status: "source-backed", sourceIds: ["src-dimisi-official"] },
+      {
+        label: "Category",
+        value: "DIMISI Internal Systems",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-official"],
+      },
+      {
+        label: "Project type",
+        value: "Official Corporate Website",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-official"],
+      },
+      {
+        label: "Status",
+        value: "Live",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-official"],
+      },
+      {
+        label: "Domain",
+        value: "dimisi.tech",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-official"],
+      },
+      {
+        label: "Frontend engineering",
+        value: "Swatantra Singh (Co-Founder & CTO)",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-official"],
+      },
+      {
+        label: "Backend engineering",
+        value: "Mridul Mishra (Founding Engineer)",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-official"],
+      },
+      {
+        label: "Frontend stack",
+        value: "Next.js, React, TypeScript, Tailwind CSS, TanStack",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-official"],
+      },
+      {
+        label: "Backend stack",
+        value: "Node.js, TypeScript, MongoDB, Redis",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-official"],
+      },
+      {
+        label: "Infrastructure & media",
+        value: "AWS, DigitalOcean, Cloudinary",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-official"],
+      },
     ],
     questions: [
       {
@@ -1892,8 +2571,16 @@ const projects: Entity[] = [
       },
     ],
     coverage: [
-      { area: "Identity & Domain", status: "source-backed", note: "Primary official web presence of DIMISI Technologies." },
-      { area: "Architecture & Stack", status: "source-backed", note: "Documented in engineering specifications and deployment manifests." },
+      {
+        area: "Identity & Domain",
+        status: "source-backed",
+        note: "Primary official web presence of DIMISI Technologies.",
+      },
+      {
+        area: "Architecture & Stack",
+        status: "source-backed",
+        note: "Documented in engineering specifications and deployment manifests.",
+      },
     ],
     officialLinks: [{ label: "dimisi.tech", url: "https://dimisi.tech", official: true }],
     sourceIds: ["src-dimisi-official"],
@@ -1932,13 +2619,48 @@ const projects: Entity[] = [
       "KaryON is an internal DIMISI product focused on simplifying access to professional home services through a digital booking and service-matching experience. Built around the customer journey 'Book Service → Get Matched → Service Done', the platform connects homeowners with vetted technicians across 8 trade categories, originated through contributions by former core member Siddhant Shekhar.",
     lifecycle: "Development",
     facts: [
-      { label: "Category", value: "DIMISI Products", status: "source-backed", sourceIds: ["src-karyon-official"] },
-      { label: "Project type", value: "Professional Home Services Platform", status: "source-backed", sourceIds: ["src-karyon-official"] },
-      { label: "Status", value: "Under Development", status: "source-backed", sourceIds: ["src-karyon-official"] },
-      { label: "Website", value: "karyon.app", status: "source-backed", sourceIds: ["src-karyon-official"] },
-      { label: "Customer journey", value: "Book Service → Get Matched → Service Done", status: "source-backed", sourceIds: ["src-karyon-official"] },
-      { label: "Service categories", value: "Plumbing, Electrical, Carpentry, Cleaning, Painting, HVAC, Moving, Gardening", status: "source-backed", sourceIds: ["src-karyon-official"] },
-      { label: "Project contribution", value: "Siddhant Shekhar (Former Core Member)", status: "source-backed", sourceIds: ["src-karyon-official", "src-team-roster"] },
+      {
+        label: "Category",
+        value: "DIMISI Products",
+        status: "source-backed",
+        sourceIds: ["src-karyon-official"],
+      },
+      {
+        label: "Project type",
+        value: "Professional Home Services Platform",
+        status: "source-backed",
+        sourceIds: ["src-karyon-official"],
+      },
+      {
+        label: "Status",
+        value: "Under Development",
+        status: "source-backed",
+        sourceIds: ["src-karyon-official"],
+      },
+      {
+        label: "Website",
+        value: "karyon.app",
+        status: "source-backed",
+        sourceIds: ["src-karyon-official"],
+      },
+      {
+        label: "Customer journey",
+        value: "Book Service → Get Matched → Service Done",
+        status: "source-backed",
+        sourceIds: ["src-karyon-official"],
+      },
+      {
+        label: "Service categories",
+        value: "Plumbing, Electrical, Carpentry, Cleaning, Painting, HVAC, Moving, Gardening",
+        status: "source-backed",
+        sourceIds: ["src-karyon-official"],
+      },
+      {
+        label: "Project contribution",
+        value: "Siddhant Shekhar (Former Core Member)",
+        status: "source-backed",
+        sourceIds: ["src-karyon-official", "src-team-roster"],
+      },
       { label: "Ownership", value: ORG_NAME, status: "documented" },
     ],
     questions: [
@@ -1998,8 +2720,16 @@ const projects: Entity[] = [
     ],
     coverage: [
       { area: "Identity & Domain", status: "source-backed", note: "Documented at karyon.app." },
-      { area: "Service Scope", status: "source-backed", note: "8 core service verticals documented in product specifications." },
-      { area: "Development History", status: "source-backed", note: "Contributed by former core member Siddhant Shekhar." },
+      {
+        area: "Service Scope",
+        status: "source-backed",
+        note: "8 core service verticals documented in product specifications.",
+      },
+      {
+        area: "Development History",
+        status: "source-backed",
+        note: "Contributed by former core member Siddhant Shekhar.",
+      },
     ],
     officialLinks: [{ label: "karyon.app", url: "https://karyon.app", official: true }],
     sourceIds: ["src-karyon-official", "src-team-roster"],
@@ -2124,16 +2854,7 @@ const projects: Entity[] = [
     projectType: "Client Website Development + Digital Brand Building",
     featuredPriority: 8,
     statusBadge: "ACTIVE",
-    tags: [
-      "Travel",
-      "Tourism",
-      "Car Rental",
-      "Next.js",
-      "SEO",
-      "AEO",
-      "GEO",
-      "Client Project",
-    ],
+    tags: ["Travel", "Tourism", "Car Rental", "Next.js", "SEO", "AEO", "GEO", "Client Project"],
     name: "Rudra Tours & Travels",
     subtitle: "Client Project — End-to-End Digital Transformation & Web Platform",
     image: "/images/rudra-tours-logo.png",
@@ -2446,7 +3167,8 @@ const projects: Entity[] = [
       },
       {
         label: "Specialization",
-        value: "Luxury Fleet, India Tour Packages & Dedicated Wedding Travel (500+ weddings served)",
+        value:
+          "Luxury Fleet, India Tour Packages & Dedicated Wedding Travel (500+ weddings served)",
         status: "source-backed",
         sourceIds: ["src-yadhuvanshi-official"],
       },
@@ -2897,7 +3619,7 @@ const baseTimeline: TimelineEntry[] = [
     title: "Internship cohort onboarded at Sand Tank office",
     description:
       "With college administration approval, four interns joined the team at the Sand Tank office: Saumya Shukla (Social Media Marketing), Niyati Gupta (Backend), Harsh Mishra (Video Editor), and Amit Kumar (Backend Intern).",
-    related: ["kalesh", "dimisi-technologies"],
+    related: ["kalesh", "dimisi-technologies", "harsh-mishra", "amit-kumar"],
     category: "Team",
     status: "source-backed",
   },
@@ -2928,7 +3650,15 @@ const baseTimeline: TimelineEntry[] = [
     title: "Home headquarters inauguration and company board mounted",
     description:
       "Operations shifted to a dedicated home office in Swarn Jayanti Vihar, Kanpur, with family support; company board mounted at the entrance on 17 May for statutory and bank account opening verification.",
-    related: ["dimisi-technologies", "shikhar-dixit"],
+    related: [
+      "dimisi-technologies",
+      "shikhar-dixit",
+      "prashant-umrao",
+      "amrit-awasthi",
+      "anushka-tripathi",
+      "nisha-chaudhary",
+      "somya-tiwari",
+    ],
     category: "Operations",
     status: "source-backed",
   },
@@ -2938,7 +3668,7 @@ const baseTimeline: TimelineEntry[] = [
     title: "First commercial client contract: Rudra Tours & Travels",
     description:
       "Following an extensive cold-outreach phase, the company secured its first commercial website development contract with Rudra Tours & Travels, joined by Somya Tiwari for client coordination and delivery, followed by two additional client deals.",
-    related: ["dimisi-technologies", "shikhar-dixit"],
+    related: ["dimisi-technologies", "shikhar-dixit", "somya-tiwari"],
     category: "Business",
     status: "source-backed",
   },
@@ -2954,6 +3684,11 @@ const baseTimeline: TimelineEntry[] = [
       "shikhar-dixit",
       "swatantra-singh",
       "nishkarsh-mishra",
+      "prashant-umrao",
+      "harsh-mishra",
+      "somya-tiwari",
+      "anushka-tripathi",
+      "amrit-awasthi",
     ],
     category: "Campaign",
     status: "source-backed",

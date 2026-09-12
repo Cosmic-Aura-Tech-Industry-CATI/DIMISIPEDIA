@@ -718,7 +718,11 @@ const shikhar: Entity = {
   officialLinks: [
     { label: "dimisi.tech (Corporate Site)", url: "https://dimisi.tech", official: true },
     { label: "thekalesh.com (Flagship Product)", url: "https://thekalesh.com", official: true },
-    { label: "dimisipedia.me (Knowledge Engine)", url: "https://www.dimisipedia.me", official: true },
+    {
+      label: "dimisipedia.me (Knowledge Engine)",
+      url: "https://www.dimisipedia.me",
+      official: true,
+    },
   ],
   sourceIds: [
     "src-shikhar-linkedin",

@@ -25,6 +25,15 @@ interface EventImage {
   caption: string;
 }
 
+export interface EventStanding {
+  position: string;
+  name: string;
+  role: string;
+  path: string;
+  award?: string;
+  winner?: boolean;
+}
+
 interface EventItem {
   id: string;
   title: string;
@@ -38,6 +47,7 @@ interface EventItem {
   highlights: string[];
   images?: EventImage[];
   relatedEntities: { label: string; to: string }[];
+  standings?: EventStanding[];
 }
 
 const documentedEvents: EventItem[] = [
@@ -56,6 +66,44 @@ const documentedEvents: EventItem[] = [
       "The initiative challenged student creators, engineering campus influencers, and developers to share daily authentic startup stories, viral opinion polls, engineering breakdowns, and campus culture reflections centered around the iconic tagline 'Chalo Kalesh Karey'.",
       "Over the course of 30 days, the campaign generated significant organic impressions across student engineering networks, establishing strong word-of-mouth growth and direct download traffic to TheKalesh.com without paid marketing expenditure.",
       "On 15 August 2026, at the conclusion of the challenge, the founding directors hosted a celebratory felicitation ceremony, presenting 1st Prize Winner Prashant Umrao with an official DIMISI Technologies Certificate of Achievement and custom awards.",
+    ],
+    standings: [
+      {
+        position: "1st Position",
+        name: "Prashant Umrao",
+        role: "Full Stack Developer Intern & Tester",
+        path: "/people/prashant-umrao",
+        award: "1st Prize Winner & Trophy Recipient",
+        winner: true,
+      },
+      {
+        position: "2nd Position",
+        name: "Harsh Mishra",
+        role: "Full Stack Web Developer",
+        path: "/people/harsh-mishra",
+        award: "2nd Position Holder",
+      },
+      {
+        position: "3rd Position",
+        name: "Somya Tiwari",
+        role: "Full Stack Developer & Client Project Manager",
+        path: "/people/somya-tiwari",
+        award: "3rd Position Holder",
+      },
+      {
+        position: "4th Position",
+        name: "Anushka Tripathi",
+        role: "Full Stack Web Developer Intern",
+        path: "/people/anushka-tripathi",
+        award: "4th Position Holder",
+      },
+      {
+        position: "5th Position",
+        name: "Amrit Awasthi",
+        role: "Android Developer Intern (Flutter / DART)",
+        path: "/people/amrit-awasthi",
+        award: "5th Position Holder",
+      },
     ],
     highlights: [
       "30 consecutive days of founder storytelling, opinion polls, and viral creator challenges",
@@ -78,7 +126,11 @@ const documentedEvents: EventItem[] = [
       },
     ],
     relatedEntities: [
-      { label: "Prashant Umrao", to: "/people/prashant-umrao" },
+      { label: "Prashant Umrao (1st)", to: "/people/prashant-umrao" },
+      { label: "Harsh Mishra (2nd)", to: "/people/harsh-mishra" },
+      { label: "Somya Tiwari (3rd)", to: "/people/somya-tiwari" },
+      { label: "Anushka Tripathi (4th)", to: "/people/anushka-tripathi" },
+      { label: "Amrit Awasthi (5th)", to: "/people/amrit-awasthi" },
       { label: "Kalesh", to: "/projects/kalesh" },
       { label: "DIMISI Technologies", to: "/dimisi-technologies" },
       { label: "Shikhar Dixit", to: "/people/shikhar-dixit" },
@@ -333,6 +385,78 @@ function EventsPage() {
                 </p>
               ))}
             </div>
+
+            {/* Official Standings / Rankings */}
+            {event.standings && event.standings.length > 0 ? (
+              <div className="mt-8 border border-border bg-background/60 p-5 sm:p-6">
+                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-rule pb-3">
+                  <p className="label-mono flex items-center gap-1.5 text-primary">
+                    <Trophy className="size-3.5" /> Official Competition Standings &amp; Rankings
+                  </p>
+                  <span className="font-mono text-[11px] text-muted-foreground">
+                    DIMISI Verified Archive
+                  </span>
+                </div>
+                <div className="mt-4 overflow-x-auto">
+                  <table className="w-full text-left font-mono text-xs sm:text-sm">
+                    <thead>
+                      <tr className="border-b border-rule text-muted-foreground">
+                        <th className="pb-2.5 font-normal tracking-wider uppercase text-[11px]">
+                          Position
+                        </th>
+                        <th className="pb-2.5 font-normal tracking-wider uppercase text-[11px]">
+                          Person
+                        </th>
+                        <th className="pb-2.5 font-normal tracking-wider uppercase text-[11px] hidden sm:table-cell">
+                          Role
+                        </th>
+                        <th className="pb-2.5 font-normal tracking-wider uppercase text-[11px] text-right">
+                          Recognition
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-rule font-sans">
+                      {event.standings.map((s) => (
+                        <tr
+                          key={s.position}
+                          className="group hover:bg-surface/60 transition-colors"
+                        >
+                          <td className="py-3 font-mono text-xs font-semibold text-primary whitespace-nowrap">
+                            <span
+                              className={`inline-block px-2 py-0.5 border ${
+                                s.winner
+                                  ? "border-primary/60 bg-primary/10 text-primary font-bold"
+                                  : "border-border bg-surface text-foreground"
+                              }`}
+                            >
+                              {s.position}
+                            </span>
+                          </td>
+                          <td className="py-3 font-medium">
+                            <Link
+                              to={s.path}
+                              className="inline-flex items-center gap-1 font-serif text-sm sm:text-base text-foreground underline-offset-4 group-hover:text-primary group-hover:underline"
+                            >
+                              {s.name}
+                              <ArrowRight className="size-3 opacity-50 transition-transform group-hover:translate-x-0.5" />
+                            </Link>
+                            <span className="block font-sans text-xs text-muted-foreground sm:hidden mt-0.5">
+                              {s.role}
+                            </span>
+                          </td>
+                          <td className="py-3 text-xs text-muted-foreground hidden sm:table-cell">
+                            {s.role}
+                          </td>
+                          <td className="py-3 text-xs text-right font-mono text-muted-foreground">
+                            {s.award}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            ) : null}
 
             {/* Key Highlights */}
             {event.highlights && event.highlights.length > 0 ? (

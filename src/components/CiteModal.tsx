@@ -82,7 +82,8 @@ export function CiteModal({ entity }: CiteModalProps) {
         <DialogHeader>
           <DialogTitle className="font-serif text-xl">Cite this DIMISIPEDIA Entry</DialogTitle>
           <DialogDescription className="text-xs text-muted-foreground">
-            Copy citation syntax formatted for research papers, MediaWiki references, or external publications.
+            Copy citation syntax formatted for research papers, MediaWiki references, or external
+            publications.
           </DialogDescription>
         </DialogHeader>
 
@@ -131,11 +132,10 @@ export function CiteModal({ entity }: CiteModalProps) {
           <p>
             Canonical Source URI: <span className="font-mono text-foreground">{canonicalUrl}</span>
           </p>
-          <p>
-            Maintained by DIMISI Technologies Pvt. Ltd. (CIN: U62013UP2026PTC246506).
-          </p>
+          <p>Maintained by DIMISI Technologies Pvt. Ltd. (CIN: U62013UP2026PTC246506).</p>
           <p className="text-[10px] text-muted-foreground/80">
-            DIMISIPEDIA is an independent knowledge archive and corporate repository. It is not affiliated with, endorsed by, or associated with the Wikimedia Foundation or Wikipedia.
+            DIMISIPEDIA is an independent knowledge archive and corporate repository. It is not
+            affiliated with, endorsed by, or associated with the Wikimedia Foundation or Wikipedia.
           </p>
         </div>
       </DialogContent>

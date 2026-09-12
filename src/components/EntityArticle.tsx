@@ -155,11 +155,7 @@ export function EntityArticle({
             </div>
           </div>
           {entity.image ? (
-            <figure
-              className="shrink-0"
-              itemScope
-              itemType="https://schema.org/ImageObject"
-            >
+            <figure className="shrink-0" itemScope itemType="https://schema.org/ImageObject">
               <img
                 src={entity.image}
                 alt={
@@ -181,7 +177,10 @@ export function EntityArticle({
               <meta itemProp="name" content={`${entity.name} — Official Image`} />
               <meta itemProp="creditText" content="DIMISI Technologies Private Limited" />
               <meta itemProp="copyrightNotice" content="© DIMISI Technologies Private Limited" />
-              <meta itemProp="acquireLicensePage" content={`https://www.dimisipedia.me${entity.path}`} />
+              <meta
+                itemProp="acquireLicensePage"
+                content={`https://www.dimisipedia.me${entity.path}`}
+              />
               <meta itemProp="license" content="https://www.dimisipedia.me/editorial-policy" />
               <figcaption
                 itemProp="caption"

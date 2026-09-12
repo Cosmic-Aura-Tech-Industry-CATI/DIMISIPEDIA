@@ -78,8 +78,9 @@ function ProjectsIndex() {
         <p className="label-mono">Entity index · Projects & Platforms</p>
         <h1 className="mt-2 text-4xl">Projects</h1>
         <p className="mt-4 max-w-2xl text-muted-foreground">
-          Proprietary consumer products, commercial client transformations, experimental gaming labs,
-          and internal operational infrastructure documented in association with DIMISI Technologies.
+          Proprietary consumer products, commercial client transformations, experimental gaming
+          labs, and internal operational infrastructure documented in association with DIMISI
+          Technologies.
         </p>
 
         {/* Category filter tabs */}
@@ -121,7 +122,10 @@ function ProjectsIndex() {
         {filteredProjects.map((p) => {
           const primaryExternal = p.officialLinks?.find((l) => l.url && l.url.startsWith("http"));
           return (
-            <li key={p.id} className="relative flex flex-col justify-between bg-surface p-6 transition-colors hover:bg-muted/40">
+            <li
+              key={p.id}
+              className="relative flex flex-col justify-between bg-surface p-6 transition-colors hover:bg-muted/40"
+            >
               <div>
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex items-center gap-3">
@@ -154,7 +158,11 @@ function ProjectsIndex() {
                     </div>
                   </div>
                   <div className="flex flex-col items-end gap-1.5">
-                    <StatusBadge badge={p.statusBadge ?? (p.lifecycle === "Active" ? "LIVE" : "UNDER DEVELOPMENT")} />
+                    <StatusBadge
+                      badge={
+                        p.statusBadge ?? (p.lifecycle === "Active" ? "LIVE" : "UNDER DEVELOPMENT")
+                      }
+                    />
                   </div>
                 </div>
 
@@ -203,8 +211,9 @@ function ProjectsIndex() {
       </ul>
 
       <p className="mt-8 max-w-2xl text-sm text-muted-foreground">
-        Project classifications: DIMISI Products, Client Projects, DIMISI Labs / Experiments, DIMISI Internal Systems.
-        Every internal project entry documents technology stack, development ownership, and current lifecycle state.
+        Project classifications: DIMISI Products, Client Projects, DIMISI Labs / Experiments, DIMISI
+        Internal Systems. Every internal project entry documents technology stack, development
+        ownership, and current lifecycle state.
       </p>
     </div>
   );

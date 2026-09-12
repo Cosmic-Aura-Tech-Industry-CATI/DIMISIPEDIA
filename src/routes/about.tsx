@@ -42,8 +42,10 @@ function About() {
         </p>
         <h2 className="mt-10 text-2xl">Independence &amp; Non-Affiliation</h2>
         <p>
-          DIMISIPEDIA is an independent corporate knowledge platform owned and operated exclusively by DIMISI Technologies Pvt. Ltd. (CIN: U62013UP2026PTC246506).
-          DIMISIPEDIA is not affiliated with, endorsed by, sponsored by, or associated with the Wikimedia Foundation, Wikipedia, or any government department or registrar.
+          DIMISIPEDIA is an independent corporate knowledge platform owned and operated exclusively
+          by DIMISI Technologies Pvt. Ltd. (CIN: U62013UP2026PTC246506). DIMISIPEDIA is not
+          affiliated with, endorsed by, sponsored by, or associated with the Wikimedia Foundation,
+          Wikipedia, or any government department or registrar.
         </p>
         <h2 className="mt-10 text-2xl">Contact</h2>
         <p>

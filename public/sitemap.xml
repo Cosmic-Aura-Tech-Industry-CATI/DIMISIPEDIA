@@ -184,13 +184,65 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/people/amrit-awasthi</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/amrit-awasthi.png</image:loc>
       <image:title>Amrit Awasthi — Android Developer Intern (Flutter / Dart)</image:title>
       <image:caption>Official photograph of Amrit Awasthi at DIMISI Technologies Private Limited</image:caption>
+      <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
+      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.dimisipedia.me/people/harsh-mishra</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.dimisipedia.me/images/harsh-mishra.jpg</image:loc>
+      <image:title>Harsh Mishra — Full Stack Web Developer</image:title>
+      <image:caption>Official photograph of Harsh Mishra at DIMISI Technologies Private Limited</image:caption>
+      <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
+      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.dimisipedia.me/people/somya-tiwari</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.dimisipedia.me/images/somya-tiwari.jpg</image:loc>
+      <image:title>Somya Tiwari — Full Stack Developer &amp; Client Project Manager</image:title>
+      <image:caption>Official photograph of Somya Tiwari at DIMISI Technologies Private Limited</image:caption>
+      <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
+      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.dimisipedia.me/people/anushka-tripathi</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.dimisipedia.me/images/anushka-tripathi.jpg</image:loc>
+      <image:title>Anushka Tripathi — Full Stack Web Developer Intern</image:title>
+      <image:caption>Official photograph of Anushka Tripathi at DIMISI Technologies Private Limited</image:caption>
+      <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
+      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.dimisipedia.me/people/nisha-chaudhary</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.dimisipedia.me/images/nisha-chaudhary.jpg</image:loc>
+      <image:title>Nisha Chaudhary — Market Research &amp; Analysis Intern</image:title>
+      <image:caption>Official photograph of Nisha Chaudhary at DIMISI Technologies Private Limited</image:caption>
       <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
       <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
     </image:image>

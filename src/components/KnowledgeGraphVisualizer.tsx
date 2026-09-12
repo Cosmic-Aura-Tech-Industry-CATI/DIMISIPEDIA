@@ -103,7 +103,7 @@ export function KnowledgeGraphVisualizer() {
         y: 220,
         r: 28,
         color: "#0284c7",
-        image: "/images/mridul-mishra.png",
+        image: "/images/mridul-mishra.jpg",
       },
       // Projects (Bottom Arc)
       {

@@ -222,37 +222,37 @@ function Home() {
           {[...projectEntities]
             .sort((a, b) => (a.featuredPriority ?? 99) - (b.featuredPriority ?? 99))
             .map((p) => (
-            <li key={p.id}>
-              <EntityLink
-                to={p.path}
-                className="flex h-full flex-col justify-between bg-surface p-6 transition-colors hover:bg-muted"
-              >
-                <div>
-                  <div className="flex items-center gap-3">
-                    {p.image ? (
-                      <div className="flex size-10 shrink-0 items-center justify-center rounded border border-rule bg-surface p-1">
-                        <img
-                          src={p.image}
-                          alt={p.name}
-                          className="size-full object-contain"
-                          loading="lazy"
-                        />
+              <li key={p.id}>
+                <EntityLink
+                  to={p.path}
+                  className="flex h-full flex-col justify-between bg-surface p-6 transition-colors hover:bg-muted"
+                >
+                  <div>
+                    <div className="flex items-center gap-3">
+                      {p.image ? (
+                        <div className="flex size-10 shrink-0 items-center justify-center rounded border border-rule bg-surface p-1">
+                          <img
+                            src={p.image}
+                            alt={p.name}
+                            className="size-full object-contain"
+                            loading="lazy"
+                          />
+                        </div>
+                      ) : null}
+                      <div>
+                        <span className="label-mono">
+                          {p.category ?? "Project"} · {p.statusBadge ?? p.lifecycle}
+                        </span>
+                        <span className="mt-0.5 block font-serif text-xl">{p.name}</span>
                       </div>
-                    ) : null}
-                    <div>
-                      <span className="label-mono">
-                        {p.category ?? "Project"} · {p.statusBadge ?? p.lifecycle}
-                      </span>
-                      <span className="mt-0.5 block font-serif text-xl">{p.name}</span>
                     </div>
+                    <span className="mt-3 block text-sm text-muted-foreground">
+                      {p.shortDescription}
+                    </span>
                   </div>
-                  <span className="mt-3 block text-sm text-muted-foreground">
-                    {p.shortDescription}
-                  </span>
-                </div>
-              </EntityLink>
-            </li>
-          ))}
+                </EntityLink>
+              </li>
+            ))}
         </ul>
       </section>
 
