@@ -157,10 +157,10 @@ function PeopleIndex() {
               </div>
               <h2 className="mt-2 font-serif text-2xl font-medium">Jayendra Pratap Singh (JP)</h2>
               <p className="mt-1 text-xs text-muted-foreground">
-                First Mentor — DIMISI Technologies Private Limited · National Mentor, Startup India (50+ Startups) · DPIIT Platinum Badge
+                Startup Advisor — Wadhwani Foundation · First Mentor — DIMISI Technologies · National Mentor, Startup India (50+ Startups) · DPIIT Platinum Badge
               </p>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed max-w-2xl">
-                14 years of cross-sector experience across Manufacturing, Telecom, IT, Services, and Education. An IIM Ranchi alumnus (HR) and Electronics &amp; Communications Engineer guiding DIMISI&apos;s people development, leadership capability, and organizational readiness.
+                14+ years cross-sector experience across corporate HR, IT, higher education, healthcare, and startup ecosystems. An IIM Ranchi HR alumnus and JSS Noida Electronics &amp; Communication Engineer guiding early-stage venture capabilities and organizational resilience.
               </p>
             </div>
           </div>

@@ -272,7 +272,7 @@ export function buildPersonSchema(entity: Entity): Json {
     (entity.id === "shikhar-dixit"
       ? "Indian technology entrepreneur and software engineer; Founder & Chief Executive Officer of DIMISI Technologies Private Limited; creator and product architect of Kalesh, DIMISIPEDIA, and Gandhigiri Face Recognition System."
       : entity.id === "jayendra-pratap-singh"
-        ? "HR & People Development Consultant, Startup India National Mentor, DPIIT Platinum Badge awardee, and First Mentor of DIMISI Technologies Private Limited."
+        ? "Startup Advisor at Wadhwani Foundation, HR & People Development Consultant, Startup India National Mentor, DPIIT Platinum Badge awardee, and First Mentor of DIMISI Technologies Private Limited."
         : entity.subtitle || entity.shortDescription);
 
   const additionalName =
@@ -295,12 +295,12 @@ export function buildPersonSchema(entity: Entity): Json {
 
   const occupationName =
     entity.id === "jayendra-pratap-singh"
-      ? "HR & People Development Consultant | Startup Mentor"
+      ? "Startup Advisor & HR / People Development Consultant"
       : roleTitles.join(", ") || "Technology Entrepreneur";
 
   const occupationDesc =
     entity.id === "jayendra-pratap-singh"
-      ? "Jayendra Pratap Singh (JP) specializes in HR, people development, leadership capability building, executive education, and startup mentorship."
+      ? "Jayendra Pratap Singh (JP) serves as Startup Advisor at Wadhwani Foundation and specializes in HR, people development, leadership capability building, executive education, and startup mentorship."
       : `${entity.name} leads executive direction, product architecture, and engineering.`;
 
   return clean({
@@ -335,15 +335,25 @@ export function buildPersonSchema(entity: Entity): Json {
       },
       skills: entity.areas ? entity.areas.join(", ") : undefined,
     },
-    worksFor: orgs
-      .filter((r) => !/Mentor/i.test(r.type) && entity.id !== "jayendra-pratap-singh")
-      .map((r) => ({
-        "@type": "Organization",
-        "@id": entityId(r.entity),
-        name: r.entity.name,
-        legalName: r.entity.name,
-        url: abs(r.entity.path),
-      })),
+    worksFor:
+      entity.id === "jayendra-pratap-singh"
+        ? [
+            {
+              "@type": "Organization",
+              name: "Wadhwani Foundation",
+              url: "https://www.wadhwanifoundation.org",
+              sameAs: "https://en.wikipedia.org/wiki/Romesh_Wadhwani",
+            },
+          ]
+        : orgs
+            .filter((r) => !/Mentor/i.test(r.type) && entity.id !== "jayendra-pratap-singh")
+            .map((r) => ({
+              "@type": "Organization",
+              "@id": entityId(r.entity),
+              name: r.entity.name,
+              legalName: r.entity.name,
+              url: abs(r.entity.path),
+            })),
     affiliation: orgs.map((r) => ({
       "@type": "Organization",
       "@id": entityId(r.entity),
@@ -387,19 +397,24 @@ export function buildPersonSchema(entity: Entity): Json {
     alumniOf: (entity.education ?? []).map((e) => {
       const isAktu = /aktu|abdul kalam/i.test(e.institution);
       const isIim = /iim|indian institute of management|ranchi/i.test(e.institution);
+      const isJss = /jss/i.test(e.institution);
       return clean({
-        "@type": isAktu || isIim ? "CollegeOrUniversity" : "EducationalOrganization",
+        "@type": isAktu || isIim || isJss ? "CollegeOrUniversity" : "EducationalOrganization",
         name: e.institution,
         url: isAktu
           ? "https://aktu.ac.in"
           : isIim
             ? "https://www.iimranchi.ac.in"
-            : undefined,
+            : isJss
+              ? "https://jssaten.ac.in"
+              : undefined,
         sameAs: isAktu
           ? "https://en.wikipedia.org/wiki/Dr._A.P.J._Abdul_Kalam_Technical_University"
           : isIim
             ? "https://en.wikipedia.org/wiki/Indian_Institute_of_Management_Ranchi"
-            : undefined,
+            : isJss
+              ? "https://en.wikipedia.org/wiki/JSS_Academy_of_Technical_Education,_Noida"
+              : undefined,
       });
     }),
     hasCredential: (entity.education ?? []).map((e) =>
@@ -419,21 +434,28 @@ export function buildPersonSchema(entity: Entity): Json {
       identifier: "IN",
       sameAs: "https://en.wikipedia.org/wiki/India",
     },
-    birthPlace: {
-      "@type": "Place",
-      name: "Kanpur, Uttar Pradesh, India",
-      sameAs: "https://en.wikipedia.org/wiki/Kanpur",
-    },
+    birthPlace:
+      entity.id === "jayendra-pratap-singh"
+        ? undefined
+        : {
+            "@type": "Place",
+            name: "Kanpur, Uttar Pradesh, India",
+            sameAs: "https://en.wikipedia.org/wiki/Kanpur",
+          },
     homeLocation: {
       "@type": "PostalAddress",
-      addressLocality: "Kanpur",
-      addressRegion: "Uttar Pradesh",
+      addressLocality:
+        entity.id === "jayendra-pratap-singh" ? "Noida / Greater Delhi Area" : "Kanpur",
+      addressRegion:
+        entity.id === "jayendra-pratap-singh" ? "National Capital Region" : "Uttar Pradesh",
       addressCountry: "IN",
     },
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Kanpur",
-      addressRegion: "Uttar Pradesh",
+      addressLocality:
+        entity.id === "jayendra-pratap-singh" ? "Noida / Greater Delhi Area" : "Kanpur",
+      addressRegion:
+        entity.id === "jayendra-pratap-singh" ? "National Capital Region" : "Uttar Pradesh",
       addressCountry: "IN",
     },
     award: entity.awards,

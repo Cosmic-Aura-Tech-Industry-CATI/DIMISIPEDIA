@@ -44,12 +44,16 @@ export function personSectionMeta(entity: Entity): PersonSectionMeta[] {
 
   if (entity.id === "jayendra-pratap-singh") {
     out.push(
+      { id: "verified-footprint", heading: "Professional Footprint & Appointments" },
       { id: "career-snapshot", heading: "Career Snapshot" },
+      { id: "career-pipeline", heading: "9-Stage Career Evolution" },
       { id: "dimisi-first-mentor-callout", heading: "First Mentor Association" },
       { id: "mentorship-value", heading: "Mentorship Value to DIMISI" },
       { id: "mentorship-philosophy", heading: "Mentorship Philosophy" },
       { id: "startup-mentorship", heading: "Startup Mentorship (50+ Startups)" },
-      { id: "government-ecosystem", heading: "Ecosystem Contributions & DPIIT" },
+      { id: "incubator-ecosystem", heading: "Incubator & Advisory Network" },
+      { id: "corporate-academic-career", heading: "Corporate HR & Academic Leadership" },
+      { id: "defence-ssb-mentoring", heading: "Defence & SSB Mentoring" },
       { id: "recognition-achievements", heading: "Recognition & Achievements" },
       { id: "areas-of-expertise", heading: "Areas of Expertise" },
       { id: "cross-sector-exposure", heading: "14 Years Cross-Sector Experience" },

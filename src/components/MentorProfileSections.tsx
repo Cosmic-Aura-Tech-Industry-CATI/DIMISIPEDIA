@@ -2,26 +2,33 @@ import { Link } from "@tanstack/react-router";
 import {
   Award,
   BadgeCheck,
+  BookOpen,
   Briefcase,
   Building2,
   CheckCircle2,
   Compass,
+  ExternalLink,
   GraduationCap,
+  HeartHandshake,
   Layers,
   Lightbulb,
   Milestone,
   Rocket,
   ShieldCheck,
   Sparkles,
+  Target,
   TrendingUp,
   Users,
 } from "lucide-react";
 import {
   jayendraProfileDetails,
   type CareerMilestone,
+  type CareerStage,
   type ExpertiseGroup,
+  type IncubatorEmpanelment,
   type MentorPillar,
 } from "@/data/mentors";
+import { EXTERNAL_REL_VERIFIED } from "@/lib/url-safety";
 import { EntityLink } from "./EntityLink";
 
 export function MentorProfileSections() {
@@ -29,18 +36,63 @@ export function MentorProfileSections() {
 
   return (
     <div className="space-y-16">
+      {/* 0. VERIFIED PROFESSIONAL PRESENCE & CURRENT APPOINTMENTS BANNER */}
+      <section id="verified-footprint" className="border border-primary/40 bg-surface p-6 sm:p-8">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div className="space-y-2">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-3 py-0.5 font-mono text-[11px] font-medium text-primary">
+                <BadgeCheck className="size-3.5" aria-hidden />
+                <span>Verified Entity Profile</span>
+              </span>
+              <span className="label-mono text-xs text-muted-foreground">
+                Greater Delhi Area / Noida, India
+              </span>
+            </div>
+            <h2 className="font-serif text-2xl sm:text-3xl font-medium text-foreground">
+              {data.displayName}
+            </h2>
+            <p className="text-sm font-medium text-primary">
+              {data.currentRole} — {data.currentOrganization} &amp; First Mentor — DIMISI Technologies
+            </p>
+            <p className="text-xs text-muted-foreground max-w-2xl leading-relaxed">
+              14+ years in HR, people development, leadership capability building, and startup mentorship.
+              Alumnus of IIM Ranchi (Human Resources) and JSS Noida (Electronics &amp; Communication Engineering).
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row lg:flex-col items-start lg:items-end gap-3 shrink-0">
+            <a
+              href={data.linkedInUrl}
+              target="_blank"
+              rel={EXTERNAL_REL_VERIFIED}
+              className="inline-flex items-center gap-2 rounded border border-[#0077b5]/50 bg-[#0077b5]/10 px-4 py-2 font-mono text-xs font-semibold text-[#0077b5] transition-all hover:bg-[#0077b5] hover:text-white"
+            >
+              <svg className="size-4 fill-current" viewBox="0 0 24 24" aria-hidden>
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28Z" />
+              </svg>
+              <span>View Verified LinkedIn Profile</span>
+              <ExternalLink className="size-3.5" />
+            </a>
+            <span className="font-mono text-[11px] text-muted-foreground">
+              {data.linkedInStats}
+            </span>
+          </div>
+        </div>
+      </section>
+
       {/* 1. CAREER SNAPSHOT / MILESTONES */}
       <section id="career-snapshot" className="scroll-mt-24">
         <div className="flex items-center gap-2 border-b border-rule pb-2">
           <Milestone className="size-5 text-primary" aria-hidden />
           <h2 className="text-2xl">Career Snapshot</h2>
-          <span className="label-mono ml-auto">14 Years Track Record</span>
+          <span className="label-mono ml-auto">14+ Years Track Record</span>
         </div>
         <p className="mt-2 text-sm text-muted-foreground">
           Verified milestones and credentials across industry, academia, national startup mentoring,
           and institutional advisory.
         </p>
-        <div className="mt-6 grid gap-px border border-border bg-rule sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="mt-6 grid gap-px border border-border bg-rule sm:grid-cols-2 lg:grid-cols-4">
           {data.careerMilestones.map((m: CareerMilestone, idx: number) => (
             <div key={m.title} className="flex flex-col justify-between bg-surface p-5">
               <div>
@@ -60,7 +112,58 @@ export function MentorProfileSections() {
         </div>
       </section>
 
-      {/* 2. DIMISI CONNECTION & FIRST MENTOR CALLOUT */}
+      {/* 2. 9-STAGE CAREER EVOLUTION PIPELINE */}
+      <section id="career-pipeline" className="scroll-mt-24">
+        <div className="flex items-center gap-2 border-b border-rule pb-2">
+          <TrendingUp className="size-5 text-primary" aria-hidden />
+          <h2 className="text-2xl">9-Stage Career Evolution</h2>
+          <span className="label-mono ml-auto">2006 – Present</span>
+        </div>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Chronological progression tracing JP&apos;s development from technical engineering, enterprise IT,
+          and student coaching to premier management education at IIM Ranchi, corporate HR management,
+          healthcare entrepreneurship, multi-incubator mentoring, and national startup advisory.
+        </p>
+
+        <div className="mt-6 space-y-4">
+          {data.careerStages.map((st: CareerStage) => (
+            <div
+              key={st.step}
+              className={`relative border p-5 transition-all ${
+                st.highlight
+                  ? "border-primary/60 bg-surface shadow-sm"
+                  : "border-border bg-surface/80"
+              }`}
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-rule/60 pb-3">
+                <div className="flex items-center gap-3">
+                  <span className="font-mono text-xs font-bold text-primary bg-primary/10 border border-primary/30 px-2 py-0.5 rounded">
+                    STAGE {st.step}
+                  </span>
+                  <span className="font-mono text-xs text-muted-foreground">{st.period}</span>
+                </div>
+                {st.badge ? (
+                  <span className="label-mono text-[11px] text-foreground bg-background border border-border px-2 py-0.5">
+                    {st.badge}
+                  </span>
+                ) : null}
+              </div>
+
+              <div className="mt-3">
+                <h3 className="font-serif text-lg font-medium text-foreground">{st.role}</h3>
+                <p className="font-mono text-xs text-primary font-medium mt-0.5">
+                  {st.organization}
+                </p>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  {st.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 3. DIMISI CONNECTION & FIRST MENTOR CALLOUT */}
       <section id="dimisi-first-mentor-callout" className="scroll-mt-24">
         <div className="overflow-hidden border border-primary/40 bg-surface">
           <div className="border-b border-primary/20 bg-primary/5 px-6 py-4">
@@ -127,7 +230,7 @@ export function MentorProfileSections() {
         </div>
       </section>
 
-      {/* 3. FIVE PILLARS OF MENTORSHIP VALUE TO DIMISI */}
+      {/* 4. FIVE PILLARS OF MENTORSHIP VALUE TO DIMISI */}
       <section id="mentorship-value" className="scroll-mt-24">
         <div className="flex items-center gap-2 border-b border-rule pb-2">
           <Layers className="size-5 text-primary" aria-hidden />
@@ -162,7 +265,7 @@ export function MentorProfileSections() {
         </div>
       </section>
 
-      {/* 4. MENTORSHIP PHILOSOPHY */}
+      {/* 5. MENTORSHIP PHILOSOPHY */}
       <section id="mentorship-philosophy" className="scroll-mt-24">
         <div className="flex items-center gap-2 border-b border-rule pb-2">
           <Compass className="size-5 text-primary" aria-hidden />
@@ -212,7 +315,7 @@ export function MentorProfileSections() {
         </div>
       </section>
 
-      {/* 5. STARTUP MENTORSHIP SHOWCASE (50+ Startups & Startup India) */}
+      {/* 6. STARTUP MENTORSHIP SHOWCASE (50+ Startups & Startup India) */}
       <section id="startup-mentorship" className="scroll-mt-24">
         <div className="flex items-center gap-2 border-b border-rule pb-2">
           <Rocket className="size-5 text-primary" aria-hidden />
@@ -243,10 +346,10 @@ export function MentorProfileSections() {
             <div>
               <h3 className="font-serif text-xl font-medium">National Mentor — Startup India</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                JP is a National Mentor with Startup India, having mentored 50+ startups on areas
+                JP is an empanelled National Mentor with Startup India, having mentored 50+ startups on areas
                 including team building, leadership, and business strategy. His interventions
                 bridge the gap between early ideation and operational capability, helping founders
-                scale robust organizational cultures.
+                scale robust organizational cultures and investor-ready teams.
               </p>
 
               <div className="mt-6 border-t border-rule pt-4">
@@ -254,10 +357,11 @@ export function MentorProfileSections() {
                 <div className="mt-3 flex flex-wrap gap-2">
                   {[
                     "Team Building",
-                    "Leadership",
+                    "Founder Alignment",
+                    "Leadership Development",
                     "Business Strategy",
-                    "Founder Development",
-                    "Organizational Capability",
+                    "Capability Building",
+                    "Startup Governance",
                   ].map((area) => (
                     <span
                       key={area}
@@ -277,50 +381,111 @@ export function MentorProfileSections() {
         </div>
       </section>
 
-      {/* 6. GOVERNMENT & ECOSYSTEM CONTRIBUTIONS (DPIIT Platinum Badge) */}
-      <section id="government-ecosystem" className="scroll-mt-24">
+      {/* 7. INCUBATOR & ADVISORY ECOSYSTEM */}
+      <section id="incubator-ecosystem" className="scroll-mt-24">
         <div className="flex items-center gap-2 border-b border-rule pb-2">
-          <Award className="size-5 text-primary" aria-hidden />
-          <h2 className="text-2xl">Mentorship &amp; Ecosystem Contributions</h2>
+          <Building2 className="size-5 text-primary" aria-hidden />
+          <h2 className="text-2xl">Incubators &amp; Advisory Ecosystem</h2>
+          <span className="label-mono ml-auto">National Network</span>
         </div>
         <p className="mt-2 text-sm text-muted-foreground">
-          Recognitions and official empanelments associated with the quality and impact of his mentorship.
+          Empanelments across national entrepreneurship foundations, central government startup platforms,
+          Atal Incubation Centres (NITI Aayog), and regional innovation bodies.
         </p>
 
-        <div className="mt-6 grid gap-4 sm:grid-cols-3">
-          <div className="border border-border bg-surface p-5">
-            <span className="label-mono text-[10px] text-primary">01 · National Empanelment</span>
-            <h3 className="mt-2 font-serif text-lg font-medium">National Mentor</h3>
-            <p className="mt-1 text-xs font-mono text-muted-foreground">Startup India</p>
-            <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-              Active mentor in the national startup ecosystem under the Department for Promotion of
-              Industry and Internal Trade (DPIIT).
-            </p>
-          </div>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {data.incubatorEmpanelments.map((inc: IncubatorEmpanelment) => (
+            <div
+              key={inc.name}
+              className="flex flex-col justify-between border border-border bg-surface p-5 transition-colors hover:border-primary/50"
+            >
+              <div>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-primary font-semibold">
+                    {inc.role}
+                  </span>
+                  {inc.badge ? (
+                    <span className="label-mono text-[10px] bg-background border border-border px-1.5 py-0.5">
+                      {inc.badge}
+                    </span>
+                  ) : null}
+                </div>
+                <h3 className="mt-2 font-serif text-lg font-medium text-foreground">{inc.name}</h3>
+                <p className="mt-0.5 font-mono text-xs text-muted-foreground">{inc.type}</p>
+                <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+                  {inc.description}
+                </p>
+              </div>
 
-          <div className="border border-border bg-surface p-5">
-            <span className="label-mono text-[10px] text-primary">02 · Government Recognition</span>
-            <h3 className="mt-2 font-serif text-lg font-medium">Platinum Badge Awardee</h3>
-            <p className="mt-1 text-xs font-mono text-muted-foreground">DPIIT, Govt. of India</p>
-            <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-              Recognized with the Platinum Badge from DPIIT, Ministry of Commerce &amp; Industry,
-              recognizing the quality of his startup mentorship.
-            </p>
-          </div>
-
-          <div className="border border-border bg-surface p-5">
-            <span className="label-mono text-[10px] text-primary">03 · State Ecosystem</span>
-            <h3 className="mt-2 font-serif text-lg font-medium">State Initiatives</h3>
-            <p className="mt-1 text-xs font-mono text-muted-foreground">Empanelled Mentor</p>
-            <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-              Empanelled with state-government mentoring initiatives, supporting emerging founders
-              and regional innovation hubs.
-            </p>
-          </div>
+              {inc.url ? (
+                <div className="mt-4 border-t border-rule/60 pt-2">
+                  <a
+                    href={inc.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 font-mono text-[11px] text-primary hover:underline"
+                  >
+                    <span>Visit Institution</span>
+                    <ExternalLink className="size-3" />
+                  </a>
+                </div>
+              ) : null}
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* 7. RECOGNITION & ACHIEVEMENTS */}
+      {/* 8. CORPORATE HR & ACADEMIC LEADERSHIP */}
+      <section id="corporate-academic-career" className="scroll-mt-24">
+        <div className="flex items-center gap-2 border-b border-rule pb-2">
+          <Briefcase className="size-5 text-primary" aria-hidden />
+          <h2 className="text-2xl">Corporate HR &amp; Academic Leadership</h2>
+          <span className="label-mono ml-auto">Institutional Roles</span>
+        </div>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Documented corporate management, academic administration, and venture leadership roles held
+          across his professional career.
+        </p>
+
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {data.corporateExperience.map((exp) => (
+            <div key={exp.organization + exp.role} className="border border-border bg-surface p-5">
+              <div className="flex items-center justify-between gap-2">
+                <span className="font-mono text-xs font-semibold text-primary">{exp.period}</span>
+              </div>
+              <h3 className="mt-2 font-serif text-lg font-medium text-foreground">{exp.role}</h3>
+              <p className="font-mono text-xs text-muted-foreground mt-0.5">{exp.organization}</p>
+              <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+                {exp.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 9. DEFENCE & SERVICES SELECTION BOARD (SSB) MENTORING */}
+      <section id="defence-ssb-mentoring" className="scroll-mt-24">
+        <div className="border border-border bg-surface p-6 sm:p-8">
+          <div className="flex items-center gap-2 text-primary">
+            <Award className="size-5" aria-hidden />
+            <span className="label-mono uppercase text-primary font-semibold text-[11px]">
+              Specialized Behavioural Practice
+            </span>
+          </div>
+          <h2 className="mt-2 font-serif text-2xl font-medium text-foreground">
+            {data.defenceMentoring.title}
+          </h2>
+          <div className="mt-2 inline-flex items-center gap-1.5 rounded border border-primary/40 bg-primary/10 px-3 py-1 font-mono text-xs font-semibold text-primary">
+            <BadgeCheck className="size-3.5" />
+            <span>{data.defenceMentoring.qualification}</span>
+          </div>
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+            {data.defenceMentoring.description}
+          </p>
+        </div>
+      </section>
+
+      {/* 10. RECOGNITION & ACHIEVEMENTS */}
       <section id="recognition-achievements" className="scroll-mt-24">
         <div className="flex items-center gap-2 border-b border-rule pb-2">
           <Award className="size-5 text-primary" aria-hidden />
@@ -338,7 +503,7 @@ export function MentorProfileSections() {
               DPIIT, Ministry of Commerce &amp; Industry, Government of India
             </p>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-              Recognition associated with the quality and sustained impact of his startup mentorship
+              Highest-tier recognition associated with the sustained quality and impact of his startup mentorship
               across national incubation initiatives.
             </p>
           </div>
@@ -359,32 +524,32 @@ export function MentorProfileSections() {
           <div className="bg-surface p-6">
             <div className="flex items-center gap-2">
               <span className="size-2 rounded-full bg-primary" />
-              <span className="label-mono text-[11px]">Management Institution</span>
+              <span className="label-mono text-[11px]">Management Festival Honor</span>
             </div>
-            <h3 className="mt-2 font-serif text-xl font-medium">IIM Ranchi Alumnus</h3>
-            <p className="mt-1 text-xs font-mono text-primary">Human Resources (HR)</p>
+            <h3 className="mt-2 font-serif text-xl font-medium">Winner — Carpe Diem 2014</h3>
+            <p className="mt-1 text-xs font-mono text-primary">IIM Calcutta (Representing IIM Ranchi)</p>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-              Postgraduate background from one of India&apos;s premier management institutes, providing
-              rigorous academic perspective to human capital systems.
+              Won first prize in the &ldquo;Minutes to Win&rdquo; flagship competition at Carpe Diem 2014,
+              the annual festival of the Indian Institute of Management Calcutta.
             </p>
           </div>
 
           <div className="bg-surface p-6">
             <div className="flex items-center gap-2">
               <span className="size-2 rounded-full bg-primary" />
-              <span className="label-mono text-[11px]">Technical Education</span>
+              <span className="label-mono text-[11px]">Technical &amp; Analytical Grounding</span>
             </div>
-            <h3 className="mt-2 font-serif text-xl font-medium">Electronics &amp; Communications Engineer</h3>
-            <p className="mt-1 text-xs font-mono text-primary">Engineering Degree</p>
+            <h3 className="mt-2 font-serif text-xl font-medium">B.Tech Electronics &amp; Communication</h3>
+            <p className="mt-1 text-xs font-mono text-primary">JSS Academy of Technical Education, Noida</p>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-              Technical foundation enabling structured analytical problem-solving and organic
-              alignment with engineering-led technology companies.
+              Technical degree affiliated with Dr. A.P.J. Abdul Kalam Technical University (AKTU / UPTU),
+              providing rigorous analytical problem-solving capabilities.
             </p>
           </div>
         </div>
       </section>
 
-      {/* 8. AREAS OF PROFESSIONAL EXPERTISE */}
+      {/* 11. AREAS OF PROFESSIONAL EXPERTISE */}
       <section id="areas-of-expertise" className="scroll-mt-24">
         <div className="flex items-center gap-2 border-b border-rule pb-2">
           <Lightbulb className="size-5 text-primary" aria-hidden />
@@ -413,7 +578,7 @@ export function MentorProfileSections() {
         </div>
       </section>
 
-      {/* 9. 14 YEARS OF CROSS-SECTOR EXPERIENCE */}
+      {/* 12. 14 YEARS OF CROSS-SECTOR EXPERIENCE */}
       <section id="cross-sector-exposure" className="scroll-mt-24">
         <div className="flex items-center gap-2 border-b border-rule pb-2">
           <Briefcase className="size-5 text-primary" aria-hidden />
@@ -421,11 +586,11 @@ export function MentorProfileSections() {
         </div>
         <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
           JP&apos;s professional experience spans multiple industries, allowing him to bring
-          perspectives from business, technology, education, people development, and organizational
+          perspectives from business, technology, education, healthcare, people development, and organizational
           capability into his consulting and mentoring engagements.
         </p>
 
-        <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+        <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
           {data.sectors.map((sector) => (
             <div
               key={sector}
@@ -439,7 +604,7 @@ export function MentorProfileSections() {
         </div>
       </section>
 
-      {/* 10. ORGANIZATIONS & INDUSTRY EXPOSURE (Explicitly Training Exposure) */}
+      {/* 13. ORGANIZATIONS & INDUSTRY EXPOSURE */}
       <section id="training-consulting-exposure" className="scroll-mt-24">
         <div className="flex items-center gap-2 border-b border-rule pb-2">
           <Building2 className="size-5 text-primary" aria-hidden />
@@ -470,13 +635,13 @@ export function MentorProfileSections() {
           <div className="mt-6 rounded border border-rule bg-muted/30 p-3 text-xs leading-relaxed text-muted-foreground">
             <strong className="font-semibold text-foreground">Documentation Standard:</strong> The
             supplied portfolio specifically describes these organizations in the context of{" "}
-            <strong>training and consulting interventions</strong>. They represent client and
-            intervention exposure and are not described as previous corporate employers.
+            <strong>training and consulting interventions</strong>. His direct corporate employment
+            and management tenure includes Godrej &amp; Boyce, Reliance Power, Tech Mahindra, and SAITM.
           </div>
         </div>
       </section>
 
-      {/* 11. PROFESSIONAL FOCUS */}
+      {/* 14. PROFESSIONAL FOCUS */}
       <section id="professional-focus" className="scroll-mt-24">
         <div className="flex items-center gap-2 border-b border-rule pb-2">
           <Sparkles className="size-5 text-primary" aria-hidden />
@@ -488,6 +653,7 @@ export function MentorProfileSections() {
 
         <div className="mt-5 flex flex-wrap gap-2">
           {[
+            "Startup Advisory",
             "People Development",
             "Leadership",
             "Behavioural Transformation",
@@ -495,7 +661,7 @@ export function MentorProfileSections() {
             "Campus-to-Corporate",
             "Executive Education",
             "Employability",
-            "Startup Mentoring",
+            "Incubator Mentoring",
             "Training & Development",
             "Industry Readiness",
             "Team Building",
@@ -511,7 +677,7 @@ export function MentorProfileSections() {
         </div>
       </section>
 
-      {/* 12. FINAL PROFILE SUMMARY */}
+      {/* 15. FINAL PROFILE SUMMARY */}
       <section id="final-summary" className="scroll-mt-24">
         <div className="border border-border bg-surface p-6 sm:p-8">
           <div className="flex items-center gap-2">
@@ -527,7 +693,7 @@ export function MentorProfileSections() {
             <div>
               <p className="font-serif text-sm font-medium">Jayendra Pratap Singh (JP)</p>
               <p className="text-xs text-muted-foreground">
-                First Mentor — DIMISI Technologies Private Limited · National Mentor — Startup India
+                Startup Advisor — Wadhwani Foundation · First Mentor — DIMISI Technologies · National Mentor — Startup India
               </p>
             </div>
             <span className="label-mono text-[10px] border border-border px-2 py-1 bg-background">
@@ -537,7 +703,7 @@ export function MentorProfileSections() {
         </div>
       </section>
 
-      {/* 13. RELATED TOPICS */}
+      {/* 16. RELATED TOPICS */}
       <section id="related-topics" className="scroll-mt-24">
         <div className="flex items-center gap-2 border-b border-rule pb-2">
           <Layers className="size-5 text-primary" aria-hidden />
