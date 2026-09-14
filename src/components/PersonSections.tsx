@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { StatusChip } from "./StatusChip";
 import { EntityLink } from "./EntityLink";
+import { MentorProfileSections } from "./MentorProfileSections";
 import { relationsFor, timeline, type Entity } from "@/data/knowledge";
 import { articlesByAuthor, articlesForEntity, articlePath } from "@/data/articles";
 import { EXTERNAL_REL_UNTRUSTED, safeExternalHref } from "@/lib/url-safety";
@@ -40,6 +41,25 @@ function relatedGroups(entity: Entity) {
 export function personSectionMeta(entity: Entity): PersonSectionMeta[] {
   const g = relatedGroups(entity);
   const out: PersonSectionMeta[] = [];
+
+  if (entity.id === "jayendra-pratap-singh") {
+    out.push(
+      { id: "career-snapshot", heading: "Career Snapshot" },
+      { id: "dimisi-first-mentor-callout", heading: "First Mentor Association" },
+      { id: "mentorship-value", heading: "Mentorship Value to DIMISI" },
+      { id: "mentorship-philosophy", heading: "Mentorship Philosophy" },
+      { id: "startup-mentorship", heading: "Startup Mentorship (50+ Startups)" },
+      { id: "government-ecosystem", heading: "Ecosystem Contributions & DPIIT" },
+      { id: "recognition-achievements", heading: "Recognition & Achievements" },
+      { id: "areas-of-expertise", heading: "Areas of Expertise" },
+      { id: "cross-sector-exposure", heading: "14 Years Cross-Sector Experience" },
+      { id: "training-consulting-exposure", heading: "Training & Consulting Exposure" },
+      { id: "professional-focus", heading: "Professional Focus" },
+      { id: "final-summary", heading: "Authoritative Profile Summary" },
+      { id: "related-topics", heading: "Related Topics" },
+    );
+  }
+
   if (g.organizations.length) out.push({ id: "organizations", heading: "Organizations" });
   if (g.projects.length) out.push({ id: "projects", heading: "Projects" });
   if (g.technologies.length) out.push({ id: "technologies", heading: "Technologies" });
@@ -135,6 +155,12 @@ export function PersonSections({ entity }: { entity: Entity }) {
 
   return (
     <>
+      {entity.id === "jayendra-pratap-singh" ? (
+        <div className="mt-12">
+          <MentorProfileSections />
+        </div>
+      ) : null}
+
       {g.organizations.length > 0 ? (
         <Block
           id="organizations"

@@ -10,7 +10,10 @@ export function cn(...inputs: ClassValue[]) {
  * As calendar time progresses, the age automatically stays accurate.
  */
 export function calculateAge(birthDate: string, targetDate: Date = new Date()): number {
-  const [y, m, d] = birthDate.split("-").map(Number);
+  const parts = birthDate.split("-").map(Number);
+  const y = parts[0] ?? 0;
+  const m = parts[1] ?? 1;
+  const d = parts[2] ?? 1;
   const birth = new Date(y, m - 1, d);
   let age = targetDate.getFullYear() - birth.getFullYear();
   const monthDiff = targetDate.getMonth() - birth.getMonth();
@@ -22,7 +25,10 @@ export function calculateAge(birthDate: string, targetDate: Date = new Date()): 
 
 /** Formats an ISO birth date into a readable string like "6 May 2004". */
 export function formatBirthDate(birthDate: string): string {
-  const [y, m, d] = birthDate.split("-").map(Number);
+  const parts = birthDate.split("-").map(Number);
+  const y = parts[0] ?? 0;
+  const m = parts[1] ?? 1;
+  const d = parts[2] ?? 1;
   const months = [
     "January",
     "February",
@@ -37,7 +43,7 @@ export function formatBirthDate(birthDate: string): string {
     "November",
     "December",
   ];
-  return `${d} ${months[m - 1]} ${y}`;
+  return `${d} ${months[m - 1] ?? ""} ${y}`;
 }
 
 /** Formats a full "Born" fact value with dynamic age and optional location. */

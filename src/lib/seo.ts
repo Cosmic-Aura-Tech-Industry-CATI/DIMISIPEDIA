@@ -302,13 +302,15 @@ export function buildPersonSchema(entity: Entity): Json {
       },
       skills: entity.areas ? entity.areas.join(", ") : undefined,
     },
-    worksFor: orgs.map((r) => ({
-      "@type": "Organization",
-      "@id": entityId(r.entity),
-      name: r.entity.name,
-      legalName: r.entity.name,
-      url: abs(r.entity.path),
-    })),
+    worksFor: orgs
+      .filter((r) => !/Mentor/i.test(r.type) && entity.id !== "jayendra-pratap-singh")
+      .map((r) => ({
+        "@type": "Organization",
+        "@id": entityId(r.entity),
+        name: r.entity.name,
+        legalName: r.entity.name,
+        url: abs(r.entity.path),
+      })),
     affiliation: orgs.map((r) => ({
       "@type": "Organization",
       "@id": entityId(r.entity),
@@ -316,18 +318,22 @@ export function buildPersonSchema(entity: Entity): Json {
       url: abs(r.entity.path),
     })),
     founder: [
-      ...orgs.map((r) => ({
-        "@type": "Organization",
-        "@id": entityId(r.entity),
-        name: r.entity.name,
-        url: abs(r.entity.path),
-      })),
-      ...projects.map((r) => ({
-        "@type": "SoftwareApplication",
-        "@id": entityId(r.entity),
-        name: r.entity.name,
-        url: abs(r.entity.path),
-      })),
+      ...orgs
+        .filter((r) => /Founder|Co-Founder/i.test(r.type))
+        .map((r) => ({
+          "@type": "Organization",
+          "@id": entityId(r.entity),
+          name: r.entity.name,
+          url: abs(r.entity.path),
+        })),
+      ...projects
+        .filter((r) => /Founder|Created|Lead/i.test(r.type))
+        .map((r) => ({
+          "@type": "SoftwareApplication",
+          "@id": entityId(r.entity),
+          name: r.entity.name,
+          url: abs(r.entity.path),
+        })),
     ],
     knowsAbout: entity.knowsAbout ??
       entity.areas ?? [
@@ -438,7 +444,13 @@ export function buildOrganizationSchema(entity: Entity): Json {
           url: abs(ceo.entity.path),
         }
       : undefined,
-    employee: Array.from(new Map(people.map((r) => [r.entity.id, r.entity])).values()).map((e) => ({
+    employee: Array.from(
+      new Map(
+        people
+          .filter((r) => r.entity.id !== "jayendra-pratap-singh" && !/Mentor/i.test(r.type))
+          .map((r) => [r.entity.id, r.entity]),
+      ).values(),
+    ).map((e) => ({
       "@type": "Person",
       "@id": entityId(e),
       name: e.name,
@@ -731,15 +743,17 @@ export function indexHead(opts: {
 
 export interface SitemapUrlEntry {
   path: string;
-  lastmod?: string;
+  lastmod?: string | undefined;
   priority: string;
-  image?: {
-    loc: string;
-    title: string;
-    caption: string;
-    geoLocation?: string;
-    license?: string;
-  };
+  image?:
+    | {
+        loc: string;
+        title: string;
+        caption: string;
+        geoLocation?: string;
+        license?: string;
+      }
+    | undefined;
 }
 
 /** Every canonical, indexable URL on the site (used by the sitemap). */
@@ -779,7 +793,12 @@ export function canonicalUrls(): SitemapUrlEntry[] {
       let priority = "0.8";
       if (e.id === "shikhar-dixit") priority = "1.0";
       else if (e.entityType === "organization" || e.id === "kalesh") priority = "0.9";
-      else if (e.id === "swatantra-singh" || e.id === "nishkarsh-mishra") priority = "0.85";
+      else if (
+        e.id === "swatantra-singh" ||
+        e.id === "nishkarsh-mishra" ||
+        e.id === "jayendra-pratap-singh"
+      )
+        priority = "0.85";
 
       let image: SitemapUrlEntry["image"] = undefined;
       if (e.image) {

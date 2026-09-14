@@ -88,7 +88,9 @@ export type RelationshipType =
   | "Led by"
   | "Studied at"
   | "Worked at"
-  | "Related to";
+  | "Related to"
+  | "1st Prize Winner"
+  | "First Mentor";
 
 export interface Relationship {
   from: string;
@@ -130,7 +132,8 @@ export type ClaimType =
   | "Project association"
   | "Corporate claim"
   | "Historical claim"
-  | "Educational claim";
+  | "Educational claim"
+  | "Identity verification";
 
 export interface Claim {
   claim: string;
@@ -232,6 +235,7 @@ import {
   founderTimeline,
   foundingLeadership,
 } from "./founders";
+import { mentorEntities, mentorRelationships, mentorSources } from "./mentors";
 
 export { foundingLeadership };
 
@@ -531,6 +535,7 @@ const baseRevisions = (created: string): Revision[] => [
 
 const people: Entity[] = [
   ...founderEntities,
+  ...mentorEntities,
   {
     id: "sheelu-singh",
     slug: "sheelu-singh",
@@ -3508,8 +3513,12 @@ const technologies: Entity[] = [
   ),
 ];
 
-export const sources: Source[] = [...baseSources, ...founderSources];
-export const relationships: Relationship[] = [...baseRelationships, ...founderRelationships];
+export const sources: Source[] = [...baseSources, ...founderSources, ...mentorSources];
+export const relationships: Relationship[] = [
+  ...baseRelationships,
+  ...founderRelationships,
+  ...mentorRelationships,
+];
 
 export const entities: Entity[] = [organization, ...people, ...projects, ...technologies];
 
@@ -3826,8 +3835,13 @@ export function searchKnowledge(q: string): SearchResult[] {
     const answerLower = (e.answer || "").toLowerCase();
 
     let score = 0;
+    const aliasMatch = e.aliases?.some(
+      (a) => a.toLowerCase() === query || a.toLowerCase().includes(query),
+    );
     if (nameLower === query) {
       score += 100;
+    } else if (aliasMatch) {
+      score += 85;
     } else if (nameLower.startsWith(query)) {
       score += 70;
     } else if (nameLower.includes(query)) {

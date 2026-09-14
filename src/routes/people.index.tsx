@@ -50,7 +50,7 @@ function PeopleIndex() {
     return sorted.filter((p) => {
       const matchesLetter = letter === "All" || p.name.toUpperCase().startsWith(letter);
       const hay =
-        `${p.name} ${p.subtitle} ${p.shortDescription} ${primaryRole(p.slug)}`.toLowerCase();
+        `${p.name} ${p.subtitle} ${p.shortDescription} ${primaryRole(p.slug)} ${p.aliases?.join(" ") ?? ""}`.toLowerCase();
       return matchesLetter && (!query || hay.includes(query));
     });
   }, [q, letter]);
@@ -137,6 +137,41 @@ function PeopleIndex() {
         </div>
       </section>
 
+      {/* First Mentor Spotlight Showcase */}
+      <section className="mt-6 border border-primary/40 bg-surface p-6 sm:p-8">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div className="flex items-start gap-4">
+            <div className="flex size-14 sm:size-16 shrink-0 items-center justify-center rounded-full border border-primary/40 bg-primary/10 font-serif text-xl sm:text-2xl font-bold text-primary">
+              JP
+            </div>
+            <div>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="label-mono uppercase text-primary border border-primary/40 px-2 py-0.5 text-[10px] font-semibold">
+                  DIMISIPEDIA • FIRST MENTOR
+                </span>
+                <span className="label-mono text-xs">Also known as: Jayant Sir</span>
+              </div>
+              <h2 className="mt-2 font-serif text-2xl font-medium">Jayendra Pratap Singh (JP)</h2>
+              <p className="mt-1 text-xs text-muted-foreground">
+                First Mentor — DIMISI Technologies Private Limited · National Mentor, Startup India (50+ Startups) · DPIIT Platinum Badge
+              </p>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed max-w-2xl">
+                14 years of cross-sector experience across Manufacturing, Telecom, IT, Services, and Education. An IIM Ranchi alumnus (HR) and Electronics &amp; Communications Engineer guiding DIMISI&apos;s people development, leadership capability, and organizational readiness.
+              </p>
+            </div>
+          </div>
+          <div className="shrink-0">
+            <EntityLink
+              to="/people/jayendra-pratap-singh"
+              className="inline-flex items-center gap-1.5 border border-primary bg-primary px-4 py-2 font-mono text-xs text-primary-foreground hover:bg-primary/90 transition-colors"
+            >
+              <span>View Mentor Profile</span>
+              <ArrowRight className="size-3.5" />
+            </EntityLink>
+          </div>
+        </div>
+      </section>
+
       <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
         <div className="flex flex-wrap gap-1.5">
           {letters.map((l) => (
@@ -192,11 +227,13 @@ function PeopleIndex() {
                       className="mb-4 size-16 border border-rule object-cover"
                     />
                   ) : (
-                    <span className="mb-4 flex size-16 items-center justify-center border border-rule font-serif text-xl text-muted-foreground">
-                      {p.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
+                    <span className="mb-4 flex size-16 items-center justify-center border border-rule font-serif text-xl text-primary font-bold bg-primary/10">
+                      {p.id === "jayendra-pratap-singh"
+                        ? "JP"
+                        : p.name
+                            .split(" ")
+                            .map((n) => n[0])
+                            .join("")}
                     </span>
                   )}
                   <span className="label-mono">Person</span>

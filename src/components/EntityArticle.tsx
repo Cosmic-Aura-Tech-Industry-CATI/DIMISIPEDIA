@@ -133,6 +133,11 @@ export function EntityArticle({
         <header className="mt-6 flex flex-col-reverse gap-6 border-b border-rule pb-8 sm:flex-row sm:items-start sm:justify-between">
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center gap-2">
+              {entity.statusBadge ? (
+                <span className="rounded border border-primary/50 bg-primary/10 px-2.5 py-0.5 font-mono text-[11px] font-semibold tracking-wider text-primary uppercase">
+                  {entity.statusBadge}
+                </span>
+              ) : null}
               <p className="label-mono">{entity.subtitle}</p>
               {entity.category ? (
                 <span className="rounded-full border border-primary/30 bg-primary/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-primary">
@@ -141,6 +146,20 @@ export function EntityArticle({
               ) : null}
             </div>
             <h1 className="mt-2 text-4xl leading-tight sm:text-5xl">{entity.name}</h1>
+            {entity.id === "jayendra-pratap-singh" ? (
+              <div className="mt-2 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+                <span className="font-serif italic">Professional name:</span>
+                <strong className="font-medium text-foreground">Jayendra Pratap Singh (JP)</strong>
+                <span className="text-rule">·</span>
+                <span className="font-serif italic">Also known as:</span>
+                <strong className="font-medium text-foreground">Jayant Sir</strong>
+              </div>
+            ) : entity.aliases && entity.aliases.length > 0 ? (
+              <div className="mt-1 flex flex-wrap items-center gap-1.5 text-xs text-muted-foreground">
+                <span className="font-serif italic">Also known as:</span>
+                <span className="text-foreground">{entity.aliases.join(", ")}</span>
+              </div>
+            ) : null}
             <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
               {entity.shortDescription}
             </p>
@@ -187,6 +206,26 @@ export function EntityArticle({
                 className="mt-2 max-w-44 text-[11px] leading-snug text-muted-foreground"
               >
                 {entity.name} — official portrait supplied by DIMISI Technologies.
+              </figcaption>
+            </figure>
+          ) : entity.entityType === "person" ? (
+            <figure className="shrink-0 flex flex-col items-center">
+              <div className="flex size-32 sm:size-44 flex-col items-center justify-center border border-rule bg-surface p-4 text-center">
+                <div className="flex size-16 sm:size-20 items-center justify-center rounded-full border border-primary/30 bg-primary/10 font-serif text-2xl sm:text-3xl font-bold text-primary">
+                  {entity.id === "jayendra-pratap-singh"
+                    ? "JP"
+                    : entity.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
+                </div>
+                <span className="mt-2.5 font-mono text-[10px] tracking-wider uppercase text-muted-foreground">
+                  Verified Profile
+                </span>
+                <span className="font-mono text-[9px] text-primary/80">DIMISIPEDIA</span>
+              </div>
+              <figcaption className="mt-2 max-w-44 text-center text-[10px] leading-snug text-muted-foreground">
+                Official profile mark · DIMISIPEDIA registry.
               </figcaption>
             </figure>
           ) : null}
