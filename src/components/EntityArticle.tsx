@@ -178,11 +178,17 @@ export function EntityArticle({
               <img
                 src={entity.image}
                 alt={
-                  entity.entityType === "person"
-                    ? `Official photograph of ${entity.name} — ${entity.subtitle || "DIMISI Technologies"} | Founder & Leadership`
-                    : `Official visual mark for ${entity.name} — DIMISI Technologies`
+                  entity.id === "jayendra-pratap-singh"
+                    ? `Official photograph of Jayendra Pratap Singh (JP) — First Mentor of DIMISI Technologies Private Limited | HR & People Development Consultant`
+                    : entity.entityType === "person"
+                      ? `Official photograph of ${entity.name} — ${entity.subtitle || "DIMISI Technologies"} | Founder & Leadership`
+                      : `Official visual mark for ${entity.name} — DIMISI Technologies`
                 }
-                title={`${entity.name} — Official Image | DIMISI Technologies`}
+                title={
+                  entity.id === "jayendra-pratap-singh"
+                    ? `Jayendra Pratap Singh (JP) — First Mentor of DIMISI Technologies Private Limited`
+                    : `${entity.name} — Official Image | DIMISI Technologies`
+                }
                 width={176}
                 height={176}
                 loading="eager"

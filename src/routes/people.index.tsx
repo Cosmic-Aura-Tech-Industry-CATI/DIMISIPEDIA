@@ -141,9 +141,13 @@ function PeopleIndex() {
       <section className="mt-6 border border-primary/40 bg-surface p-6 sm:p-8">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <div className="flex items-start gap-4">
-            <div className="flex size-14 sm:size-16 shrink-0 items-center justify-center rounded-full border border-primary/40 bg-primary/10 font-serif text-xl sm:text-2xl font-bold text-primary">
-              JP
-            </div>
+            <img
+              src="/images/jayendra-pratap-singh.jpg"
+              alt="Official photograph of Jayendra Pratap Singh (JP) — First Mentor of DIMISI Technologies Private Limited"
+              width={64}
+              height={64}
+              className="size-16 shrink-0 rounded-full border border-primary/40 object-cover"
+            />
             <div>
               <div className="flex flex-wrap items-center gap-2">
                 <span className="label-mono uppercase text-primary border border-primary/40 px-2 py-0.5 text-[10px] font-semibold">

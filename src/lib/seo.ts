@@ -242,7 +242,10 @@ export function buildPersonSchema(entity: Entity): Json {
         url: abs(entity.image),
         contentUrl: abs(entity.image),
         name: `${entity.name} — ${entity.subtitle || "DIMISI Technologies"}`,
-        caption: `Official photograph of ${entity.name}, ${entity.subtitle || "Founding Member"} at DIMISI Technologies Private Limited`,
+        caption:
+          entity.id === "jayendra-pratap-singh"
+            ? `Official photograph of Jayendra Pratap Singh (JP), First Mentor of DIMISI Technologies Private Limited | HR & People Development Consultant`
+            : `Official photograph of ${entity.name}, ${entity.subtitle || "Founding Member"} at DIMISI Technologies Private Limited`,
         representativeOfPage: true,
         width: 1024,
         height: 1024,
@@ -268,7 +271,37 @@ export function buildPersonSchema(entity: Entity): Json {
     entity.disambiguatingDescription ||
     (entity.id === "shikhar-dixit"
       ? "Indian technology entrepreneur and software engineer; Founder & Chief Executive Officer of DIMISI Technologies Private Limited; creator and product architect of Kalesh, DIMISIPEDIA, and Gandhigiri Face Recognition System."
-      : entity.subtitle || entity.shortDescription);
+      : entity.id === "jayendra-pratap-singh"
+        ? "HR & People Development Consultant, Startup India National Mentor, DPIIT Platinum Badge awardee, and First Mentor of DIMISI Technologies Private Limited."
+        : entity.subtitle || entity.shortDescription);
+
+  const additionalName =
+    entity.id === "shikhar-dixit"
+      ? ["shikhar040", "dixitshikhar004"]
+      : entity.id === "jayendra-pratap-singh"
+        ? ["JP", "Jayant Sir"]
+        : undefined;
+
+  const alternateName =
+    entity.id === "jayendra-pratap-singh"
+      ? [
+          "Jayendra Pratap Singh (JP)",
+          "JP",
+          "Jayant Sir",
+          "First Mentor Jayendra Pratap Singh",
+          entity.subtitle,
+        ].filter(Boolean)
+      : entity.subtitle || undefined;
+
+  const occupationName =
+    entity.id === "jayendra-pratap-singh"
+      ? "HR & People Development Consultant | Startup Mentor"
+      : roleTitles.join(", ") || "Technology Entrepreneur";
+
+  const occupationDesc =
+    entity.id === "jayendra-pratap-singh"
+      ? "Jayendra Pratap Singh (JP) specializes in HR, people development, leadership capability building, executive education, and startup mentorship."
+      : `${entity.name} leads executive direction, product architecture, and engineering.`;
 
   return clean({
     "@type": "Person",
@@ -276,13 +309,13 @@ export function buildPersonSchema(entity: Entity): Json {
     name: entity.name,
     givenName,
     familyName,
-    additionalName: entity.id === "shikhar-dixit" ? ["shikhar040", "dixitshikhar004"] : undefined,
+    additionalName,
     gender: entity.gender || "https://schema.org/Male",
     birthDate: entity.birthDate,
     disambiguatingDescription,
     image: imageObj,
     primaryImageOfPage: imageObj ? { "@id": `${abs(entity.path)}#primaryimage` } : undefined,
-    alternateName: entity.subtitle || undefined,
+    alternateName,
     description: entity.answer || entity.shortDescription,
     url: abs(entity.path),
     mainEntityOfPage: {
@@ -293,12 +326,12 @@ export function buildPersonSchema(entity: Entity): Json {
     jobTitle: roleTitles.length > 0 ? roleTitles : undefined,
     hasOccupation: {
       "@type": "Occupation",
-      name: roleTitles.join(", ") || "Technology Entrepreneur",
-      description: `${entity.name} leads executive direction, product architecture, and engineering.`,
+      name: occupationName,
+      description: occupationDesc,
       occupationLocation: {
-        "@type": "AdministrativeArea",
-        name: "Kanpur, Uttar Pradesh, India",
-        sameAs: "https://en.wikipedia.org/wiki/Kanpur",
+        "@type": "Country",
+        name: "India",
+        sameAs: "https://en.wikipedia.org/wiki/India",
       },
       skills: entity.areas ? entity.areas.join(", ") : undefined,
     },
@@ -353,13 +386,20 @@ export function buildPersonSchema(entity: Entity): Json {
     subjectOf: [...projects.map((r) => ({ "@id": entityId(r.entity) })), ...aboutArticles],
     alumniOf: (entity.education ?? []).map((e) => {
       const isAktu = /aktu|abdul kalam/i.test(e.institution);
+      const isIim = /iim|indian institute of management|ranchi/i.test(e.institution);
       return clean({
-        "@type": isAktu ? "CollegeOrUniversity" : "EducationalOrganization",
+        "@type": isAktu || isIim ? "CollegeOrUniversity" : "EducationalOrganization",
         name: e.institution,
-        url: isAktu ? "https://aktu.ac.in" : undefined,
+        url: isAktu
+          ? "https://aktu.ac.in"
+          : isIim
+            ? "https://www.iimranchi.ac.in"
+            : undefined,
         sameAs: isAktu
           ? "https://en.wikipedia.org/wiki/Dr._A.P.J._Abdul_Kalam_Technical_University"
-          : undefined,
+          : isIim
+            ? "https://en.wikipedia.org/wiki/Indian_Institute_of_Management_Ranchi"
+            : undefined,
       });
     }),
     hasCredential: (entity.education ?? []).map((e) =>
@@ -684,9 +724,11 @@ export function pageHead(options: HeadOptions) {
 export function entityHead(entity: Entity, trail: { label: string; to?: string }[]) {
   const faqSchema = buildFAQSchema(entity.faqs ?? entity.questions, entity.path);
   const imageAlt =
-    entity.entityType === "person"
-      ? `Official photograph of ${entity.name} — ${entity.subtitle || "DIMISI Technologies"} | Founder & Leadership`
-      : `Official visual mark for ${entity.name} — DIMISI Technologies`;
+    entity.id === "jayendra-pratap-singh"
+      ? `Official photograph of Jayendra Pratap Singh (JP) — First Mentor of DIMISI Technologies Private Limited | HR & People Development Consultant`
+      : entity.entityType === "person"
+        ? `Official photograph of ${entity.name} — ${entity.subtitle || "DIMISI Technologies"} | Founder & Leadership`
+        : `Official visual mark for ${entity.name} — DIMISI Technologies`;
   return pageHead({
     title: entity.seoTitle,
     description: entity.seoDescription,
@@ -791,25 +833,25 @@ export function canonicalUrls(): SitemapUrlEntry[] {
     ...statics,
     ...entities.map((e) => {
       let priority = "0.8";
-      if (e.id === "shikhar-dixit") priority = "1.0";
+      if (e.id === "shikhar-dixit" || e.id === "jayendra-pratap-singh") priority = "1.0";
       else if (e.entityType === "organization" || e.id === "kalesh") priority = "0.9";
-      else if (
-        e.id === "swatantra-singh" ||
-        e.id === "nishkarsh-mishra" ||
-        e.id === "jayendra-pratap-singh"
-      )
-        priority = "0.85";
+      else if (e.id === "swatantra-singh" || e.id === "nishkarsh-mishra") priority = "0.85";
 
       let image: SitemapUrlEntry["image"] = undefined;
       if (e.image) {
         const isFounder =
           e.id === "shikhar-dixit" || e.id === "nishkarsh-mishra" || e.id === "swatantra-singh";
-        const title = isFounder
-          ? `${e.name} — Co-Founder & Executive Leadership | DIMISI Technologies`
-          : `${e.name} — ${e.subtitle || "DIMISI Technologies"}`;
-        const caption = isFounder
-          ? `Official photograph of ${e.name}, Co-Founder and Executive Leadership at DIMISI Technologies Private Limited`
-          : `Official image of ${e.name} (${e.subtitle || e.entityType}) — DIMISI Technologies`;
+        const isMentor = e.id === "jayendra-pratap-singh";
+        const title = isMentor
+          ? "Jayendra Pratap Singh (JP) — First Mentor of DIMISI Technologies | HR & People Development Consultant"
+          : isFounder
+            ? `${e.name} — Co-Founder & Executive Leadership | DIMISI Technologies`
+            : `${e.name} — ${e.subtitle || "DIMISI Technologies"}`;
+        const caption = isMentor
+          ? "Official photograph of Jayendra Pratap Singh (JP), First Mentor of DIMISI Technologies Private Limited, Startup India National Mentor, and DPIIT Platinum Badge Awardee"
+          : isFounder
+            ? `Official photograph of ${e.name}, Co-Founder and Executive Leadership at DIMISI Technologies Private Limited`
+            : `Official image of ${e.name} (${e.subtitle || e.entityType}) — DIMISI Technologies`;
 
         image = {
           loc: abs(e.image),
