@@ -855,7 +855,7 @@ export function canonicalUrls(): SitemapUrlEntry[] {
     ...statics,
     ...entities.map((e) => {
       let priority = "0.8";
-      if (e.id === "shikhar-dixit" || e.id === "jayendra-pratap-singh") priority = "1.0";
+      if (e.id === "shikhar-dixit") priority = "1.0";
       else if (e.entityType === "organization" || e.id === "kalesh") priority = "0.9";
       else if (e.id === "swatantra-singh" || e.id === "nishkarsh-mishra") priority = "0.85";
 

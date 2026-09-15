@@ -116,7 +116,7 @@ function PeopleIndex() {
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-rule flex items-center justify-between">
+            <div className="mt-6 pt-4 border-t border-rule flex flex-wrap items-center justify-between gap-3">
               <Link
                 to="/journey"
                 className="inline-flex items-center gap-1.5 font-mono text-xs text-primary hover:underline"
@@ -124,6 +124,13 @@ function PeopleIndex() {
                 <span>Read the Founder's Chronicle</span>
                 <ArrowRight className="size-3.5" />
               </Link>
+              <EntityLink
+                to="/people/shikhar-dixit"
+                className="inline-flex items-center gap-1.5 border border-primary bg-primary px-3.5 py-1.5 font-mono text-xs text-primary-foreground hover:bg-primary/90 transition-colors"
+              >
+                <span>Shikhar Dixit (Founder &amp; CEO) Profile</span>
+                <ArrowRight className="size-3.5" />
+              </EntityLink>
             </div>
           </div>
 
@@ -133,45 +140,6 @@ function PeopleIndex() {
               alt="Founding Directors of DIMISI Technologies — Swatantra Singh, Shikhar Dixit, and Nishkarsh Mishra"
               className="w-full max-h-[380px] object-cover object-center"
             />
-          </div>
-        </div>
-      </section>
-
-      {/* First Mentor Spotlight Showcase */}
-      <section className="mt-6 border border-primary/40 bg-surface p-6 sm:p-8">
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-          <div className="flex items-start gap-4">
-            <img
-              src="/images/jayendra-pratap-singh.jpg"
-              alt="Official photograph of Jayendra Pratap Singh (JP) — First Mentor of DIMISI Technologies Private Limited"
-              width={64}
-              height={64}
-              className="size-16 shrink-0 rounded-full border border-primary/40 object-cover"
-            />
-            <div>
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="label-mono uppercase text-primary border border-primary/40 px-2 py-0.5 text-[10px] font-semibold">
-                  DIMISIPEDIA • FIRST MENTOR
-                </span>
-                <span className="label-mono text-xs">Also known as: Jayant Sir</span>
-              </div>
-              <h2 className="mt-2 font-serif text-2xl font-medium">Jayendra Pratap Singh (JP)</h2>
-              <p className="mt-1 text-xs text-muted-foreground">
-                Startup Advisor — Wadhwani Foundation · First Mentor — DIMISI Technologies · National Mentor, Startup India (50+ Startups) · DPIIT Platinum Badge
-              </p>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed max-w-2xl">
-                14+ years cross-sector experience across corporate HR, IT, higher education, healthcare, and startup ecosystems. An IIM Ranchi HR alumnus and JSS Noida Electronics &amp; Communication Engineer guiding early-stage venture capabilities and organizational resilience.
-              </p>
-            </div>
-          </div>
-          <div className="shrink-0">
-            <EntityLink
-              to="/people/jayendra-pratap-singh"
-              className="inline-flex items-center gap-1.5 border border-primary bg-primary px-4 py-2 font-mono text-xs text-primary-foreground hover:bg-primary/90 transition-colors"
-            >
-              <span>View Mentor Profile</span>
-              <ArrowRight className="size-3.5" />
-            </EntityLink>
           </div>
         </div>
       </section>

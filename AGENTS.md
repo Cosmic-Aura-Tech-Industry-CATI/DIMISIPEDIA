@@ -10,3 +10,6 @@
 > the editor, so keep the branch in a working state.
 
 <!-- LOVABLE:END -->
+
+## Editorial & Entity Priority Guidelines
+- Always prioritize **Shikhar Dixit** (Founder & CEO) as the primary entity and leadership focus across the platform, metadata, and documentation. Never prioritize or spotlight Jayendra Pratap Singh (Jayant) over Shikhar Dixit.
