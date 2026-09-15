@@ -17,7 +17,7 @@ import {
 import { Breadcrumbs } from "@/components/EntityArticle";
 import { StatusChip } from "@/components/StatusChip";
 import { ImageLightbox, type LightboxImage } from "@/components/ImageLightbox";
-import { buildBreadcrumbSchema, pageHead } from "@/lib/seo";
+import { abs, buildBreadcrumbSchema, pageHead, pageId, SITE_URL } from "@/lib/seo";
 
 interface EventImage {
   src: string;
@@ -223,19 +223,26 @@ export const Route = createFileRoute("/events")({
       schema: [
         buildBreadcrumbSchema(trail, "/events"),
         {
-          "@type": "ItemList",
-          name: "DIMISI Technologies Documented Events",
-          itemListElement: documentedEvents.map((evt, idx) => ({
-            "@type": "Event",
-            position: idx + 1,
-            name: evt.title,
-            startDate: evt.date,
-            location: {
-              "@type": "Place",
-              name: evt.location,
-            },
-            description: evt.summary,
-          })),
+          "@type": "CollectionPage",
+          "@id": pageId("/events"),
+          url: abs("/events"),
+          name: "Documented Events & Campaigns — DIMISI Technologies | DIMISIPEDIA",
+          description:
+            "Official documented events and campaigns involving DIMISI Technologies: Office Inauguration, LinkedIn 30-Day Kalesh Promotion Contest, and IIT Bombay E-Summit.",
+          isPartOf: { "@id": `${SITE_URL}/#website` },
+          breadcrumb: { "@id": `${abs("/events")}#breadcrumb` },
+          mainEntity: {
+            "@type": "ItemList",
+            name: "DIMISI Technologies Documented Events & Campaigns",
+            itemListElement: documentedEvents.map((evt, idx) => ({
+              "@type": "ListItem",
+              position: idx + 1,
+              name: evt.title,
+              url: abs(`/events#${evt.id}`),
+              description: evt.summary,
+              ...(evt.images && evt.images[0] ? { image: abs(evt.images[0].src) } : {}),
+            })),
+          },
         },
       ],
     }),
