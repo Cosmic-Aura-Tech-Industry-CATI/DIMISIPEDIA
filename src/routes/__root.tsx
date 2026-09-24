@@ -7,7 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -52,27 +52,78 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     reportLovableError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
 
+  const isOffline = typeof navigator !== "undefined" && !navigator.onLine;
+
   return (
     <div className="mx-auto max-w-2xl px-5 py-24">
-      <h1 className="text-2xl">This page didn't load</h1>
-      <p className="mt-2 text-sm text-muted-foreground">
-        Something went wrong. You can try again or return to the archive index.
+      <p className="label-mono">{isOffline ? "Network Offline" : "System Notification"}</p>
+      <h1 className="mt-2 text-2xl font-serif">
+        {isOffline ? "Connection Disconnected" : "This page didn't load"}
+      </h1>
+      <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+        {isOffline
+          ? "Your device has lost internet connectivity. You can jump directly to the offline Dinosaur Runner or test reconnecting."
+          : "Something went wrong. You can try again or return to the archive index."}
       </p>
-      <div className="mt-6 flex flex-wrap gap-3 text-sm">
+      <div className="mt-6 flex flex-wrap items-center gap-3 text-sm">
         <button
           onClick={() => {
             router.invalidate();
             reset();
           }}
-          className="border border-border px-4 py-2 hover:border-primary"
+          className="border border-border px-4 py-2 hover:border-primary font-mono text-xs cursor-pointer"
         >
           Try again
         </button>
-        <a href="/" className="border border-border px-4 py-2 hover:border-primary">
+        <Link
+          to="/offline"
+          className="border border-primary bg-primary px-4 py-2 font-mono text-xs text-primary-foreground hover:bg-primary/90 transition-colors"
+        >
+          Play Dinosaur Runner (Offline Mode)
+        </Link>
+        <a href="/" className="border border-border px-4 py-2 hover:border-primary font-mono text-xs">
           Go home
         </a>
       </div>
     </div>
+  );
+}
+
+function OfflineBanner() {
+  const [offline, setOffline] = useState(false);
+
+  useEffect(() => {
+    const update = () => {
+      setOffline(!navigator.onLine);
+    };
+    update();
+    window.addEventListener("online", update);
+    window.addEventListener("offline", update);
+    return () => {
+      window.removeEventListener("online", update);
+      window.removeEventListener("offline", update);
+    };
+  }, []);
+
+  if (!offline) return null;
+
+  return (
+    <aside
+      aria-label="Offline status banner"
+      className="sticky top-0 z-50 flex flex-wrap items-center justify-between gap-2 border-b border-amber-500/40 bg-amber-500/15 px-4 py-2 text-xs text-amber-900 dark:text-amber-100 backdrop-blur-md"
+    >
+      <div className="flex items-center gap-2">
+        <span className="size-2 rounded-full bg-amber-500 animate-pulse" />
+        <span className="font-mono font-medium">Network Offline</span>
+        <span className="hidden sm:inline text-muted-foreground">— Connection lost.</span>
+      </div>
+      <Link
+        to="/offline"
+        className="border border-amber-600/40 bg-amber-600/20 px-2.5 py-0.5 font-mono text-[11px] font-semibold uppercase tracking-wider text-amber-900 dark:text-amber-100 hover:bg-amber-600 hover:text-white transition-colors"
+      >
+        Play Dino Game →
+      </Link>
+    </aside>
   );
 }
 
@@ -146,6 +197,12 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
+  useEffect(() => {
+    if (typeof window !== "undefined" && "serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js").catch(() => {});
+    }
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <a
@@ -154,6 +211,7 @@ function RootComponent() {
       >
         Skip to content
       </a>
+      <OfflineBanner />
       <SiteHeader />
       <main id="main">
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}

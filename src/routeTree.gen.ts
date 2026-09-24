@@ -19,6 +19,7 @@ import { Route as ExploreRouteImport } from './routes/explore'
 import { Route as IndexnowKeyDottxtRouteImport } from './routes/indexnow-key[.]txt'
 import { Route as JourneyRouteImport } from './routes/journey'
 import { Route as MethodologyRouteImport } from './routes/methodology'
+import { Route as OfflineRouteImport } from './routes/offline'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PublicationsRouteImport } from './routes/publications'
 import { Route as SearchRouteImport } from './routes/search'
@@ -91,6 +92,11 @@ const JourneyRoute = JourneyRouteImport.update({
 const MethodologyRoute = MethodologyRouteImport.update({
   id: '/methodology',
   path: '/methodology',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OfflineRoute = OfflineRouteImport.update({
+  id: '/offline',
+  path: '/offline',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -220,6 +226,7 @@ export interface FileRoutesByFullPath {
   '/indexnow-key.txt': typeof IndexnowKeyDottxtRoute
   '/journey': typeof JourneyRoute
   '/methodology': typeof MethodologyRoute
+  '/offline': typeof OfflineRoute
   '/privacy': typeof PrivacyRoute
   '/publications': typeof PublicationsRoute
   '/search': typeof SearchRoute
@@ -255,6 +262,7 @@ export interface FileRoutesByTo {
   '/indexnow-key.txt': typeof IndexnowKeyDottxtRoute
   '/journey': typeof JourneyRoute
   '/methodology': typeof MethodologyRoute
+  '/offline': typeof OfflineRoute
   '/privacy': typeof PrivacyRoute
   '/publications': typeof PublicationsRoute
   '/search': typeof SearchRoute
@@ -291,6 +299,7 @@ export interface FileRoutesById {
   '/indexnow-key.txt': typeof IndexnowKeyDottxtRoute
   '/journey': typeof JourneyRoute
   '/methodology': typeof MethodologyRoute
+  '/offline': typeof OfflineRoute
   '/privacy': typeof PrivacyRoute
   '/publications': typeof PublicationsRoute
   '/search': typeof SearchRoute
@@ -328,6 +337,7 @@ export interface FileRouteTypes {
     | '/indexnow-key.txt'
     | '/journey'
     | '/methodology'
+    | '/offline'
     | '/privacy'
     | '/publications'
     | '/search'
@@ -363,6 +373,7 @@ export interface FileRouteTypes {
     | '/indexnow-key.txt'
     | '/journey'
     | '/methodology'
+    | '/offline'
     | '/privacy'
     | '/publications'
     | '/search'
@@ -398,6 +409,7 @@ export interface FileRouteTypes {
     | '/indexnow-key.txt'
     | '/journey'
     | '/methodology'
+    | '/offline'
     | '/privacy'
     | '/publications'
     | '/search'
@@ -434,6 +446,7 @@ export interface RootRouteChildren {
   IndexnowKeyDottxtRoute: typeof IndexnowKeyDottxtRoute
   JourneyRoute: typeof JourneyRoute
   MethodologyRoute: typeof MethodologyRoute
+  OfflineRoute: typeof OfflineRoute
   PrivacyRoute: typeof PrivacyRoute
   PublicationsRoute: typeof PublicationsRoute
   SearchRoute: typeof SearchRoute
@@ -529,6 +542,13 @@ declare module '@tanstack/react-router' {
       path: '/methodology'
       fullPath: '/methodology'
       preLoaderRoute: typeof MethodologyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/offline': {
+      id: '/offline'
+      path: '/offline'
+      fullPath: '/offline'
+      preLoaderRoute: typeof OfflineRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -706,6 +726,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexnowKeyDottxtRoute: IndexnowKeyDottxtRoute,
   JourneyRoute: JourneyRoute,
   MethodologyRoute: MethodologyRoute,
+  OfflineRoute: OfflineRoute,
   PrivacyRoute: PrivacyRoute,
   PublicationsRoute: PublicationsRoute,
   SearchRoute: SearchRoute,

@@ -115,14 +115,18 @@ function LinkList({ items }: { items: { type: string; entity: Entity }[] }) {
   return (
     <ul className="mt-5 grid gap-px border border-border bg-rule sm:grid-cols-2">
       {items.map((r, i) => (
-        <li key={`${i}-${r.entity.id}`}>
+        <li key={`${i}-${r.entity.id}`} className="min-w-0">
           <EntityLink
             to={r.entity.path}
-            className="block h-full bg-surface px-4 py-4 transition-colors hover:bg-muted"
+            className="block h-full bg-surface px-4 py-3.5 transition-colors hover:bg-muted"
           >
             <span className="label-mono">{r.type}</span>
-            <span className="mt-1 block font-serif text-lg">{r.entity.name}</span>
-            <span className="mt-0.5 block text-xs text-muted-foreground">{r.entity.subtitle}</span>
+            <span className="mt-1 block font-serif text-lg leading-snug text-foreground">
+              {r.entity.name}
+            </span>
+            <span className="mt-0.5 block text-xs text-muted-foreground leading-relaxed break-words">
+              {r.entity.subtitle}
+            </span>
           </EntityLink>
         </li>
       ))}
@@ -293,10 +297,10 @@ export function PersonSections({ entity }: { entity: Entity }) {
         >
           <ul className="mt-5 grid gap-px border border-border bg-rule sm:grid-cols-2 lg:grid-cols-3">
             {people.map((r) => (
-              <li key={r.entity.id}>
+              <li key={r.entity.id} className="min-w-0">
                 <EntityLink
                   to={r.entity.path}
-                  className="flex h-full items-center gap-3 bg-surface px-4 py-4 transition-colors hover:bg-muted"
+                  className="flex h-full items-start gap-3 bg-surface px-4 py-3.5 transition-colors hover:bg-muted"
                 >
                   {r.entity.image ? (
                     <img
@@ -307,13 +311,24 @@ export function PersonSections({ entity }: { entity: Entity }) {
                       loading="lazy"
                       className="size-11 shrink-0 border border-rule object-cover"
                     />
-                  ) : null}
-                  <span className="min-w-0">
-                    <span className="block font-serif text-base">{r.entity.name}</span>
-                    <span className="block truncate text-xs text-muted-foreground">
+                  ) : (
+                    <span className="flex size-11 shrink-0 items-center justify-center border border-rule bg-muted font-serif text-sm font-medium text-foreground">
+                      {r.entity.id === "jayendra-pratap-singh"
+                        ? "JP"
+                        : r.entity.name
+                            .split(" ")
+                            .map((n) => n[0])
+                            .join("")}
+                    </span>
+                  )}
+                  <div className="min-w-0 flex-1">
+                    <span className="block font-serif text-base font-medium leading-snug text-foreground">
+                      {r.entity.name}
+                    </span>
+                    <span className="mt-0.5 block text-xs text-muted-foreground leading-relaxed break-words">
                       {r.entity.subtitle}
                     </span>
-                  </span>
+                  </div>
                 </EntityLink>
               </li>
             ))}
