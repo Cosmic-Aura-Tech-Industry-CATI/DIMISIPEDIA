@@ -105,6 +105,18 @@ export function KnowledgeGraphVisualizer() {
         color: "#0284c7",
         image: "/images/mridul-mishra.jpg",
       },
+      {
+        id: "krishna-tiwari",
+        name: "Krishna Tiwari",
+        type: "person",
+        subtitle: "Social Media Marketing Head",
+        path: "/people/krishna-tiwari",
+        x: 720,
+        y: 120,
+        r: 28,
+        color: "#0284c7",
+        image: "/images/krishna-tiwari.jpg",
+      },
       // Projects (Bottom Arc)
       {
         id: "kalesh",
@@ -198,6 +210,7 @@ export function KnowledgeGraphVisualizer() {
       { source: "nishkarsh-mishra", target: "dimisi-technologies", label: "Co-Founder & Director" },
       { source: "sheelu-singh", target: "dimisi-technologies", label: "Core Engineer" },
       { source: "mridul-mishra", target: "dimisi-technologies", label: "Core Engineer" },
+      { source: "krishna-tiwari", target: "dimisi-technologies", label: "Marketing Head" },
       { source: "dimisi-technologies", target: "kalesh", label: "Product Owner" },
       { source: "dimisi-technologies", target: "dimisipedia", label: "Knowledge Base" },
       // Product Architecture Connections
@@ -205,6 +218,7 @@ export function KnowledgeGraphVisualizer() {
       { source: "swatantra-singh", target: "kalesh", label: "Backend Lead" },
       { source: "sheelu-singh", target: "kalesh", label: "Mobile Dev" },
       { source: "mridul-mishra", target: "kalesh", label: "Linux Infrastructure" },
+      { source: "krishna-tiwari", target: "kalesh", label: "Media & Growth" },
       // Technology Links
       { source: "kalesh", target: "flutter", label: "Built With" },
       { source: "kalesh", target: "node-js", label: "API Stack" },

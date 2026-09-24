@@ -292,6 +292,7 @@ const baseSources: Source[] = [
       "somya-tiwari",
       "anushka-tripathi",
       "nisha-chaudhary",
+      "krishna-tiwari",
     ],
     claim: "Names and current roles of DIMISI Technologies team members.",
     addedAt: "2026-08-15",
@@ -442,9 +443,48 @@ const baseSources: Source[] = [
     addedAt: "2026-09-04",
     status: "source-backed",
   },
+  {
+    id: "src-krishna-social",
+    title: "Official Social Media Marketing & Channels — DIMISI Technologies & Kalesh",
+    publisher: "DIMISI Technologies / Meta Platforms (Instagram)",
+    type: "Social Profile",
+    url: "https://www.instagram.com/dimisi.tech/",
+    relatedEntities: ["krishna-tiwari", "dimisi-technologies", "kalesh"],
+    claim:
+      "Krishna Tiwari serves as Social Media Marketing Head, leading video shooting, editing, and comprehensive social media marketing operations across official channels @dimisi.tech, @thekaleshofficial, and @thestartupdiariesofficial.",
+    addedAt: "2026-09-24",
+    status: "source-backed",
+  },
+  {
+    id: "src-kalesh-instagram",
+    title: "The Kalesh Official Instagram Channel (@thekaleshofficial)",
+    publisher: "Meta Platforms (Instagram) / Kalesh",
+    type: "Social Profile",
+    url: "https://www.instagram.com/thekaleshofficial/",
+    relatedEntities: ["krishna-tiwari", "kalesh"],
+    claim:
+      "Official Instagram channel of Kalesh (@thekaleshofficial) managed and produced under DIMISI digital marketing and video operations.",
+    addedAt: "2026-09-24",
+    status: "source-backed",
+  },
+  {
+    id: "src-startup-diaries-instagram",
+    title: "The Startup Diaries Official Instagram Channel (@thestartupdiariesofficial)",
+    publisher: "Meta Platforms (Instagram) / The Startup Diaries",
+    type: "Social Profile",
+    url: "https://www.instagram.com/thestartupdiariesofficial/",
+    relatedEntities: ["krishna-tiwari", "dimisi-technologies"],
+    claim:
+      "The Startup Diaries (@thestartupdiariesofficial) storytelling media handle managed and edited by Krishna Tiwari.",
+    addedAt: "2026-09-24",
+    status: "source-backed",
+  },
 ];
 
 const baseRelationships: Relationship[] = [
+  { from: "krishna-tiwari", type: "Works at", to: "dimisi-technologies" },
+  { from: "krishna-tiwari", type: "Marketing", to: "dimisi-technologies" },
+  { from: "krishna-tiwari", type: "Marketing", to: "kalesh" },
   { from: "sheelu-singh", type: "Works at", to: "dimisi-technologies" },
   { from: "mridul-mishra", type: "Works at", to: "dimisi-technologies" },
   { from: "prashant-umrao", type: "1st Prize Winner", to: "kalesh" },
@@ -1477,6 +1517,160 @@ const people: Entity[] = [
     seoDescription:
       "Siddhant Shekhar is a former core member of DIMISI Technologies and developer of the KaryON home services platform.",
   },
+  {
+    id: "krishna-tiwari",
+    slug: "krishna-tiwari",
+    path: "/people/krishna-tiwari",
+    entityType: "person",
+    name: "Krishna Tiwari",
+    subtitle: "Social Media Marketing Head — DIMISI Technologies",
+    image: "/images/krishna-tiwari.jpg",
+    shortDescription:
+      "Social Media Marketing Head at DIMISI Technologies, heading video shoots, editing, and end-to-end social media marketing for Dimisi, Kalesh, and The Startup Diaries.",
+    answer:
+      "Krishna Tiwari is the Social Media Marketing Head at DIMISI Technologies Private Limited. He oversees complete social media marketing operations, video shoots, content production, and video editing for the parent company DIMISI and its consumer social product Kalesh, managing official Instagram channels @dimisi.tech, @thekaleshofficial, and @thestartupdiariesofficial.",
+    lifecycle: "Active",
+    facts: [
+      { label: "Role", value: "Social Media Marketing Head", status: "source-backed" },
+      { label: "Organization", value: ORG_NAME, status: "documented" },
+      {
+        label: "Primary initiatives",
+        value: "DIMISI Social, Kalesh Marketing, The Startup Diaries",
+        status: "source-backed",
+      },
+      {
+        label: "Key responsibilities",
+        value: "Video shoots, video editing, complete social media marketing",
+        status: "source-backed",
+      },
+      {
+        label: "Official channels",
+        value: "@dimisi.tech, @thekaleshofficial, @thestartupdiariesofficial",
+        status: "source-backed",
+      },
+    ],
+    areas: [
+      "Social media marketing & strategy",
+      "Video shooting & cinematography",
+      "Video editing & post-production",
+      "Brand storytelling & campaign growth",
+      "Digital community engagement",
+    ],
+    roles: [
+      {
+        title: "Social Media Marketing Head",
+        organization: ORG_NAME,
+        status: "source-backed",
+        sourceIds: ["src-krishna-social", "src-team-roster"],
+      },
+    ],
+    externalProfiles: [
+      {
+        label: "Instagram — @dimisi.tech (DIMISI Official)",
+        url: "https://www.instagram.com/dimisi.tech/",
+        verified: true,
+        note: "Official corporate Instagram channel managed by Krishna Tiwari.",
+      },
+      {
+        label: "Instagram — @thekaleshofficial (Kalesh Official)",
+        url: "https://www.instagram.com/thekaleshofficial/",
+        verified: true,
+        note: "Official Instagram channel for the Kalesh anonymous social app.",
+      },
+      {
+        label: "Instagram — @thestartupdiariesofficial (The Startup Diaries)",
+        url: "https://www.instagram.com/thestartupdiariesofficial/",
+        verified: true,
+        note: "Official entrepreneurship and founder storytelling channel.",
+      },
+    ],
+    sections: [
+      {
+        id: "overview",
+        heading: "Overview & role",
+        status: "source-backed",
+        body: [
+          "Krishna Tiwari serves as the Social Media Marketing Head at DIMISI Technologies Private Limited. [1]",
+          "He heads the complete digital media and social marketing operations for DIMISI Technologies and its flagship consumer platform, Kalesh. [1][2]",
+          "His responsibilities encompass end-to-end media operations including on-ground video shooting, high-retention video editing, visual storytelling, and platform-wide growth strategies across digital channels. [1][2]",
+        ],
+      },
+      {
+        id: "marketing-operations",
+        heading: "Social media operations & brand management",
+        status: "source-backed",
+        body: [
+          "Tiwari oversees the public digital footprint and audience engagement across three core brand channels: [1]",
+          "• @dimisi.tech — The official corporate Instagram page representing DIMISI Technologies, highlighting company initiatives, milestones, and technical developments. [1]",
+          "• @thekaleshofficial — The official product Instagram page for Kalesh, driving consumer engagement, campus buzz, poll trends, and product awareness. [2]",
+          "• @thestartupdiariesofficial — The dedicated startup storytelling platform chronicling entrepreneurial journeys, founder lessons, and grassroots startup culture. [3]",
+        ],
+      },
+      {
+        id: "video-production",
+        heading: "Video production & creative direction",
+        status: "source-backed",
+        body: [
+          "A central dimension of Krishna Tiwari's portfolio is direct leadership of video shoots and creative post-production workflows. [1]",
+          "From conceptualizing reel formats and framing shots to color grading and audio mastering, he delivers polished multimedia assets designed to maximize engagement across modern short-form video platforms. [1][2]",
+        ],
+      },
+    ],
+    coverage: [
+      {
+        area: "Identity & Role",
+        status: "source-backed",
+        note: "Social Media Marketing Head appointment recorded in company records.",
+      },
+      {
+        area: "Media Responsibilities",
+        status: "source-backed",
+        note: "Management of @dimisi.tech, @thekaleshofficial, and @thestartupdiariesofficial verified.",
+      },
+      {
+        area: "Video Production",
+        status: "source-backed",
+        note: "Video shoot and editing leadership documented in marketing operations.",
+      },
+    ],
+    officialLinks: [
+      {
+        label: "DIMISI Instagram (@dimisi.tech)",
+        url: "https://www.instagram.com/dimisi.tech/",
+        official: true,
+      },
+      {
+        label: "The Kalesh Instagram (@thekaleshofficial)",
+        url: "https://www.instagram.com/thekaleshofficial/",
+        official: true,
+      },
+      {
+        label: "The Startup Diaries (@thestartupdiariesofficial)",
+        url: "https://www.instagram.com/thestartupdiariesofficial/",
+        official: true,
+      },
+    ],
+    sourceIds: [
+      "src-krishna-social",
+      "src-kalesh-instagram",
+      "src-startup-diaries-instagram",
+      "src-team-roster",
+    ],
+    revisions: [
+      {
+        n: 1,
+        date: "2026-09-24",
+        editor: "DIMISIPEDIA Editorial",
+        change:
+          "Entity created: Krishna Tiwari added as Social Media Marketing Head handling video shoots, editing, and social marketing for Dimisi, Kalesh, and The Startup Diaries.",
+      },
+    ],
+    createdAt: "2026-09-24",
+    updatedAt: "2026-09-24",
+    seoTitle: "Krishna Tiwari — Social Media Marketing Head | DIMISIPEDIA",
+    seoDescription:
+      "Krishna Tiwari is the Social Media Marketing Head at DIMISI Technologies, heading video shoots, editing, and complete social marketing for Dimisi, Kalesh, and The Startup Diaries.",
+  },
 ];
 
 const organization: Entity = {
@@ -1593,8 +1787,8 @@ const organization: Entity = {
       id: "team",
       heading: "Team",
       body: [
-        "Beyond the founding leadership, two further team members are currently documented: Sheelu Singh (Android Developer) and Mridul Mishra (Backend Developer).",
-        "Interns, alumni and contributors will be added as they are documented.",
+        "Beyond the founding leadership, key core members and team leaders include Sheelu Singh (Android Developer), Mridul Mishra (Backend Developer), and Krishna Tiwari (Social Media Marketing Head).",
+        "Interns, alumni and contributors are documented across engineering and media operations.",
       ],
       status: "documented",
     },
@@ -1654,6 +1848,11 @@ const organization: Entity = {
       official: true,
     },
     {
+      label: "Official Instagram (@dimisi.tech)",
+      url: "https://www.instagram.com/dimisi.tech/",
+      official: true,
+    },
+    {
       label: "Kalesh platform",
       url: "https://thekalesh.com",
       official: true,
@@ -1661,6 +1860,7 @@ const organization: Entity = {
   ],
   sameAs: [
     "https://dimisi.tech",
+    "https://www.instagram.com/dimisi.tech/",
     "https://thekalesh.com",
     "https://www.crunchbase.com/organization/dimisi-technologies-private-limited",
     "https://www.linkedin.com/company/dimisi-technologies",
@@ -1897,7 +2097,7 @@ const projects: Entity[] = [
         id: "team",
         heading: "Team",
         body: [
-          "Public Kalesh material references a wider team including Shikhar Dixit, Nishkarsh Mishra, Swatantra Singh, Mridul Mishra and Sheelu Singh, alongside further members named in company updates. [2][5]",
+          "Public Kalesh material references a wider team including Shikhar Dixit, Nishkarsh Mishra, Swatantra Singh, Mridul Mishra, Sheelu Singh, and Krishna Tiwari (Social Media Marketing Head), alongside further members named in company updates. [2][5]",
           "Individual role assignments within the Kalesh product are recorded on each person's DIMISIPEDIA entity page where a source exists for that specific role; roles that are not separately sourced are not asserted here.",
         ],
         status: "source-backed",
@@ -1974,9 +2174,17 @@ const projects: Entity[] = [
         note: "No third-party press coverage recorded.",
       },
     ],
-    officialLinks: [{ label: "thekalesh.com", url: "https://thekalesh.com", official: true }],
+    officialLinks: [
+      { label: "thekalesh.com", url: "https://thekalesh.com", official: true },
+      {
+        label: "Official Instagram (@thekaleshofficial)",
+        url: "https://www.instagram.com/thekaleshofficial/",
+        official: true,
+      },
+    ],
     sourceIds: [
       "src-kalesh-official",
+      "src-kalesh-instagram",
       "src-kalesh-linkedin",
       "src-dimisi-website",
       "src-shikhar-linkedin",
@@ -1984,6 +2192,7 @@ const projects: Entity[] = [
       "src-kalesh-hiring",
       "src-kalesh-team",
       "src-kalesh-docs",
+      "src-krishna-social",
     ],
     revisions: [
       ...baseRevisions("2026-08-15"),
@@ -3712,6 +3921,17 @@ const baseTimeline: TimelineEntry[] = [
     category: "Project",
     status: "documented",
     sourceId: "src-dimisipedia-spec",
+  },
+  {
+    date: "2026-09-24",
+    displayDate: "September 2026",
+    title: "Appointment of Krishna Tiwari as Social Media Marketing Head",
+    description:
+      "Krishna Tiwari appointed Social Media Marketing Head at DIMISI Technologies, heading video shoots, editing, and comprehensive digital media marketing across DIMISI Technologies, Kalesh (@thekaleshofficial), and The Startup Diaries (@thestartupdiariesofficial).",
+    related: ["dimisi-technologies", "kalesh", "krishna-tiwari", "shikhar-dixit"],
+    category: "Team & Growth",
+    status: "source-backed",
+    sourceId: "src-krishna-social",
   },
 ];
 

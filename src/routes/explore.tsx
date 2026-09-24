@@ -38,6 +38,7 @@ const peopleOrder = [
   "nishkarsh-mishra",
   "sheelu-singh",
   "mridul-mishra",
+  "krishna-tiwari",
 ];
 
 const peopleRoles: Record<string, string> = {
@@ -46,6 +47,7 @@ const peopleRoles: Record<string, string> = {
   "nishkarsh-mishra": "Co-Founder",
   "sheelu-singh": "Android Developer",
   "mridul-mishra": "Founding Engineer",
+  "krishna-tiwari": "Social Media Marketing Head",
 };
 
 const activeProjects = ["KAND", "DIMISI Ops", "DIMISI official site", "DIMISIPEDIA", "Kalesh"];
