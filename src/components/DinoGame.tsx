@@ -597,8 +597,8 @@ export function DinoGame({ onScoreUpdate }: DinoGameProps) {
       <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-[11px] text-muted-foreground">
         <span className="hidden sm:inline font-mono">
           Jump: <kbd className="border border-border bg-muted px-1.5 py-0.5 text-[10px]">Space</kbd>{" "}
-          / <kbd className="border border-border bg-muted px-1.5 py-0.5 text-[10px]">↑</kbd> ·
-          Duck: <kbd className="border border-border bg-muted px-1.5 py-0.5 text-[10px]">↓</kbd>
+          / <kbd className="border border-border bg-muted px-1.5 py-0.5 text-[10px]">↑</kbd> · Duck:{" "}
+          <kbd className="border border-border bg-muted px-1.5 py-0.5 text-[10px]">↓</kbd>
         </span>
         <span className="sm:hidden font-mono">Tap game screen or buttons to jump &amp; duck</span>
 

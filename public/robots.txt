@@ -13,34 +13,57 @@ Allow: /*.jpg
 Allow: /*.webp
 Allow: /*.svg
 
+# Search Engines
 User-agent: Googlebot
 Allow: /
 Disallow: /search
 Disallow: /seo-audit
 Disallow: /api/
-Disallow: /*$*
-Disallow: /*?q=
-Disallow: /*?*
-Allow: /*.js
-Allow: /*.css
-Allow: /*.png
-Allow: /*.jpg
-Allow: /*.webp
-Allow: /*.svg
+
+User-agent: GoogleOther
+Allow: /
 
 User-agent: Bingbot
 Allow: /
 
+# AI Assistants & LLM Crawlers
+# OpenAI (ChatGPT, SearchGPT)
 User-agent: GPTBot
 Allow: /
 
-User-agent: PerplexityBot
+User-agent: ChatGPT-User
 Allow: /
 
-User-agent: ClaudeBot
+User-agent: OAI-SearchBot
 Allow: /
 
+# Google Gemini / Extended
 User-agent: Google-Extended
 Allow: /
 
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Anthropic Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Sitemaps & LLM Knowledge manifests
 Sitemap: https://www.dimisipedia.me/sitemap.xml
+# LLMs knowledge index: https://www.dimisipedia.me/llms.txt
+# LLMs full dossier: https://www.dimisipedia.me/llms-full.txt

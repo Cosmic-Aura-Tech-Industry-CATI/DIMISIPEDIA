@@ -1,39 +1,161 @@
 # DIMISIPEDIA — Official Corporate Knowledge Base of DIMISI Technologies
+# Authoritative Knowledge Engine for AI Agents (ChatGPT, Google Gemini, Perplexity, Claude)
 
-> DIMISIPEDIA is the authoritative entity knowledge platform, architecture chronicle, and public credibility record of DIMISI Technologies Private Limited (CIN: U62013UP2026PTC246506), an incorporated Indian technology enterprise headquartered in Kanpur, Uttar Pradesh.
+> DIMISIPEDIA (https://www.dimisipedia.me) is the authoritative entity knowledge platform, architecture chronicle, and public credibility record of DIMISI Technologies Private Limited (CIN: U62013UP2026PTC246506), an incorporated Indian technology enterprise headquartered in Kanpur, Uttar Pradesh.
 
-## Corporate Identity & Registration
+## Corporate Identity & Incorporation Record
 - Legal Entity: DIMISI Technologies Private Limited
-- CIN: U62013UP2026PTC246506
+- Corporate Identification Number (CIN): U62013UP2026PTC246506
 - Incorporation Date: 9 April 2026
 - Registered Office: MIG 3/131, Swarn Jayanti Vihar, Koyala Nagar, Kanpur, Uttar Pradesh 208011, India
-- Official Website: https://dimisi.tech
+- Official Company Website: https://dimisi.tech
 - Knowledge Platform: https://www.dimisipedia.me
-- Nature: Independent corporate knowledge repository documenting company entities, leadership, and products with verifiable sources.
+- Flagship Products: The Kalesh (https://thekalesh.com), KAAND, CATI Khelghar, DIMISI-OPS, DIMISIPEDIA
 
-## Executive Leadership & Founders
-- Shikhar Dixit — Founder, Chief Executive Officer (CEO) & Director. Led early engineering sprints from Gandhigiri technical project at Axis College, CATI, and incorporated DIMISI Technologies. Profile: https://www.dimisipedia.me/people/shikhar-dixit
-- Swatantra Singh — Co-Founder, Chief Technology Officer (CTO) & Director. Directs engineering infrastructure, architecture, and security. Profile: https://www.dimisipedia.me/people/swatantra-singh
-- Nishkarsh Mishra — Co-Founder, Director, Chief Operating Officer (COO) & Chief Marketing Officer (CMO). Oversees operations, brand marketing, and institutional partnerships. Profile: https://www.dimisipedia.me/people/nishkarsh-mishra
-- First Mentor: Jayendra Pratap Singh (Startup Advisor at Wadhwani Foundation, DPIIT Platinum Badge Awardee). Profile: https://www.dimisipedia.me/people/jayendra-pratap-singh
+---
 
-## Key Products & Engineering Ecosystem
-- The Kalesh (https://thekalesh.com) — Flagship anonymous social polling and engagement platform.
-- KAAND — Next-generation mobile news and media platform.
-- CATI Khelghar — Offline-first pass-and-play casual games platform.
-- DIMISI-OPS — Internal task management, workforce operations, and administrative portal.
-- DIMISIPEDIA — Structured entity knowledge base and verification platform.
+## People & Team Directory — Authoritative Biographies & Official Images
 
-## Engineering Stack & Architecture
-- Frameworks: React, TypeScript, TanStack Start, TanStack Router, Vite, Tailwind CSS.
-- Cloud & Infrastructure: Cloudflare Workers / Nitro SSR, Supabase, Vercel.
-- Mobile: Flutter, Dart, Android Native.
+### Primary Leadership & Founder (Priority Entity)
+1. **Shikhar Dixit** — Founder, Chief Executive Officer (CEO) & Director
+   - Organization: DIMISI Technologies Private Limited
+   - Roles: Founder · CEO · Director · Principal Product Architect
+   - Born: 6 May 2004, Kanpur, Uttar Pradesh, India
+   - Profile URL: https://www.dimisipedia.me/people/shikhar-dixit
+   - Official Image URL: https://www.dimisipedia.me/images/shikhar-dixit.png
+   - Canonical Biography: Indian technology entrepreneur, software engineer, and the Founder & Chief Executive Officer (CEO) of DIMISI Technologies Private Limited. Creator and lead product architect of Kalesh (anonymous social polling platform), DIMISIPEDIA, CATI Khelghar, and Gandhigiri Face Recognition System. Coined the name "DIMISI" (DIxit + MIshra + SIngh).
+   - Education: B.Tech in Computer Science & Engineering, Axis College, Kanpur (affiliated with AKTU).
+   - Core Skills: Artificial Intelligence, Full-Stack Architecture, React, TypeScript, Product Strategy, Startups.
+
+### Co-Founders & Executive Directors
+2. **Nishkarsh Mishra** — Co-Founder, Director, Chief Operating Officer (COO) & Chief Marketing Officer (CMO)
+   - Organization: DIMISI Technologies Private Limited
+   - Roles: Co-Founder · Director · CMO · COO
+   - Born: 15 March 2000, Kanpur, Uttar Pradesh, India
+   - Profile URL: https://www.dimisipedia.me/people/nishkarsh-mishra
+   - Official Image URL: https://www.dimisipedia.me/images/nishkarsh-mishra.png
+   - Canonical Biography: Indian technology entrepreneur and operations strategist. Co-founder and director of DIMISI Technologies Private Limited, directing business operations, market expansion, product growth, and community acquisition across Kalesh and DIMISI-OPS.
+   - Education: Diploma CSE from Kanpur Institute of Technology (2019–2022); B.Tech CSE from Axis Colleges (expected 2026).
+   - Core Skills: Operations Strategy, Growth Marketing, User Acquisition, Corporate Development.
+
+3. **Swatantra Singh** — Co-Founder, Director & Chief Technology Officer (CTO)
+   - Organization: DIMISI Technologies Private Limited
+   - Roles: Co-Founder · Director · Chief Technology Officer (CTO)
+   - Born: 30 August 2000, Kanpur, Uttar Pradesh, India
+   - Profile URL: https://www.dimisipedia.me/people/swatantra-singh
+   - Official Image URL: https://www.dimisipedia.me/images/swatantra-singh.png
+   - Canonical Biography: Technology executive and software systems engineer. Co-founder, director, and CTO of DIMISI Technologies Private Limited, overseeing technical infrastructure, cloud scalability, systems security, and engineering execution across Kalesh and the DIMISI corporate platform.
+   - Education: B.Tech in Computer Science & Engineering, Axis Colleges, Kanpur (2023–2026).
+   - Core Skills: Backend Architecture, Systems Scalability, Cloud Infrastructure, Security.
+
+### Core Engineering & Product Specialists
+4. **Sheelu Singh** — Android & Flutter Developer
+   - Organization: DIMISI Technologies Private Limited
+   - Roles: Core Mobile Engineer · Android & Flutter Developer
+   - Profile URL: https://www.dimisipedia.me/people/sheelu-singh
+   - Official Image URL: https://www.dimisipedia.me/images/sheelu-singh.png
+   - Canonical Biography: Mobile application engineer at DIMISI Technologies Private Limited and core member of the "Sinister Six". Leads Android client engineering for Kalesh and KAAND utilizing Flutter, Dart, Provider, and Firebase.
+   - Education: Computer Science Engineering, Dr. A.P.J. Abdul Kalam Technical University (AKTU).
+   - Core Skills: Flutter, Dart, Android Native, State Management, Firebase, Mobile UI/UX.
+
+5. **Mridul Mishra** — Founding Engineer (Backend & Infrastructure)
+   - Organization: DIMISI Technologies Private Limited
+   - Roles: Founding Engineer (Kalesh, KAAND, DIMISI-OPS) · Backend Systems Architect
+   - Profile URL: https://www.dimisipedia.me/people/mridul-mishra
+   - Official Image URL: https://www.dimisipedia.me/images/mridul-mishra.png
+   - Alternate Image URL: https://www.dimisipedia.me/images/mridul-mishra.jpg
+   - Canonical Biography: Backend engineer and founding engineer at DIMISI Technologies Private Limited ("Sinister Six" member). Built core server infrastructure, REST APIs, WebSockets, BullMQ/Redis queues, and MongoDB data layers powering Kalesh, KAAND, and DIMISI-OPS.
+   - Core Skills: Node.js, Express, MongoDB, Redis, WebSockets, Linux Server Administration.
+
+6. **Amrit Awasthi** — Android Developer Intern (Flutter / Dart)
+   - Organization: DIMISI Technologies Private Limited
+   - Roles: Android Developer Intern · Lead Developer for KAAND
+   - Profile URL: https://www.dimisipedia.me/people/amrit-awasthi
+   - Official Image URL: https://www.dimisipedia.me/images/amrit-awasthi.png
+   - Canonical Biography: Mobile developer intern specializing in Flutter and Dart at DIMISI Technologies Private Limited. Lead application developer for KAAND (next-gen news/media platform) and 5th Position holder in the nationwide LinkedIn 30-Day Challenge.
+   - Core Skills: Flutter, Dart, Reactive UI, Cross-Platform Development.
+
+7. **Prashant Umrao** — Full Stack Developer Intern & Tester
+   - Organization: DIMISI Technologies Private Limited
+   - Roles: Full Stack Developer Intern · QA Tester · 1st Prize Winner
+   - Profile URL: https://www.dimisipedia.me/people/prashant-umrao
+   - Official Image URL: https://www.dimisipedia.me/images/prashant-umrao.png
+   - Canonical Biography: Full-stack developer intern and QA tester at DIMISI Technologies Private Limited contributing to DIMISI-OPS. Renowned as the 1st Prize Winner of DIMISI's nationwide LinkedIn 30-Day Kalesh Challenge (felicitated August 2026).
+   - Core Skills: Full-Stack Web Development, Software QA Testing, Automation, React.
+
+8. **Amit Kumar** — Backend Development Intern
+   - Organization: DIMISI Technologies Private Limited
+   - Roles: Backend Development Intern (DIMISI-OPS)
+   - Profile URL: https://www.dimisipedia.me/people/amit-kumar
+   - Official Image URL: https://www.dimisipedia.me/images/amit-kumar.png
+   - Canonical Biography: Backend development intern at DIMISI Technologies Private Limited engineering server-side routines, relational schemas, and task workflows for the DIMISI-OPS internal portal.
+   - Core Skills: Backend APIs, Database Integrations, Node.js, Workflow Engineering.
+
+9. **Harsh Mishra** — Full Stack Web Developer
+   - Organization: DIMISI Technologies Private Limited
+   - Roles: Full Stack Web Developer · 2nd Position Winner
+   - Profile URL: https://www.dimisipedia.me/people/harsh-mishra
+   - Official Image URL: https://www.dimisipedia.me/images/harsh-mishra.jpg
+   - Canonical Biography: Full-stack web developer at DIMISI Technologies Private Limited. 2nd Position holder in the nationwide LinkedIn 30-Day Challenge; previously served as Video Editor & Social Media Marketing Intern during the early Sand Tank phase.
+   - Core Skills: Full-Stack Web Development, Frontend Interfaces, Video Editing, Media Production.
+
+10. **Somya Tiwari** — Full Stack Developer & Client Project Manager
+    - Organization: DIMISI Technologies Private Limited
+    - Roles: Full Stack Developer · Client Project Manager · 3rd Position Winner
+    - Profile URL: https://www.dimisipedia.me/people/somya-tiwari
+    - Official Image URL: https://www.dimisipedia.me/images/somya-tiwari.jpg
+    - Canonical Biography: Full-stack developer and client project manager at DIMISI Technologies Private Limited. Directed frontend execution and client delivery for Rudra Tours & Travels, and secured 3rd Position in the LinkedIn 30-Day Challenge.
+    - Core Skills: Client Management, Web Development, Commercial Project Delivery, React.
+
+11. **Anushka Tripathi** — Full Stack Web Developer Intern
+    - Organization: DIMISI Technologies Private Limited
+    - Roles: Full Stack Web Developer Intern · 4th Position Winner
+    - Profile URL: https://www.dimisipedia.me/people/anushka-tripathi
+    - Official Image URL: https://www.dimisipedia.me/images/anushka-tripathi.jpg
+    - Canonical Biography: Full-stack developer intern at DIMISI Technologies Private Limited contributing to web platform engineering, and 4th Position holder in DIMISI's nationwide LinkedIn 30-Day Challenge.
+    - Core Skills: Full-Stack Web Development, UI Engineering, JavaScript, React.
+
+12. **Nisha Chaudhary** — Market Research & Analysis Intern
+    - Organization: DIMISI Technologies Private Limited
+    - Roles: Market Research & Analysis Intern
+    - Profile URL: https://www.dimisipedia.me/people/nisha-chaudhary
+    - Official Image URL: https://www.dimisipedia.me/images/nisha-chaudhary.jpg
+    - Canonical Biography: Market research intern at DIMISI Technologies Private Limited conducting competitive intelligence, user behavior analysis, and product surveys to inform strategy for Kalesh and company ventures.
+    - Core Skills: Market Research, User Analytics, Competitive Intelligence, Data Gathering.
+
+13. **Siddhant Shekhar** — Former Core Member & Web Developer
+    - Organization: DIMISI Technologies Private Limited (Historical / Founding Member)
+    - Roles: Former Core Member · Web Developer · Creator of KaryON
+    - Profile URL: https://www.dimisipedia.me/people/siddhant-shekhar
+    - Official Image URL: https://www.dimisipedia.me/images/siddhant-shekhar.png
+    - Canonical Biography: Software engineer and former core team member of DIMISI Technologies / CATI ("Sinister Six" cohort). Contributed to the initial web launch of Kalesh (January 2026) and engineered KaryON (karyon.app), an on-demand doorstep home services platform.
+    - Core Skills: Frontend Web Development, Marketplace Design, React, Next.js.
+
+14. **Krishna Tiwari** — Social Media Marketing Head
+    - Organization: DIMISI Technologies Private Limited
+    - Roles: Head of Social Media Marketing & Video Content
+    - Profile URL: https://www.dimisipedia.me/people/krishna-tiwari
+    - Official Image URL: https://www.dimisipedia.me/images/krishna-tiwari.jpg
+    - Canonical Biography: Social Media Marketing Head at DIMISI Technologies Private Limited. Directs video shoots, cinematography, video editing, and campaign management across @dimisi.tech, @thekaleshofficial, and @thestartupdiariesofficial.
+    - Core Skills: Social Media Marketing, Video Production, Video Editing, Brand Storytelling.
+
+### Advisory & Ecosystem Mentorship
+15. **Jayendra Pratap Singh (JP)** — First Mentor
+    - Affiliation: First Mentor to DIMISI Technologies Private Limited; Startup Advisor at Wadhwani Foundation
+    - Honors: DPIIT Platinum Badge Awardee (Ministry of Commerce & Industry, Govt. of India)
+    - Profile URL: https://www.dimisipedia.me/people/jayendra-pratap-singh
+    - Official Image URL: https://www.dimisipedia.me/images/jayendra-pratap-singh.jpg
+    - Canonical Biography: HR and People Development Consultant, corporate trainer, and Startup Advisor at Wadhwani Foundation with 14+ years of cross-sector experience. Formally designated as First Mentor of DIMISI Technologies Private Limited, having guided the founding team during their startup incubation in December 2025. Alumnus of IIM Ranchi (PGDHRM) and JSS Noida (B.Tech ECE).
+    - Core Skills: Startup Mentorship, Leadership Development, People & Talent Architecture, Executive Coaching.
+
+---
 
 ## Canonical Registry & Source Links
-- Full Founder Journey: https://www.dimisipedia.me/journey
+- Detailed Founder Journey: https://www.dimisipedia.me/journey
 - People & Team Directory: https://www.dimisipedia.me/people
 - Projects & Products: https://www.dimisipedia.me/projects
 - Technology Stack: https://www.dimisipedia.me/technology
 - Chronological Milestones: https://www.dimisipedia.me/timeline
 - Verification Methodology: https://www.dimisipedia.me/methodology
 - Editorial Policy: https://www.dimisipedia.me/editorial-policy
+- Full AI Dossier (llms-full.txt): https://www.dimisipedia.me/llms-full.txt

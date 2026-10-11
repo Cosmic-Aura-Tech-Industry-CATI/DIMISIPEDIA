@@ -44,7 +44,8 @@ export const mentorSources: Source[] = [
   {
     id: "src-jp-dpiit-platinum",
     title: "DPIIT Mentorship Recognition — Platinum Badge Award",
-    publisher: "Department for Promotion of Industry and Internal Trade (DPIIT), Ministry of Commerce & Industry, Government of India",
+    publisher:
+      "Department for Promotion of Industry and Internal Trade (DPIIT), Ministry of Commerce & Industry, Government of India",
     url: "https://dpiit.gov.in",
     type: "Government Record",
     relatedEntities: ["jayendra-pratap-singh"],
@@ -68,7 +69,8 @@ export const mentorSources: Source[] = [
   {
     id: "src-jp-aic-pecf",
     title: "AIC-PECF Mentor Empanelment — Atal Incubation Centre",
-    publisher: "Atal Incubation Centre – Pondicherry Engineering College Foundation (AIC-PECF), supported by Atal Innovation Mission, NITI Aayog",
+    publisher:
+      "Atal Incubation Centre – Pondicherry Engineering College Foundation (AIC-PECF), supported by Atal Innovation Mission, NITI Aayog",
     url: "https://aicpecf.org",
     type: "Institutional Source",
     relatedEntities: ["jayendra-pratap-singh"],
@@ -103,7 +105,8 @@ export const mentorSources: Source[] = [
   {
     id: "src-jp-jssaten",
     title: "JSS Academy of Technical Education, Noida — B.Tech Alumni Record",
-    publisher: "JSS Academy of Technical Education, Noida (JSSATEN) / Dr. A.P.J. Abdul Kalam Technical University",
+    publisher:
+      "JSS Academy of Technical Education, Noida (JSSATEN) / Dr. A.P.J. Abdul Kalam Technical University",
     url: "https://jssaten.ac.in",
     type: "Institutional Source",
     relatedEntities: ["jayendra-pratap-singh"],
@@ -126,7 +129,8 @@ export const mentorSources: Source[] = [
   },
   {
     id: "src-jp-axis-sharktank-chronicle",
-    title: "DIMISI Technologies Founding Chronicle — Phase 5: Mentorship, The Library Wait & Shark Tank Pitch",
+    title:
+      "DIMISI Technologies Founding Chronicle — Phase 5: Mentorship, The Library Wait & Shark Tank Pitch",
     publisher: "DIMISI Technologies Editorial & Historical Record",
     type: "Company Announcement",
     relatedEntities: ["jayendra-pratap-singh", "dimisi-technologies", "kalesh"],
@@ -695,9 +699,16 @@ export const jayendraProfileDetails: MentorProfileDetails = {
     { title: "Startup India", note: "National Mentor (50+ startups mentored)" },
     { title: "DPIIT", note: "Platinum Badge Awardee, Ministry of Commerce & Industry" },
     { title: "AIC-PECF", note: "Atal Incubation Centre — NITI Aayog supported mentor" },
-    { title: "DIMISI Technologies Private Limited", href: "/dimisi-technologies", note: "First Mentor relationship" },
+    {
+      title: "DIMISI Technologies Private Limited",
+      href: "/dimisi-technologies",
+      note: "First Mentor relationship",
+    },
     { title: "IIM Ranchi", note: "PGDHRM / Human Resources alumnus" },
-    { title: "JSS Academy of Technical Education, Noida", note: "B.Tech in Electronics & Communication Engineering" },
+    {
+      title: "JSS Academy of Technical Education, Noida",
+      note: "B.Tech in Electronics & Communication Engineering",
+    },
     { title: "Leadership Transformation", note: "Behavioral transformation & executive education" },
     { title: "People Development", note: "Organizational capability & talent architecture" },
     { title: "Campus-to-Corporate", note: "Graduate employability & industry transition" },
@@ -740,8 +751,16 @@ export const jayendraPratapSingh: Entity = {
       status: "verified",
       sourceIds: ["src-jp-dimisi-appointment"],
     },
-    { label: "Profession", value: "HR & People Development Consultant | Startup Advisor", status: "verified" },
-    { label: "Experience", value: "14+ years cross-sector professional experience", status: "verified" },
+    {
+      label: "Profession",
+      value: "HR & People Development Consultant | Startup Advisor",
+      status: "verified",
+    },
+    {
+      label: "Experience",
+      value: "14+ years cross-sector professional experience",
+      status: "verified",
+    },
     {
       label: "Industries",
       value: "Manufacturing, Telecom, IT, Services, Higher Education, Healthcare, Startups",
@@ -767,7 +786,8 @@ export const jayendraPratapSingh: Entity = {
     },
     {
       label: "Ecosystem Roles",
-      value: "Startup Advisor (Wadhwani Foundation) · National Mentor (Startup India) · Mentor (AIC-PECF)",
+      value:
+        "Startup Advisor (Wadhwani Foundation) · National Mentor (Startup India) · Mentor (AIC-PECF)",
       status: "verified",
       sourceIds: ["src-jp-wadhwani", "src-jp-startup-india", "src-jp-aic-pecf"],
     },
@@ -783,7 +803,11 @@ export const jayendraPratapSingh: Entity = {
       status: "verified",
       sourceIds: ["src-jp-linkedin"],
     },
-    { label: "Approach", value: "Practical + Structured + Experiential + Outcome-Oriented", status: "source-backed" },
+    {
+      label: "Approach",
+      value: "Practical + Structured + Experiential + Outcome-Oriented",
+      status: "source-backed",
+    },
   ],
   areas: [
     "Startup Advisory & Mentoring",
@@ -1043,7 +1067,8 @@ export const jayendraPratapSingh: Entity = {
   ],
   claims: [
     {
-      claim: "Jayendra Pratap Singh (JP) is the First Mentor of DIMISI Technologies Private Limited.",
+      claim:
+        "Jayendra Pratap Singh (JP) is the First Mentor of DIMISI Technologies Private Limited.",
       claimType: "Confirmed role",
       sourceIds: ["src-jp-dimisi-appointment", "src-jp-axis-sharktank-chronicle"],
       verification: "official",
@@ -1061,7 +1086,8 @@ export const jayendraPratapSingh: Entity = {
       editor: "DIMISIPEDIA Editorial",
     },
     {
-      claim: "National Mentor with Startup India, having mentored 50+ startups on team building, leadership, and business strategy.",
+      claim:
+        "National Mentor with Startup India, having mentored 50+ startups on team building, leadership, and business strategy.",
       claimType: "Descriptive claim",
       sourceIds: ["src-jp-startup-india"],
       verification: "verified",
@@ -1070,7 +1096,8 @@ export const jayendraPratapSingh: Entity = {
       editor: "DIMISIPEDIA Editorial",
     },
     {
-      claim: "Platinum Badge awardee from DPIIT, Ministry of Commerce & Industry, Government of India, recognizing the quality of his startup mentorship.",
+      claim:
+        "Platinum Badge awardee from DPIIT, Ministry of Commerce & Industry, Government of India, recognizing the quality of his startup mentorship.",
       claimType: "Descriptive claim",
       sourceIds: ["src-jp-dpiit-platinum"],
       verification: "verified",
@@ -1079,7 +1106,8 @@ export const jayendraPratapSingh: Entity = {
       editor: "DIMISIPEDIA Editorial",
     },
     {
-      claim: "Postgraduate qualification in Human Resource Management (PGDHRM) from IIM Ranchi (2013–2015).",
+      claim:
+        "Postgraduate qualification in Human Resource Management (PGDHRM) from IIM Ranchi (2013–2015).",
       claimType: "Educational claim",
       sourceIds: ["src-jp-iim-ranchi"],
       verification: "verified",
@@ -1088,7 +1116,8 @@ export const jayendraPratapSingh: Entity = {
       editor: "DIMISIPEDIA Editorial",
     },
     {
-      claim: "Bachelor of Technology in Electronics & Communication Engineering from JSS Academy of Technical Education, Noida.",
+      claim:
+        "Bachelor of Technology in Electronics & Communication Engineering from JSS Academy of Technical Education, Noida.",
       claimType: "Educational claim",
       sourceIds: ["src-jp-jssaten"],
       verification: "verified",
@@ -1097,7 +1126,8 @@ export const jayendraPratapSingh: Entity = {
       editor: "DIMISIPEDIA Editorial",
     },
     {
-      claim: "Winner of 'Minutes to Win' at Carpe Diem 2014, Indian Institute of Management Calcutta, representing IIM Ranchi.",
+      claim:
+        "Winner of 'Minutes to Win' at Carpe Diem 2014, Indian Institute of Management Calcutta, representing IIM Ranchi.",
       claimType: "Descriptive claim",
       sourceIds: ["src-jp-carpe-diem-2014"],
       verification: "source-backed",
@@ -1106,7 +1136,8 @@ export const jayendraPratapSingh: Entity = {
       editor: "DIMISIPEDIA Editorial",
     },
     {
-      claim: "Recommended on first attempt for Indian Navy University Entry Scheme (UES) and provides pro-bono SSB mentorship.",
+      claim:
+        "Recommended on first attempt for Indian Navy University Entry Scheme (UES) and provides pro-bono SSB mentorship.",
       claimType: "Descriptive claim",
       sourceIds: ["src-jp-consulting-portfolio"],
       verification: "source-backed",
@@ -1115,7 +1146,8 @@ export const jayendraPratapSingh: Entity = {
       editor: "DIMISIPEDIA Editorial",
     },
     {
-      claim: "Corporate career including Godrej & Boyce (HR Manager), Reliance Power (Management Trainee HR), Tech Mahindra (Technical Associate), and SAITM (Director T&P).",
+      claim:
+        "Corporate career including Godrej & Boyce (HR Manager), Reliance Power (Management Trainee HR), Tech Mahindra (Technical Associate), and SAITM (Director T&P).",
       claimType: "Corporate claim",
       sourceIds: ["src-jp-consulting-portfolio"],
       verification: "source-backed",
@@ -1124,7 +1156,8 @@ export const jayendraPratapSingh: Entity = {
       editor: "DIMISIPEDIA Editorial",
     },
     {
-      claim: "Mentored the DIMISI founding team at Axis College in December 2025, granting studio facilities for recording their Shark Tank India pitch video.",
+      claim:
+        "Mentored the DIMISI founding team at Axis College in December 2025, granting studio facilities for recording their Shark Tank India pitch video.",
       claimType: "Historical claim",
       sourceIds: ["src-jp-axis-sharktank-chronicle"],
       verification: "source-backed",
@@ -1165,7 +1198,8 @@ export const jayendraPratapSingh: Entity = {
         "He has been awarded the prestigious Platinum Badge by the Department for Promotion of Industry and Internal Trade (DPIIT), Ministry of Commerce & Industry, Government of India. He is an empanelled National Mentor with Startup India (50+ startups mentored), an empanelled mentor with AIC-PECF (Atal Incubation Centre, NITI Aayog), StartupTN, and Innovation Mission Punjab.",
     },
     {
-      question: "What corporate organizations has Jayendra Pratap Singh worked with or consulted for?",
+      question:
+        "What corporate organizations has Jayendra Pratap Singh worked with or consulted for?",
       answer:
         "His corporate career includes roles as Human Resources Manager at Godrej & Boyce Mfg. Co. Ltd., Management Trainee at Reliance Power, Technical Associate at Tech Mahindra, and Director of Training & Placement at SAITM. In addition, he has conducted training interventions for participants from Samsung Electronics, Decathlon, ISGEC, and Larsen & Toubro.",
     },
@@ -1262,13 +1296,15 @@ export const jayendraPratapSingh: Entity = {
       n: 1,
       date: "2026-09-13",
       editor: "DIMISIPEDIA Editorial",
-      change: "Initial publication of verified profile for Jayendra Pratap Singh (JP), First Mentor of DIMISI Technologies Private Limited.",
+      change:
+        "Initial publication of verified profile for Jayendra Pratap Singh (JP), First Mentor of DIMISI Technologies Private Limited.",
     },
     {
       n: 2,
       date: "2026-09-14",
       editor: "DIMISIPEDIA Editorial",
-      change: "Comprehensive research integration: verified LinkedIn profile (~18k followers), Wadhwani Foundation Startup Advisor role, 9-stage career evolution, JSS Noida B.Tech, AIC-PECF empanelment, and Carpe Diem 2014 honor.",
+      change:
+        "Comprehensive research integration: verified LinkedIn profile (~18k followers), Wadhwani Foundation Startup Advisor role, 9-stage career evolution, JSS Noida B.Tech, AIC-PECF empanelment, and Carpe Diem 2014 honor.",
     },
   ],
   createdAt: ADDED,

@@ -69,7 +69,9 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-rule bg-background/95 backdrop-blur-sm">
       <div className="border-b border-rule bg-surface/80 py-1.5 px-4 text-center text-[11px] text-muted-foreground">
-        Official Corporate Knowledge Platform · <span className="text-foreground font-medium">DIMISI Technologies Pvt. Ltd.</span> (CIN: U62013UP2026PTC246506)
+        Official Corporate Knowledge Platform ·{" "}
+        <span className="text-foreground font-medium">DIMISI Technologies Pvt. Ltd.</span> (CIN:
+        U62013UP2026PTC246506)
       </div>
       <div className="mx-auto flex max-w-6xl items-center gap-4 px-5 py-3">
         <Link to="/" className="group flex shrink-0 items-center gap-2.5">

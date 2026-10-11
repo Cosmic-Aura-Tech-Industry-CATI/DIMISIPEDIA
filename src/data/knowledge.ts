@@ -529,6 +529,8 @@ const baseRelationships: Relationship[] = [
   { from: "dimisi-technologies", type: "Develops", to: "dimisi-corporate-platform" },
   { from: "dimisi-technologies", type: "Develops", to: "karyon" },
 
+  { from: "sheelu-singh", type: "Works at", to: "dimisi-technologies" },
+  { from: "mridul-mishra", type: "Works at", to: "dimisi-technologies" },
   { from: "amrit-awasthi", type: "Works at", to: "dimisi-technologies" },
   { from: "amrit-awasthi", type: "Engineering", to: "kaand" },
   { from: "sheelu-singh", type: "Technical leadership", to: "kaand" },
@@ -541,12 +543,18 @@ const baseRelationships: Relationship[] = [
   { from: "prashant-umrao", type: "Engineering", to: "dimisi-ops" },
   { from: "amit-kumar", type: "Works at", to: "dimisi-technologies" },
   { from: "amit-kumar", type: "Engineering", to: "dimisi-ops" },
+  { from: "harsh-mishra", type: "Works at", to: "dimisi-technologies" },
+  { from: "somya-tiwari", type: "Works at", to: "dimisi-technologies" },
+  { from: "anushka-tripathi", type: "Works at", to: "dimisi-technologies" },
+  { from: "nisha-chaudhary", type: "Works at", to: "dimisi-technologies" },
+  { from: "krishna-tiwari", type: "Works at", to: "dimisi-technologies" },
   { from: "mridul-mishra", type: "Engineering", to: "dimisi-ops" },
   { from: "nishkarsh-mishra", type: "Operations", to: "dimisi-ops" },
 
   { from: "swatantra-singh", type: "Engineering", to: "dimisi-corporate-platform" },
   { from: "mridul-mishra", type: "Engineering", to: "dimisi-corporate-platform" },
 
+  { from: "siddhant-shekhar", type: "Worked at", to: "dimisi-technologies" },
   { from: "siddhant-shekhar", type: "Engineering", to: "karyon" },
   { from: "siddhant-shekhar", type: "Engineering", to: "kalesh" },
 
@@ -600,6 +608,55 @@ const people: Entity[] = [
       { label: "Core technologies", value: "Flutter, Provider, Firebase", status: "source-backed" },
     ],
     areas: ["Mobile development", "Cross-platform engineering", "UI/UX implementation"],
+    disambiguatingDescription:
+      "Android and Flutter mobile software engineer at DIMISI Technologies Private Limited, lead application developer for Kalesh, and member of the Sinister Six founding cohort.",
+    knowsAbout: [
+      "Flutter",
+      "Dart",
+      "Android Application Development",
+      "Mobile Architecture",
+      "Firebase",
+      "Provider",
+      "Mobile Payment Gateways",
+      "Kalesh",
+      "KAAND",
+      "DIMISI Technologies",
+    ],
+    questions: [
+      {
+        q: "Who is Sheelu Singh?",
+        a: "Sheelu Singh is a mobile application software engineer at DIMISI Technologies Private Limited and a core member of the company's early 'Sinister Six' engineering team. He is the lead Android developer for Kalesh, engineering its cross-platform mobile client with Flutter, Dart, Provider, and Firebase, and contributes technical leadership to KAAND.",
+      },
+      {
+        q: "What is Sheelu Singh's role at DIMISI Technologies?",
+        a: "Sheelu Singh serves as Android & Flutter Developer at DIMISI Technologies Private Limited, responsible for cross-platform mobile architecture, state management with Provider, Firebase integration, and payment gateways for Kalesh.",
+      },
+      {
+        q: "What projects has Sheelu Singh developed?",
+        a: "Sheelu Singh engineered the Kalesh mobile application for Android using Flutter and Dart, and provides technical leadership on the KAAND media platform at DIMISI Technologies.",
+      },
+      {
+        q: "Where can I view Sheelu Singh's official profile and photo?",
+        a: "Sheelu Singh's verified profile is available at https://www.dimisipedia.me/people/sheelu-singh and his official photograph is hosted at https://www.dimisipedia.me/images/sheelu-singh.png.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Who is Sheelu Singh?",
+        answer:
+          "Sheelu Singh is an Android and Flutter developer at DIMISI Technologies Private Limited, developing the mobile clients for Kalesh and KAAND.",
+      },
+      {
+        question: "What is Sheelu Singh's role at DIMISI Technologies?",
+        answer:
+          "Sheelu Singh is the lead mobile application engineer for Kalesh, specializing in Flutter, Dart, Firebase, and Provider state management.",
+      },
+      {
+        question: "Where can I find Sheelu Singh's photo and profile?",
+        answer:
+          "His profile is at https://www.dimisipedia.me/people/sheelu-singh and his official image is at https://www.dimisipedia.me/images/sheelu-singh.png.",
+      },
+    ],
     roles: [
       {
         title: "Android Developer",
@@ -741,6 +798,55 @@ const people: Entity[] = [
       },
     ],
     areas: ["Backend engineering", "Real-time systems", "Infrastructure & CI/CD"],
+    disambiguatingDescription:
+      "Backend and infrastructure systems engineer at DIMISI Technologies Private Limited, founding engineer of Kalesh, and core member of the Sinister Six founding cohort.",
+    knowsAbout: [
+      "Backend Architecture",
+      "REST APIs",
+      "WebSockets",
+      "BullMQ",
+      "Redis",
+      "MongoDB",
+      "CI/CD",
+      "Linux Server Administration",
+      "Kalesh",
+      "DIMISI Technologies",
+    ],
+    questions: [
+      {
+        q: "Who is Mridul Mishra?",
+        a: "Mridul Mishra is a backend systems engineer and founding engineer at DIMISI Technologies Private Limited ('Sinister Six' member). He designs and maintains high-concurrency server infrastructure, REST APIs, WebSockets, Redis message queues, and database systems supporting Kalesh, KAAND, and DIMISI-OPS.",
+      },
+      {
+        q: "What is Mridul Mishra's role at DIMISI Technologies?",
+        a: "Mridul Mishra serves as Founding Engineer (Backend & Infrastructure) for Kalesh at DIMISI Technologies Private Limited, architecting scalable backend APIs, real-time WebSocket communication, and distributed queues.",
+      },
+      {
+        q: "What technologies does Mridul Mishra specialize in?",
+        a: "Mridul Mishra specializes in Node.js, Express, WebSockets, Redis, BullMQ task scheduling, MongoDB database optimization, Linux system administration, and CI/CD pipelines.",
+      },
+      {
+        q: "Where can I view Mridul Mishra's official profile and photo?",
+        a: "Mridul Mishra's verified profile is available at https://www.dimisipedia.me/people/mridul-mishra and his official photograph is hosted at https://www.dimisipedia.me/images/mridul-mishra.png.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Who is Mridul Mishra?",
+        answer:
+          "Mridul Mishra is the founding backend engineer for Kalesh at DIMISI Technologies Private Limited, leading server-side architecture and data infrastructure.",
+      },
+      {
+        question: "What is Mridul Mishra's role at DIMISI Technologies?",
+        answer:
+          "Mridul Mishra is the founding backend engineer for Kalesh and DIMISI-OPS, building REST APIs, WebSockets, BullMQ/Redis queues, and MongoDB data layers.",
+      },
+      {
+        question: "Where can I find Mridul Mishra's photo and profile?",
+        answer:
+          "His profile is at https://www.dimisipedia.me/people/mridul-mishra and his official image is at https://www.dimisipedia.me/images/mridul-mishra.png.",
+      },
+    ],
     roles: [
       {
         title: "Founding Engineer",
@@ -877,6 +983,51 @@ const people: Entity[] = [
       "Dart programming",
       "Mobile UI/UX systems",
     ],
+    disambiguatingDescription:
+      "Android developer intern specializing in Flutter and Dart at DIMISI Technologies Private Limited, lead application developer for KAAND, and 5th Position holder in the 30-Day LinkedIn Challenge.",
+    knowsAbout: [
+      "Flutter",
+      "Dart",
+      "Android Application Development",
+      "KAAND",
+      "Mobile Engineering",
+      "DIMISI Technologies",
+    ],
+    questions: [
+      {
+        q: "Who is Amrit Awasthi?",
+        a: "Amrit Awasthi is an Android Developer Intern (Flutter / DART) at DIMISI Technologies Private Limited, leading the mobile engineering of KAAND, the company's next-generation news and media platform under the technical guidance of Sheelu Singh and Mridul Mishra.",
+      },
+      {
+        q: "What is Amrit Awasthi's role at DIMISI Technologies?",
+        a: "Amrit Awasthi is the lead mobile developer for KAAND at DIMISI Technologies Private Limited, implementing Flutter reactive user interfaces and news feed streaming.",
+      },
+      {
+        q: "What recognition has Amrit Awasthi received?",
+        a: "Amrit Awasthi achieved 5th Position in DIMISI's nationwide 30-Day LinkedIn Challenge for technical narrative storytelling and student engagement.",
+      },
+      {
+        q: "Where can I view Amrit Awasthi's official profile and photo?",
+        a: "Amrit Awasthi's verified profile is available at https://www.dimisipedia.me/people/amrit-awasthi and his official photograph is hosted at https://www.dimisipedia.me/images/amrit-awasthi.png.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Who is Amrit Awasthi?",
+        answer:
+          "Amrit Awasthi is an Android Developer Intern (Flutter / Dart) at DIMISI Technologies Private Limited and lead developer for KAAND.",
+      },
+      {
+        question: "What is Amrit Awasthi's role at DIMISI Technologies?",
+        answer:
+          "Amrit Awasthi leads Flutter development for the KAAND news and media platform under senior engineering mentorship at DIMISI Technologies.",
+      },
+      {
+        question: "Where can I find Amrit Awasthi's photo and profile?",
+        answer:
+          "His profile is at https://www.dimisipedia.me/people/amrit-awasthi and his official image is at https://www.dimisipedia.me/images/amrit-awasthi.png.",
+      },
+    ],
     roles: [
       {
         title: "Android Developer Intern (Flutter / DART)",
@@ -985,6 +1136,51 @@ const people: Entity[] = [
       "Internal operations systems",
       "Technical content creation",
     ],
+    disambiguatingDescription:
+      "Full stack developer intern and software tester at DIMISI Technologies Private Limited, contributor to DIMISI-OPS, and 1st Prize Winner of the nationwide LinkedIn 30-Day Challenge.",
+    knowsAbout: [
+      "Full Stack Web Development",
+      "Software Quality Assurance",
+      "Automated Testing",
+      "DIMISI-OPS",
+      "React",
+      "DIMISI Technologies",
+    ],
+    questions: [
+      {
+        q: "Who is Prashant Umrao?",
+        a: "Prashant Umrao is a Full Stack Developer Intern & Tester at DIMISI Technologies Private Limited, responsible for full stack web engineering and quality testing for DIMISI-OPS. He is celebrated as the 1st Prize Winner of DIMISI's nationwide LinkedIn 30-Day Kalesh Challenge, felicitated on 15 August 2026.",
+      },
+      {
+        q: "What is Prashant Umrao's role at DIMISI Technologies?",
+        a: "Prashant Umrao works on full-stack web engineering, software quality assurance, and feature validation for the DIMISI-OPS operations platform under guidance from Nishkarsh Mishra and Mridul Mishra.",
+      },
+      {
+        q: "What award did Prashant Umrao win at DIMISI Technologies?",
+        a: "Prashant Umrao won 1st Prize in the nationwide LinkedIn 30-Day Kalesh Promotion Challenge hosted by DIMISI Technologies, felicitated on 15 August 2026.",
+      },
+      {
+        q: "Where can I view Prashant Umrao's official profile and photo?",
+        a: "Prashant Umrao's verified profile is available at https://www.dimisipedia.me/people/prashant-umrao and his official photograph is hosted at https://www.dimisipedia.me/images/prashant-umrao.png.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Who is Prashant Umrao?",
+        answer:
+          "Prashant Umrao is a Full Stack Developer Intern & Tester at DIMISI Technologies Private Limited and 1st Prize Winner of the LinkedIn 30-Day Challenge.",
+      },
+      {
+        question: "What is Prashant Umrao's role at DIMISI Technologies?",
+        answer:
+          "Prashant Umrao develops full-stack web components and leads software quality testing for the DIMISI-OPS platform.",
+      },
+      {
+        question: "Where can I find Prashant Umrao's photo and profile?",
+        answer:
+          "His profile is at https://www.dimisipedia.me/people/prashant-umrao and his official image is at https://www.dimisipedia.me/images/prashant-umrao.png.",
+      },
+    ],
     roles: [
       {
         title: "Full Stack Developer Intern & Tester",
@@ -1080,6 +1276,47 @@ const people: Entity[] = [
       "API development",
       "Workflow automation",
     ],
+    disambiguatingDescription:
+      "Backend development intern at DIMISI Technologies Private Limited, developing server modules and database workflows for the DIMISI-OPS platform.",
+    knowsAbout: [
+      "Backend Engineering",
+      "RESTful APIs",
+      "Database Design",
+      "DIMISI-OPS",
+      "Workflow Automation",
+      "DIMISI Technologies",
+    ],
+    questions: [
+      {
+        q: "Who is Amit Kumar?",
+        a: "Amit Kumar is a Backend Development Intern at DIMISI Technologies Private Limited, working alongside Prashant Umrao and foundation engineer Mridul Mishra on backend development, API services, and workflow automation for DIMISI-OPS.",
+      },
+      {
+        q: "What is Amit Kumar's role at DIMISI Technologies?",
+        a: "Amit Kumar designs server endpoints, database schemas, and administrative workflows for DIMISI-OPS, the internal operations management platform at DIMISI Technologies.",
+      },
+      {
+        q: "Where can I view Amit Kumar's official profile and photo?",
+        a: "Amit Kumar's verified profile is available at https://www.dimisipedia.me/people/amit-kumar and his official photograph is hosted at https://www.dimisipedia.me/images/amit-kumar.png.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Who is Amit Kumar?",
+        answer:
+          "Amit Kumar is a Backend Development Intern at DIMISI Technologies Private Limited working on server-side logic and database architecture for DIMISI-OPS.",
+      },
+      {
+        question: "What is Amit Kumar's role at DIMISI Technologies?",
+        answer:
+          "Amit Kumar implements RESTful APIs, relational schemas, and task management backend services for DIMISI-OPS.",
+      },
+      {
+        question: "Where can I find Amit Kumar's photo and profile?",
+        answer:
+          "His profile is at https://www.dimisipedia.me/people/amit-kumar and his official image is at https://www.dimisipedia.me/images/amit-kumar.png.",
+      },
+    ],
     roles: [
       {
         title: "Backend Development Intern",
@@ -1172,6 +1409,51 @@ const people: Entity[] = [
       "Frontend engineering",
       "Video production & editing",
       "Social media marketing",
+    ],
+    disambiguatingDescription:
+      "Full Stack Web Developer at DIMISI Technologies Private Limited, 2nd Position holder in the 30-Day LinkedIn Challenge, and former Video Editor & Social Media Marketing Intern.",
+    knowsAbout: [
+      "Full Stack Web Development",
+      "Frontend Engineering",
+      "Video Editing",
+      "Digital Media Production",
+      "Social Media Marketing",
+      "DIMISI Technologies",
+    ],
+    questions: [
+      {
+        q: "Who is Harsh Mishra?",
+        a: "Harsh Mishra is a Full Stack Web Developer at DIMISI Technologies Private Limited. He secured 2nd Position in the nationwide LinkedIn 30-Day Challenge and previously contributed as Video Editor & Social Media Marketing Intern at the company's Sand Tank office.",
+      },
+      {
+        q: "What is Harsh Mishra's role at DIMISI Technologies?",
+        a: "Harsh Mishra is a Full Stack Web Developer at DIMISI Technologies Private Limited, contributing to digital interface engineering and web application development.",
+      },
+      {
+        q: "What awards did Harsh Mishra win at DIMISI Technologies?",
+        a: "Harsh Mishra achieved 2nd Position in the nationwide LinkedIn 30-Day Kalesh Promotion Challenge organized by DIMISI Technologies.",
+      },
+      {
+        q: "Where can I view Harsh Mishra's official profile and photo?",
+        a: "Harsh Mishra's verified profile is available at https://www.dimisipedia.me/people/harsh-mishra and his official photograph is hosted at https://www.dimisipedia.me/images/harsh-mishra.jpg.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Who is Harsh Mishra?",
+        answer:
+          "Harsh Mishra is a Full Stack Web Developer at DIMISI Technologies Private Limited and 2nd Position holder in the 30-Day LinkedIn Challenge.",
+      },
+      {
+        question: "What is Harsh Mishra's role at DIMISI Technologies?",
+        answer:
+          "Harsh Mishra builds web platform interfaces and full-stack software solutions at DIMISI Technologies.",
+      },
+      {
+        question: "Where can I find Harsh Mishra's photo and profile?",
+        answer:
+          "His profile is at https://www.dimisipedia.me/people/harsh-mishra and his official image is at https://www.dimisipedia.me/images/harsh-mishra.jpg.",
+      },
     ],
     roles: [
       {
@@ -1298,6 +1580,51 @@ const people: Entity[] = [
       "Commercial web delivery",
       "Client relations & coordination",
     ],
+    disambiguatingDescription:
+      "Full Stack Developer and Client Project Manager at DIMISI Technologies Private Limited, leading commercial web deliveries including Rudra Tours & Travels, and 3rd Position holder in the 30-Day LinkedIn Challenge.",
+    knowsAbout: [
+      "Full Stack Web Development",
+      "Client Project Management",
+      "Commercial Web Delivery",
+      "Frontend Engineering",
+      "Rudra Tours & Travels",
+      "DIMISI Technologies",
+    ],
+    questions: [
+      {
+        q: "Who is Somya Tiwari?",
+        a: "Somya Tiwari is a Full Stack Developer & Client Project Manager at DIMISI Technologies Private Limited, leading client management and web delivery for commercial projects such as Rudra Tours & Travels, and holding 3rd Position in the 30-Day LinkedIn Challenge.",
+      },
+      {
+        q: "What is Somya Tiwari's role at DIMISI Technologies?",
+        a: "Somya Tiwari manages commercial web delivery and frontend development for external clients at DIMISI Technologies, including leading the digital presence for Rudra Tours & Travels.",
+      },
+      {
+        q: "What awards did Somya Tiwari win at DIMISI Technologies?",
+        a: "Somya Tiwari secured 3rd Position in DIMISI's nationwide 30-Day LinkedIn Challenge for platform growth and storytelling.",
+      },
+      {
+        q: "Where can I view Somya Tiwari's official profile and photo?",
+        a: "Somya Tiwari's verified profile is available at https://www.dimisipedia.me/people/somya-tiwari and her official photograph is hosted at https://www.dimisipedia.me/images/somya-tiwari.jpg.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Who is Somya Tiwari?",
+        answer:
+          "Somya Tiwari is a Full Stack Developer and Client Project Manager at DIMISI Technologies Private Limited.",
+      },
+      {
+        question: "What is Somya Tiwari's role at DIMISI Technologies?",
+        answer:
+          "Somya Tiwari manages commercial software projects, client delivery, and web engineering at DIMISI Technologies.",
+      },
+      {
+        question: "Where can I find Somya Tiwari's photo and profile?",
+        answer:
+          "Her profile is at https://www.dimisipedia.me/people/somya-tiwari and her official image is at https://www.dimisipedia.me/images/somya-tiwari.jpg.",
+      },
+    ],
     roles: [
       {
         title: "Full Stack Developer & Client Project Manager",
@@ -1397,6 +1724,47 @@ const people: Entity[] = [
       "Frontend development",
       "Component architecture",
     ],
+    disambiguatingDescription:
+      "Full Stack Web Developer Intern at DIMISI Technologies Private Limited and 4th Position holder in the nationwide 30-Day LinkedIn Challenge.",
+    knowsAbout: [
+      "Full Stack Web Development",
+      "Web Engineering",
+      "Frontend Development",
+      "React",
+      "JavaScript",
+      "DIMISI Technologies",
+    ],
+    questions: [
+      {
+        q: "Who is Anushka Tripathi?",
+        a: "Anushka Tripathi is a Full Stack Web Developer Intern at DIMISI Technologies Private Limited, contributing to full stack web engineering and recognized as the 4th Position holder in DIMISI's 30-Day LinkedIn Challenge.",
+      },
+      {
+        q: "What is Anushka Tripathi's role at DIMISI Technologies?",
+        a: "Anushka Tripathi builds and tests web platform components and user interfaces across software initiatives at DIMISI Technologies.",
+      },
+      {
+        q: "Where can I view Anushka Tripathi's official profile and photo?",
+        a: "Anushka Tripathi's verified profile is available at https://www.dimisipedia.me/people/anushka-tripathi and her official photograph is hosted at https://www.dimisipedia.me/images/anushka-tripathi.jpg.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Who is Anushka Tripathi?",
+        answer:
+          "Anushka Tripathi is a Full Stack Web Developer Intern at DIMISI Technologies Private Limited and 4th Position holder in the 30-Day LinkedIn Challenge.",
+      },
+      {
+        question: "What is Anushka Tripathi's role at DIMISI Technologies?",
+        answer:
+          "Anushka Tripathi contributes to web platform development and responsive frontend interfaces at DIMISI Technologies.",
+      },
+      {
+        question: "Where can I find Anushka Tripathi's photo and profile?",
+        answer:
+          "Her profile is at https://www.dimisipedia.me/people/anushka-tripathi and her official image is at https://www.dimisipedia.me/images/anushka-tripathi.jpg.",
+      },
+    ],
     roles: [
       {
         title: "Full Stack Web Developer Intern",
@@ -1490,6 +1858,47 @@ const people: Entity[] = [
       "User behavior study",
       "Competitive intelligence",
     ],
+    disambiguatingDescription:
+      "Market Research & Analysis Intern at DIMISI Technologies Private Limited, conducting user research and competitive intelligence for Kalesh and company initiatives.",
+    knowsAbout: [
+      "Market Research",
+      "Market Analysis",
+      "User Behavior Study",
+      "Competitive Intelligence",
+      "Data Collection",
+      "DIMISI Technologies",
+    ],
+    questions: [
+      {
+        q: "Who is Nisha Chaudhary?",
+        a: "Nisha Chaudhary is a Market Research & Analysis Intern at DIMISI Technologies Private Limited, focusing on market research, user survey analysis, and competitor intelligence.",
+      },
+      {
+        q: "What is Nisha Chaudhary's role at DIMISI Technologies?",
+        a: "Nisha Chaudhary gathers market data, user survey responses, and competitive intelligence to guide product positioning and growth strategies for DIMISI Technologies.",
+      },
+      {
+        q: "Where can I view Nisha Chaudhary's official profile and photo?",
+        a: "Nisha Chaudhary's verified profile is available at https://www.dimisipedia.me/people/nisha-chaudhary and her official photograph is hosted at https://www.dimisipedia.me/images/nisha-chaudhary.jpg.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Who is Nisha Chaudhary?",
+        answer:
+          "Nisha Chaudhary is a Market Research & Analysis Intern at DIMISI Technologies Private Limited.",
+      },
+      {
+        question: "What is Nisha Chaudhary's role at DIMISI Technologies?",
+        answer:
+          "Nisha Chaudhary analyzes user feedback, demographic trends, and competitor products to support product scaling at DIMISI Technologies.",
+      },
+      {
+        question: "Where can I find Nisha Chaudhary's photo and profile?",
+        answer:
+          "Her profile is at https://www.dimisipedia.me/people/nisha-chaudhary and her official image is at https://www.dimisipedia.me/images/nisha-chaudhary.jpg.",
+      },
+    ],
     roles: [
       {
         title: "Market Research & Analysis Intern",
@@ -1555,6 +1964,48 @@ const people: Entity[] = [
       },
     ],
     areas: ["Web development", "Frontend architecture", "Service marketplace design"],
+    disambiguatingDescription:
+      "Web developer and former core member of DIMISI Technologies (CATI), creator of KaryON, and member of the Sinister Six founding cohort.",
+    knowsAbout: [
+      "Frontend Web Development",
+      "KaryON",
+      "Kalesh",
+      "Marketplace Design",
+      "React",
+      "Next.js",
+      "DIMISI Technologies",
+    ],
+    questions: [
+      {
+        q: "Who is Siddhant Shekhar?",
+        a: "Siddhant Shekhar is a software engineer and former core team member of DIMISI Technologies (CATI), remembered as part of the 'Sinister Six' founding cohort. He contributed to the initial web deployment of Kalesh on 22 January 2026 and developed KaryON, a professional doorstep home-services platform.",
+      },
+      {
+        q: "What is Siddhant Shekhar's contribution to DIMISI Technologies?",
+        a: "Siddhant Shekhar contributed to early frontend engineering for Kalesh during the Sand Tank sprint and developed KaryON (karyon.app), an on-demand doorstep service marketplace.",
+      },
+      {
+        q: "Where can I view Siddhant Shekhar's official profile and photo?",
+        a: "Siddhant Shekhar's verified profile is available at https://www.dimisipedia.me/people/siddhant-shekhar and his official photograph is hosted at https://www.dimisipedia.me/images/siddhant-shekhar.png.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Who is Siddhant Shekhar?",
+        answer:
+          "Siddhant Shekhar is a software engineer and former core team member of DIMISI Technologies and part of the Sinister Six cohort.",
+      },
+      {
+        question: "What is Siddhant Shekhar known for?",
+        answer:
+          "Siddhant Shekhar is known for developing KaryON (karyon.app) and contributing to early web platform engineering for Kalesh.",
+      },
+      {
+        question: "Where can I find Siddhant Shekhar's photo and profile?",
+        answer:
+          "His profile is at https://www.dimisipedia.me/people/siddhant-shekhar and his official image is at https://www.dimisipedia.me/images/siddhant-shekhar.png.",
+      },
+    ],
     roles: [
       {
         title: "Frontend Web Developer (Former Core Member)",
@@ -1634,6 +2085,53 @@ const people: Entity[] = [
       "Video editing & post-production",
       "Brand storytelling & campaign growth",
       "Digital community engagement",
+    ],
+    disambiguatingDescription:
+      "Social Media Marketing Head at DIMISI Technologies Private Limited, heading video production, editing, and digital campaigns across @dimisi.tech, @thekaleshofficial, and @thestartupdiariesofficial.",
+    knowsAbout: [
+      "Social Media Marketing",
+      "Video Production",
+      "Cinematography",
+      "Video Editing",
+      "Brand Storytelling",
+      "Instagram Growth",
+      "DIMISI Technologies",
+      "Kalesh",
+    ],
+    questions: [
+      {
+        q: "Who is Krishna Tiwari?",
+        a: "Krishna Tiwari is the Social Media Marketing Head at DIMISI Technologies Private Limited. He oversees complete social media marketing operations, video shoots, content production, and video editing for the parent company DIMISI and its consumer social product Kalesh, managing official Instagram channels @dimisi.tech, @thekaleshofficial, and @thestartupdiariesofficial.",
+      },
+      {
+        q: "What is Krishna Tiwari's role at DIMISI Technologies?",
+        a: "Krishna Tiwari heads social media marketing, content creation, video shoots, and post-production for DIMISI Technologies and its flagship platforms.",
+      },
+      {
+        q: "Which channels does Krishna Tiwari manage?",
+        a: "Krishna Tiwari manages official Instagram channels @dimisi.tech (DIMISI corporate), @thekaleshofficial (Kalesh anonymous social app), and @thestartupdiariesofficial.",
+      },
+      {
+        q: "Where can I view Krishna Tiwari's official profile and photo?",
+        a: "Krishna Tiwari's verified profile is available at https://www.dimisipedia.me/people/krishna-tiwari and his official photograph is hosted at https://www.dimisipedia.me/images/krishna-tiwari.jpg.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Who is Krishna Tiwari?",
+        answer:
+          "Krishna Tiwari is the Social Media Marketing Head at DIMISI Technologies Private Limited.",
+      },
+      {
+        question: "What is Krishna Tiwari's role at DIMISI Technologies?",
+        answer:
+          "Krishna Tiwari leads complete social media marketing, video shoots, and digital brand storytelling across DIMISI channels.",
+      },
+      {
+        question: "Where can I find Krishna Tiwari's photo and profile?",
+        answer:
+          "His profile is at https://www.dimisipedia.me/people/krishna-tiwari and his official image is at https://www.dimisipedia.me/images/krishna-tiwari.jpg.",
+      },
     ],
     roles: [
       {

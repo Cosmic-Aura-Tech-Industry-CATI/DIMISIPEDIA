@@ -53,11 +53,13 @@ export function MentorProfileSections() {
               {data.displayName}
             </h2>
             <p className="text-sm font-medium text-primary">
-              {data.currentRole} — {data.currentOrganization} &amp; First Mentor — DIMISI Technologies
+              {data.currentRole} — {data.currentOrganization} &amp; First Mentor — DIMISI
+              Technologies
             </p>
             <p className="text-xs text-muted-foreground max-w-2xl leading-relaxed">
-              14+ years in HR, people development, leadership capability building, and startup mentorship.
-              Alumnus of IIM Ranchi (Human Resources) and JSS Noida (Electronics &amp; Communication Engineering).
+              14+ years in HR, people development, leadership capability building, and startup
+              mentorship. Alumnus of IIM Ranchi (Human Resources) and JSS Noida (Electronics &amp;
+              Communication Engineering).
             </p>
           </div>
 
@@ -120,9 +122,10 @@ export function MentorProfileSections() {
           <span className="label-mono ml-auto">2006 – Present</span>
         </div>
         <p className="mt-2 text-sm text-muted-foreground">
-          Chronological progression tracing JP&apos;s development from technical engineering, enterprise IT,
-          and student coaching to premier management education at IIM Ranchi, corporate HR management,
-          healthcare entrepreneurship, multi-incubator mentoring, and national startup advisory.
+          Chronological progression tracing JP&apos;s development from technical engineering,
+          enterprise IT, and student coaching to premier management education at IIM Ranchi,
+          corporate HR management, healthcare entrepreneurship, multi-incubator mentoring, and
+          national startup advisory.
         </p>
 
         <div className="mt-6 space-y-4">
@@ -185,15 +188,18 @@ export function MentorProfileSections() {
 
           <div className="p-6 sm:p-8 space-y-5">
             <p className="font-serif text-lg leading-relaxed text-foreground">
-              <strong>Jayendra Pratap Singh (JP) is the First Mentor of DIMISI Technologies Private Limited.</strong>
+              <strong>
+                Jayendra Pratap Singh (JP) is the First Mentor of DIMISI Technologies Private
+                Limited.
+              </strong>
             </p>
             <p className="text-sm leading-relaxed text-muted-foreground">
               As DIMISI&apos;s First Mentor, JP brings his experience in people development,
-              leadership, organizational capability building, behavioural transformation,
-              executive education, and startup mentoring to the company&apos;s broader growth
-              journey. His practitioner-led perspective provides DIMISI with valuable guidance
-              around people, leadership, organizational development, team capability, and the
-              development of industry-ready talent.
+              leadership, organizational capability building, behavioural transformation, executive
+              education, and startup mentoring to the company&apos;s broader growth journey. His
+              practitioner-led perspective provides DIMISI with valuable guidance around people,
+              leadership, organizational development, team capability, and the development of
+              industry-ready talent.
             </p>
 
             {/* Historical Founding Connection */}
@@ -204,17 +210,25 @@ export function MentorProfileSections() {
               </div>
               <p className="mt-2 text-sm leading-relaxed text-foreground">
                 During the formative semester of CATI / DIMISI Technologies, the founding team (
-                <EntityLink to="/people/shikhar-dixit" className="underline font-medium">Shikhar Dixit</EntityLink>,{" "}
-                <EntityLink to="/people/swatantra-singh" className="underline font-medium">Swatantra Singh</EntityLink>, and{" "}
-                <EntityLink to="/people/nishkarsh-mishra" className="underline font-medium">Nishkarsh Mishra</EntityLink>
-                ) enrolled in a practical course on Startup &amp; Entrepreneurship led by Jayendra Pratap Singh
-                (affectionately known as <em>Jayant Sir</em>).
+                <EntityLink to="/people/shikhar-dixit" className="underline font-medium">
+                  Shikhar Dixit
+                </EntityLink>
+                ,{" "}
+                <EntityLink to="/people/swatantra-singh" className="underline font-medium">
+                  Swatantra Singh
+                </EntityLink>
+                , and{" "}
+                <EntityLink to="/people/nishkarsh-mishra" className="underline font-medium">
+                  Nishkarsh Mishra
+                </EntityLink>
+                ) enrolled in a practical course on Startup &amp; Entrepreneurship led by Jayendra
+                Pratap Singh (affectionately known as <em>Jayant Sir</em>).
               </p>
               <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                After the founders proved their resilience by waiting two hours outside the central library,
-                Jayant Sir reviewed their blueprint, opened the college media studio for filming their
-                official application video for Shark Tank India, and provided foundational mentorship
-                that helped crystallize the team&apos;s early venture.
+                After the founders proved their resilience by waiting two hours outside the central
+                library, Jayant Sir reviewed their blueprint, opened the college media studio for
+                filming their official application video for Shark Tank India, and provided
+                foundational mentorship that helped crystallize the team&apos;s early venture.
               </p>
             </div>
 
@@ -237,8 +251,8 @@ export function MentorProfileSections() {
           <h2 className="text-2xl">How JP&apos;s Expertise Supports DIMISI</h2>
         </div>
         <p className="mt-2 text-sm text-muted-foreground">
-          Five core capability pillars where Jayendra Pratap Singh&apos;s practitioner-led perspective
-          actively reinforces DIMISI Technologies.
+          Five core capability pillars where Jayendra Pratap Singh&apos;s practitioner-led
+          perspective actively reinforces DIMISI Technologies.
         </p>
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -346,10 +360,10 @@ export function MentorProfileSections() {
             <div>
               <h3 className="font-serif text-xl font-medium">National Mentor — Startup India</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                JP is an empanelled National Mentor with Startup India, having mentored 50+ startups on areas
-                including team building, leadership, and business strategy. His interventions
-                bridge the gap between early ideation and operational capability, helping founders
-                scale robust organizational cultures and investor-ready teams.
+                JP is an empanelled National Mentor with Startup India, having mentored 50+ startups
+                on areas including team building, leadership, and business strategy. His
+                interventions bridge the gap between early ideation and operational capability,
+                helping founders scale robust organizational cultures and investor-ready teams.
               </p>
 
               <div className="mt-6 border-t border-rule pt-4">
@@ -375,7 +389,8 @@ export function MentorProfileSections() {
             </div>
 
             <div className="mt-6 border-t border-rule pt-3 text-[11px] text-muted-foreground font-mono">
-              Data verified against Startup India mentorship roster &amp; national ecosystem records.
+              Data verified against Startup India mentorship roster &amp; national ecosystem
+              records.
             </div>
           </div>
         </div>
@@ -389,8 +404,8 @@ export function MentorProfileSections() {
           <span className="label-mono ml-auto">National Network</span>
         </div>
         <p className="mt-2 text-sm text-muted-foreground">
-          Empanelments across national entrepreneurship foundations, central government startup platforms,
-          Atal Incubation Centres (NITI Aayog), and regional innovation bodies.
+          Empanelments across national entrepreneurship foundations, central government startup
+          platforms, Atal Incubation Centres (NITI Aayog), and regional innovation bodies.
         </p>
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -443,8 +458,8 @@ export function MentorProfileSections() {
           <span className="label-mono ml-auto">Institutional Roles</span>
         </div>
         <p className="mt-2 text-sm text-muted-foreground">
-          Documented corporate management, academic administration, and venture leadership roles held
-          across his professional career.
+          Documented corporate management, academic administration, and venture leadership roles
+          held across his professional career.
         </p>
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -503,8 +518,8 @@ export function MentorProfileSections() {
               DPIIT, Ministry of Commerce &amp; Industry, Government of India
             </p>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-              Highest-tier recognition associated with the sustained quality and impact of his startup mentorship
-              across national incubation initiatives.
+              Highest-tier recognition associated with the sustained quality and impact of his
+              startup mentorship across national incubation initiatives.
             </p>
           </div>
 
@@ -516,8 +531,8 @@ export function MentorProfileSections() {
             <h3 className="mt-2 font-serif text-xl font-medium">National Mentor — Startup India</h3>
             <p className="mt-1 text-xs font-mono text-primary">Startup India Initiative</p>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-              Mentored 50+ startups across critical venture areas including team building, leadership,
-              and business strategy.
+              Mentored 50+ startups across critical venture areas including team building,
+              leadership, and business strategy.
             </p>
           </div>
 
@@ -527,10 +542,12 @@ export function MentorProfileSections() {
               <span className="label-mono text-[11px]">Management Festival Honor</span>
             </div>
             <h3 className="mt-2 font-serif text-xl font-medium">Winner — Carpe Diem 2014</h3>
-            <p className="mt-1 text-xs font-mono text-primary">IIM Calcutta (Representing IIM Ranchi)</p>
+            <p className="mt-1 text-xs font-mono text-primary">
+              IIM Calcutta (Representing IIM Ranchi)
+            </p>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-              Won first prize in the &ldquo;Minutes to Win&rdquo; flagship competition at Carpe Diem 2014,
-              the annual festival of the Indian Institute of Management Calcutta.
+              Won first prize in the &ldquo;Minutes to Win&rdquo; flagship competition at Carpe Diem
+              2014, the annual festival of the Indian Institute of Management Calcutta.
             </p>
           </div>
 
@@ -539,11 +556,15 @@ export function MentorProfileSections() {
               <span className="size-2 rounded-full bg-primary" />
               <span className="label-mono text-[11px]">Technical &amp; Analytical Grounding</span>
             </div>
-            <h3 className="mt-2 font-serif text-xl font-medium">B.Tech Electronics &amp; Communication</h3>
-            <p className="mt-1 text-xs font-mono text-primary">JSS Academy of Technical Education, Noida</p>
+            <h3 className="mt-2 font-serif text-xl font-medium">
+              B.Tech Electronics &amp; Communication
+            </h3>
+            <p className="mt-1 text-xs font-mono text-primary">
+              JSS Academy of Technical Education, Noida
+            </p>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-              Technical degree affiliated with Dr. A.P.J. Abdul Kalam Technical University (AKTU / UPTU),
-              providing rigorous analytical problem-solving capabilities.
+              Technical degree affiliated with Dr. A.P.J. Abdul Kalam Technical University (AKTU /
+              UPTU), providing rigorous analytical problem-solving capabilities.
             </p>
           </div>
         </div>
@@ -556,7 +577,8 @@ export function MentorProfileSections() {
           <h2 className="text-2xl">Areas of Expertise</h2>
         </div>
         <p className="mt-2 text-sm text-muted-foreground">
-          Core consulting and capability-building disciplines across people, leadership, and startup ecosystems.
+          Core consulting and capability-building disciplines across people, leadership, and startup
+          ecosystems.
         </p>
 
         <div className="mt-6 grid gap-px border border-border bg-rule sm:grid-cols-2 lg:grid-cols-3">
@@ -566,7 +588,10 @@ export function MentorProfileSections() {
                 <h3 className="font-serif text-lg font-medium text-foreground">{grp.category}</h3>
                 <ul className="mt-4 space-y-2">
                   {grp.skills.map((skill: string) => (
-                    <li key={skill} className="flex items-start gap-2 text-xs text-muted-foreground">
+                    <li
+                      key={skill}
+                      className="flex items-start gap-2 text-xs text-muted-foreground"
+                    >
                       <span className="size-1.5 rounded-full bg-primary/70 mt-1 shrink-0" />
                       <span>{skill}</span>
                     </li>
@@ -586,8 +611,8 @@ export function MentorProfileSections() {
         </div>
         <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
           JP&apos;s professional experience spans multiple industries, allowing him to bring
-          perspectives from business, technology, education, healthcare, people development, and organizational
-          capability into his consulting and mentoring engagements.
+          perspectives from business, technology, education, healthcare, people development, and
+          organizational capability into his consulting and mentoring engagements.
         </p>
 
         <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
@@ -636,7 +661,8 @@ export function MentorProfileSections() {
             <strong className="font-semibold text-foreground">Documentation Standard:</strong> The
             supplied portfolio specifically describes these organizations in the context of{" "}
             <strong>training and consulting interventions</strong>. His direct corporate employment
-            and management tenure includes Godrej &amp; Boyce, Reliance Power, Tech Mahindra, and SAITM.
+            and management tenure includes Godrej &amp; Boyce, Reliance Power, Tech Mahindra, and
+            SAITM.
           </div>
         </div>
       </section>
@@ -648,7 +674,8 @@ export function MentorProfileSections() {
           <h2 className="text-2xl">Professional Focus</h2>
         </div>
         <p className="mt-2 text-sm text-muted-foreground">
-          Core domains and thematic focus areas reflected in his professional consulting engagements.
+          Core domains and thematic focus areas reflected in his professional consulting
+          engagements.
         </p>
 
         <div className="mt-5 flex flex-wrap gap-2">
@@ -693,7 +720,8 @@ export function MentorProfileSections() {
             <div>
               <p className="font-serif text-sm font-medium">Jayendra Pratap Singh (JP)</p>
               <p className="text-xs text-muted-foreground">
-                Startup Advisor — Wadhwani Foundation · First Mentor — DIMISI Technologies · National Mentor — Startup India
+                Startup Advisor — Wadhwani Foundation · First Mentor — DIMISI Technologies ·
+                National Mentor — Startup India
               </p>
             </div>
             <span className="label-mono text-[10px] border border-border px-2 py-1 bg-background">
@@ -710,8 +738,8 @@ export function MentorProfileSections() {
           <h2 className="text-2xl">Related Topics</h2>
         </div>
         <p className="mt-2 text-sm text-muted-foreground">
-          Knowledge topics and related institutional entities connected to Jayendra Pratap Singh&apos;s
-          documented profile.
+          Knowledge topics and related institutional entities connected to Jayendra Pratap
+          Singh&apos;s documented profile.
         </p>
 
         <div className="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">

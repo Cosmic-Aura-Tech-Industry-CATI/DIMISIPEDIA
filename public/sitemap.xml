@@ -163,15 +163,29 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/people/sheelu-singh</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.dimisipedia.me/images/sheelu-singh.png</image:loc>
+      <image:title>Sheelu Singh — Android &amp; Flutter Developer, DIMISI Technologies</image:title>
+      <image:caption>Official photograph of Sheelu Singh at DIMISI Technologies Private Limited</image:caption>
+      <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
+      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://www.dimisipedia.me/people/mridul-mishra</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.dimisipedia.me/images/mridul-mishra.png</image:loc>
+      <image:title>Mridul Mishra — Founding Engineer, DIMISI Technologies</image:title>
+      <image:caption>Official photograph of Mridul Mishra at DIMISI Technologies Private Limited</image:caption>
+      <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
+      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://www.dimisipedia.me/people/siddhant-shekhar</loc>
@@ -180,7 +194,7 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/siddhant-shekhar.png</image:loc>
-      <image:title>Siddhant Shekhar — Vice President, Public Relations &amp; Strategic Operations</image:title>
+      <image:title>Siddhant Shekhar — Former Core Member &amp; Web Developer</image:title>
       <image:caption>Official photograph of Siddhant Shekhar at DIMISI Technologies Private Limited</image:caption>
       <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
       <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
@@ -274,6 +288,32 @@
       <image:title>Amit Kumar — Backend Development Intern</image:title>
       <image:caption>Official photograph of Amit Kumar at DIMISI Technologies Private Limited</image:caption>
       <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
+      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.dimisipedia.me/people/krishna-tiwari</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.dimisipedia.me/images/krishna-tiwari.jpg</image:loc>
+      <image:title>Krishna Tiwari — Social Media Marketing Head</image:title>
+      <image:caption>Official photograph of Krishna Tiwari at DIMISI Technologies Private Limited</image:caption>
+      <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
+      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.dimisipedia.me/people/jayendra-pratap-singh</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.dimisipedia.me/images/jayendra-pratap-singh.jpg</image:loc>
+      <image:title>Jayendra Pratap Singh (JP) — First Mentor, DIMISI Technologies</image:title>
+      <image:caption>Official photograph of Jayendra Pratap Singh (JP), First Mentor of DIMISI Technologies Private Limited and Startup Advisor at Wadhwani Foundation</image:caption>
+      <image:geo_location>Noida, Uttar Pradesh, India</image:geo_location>
       <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
     </image:image>
   </url>

@@ -273,7 +273,7 @@ export function buildPersonSchema(entity: Entity): Json {
       ? "Indian technology entrepreneur and software engineer; Founder & Chief Executive Officer of DIMISI Technologies Private Limited; creator and product architect of Kalesh, DIMISIPEDIA, and Gandhigiri Face Recognition System."
       : entity.id === "jayendra-pratap-singh"
         ? "Startup Advisor at Wadhwani Foundation, HR & People Development Consultant, Startup India National Mentor, DPIIT Platinum Badge awardee, and First Mentor of DIMISI Technologies Private Limited."
-        : entity.subtitle || entity.shortDescription);
+        : `${entity.name} — ${entity.subtitle || "Team Member"} at DIMISI Technologies Private Limited in Kanpur, Uttar Pradesh, India.`);
 
   const additionalName =
     entity.id === "shikhar-dixit"
@@ -301,7 +301,60 @@ export function buildPersonSchema(entity: Entity): Json {
   const occupationDesc =
     entity.id === "jayendra-pratap-singh"
       ? "Jayendra Pratap Singh (JP) serves as Startup Advisor at Wadhwani Foundation and specializes in HR, people development, leadership capability building, executive education, and startup mentorship."
-      : `${entity.name} leads executive direction, product architecture, and engineering.`;
+      : entity.id === "shikhar-dixit"
+        ? "Shikhar Dixit leads executive direction, product architecture, and engineering across DIMISI Technologies Private Limited."
+        : `${entity.name} serves as ${entity.subtitle || "software engineering contributor"} at DIMISI Technologies Private Limited.`;
+
+  const dimisiOrgNode = {
+    "@type": "Organization",
+    "@id": `${SITE_URL}/dimisi-technologies#organization`,
+    name: ORG_NAME,
+    legalName: "DIMISI Technologies Private Limited",
+    url: `${SITE_URL}/dimisi-technologies`,
+  };
+
+  const personWorksFor =
+    entity.id === "jayendra-pratap-singh"
+      ? [
+          {
+            "@type": "Organization",
+            name: "Wadhwani Foundation",
+            url: "https://www.wadhwanifoundation.org",
+            sameAs: "https://en.wikipedia.org/wiki/Romesh_Wadhwani",
+          },
+        ]
+      : orgs.filter((r) => !/Mentor/i.test(r.type) && entity.id !== "jayendra-pratap-singh")
+            .length > 0
+        ? orgs
+            .filter((r) => !/Mentor/i.test(r.type) && entity.id !== "jayendra-pratap-singh")
+            .map((r) => ({
+              "@type": "Organization",
+              "@id": entityId(r.entity),
+              name: r.entity.name,
+              legalName: r.entity.name,
+              url: abs(r.entity.path),
+            }))
+        : [dimisiOrgNode];
+
+  const personAffiliation =
+    entity.id === "jayendra-pratap-singh"
+      ? [
+          dimisiOrgNode,
+          {
+            "@type": "Organization",
+            name: "Wadhwani Foundation",
+            url: "https://www.wadhwanifoundation.org",
+          },
+        ]
+      : [
+          dimisiOrgNode,
+          ...orgs.map((r) => ({
+            "@type": "Organization",
+            "@id": entityId(r.entity),
+            name: r.entity.name,
+            url: abs(r.entity.path),
+          })),
+        ];
 
   return clean({
     "@type": "Person",
@@ -313,7 +366,7 @@ export function buildPersonSchema(entity: Entity): Json {
     gender: entity.gender || "https://schema.org/Male",
     birthDate: entity.birthDate,
     disambiguatingDescription,
-    image: imageObj,
+    image: entity.image ? [abs(entity.image), imageObj] : undefined,
     primaryImageOfPage: imageObj ? { "@id": `${abs(entity.path)}#primaryimage` } : undefined,
     alternateName,
     description: entity.answer || entity.shortDescription,
@@ -322,6 +375,7 @@ export function buildPersonSchema(entity: Entity): Json {
       "@type": "ProfilePage",
       "@id": pageId(entity.path),
       url: abs(entity.path),
+      image: entity.image ? abs(entity.image) : undefined,
     },
     jobTitle: roleTitles.length > 0 ? roleTitles : undefined,
     hasOccupation: {
@@ -335,31 +389,8 @@ export function buildPersonSchema(entity: Entity): Json {
       },
       skills: entity.areas ? entity.areas.join(", ") : undefined,
     },
-    worksFor:
-      entity.id === "jayendra-pratap-singh"
-        ? [
-            {
-              "@type": "Organization",
-              name: "Wadhwani Foundation",
-              url: "https://www.wadhwanifoundation.org",
-              sameAs: "https://en.wikipedia.org/wiki/Romesh_Wadhwani",
-            },
-          ]
-        : orgs
-            .filter((r) => !/Mentor/i.test(r.type) && entity.id !== "jayendra-pratap-singh")
-            .map((r) => ({
-              "@type": "Organization",
-              "@id": entityId(r.entity),
-              name: r.entity.name,
-              legalName: r.entity.name,
-              url: abs(r.entity.path),
-            })),
-    affiliation: orgs.map((r) => ({
-      "@type": "Organization",
-      "@id": entityId(r.entity),
-      name: r.entity.name,
-      url: abs(r.entity.path),
-    })),
+    worksFor: personWorksFor,
+    affiliation: personAffiliation,
     founder: [
       ...orgs
         .filter((r) => /Founder|Co-Founder/i.test(r.type))

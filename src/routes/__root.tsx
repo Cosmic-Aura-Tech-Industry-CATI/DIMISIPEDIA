@@ -81,7 +81,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
         >
           Play Dinosaur Runner (Offline Mode)
         </Link>
-        <a href="/" className="border border-border px-4 py-2 hover:border-primary font-mono text-xs">
+        <a
+          href="/"
+          className="border border-border px-4 py-2 hover:border-primary font-mono text-xs"
+        >
           Go home
         </a>
       </div>
@@ -160,6 +163,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "apple-touch-icon", href: "/favicon.png" },
       { rel: "manifest", href: "/manifest.webmanifest" },
+      { rel: "author", href: "/llms.txt" },
+      { rel: "help", href: "/llms.txt", type: "text/plain", title: "LLM Knowledge Index" },
     ],
     scripts: [
       {
