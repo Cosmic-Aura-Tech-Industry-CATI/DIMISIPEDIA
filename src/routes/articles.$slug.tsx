@@ -1,4 +1,4 @@
-import { createFileRoute, notFound } from "@tanstack/react-router";
+import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
 import { ArticleBody } from "@/components/ArticleBody";
 import { Breadcrumbs } from "@/components/EntityArticle";
 import { EntityLink } from "@/components/EntityLink";
@@ -24,6 +24,9 @@ const trailFor = (title: string) => [
 
 export const Route = createFileRoute("/articles/$slug")({
   loader: ({ params }) => {
+    if (params.slug === "$slug" || params.slug.startsWith("$")) {
+      throw redirect({ to: "/articles", statusCode: 301 });
+    }
     const article = getArticle(params.slug);
     if (!article) throw notFound();
     return { article };

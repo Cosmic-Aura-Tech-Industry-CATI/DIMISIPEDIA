@@ -1,4 +1,4 @@
-import { createFileRoute, notFound } from "@tanstack/react-router";
+import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
 import { EntityArticle } from "@/components/EntityArticle";
 import { PersonSections, personSectionMeta } from "@/components/PersonSections";
 import { peopleEntities } from "@/data/knowledge";
@@ -12,6 +12,9 @@ const trailFor = (name: string) => [
 
 export const Route = createFileRoute("/people/$slug")({
   loader: ({ params }) => {
+    if (params.slug === "$slug" || params.slug.startsWith("$")) {
+      throw redirect({ to: "/people", statusCode: 301 });
+    }
     const person = peopleEntities.find(
       (p) => p.slug === params.slug || p.id === params.slug || p.aliases?.includes(params.slug),
     );

@@ -822,9 +822,11 @@ export interface SitemapUrlEntry {
 
 /** Every canonical, indexable URL on the site (used by the sitemap). */
 export function canonicalUrls(): SitemapUrlEntry[] {
+  const TODAY = "2026-10-11";
   const statics: SitemapUrlEntry[] = [
     {
       path: "/",
+      lastmod: TODAY,
       priority: "1.0",
       image: {
         loc: abs("/images/dimisipedia-logo.png"),
@@ -834,22 +836,22 @@ export function canonicalUrls(): SitemapUrlEntry[] {
         license: `${SITE_URL}/editorial-policy`,
       },
     },
-    { path: "/journey", priority: "0.8" },
-    { path: "/people", priority: "0.8" },
-    { path: "/organizations", priority: "0.8" },
-    { path: "/projects", priority: "0.8" },
-    { path: "/technology", priority: "0.7" },
-    { path: "/timeline", priority: "0.7" },
-    { path: "/explore", priority: "0.7" },
-    { path: "/events", priority: "0.4" },
-    { path: "/articles", priority: "0.4" },
-    { path: "/sources", priority: "0.6" },
-    { path: "/methodology", priority: "0.7" },
-    { path: "/credibility", priority: "0.6" },
-    { path: "/editorial-policy", priority: "0.6" },
-    { path: "/about", priority: "0.5" },
-    { path: "/privacy", priority: "0.3" },
-    { path: "/terms", priority: "0.3" },
+    { path: "/journey", lastmod: TODAY, priority: "0.8" },
+    { path: "/people", lastmod: TODAY, priority: "0.8" },
+    { path: "/organizations", lastmod: TODAY, priority: "0.8" },
+    { path: "/projects", lastmod: TODAY, priority: "0.8" },
+    { path: "/technology", lastmod: TODAY, priority: "0.7" },
+    { path: "/timeline", lastmod: TODAY, priority: "0.7" },
+    { path: "/explore", lastmod: TODAY, priority: "0.7" },
+    { path: "/events", lastmod: TODAY, priority: "0.4" },
+    { path: "/articles", lastmod: TODAY, priority: "0.4" },
+    { path: "/sources", lastmod: TODAY, priority: "0.6" },
+    { path: "/methodology", lastmod: TODAY, priority: "0.7" },
+    { path: "/credibility", lastmod: TODAY, priority: "0.6" },
+    { path: "/editorial-policy", lastmod: TODAY, priority: "0.6" },
+    { path: "/about", lastmod: TODAY, priority: "0.5" },
+    { path: "/privacy", lastmod: TODAY, priority: "0.3" },
+    { path: "/terms", lastmod: TODAY, priority: "0.3" },
   ];
   return [
     ...statics,

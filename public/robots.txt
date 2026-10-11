@@ -3,9 +3,30 @@ Allow: /
 Disallow: /search
 Disallow: /seo-audit
 Disallow: /api/
+Disallow: /*$*
+Disallow: /*?q=
+Disallow: /*?*
+Allow: /*.js
+Allow: /*.css
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.webp
+Allow: /*.svg
 
 User-agent: Googlebot
 Allow: /
+Disallow: /search
+Disallow: /seo-audit
+Disallow: /api/
+Disallow: /*$*
+Disallow: /*?q=
+Disallow: /*?*
+Allow: /*.js
+Allow: /*.css
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.webp
+Allow: /*.svg
 
 User-agent: Bingbot
 Allow: /
@@ -23,4 +44,3 @@ User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://www.dimisipedia.me/sitemap.xml
-

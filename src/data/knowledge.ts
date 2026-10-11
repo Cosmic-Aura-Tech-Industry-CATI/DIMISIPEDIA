@@ -1027,10 +1027,24 @@ const people: Entity[] = [
       },
     ],
     officialLinks: [],
+    externalProfiles: [
+      {
+        label: "DIMISI Technologies Team",
+        url: "https://dimisi.tech",
+        verified: true,
+        note: "Official engineering team roster.",
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/company/dimisi-technologies",
+        verified: true,
+        note: "Company organization directory.",
+      },
+    ],
     sourceIds: ["src-dimisi-ops-spec", "src-team-roster", "src-linkedin-challenge-felicitation"],
     revisions: baseRevisions("2026-09-04"),
     createdAt: "2026-09-04",
-    updatedAt: "2026-09-04",
+    updatedAt: "2026-10-11",
     seoTitle:
       "Prashant Umrao — Full Stack Developer Intern, Tester & 1st Prize Winner | DIMISIPEDIA",
     seoDescription:
@@ -1080,8 +1094,17 @@ const people: Entity[] = [
         heading: "Overview",
         status: "source-backed",
         body: [
-          "Amit Kumar is a Backend Development Intern at DIMISI Technologies. [1]",
-          "He collaborates on the engineering of DIMISI-OPS, developing internal task allocation, team coordination, and employee administration modules under operational guidance from co-founder Nishkarsh Mishra. [1]",
+          "Amit Kumar is a Backend Development Intern at DIMISI Technologies Private Limited. [1]",
+          "He collaborates on the engineering of DIMISI-OPS, developing internal task allocation, team coordination, and employee administration modules under operational guidance from co-founder Nishkarsh Mishra and senior backend engineer Mridul Mishra. [1]",
+        ],
+      },
+      {
+        id: "engineering-contributions",
+        heading: "Engineering & Technical Contributions",
+        status: "source-backed",
+        body: [
+          "As part of the backend engineering division for DIMISI-OPS, Amit Kumar implements RESTful API services, relational database schemas, and structured data handling routines. [1]",
+          "His work focuses on ensuring performant backend interactions for cross-functional employee tracking, automated logging, and administrative controls within the company's internal tools infrastructure. [1]",
         ],
       },
     ],
@@ -1093,10 +1116,24 @@ const people: Entity[] = [
       },
     ],
     officialLinks: [],
+    externalProfiles: [
+      {
+        label: "DIMISI Technologies Team",
+        url: "https://dimisi.tech",
+        verified: true,
+        note: "Official engineering team roster.",
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/company/dimisi-technologies",
+        verified: true,
+        note: "Company organization directory.",
+      },
+    ],
     sourceIds: ["src-dimisi-ops-spec", "src-team-roster"],
     revisions: baseRevisions("2026-09-04"),
     createdAt: "2026-09-04",
-    updatedAt: "2026-09-04",
+    updatedAt: "2026-10-11",
     seoTitle: "Amit Kumar — Backend Development Intern | DIMISIPEDIA",
     seoDescription:
       "Amit Kumar is a Backend Development Intern at DIMISI Technologies contributing to the DIMISI-OPS operations platform.",
@@ -1200,10 +1237,24 @@ const people: Entity[] = [
       },
     ],
     officialLinks: [],
+    externalProfiles: [
+      {
+        label: "DIMISI Technologies Team",
+        url: "https://dimisi.tech",
+        verified: true,
+        note: "Official engineering team roster.",
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/company/dimisi-technologies",
+        verified: true,
+        note: "Company organization directory.",
+      },
+    ],
     sourceIds: ["src-team-roster", "src-linkedin-challenge-felicitation"],
     revisions: baseRevisions("2026-09-12"),
     createdAt: "2026-09-12",
-    updatedAt: "2026-09-12",
+    updatedAt: "2026-10-11",
     seoTitle: "Harsh Mishra — Full Stack Web Developer & 2nd Position Holder | DIMISIPEDIA",
     seoDescription:
       "Harsh Mishra is a Full Stack Web Developer at DIMISI Technologies, 2nd Position holder in the 30-Day LinkedIn Challenge, and former Video Editor & Social Media Marketing Intern.",
@@ -1294,10 +1345,24 @@ const people: Entity[] = [
       },
     ],
     officialLinks: [],
+    externalProfiles: [
+      {
+        label: "DIMISI Technologies Team",
+        url: "https://dimisi.tech",
+        verified: true,
+        note: "Official client delivery & project management roster.",
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/company/dimisi-technologies",
+        verified: true,
+        note: "Company organization directory.",
+      },
+    ],
     sourceIds: ["src-team-roster", "src-rudra-official", "src-linkedin-challenge-felicitation"],
     revisions: baseRevisions("2026-09-12"),
     createdAt: "2026-09-12",
-    updatedAt: "2026-09-12",
+    updatedAt: "2026-10-11",
     seoTitle: "Somya Tiwari — Full Stack Developer & Client Project Manager | DIMISIPEDIA",
     seoDescription:
       "Somya Tiwari is a Full Stack Developer & Client Project Manager at DIMISI Technologies and 3rd Position holder in the 30-Day LinkedIn Challenge.",
@@ -1374,10 +1439,24 @@ const people: Entity[] = [
       },
     ],
     officialLinks: [],
+    externalProfiles: [
+      {
+        label: "DIMISI Technologies Team",
+        url: "https://dimisi.tech",
+        verified: true,
+        note: "Official engineering team roster.",
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/company/dimisi-technologies",
+        verified: true,
+        note: "Company organization directory.",
+      },
+    ],
     sourceIds: ["src-team-roster", "src-linkedin-challenge-felicitation"],
     revisions: baseRevisions("2026-09-12"),
     createdAt: "2026-09-12",
-    updatedAt: "2026-09-12",
+    updatedAt: "2026-10-11",
     seoTitle: "Anushka Tripathi — Full Stack Web Developer Intern | DIMISIPEDIA",
     seoDescription:
       "Anushka Tripathi is a Full Stack Web Developer Intern at DIMISI Technologies and 4th Position holder in the 30-Day LinkedIn Challenge.",
@@ -2358,7 +2437,7 @@ const projects: Entity[] = [
     sourceIds: ["src-kaand-dev"],
     revisions: baseRevisions("2026-09-04"),
     createdAt: "2026-09-04",
-    updatedAt: "2026-09-04",
+    updatedAt: "2026-10-11",
     seoTitle: "KAAND — Next-Generation Media & News Platform | DIMISIPEDIA",
     seoDescription:
       "KAAND is a next-generation mobile media and news platform developed by DIMISI Technologies using Flutter and Dart. Features, team, and development status.",
@@ -2656,7 +2735,7 @@ const projects: Entity[] = [
     sourceIds: ["src-dimisi-ops-spec"],
     revisions: baseRevisions("2026-09-04"),
     createdAt: "2026-09-04",
-    updatedAt: "2026-09-04",
+    updatedAt: "2026-10-11",
     seoTitle: "DIMISI-OPS — Internal Employee & Operations Management System | DIMISIPEDIA",
     seoDescription:
       "DIMISI-OPS is an internal employee management and task assignment platform developed by DIMISI Technologies for internal company operations.",

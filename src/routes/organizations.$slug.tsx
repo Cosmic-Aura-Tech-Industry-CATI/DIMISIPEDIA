@@ -8,6 +8,9 @@ import { organizationEntity } from "@/data/knowledge";
  */
 export const Route = createFileRoute("/organizations/$slug")({
   beforeLoad: ({ params }) => {
+    if (params.slug === "$slug" || params.slug.startsWith("$")) {
+      throw redirect({ to: "/organizations", statusCode: 301 });
+    }
     if (params.slug === organizationEntity.slug) {
       throw redirect({ to: "/dimisi-technologies", statusCode: 301 });
     }

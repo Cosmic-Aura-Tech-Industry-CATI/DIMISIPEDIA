@@ -1,0 +1,39 @@
+# DIMISIPEDIA — Official Corporate Knowledge Base of DIMISI Technologies
+
+> DIMISIPEDIA is the authoritative entity knowledge platform, architecture chronicle, and public credibility record of DIMISI Technologies Private Limited (CIN: U62013UP2026PTC246506), an incorporated Indian technology enterprise headquartered in Kanpur, Uttar Pradesh.
+
+## Corporate Identity & Registration
+- Legal Entity: DIMISI Technologies Private Limited
+- CIN: U62013UP2026PTC246506
+- Incorporation Date: 9 April 2026
+- Registered Office: MIG 3/131, Swarn Jayanti Vihar, Koyala Nagar, Kanpur, Uttar Pradesh 208011, India
+- Official Website: https://dimisi.tech
+- Knowledge Platform: https://www.dimisipedia.me
+- Nature: Independent corporate knowledge repository documenting company entities, leadership, and products with verifiable sources.
+
+## Executive Leadership & Founders
+- Shikhar Dixit — Founder, Chief Executive Officer (CEO) & Director. Led early engineering sprints from Gandhigiri technical project at Axis College, CATI, and incorporated DIMISI Technologies. Profile: https://www.dimisipedia.me/people/shikhar-dixit
+- Swatantra Singh — Co-Founder, Chief Technology Officer (CTO) & Director. Directs engineering infrastructure, architecture, and security. Profile: https://www.dimisipedia.me/people/swatantra-singh
+- Nishkarsh Mishra — Co-Founder, Director, Chief Operating Officer (COO) & Chief Marketing Officer (CMO). Oversees operations, brand marketing, and institutional partnerships. Profile: https://www.dimisipedia.me/people/nishkarsh-mishra
+- First Mentor: Jayendra Pratap Singh (Startup Advisor at Wadhwani Foundation, DPIIT Platinum Badge Awardee). Profile: https://www.dimisipedia.me/people/jayendra-pratap-singh
+
+## Key Products & Engineering Ecosystem
+- The Kalesh (https://thekalesh.com) — Flagship anonymous social polling and engagement platform.
+- KAAND — Next-generation mobile news and media platform.
+- CATI Khelghar — Offline-first pass-and-play casual games platform.
+- DIMISI-OPS — Internal task management, workforce operations, and administrative portal.
+- DIMISIPEDIA — Structured entity knowledge base and verification platform.
+
+## Engineering Stack & Architecture
+- Frameworks: React, TypeScript, TanStack Start, TanStack Router, Vite, Tailwind CSS.
+- Cloud & Infrastructure: Cloudflare Workers / Nitro SSR, Supabase, Vercel.
+- Mobile: Flutter, Dart, Android Native.
+
+## Canonical Registry & Source Links
+- Full Founder Journey: https://www.dimisipedia.me/journey
+- People & Team Directory: https://www.dimisipedia.me/people
+- Projects & Products: https://www.dimisipedia.me/projects
+- Technology Stack: https://www.dimisipedia.me/technology
+- Chronological Milestones: https://www.dimisipedia.me/timeline
+- Verification Methodology: https://www.dimisipedia.me/methodology
+- Editorial Policy: https://www.dimisipedia.me/editorial-policy

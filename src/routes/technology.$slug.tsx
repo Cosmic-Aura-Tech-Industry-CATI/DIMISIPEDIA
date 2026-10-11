@@ -1,4 +1,4 @@
-import { createFileRoute, notFound } from "@tanstack/react-router";
+import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
 import { EntityArticle } from "@/components/EntityArticle";
 import { technologyEntities } from "@/data/knowledge";
 import { entityHead, pageHead } from "@/lib/seo";
@@ -11,6 +11,9 @@ const trailFor = (name: string) => [
 
 export const Route = createFileRoute("/technology/$slug")({
   loader: ({ params }) => {
+    if (params.slug === "$slug" || params.slug.startsWith("$")) {
+      throw redirect({ to: "/technology", statusCode: 301 });
+    }
     const tech = technologyEntities.find((t) => t.slug === params.slug);
     if (!tech) throw notFound();
     return { tech };
