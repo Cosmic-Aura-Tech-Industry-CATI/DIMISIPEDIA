@@ -57,14 +57,14 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
 
   return (
     <div className="mx-auto max-w-2xl px-5 py-24">
-      <p className="label-mono">{isOffline ? "Network Offline" : "System Notification"}</p>
+      <p className="label-mono">{isOffline ? "Offline Archive Mode" : "Notice"}</p>
       <h1 className="mt-2 text-2xl font-serif">
-        {isOffline ? "Connection Disconnected" : "This page didn't load"}
+        {isOffline ? "Unable to connect to server" : "This page didn't load"}
       </h1>
       <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
         {isOffline
-          ? "Your device has lost internet connectivity. You can jump directly to the offline Dinosaur Runner or test reconnecting."
-          : "Something went wrong. You can try again or return to the archive index."}
+          ? "You are currently browsing in offline standby mode. Cached documentation and leadership records remain available."
+          : "Something went wrong loading this entry. You can try again or return to the archive index."}
       </p>
       <div className="mt-6 flex flex-wrap items-center gap-3 text-sm">
         <button
@@ -78,13 +78,13 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
         </button>
         <Link
           to="/offline"
-          className="border border-primary bg-primary px-4 py-2 font-mono text-xs text-primary-foreground hover:bg-primary/90 transition-colors"
+          className="border border-border bg-surface px-4 py-2 font-mono text-xs text-foreground hover:border-primary transition-colors"
         >
-          Play Dinosaur Runner (Offline Mode)
+          Offline Archive
         </Link>
         <a
           href="/"
-          className="border border-border px-4 py-2 hover:border-primary font-mono text-xs"
+          className="border border-primary bg-primary px-4 py-2 font-mono text-xs text-primary-foreground hover:bg-primary/90 transition-colors"
         >
           Go home
         </a>
@@ -114,18 +114,18 @@ function OfflineBanner() {
   return (
     <aside
       aria-label="Offline status banner"
-      className="sticky top-0 z-50 flex flex-wrap items-center justify-between gap-2 border-b border-amber-500/40 bg-amber-500/15 px-4 py-2 text-xs text-amber-900 dark:text-amber-100 backdrop-blur-md"
+      className="sticky top-0 z-50 flex flex-wrap items-center justify-between gap-2 border-b border-rule bg-surface/95 px-4 py-2 text-xs text-muted-foreground backdrop-blur-md"
     >
       <div className="flex items-center gap-2">
         <span className="size-2 rounded-full bg-amber-500 animate-pulse" />
-        <span className="font-mono font-medium">Network Offline</span>
-        <span className="hidden sm:inline text-muted-foreground">— Connection lost.</span>
+        <span className="font-mono font-medium text-foreground">Offline Archive Mode</span>
+        <span className="hidden sm:inline">— Currently viewing locally cached entries.</span>
       </div>
       <Link
         to="/offline"
-        className="border border-amber-600/40 bg-amber-600/20 px-2.5 py-0.5 font-mono text-[11px] font-semibold uppercase tracking-wider text-amber-900 dark:text-amber-100 hover:bg-amber-600 hover:text-white transition-colors"
+        className="border border-border bg-background px-2.5 py-0.5 font-mono text-[11px] font-medium text-foreground hover:border-primary transition-colors"
       >
-        Play Dino Game →
+        Offline Details →
       </Link>
     </aside>
   );

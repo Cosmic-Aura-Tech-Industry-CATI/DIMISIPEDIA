@@ -35,11 +35,11 @@ function Terms() {
           unless attributed otherwise. Quotation with attribution and a link to the source entry is
           permitted.
         </p>
-        <h2 className="mt-6 text-xl">Independent Repository &amp; Non-Affiliation</h2>
+        <h2 className="mt-6 text-xl">Corporate Repository &amp; Authority</h2>
         <p>
-          DIMISIPEDIA is an independent publication of DIMISI Technologies Pvt. Ltd. (CIN:
-          U62013UP2026PTC246506). DIMISIPEDIA is not affiliated with, sponsored by, authorized by,
-          or endorsed by the Wikimedia Foundation, Wikipedia, or any governmental authority.
+          DIMISIPEDIA is an independent corporate publication of DIMISI Technologies Pvt. Ltd. (CIN:
+          U62013UP2026PTC246506). All documentation, entity chronicles, and architectural records
+          represent first-party disclosures maintained under corporate editorial standards.
         </p>
         <p>
           Corrections and verification requests may be sent to DIMISI Technologies through{" "}

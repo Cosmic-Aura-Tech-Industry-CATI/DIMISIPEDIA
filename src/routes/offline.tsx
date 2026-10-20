@@ -1,16 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { WifiOff, Wifi, RefreshCw, Home, Compass, BookOpen } from "lucide-react";
+import { WifiOff, Wifi, RefreshCw, Home, Compass, BookOpen, Layers } from "lucide-react";
 import { Breadcrumbs } from "@/components/EntityArticle";
-import { DinoGame } from "@/components/DinoGame";
 import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/offline")({
   head: () =>
     pageHead({
-      title: "Offline Mode & Dinosaur Runner | DIMISIPEDIA",
+      title: "Offline Reader Mode | DIMISIPEDIA",
       description:
-        "DIMISIPEDIA offline mode. Network connection is currently unavailable. Enjoy the classic Dinosaur Run game while connection restores.",
+        "DIMISIPEDIA offline mode. Access previously cached company records, founders, and engineering chronicles while offline.",
       path: "/offline",
       noindex: true,
     }),
@@ -50,7 +49,6 @@ function OfflinePage() {
   const handleCheckConnection = async () => {
     setIsChecking(true);
     try {
-      // Test small fetch to verify real internet connectivity
       const response = await fetch("/favicon.png?cacheBust=" + Date.now(), {
         method: "HEAD",
         cache: "no-store",
@@ -87,8 +85,10 @@ function OfflinePage() {
               className="size-10 object-contain drop-shadow-sm"
             />
             <div>
-              <p className="label-mono">Platform State · Network Standby</p>
-              <h1 className="font-serif text-3xl font-medium sm:text-4xl">Offline Archive Mode</h1>
+              <p className="label-mono">Platform State · Offline Archive</p>
+              <h1 className="font-serif text-3xl font-medium sm:text-4xl">
+                Offline Archive Reader
+              </h1>
             </div>
           </div>
 
@@ -96,29 +96,30 @@ function OfflinePage() {
             {isOnline ? (
               <span className="inline-flex items-center gap-2 border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 font-mono text-xs font-medium text-emerald-600 dark:text-emerald-400">
                 <Wifi className="size-3.5" />
-                <span>Connection Restored</span>
+                <span>Connection Active</span>
               </span>
             ) : (
               <span className="inline-flex items-center gap-2 border border-amber-500/40 bg-amber-500/10 px-3 py-1 font-mono text-xs font-medium text-amber-600 dark:text-amber-400">
                 <WifiOff className="size-3.5" />
-                <span>No Network Connection</span>
+                <span>Offline Archive Mode</span>
               </span>
             )}
           </div>
         </div>
 
         <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-          Your device or local network lost connection to the Internet. DIMISIPEDIA has
-          automatically shifted into offline standby mode. While your connection is being restored,
-          you can enjoy the official DIMISIPEDIA Dinosaur Runner arcade below!
+          DIMISIPEDIA is running in offline archive mode. The core application shell and previously
+          visited entries remain stored in your browser&apos;s service worker cache.
         </p>
 
         {reconnectSuccess ? (
           <div className="mt-4 flex items-center justify-between border border-emerald-500/30 bg-emerald-500/10 p-3 text-sm text-emerald-700 dark:text-emerald-300">
-            <span className="font-medium">Internet detected! You can return to browsing now.</span>
+            <span className="font-medium">
+              Internet detected! You can return to live browsing now.
+            </span>
             <button
               onClick={() => (window.location.href = "/")}
-              className="border border-emerald-600 bg-emerald-600 px-3 py-1 font-mono text-xs font-semibold text-white transition-colors hover:bg-emerald-700"
+              className="border border-emerald-600 bg-emerald-600 px-3 py-1 font-mono text-xs font-semibold text-white transition-colors hover:bg-emerald-700 cursor-pointer"
             >
               Reload Page
             </button>
@@ -126,18 +127,35 @@ function OfflinePage() {
         ) : null}
       </header>
 
-      {/* Dinosaur Run Game Section */}
-      <section className="mt-8 border border-border bg-surface p-4 sm:p-6 shadow-sm">
-        <DinoGame />
+      {/* Offline Status & Guide */}
+      <section className="mt-8 border border-border bg-surface p-6">
+        <h2 className="font-serif text-xl font-medium">Available Offline Features</h2>
+        <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+          DIMISIPEDIA uses progressive caching to keep essential corporate documentation and
+          leadership records available even with intermittent or zero internet connectivity.
+        </p>
+        <ul className="mt-4 space-y-2 text-xs font-mono text-muted-foreground">
+          <li className="flex items-center gap-2">
+            <span className="size-1.5 rounded-full bg-primary" />
+            <span>Cached corporate metadata, registration records, and statutory identifiers</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="size-1.5 rounded-full bg-primary" />
+            <span>Previously opened leadership profiles and entity dossiers</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="size-1.5 rounded-full bg-primary" />
+            <span>Local full-text keyword search across preloaded records</span>
+          </li>
+        </ul>
       </section>
 
       {/* Actions & Diagnostic Details */}
       <section className="mt-8 grid gap-4 sm:grid-cols-2">
         <div className="border border-border bg-surface p-5">
-          <h2 className="font-serif text-lg font-medium">Network Reconnection</h2>
+          <h2 className="font-serif text-lg font-medium">Verify Connection</h2>
           <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
-            If your Wi-Fi, optical fiber, or mobile cellular data has resumed, click below to verify
-            live connection with the DIMISIPEDIA servers.
+            Click below to test connection with the DIMISIPEDIA servers.
           </p>
 
           <button
@@ -154,7 +172,7 @@ function OfflinePage() {
         <div className="border border-border bg-surface p-5">
           <h2 className="font-serif text-lg font-medium">Quick Navigation</h2>
           <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
-            Previously visited encyclopedia pages may still reside in your local browser cache:
+            Return to saved encyclopedia sections:
           </p>
 
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
@@ -178,6 +196,13 @@ function OfflinePage() {
             >
               <BookOpen className="size-3" />
               <span>People</span>
+            </Link>
+            <Link
+              to="/projects"
+              className="inline-flex items-center gap-1.5 border border-border bg-background px-3 py-1.5 font-mono text-muted-foreground hover:border-primary hover:text-foreground transition-colors"
+            >
+              <Layers className="size-3" />
+              <span>Projects</span>
             </Link>
           </div>
         </div>

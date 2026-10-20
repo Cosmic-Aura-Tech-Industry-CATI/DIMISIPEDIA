@@ -108,8 +108,11 @@ const SUBSTRINGS: [RegExp, string][] = [
   [/Documented/gi, "Documented / Record Me Darj"],
 ];
 
-let observer: MutationObserver | null = null;
-const originalNodes = new WeakMap<Node, string>();
+/**
+ * NOTE: Active DOM TreeWalker / MutationObserver node modification has been
+ * disabled to comply with Google Safe Browsing and anti-cloaking security policies.
+ * Text translations remain available for direct string utilities.
+ */
 
 /** Translate a single text string into Hinglish */
 export function translateToHinglishText(text: string): string {
@@ -127,92 +130,17 @@ export function translateToHinglishText(text: string): string {
   return result;
 }
 
-/** Translate all text nodes inside a DOM tree to Hinglish */
-export function applyHinglishToDOM(root: Node = document.body) {
-  if (typeof window === "undefined" || !root) return;
-
-  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
-    acceptNode: (node) => {
-      const parent = node.parentElement;
-      if (!parent) return NodeFilter.FILTER_REJECT;
-      const tag = parent.tagName.toLowerCase();
-      if (
-        tag === "script" ||
-        tag === "style" ||
-        tag === "code" ||
-        tag === "pre" ||
-        parent.isContentEditable ||
-        parent.closest(".notranslate")
-      ) {
-        return NodeFilter.FILTER_REJECT;
-      }
-      return node.nodeValue && node.nodeValue.trim().length > 0
-        ? NodeFilter.FILTER_ACCEPT
-        : NodeFilter.FILTER_REJECT;
-    },
-  });
-
-  const nodes: Text[] = [];
-  let current: Node | null;
-  while ((current = walker.nextNode())) {
-    nodes.push(current as Text);
-  }
-
-  for (const node of nodes) {
-    const val = node.nodeValue;
-    if (!val) continue;
-    if (!originalNodes.has(node)) {
-      originalNodes.set(node, val);
-    }
-    const translated = translateToHinglishText(val);
-    if (translated !== val) {
-      node.nodeValue = translated;
-    }
-  }
+/** Translate text nodes inside a DOM tree - no-op for security compliance */
+export function applyHinglishToDOM(_root?: Node): void {
+  // No-op: active DOM manipulation removed to prevent cloaking heuristics
 }
 
-/** Restore original text nodes when switching away from Hinglish */
-export function restoreOriginalDOM(root: Node = document.body) {
-  if (typeof window === "undefined" || !root) return;
-
-  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-  let current: Node | null;
-  while ((current = walker.nextNode())) {
-    if (originalNodes.has(current)) {
-      const orig = originalNodes.get(current);
-      if (orig !== undefined && current.nodeValue !== orig) {
-        current.nodeValue = orig;
-      }
-    }
-  }
+/** Restore original text nodes - no-op for security compliance */
+export function restoreOriginalDOM(_root?: Node): void {
+  // No-op: active DOM manipulation removed to prevent cloaking heuristics
 }
 
-/** Activates or deactivates the whole-website Hinglish Translation observer */
-export function setHinglishActive(active: boolean) {
-  if (typeof window === "undefined") return;
-
-  if (observer) {
-    observer.disconnect();
-    observer = null;
-  }
-
-  if (active) {
-    applyHinglishToDOM();
-
-    // Observe future DOM changes (route navigations, dynamic content renders)
-    observer = new MutationObserver((mutations) => {
-      for (const mutation of mutations) {
-        for (const added of Array.from(mutation.addedNodes)) {
-          applyHinglishToDOM(added);
-        }
-      }
-    });
-
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
-    });
-  } else {
-    restoreOriginalDOM();
-  }
+/** Activates or deactivates the Hinglish observer - no-op for security compliance */
+export function setHinglishActive(_active: boolean): void {
+  // No-op: active DOM manipulation removed to prevent cloaking heuristics
 }

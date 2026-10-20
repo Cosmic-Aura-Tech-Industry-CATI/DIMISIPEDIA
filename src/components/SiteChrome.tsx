@@ -271,9 +271,9 @@ export function SiteFooter() {
               (CIN: U62013UP2026PTC246506) · Kanpur, Uttar Pradesh, India
             </p>
             <p className="text-[11px] text-muted-foreground/75 leading-relaxed">
-              DIMISIPEDIA is an independent corporate knowledge repository. It is not affiliated
-              with, sponsored by, or endorsed by the Wikimedia Foundation, Wikipedia, or any
-              government portal.
+              DIMISIPEDIA is the official corporate knowledge platform owned and operated
+              exclusively by DIMISI Technologies Pvt. Ltd. All records, profiles, and milestones are
+              documented with verification status.
             </p>
           </div>
           <a

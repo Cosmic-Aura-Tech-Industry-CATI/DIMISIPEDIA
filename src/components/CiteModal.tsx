@@ -15,10 +15,10 @@ interface CiteModalProps {
   entity: Entity;
 }
 
-type Format = "wikipedia" | "apa" | "bibtex" | "chicago" | "mla";
+type Format = "apa" | "bibtex" | "mediawiki" | "chicago" | "mla";
 
 export function CiteModal({ entity }: CiteModalProps) {
-  const [format, setFormat] = useState<Format>("wikipedia");
+  const [format, setFormat] = useState<Format>("apa");
   const [copied, setCopied] = useState(false);
 
   const today = new Date().toISOString().split("T")[0]!;
@@ -26,10 +26,6 @@ export function CiteModal({ entity }: CiteModalProps) {
   const cleanTitle = `${entity.name} — ${entity.subtitle || entity.shortDescription}`;
 
   const citations: Record<Format, { label: string; text: string }> = {
-    wikipedia: {
-      label: "MediaWiki / Wikipedia Syntax",
-      text: `{{cite web |url=${canonicalUrl} |title=${cleanTitle} |website=DIMISIPEDIA — Knowledge Base of DIMISI Technologies |access-date=${today}}}`,
-    },
     apa: {
       label: "APA 7th Edition",
       text: `DIMISIPEDIA Editorial. (${today.split("-")[0]}). ${entity.name}: ${entity.subtitle || entity.shortDescription}. DIMISIPEDIA. Retrieved ${today}, from ${canonicalUrl}`,
@@ -43,6 +39,10 @@ export function CiteModal({ entity }: CiteModalProps) {
   url = {${canonicalUrl}},
   note = {Accessed: ${today}}
 }`,
+    },
+    mediawiki: {
+      label: "MediaWiki Syntax",
+      text: `{{cite web |url=${canonicalUrl} |title=${cleanTitle} |website=DIMISIPEDIA — Knowledge Base of DIMISI Technologies |access-date=${today}}}`,
     },
     chicago: {
       label: "Chicago (17th ed.)",
@@ -72,7 +72,7 @@ export function CiteModal({ entity }: CiteModalProps) {
         <button
           type="button"
           className="inline-flex items-center gap-1.5 border border-border bg-surface px-3 py-1.5 text-xs font-mono text-muted-foreground transition-colors hover:border-primary hover:text-foreground cursor-pointer"
-          title="Cite this entity profile in Wikipedia, academic papers, or publications"
+          title="Cite this entity profile in academic papers, documentation, or publications"
         >
           <Quote className="size-3.5" />
           <span>Cite this entry</span>
@@ -134,8 +134,8 @@ export function CiteModal({ entity }: CiteModalProps) {
           </p>
           <p>Maintained by DIMISI Technologies Pvt. Ltd. (CIN: U62013UP2026PTC246506).</p>
           <p className="text-[10px] text-muted-foreground/80">
-            DIMISIPEDIA is an independent knowledge archive and corporate repository. It is not
-            affiliated with, endorsed by, or associated with the Wikimedia Foundation or Wikipedia.
+            DIMISIPEDIA is an independent corporate knowledge platform and registry maintained
+            exclusively by DIMISI Technologies Pvt. Ltd.
           </p>
         </div>
       </DialogContent>

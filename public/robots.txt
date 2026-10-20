@@ -19,6 +19,7 @@ Allow: /
 Disallow: /search
 Disallow: /seo-audit
 Disallow: /api/
+Disallow: /*$*
 
 User-agent: GoogleOther
 Allow: /
