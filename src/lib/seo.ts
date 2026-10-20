@@ -109,7 +109,7 @@ export function buildWebsiteSchema(): Json {
     url: `${SITE_URL}/`,
     inLanguage: "en",
     description:
-      "DIMISIPEDIA is an authoritative entity knowledge platform documenting DIMISI Technologies Pvt. Ltd., its founders, people, projects, technologies, and history.",
+      "DIMISIPEDIA is an authoritative entity knowledge platform documenting DIMISI Technologies Pvt. Ltd., its founders, enterprise business software solutions, products, engineering architecture, and corporate history.",
     publisher: { "@id": `${SITE_URL}/dimisi-technologies#organization` },
     potentialAction: {
       "@type": "SearchAction",
@@ -137,7 +137,7 @@ export function buildSiteNavigationSchema(): Json {
       name: "DIMISI Technologies",
       url: `${SITE_URL}/dimisi-technologies`,
       description:
-        "Corporate overview, CIN: U62013UP2026PTC246506, leadership, and products of DIMISI Technologies Pvt. Ltd.",
+        "Corporate overview, CIN: U62013UP2026PTC246506, leadership, enterprise business software solutions, and products of DIMISI Technologies Pvt. Ltd.",
     },
     {
       name: "Kalesh Platform",
@@ -153,7 +153,8 @@ export function buildSiteNavigationSchema(): Json {
     {
       name: "Projects & Products",
       url: `${SITE_URL}/projects`,
-      description: "Software products, applications, and engineering projects.",
+      description:
+        "Enterprise business software, operations platforms (DIMISI-OPS), and applications.",
     },
     {
       name: "Timeline & Milestones",
@@ -521,6 +522,74 @@ export function buildOrganizationSchema(entity: Entity): Json {
     foundingDate: fact("Incorporated") ?? fact("Founded") ?? "2026-04-09",
     taxID: fact("CIN") ?? "U62013UP2026PTC246506",
     identifier: fact("CIN") ?? "U62013UP2026PTC246506",
+    slogan:
+      "Engineering Scalable Business Software, Digital Products & Intelligent Enterprise Systems",
+    knowsAbout: entity.knowsAbout ?? [
+      "Custom Business Software Solutions",
+      "Enterprise Software Engineering",
+      "Operations Management Systems",
+      "Enterprise Resource Planning (ERP)",
+      "B2B SaaS Architecture",
+      "Full-Stack Web Development",
+      "Cloud-Native Infrastructure",
+      "AI Automation & Workflow Systems",
+      "Cross-Platform Mobile Engineering",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Flutter",
+    ],
+    areaServed: [
+      { "@type": "Country", name: "India" },
+      { "@type": "AdministrativeArea", name: "Worldwide" },
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Enterprise Software & Business Solutions Catalog",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Custom Enterprise & Business Software Development",
+            description:
+              "Engineering bespoke enterprise operations platforms, workforce management tools (including DIMISI-OPS), custom ERP/CRM architectures, and operational workflow software.",
+            provider: { "@id": entityId(entity) },
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Cloud-Native Web Application Engineering",
+            description:
+              "High-performance, secure, and scalable web application development utilizing Next.js, React, Node.js, TypeScript, and microservices architecture.",
+            provider: { "@id": entityId(entity) },
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "AI Workflow Automation & Intelligent Business Integrations",
+            description:
+              "Designing automated business logic, intelligent data pipelines, natural language query interfaces, and AI-powered operational tools.",
+            provider: { "@id": entityId(entity) },
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Cross-Platform Mobile Application Development",
+            description:
+              "Production-grade cross-platform mobile app development with Flutter and Dart for enterprise mobility and commercial platforms.",
+            provider: { "@id": entityId(entity) },
+          },
+        },
+      ],
+    },
     founder: Array.from(new Map(founders.map((r) => [r.entity.id, r.entity])).values()).map(
       (e) => ({
         "@type": "Person",
@@ -585,7 +654,49 @@ export function buildProjectSchema(entity: Entity): Json {
   const creatorPerson = people.find((r) => /Founder|Creator|Product|Lead/i.test(r.type));
   const tech = related.filter((r) => r.entity.entityType === "technology");
 
-  const isSoftwareApp = entity.id === "kalesh" || entity.id === "dimisipedia";
+  const softwareAppConfig: Record<string, { category: string; os: string; price?: string }> = {
+    "dimisi-ops": {
+      category: "BusinessApplication",
+      os: "Web, Cloud",
+    },
+    dimisipedia: {
+      category: "ReferenceApplication",
+      os: "Web",
+    },
+    kalesh: {
+      category: "SocialNetworkingApplication",
+      os: "Web, iOS, Android",
+      price: "0",
+    },
+    "cati-khelghar": {
+      category: "GameApplication",
+      os: "Web, Mobile",
+      price: "0",
+    },
+    kaand: {
+      category: "NewsApplication",
+      os: "Android, iOS",
+    },
+    "dimisi-corporate-platform": {
+      category: "BusinessApplication",
+      os: "Web",
+    },
+    "rudra-tours": {
+      category: "BusinessApplication",
+      os: "Web",
+    },
+    "yadhuvanshi-tours": {
+      category: "BusinessApplication",
+      os: "Web",
+    },
+    karyon: {
+      category: "BusinessApplication",
+      os: "Web, Mobile",
+    },
+  };
+
+  const appMeta = softwareAppConfig[entity.id];
+  const isSoftwareApp = Boolean(appMeta);
 
   const baseSchema: Json = {
     "@type": isSoftwareApp ? "SoftwareApplication" : "CreativeWork",
@@ -602,21 +713,23 @@ export function buildProjectSchema(entity: Entity): Json {
         ? { "@id": entityId(creatorOrg.entity) }
         : undefined,
     publisher: creatorOrg ? { "@id": entityId(creatorOrg.entity) } : undefined,
-    keywords: tech.map((r) => r.entity.name),
+    keywords: Array.from(new Set([...(entity.tags ?? []), ...tech.map((r) => r.entity.name)])),
     creativeWorkStatus: entity.lifecycle,
     dateCreated: toIsoDateTime(entity.createdAt),
     dateModified: toIsoDateTime(entity.updatedAt),
     citation: sourceCitations(entity),
   };
 
-  if (isSoftwareApp) {
-    baseSchema["applicationCategory"] = "SocialNetworkingApplication";
-    baseSchema["operatingSystem"] = "Web, iOS, Android";
-    baseSchema["offers"] = {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "INR",
-    };
+  if (isSoftwareApp && appMeta) {
+    baseSchema["applicationCategory"] = appMeta.category;
+    baseSchema["operatingSystem"] = appMeta.os;
+    if (appMeta.price !== undefined) {
+      baseSchema["offers"] = {
+        "@type": "Offer",
+        price: appMeta.price,
+        priceCurrency: "INR",
+      };
+    }
   }
 
   return clean(baseSchema);

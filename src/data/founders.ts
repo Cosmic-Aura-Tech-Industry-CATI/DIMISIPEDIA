@@ -319,9 +319,9 @@ const shikhar: Entity = {
   image: "/images/shikhar-dixit.png",
   birthDate: "2004-05-06",
   shortDescription:
-    "Indian technology entrepreneur and software developer; founder and chief executive officer of DIMISI Technologies Private Limited.",
+    "Indian technology entrepreneur and software engineer; Founder & Chief Executive Officer of DIMISI Technologies Private Limited, leading enterprise business software architecture, operations systems (DIMISI-OPS), and digital platforms.",
   answer:
-    "Shikhar Dixit is an Indian technology entrepreneur, software engineer, and the Founder & Chief Executive Officer (CEO) of DIMISI Technologies Private Limited, based in Kanpur, Uttar Pradesh. He is the creator and product architect of Kalesh (an anonymous social polling and engagement platform), DIMISIPEDIA, and the Gandhigiri Face Recognition System.",
+    "Shikhar Dixit is an Indian technology entrepreneur, software engineer, and the Founder & Chief Executive Officer (CEO) of DIMISI Technologies Private Limited, based in Kanpur, Uttar Pradesh. He is the principal product and software architect behind DIMISI's enterprise business software solutions (including DIMISI-OPS), consumer platforms (Kalesh), the DIMISIPEDIA entity knowledge platform, and commercial digital systems.",
   facts: [
     {
       label: "Born",
@@ -333,7 +333,7 @@ const shikhar: Entity = {
     },
     {
       label: "Occupation",
-      value: "Technology entrepreneur, software developer",
+      value: "Technology entrepreneur, software architect, executive engineer",
       status: "source-backed",
     },
     {
@@ -341,11 +341,16 @@ const shikhar: Entity = {
       value: "DIMISI Technologies Private Limited",
       status: "source-backed",
     },
-    { label: "Roles", value: "Founder · CEO · Director", status: "source-backed" },
+    {
+      label: "Roles",
+      value: "Founder · CEO · Director · Principal Software Architect",
+      status: "source-backed",
+    },
     { label: "Location", value: "Kanpur, Uttar Pradesh, India", status: "source-backed" },
     {
       label: "Known for",
-      value: "DIMISI Technologies, Kalesh, DIMISIPEDIA, Face Recognition",
+      value:
+        "DIMISI Technologies, Enterprise Business Software (DIMISI-OPS), Kalesh, DIMISIPEDIA, Face Recognition",
       status: "source-backed",
     },
     {
@@ -355,12 +360,22 @@ const shikhar: Entity = {
     },
   ],
   areas: [
+    "Enterprise Software Architecture",
+    "Custom Business Software",
+    "Operations Systems & Workflow Automation",
     "Artificial Intelligence",
     "Product Architecture",
     "Mobile & Web Engineering",
     "Technology Entrepreneurship",
   ],
   knowsAbout: [
+    "Enterprise Software Architecture",
+    "Custom Business Software Solutions",
+    "Operations Management Systems",
+    "Enterprise Resource Planning (ERP)",
+    "B2B SaaS Engineering",
+    "AI Workflow Automation",
+    "DIMISI-OPS",
     "Artificial Intelligence",
     "Face Recognition Systems",
     "Mobile Application Development",
@@ -372,7 +387,7 @@ const shikhar: Entity = {
     "Startup Leadership",
   ],
   disambiguatingDescription:
-    "Indian technology entrepreneur and software engineer; Founder & Chief Executive Officer of DIMISI Technologies Private Limited; creator and product architect of Kalesh, DIMISIPEDIA, and Gandhigiri Face Recognition System.",
+    "Indian technology entrepreneur and software engineer; Founder & Chief Executive Officer of DIMISI Technologies Private Limited; principal architect of enterprise business software (DIMISI-OPS), Kalesh, and DIMISIPEDIA.",
   gender: "https://schema.org/Male",
   awards: [
     "Gandhigiri Technical Project Recognition (Face Recognition System Showcase, Axis College)",
@@ -740,10 +755,11 @@ const shikhar: Entity = {
     "Expanded verified sameAs profiles, identity claim anchors, and Google Knowledge Graph disambiguation properties.",
   ),
   createdAt: ADDED,
-  updatedAt: "2026-08-21",
-  seoTitle: "Shikhar Dixit — Founder & CEO of DIMISI Technologies | Official Knowledge Profile",
+  updatedAt: "2026-10-20",
+  seoTitle:
+    "Shikhar Dixit — Founder & CEO of DIMISI Technologies | Enterprise Software Architect & Entrepreneur",
   seoDescription:
-    "Official Google Knowledge Graph profile of Shikhar Dixit: Indian technology entrepreneur, software engineer, and Founder & CEO of DIMISI Technologies Private Limited in Kanpur, Uttar Pradesh. Creator of Kalesh and DIMISIPEDIA.",
+    "Official entity profile of Shikhar Dixit: Founder & CEO of DIMISI Technologies Private Limited. Principal software architect of DIMISI-OPS, Kalesh, and DIMISIPEDIA; technology entrepreneur and enterprise software leader based in Kanpur, UP.",
 };
 
 /* ---------------------------------------------------------- person: Nishkarsh */

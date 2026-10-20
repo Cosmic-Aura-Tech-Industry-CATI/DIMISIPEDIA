@@ -18,8 +18,10 @@ import { article as whatIsKalesh } from "./what-is-kalesh";
 import { article as historyDimisi } from "./history-of-dimisi-technologies";
 import { article as timelineDimisi } from "./timeline-of-dimisi-technologies";
 import { article as foundingBrotherhood } from "./the-founding-brotherhood";
+import { article as businessSoftware } from "./business-software-solutions-dimisi";
 
 export const articleRegistry: Article[] = [
+  businessSoftware,
   foundingBrotherhood,
   whoIsShikhar,
   whatIsKalesh,
