@@ -164,6 +164,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "apple-touch-icon", href: "/favicon.png" },
       { rel: "manifest", href: "/manifest.webmanifest" },
+      {
+        rel: "alternate",
+        type: "application/rss+xml",
+        title: "DIMISIPEDIA Official Blog & Knowledge Feed",
+        href: "/feed.xml",
+      },
       { rel: "author", href: "/llms.txt" },
       { rel: "help", href: "/llms.txt", type: "text/plain", title: "LLM Knowledge Index" },
     ],

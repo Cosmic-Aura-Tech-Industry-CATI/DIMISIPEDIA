@@ -199,6 +199,7 @@ export function getPagesEntries(): SitemapEntry[] {
     { path: "/projects", priority: "0.9", changefreq: "weekly" },
     { path: "/technology", priority: "0.8", changefreq: "weekly" },
     { path: "/articles", priority: "0.9", changefreq: "daily" },
+    { path: "/blog", priority: "0.9", changefreq: "daily" },
   ];
 
   return pagesConfig.map((p) => ({

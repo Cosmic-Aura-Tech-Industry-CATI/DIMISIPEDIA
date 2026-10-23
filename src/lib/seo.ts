@@ -140,6 +140,12 @@ export function buildSiteNavigationSchema(): Json {
         "Corporate overview, CIN: U62013UP2026PTC246506, leadership, enterprise business software solutions, and products of DIMISI Technologies Pvt. Ltd.",
     },
     {
+      name: "DIMISIPEDIA Blog",
+      url: `${SITE_URL}/blog`,
+      description:
+        "Official blog featuring engineering architecture, technology analysis, and leadership perspectives by Shikhar Dixit.",
+    },
+    {
       name: "Kalesh Platform",
       url: `${SITE_URL}/projects/kalesh`,
       description:
@@ -989,6 +995,7 @@ export function canonicalUrls(): SitemapUrlEntry[] {
     { path: "/explore", lastmod: TODAY, priority: "0.7" },
     { path: "/events", lastmod: TODAY, priority: "0.4" },
     { path: "/articles", lastmod: TODAY, priority: "0.4" },
+    { path: "/blog", lastmod: TODAY, priority: "0.8" },
     { path: "/sources", lastmod: TODAY, priority: "0.6" },
     { path: "/methodology", lastmod: TODAY, priority: "0.7" },
     { path: "/credibility", lastmod: TODAY, priority: "0.6" },
@@ -1052,8 +1059,32 @@ export function articleId(article: Article): string {
 export function buildArticleSchema(article: Article): Json {
   const author = resolveAuthor(article.authorId);
   const related = articleEntities(article);
+  const isShikhar = author.entity?.id === "shikhar-dixit" || author.name.includes("Shikhar");
+
+  const authorSchema = author.entity
+    ? {
+        "@type": "Person",
+        "@id": entityId(author.entity),
+        name: author.name,
+        url: abs(author.entity.path),
+        jobTitle: author.entity.subtitle || (isShikhar ? "Founder & CEO" : "Executive"),
+        sameAs: sameAsUrls(author.entity),
+      }
+    : {
+        "@type": "Person",
+        "@id": `${SITE_URL}/people/shikhar-dixit#person`,
+        name: "Shikhar Dixit",
+        jobTitle: "Founder & CEO",
+        url: `${SITE_URL}/people/shikhar-dixit`,
+        sameAs: [
+          "https://www.linkedin.com/in/shikhardixit/",
+          "https://x.com/ShikharDixit_",
+          "https://github.com/ShikharDixit-1",
+        ],
+      };
+
   return clean({
-    "@type": "Article",
+    "@type": ["BlogPosting", "Article"],
     "@id": articleId(article),
     headline: article.title,
     description: article.excerpt,
@@ -1065,10 +1096,29 @@ export function buildArticleSchema(article: Article): Json {
     keywords: article.tags,
     image: article.coverImage ? abs(article.coverImage) : undefined,
     inLanguage: "en",
-    author: author.entity
-      ? { "@id": entityId(author.entity) }
-      : { "@type": "Organization", name: author.name },
-    publisher: { "@id": `${SITE_URL}/dimisi-technologies#organization` },
+    isPartOf: {
+      "@type": "Blog",
+      "@id": `${SITE_URL}/blog#blog`,
+      name: "DIMISIPEDIA Official Blog",
+      url: `${SITE_URL}/blog`,
+    },
+    author: authorSchema,
+    publisher: {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/dimisi-technologies#organization`,
+      name: "DIMISI Technologies Pvt. Ltd.",
+      url: `${SITE_URL}/dimisi-technologies`,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/images/dimisipedia-logo.png`,
+        width: "512",
+        height: "512",
+      },
+    },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", ".article-excerpt", "article p:first-of-type"],
+    },
     about: related.map((e) => ({ "@id": entityId(e) })),
     mentions: related.map((e) => ({ "@id": entityId(e) })),
     citation: articleSources(article)

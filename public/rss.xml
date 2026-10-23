@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>DIMISIPEDIA Official Blog &amp; Knowledge Feed</title>
+    <link>https://www.dimisipedia.me/blog</link>
+    <description>Authoritative insights on enterprise software engineering, architecture, and technology from DIMISI Technologies Pvt. Ltd., authored by Shikhar Dixit and the leadership team.</description>
+    <language>en</language>
+    <lastBuildDate>Tue, 20 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://www.dimisipedia.me/feed.xml" rel="self" type="application/rss+xml" />
+    <image>
+      <url>https://www.dimisipedia.me/images/dimisipedia-logo.png</url>
+      <title>DIMISIPEDIA</title>
+      <link>https://www.dimisipedia.me/blog</link>
+    </image>
+    <item>
+      <title>DIMISI Technologies: Engineering Scalable Business Software &amp; Enterprise Operations</title>
+      <link>https://www.dimisipedia.me/articles/business-software-solutions-dimisi</link>
+      <guid isPermaLink="true">https://www.dimisipedia.me/articles/business-software-solutions-dimisi</guid>
+      <pubDate>Tue, 20 Oct 2026 00:00:00 GMT</pubDate>
+      <dc:creator>Shikhar Dixit</dc:creator>
+      <category>Engineering</category>
+      <description>An architectural exploration of how DIMISI Technologies engineers scalable custom business software, enterprise operations platforms (DIMISI-OPS), high-performance web systems, and AI-driven automation.</description>
+    </item>
+    <item>
+      <title>The Founding Brotherhood: Shikhar Dixit, Nishkarsh Mishra &amp; Swatantra Singh</title>
+      <link>https://www.dimisipedia.me/articles/the-founding-brotherhood</link>
+      <guid isPermaLink="true">https://www.dimisipedia.me/articles/the-founding-brotherhood</guid>
+      <pubDate>Fri, 21 Aug 2026 00:00:00 GMT</pubDate>
+      <dc:creator>DIMISIPEDIA Editorial</dc:creator>
+      <category>People</category>
+      <description>The complete documented history of the founding friendship and leadership trio behind DIMISI Technologies: how three Axis College computer science students united from a 6-hour hackathon to form CATI, Kalesh, and incorporate DIMISI Technologies.</description>
+      <enclosure url="https://www.dimisipedia.me/images/Shikhar Nish Swat.jpeg" type="image/png" length="102400" />
+    </item>
+    <item>
+      <title>Who is Shikhar Dixit? Biography, Leadership &amp; Innovations</title>
+      <link>https://www.dimisipedia.me/articles/who-is-shikhar-dixit</link>
+      <guid isPermaLink="true">https://www.dimisipedia.me/articles/who-is-shikhar-dixit</guid>
+      <pubDate>Fri, 21 Aug 2026 00:00:00 GMT</pubDate>
+      <dc:creator>DIMISIPEDIA Editorial</dc:creator>
+      <category>People</category>
+      <description>An authoritative biographical profile of Shikhar Dixit: Indian technology entrepreneur, Founder &amp; CEO of DIMISI Technologies Private Limited, creator of Kalesh, and alumnus of Axis College, Kanpur.</description>
+    </item>
+    <item>
+      <title>What is Kalesh? The Anonymous Social Polling Platform</title>
+      <link>https://www.dimisipedia.me/articles/what-is-kalesh</link>
+      <guid isPermaLink="true">https://www.dimisipedia.me/articles/what-is-kalesh</guid>
+      <pubDate>Fri, 21 Aug 2026 00:00:00 GMT</pubDate>
+      <dc:creator>Shikhar Dixit</dc:creator>
+      <category>Projects</category>
+      <description>An architectural and conceptual breakdown of Kalesh: the anonymous social voting, campus sentiment, and debate platform created by Shikhar Dixit and engineered by DIMISI Technologies.</description>
+    </item>
+    <item>
+      <title>The History of DIMISI Technologies Private Limited</title>
+      <link>https://www.dimisipedia.me/articles/history-of-dimisi-technologies</link>
+      <guid isPermaLink="true">https://www.dimisipedia.me/articles/history-of-dimisi-technologies</guid>
+      <pubDate>Fri, 21 Aug 2026 00:00:00 GMT</pubDate>
+      <dc:creator>DIMISIPEDIA Editorial</dc:creator>
+      <category>Startup</category>
+      <description>A chronological history of DIMISI Technologies: from a 2024 home engineering sprint for Axis College&apos;s Gandhigiri technical presenting event to Cosmic Aura Tech Industry (CATI), campus incubator office allocation, and corporate incorporation.</description>
+    </item>
+    <item>
+      <title>Timeline of Key Milestones: DIMISI Technologies (2024–2026)</title>
+      <link>https://www.dimisipedia.me/articles/timeline-of-dimisi-technologies</link>
+      <guid isPermaLink="true">https://www.dimisipedia.me/articles/timeline-of-dimisi-technologies</guid>
+      <pubDate>Fri, 21 Aug 2026 00:00:00 GMT</pubDate>
+      <dc:creator>DIMISIPEDIA Editorial</dc:creator>
+      <category>Startup</category>
+      <description>A structured chronological review of all major milestones in the development of DIMISI Technologies and its ecosystem products, from initial hackathons to corporate incorporation.</description>
+    </item>
+    <item>
+      <title>How DIMISIPEDIA verifies information</title>
+      <link>https://www.dimisipedia.me/articles/how-dimisipedia-verifies-information</link>
+      <guid isPermaLink="true">https://www.dimisipedia.me/articles/how-dimisipedia-verifies-information</guid>
+      <pubDate>Sat, 15 Aug 2026 00:00:00 GMT</pubDate>
+      <dc:creator>DIMISIPEDIA Editorial</dc:creator>
+      <category>Analysis</category>
+      <description>DIMISIPEDIA verifies claims, not people. This article explains the five verification states, the four-tier source hierarchy and the rule that an editorial status can lower a claim&apos;s standing but never raise it.</description>
+    </item>
+  </channel>
+</rss>

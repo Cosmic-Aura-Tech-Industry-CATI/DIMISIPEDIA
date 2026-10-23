@@ -12,8 +12,11 @@ import {
   generateTimelineSitemapXml,
   generateImagesSitemapXml,
 } from "../src/lib/sitemap";
+import { generateRssFeedXml } from "../src/lib/rss";
 
 const publicDir = path.resolve(process.cwd(), "public");
+
+const rssXml = generateRssFeedXml();
 
 const files: Record<string, string> = {
   "sitemap.xml": generateSitemapIndexXml(),
@@ -26,6 +29,8 @@ const files: Record<string, string> = {
   "sitemap-events.xml": generateEventsSitemapXml(),
   "sitemap-timeline.xml": generateTimelineSitemapXml(),
   "sitemap-images.xml": generateImagesSitemapXml(),
+  "feed.xml": rssXml,
+  "rss.xml": rssXml,
 };
 
 console.log("Generating enterprise XML sitemaps to public/...");

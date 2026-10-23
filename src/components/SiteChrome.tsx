@@ -13,6 +13,7 @@ const nav = [
   { to: "/technology", label: "Technology" },
   { to: "/timeline", label: "Timeline" },
   { to: "/events", label: "Events" },
+  { to: "/blog", label: "Blog" },
   { to: "/articles", label: "Articles" },
 ];
 
@@ -221,6 +222,21 @@ export function SiteFooter() {
               <Link to="/credibility" className="text-muted-foreground hover:text-foreground">
                 Credibility Standards
               </Link>
+            </li>
+            <li>
+              <Link to="/blog" className="text-muted-foreground hover:text-foreground">
+                Blog &amp; Insights
+              </Link>
+            </li>
+            <li>
+              <a
+                href="/feed.xml"
+                target="_blank"
+                rel="noreferrer"
+                className="text-muted-foreground hover:text-foreground font-mono text-xs text-orange-500/90"
+              >
+                RSS Feed
+              </a>
             </li>
           </ul>
         </div>

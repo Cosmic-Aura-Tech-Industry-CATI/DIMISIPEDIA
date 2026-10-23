@@ -16,12 +16,14 @@ import { Route as DimisiTechnologiesRouteImport } from './routes/dimisi-technolo
 import { Route as EditorialPolicyRouteImport } from './routes/editorial-policy'
 import { Route as EventsRouteImport } from './routes/events'
 import { Route as ExploreRouteImport } from './routes/explore'
+import { Route as FeedDotxmlRouteImport } from './routes/feed[.]xml'
 import { Route as IndexnowKeyDottxtRouteImport } from './routes/indexnow-key[.]txt'
 import { Route as JourneyRouteImport } from './routes/journey'
 import { Route as MethodologyRouteImport } from './routes/methodology'
 import { Route as OfflineRouteImport } from './routes/offline'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PublicationsRouteImport } from './routes/publications'
+import { Route as RssDotxmlRouteImport } from './routes/rss[.]xml'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as SeoAuditRouteImport } from './routes/seo-audit'
 import { Route as SitemapArticlesDotxmlRouteImport } from './routes/sitemap-articles[.]xml'
@@ -40,6 +42,8 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TimelineRouteImport } from './routes/timeline'
 import { Route as ArticlesIndexRouteImport } from './routes/articles.index'
 import { Route as ArticlesSlugRouteImport } from './routes/articles.$slug'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as OrganizationsIndexRouteImport } from './routes/organizations.index'
 import { Route as OrganizationsSlugRouteImport } from './routes/organizations.$slug'
 import { Route as PeopleIndexRouteImport } from './routes/people.index'
@@ -89,6 +93,11 @@ const ExploreRoute = ExploreRouteImport.update({
   path: '/explore',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FeedDotxmlRoute = FeedDotxmlRouteImport.update({
+  id: '/feed.xml',
+  path: '/feed.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexnowKeyDottxtRoute = IndexnowKeyDottxtRouteImport.update({
   id: '/indexnow-key.txt',
   path: '/indexnow-key.txt',
@@ -117,6 +126,11 @@ const PrivacyRoute = PrivacyRouteImport.update({
 const PublicationsRoute = PublicationsRouteImport.update({
   id: '/publications',
   path: '/publications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RssDotxmlRoute = RssDotxmlRouteImport.update({
+  id: '/rss.xml',
+  path: '/rss.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SearchRoute = SearchRouteImport.update({
@@ -210,6 +224,16 @@ const ArticlesSlugRoute = ArticlesSlugRouteImport.update({
   path: '/articles/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OrganizationsIndexRoute = OrganizationsIndexRouteImport.update({
   id: '/organizations/',
   path: '/organizations/',
@@ -284,12 +308,14 @@ export interface FileRoutesByFullPath {
   '/editorial-policy': typeof EditorialPolicyRoute
   '/events': typeof EventsRoute
   '/explore': typeof ExploreRoute
+  '/feed.xml': typeof FeedDotxmlRoute
   '/indexnow-key.txt': typeof IndexnowKeyDottxtRoute
   '/journey': typeof JourneyRoute
   '/methodology': typeof MethodologyRoute
   '/offline': typeof OfflineRoute
   '/privacy': typeof PrivacyRoute
   '/publications': typeof PublicationsRoute
+  '/rss.xml': typeof RssDotxmlRoute
   '/search': typeof SearchRoute
   '/seo-audit': typeof SeoAuditRoute
   '/sitemap-articles.xml': typeof SitemapArticlesDotxmlRoute
@@ -307,11 +333,13 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/timeline': typeof TimelineRoute
   '/articles/$slug': typeof ArticlesSlugRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/organizations/$slug': typeof OrganizationsSlugRoute
   '/people/$slug': typeof PeopleSlugRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/technology/$slug': typeof TechnologySlugRoute
   '/articles/': typeof ArticlesIndexRoute
+  '/blog/': typeof BlogIndexRoute
   '/organizations/': typeof OrganizationsIndexRoute
   '/people/': typeof PeopleIndexRoute
   '/projects/': typeof ProjectsIndexRoute
@@ -330,12 +358,14 @@ export interface FileRoutesByTo {
   '/editorial-policy': typeof EditorialPolicyRoute
   '/events': typeof EventsRoute
   '/explore': typeof ExploreRoute
+  '/feed.xml': typeof FeedDotxmlRoute
   '/indexnow-key.txt': typeof IndexnowKeyDottxtRoute
   '/journey': typeof JourneyRoute
   '/methodology': typeof MethodologyRoute
   '/offline': typeof OfflineRoute
   '/privacy': typeof PrivacyRoute
   '/publications': typeof PublicationsRoute
+  '/rss.xml': typeof RssDotxmlRoute
   '/search': typeof SearchRoute
   '/seo-audit': typeof SeoAuditRoute
   '/sitemap-articles.xml': typeof SitemapArticlesDotxmlRoute
@@ -353,11 +383,13 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/timeline': typeof TimelineRoute
   '/articles/$slug': typeof ArticlesSlugRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/organizations/$slug': typeof OrganizationsSlugRoute
   '/people/$slug': typeof PeopleSlugRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/technology/$slug': typeof TechnologySlugRoute
   '/articles': typeof ArticlesIndexRoute
+  '/blog': typeof BlogIndexRoute
   '/organizations': typeof OrganizationsIndexRoute
   '/people': typeof PeopleIndexRoute
   '/projects': typeof ProjectsIndexRoute
@@ -377,12 +409,14 @@ export interface FileRoutesById {
   '/editorial-policy': typeof EditorialPolicyRoute
   '/events': typeof EventsRoute
   '/explore': typeof ExploreRoute
+  '/feed.xml': typeof FeedDotxmlRoute
   '/indexnow-key.txt': typeof IndexnowKeyDottxtRoute
   '/journey': typeof JourneyRoute
   '/methodology': typeof MethodologyRoute
   '/offline': typeof OfflineRoute
   '/privacy': typeof PrivacyRoute
   '/publications': typeof PublicationsRoute
+  '/rss.xml': typeof RssDotxmlRoute
   '/search': typeof SearchRoute
   '/seo-audit': typeof SeoAuditRoute
   '/sitemap-articles.xml': typeof SitemapArticlesDotxmlRoute
@@ -400,11 +434,13 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/timeline': typeof TimelineRoute
   '/articles/$slug': typeof ArticlesSlugRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/organizations/$slug': typeof OrganizationsSlugRoute
   '/people/$slug': typeof PeopleSlugRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/technology/$slug': typeof TechnologySlugRoute
   '/articles/': typeof ArticlesIndexRoute
+  '/blog/': typeof BlogIndexRoute
   '/organizations/': typeof OrganizationsIndexRoute
   '/people/': typeof PeopleIndexRoute
   '/projects/': typeof ProjectsIndexRoute
@@ -425,12 +461,14 @@ export interface FileRouteTypes {
     | '/editorial-policy'
     | '/events'
     | '/explore'
+    | '/feed.xml'
     | '/indexnow-key.txt'
     | '/journey'
     | '/methodology'
     | '/offline'
     | '/privacy'
     | '/publications'
+    | '/rss.xml'
     | '/search'
     | '/seo-audit'
     | '/sitemap-articles.xml'
@@ -448,11 +486,13 @@ export interface FileRouteTypes {
     | '/terms'
     | '/timeline'
     | '/articles/$slug'
+    | '/blog/$slug'
     | '/organizations/$slug'
     | '/people/$slug'
     | '/projects/$slug'
     | '/technology/$slug'
     | '/articles/'
+    | '/blog/'
     | '/organizations/'
     | '/people/'
     | '/projects/'
@@ -471,12 +511,14 @@ export interface FileRouteTypes {
     | '/editorial-policy'
     | '/events'
     | '/explore'
+    | '/feed.xml'
     | '/indexnow-key.txt'
     | '/journey'
     | '/methodology'
     | '/offline'
     | '/privacy'
     | '/publications'
+    | '/rss.xml'
     | '/search'
     | '/seo-audit'
     | '/sitemap-articles.xml'
@@ -494,11 +536,13 @@ export interface FileRouteTypes {
     | '/terms'
     | '/timeline'
     | '/articles/$slug'
+    | '/blog/$slug'
     | '/organizations/$slug'
     | '/people/$slug'
     | '/projects/$slug'
     | '/technology/$slug'
     | '/articles'
+    | '/blog'
     | '/organizations'
     | '/people'
     | '/projects'
@@ -517,12 +561,14 @@ export interface FileRouteTypes {
     | '/editorial-policy'
     | '/events'
     | '/explore'
+    | '/feed.xml'
     | '/indexnow-key.txt'
     | '/journey'
     | '/methodology'
     | '/offline'
     | '/privacy'
     | '/publications'
+    | '/rss.xml'
     | '/search'
     | '/seo-audit'
     | '/sitemap-articles.xml'
@@ -540,11 +586,13 @@ export interface FileRouteTypes {
     | '/terms'
     | '/timeline'
     | '/articles/$slug'
+    | '/blog/$slug'
     | '/organizations/$slug'
     | '/people/$slug'
     | '/projects/$slug'
     | '/technology/$slug'
     | '/articles/'
+    | '/blog/'
     | '/organizations/'
     | '/people/'
     | '/projects/'
@@ -564,12 +612,14 @@ export interface RootRouteChildren {
   EditorialPolicyRoute: typeof EditorialPolicyRoute
   EventsRoute: typeof EventsRoute
   ExploreRoute: typeof ExploreRoute
+  FeedDotxmlRoute: typeof FeedDotxmlRoute
   IndexnowKeyDottxtRoute: typeof IndexnowKeyDottxtRoute
   JourneyRoute: typeof JourneyRoute
   MethodologyRoute: typeof MethodologyRoute
   OfflineRoute: typeof OfflineRoute
   PrivacyRoute: typeof PrivacyRoute
   PublicationsRoute: typeof PublicationsRoute
+  RssDotxmlRoute: typeof RssDotxmlRoute
   SearchRoute: typeof SearchRoute
   SeoAuditRoute: typeof SeoAuditRoute
   SitemapArticlesDotxmlRoute: typeof SitemapArticlesDotxmlRoute
@@ -587,11 +637,13 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   TimelineRoute: typeof TimelineRoute
   ArticlesSlugRoute: typeof ArticlesSlugRoute
+  BlogSlugRoute: typeof BlogSlugRoute
   OrganizationsSlugRoute: typeof OrganizationsSlugRoute
   PeopleSlugRoute: typeof PeopleSlugRoute
   ProjectsSlugRoute: typeof ProjectsSlugRoute
   TechnologySlugRoute: typeof TechnologySlugRoute
   ArticlesIndexRoute: typeof ArticlesIndexRoute
+  BlogIndexRoute: typeof BlogIndexRoute
   OrganizationsIndexRoute: typeof OrganizationsIndexRoute
   PeopleIndexRoute: typeof PeopleIndexRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
@@ -654,6 +706,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExploreRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/feed.xml': {
+      id: '/feed.xml'
+      path: '/feed.xml'
+      fullPath: '/feed.xml'
+      preLoaderRoute: typeof FeedDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/indexnow-key.txt': {
       id: '/indexnow-key.txt'
       path: '/indexnow-key.txt'
@@ -694,6 +753,13 @@ declare module '@tanstack/react-router' {
       path: '/publications'
       fullPath: '/publications'
       preLoaderRoute: typeof PublicationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rss.xml': {
+      id: '/rss.xml'
+      path: '/rss.xml'
+      fullPath: '/rss.xml'
+      preLoaderRoute: typeof RssDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/search': {
@@ -822,6 +888,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ArticlesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/organizations/': {
       id: '/organizations/'
       path: '/organizations'
@@ -924,12 +1004,14 @@ const rootRouteChildren: RootRouteChildren = {
   EditorialPolicyRoute: EditorialPolicyRoute,
   EventsRoute: EventsRoute,
   ExploreRoute: ExploreRoute,
+  FeedDotxmlRoute: FeedDotxmlRoute,
   IndexnowKeyDottxtRoute: IndexnowKeyDottxtRoute,
   JourneyRoute: JourneyRoute,
   MethodologyRoute: MethodologyRoute,
   OfflineRoute: OfflineRoute,
   PrivacyRoute: PrivacyRoute,
   PublicationsRoute: PublicationsRoute,
+  RssDotxmlRoute: RssDotxmlRoute,
   SearchRoute: SearchRoute,
   SeoAuditRoute: SeoAuditRoute,
   SitemapArticlesDotxmlRoute: SitemapArticlesDotxmlRoute,
@@ -947,11 +1029,13 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   TimelineRoute: TimelineRoute,
   ArticlesSlugRoute: ArticlesSlugRoute,
+  BlogSlugRoute: BlogSlugRoute,
   OrganizationsSlugRoute: OrganizationsSlugRoute,
   PeopleSlugRoute: PeopleSlugRoute,
   ProjectsSlugRoute: ProjectsSlugRoute,
   TechnologySlugRoute: TechnologySlugRoute,
   ArticlesIndexRoute: ArticlesIndexRoute,
+  BlogIndexRoute: BlogIndexRoute,
   OrganizationsIndexRoute: OrganizationsIndexRoute,
   PeopleIndexRoute: PeopleIndexRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,
