@@ -1,7 +1,7 @@
 /**
  * DIMISIPEDIA Enterprise Sitemap Engine
  *
- * Implements a Tech Mahindra-style modular XML Sitemap architecture:
+ * Implements an Enterprise modular XML Sitemap architecture:
  * - Master Sitemap Index (/sitemap.xml)
  * - Domain-partitioned child sitemaps:
  *   - /sitemap-pages.xml
@@ -49,7 +49,7 @@ export interface ImageSitemapEntry {
   images: ImageMetadata[];
 }
 
-/** Formats dates into Tech Mahindra-style W3C ISO 8601 timestamps with IST (+05:30) offset */
+/** Formats dates into W3C ISO 8601 timestamps with IST (+05:30) offset */
 export function toW3cTimestamp(d: string | undefined): string {
   if (!d) return "2026-10-20T12:00:00+05:30";
   if (d.includes("T")) {
@@ -93,7 +93,7 @@ export function sitemapResponse(xml: string): Response {
   });
 }
 
-/** Renders standard <urlset> XML with Tech Mahindra XSL stylesheet instruction */
+/** Renders standard <urlset> XML with XSL stylesheet instruction */
 export function renderUrlset(entries: SitemapEntry[]): string {
   const urls = entries.map((e) => {
     return [
@@ -117,7 +117,7 @@ export function renderUrlset(entries: SitemapEntry[]): string {
   ].join("\n");
 }
 
-/** Renders Google Image Sitemap <urlset> XML with Tech Mahindra XSL stylesheet instruction */
+/** Renders Google Image Sitemap <urlset> XML with XSL stylesheet instruction */
 export function renderImageUrlset(entries: ImageSitemapEntry[]): string {
   const urls = entries.map((entry) => {
     const lines = [
@@ -152,7 +152,7 @@ export function renderImageUrlset(entries: ImageSitemapEntry[]): string {
   ].join("\n");
 }
 
-/** Renders Master <sitemapindex> XML with Tech Mahindra XSL stylesheet instruction */
+/** Renders Master <sitemapindex> XML with XSL stylesheet instruction */
 export function renderSitemapIndex(sitemaps: { loc: string; lastmod: string }[]): string {
   const items = sitemaps.map((s) => {
     return [

@@ -129,7 +129,7 @@
         </main>
 
         <footer role="contentinfo" id="footer">
-          <p>DIMISIPEDIA Enterprise Sitemap System · Modeled on Tech Mahindra XML Sitemap Architecture</p>
+          <p>DIMISIPEDIA Enterprise Sitemap System · Authoritative Entity &amp; Knowledge Registry</p>
         </footer>
 
         <script type="text/javascript">

@@ -195,7 +195,7 @@ for (const lm of lastmodMatches) {
 // 7b. Verify XSL Stylesheet instruction
 assert(
   indexXml.includes('<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>'),
-  "Sitemap Index has XSL Stylesheet (Tech Mahindra visual presentation)",
+  "Sitemap Index has XSL Stylesheet (Visual Presentation)",
   "Missing <?xml-stylesheet ...?> instruction",
 );
 

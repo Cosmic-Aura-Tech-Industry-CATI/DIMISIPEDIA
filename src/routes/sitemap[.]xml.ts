@@ -4,7 +4,7 @@ import { generateSitemapIndexXml, sitemapResponse } from "@/lib/sitemap";
 
 /**
  * Enterprise XML Sitemap Index (/sitemap.xml)
- * Inspired by Tech Mahindra and enterprise discovery architecture.
+ * Enterprise-grade discovery architecture.
  * Serves a master sitemapindex pointing to domain-partitioned child sitemaps.
  */
 export const Route = createFileRoute("/sitemap.xml")({
