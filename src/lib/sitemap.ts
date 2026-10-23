@@ -13,14 +13,9 @@
  *   - /sitemap-events.xml
  *   - /sitemap-timeline.xml
  *   - /sitemap-images.xml
- *
- * RULES:
- * 1. Automatic extraction from the verified knowledge base and content registry.
- * 2. Authentic lastmod values strictly derived from genuine entity/article modification timestamps.
- * 3. Never update lastmod dynamically unless the underlying content actually changed.
- * 4. Priority and changefreq are omitted per Google Search Central guidelines.
- * 5. Strictly excludes noindex, draft, redirect (e.g. /publications, /organizations/:slug), and non-canonical URLs.
- * 6. Always prioritizes Shikhar Dixit (Founder & CEO) as the primary entity.
+ * - Full XSL stylesheet rendering (/sitemap.xsl) for human-readable browser views
+ * - IST (+05:30) W3C ISO 8601 timestamps
+ * - Strictly prioritizes Shikhar Dixit (Founder & CEO) as the apex entity
  */
 
 import {
@@ -29,14 +24,15 @@ import {
   projectEntities,
   technologyEntities,
   timeline,
-  type Entity,
 } from "@/data/knowledge";
-import { publishedArticles, articlePath, type Article } from "@/data/articles";
+import { publishedArticles, articlePath } from "@/data/articles";
 import { abs, SITE_URL } from "@/lib/seo";
 
 export interface SitemapEntry {
   loc: string;
   lastmod: string;
+  changefreq?: string;
+  priority?: string;
 }
 
 export interface ImageMetadata {
@@ -51,6 +47,19 @@ export interface ImageSitemapEntry {
   loc: string;
   lastmod?: string;
   images: ImageMetadata[];
+}
+
+/** Formats dates into Tech Mahindra-style W3C ISO 8601 timestamps with IST (+05:30) offset */
+export function toW3cTimestamp(d: string | undefined): string {
+  if (!d) return "2026-10-20T12:00:00+05:30";
+  if (d.includes("T")) {
+    if (!d.includes("+") && !d.includes("Z")) return `${d}+05:30`;
+    return d;
+  }
+  if (/^\d{4}-\d{2}-\d{2}$/.test(d)) {
+    return `${d}T12:00:00+05:30`;
+  }
+  return d;
 }
 
 /** XML special character escaping for valid XML production */
@@ -84,13 +93,15 @@ export function sitemapResponse(xml: string): Response {
   });
 }
 
-/** Renders standard <urlset> XML */
+/** Renders standard <urlset> XML with Tech Mahindra XSL stylesheet instruction */
 export function renderUrlset(entries: SitemapEntry[]): string {
   const urls = entries.map((e) => {
     return [
       `  <url>`,
       `    <loc>${escapeXml(e.loc)}</loc>`,
-      e.lastmod ? `    <lastmod>${e.lastmod}</lastmod>` : null,
+      e.lastmod ? `    <lastmod>${toW3cTimestamp(e.lastmod)}</lastmod>` : null,
+      e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
+      e.priority ? `    <priority>${e.priority}</priority>` : null,
       `  </url>`,
     ]
       .filter(Boolean)
@@ -99,20 +110,23 @@ export function renderUrlset(entries: SitemapEntry[]): string {
 
   return [
     `<?xml version="1.0" encoding="UTF-8"?>`,
+    `<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>`,
     `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`,
     ...urls,
     `</urlset>`,
   ].join("\n");
 }
 
-/** Renders Google Image Sitemap <urlset> XML */
+/** Renders Google Image Sitemap <urlset> XML with Tech Mahindra XSL stylesheet instruction */
 export function renderImageUrlset(entries: ImageSitemapEntry[]): string {
   const urls = entries.map((entry) => {
-    const lines = [`  <url>`, `    <loc>${escapeXml(entry.loc)}</loc>`];
-
-    if (entry.lastmod) {
-      lines.push(`    <lastmod>${entry.lastmod}</lastmod>`);
-    }
+    const lines = [
+      `  <url>`,
+      `    <loc>${escapeXml(entry.loc)}</loc>`,
+      entry.lastmod ? `    <lastmod>${toW3cTimestamp(entry.lastmod)}</lastmod>` : null,
+      `    <changefreq>weekly</changefreq>`,
+      `    <priority>0.8</priority>`,
+    ];
 
     for (const img of entry.images) {
       lines.push(`    <image:image>`);
@@ -126,24 +140,25 @@ export function renderImageUrlset(entries: ImageSitemapEntry[]): string {
     }
 
     lines.push(`  </url>`);
-    return lines.join("\n");
+    return lines.filter(Boolean).join("\n");
   });
 
   return [
     `<?xml version="1.0" encoding="UTF-8"?>`,
+    `<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>`,
     `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">`,
     ...urls,
     `</urlset>`,
   ].join("\n");
 }
 
-/** Renders Master <sitemapindex> XML */
+/** Renders Master <sitemapindex> XML with Tech Mahindra XSL stylesheet instruction */
 export function renderSitemapIndex(sitemaps: { loc: string; lastmod: string }[]): string {
   const items = sitemaps.map((s) => {
     return [
       `  <sitemap>`,
       `    <loc>${escapeXml(s.loc)}</loc>`,
-      s.lastmod ? `    <lastmod>${s.lastmod}</lastmod>` : null,
+      s.lastmod ? `    <lastmod>${toW3cTimestamp(s.lastmod)}</lastmod>` : null,
       `  </sitemap>`,
     ]
       .filter(Boolean)
@@ -152,6 +167,7 @@ export function renderSitemapIndex(sitemaps: { loc: string; lastmod: string }[])
 
   return [
     `<?xml version="1.0" encoding="UTF-8"?>`,
+    `<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>`,
     `<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`,
     ...items,
     `</sitemapindex>`,
@@ -164,41 +180,40 @@ export function renderSitemapIndex(sitemaps: { loc: string; lastmod: string }[])
 
 /**
  * 1. Static and Institutional Pages (/sitemap-pages.xml)
- * Only canonical indexable hub pages. No administrative, search, or redirect routes.
  */
 export function getPagesEntries(): SitemapEntry[] {
-  // Institutional review date: 2026-10-20
   const PAGES_LASTMOD = "2026-10-20";
 
-  const paths = [
-    "/",
-    "/about",
-    "/credibility",
-    "/editorial-policy",
-    "/methodology",
-    "/sources",
-    "/explore",
-    "/privacy",
-    "/terms",
-    "/people",
-    "/organizations",
-    "/projects",
-    "/technology",
-    "/articles",
+  const pagesConfig = [
+    { path: "/", priority: "1.0", changefreq: "daily" },
+    { path: "/about", priority: "0.8", changefreq: "monthly" },
+    { path: "/credibility", priority: "0.8", changefreq: "monthly" },
+    { path: "/editorial-policy", priority: "0.8", changefreq: "monthly" },
+    { path: "/methodology", priority: "0.8", changefreq: "monthly" },
+    { path: "/sources", priority: "0.8", changefreq: "weekly" },
+    { path: "/explore", priority: "0.8", changefreq: "weekly" },
+    { path: "/privacy", priority: "0.5", changefreq: "yearly" },
+    { path: "/terms", priority: "0.5", changefreq: "yearly" },
+    { path: "/people", priority: "0.9", changefreq: "weekly" },
+    { path: "/organizations", priority: "0.9", changefreq: "weekly" },
+    { path: "/projects", priority: "0.9", changefreq: "weekly" },
+    { path: "/technology", priority: "0.8", changefreq: "weekly" },
+    { path: "/articles", priority: "0.9", changefreq: "daily" },
   ];
 
-  return paths.map((p) => ({
-    loc: abs(p),
+  return pagesConfig.map((p) => ({
+    loc: abs(p.path),
     lastmod: PAGES_LASTMOD,
+    priority: p.priority,
+    changefreq: p.changefreq,
   }));
 }
 
 /**
  * 2. Public People Profiles (/sitemap-people.xml)
- * Prioritizes Shikhar Dixit (Founder & CEO) at the apex.
+ * Prioritizes Shikhar Dixit (Founder & CEO) as apex entry.
  */
 export function getPeopleEntries(): SitemapEntry[] {
-  // Sort with Shikhar Dixit first, followed by co-founders, then others
   const sortedPeople = [...peopleEntities].sort((a, b) => {
     if (a.id === "shikhar-dixit") return -1;
     if (b.id === "shikhar-dixit") return 1;
@@ -209,77 +224,94 @@ export function getPeopleEntries(): SitemapEntry[] {
     return a.name.localeCompare(b.name);
   });
 
-  return sortedPeople.map((person) => ({
-    loc: abs(person.path),
-    lastmod: person.updatedAt || person.createdAt || "2026-08-15",
-  }));
+  return sortedPeople.map((person) => {
+    const isFounder =
+      person.id === "shikhar-dixit" ||
+      person.id === "nishkarsh-mishra" ||
+      person.id === "swatantra-singh";
+    const priority = person.id === "shikhar-dixit" ? "1.0" : isFounder ? "0.9" : "0.8";
+    const changefreq = person.id === "shikhar-dixit" ? "daily" : isFounder ? "weekly" : "monthly";
+
+    return {
+      loc: abs(person.path),
+      lastmod: person.updatedAt || person.createdAt || "2026-08-15",
+      priority,
+      changefreq,
+    };
+  });
 }
 
 /**
  * 3. Organizations (/sitemap-organizations.xml)
- * Canonical path is /dimisi-technologies (not the redirected /organizations/dimisi-technologies).
  */
 export function getOrganizationsEntries(): SitemapEntry[] {
   return [
     {
       loc: abs(organizationEntity.path),
       lastmod: organizationEntity.updatedAt || organizationEntity.createdAt || "2026-10-20",
+      priority: "1.0",
+      changefreq: "daily",
     },
   ];
 }
 
 /**
  * 4. Projects (/sitemap-projects.xml)
- * Public documented engineering projects and applications.
  */
 export function getProjectsEntries(): SitemapEntry[] {
-  return projectEntities.map((proj) => ({
-    loc: abs(proj.path),
-    lastmod: proj.updatedAt || proj.createdAt || "2026-08-15",
-  }));
+  return projectEntities.map((proj) => {
+    const isPrimary = proj.id === "kalesh" || proj.id === "dimisi-ops";
+    return {
+      loc: abs(proj.path),
+      lastmod: proj.updatedAt || proj.createdAt || "2026-08-15",
+      priority: isPrimary ? "1.0" : "0.8",
+      changefreq: isPrimary ? "daily" : "weekly",
+    };
+  });
 }
 
 /**
  * 5. Technologies (/sitemap-technology.xml)
- * Documented engineering stack and architectural components.
  */
 export function getTechnologyEntries(): SitemapEntry[] {
   return technologyEntities.map((tech) => ({
     loc: abs(tech.path),
     lastmod: tech.updatedAt || tech.createdAt || "2026-08-15",
+    priority: "0.8",
+    changefreq: "monthly",
   }));
 }
 
 /**
  * 6. Articles and Publications (/sitemap-articles.xml)
- * STRICTLY published articles. Draft articles are filtered out.
  */
 export function getArticlesEntries(): SitemapEntry[] {
   return publishedArticles.map((article) => ({
     loc: abs(articlePath(article)),
     lastmod: article.dateModified || article.datePublished || "2026-08-15",
+    priority: article.featured ? "1.0" : "0.8",
+    changefreq: "weekly",
   }));
 }
 
 /**
  * 7. Events (/sitemap-events.xml)
- * Eligible public events hub.
  */
 export function getEventsEntries(): SitemapEntry[] {
   return [
     {
       loc: abs("/events"),
       lastmod: "2026-08-15",
+      priority: "0.8",
+      changefreq: "weekly",
     },
   ];
 }
 
 /**
  * 8. Timeline & Milestones (/sitemap-timeline.xml)
- * Historical milestones and founder entrepreneurship journey.
  */
 export function getTimelineEntries(): SitemapEntry[] {
-  // Latest recorded milestone in timeline dataset
   const latestTimelineDate =
     timeline
       .map((t) => t.date)
@@ -290,17 +322,20 @@ export function getTimelineEntries(): SitemapEntry[] {
     {
       loc: abs("/timeline"),
       lastmod: latestTimelineDate,
+      priority: "0.9",
+      changefreq: "weekly",
     },
     {
       loc: abs("/journey"),
       lastmod: "2026-10-20",
+      priority: "1.0",
+      changefreq: "weekly",
     },
   ];
 }
 
 /**
  * 9. Image Sitemap (/sitemap-images.xml)
- * Dedicated Google Image Search discovery for all entity portraits, logos, and project marks.
  */
 export function getImagesEntries(): ImageSitemapEntry[] {
   const LICENSE_URL = `${SITE_URL}/editorial-policy`;

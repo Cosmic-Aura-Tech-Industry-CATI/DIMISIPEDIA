@@ -182,15 +182,22 @@ assert(
   "Missing GPTBot block",
 );
 
-// 7. Verify Date Formatting (YYYY-MM-DD)
+// 7. Verify Date Formatting (YYYY-MM-DD or W3C ISO 8601 with offset)
 const lastmodMatches = [...indexXml.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map((m) => m[1]);
 for (const lm of lastmodMatches) {
   assert(
-    /^\d{4}-\d{2}-\d{2}$/.test(lm),
+    /^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}:\d{2}(\+05:30|Z)?)?$/.test(lm),
     `Valid W3C lastmod: ${lm}`,
     `Invalid lastmod format: ${lm}`,
   );
 }
+
+// 7b. Verify XSL Stylesheet instruction
+assert(
+  indexXml.includes('<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>'),
+  "Sitemap Index has XSL Stylesheet (Tech Mahindra visual presentation)",
+  "Missing <?xml-stylesheet ...?> instruction",
+);
 
 // 8. Total Canonical URL count
 assert(

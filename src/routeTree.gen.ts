@@ -34,6 +34,7 @@ import { Route as SitemapProjectsDotxmlRouteImport } from './routes/sitemap-proj
 import { Route as SitemapTechnologyDotxmlRouteImport } from './routes/sitemap-technology[.]xml'
 import { Route as SitemapTimelineDotxmlRouteImport } from './routes/sitemap-timeline[.]xml'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SitemapDotxslRouteImport } from './routes/sitemap[.]xsl'
 import { Route as SourcesRouteImport } from './routes/sources'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TimelineRouteImport } from './routes/timeline'
@@ -179,6 +180,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxslRoute = SitemapDotxslRouteImport.update({
+  id: '/sitemap.xsl',
+  path: '/sitemap.xsl',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SourcesRoute = SourcesRouteImport.update({
   id: '/sources',
   path: '/sources',
@@ -296,6 +302,7 @@ export interface FileRoutesByFullPath {
   '/sitemap-technology.xml': typeof SitemapTechnologyDotxmlRoute
   '/sitemap-timeline.xml': typeof SitemapTimelineDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sitemap.xsl': typeof SitemapDotxslRoute
   '/sources': typeof SourcesRoute
   '/terms': typeof TermsRoute
   '/timeline': typeof TimelineRoute
@@ -341,6 +348,7 @@ export interface FileRoutesByTo {
   '/sitemap-technology.xml': typeof SitemapTechnologyDotxmlRoute
   '/sitemap-timeline.xml': typeof SitemapTimelineDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sitemap.xsl': typeof SitemapDotxslRoute
   '/sources': typeof SourcesRoute
   '/terms': typeof TermsRoute
   '/timeline': typeof TimelineRoute
@@ -387,6 +395,7 @@ export interface FileRoutesById {
   '/sitemap-technology.xml': typeof SitemapTechnologyDotxmlRoute
   '/sitemap-timeline.xml': typeof SitemapTimelineDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sitemap.xsl': typeof SitemapDotxslRoute
   '/sources': typeof SourcesRoute
   '/terms': typeof TermsRoute
   '/timeline': typeof TimelineRoute
@@ -434,6 +443,7 @@ export interface FileRouteTypes {
     | '/sitemap-technology.xml'
     | '/sitemap-timeline.xml'
     | '/sitemap.xml'
+    | '/sitemap.xsl'
     | '/sources'
     | '/terms'
     | '/timeline'
@@ -479,6 +489,7 @@ export interface FileRouteTypes {
     | '/sitemap-technology.xml'
     | '/sitemap-timeline.xml'
     | '/sitemap.xml'
+    | '/sitemap.xsl'
     | '/sources'
     | '/terms'
     | '/timeline'
@@ -524,6 +535,7 @@ export interface FileRouteTypes {
     | '/sitemap-technology.xml'
     | '/sitemap-timeline.xml'
     | '/sitemap.xml'
+    | '/sitemap.xsl'
     | '/sources'
     | '/terms'
     | '/timeline'
@@ -570,6 +582,7 @@ export interface RootRouteChildren {
   SitemapTechnologyDotxmlRoute: typeof SitemapTechnologyDotxmlRoute
   SitemapTimelineDotxmlRoute: typeof SitemapTimelineDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SitemapDotxslRoute: typeof SitemapDotxslRoute
   SourcesRoute: typeof SourcesRoute
   TermsRoute: typeof TermsRoute
   TimelineRoute: typeof TimelineRoute
@@ -767,6 +780,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap.xsl': {
+      id: '/sitemap.xsl'
+      path: '/sitemap.xsl'
+      fullPath: '/sitemap.xsl'
+      preLoaderRoute: typeof SitemapDotxslRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sources': {
       id: '/sources'
       path: '/sources'
@@ -922,6 +942,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapTechnologyDotxmlRoute: SitemapTechnologyDotxmlRoute,
   SitemapTimelineDotxmlRoute: SitemapTimelineDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SitemapDotxslRoute: SitemapDotxslRoute,
   SourcesRoute: SourcesRoute,
   TermsRoute: TermsRoute,
   TimelineRoute: TimelineRoute,

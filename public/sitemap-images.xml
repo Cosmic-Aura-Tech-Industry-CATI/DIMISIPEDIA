@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.dimisipedia.me/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-20T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/dimisipedia-logo.png</image:loc>
       <image:title>DIMISIPEDIA — Official Knowledge Engine of DIMISI Technologies</image:title>
@@ -13,7 +16,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/dimisi-technologies</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-20T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/dimisi-logo.png</image:loc>
       <image:title>DIMISI Technologies Private Limited — Official Corporate Mark</image:title>
@@ -24,7 +29,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/people/shikhar-dixit</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-20T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/shikhar-dixit.png</image:loc>
       <image:title>Shikhar Dixit — Founder &amp; CEO | DIMISI Technologies Private Limited</image:title>
@@ -35,7 +42,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/people/nishkarsh-mishra</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-08-21T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/nishkarsh-mishra.png</image:loc>
       <image:title>Nishkarsh Mishra — Co-Founder &amp; Executive Leadership | DIMISI Technologies</image:title>
@@ -46,7 +55,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/people/swatantra-singh</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-08-21T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/swatantra-singh.png</image:loc>
       <image:title>Swatantra Singh — Co-Founder &amp; Executive Leadership | DIMISI Technologies</image:title>
@@ -57,7 +68,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/people/jayendra-pratap-singh</loc>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-09-14T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/jayendra-pratap-singh.jpg</image:loc>
       <image:title>Jayendra Pratap Singh (JP) — First Mentor of DIMISI Technologies | HR &amp; People Development Consultant</image:title>
@@ -68,7 +81,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/people/sheelu-singh</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-15T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/sheelu-singh.png</image:loc>
       <image:title>Sheelu Singh — Android &amp; Flutter Developer — DIMISI Technologies</image:title>
@@ -79,7 +94,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/people/mridul-mishra</loc>
-    <lastmod>2026-09-12</lastmod>
+    <lastmod>2026-09-12T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/mridul-mishra.jpg</image:loc>
       <image:title>Mridul Mishra — Founding Engineer — Kalesh, DIMISI Technologies</image:title>
@@ -90,7 +107,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/people/amrit-awasthi</loc>
-    <lastmod>2026-09-12</lastmod>
+    <lastmod>2026-09-12T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/amrit-awasthi.png</image:loc>
       <image:title>Amrit Awasthi — Android Developer Intern (Flutter / DART) — DIMISI Technologies</image:title>
@@ -101,7 +120,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/people/prashant-umrao</loc>
-    <lastmod>2026-10-11</lastmod>
+    <lastmod>2026-10-11T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/prashant-umrao.png</image:loc>
       <image:title>Prashant Umrao — Full Stack Developer Intern &amp; Tester — DIMISI Technologies</image:title>
@@ -112,7 +133,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/people/amit-kumar</loc>
-    <lastmod>2026-10-11</lastmod>
+    <lastmod>2026-10-11T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/amit-kumar.png</image:loc>
       <image:title>Amit Kumar — Backend Development Intern — DIMISI Technologies</image:title>
@@ -123,7 +146,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/people/harsh-mishra</loc>
-    <lastmod>2026-10-11</lastmod>
+    <lastmod>2026-10-11T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/harsh-mishra.jpg</image:loc>
       <image:title>Harsh Mishra — Full Stack Web Developer — DIMISI Technologies</image:title>
@@ -134,7 +159,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/people/somya-tiwari</loc>
-    <lastmod>2026-10-11</lastmod>
+    <lastmod>2026-10-11T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/somya-tiwari.jpg</image:loc>
       <image:title>Somya Tiwari — Full Stack Developer &amp; Client Project Manager — DIMISI Technologies</image:title>
@@ -145,7 +172,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/people/anushka-tripathi</loc>
-    <lastmod>2026-10-11</lastmod>
+    <lastmod>2026-10-11T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/anushka-tripathi.jpg</image:loc>
       <image:title>Anushka Tripathi — Full Stack Web Developer Intern — DIMISI Technologies</image:title>
@@ -156,7 +185,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/people/nisha-chaudhary</loc>
-    <lastmod>2026-09-12</lastmod>
+    <lastmod>2026-09-12T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/nisha-chaudhary.jpg</image:loc>
       <image:title>Nisha Chaudhary — Market Research &amp; Analysis Intern — DIMISI Technologies</image:title>
@@ -167,7 +198,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/people/siddhant-shekhar</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-04T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/siddhant-shekhar.png</image:loc>
       <image:title>Siddhant Shekhar — Former Core Member &amp; Web Developer — DIMISI Technologies</image:title>
@@ -178,7 +211,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/people/krishna-tiwari</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-09-24T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/krishna-tiwari.jpg</image:loc>
       <image:title>Krishna Tiwari — Social Media Marketing Head — DIMISI Technologies</image:title>
@@ -189,7 +224,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/projects/kalesh</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-15T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/kalesh-icon.png</image:loc>
       <image:title>The Kalesh — Flagship DIMISI Product — Anonymous Social Media Platform</image:title>
@@ -200,7 +237,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/projects/kaand</loc>
-    <lastmod>2026-10-11</lastmod>
+    <lastmod>2026-10-11T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/kaand-logo.png</image:loc>
       <image:title>KAAND — Next-Generation Mobile News &amp; Media Platform (Android &amp; iOS)</image:title>
@@ -211,7 +250,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/projects/cati-khelghar</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-04T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/cati-khelghar-logo.png</image:loc>
       <image:title>CATI Khelghar — Offline Pass-and-Play Local Multiplayer Gaming Platform</image:title>
@@ -222,7 +263,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/projects/dimisi-ops</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-20T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/dimisi-ops-logo.jpg</image:loc>
       <image:title>DIMISI-OPS — Enterprise Operations, Employee Management &amp; Workflow System</image:title>
@@ -233,7 +276,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/projects/dimisi-corporate-platform</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-04T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/dimisi-logo.png</image:loc>
       <image:title>DIMISI Technologies — Official Corporate Web Platform &amp; Technology Showcase</image:title>
@@ -244,7 +289,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/projects/karyon</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-04T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/karyon-logo.png</image:loc>
       <image:title>KaryON — Professional Home Services Platform At Your Doorstep</image:title>
@@ -255,7 +302,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/projects/dimisipedia</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-15T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/dimisipedia-logo.png</image:loc>
       <image:title>DIMISIPEDIA — Project — knowledge and documentation platform</image:title>
@@ -266,7 +315,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/projects/rudra-tours</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-04T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/rudra-tours-logo.png</image:loc>
       <image:title>Rudra Tours &amp; Travels — Client Project — End-to-End Digital Transformation &amp; Web Platform</image:title>
@@ -277,7 +328,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/projects/yadhuvanshi-tours</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-04T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/yadhuvanshi-tours-logo.png</image:loc>
       <image:title>Yadhuvanshi Tours &amp; Travels — Client Project — Premium Travel, Tourism &amp; Wedding Transportation Platform</image:title>
@@ -288,7 +341,9 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/articles/the-founding-brotherhood</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-08-21T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/Shikhar Nish Swat.jpeg</image:loc>
       <image:title>The Founding Brotherhood: Shikhar Dixit, Nishkarsh Mishra &amp; Swatantra Singh</image:title>

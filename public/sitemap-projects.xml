@@ -1,39 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.dimisipedia.me/projects/kalesh</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-15T12:00:00+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.dimisipedia.me/projects/kaand</loc>
-    <lastmod>2026-10-11</lastmod>
+    <lastmod>2026-10-11T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.dimisipedia.me/projects/cati-khelghar</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-04T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.dimisipedia.me/projects/dimisi-ops</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-20T12:00:00+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.dimisipedia.me/projects/dimisi-corporate-platform</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-04T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.dimisipedia.me/projects/karyon</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-04T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.dimisipedia.me/projects/dimisipedia</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-15T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.dimisipedia.me/projects/rudra-tours</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-04T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.dimisipedia.me/projects/yadhuvanshi-tours</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-04T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

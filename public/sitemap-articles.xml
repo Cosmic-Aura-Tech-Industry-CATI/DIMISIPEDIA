@@ -1,31 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.dimisipedia.me/articles/business-software-solutions-dimisi</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-20T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.dimisipedia.me/articles/the-founding-brotherhood</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-08-21T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.dimisipedia.me/articles/who-is-shikhar-dixit</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-08-21T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.dimisipedia.me/articles/what-is-kalesh</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-08-21T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.dimisipedia.me/articles/history-of-dimisi-technologies</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-08-21T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.dimisipedia.me/articles/timeline-of-dimisi-technologies</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-08-21T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.dimisipedia.me/articles/how-dimisipedia-verifies-information</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-15T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
 </urlset>

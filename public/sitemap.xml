@@ -1,39 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>https://www.dimisipedia.me/sitemap-pages.xml</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-20T12:00:00+05:30</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://www.dimisipedia.me/sitemap-people.xml</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-20T12:00:00+05:30</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://www.dimisipedia.me/sitemap-organizations.xml</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-20T12:00:00+05:30</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://www.dimisipedia.me/sitemap-projects.xml</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-20T12:00:00+05:30</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://www.dimisipedia.me/sitemap-technology.xml</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-15T12:00:00+05:30</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://www.dimisipedia.me/sitemap-articles.xml</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-20T12:00:00+05:30</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://www.dimisipedia.me/sitemap-events.xml</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-15T12:00:00+05:30</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://www.dimisipedia.me/sitemap-timeline.xml</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-20T12:00:00+05:30</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://www.dimisipedia.me/sitemap-images.xml</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-20T12:00:00+05:30</lastmod>
   </sitemap>
 </sitemapindex>
