@@ -10,16 +10,18 @@ import { SITE_URL, buildOrganizationSchema, pageHead } from "@/lib/seo";
 export const Route = createFileRoute("/")({
   head: () =>
     pageHead({
-      title: "DIMISIPEDIA — Knowledge Base of DIMISI Technologies",
+      title: "DIMISIPEDIA | People, Projects and Technology Knowledge Base",
       description:
-        "DIMISIPEDIA is an entity knowledge platform documenting DIMISI Technologies Pvt. Ltd. — its people, projects, technologies, milestones and sources, each with a verification status.",
+        "Explore documented people, organizations, projects, technology, events and articles through DIMISIPEDIA's structured knowledge base, with relevant sources and context.",
       path: "/",
       schema: [
         {
           "@type": "WebPage",
           "@id": `${SITE_URL}/#webpage`,
           url: `${SITE_URL}/`,
-          name: "DIMISIPEDIA — Knowledge Base of DIMISI Technologies",
+          name: "DIMISIPEDIA | People, Projects and Technology Knowledge Base",
+          description:
+            "Explore documented people, organizations, projects, technology, events and articles through DIMISIPEDIA's structured knowledge base, with relevant sources and context.",
           isPartOf: { "@id": `${SITE_URL}/#website` },
           about: { "@id": `${SITE_URL}/dimisi-technologies#organization` },
         },

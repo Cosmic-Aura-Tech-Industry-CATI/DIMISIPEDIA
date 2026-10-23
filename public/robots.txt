@@ -66,5 +66,15 @@ Allow: /
 
 # Sitemaps & LLM Knowledge manifests
 Sitemap: https://www.dimisipedia.me/sitemap.xml
+Sitemap: https://www.dimisipedia.me/sitemap-pages.xml
+Sitemap: https://www.dimisipedia.me/sitemap-people.xml
+Sitemap: https://www.dimisipedia.me/sitemap-organizations.xml
+Sitemap: https://www.dimisipedia.me/sitemap-projects.xml
+Sitemap: https://www.dimisipedia.me/sitemap-technology.xml
+Sitemap: https://www.dimisipedia.me/sitemap-articles.xml
+Sitemap: https://www.dimisipedia.me/sitemap-events.xml
+Sitemap: https://www.dimisipedia.me/sitemap-timeline.xml
+Sitemap: https://www.dimisipedia.me/sitemap-images.xml
 # LLMs knowledge index: https://www.dimisipedia.me/llms.txt
 # LLMs full dossier: https://www.dimisipedia.me/llms-full.txt
+

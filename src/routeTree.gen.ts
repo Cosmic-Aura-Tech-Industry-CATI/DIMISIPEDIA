@@ -24,6 +24,15 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PublicationsRouteImport } from './routes/publications'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as SeoAuditRouteImport } from './routes/seo-audit'
+import { Route as SitemapArticlesDotxmlRouteImport } from './routes/sitemap-articles[.]xml'
+import { Route as SitemapEventsDotxmlRouteImport } from './routes/sitemap-events[.]xml'
+import { Route as SitemapImagesDotxmlRouteImport } from './routes/sitemap-images[.]xml'
+import { Route as SitemapOrganizationsDotxmlRouteImport } from './routes/sitemap-organizations[.]xml'
+import { Route as SitemapPagesDotxmlRouteImport } from './routes/sitemap-pages[.]xml'
+import { Route as SitemapPeopleDotxmlRouteImport } from './routes/sitemap-people[.]xml'
+import { Route as SitemapProjectsDotxmlRouteImport } from './routes/sitemap-projects[.]xml'
+import { Route as SitemapTechnologyDotxmlRouteImport } from './routes/sitemap-technology[.]xml'
+import { Route as SitemapTimelineDotxmlRouteImport } from './routes/sitemap-timeline[.]xml'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SourcesRouteImport } from './routes/sources'
 import { Route as TermsRouteImport } from './routes/terms'
@@ -117,6 +126,52 @@ const SearchRoute = SearchRouteImport.update({
 const SeoAuditRoute = SeoAuditRouteImport.update({
   id: '/seo-audit',
   path: '/seo-audit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapArticlesDotxmlRoute = SitemapArticlesDotxmlRouteImport.update({
+  id: '/sitemap-articles.xml',
+  path: '/sitemap-articles.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapEventsDotxmlRoute = SitemapEventsDotxmlRouteImport.update({
+  id: '/sitemap-events.xml',
+  path: '/sitemap-events.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapImagesDotxmlRoute = SitemapImagesDotxmlRouteImport.update({
+  id: '/sitemap-images.xml',
+  path: '/sitemap-images.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapOrganizationsDotxmlRoute =
+  SitemapOrganizationsDotxmlRouteImport.update({
+    id: '/sitemap-organizations.xml',
+    path: '/sitemap-organizations.xml',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const SitemapPagesDotxmlRoute = SitemapPagesDotxmlRouteImport.update({
+  id: '/sitemap-pages.xml',
+  path: '/sitemap-pages.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapPeopleDotxmlRoute = SitemapPeopleDotxmlRouteImport.update({
+  id: '/sitemap-people.xml',
+  path: '/sitemap-people.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapProjectsDotxmlRoute = SitemapProjectsDotxmlRouteImport.update({
+  id: '/sitemap-projects.xml',
+  path: '/sitemap-projects.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapTechnologyDotxmlRoute = SitemapTechnologyDotxmlRouteImport.update({
+  id: '/sitemap-technology.xml',
+  path: '/sitemap-technology.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapTimelineDotxmlRoute = SitemapTimelineDotxmlRouteImport.update({
+  id: '/sitemap-timeline.xml',
+  path: '/sitemap-timeline.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -231,6 +286,15 @@ export interface FileRoutesByFullPath {
   '/publications': typeof PublicationsRoute
   '/search': typeof SearchRoute
   '/seo-audit': typeof SeoAuditRoute
+  '/sitemap-articles.xml': typeof SitemapArticlesDotxmlRoute
+  '/sitemap-events.xml': typeof SitemapEventsDotxmlRoute
+  '/sitemap-images.xml': typeof SitemapImagesDotxmlRoute
+  '/sitemap-organizations.xml': typeof SitemapOrganizationsDotxmlRoute
+  '/sitemap-pages.xml': typeof SitemapPagesDotxmlRoute
+  '/sitemap-people.xml': typeof SitemapPeopleDotxmlRoute
+  '/sitemap-projects.xml': typeof SitemapProjectsDotxmlRoute
+  '/sitemap-technology.xml': typeof SitemapTechnologyDotxmlRoute
+  '/sitemap-timeline.xml': typeof SitemapTimelineDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sources': typeof SourcesRoute
   '/terms': typeof TermsRoute
@@ -267,6 +331,15 @@ export interface FileRoutesByTo {
   '/publications': typeof PublicationsRoute
   '/search': typeof SearchRoute
   '/seo-audit': typeof SeoAuditRoute
+  '/sitemap-articles.xml': typeof SitemapArticlesDotxmlRoute
+  '/sitemap-events.xml': typeof SitemapEventsDotxmlRoute
+  '/sitemap-images.xml': typeof SitemapImagesDotxmlRoute
+  '/sitemap-organizations.xml': typeof SitemapOrganizationsDotxmlRoute
+  '/sitemap-pages.xml': typeof SitemapPagesDotxmlRoute
+  '/sitemap-people.xml': typeof SitemapPeopleDotxmlRoute
+  '/sitemap-projects.xml': typeof SitemapProjectsDotxmlRoute
+  '/sitemap-technology.xml': typeof SitemapTechnologyDotxmlRoute
+  '/sitemap-timeline.xml': typeof SitemapTimelineDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sources': typeof SourcesRoute
   '/terms': typeof TermsRoute
@@ -304,6 +377,15 @@ export interface FileRoutesById {
   '/publications': typeof PublicationsRoute
   '/search': typeof SearchRoute
   '/seo-audit': typeof SeoAuditRoute
+  '/sitemap-articles.xml': typeof SitemapArticlesDotxmlRoute
+  '/sitemap-events.xml': typeof SitemapEventsDotxmlRoute
+  '/sitemap-images.xml': typeof SitemapImagesDotxmlRoute
+  '/sitemap-organizations.xml': typeof SitemapOrganizationsDotxmlRoute
+  '/sitemap-pages.xml': typeof SitemapPagesDotxmlRoute
+  '/sitemap-people.xml': typeof SitemapPeopleDotxmlRoute
+  '/sitemap-projects.xml': typeof SitemapProjectsDotxmlRoute
+  '/sitemap-technology.xml': typeof SitemapTechnologyDotxmlRoute
+  '/sitemap-timeline.xml': typeof SitemapTimelineDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sources': typeof SourcesRoute
   '/terms': typeof TermsRoute
@@ -342,6 +424,15 @@ export interface FileRouteTypes {
     | '/publications'
     | '/search'
     | '/seo-audit'
+    | '/sitemap-articles.xml'
+    | '/sitemap-events.xml'
+    | '/sitemap-images.xml'
+    | '/sitemap-organizations.xml'
+    | '/sitemap-pages.xml'
+    | '/sitemap-people.xml'
+    | '/sitemap-projects.xml'
+    | '/sitemap-technology.xml'
+    | '/sitemap-timeline.xml'
     | '/sitemap.xml'
     | '/sources'
     | '/terms'
@@ -378,6 +469,15 @@ export interface FileRouteTypes {
     | '/publications'
     | '/search'
     | '/seo-audit'
+    | '/sitemap-articles.xml'
+    | '/sitemap-events.xml'
+    | '/sitemap-images.xml'
+    | '/sitemap-organizations.xml'
+    | '/sitemap-pages.xml'
+    | '/sitemap-people.xml'
+    | '/sitemap-projects.xml'
+    | '/sitemap-technology.xml'
+    | '/sitemap-timeline.xml'
     | '/sitemap.xml'
     | '/sources'
     | '/terms'
@@ -414,6 +514,15 @@ export interface FileRouteTypes {
     | '/publications'
     | '/search'
     | '/seo-audit'
+    | '/sitemap-articles.xml'
+    | '/sitemap-events.xml'
+    | '/sitemap-images.xml'
+    | '/sitemap-organizations.xml'
+    | '/sitemap-pages.xml'
+    | '/sitemap-people.xml'
+    | '/sitemap-projects.xml'
+    | '/sitemap-technology.xml'
+    | '/sitemap-timeline.xml'
     | '/sitemap.xml'
     | '/sources'
     | '/terms'
@@ -451,6 +560,15 @@ export interface RootRouteChildren {
   PublicationsRoute: typeof PublicationsRoute
   SearchRoute: typeof SearchRoute
   SeoAuditRoute: typeof SeoAuditRoute
+  SitemapArticlesDotxmlRoute: typeof SitemapArticlesDotxmlRoute
+  SitemapEventsDotxmlRoute: typeof SitemapEventsDotxmlRoute
+  SitemapImagesDotxmlRoute: typeof SitemapImagesDotxmlRoute
+  SitemapOrganizationsDotxmlRoute: typeof SitemapOrganizationsDotxmlRoute
+  SitemapPagesDotxmlRoute: typeof SitemapPagesDotxmlRoute
+  SitemapPeopleDotxmlRoute: typeof SitemapPeopleDotxmlRoute
+  SitemapProjectsDotxmlRoute: typeof SitemapProjectsDotxmlRoute
+  SitemapTechnologyDotxmlRoute: typeof SitemapTechnologyDotxmlRoute
+  SitemapTimelineDotxmlRoute: typeof SitemapTimelineDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SourcesRoute: typeof SourcesRoute
   TermsRoute: typeof TermsRoute
@@ -577,6 +695,69 @@ declare module '@tanstack/react-router' {
       path: '/seo-audit'
       fullPath: '/seo-audit'
       preLoaderRoute: typeof SeoAuditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-articles.xml': {
+      id: '/sitemap-articles.xml'
+      path: '/sitemap-articles.xml'
+      fullPath: '/sitemap-articles.xml'
+      preLoaderRoute: typeof SitemapArticlesDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-events.xml': {
+      id: '/sitemap-events.xml'
+      path: '/sitemap-events.xml'
+      fullPath: '/sitemap-events.xml'
+      preLoaderRoute: typeof SitemapEventsDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-images.xml': {
+      id: '/sitemap-images.xml'
+      path: '/sitemap-images.xml'
+      fullPath: '/sitemap-images.xml'
+      preLoaderRoute: typeof SitemapImagesDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-organizations.xml': {
+      id: '/sitemap-organizations.xml'
+      path: '/sitemap-organizations.xml'
+      fullPath: '/sitemap-organizations.xml'
+      preLoaderRoute: typeof SitemapOrganizationsDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-pages.xml': {
+      id: '/sitemap-pages.xml'
+      path: '/sitemap-pages.xml'
+      fullPath: '/sitemap-pages.xml'
+      preLoaderRoute: typeof SitemapPagesDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-people.xml': {
+      id: '/sitemap-people.xml'
+      path: '/sitemap-people.xml'
+      fullPath: '/sitemap-people.xml'
+      preLoaderRoute: typeof SitemapPeopleDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-projects.xml': {
+      id: '/sitemap-projects.xml'
+      path: '/sitemap-projects.xml'
+      fullPath: '/sitemap-projects.xml'
+      preLoaderRoute: typeof SitemapProjectsDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-technology.xml': {
+      id: '/sitemap-technology.xml'
+      path: '/sitemap-technology.xml'
+      fullPath: '/sitemap-technology.xml'
+      preLoaderRoute: typeof SitemapTechnologyDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-timeline.xml': {
+      id: '/sitemap-timeline.xml'
+      path: '/sitemap-timeline.xml'
+      fullPath: '/sitemap-timeline.xml'
+      preLoaderRoute: typeof SitemapTimelineDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -731,6 +912,15 @@ const rootRouteChildren: RootRouteChildren = {
   PublicationsRoute: PublicationsRoute,
   SearchRoute: SearchRoute,
   SeoAuditRoute: SeoAuditRoute,
+  SitemapArticlesDotxmlRoute: SitemapArticlesDotxmlRoute,
+  SitemapEventsDotxmlRoute: SitemapEventsDotxmlRoute,
+  SitemapImagesDotxmlRoute: SitemapImagesDotxmlRoute,
+  SitemapOrganizationsDotxmlRoute: SitemapOrganizationsDotxmlRoute,
+  SitemapPagesDotxmlRoute: SitemapPagesDotxmlRoute,
+  SitemapPeopleDotxmlRoute: SitemapPeopleDotxmlRoute,
+  SitemapProjectsDotxmlRoute: SitemapProjectsDotxmlRoute,
+  SitemapTechnologyDotxmlRoute: SitemapTechnologyDotxmlRoute,
+  SitemapTimelineDotxmlRoute: SitemapTimelineDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SourcesRoute: SourcesRoute,
   TermsRoute: TermsRoute,
