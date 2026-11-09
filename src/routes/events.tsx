@@ -48,9 +48,56 @@ interface EventItem {
   images?: EventImage[];
   relatedEntities: { label: string; to: string }[];
   standings?: EventStanding[];
+  organisedBy?: string;
+  distributedBy?: string;
 }
 
 const documentedEvents: EventItem[] = [
+  {
+    id: "team-id-cards-tshirts-distribution-ceremony",
+    title: "Team ID Cards & T-Shirts Distribution Ceremony",
+    category: "Milestone",
+    date: "2026-10-06",
+    displayDate: "6 October 2026",
+    location: "DIMISI Technologies Headquarters, Kanpur, Uttar Pradesh",
+    status: "verified",
+    organisedBy: "DIMISI Technologies Pvt. Ltd.",
+    distributedBy: "Nishkarsh Mishra",
+    summary:
+      "On 6th October 2026, DIMISI Technologies Pvt. Ltd. organised an internal team distribution ceremony where Nishkarsh Mishra distributed official DIMISI-branded T-shirts and company ID cards to the entire team.",
+    description: [
+      "On 6th October 2026, DIMISI Technologies Pvt. Ltd. organised an internal team distribution ceremony where Nishkarsh Mishra distributed official DIMISI-branded T-shirts and company ID cards to the entire team.",
+      "The event marked an important step towards strengthening team identity, professionalism, unity, and a sense of belonging within the DIMISI family.",
+      "Attended by executive leadership, founding directors Shikhar Dixit (Founder & CEO), Swatantra Singh (Co-Founder & CTO), Nishkarsh Mishra (Co-Founder & COO/CFO), and the full developer and operations cohort, the ceremony celebrated the growing strength and cultural unity of DIMISI Technologies.",
+    ],
+    highlights: [
+      "Internal team distribution ceremony organised by DIMISI Technologies Pvt. Ltd. on 6 October 2026",
+      "Official DIMISI-branded corporate T-shirts and company ID cards distributed to the entire team by Nishkarsh Mishra",
+      "Important milestone strengthening team identity, professionalism, unity, and a sense of belonging",
+      "Celebrated alongside executive leadership and the full core development and marketing cohort",
+    ],
+    images: [
+      {
+        src: "/images/team-id-cards-and-tshirts-distribution.jpeg",
+        alt: "The DIMISI Technologies team wearing official branded black T-shirts and corporate ID cards during the distribution ceremony",
+        caption:
+          "Team Identity Ceremony · 6 October 2026: Team members and leadership proudly wearing their official DIMISI-branded black T-shirts and corporate ID cards at headquarters.",
+      },
+      {
+        src: "/images/team-id-cards-and-tshirts-ceremony.jpeg",
+        alt: "DIMISI Technologies team members and leadership celebrating the ID cards and T-shirts distribution ceremony",
+        caption:
+          "Corporate Culture Archive · 6 October 2026: The entire DIMISI team alongside Nishkarsh Mishra celebrating the corporate distribution ceremony.",
+      },
+    ],
+    relatedEntities: [
+      { label: "DIMISI Technologies", to: "/dimisi-technologies" },
+      { label: "Shikhar Dixit (CEO)", to: "/people/shikhar-dixit" },
+      { label: "Nishkarsh Mishra", to: "/people/nishkarsh-mishra" },
+      { label: "Swatantra Singh (CTO)", to: "/people/swatantra-singh" },
+      { label: "Our Journey", to: "/journey" },
+    ],
+  },
   {
     id: "linkedin-30days-kalesh-contest",
     title: "LinkedIn 30-Day Kalesh Promotion & Content Creator Challenge",
@@ -218,7 +265,7 @@ export const Route = createFileRoute("/events")({
     pageHead({
       title: "Documented Events & Campaigns — DIMISI Technologies | DIMISIPEDIA",
       description:
-        "Official documented events and campaigns involving DIMISI Technologies: Office Inauguration, LinkedIn 30-Day Kalesh Promotion Contest, and IIT Bombay E-Summit.",
+        "Official documented events and campaigns involving DIMISI Technologies: Team ID Cards & T-Shirts Distribution Ceremony, Office Inauguration, LinkedIn 30-Day Kalesh Promotion Contest, and IIT Bombay E-Summit.",
       path: "/events",
       schema: [
         buildBreadcrumbSchema(trail, "/events"),
@@ -228,7 +275,7 @@ export const Route = createFileRoute("/events")({
           url: abs("/events"),
           name: "Documented Events & Campaigns — DIMISI Technologies | DIMISIPEDIA",
           description:
-            "Official documented events and campaigns involving DIMISI Technologies: Office Inauguration, LinkedIn 30-Day Kalesh Promotion Contest, and IIT Bombay E-Summit.",
+            "Official documented events and campaigns involving DIMISI Technologies: Team ID Cards & T-Shirts Distribution Ceremony, Office Inauguration, LinkedIn 30-Day Kalesh Promotion Contest, and IIT Bombay E-Summit.",
           isPartOf: { "@id": `${SITE_URL}/#website` },
           breadcrumb: { "@id": `${abs("/events")}#breadcrumb` },
           mainEntity: {
@@ -349,6 +396,23 @@ function EventsPage() {
               {event.summary}
             </p>
 
+            {event.organisedBy || event.distributedBy ? (
+              <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 border-y border-rule/60 py-2.5 font-mono text-xs text-muted-foreground">
+                {event.organisedBy ? (
+                  <span>
+                    <strong className="text-foreground font-semibold">Organised By:</strong>{" "}
+                    {event.organisedBy}
+                  </span>
+                ) : null}
+                {event.distributedBy ? (
+                  <span>
+                    <strong className="text-foreground font-semibold">Distributed By:</strong>{" "}
+                    {event.distributedBy}
+                  </span>
+                ) : null}
+              </div>
+            ) : null}
+
             {/* Images Showcase */}
             {event.images && event.images.length > 0 ? (
               <div
@@ -369,7 +433,10 @@ function EventsPage() {
                       <img
                         src={img.src}
                         alt={img.alt}
+                        width={600}
+                        height={380}
                         loading="lazy"
+                        decoding="async"
                         className="max-h-[380px] w-full object-contain transition-transform duration-300 group-hover:scale-[1.02]"
                       />
                       <div className="absolute bottom-2 right-2 flex items-center gap-1 bg-black/75 px-2.5 py-1 text-[11px] font-mono text-white opacity-0 transition-opacity group-hover:opacity-100 backdrop-blur-xs">

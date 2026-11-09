@@ -23,9 +23,9 @@ const trail = [{ label: "DIMISIPEDIA", to: "/" }, { label: "Our Journey" }];
 export const Route = createFileRoute("/journey")({
   head: () =>
     pageHead({
-      title: "The Entrepreneurship Journey — Shikhar Dixit & DIMISI Technologies | DIMISIPEDIA",
+      title: "Entrepreneurship Journey – Shikhar Dixit & DIMISI",
       description:
-        "The complete, unfiltered story of DIMISI Technologies: from a 6-hour home development sprint for Axis College's Gandhigiri technical project presentation event to CATI, Kalesh, the Sinister Six, incorporation, and DIMISIPEDIA.",
+        "A first-person narrative of DIMISI’s founding: from a 6-hour home project to company formation and beyond, by Founder Shikhar Dixit.",
       path: "/journey",
       schema: [
         buildBreadcrumbSchema(trail, "/journey"),
@@ -419,7 +419,10 @@ function PhaseImageCard({
           <img
             src={image.src}
             alt={image.alt}
+            width={800}
+            height={450}
             loading="lazy"
+            decoding="async"
             className="max-h-[540px] w-full object-contain transition-transform duration-300 group-hover:scale-[1.01]"
           />
           <div className="absolute bottom-3 right-3 flex items-center gap-1.5 bg-black/75 px-3 py-1.5 text-xs font-mono text-white opacity-0 transition-opacity group-hover:opacity-100 backdrop-blur-xs">

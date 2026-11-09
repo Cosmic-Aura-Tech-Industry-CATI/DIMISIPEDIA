@@ -302,7 +302,7 @@ export function getEventsEntries(): SitemapEntry[] {
   return [
     {
       loc: abs("/events"),
-      lastmod: "2026-08-15",
+      lastmod: "2026-10-06",
       priority: "0.8",
       changefreq: "weekly",
     },
@@ -347,10 +347,10 @@ export function getImagesEntries(): ImageSitemapEntry[] {
   // Home logo
   entries.push({
     loc: abs("/"),
-    lastmod: "2026-10-20",
+    lastmod: "2026-10-31",
     images: [
       {
-        loc: abs("/images/dimisipedia-logo.png"),
+        loc: abs("/images/dimisipedia-logo.webp"),
         title: "DIMISIPEDIA — Official Knowledge Engine of DIMISI Technologies",
         caption: "DIMISIPEDIA authoritative knowledge base and entity registry",
         geoLocation: GEO_KANPUR,
@@ -365,7 +365,7 @@ export function getImagesEntries(): ImageSitemapEntry[] {
     lastmod: organizationEntity.updatedAt,
     images: [
       {
-        loc: abs("/images/dimisi-logo.png"),
+        loc: abs("/images/dimisi-logo.webp"),
         title: "DIMISI Technologies Private Limited — Official Corporate Mark",
         caption:
           "Corporate identity of DIMISI Technologies Private Limited (CIN: U62013UP2026PTC246506)",
@@ -459,6 +459,30 @@ export function getImagesEntries(): ImageSitemapEntry[] {
       });
     }
   }
+
+  // Events images
+  entries.push({
+    loc: abs("/events"),
+    lastmod: "2026-10-06",
+    images: [
+      {
+        loc: abs("/images/team-id-cards-and-tshirts-distribution.webp"),
+        title: "Team ID Cards & T-Shirts Distribution Ceremony — DIMISI Technologies",
+        caption:
+          "DIMISI Technologies team wearing official branded black T-shirts and corporate ID cards",
+        geoLocation: GEO_KANPUR,
+        license: LICENSE_URL,
+      },
+      {
+        loc: abs("/images/team-id-cards-and-tshirts-ceremony.webp"),
+        title: "Corporate Identity & Unity Ceremony — DIMISI Technologies",
+        caption:
+          "DIMISI Technologies team celebrating the distribution ceremony alongside Nishkarsh Mishra",
+        geoLocation: GEO_KANPUR,
+        license: LICENSE_URL,
+      },
+    ],
+  });
 
   return entries;
 }

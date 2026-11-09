@@ -73,8 +73,11 @@ function BlogCard({ article, featured }: { article: Article; featured?: boolean 
           <img
             src={article.coverImage}
             alt={article.coverAlt ?? article.title}
-            className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
+            width={640}
+            height={360}
             loading="lazy"
+            decoding="async"
+            className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
         </div>
       )}
@@ -107,6 +110,10 @@ function BlogCard({ article, featured }: { article: Article; featured?: boolean 
             <img
               src={author.image}
               alt={author.name}
+              width={24}
+              height={24}
+              loading="lazy"
+              decoding="async"
               className="size-6 rounded-full object-cover border border-border"
             />
           ) : (

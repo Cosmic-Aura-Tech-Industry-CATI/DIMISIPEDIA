@@ -136,8 +136,12 @@ function PeopleIndex() {
 
           <div className="relative flex items-center justify-center bg-black/40 border-t lg:border-t-0 lg:border-l border-rule overflow-hidden">
             <img
-              src="/images/Shikhar Nish Swat.jpeg"
+              src="/images/Shikhar Nish Swat.webp"
               alt="Founding Directors of DIMISI Technologies — Swatantra Singh, Shikhar Dixit, and Nishkarsh Mishra"
+              width={600}
+              height={380}
+              loading="lazy"
+              decoding="async"
               className="w-full max-h-[380px] object-cover object-center"
             />
           </div>

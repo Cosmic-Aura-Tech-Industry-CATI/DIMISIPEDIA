@@ -79,7 +79,11 @@ function verifiedProfileUrls(entity: Entity): string[] {
     .map((p) => p.url as string);
   const official = (entity.officialLinks ?? []).filter((l) => l.official).map((l) => l.url);
   const explicitSameAs = entity.sameAs ?? [];
-  return Array.from(new Set([...explicitSameAs, ...external, ...official]));
+  const urls = Array.from(new Set([...explicitSameAs, ...external, ...official]));
+  if (urls.length === 0) {
+    return [abs(entity.path)];
+  }
+  return urls;
 }
 
 /** Lightweight reference node so related entities can be linked by @id. */
@@ -111,6 +115,17 @@ export function buildWebsiteSchema(): Json {
     description:
       "DIMISIPEDIA is an authoritative entity knowledge platform documenting DIMISI Technologies Pvt. Ltd., its founders, enterprise business software solutions, products, engineering architecture, and corporate history.",
     publisher: { "@id": `${SITE_URL}/dimisi-technologies#organization` },
+    author: {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/dimisi-technologies#organization`,
+      name: "DIMISI Technologies Pvt. Ltd.",
+    },
+    datePublished: "2026-04-09T00:00:00+05:30",
+    dateModified: "2026-10-31T20:30:00+05:30",
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", ".lead-paragraph", "p"],
+    },
     potentialAction: {
       "@type": "SearchAction",
       target: { "@type": "EntryPoint", urlTemplate: `${SITE_URL}/search?q={search_term_string}` },
@@ -183,6 +198,8 @@ export function buildSiteNavigationSchema(): Json {
     "@type": "ItemList",
     "@id": `${SITE_URL}/#navigation`,
     name: "DIMISIPEDIA Main Navigation",
+    numberOfItems: items.length,
+    itemListOrder: "https://schema.org/ItemListOrderAscending",
     itemListElement: items.map((item, index) => ({
       "@type": "SiteNavigationElement",
       position: index + 1,
@@ -219,6 +236,8 @@ export function buildBreadcrumbSchema(trail: { label: string; to?: string }[], p
   return {
     "@type": "BreadcrumbList",
     "@id": `${abs(path)}#breadcrumb`,
+    numberOfItems: trail.length,
+    itemListOrder: "https://schema.org/ItemListOrderAscending",
     itemListElement: trail.map((t, i) =>
       clean({
         "@type": "ListItem",
@@ -373,7 +392,7 @@ export function buildPersonSchema(entity: Entity): Json {
     gender: entity.gender || "https://schema.org/Male",
     birthDate: entity.birthDate,
     disambiguatingDescription,
-    image: entity.image ? [abs(entity.image), imageObj] : undefined,
+    image: entity.image ? [abs(entity.image), imageObj] : [abs("/images/dimisipedia-logo.png")],
     primaryImageOfPage: imageObj ? { "@id": `${abs(entity.path)}#primaryimage` } : undefined,
     alternateName,
     description: entity.answer || entity.shortDescription,
@@ -382,9 +401,13 @@ export function buildPersonSchema(entity: Entity): Json {
       "@type": "ProfilePage",
       "@id": pageId(entity.path),
       url: abs(entity.path),
-      image: entity.image ? abs(entity.image) : undefined,
+      image: entity.image ? abs(entity.image) : abs("/images/dimisipedia-logo.png"),
     },
-    jobTitle: roleTitles.length > 0 ? roleTitles : undefined,
+    jobTitle: roleTitles.length > 0 ? roleTitles : [entity.subtitle || "Contributor"],
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", ".lead-paragraph", "p"],
+    },
     hasOccupation: {
       "@type": "Occupation",
       name: occupationName,
@@ -649,6 +672,20 @@ export function buildOrganizationSchema(entity: Entity): Json {
         longitude: "80.3319",
       },
     },
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "customer service",
+        email: "contact@dimisi.tech",
+        telephone: "+91-XXXXXXXXXX",
+        availableLanguage: ["English", "Hindi"],
+        areaServed: "Worldwide",
+      },
+    ],
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", ".overview-lead", "p"],
+    },
     sameAs: verifiedProfileUrls(entity),
   });
 }
@@ -814,6 +851,17 @@ export function buildEntityPageSchema(entity: Entity): Json {
     description: entity.shortDescription,
     inLanguage: "en",
     isPartOf: { "@id": `${SITE_URL}/#website` },
+    author: {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/dimisi-technologies#organization`,
+      name: "DIMISI Technologies Pvt. Ltd.",
+    },
+    datePublished: toIsoDateTime(entity.createdAt) ?? "2026-04-09T00:00:00+05:30",
+    dateModified: toIsoDateTime(entity.updatedAt) ?? "2026-10-31T20:30:00+05:30",
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", ".speakable-summary", "p"],
+    },
     dateCreated: toIsoDateTime(entity.createdAt),
     dateModified: toIsoDateTime(entity.updatedAt),
     breadcrumb: { "@id": `${abs(entity.path)}#breadcrumb` },
@@ -861,6 +909,9 @@ export function pageHead(options: HeadOptions) {
     { name: "ICBM", content: "26.4499, 80.3319" },
     { name: "theme-color", content: "#0a0a0a" },
     { name: "author", content: "DIMISI Technologies Pvt. Ltd." },
+    { name: "date", content: "2026-10-31" },
+    { property: "article:published_time", content: "2026-04-09T00:00:00+05:30" },
+    { property: "article:modified_time", content: "2026-10-31T20:30:00+05:30" },
   ];
   const imageToUse = options.image || "/images/dimisipedia-logo.png";
   const imageUrl = abs(imageToUse);
@@ -937,11 +988,25 @@ export function indexHead(opts: {
         url: abs(opts.path),
         name: opts.title,
         description: opts.description,
+        inLanguage: "en",
         isPartOf: { "@id": `${SITE_URL}/#website` },
+        author: {
+          "@type": "Organization",
+          "@id": `${SITE_URL}/dimisi-technologies#organization`,
+          name: "DIMISI Technologies Pvt. Ltd.",
+        },
+        datePublished: "2026-04-09T00:00:00+05:30",
+        dateModified: "2026-10-31T20:30:00+05:30",
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", "p"],
+        },
         breadcrumb: { "@id": `${abs(opts.path)}#breadcrumb` },
         mainEntity: {
           "@type": "ItemList",
           name: opts.listName,
+          numberOfItems: opts.items.length,
+          itemListOrder: "https://schema.org/ItemListOrderAscending",
           itemListElement: opts.items.map((e, i) => ({
             "@type": "ListItem",
             position: i + 1,
@@ -979,7 +1044,7 @@ export function canonicalUrls(): SitemapUrlEntry[] {
       lastmod: TODAY,
       priority: "1.0",
       image: {
-        loc: abs("/images/dimisipedia-logo.png"),
+        loc: abs("/images/dimisipedia-logo.webp"),
         title: "DIMISIPEDIA — Official Knowledge Engine of DIMISI Technologies",
         caption: "DIMISIPEDIA authoritative knowledge base and entity registry",
         geoLocation: "Kanpur, Uttar Pradesh, India",

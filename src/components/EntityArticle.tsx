@@ -73,7 +73,10 @@ function SectionImageGallery({
           <img
             src={img.src}
             alt={img.alt}
+            width={640}
+            height={360}
             loading="lazy"
+            decoding="async"
             className="aspect-video w-full object-cover"
           />
           {img.caption ? (
@@ -124,6 +127,19 @@ export function EntityArticle({
   const rels = relationsFor(entity.id);
   const claimCount = entity.claims?.length ?? 0;
 
+  const h1Title =
+    entity.id === "shikhar-dixit"
+      ? "Shikhar Dixit – Founder & CEO"
+      : entity.id === "kalesh"
+        ? "The Kalesh (Flagship Project)"
+        : entity.id === "sheelu-singh"
+          ? "Sheelu Singh – Android & Flutter Developer"
+          : entity.id === "dimisi-technologies"
+            ? "DIMISI Technologies"
+            : entity.entityType === "person" && entity.subtitle
+              ? `${entity.name} – ${entity.subtitle.split("—")[0].replace(/·.*/, "").trim()}`
+              : entity.name;
+
   return (
     <>
       <ReadingProgress />
@@ -145,8 +161,20 @@ export function EntityArticle({
                 </span>
               ) : null}
             </div>
-            <h1 className="mt-2 text-4xl leading-tight sm:text-5xl">{entity.name}</h1>
-            {entity.id === "jayendra-pratap-singh" ? (
+            <h1 className="mt-2 text-4xl leading-tight sm:text-5xl">{h1Title}</h1>
+            {entity.id === "shikhar-dixit" ? (
+              <div className="mt-2 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+                <span className="font-serif italic">Executive Title:</span>
+                <strong className="font-medium text-foreground">
+                  Founder &amp; Chief Executive Officer (CEO)
+                </strong>
+                <span className="text-rule">·</span>
+                <span className="font-serif italic">Primary Entity:</span>
+                <strong className="font-medium text-foreground">
+                  DIMISI Technologies Pvt. Ltd.
+                </strong>
+              </div>
+            ) : entity.id === "jayendra-pratap-singh" ? (
               <div className="mt-2 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
                 <span className="font-serif italic">Professional name:</span>
                 <strong className="font-medium text-foreground">Jayendra Pratap Singh (JP)</strong>

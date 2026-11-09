@@ -72,7 +72,7 @@ export const article: Article = {
   ],
   sourceIds: ["src-dimisipedia-spec"],
   relatedEntities: ["dimisipedia", "dimisi-technologies"],
-  seoTitle: "How DIMISIPEDIA verifies information — verification states and source tiers",
+  seoTitle: "How DIMISIPEDIA Verifies Information – Verification Policy",
   seoDescription:
-    "DIMISIPEDIA verifies claims rather than people: five verification states, a four-tier source hierarchy, and a derivation rule where editorial judgement can only lower a claim's status.",
+    "Article explaining DIMISIPEDIA’s claim verification policy: evidence tiers, verification states, and source hierarchy for publishing information.",
 };

@@ -102,6 +102,10 @@ function ArticlePage() {
           <img
             src={article.coverImage}
             alt={article.coverAlt ?? article.title}
+            width={1200}
+            height={675}
+            loading="lazy"
+            decoding="async"
             className="w-full border border-rule object-cover"
           />
         </figure>
@@ -190,6 +194,8 @@ function ArticlePage() {
                   alt={`Portrait of ${author.name}`}
                   width={64}
                   height={64}
+                  loading="lazy"
+                  decoding="async"
                   className="size-16 border border-rule object-cover"
                 />
               ) : null}

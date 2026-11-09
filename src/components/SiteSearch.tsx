@@ -44,30 +44,53 @@ export function SiteSearch({
 
   return (
     <div className="relative">
-      <label htmlFor="dp-search" className="sr-only">
-        Search DIMISIPEDIA
-      </label>
-      <div
-        className="flex items-center gap-3 border border-border bg-surface px-4 py-3 transition-colors focus-within:border-primary"
-        role="combobox"
-        aria-expanded={Boolean(q.trim() && results.length > 0)}
-        aria-haspopup="listbox"
-        aria-owns="dp-search-results"
+      <form
+        role="search"
+        action="/search"
+        method="get"
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (q.trim()) {
+            navigate({
+              to: "/search",
+              search: { q: q.trim() } as unknown as Record<string, string>,
+            });
+          }
+        }}
+        {...({
+          toolname: "siteSearch",
+          tooldescription:
+            "Search DIMISIPEDIA for documented people, founders, projects, technology stacks, and corporate milestones",
+          toolparamdescription:
+            "Search query or entity name (e.g. Shikhar Dixit, Kalesh, DIMISI-OPS)",
+        } as Record<string, string>)}
       >
-        <Search className="size-4 shrink-0 text-muted-foreground" aria-hidden />
-        <input
-          ref={inputRef}
-          id="dp-search"
-          value={q}
-          autoFocus={autoFocus}
-          onChange={(e) => setQ(e.target.value)}
-          onKeyDown={handleKeyDown}
-          placeholder={placeholder}
-          aria-autocomplete="list"
-          aria-controls="dp-search-results"
-          className="w-full bg-transparent text-sm outline-none placeholder:text-muted-foreground"
-        />
-      </div>
+        <label htmlFor="dp-search" className="sr-only">
+          Search DIMISIPEDIA
+        </label>
+        <div
+          className="flex items-center gap-3 border border-border bg-surface px-4 py-3 transition-colors focus-within:border-primary"
+          role="combobox"
+          aria-expanded={Boolean(q.trim() && results.length > 0)}
+          aria-haspopup="listbox"
+          aria-owns="dp-search-results"
+        >
+          <Search className="size-4 shrink-0 text-muted-foreground" aria-hidden />
+          <input
+            ref={inputRef}
+            id="dp-search"
+            name="q"
+            value={q}
+            autoFocus={autoFocus}
+            onChange={(e) => setQ(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder={placeholder}
+            aria-autocomplete="list"
+            aria-controls="dp-search-results"
+            className="w-full bg-transparent text-sm outline-none placeholder:text-muted-foreground"
+          />
+        </div>
+      </form>
 
       {q.trim() ? (
         <div

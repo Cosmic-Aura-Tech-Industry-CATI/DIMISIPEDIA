@@ -10,9 +10,9 @@ import { EXTERNAL_REL_UNTRUSTED, safeExternalHref } from "@/lib/url-safety";
 export const Route = createFileRoute("/projects/")({
   head: () =>
     indexHead({
-      title: "Projects & Platforms — DIMISI Technologies | DIMISIPEDIA",
+      title: "DIMISIPEDIA – Project Directory",
       description:
-        "Directory of DIMISI Technologies internal products, client digital transformations, lab experiments, and internal operational systems.",
+        "Directory of documented projects at DIMISI Technologies, including flagship products Kalesh and DIMISIPEDIA.",
       path: "/projects",
       listName: "Projects documented by DIMISIPEDIA",
       items: projectEntities,
@@ -134,8 +134,11 @@ function ProjectsIndex() {
                         <img
                           src={p.image}
                           alt={p.name}
-                          className="size-full object-contain"
+                          width={48}
+                          height={48}
                           loading="lazy"
+                          decoding="async"
+                          className="size-full object-contain"
                         />
                       </div>
                     ) : null}

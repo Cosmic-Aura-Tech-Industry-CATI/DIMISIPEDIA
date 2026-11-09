@@ -729,7 +729,7 @@ export const jayendraPratapSingh: Entity = {
   statusBadge: "DIMISIPEDIA • FIRST MENTOR",
   category: "People & Leadership",
   aliases: ["jp", "jayant-sir", "jayendra-singh", "jayendra-pratap"],
-  image: "/images/jayendra-pratap-singh.jpg",
+  image: "/images/jayendra-pratap-singh.webp",
   shortDescription:
     "Startup Advisor at Wadhwani Foundation, HR & People Development Consultant, Startup India National Mentor, DPIIT Platinum Badge awardee, and the First Mentor of DIMISI Technologies Private Limited.",
   answer:
@@ -1310,9 +1310,9 @@ export const jayendraPratapSingh: Entity = {
   createdAt: ADDED,
   updatedAt: REVIEWED,
   verifiedAt: REVIEWED,
-  seoTitle: "Jayendra Pratap Singh (JP) — First Mentor, DIMISI Technologies | Profile",
+  seoTitle: "Jayendra Pratap Singh (JP) – First Mentor & Startup Advisor | DIMISIPEDIA",
   seoDescription:
-    "Authoritative profile of Jayendra Pratap Singh (JP), First Mentor of DIMISI Technologies Private Limited. Startup Advisor at Wadhwani Foundation, IIM Ranchi HR alumnus, Startup India National Mentor (50+ startups), and DPIIT Platinum Badge awardee.",
+    "Profile of Jayendra Pratap Singh, HR consultant and Startup India national mentor, and the first mentor of DIMISI Technologies.",
 };
 
 export const mentorEntities: Entity[] = [jayendraPratapSingh];

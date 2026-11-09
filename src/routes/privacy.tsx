@@ -26,17 +26,31 @@ function Privacy() {
       <h1 className="mt-6 text-4xl">Privacy</h1>
       <div className="prose-editorial mt-6">
         <p>
-          DIMISIPEDIA is a public reading platform operated by DIMISI Technologies Pvt. Ltd. It does
-          not require an account to read any published entry and does not ask visitors for personal
-          information in order to browse.
+          DIMISIPEDIA is a public informational repository operated by DIMISI Technologies Pvt. Ltd.
+          (CIN: U62013UP2026PTC246506). The platform provides free public access to corporate
+          records, leadership profiles, and technological documentation.
         </p>
+        <h2 className="mt-6 text-xl">No Account or Credential Harvesting</h2>
         <p>
-          A formal privacy statement covering analytics, contact submissions and contributor
-          accounts will be published here once those features are introduced. Until then, no such
-          data is collected through this site.
+          DIMISIPEDIA does not require user registration or logins. We do not prompt visitors for
+          usernames, passwords, phone numbers, payment details, or personal identifiable information
+          (PII). We do not host deceptive downloads, ads, third-party marketing trackers, or
+          credential harvesting mechanisms.
         </p>
+        <h2 className="mt-6 text-xl">Data Storage &amp; Cookies</h2>
         <p>
-          Questions can be directed to DIMISI Technologies through{" "}
+          DIMISIPEDIA stores light, non-tracking client-side preferences (such as your chosen light
+          or dark color theme) strictly in your local browser storage. No session profiling,
+          cross-site tracking, or behavioral advertising cookies are used.
+        </p>
+        <h2 className="mt-6 text-xl">Contact &amp; Inquiries</h2>
+        <p>
+          Privacy-related questions or data protection queries can be directed to DIMISI
+          Technologies at{" "}
+          <a href="mailto:contact@dimisi.tech" className="text-primary hover:underline">
+            contact@dimisi.tech
+          </a>{" "}
+          or through our corporate portal at{" "}
           <a href="https://dimisi.tech" target="_blank" rel="noreferrer noopener">
             dimisi.tech
           </a>

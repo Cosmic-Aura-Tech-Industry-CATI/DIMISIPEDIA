@@ -316,7 +316,7 @@ const shikhar: Entity = {
   entityType: "person",
   name: "Shikhar Dixit",
   subtitle: "Founder & CEO · DIMISI Technologies",
-  image: "/images/shikhar-dixit.png",
+  image: "/images/shikhar-dixit.webp",
   birthDate: "2004-05-06",
   shortDescription:
     "Indian technology entrepreneur and software engineer; Founder & Chief Executive Officer of DIMISI Technologies Private Limited, leading enterprise business software architecture, operations systems (DIMISI-OPS), and digital platforms.",
@@ -756,10 +756,9 @@ const shikhar: Entity = {
   ),
   createdAt: ADDED,
   updatedAt: "2026-10-20",
-  seoTitle:
-    "Shikhar Dixit — Founder & CEO of DIMISI Technologies | Enterprise Software Architect & Entrepreneur",
+  seoTitle: "Shikhar Dixit – Founder & CEO at DIMISI Technologies | DIMISIPEDIA",
   seoDescription:
-    "Official entity profile of Shikhar Dixit: Founder & CEO of DIMISI Technologies Private Limited. Principal software architect of DIMISI-OPS, Kalesh, and DIMISIPEDIA; technology entrepreneur and enterprise software leader based in Kanpur, UP.",
+    "Profile of Shikhar Dixit, Founder and Chief Executive Officer (CEO) of DIMISI Technologies. Principal software architect of DIMISI-OPS, Kalesh, and DIMISIPEDIA.",
 };
 
 /* ---------------------------------------------------------- person: Nishkarsh */
@@ -771,7 +770,7 @@ const nishkarsh: Entity = {
   entityType: "person",
   name: "Nishkarsh Mishra",
   subtitle: "Co-Founder, Director, CMO & COO · DIMISI Technologies",
-  image: "/images/nishkarsh-mishra.png",
+  image: "/images/nishkarsh-mishra.webp",
   birthDate: "2000-03-15",
   shortDescription:
     "Technology entrepreneur, operations strategist and marketing executive; co-founder and director of DIMISI Technologies Private Limited.",
@@ -1032,7 +1031,7 @@ const swatantra: Entity = {
   entityType: "person",
   name: "Swatantra Singh",
   subtitle: "Co-Founder & CTO · DIMISI Technologies",
-  image: "/images/swatantra-singh.png",
+  image: "/images/swatantra-singh.webp",
   birthDate: "2000-08-30",
   shortDescription:
     "Technology executive and engineer; co-founder, director and chief technology officer of DIMISI Technologies Private Limited.",

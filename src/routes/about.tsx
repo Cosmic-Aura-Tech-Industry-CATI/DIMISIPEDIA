@@ -5,9 +5,9 @@ import { Breadcrumbs } from "@/components/EntityArticle";
 export const Route = createFileRoute("/about")({
   head: () =>
     pageHead({
-      title: "About DIMISIPEDIA",
+      title: "About DIMISIPEDIA – DIMISI's Corporate Knowledge Base",
       description:
-        "DIMISIPEDIA is the official public knowledge and documentation platform of DIMISI Technologies Pvt. Ltd. What it is, who operates it and how it is structured.",
+        "Learn about DIMISIPEDIA: DIMISI Technologies’ public knowledge platform documenting our organization, people, projects and technology.",
       path: "/about",
       schema: [
         buildBreadcrumbSchema(
@@ -47,13 +47,33 @@ function About() {
           chronicles, and architectural records are published directly by the enterprise as
           first-party corporate disclosures.
         </p>
-        <h2 className="mt-10 text-2xl">Contact</h2>
+        <h2 className="mt-10 text-2xl">Legal Disclaimers &amp; Non-Affiliation</h2>
         <p>
-          For corrections, additions or verification requests, contact DIMISI Technologies through{" "}
-          <a href="https://dimisi.tech" target="_blank" rel="noreferrer noopener">
+          DIMISIPEDIA is an independent entity knowledge registry. It is not affiliated with,
+          sponsored by, authorized by, or endorsed by the Wikimedia Foundation, Wikipedia, or any
+          third-party encyclopedia. DIMISIPEDIA does not provide user account registration, does not
+          collect login credentials or passwords, and does not process financial transactions.
+        </p>
+        <h2 id="contact" className="mt-10 text-2xl scroll-mt-20">
+          Contact &amp; Inquiries
+        </h2>
+        <p>
+          For editorial inquiries, fact verification, or corporate business software requests,
+          contact DIMISI Technologies at{" "}
+          <a href="mailto:contact@dimisi.tech" className="text-primary hover:underline">
+            contact@dimisi.tech
+          </a>{" "}
+          or visit the official company website at{" "}
+          <a
+            href="https://dimisi.tech"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="text-primary hover:underline"
+          >
             dimisi.tech
           </a>
-          .
+          . Registered office: Swarn Jayanti Vihar, Koyala Nagar, Kanpur, Uttar Pradesh 208011,
+          India.
         </p>
         <h2 className="mt-10 text-2xl">Related pages</h2>
         <p>

@@ -131,15 +131,6 @@
         <footer role="contentinfo" id="footer">
           <p>DIMISIPEDIA Enterprise Sitemap System · Authoritative Entity &amp; Knowledge Registry</p>
         </footer>
-
-        <script type="text/javascript">
-          if (typeof window !== 'undefined') {
-            var urlSpan = document.getElementById('header-url');
-            if (urlSpan) {
-              urlSpan.textContent = window.location.href;
-            }
-          }
-        </script>
       </body>
     </html>
   </xsl:template>

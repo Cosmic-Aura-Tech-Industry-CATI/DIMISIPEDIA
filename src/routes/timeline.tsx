@@ -10,13 +10,13 @@ import { getEntity, timeline } from "@/data/knowledge";
 export const Route = createFileRoute("/timeline")({
   head: () =>
     pageHead({
-      title: "Timeline of DIMISI Technologies | DIMISIPEDIA",
+      title: "Company Timeline – DIMISI Technologies",
       description:
-        "Chronological record of documented DIMISI Technologies milestones, from the initial spark in October 2024 to incorporation and modern platform releases.",
+        "Explore the chronological history and key milestones of DIMISI Technologies, from founding to recent achievements.",
       path: "/timeline",
       schema: [
         buildBreadcrumbSchema(
-          [{ label: "DIMISIPEDIA", to: "/" }, { label: "Timeline of DIMISI Technologies" }],
+          [{ label: "DIMISIPEDIA", to: "/" }, { label: "Company Timeline – DIMISI Technologies" }],
           "/timeline",
         ),
       ],
@@ -48,7 +48,7 @@ function TimelinePage() {
       <Breadcrumbs trail={[{ label: "DIMISIPEDIA", to: "/" }, { label: "Timeline" }]} />
       <header className="mt-6 border-b border-rule pb-8">
         <p className="label-mono">Chronological record · {timeline.length} Documented Milestones</p>
-        <h1 className="mt-2 text-4xl">Technical &amp; Corporate Timeline</h1>
+        <h1 className="mt-2 text-4xl">DIMISI Timeline &amp; Milestones</h1>
         <p className="mt-4 max-w-2xl text-muted-foreground">
           The recorded history of DIMISI Technologies. Entries appear here when a date and a
           documented description exist; each carries its own verification status. For the detailed

@@ -143,6 +143,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "DIMISIPEDIA documents DIMISI Technologies Pvt. Ltd. — its founders, people, projects, technology, history and sources.",
       },
       { name: "author", content: "DIMISI Technologies Pvt. Ltd." },
+      { name: "date", content: "2026-10-31" },
+      { property: "article:published_time", content: "2026-04-09T00:00:00+05:30" },
+      { property: "article:modified_time", content: "2026-10-31T20:30:00+05:30" },
       { name: "geo.region", content: "IN-UP" },
       { name: "geo.placename", content: "Kanpur, Uttar Pradesh, India" },
       { name: "geo.position", content: "26.4499;80.3319" },
@@ -170,8 +173,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         title: "DIMISIPEDIA Official Blog & Knowledge Feed",
         href: "/feed.xml",
       },
+      { rel: "sitemap", type: "application/xml", title: "Sitemap", href: "/sitemap.xml" },
       { rel: "author", href: "/llms.txt" },
       { rel: "help", href: "/llms.txt", type: "text/plain", title: "LLM Knowledge Index" },
+      {
+        rel: "webmcp",
+        href: "/webmcp.json",
+        type: "application/json",
+        title: "WebMCP Tools Manifest",
+      },
     ],
     scripts: [
       {

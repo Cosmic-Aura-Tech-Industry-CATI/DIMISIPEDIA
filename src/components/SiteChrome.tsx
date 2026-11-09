@@ -14,7 +14,7 @@ const nav = [
   { to: "/timeline", label: "Timeline" },
   { to: "/events", label: "Events" },
   { to: "/blog", label: "Blog" },
-  { to: "/articles", label: "Articles" },
+  { to: "/about", label: "About & Contact" },
 ];
 
 function ThemeToggle() {
@@ -77,7 +77,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center gap-4 px-5 py-3">
         <Link to="/" className="group flex shrink-0 items-center gap-2.5">
           <img
-            src="/images/dimisipedia-logo.png"
+            src="/images/dimisipedia-logo.webp"
             alt="DIMISIPEDIA logo"
             width={28}
             height={28}
@@ -162,7 +162,7 @@ export function SiteFooter() {
         <div>
           <div className="flex items-center gap-2.5">
             <img
-              src="/images/dimisipedia-logo.png"
+              src="/images/dimisipedia-logo.webp"
               alt="DIMISIPEDIA logo"
               width={32}
               height={32}
@@ -264,6 +264,14 @@ export function SiteFooter() {
               </a>
             </li>
             <li>
+              <a
+                href="mailto:contact@dimisi.tech"
+                className="text-muted-foreground hover:text-foreground"
+              >
+                Contact
+              </a>
+            </li>
+            <li>
               <Link to="/privacy" className="text-muted-foreground hover:text-foreground">
                 Privacy
               </Link>
@@ -287,9 +295,10 @@ export function SiteFooter() {
               (CIN: U62013UP2026PTC246506) · Kanpur, Uttar Pradesh, India
             </p>
             <p className="text-[11px] text-muted-foreground/75 leading-relaxed">
-              DIMISIPEDIA is the official corporate knowledge platform owned and operated
-              exclusively by DIMISI Technologies Pvt. Ltd. All records, profiles, and milestones are
-              documented with verification status.
+              DIMISIPEDIA is an independent first-party corporate encyclopedia documenting DIMISI
+              Technologies Pvt. Ltd. It is not affiliated with, sponsored by, or endorsed by the
+              Wikimedia Foundation or Wikipedia. This public reference repository does not collect
+              user credentials, passwords, or payment details.
             </p>
           </div>
           <a
@@ -302,10 +311,11 @@ export function SiteFooter() {
               Designed &amp; Developed By
             </span>
             <img
-              src="/images/dimisi-horizontal.png"
-              alt="DIMISI Technologies — dimisi.tech"
+              src="/images/dimisi-horizontal.webp"
+              alt="DIMISIPEDIA and DIMISI Technologies — dimisi.tech"
               width={148}
               height={38}
+              loading="lazy"
               className="h-6 w-auto shrink-0 object-contain opacity-90 transition-opacity group-hover:opacity-100 sm:h-7"
             />
           </a>

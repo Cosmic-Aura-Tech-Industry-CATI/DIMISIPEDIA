@@ -603,7 +603,7 @@ const people: Entity[] = [
     entityType: "person",
     name: "Sheelu Singh",
     subtitle: "Android & Flutter Developer — DIMISI Technologies",
-    image: "/images/sheelu-singh.png",
+    image: "/images/sheelu-singh.webp",
     shortDescription:
       "Mobile engineer at DIMISI Technologies; Android and Flutter developer for the Kalesh platform.",
     answer:
@@ -783,9 +783,9 @@ const people: Entity[] = [
     ],
     createdAt: "2026-08-15",
     updatedAt: "2026-08-15",
-    seoTitle: "Sheelu Singh — Android & Flutter Developer, DIMISI Technologies | DIMISIPEDIA",
+    seoTitle: "Sheelu Singh – Android & Flutter Developer, DIMISI | DIMISIPEDIA",
     seoDescription:
-      "Sheelu Singh is an Android and Flutter developer at DIMISI Technologies, engineering the Kalesh mobile application with Flutter, Provider and Firebase.",
+      "Learn about Sheelu Singh, Android/Flutter developer at DIMISI Technologies working on the Kalesh platform (anonymous social network).",
   },
   {
     id: "mridul-mishra",
@@ -794,7 +794,7 @@ const people: Entity[] = [
     entityType: "person",
     name: "Mridul Mishra",
     subtitle: "Founding Engineer — Kalesh, DIMISI Technologies",
-    image: "/images/mridul-mishra.jpg",
+    image: "/images/mridul-mishra.webp",
     shortDescription:
       "Backend engineer and founding engineer for Kalesh, DIMISI Technologies' consumer social platform.",
     answer:
@@ -966,7 +966,7 @@ const people: Entity[] = [
     entityType: "person",
     name: "Amrit Awasthi",
     subtitle: "Android Developer Intern (Flutter / DART) — DIMISI Technologies",
-    image: "/images/amrit-awasthi.png",
+    image: "/images/amrit-awasthi.webp",
     shortDescription:
       "Android developer intern specializing in Flutter and Dart at DIMISI Technologies, serving as lead application developer for the KAAND news and media platform.",
     answer:
@@ -1120,7 +1120,7 @@ const people: Entity[] = [
     entityType: "person",
     name: "Prashant Umrao",
     subtitle: "Full Stack Developer Intern & Tester — DIMISI Technologies",
-    image: "/images/prashant-umrao.png",
+    image: "/images/prashant-umrao.webp",
     shortDescription:
       "Full stack developer intern and software tester at DIMISI Technologies, 1st Prize Winner of the nationwide LinkedIn 30-Day Kalesh Promotion Challenge, and contributor to DIMISI-OPS.",
     answer:
@@ -1266,7 +1266,7 @@ const people: Entity[] = [
     entityType: "person",
     name: "Amit Kumar",
     subtitle: "Backend Development Intern — DIMISI Technologies",
-    image: "/images/amit-kumar.png",
+    image: "/images/amit-kumar.webp",
     shortDescription:
       "Backend development intern at DIMISI Technologies, building server-side logic, database integrations, and task workflows for the DIMISI-OPS platform.",
     answer:
@@ -1395,7 +1395,7 @@ const people: Entity[] = [
     entityType: "person",
     name: "Harsh Mishra",
     subtitle: "Full Stack Web Developer — DIMISI Technologies",
-    image: "/images/harsh-mishra.jpg",
+    image: "/images/harsh-mishra.webp",
     shortDescription:
       "Full Stack Web Developer at DIMISI Technologies and 2nd Position holder in the 30-Day LinkedIn Challenge, with previous experience as Video Editor & Social Media Marketing Intern.",
     answer:
@@ -1561,7 +1561,7 @@ const people: Entity[] = [
     entityType: "person",
     name: "Somya Tiwari",
     subtitle: "Full Stack Developer & Client Project Manager — DIMISI Technologies",
-    image: "/images/somya-tiwari.jpg",
+    image: "/images/somya-tiwari.webp",
     shortDescription:
       "Full Stack Developer and Client Project Manager at DIMISI Technologies, 3rd Position holder in the 30-Day LinkedIn Challenge, and coordinator for commercial client deliveries.",
     answer:
@@ -1714,7 +1714,7 @@ const people: Entity[] = [
     entityType: "person",
     name: "Anushka Tripathi",
     subtitle: "Full Stack Web Developer Intern — DIMISI Technologies",
-    image: "/images/anushka-tripathi.jpg",
+    image: "/images/anushka-tripathi.webp",
     shortDescription:
       "Full Stack Web Developer Intern at DIMISI Technologies and 4th Position holder in the nationwide 30-Day LinkedIn Challenge.",
     answer:
@@ -1849,7 +1849,7 @@ const people: Entity[] = [
     entityType: "person",
     name: "Nisha Chaudhary",
     subtitle: "Market Research & Analysis Intern — DIMISI Technologies",
-    image: "/images/nisha-chaudhary.jpg",
+    image: "/images/nisha-chaudhary.webp",
     shortDescription:
       "Market Research & Analysis Intern at DIMISI Technologies, specializing in market intelligence, user behavior analysis, and product insights.",
     answer:
@@ -1959,7 +1959,7 @@ const people: Entity[] = [
     entityType: "person",
     name: "Siddhant Shekhar",
     subtitle: "Former Core Member & Web Developer — DIMISI Technologies",
-    image: "/images/siddhant-shekhar.png",
+    image: "/images/siddhant-shekhar.webp",
     shortDescription:
       "Former core member of DIMISI Technologies and web developer who contributed to early frontend platforms and developed the KaryON home services platform.",
     answer:
@@ -2066,7 +2066,7 @@ const people: Entity[] = [
     entityType: "person",
     name: "Krishna Tiwari",
     subtitle: "Social Media Marketing Head — DIMISI Technologies",
-    image: "/images/krishna-tiwari.jpg",
+    image: "/images/krishna-tiwari.webp",
     shortDescription:
       "Social Media Marketing Head at DIMISI Technologies, heading video shoots, editing, and end-to-end social media marketing for Dimisi, Kalesh, and The Startup Diaries.",
     answer:
@@ -2269,7 +2269,7 @@ const organization: Entity = {
   entityType: "organization",
   name: "DIMISI Technologies",
   subtitle: "Enterprise Business Software & Technology Solutions Provider",
-  image: "/images/dimisi-logo.png",
+  image: "/images/dimisi-logo.webp",
   shortDescription:
     "Indian technology company and enterprise software provider specializing in custom business software, operations management platforms (DIMISI-OPS), cloud-native web engineering, and AI automation.",
   answer:
@@ -2564,10 +2564,9 @@ const organization: Entity = {
   ],
   createdAt: "2026-08-15",
   updatedAt: "2026-10-20",
-  seoTitle:
-    "DIMISI Technologies — Enterprise Business Software Solutions & IT Company | DIMISIPEDIA",
+  seoTitle: "DIMISI Technologies Pvt. Ltd. – Enterprise Software & Cloud Solutions | DIMISIPEDIA",
   seoDescription:
-    "Official corporate overview of DIMISI Technologies Private Limited (CIN: U62013UP2026PTC246506). Custom business software, enterprise operations systems (DIMISI-OPS), cloud engineering, and leadership by Founder & CEO Shikhar Dixit.",
+    "Official DIMISI Technologies profile: An Indian enterprise software and business solutions provider headquartered in Kanpur.",
 };
 
 const projects: Entity[] = [
@@ -2591,7 +2590,7 @@ const projects: Entity[] = [
     ],
     name: "The Kalesh",
     subtitle: "Flagship DIMISI Product — Anonymous Social Media Platform",
-    image: "/images/kalesh-icon.png",
+    image: "/images/kalesh-icon.webp",
     shortDescription:
       "The Kalesh is DIMISI's flagship anonymous social media platform built around identity-free expression, conversations and community interaction.",
     answer:
@@ -2850,9 +2849,9 @@ const projects: Entity[] = [
     ],
     createdAt: "2026-08-15",
     updatedAt: "2026-08-15",
-    seoTitle: "Kalesh — Anonymous Social Media & Opinion Platform | DIMISIPEDIA",
+    seoTitle: "Kalesh – Anonymous Social Platform by DIMISI | DIMISIPEDIA",
     seoDescription:
-      "Kalesh is an India-focused anonymous social media and opinion platform by DIMISI Technologies: anonymous profiles, real-time polls, private chats, team, technology and sources.",
+      "The Kalesh is an anonymous social media platform developed by DIMISI Technologies, enabling private polls and chats without real identities.",
   },
 
   {
@@ -2877,7 +2876,7 @@ const projects: Entity[] = [
     ],
     name: "KAAND",
     subtitle: "Next-Generation Mobile News & Media Platform (Android & iOS)",
-    image: "/images/kaand-logo.png",
+    image: "/images/kaand-logo.webp",
     shortDescription:
       "KAAND is DIMISI's next-generation media and news platform being developed to create a new approach to modern news consumption.",
     answer:
@@ -3029,7 +3028,7 @@ const projects: Entity[] = [
     ],
     name: "CATI Khelghar",
     subtitle: "Offline Pass-and-Play Local Multiplayer Gaming Platform",
-    image: "/images/cati-khelghar-logo.png",
+    image: "/images/cati-khelghar-logo.webp",
     shortDescription:
       "CATI Khelghar is an offline-first collection of pass-and-play games designed for playing together on a single device without requiring accounts or internet connectivity.",
     answer:
@@ -3175,7 +3174,7 @@ const projects: Entity[] = [
       "DIMISI Technologies",
       "Under Development",
     ],
-    image: "/images/dimisi-ops-logo.jpg",
+    image: "/images/dimisi-ops-logo.webp",
     name: "DIMISI-OPS",
     subtitle: "Enterprise Operations, Employee Management & Workflow System",
     shortDescription:
@@ -3334,7 +3333,7 @@ const projects: Entity[] = [
     ],
     name: "DIMISI Technologies",
     subtitle: "Official Corporate Web Platform & Technology Showcase",
-    image: "/images/dimisi-logo.png",
+    image: "/images/dimisi-logo.webp",
     shortDescription:
       "The official digital platform of DIMISI Technologies showcasing its technology capabilities, products, services and digital ecosystem.",
     answer:
@@ -3473,7 +3472,7 @@ const projects: Entity[] = [
     ],
     name: "KaryON",
     subtitle: "Professional Home Services Platform At Your Doorstep",
-    image: "/images/karyon-logo.png",
+    image: "/images/karyon-logo.webp",
     shortDescription:
       "KaryON is a professional home-services platform designed to connect customers with service professionals at their doorstep.",
     answer:
@@ -3619,7 +3618,7 @@ const projects: Entity[] = [
       "Entity Graph",
       "DIMISI Internal",
     ],
-    image: "/images/dimisipedia-logo.png",
+    image: "/images/dimisipedia-logo.webp",
     name: "DIMISIPEDIA",
     subtitle: "Project — knowledge and documentation platform",
     shortDescription:
@@ -3718,7 +3717,7 @@ const projects: Entity[] = [
     tags: ["Travel", "Tourism", "Car Rental", "Next.js", "SEO", "AEO", "GEO", "Client Project"],
     name: "Rudra Tours & Travels",
     subtitle: "Client Project — End-to-End Digital Transformation & Web Platform",
-    image: "/images/rudra-tours-logo.png",
+    image: "/images/rudra-tours-logo.webp",
     shortDescription:
       "High-performance Next.js travel platform and digital brand built by DIMISI Technologies with comprehensive SEO, AEO, and GEO architecture.",
     answer:
@@ -3977,7 +3976,7 @@ const projects: Entity[] = [
     ],
     name: "Yadhuvanshi Tours & Travels",
     subtitle: "Client Project — Premium Travel, Tourism & Wedding Transportation Platform",
-    image: "/images/yadhuvanshi-tours-logo.png",
+    image: "/images/yadhuvanshi-tours-logo.webp",
     shortDescription:
       "Luxury travel and wedding transportation digital platform engineered by DIMISI Technologies with Next.js, experience-led design, and multi-intent search architecture.",
     answer:

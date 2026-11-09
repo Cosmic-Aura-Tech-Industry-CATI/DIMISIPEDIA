@@ -1,0 +1,57 @@
+{
+  "$schema": "https://webmcp.org/schema/v1.json",
+  "name": "DIMISIPEDIA WebMCP Endpoint",
+  "version": "1.0.0",
+  "description": "Model Context Protocol interface and tool manifest for DIMISIPEDIA — The Official Knowledge Base of DIMISI Technologies Pvt. Ltd.",
+  "publisher": {
+    "name": "DIMISI Technologies Pvt. Ltd.",
+    "url": "https://dimisi.tech",
+    "contact": "contact@dimisi.tech"
+  },
+  "canonicalUrl": "https://www.dimisipedia.me",
+  "tools": [
+    {
+      "name": "siteSearch",
+      "description": "Search DIMISIPEDIA for documented people (founders, engineers, mentors), software projects, technology stacks, and corporate milestones.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "q": {
+            "type": "string",
+            "description": "The search query string (e.g. 'Shikhar Dixit', 'Kalesh', 'DIMISI-OPS')"
+          }
+        },
+        "required": ["q"]
+      },
+      "endpoint": "/search",
+      "method": "GET"
+    },
+    {
+      "name": "getCompanyProfile",
+      "description": "Retrieve corporate information, incorporation details (CIN: U62013UP2026PTC246506), leadership roster, and verified business activities of DIMISI Technologies.",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      },
+      "endpoint": "/dimisi-technologies",
+      "method": "GET"
+    },
+    {
+      "name": "navigateToSection",
+      "description": "Navigate directly to key knowledge sections on DIMISIPEDIA including leadership, projects, technology, timeline, and editorial policies.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "section": {
+            "type": "string",
+            "enum": ["journey", "people", "projects", "technology", "timeline", "about", "blog"],
+            "description": "The section identifier to view"
+          }
+        },
+        "required": ["section"]
+      },
+      "endpoint": "/{section}",
+      "method": "GET"
+    }
+  ]
+}

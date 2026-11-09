@@ -77,4 +77,5 @@ Sitemap: https://www.dimisipedia.me/sitemap-timeline.xml
 Sitemap: https://www.dimisipedia.me/sitemap-images.xml
 # LLMs knowledge index: https://www.dimisipedia.me/llms.txt
 # LLMs full dossier: https://www.dimisipedia.me/llms-full.txt
+# WebMCP tools manifest: https://www.dimisipedia.me/webmcp.json
 

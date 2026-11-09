@@ -56,7 +56,10 @@ export function ArticleBody({ content }: { content: Block[] }) {
                 <img
                   src={b.src}
                   alt={b.alt}
+                  width={800}
+                  height={450}
                   loading="lazy"
+                  decoding="async"
                   className="w-full border border-rule object-cover"
                 />
                 {b.caption ? (
