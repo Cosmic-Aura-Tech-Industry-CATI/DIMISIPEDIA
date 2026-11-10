@@ -404,7 +404,7 @@ export function buildPersonSchema(entity: Entity): Json {
     familyName,
     additionalName,
     gender: entity.gender || "https://schema.org/Male",
-    birthDate: entity.birthDate,
+    birthDate: entity.isPublicBirthDateAllowed ? entity.birthDate : undefined,
     disambiguatingDescription,
     image: entity.image ? [abs(entity.image), imageObj] : [abs("/images/dimisipedia-logo.png")],
     primaryImageOfPage: imageObj ? { "@id": `${abs(entity.path)}#primaryimage` } : undefined,

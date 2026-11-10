@@ -14,7 +14,22 @@ export type EntityType =
   | "technology"
   | "event"
   | "article"
-  | "service";
+  | "service"
+  | "achievement"
+  | "location";
+
+export const ENTITY_TYPES = [
+  "organization",
+  "person",
+  "product",
+  "project",
+  "technology",
+  "event",
+  "article",
+  "service",
+  "achievement",
+  "location",
+] as const;
 
 export type InfoStatus =
   | "verified"
@@ -26,6 +41,26 @@ export type InfoStatus =
   | "historical"
   | "archived"
   | "official";
+
+export const INFO_STATUSES = [
+  "verified",
+  "source-backed",
+  "documented",
+  "needs-verification",
+  "disputed",
+  "unverified",
+  "historical",
+  "archived",
+  "official",
+] as const;
+
+export function isValidEntityType(type: string): type is EntityType {
+  return (ENTITY_TYPES as readonly string[]).includes(type.toLowerCase());
+}
+
+export function isValidInfoStatus(status: string): status is InfoStatus {
+  return (INFO_STATUSES as readonly string[]).includes(status.toLowerCase());
+}
 
 export type LifecycleStatus =
   | "Concept"
@@ -240,7 +275,9 @@ export interface Entity {
   gender?: string;
   awards?: string[];
   birthDate?: string;
+  isPublicBirthDateAllowed?: boolean;
   aliases?: string[];
+  alternateNames?: string[];
 }
 
 import {
@@ -562,8 +599,6 @@ const baseRelationships: Relationship[] = [
   { from: "dimisi-technologies", type: "Develops", to: "dimisi-corporate-platform" },
   { from: "dimisi-technologies", type: "Develops", to: "karyon" },
 
-  { from: "sheelu-singh", type: "Works at", to: "dimisi-technologies" },
-  { from: "mridul-mishra", type: "Works at", to: "dimisi-technologies" },
   { from: "amrit-awasthi", type: "Works at", to: "dimisi-technologies" },
   { from: "amrit-awasthi", type: "Engineering", to: "kaand" },
   { from: "sheelu-singh", type: "Technical leadership", to: "kaand" },
@@ -576,11 +611,6 @@ const baseRelationships: Relationship[] = [
   { from: "prashant-umrao", type: "Engineering", to: "dimisi-ops" },
   { from: "amit-kumar", type: "Works at", to: "dimisi-technologies" },
   { from: "amit-kumar", type: "Engineering", to: "dimisi-ops" },
-  { from: "harsh-mishra", type: "Works at", to: "dimisi-technologies" },
-  { from: "somya-tiwari", type: "Works at", to: "dimisi-technologies" },
-  { from: "anushka-tripathi", type: "Works at", to: "dimisi-technologies" },
-  { from: "nisha-chaudhary", type: "Works at", to: "dimisi-technologies" },
-  { from: "krishna-tiwari", type: "Works at", to: "dimisi-technologies" },
   { from: "mridul-mishra", type: "Engineering", to: "dimisi-ops" },
   { from: "nishkarsh-mishra", type: "Operations", to: "dimisi-ops" },
 
@@ -4557,12 +4587,29 @@ export const sources: Source[] = [
   ...mentorSources,
   ...serviceAndEventSources,
 ];
-export const relationships: Relationship[] = [
+export function deduplicateRelationships(list: Relationship[]): Relationship[] {
+  const seen = new Set<string>();
+  const deduped: Relationship[] = [];
+  for (const r of list) {
+    if (!r.from || !r.to || !r.type) continue;
+    const from = r.from.trim();
+    const to = r.to.trim();
+    const type = r.type.trim() as RelationshipType;
+    const key = `${from}|${type}|${to}`;
+    if (!seen.has(key)) {
+      seen.add(key);
+      deduped.push({ from, type, to });
+    }
+  }
+  return deduped;
+}
+
+export const relationships: Relationship[] = deduplicateRelationships([
   ...baseRelationships,
   ...founderRelationships,
   ...mentorRelationships,
   ...serviceAndEventRelationships,
-];
+]);
 
 export const entities: Entity[] = [
   organization,

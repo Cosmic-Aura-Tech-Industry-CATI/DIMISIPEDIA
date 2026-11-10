@@ -117,7 +117,7 @@ const systemsRegistry = [
     category: "Anonymous Social Network",
     status: "Active / Flagship",
     architect: "Shikhar Dixit & Founding Team",
-    href: "/projects/kalesh",
+    href: "/products/kalesh",
   },
   {
     name: "DIMISIPEDIA",

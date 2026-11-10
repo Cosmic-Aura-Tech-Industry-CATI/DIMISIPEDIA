@@ -73,6 +73,57 @@ export const serviceAndEventSources: Source[] = [
     addedAt: ADDED,
     status: "verified",
   },
+  {
+    id: "src-linkedin-30days-contest",
+    title: "LinkedIn 30-Day Kalesh Challenge & Awards Felicitation Records",
+    publisher: "DIMISI Technologies Pvt. Ltd.",
+    type: "Company Announcement",
+    relatedEntities: [
+      "linkedin-30days-kalesh-contest",
+      "prashant-umrao",
+      "swatantra-singh",
+      "shikhar-dixit",
+      "kalesh",
+    ],
+    claim:
+      "Felicitation ceremony on 15 August 2026 concluding the 30-day creator challenge and awarding 1st Prize Winner Prashant Umrao.",
+    addedAt: ADDED,
+    status: "source-backed",
+  },
+  {
+    id: "src-office-inauguration-2026",
+    title: "DIMISI Headquarters Inauguration & Corporate Board Mounting Records",
+    publisher: "DIMISI Technologies Pvt. Ltd.",
+    type: "Company Announcement",
+    relatedEntities: [
+      "office-inauguration-2026",
+      "dimisi-technologies",
+      "shikhar-dixit",
+      "nishkarsh-mishra",
+      "swatantra-singh",
+    ],
+    claim:
+      "Official inauguration of permanent Kanpur headquarters at Swarn Jayanti Vihar on 16 May 2026 and mounting of corporate board on 17 May 2026.",
+    addedAt: ADDED,
+    status: "source-backed",
+  },
+  {
+    id: "src-iit-bombay-esummit-2025",
+    title: "IIT Bombay E-Summit 2025 Delegation & Startup Pitch Records",
+    publisher: "E-Cell, IIT Bombay",
+    type: "Event Page",
+    relatedEntities: [
+      "iit-bombay-esummit-2025",
+      "dimisi-technologies",
+      "shikhar-dixit",
+      "nishkarsh-mishra",
+      "swatantra-singh",
+    ],
+    claim:
+      "National entrepreneurship delegation to IIT Bombay E-Summit 2025 by DIMISI founding directors Shikhar Dixit, Swatantra Singh, and Nishkarsh Mishra.",
+    addedAt: ADDED,
+    status: "verified",
+  },
 ];
 
 /* ------------------------------------------------------------ relationships */
@@ -96,7 +147,15 @@ export const serviceAndEventRelationships: Relationship[] = [
   { from: ORG_ID, type: "Organized by", to: "dimisi-foundation-day-2026" },
   { from: "shikhar-dixit", type: "Participated in", to: "dimisi-foundation-day-2026" },
   { from: ORG_ID, type: "Organized by", to: "team-id-cards-ceremony" },
-  { from: "prashant-umrao", type: "1st Prize Winner", to: "linkedin-30-days-challenge" },
+  { from: "shikhar-dixit", type: "Participated in", to: "team-id-cards-ceremony" },
+  { from: "prashant-umrao", type: "1st Prize Winner", to: "linkedin-30days-kalesh-contest" },
+  { from: ORG_ID, type: "Organized by", to: "linkedin-30days-kalesh-contest" },
+  { from: "swatantra-singh", type: "Presented award at", to: "linkedin-30days-kalesh-contest" },
+  { from: "shikhar-dixit", type: "Participated in", to: "office-inauguration-2026" },
+  { from: ORG_ID, type: "Organized by", to: "office-inauguration-2026" },
+  { from: "shikhar-dixit", type: "Participated in", to: "iit-bombay-esummit-2025" },
+  { from: "swatantra-singh", type: "Participated in", to: "iit-bombay-esummit-2025" },
+  { from: "nishkarsh-mishra", type: "Participated in", to: "iit-bombay-esummit-2025" },
 ];
 
 /* ------------------------------------------------------------------ Services */
@@ -511,6 +570,7 @@ export const eventEntities: Entity[] = [
     id: "iit-kanpur-siic-avinya-2026",
     slug: "iit-kanpur-siic-avinya-2026",
     path: "/events/iit-kanpur-siic-avinya-2026",
+    alternateNames: ["siic-avinya-2026-hackathon", "avinya-2026", "iit-kanpur-avinya-2026"],
     entityType: "event",
     name: "IIT Kanpur SIIC Avinya 2026",
     subtitle: "Startup Showcase & Innovation Summit — Finalist Achievement",
@@ -566,6 +626,7 @@ export const eventEntities: Entity[] = [
     id: "axis-hacksprint-2",
     slug: "axis-hacksprint-2",
     path: "/events/axis-hacksprint-2",
+    alternateNames: ["axis-colleges-hacksprint-2", "hacksprint-2"],
     entityType: "event",
     name: "Axis HackSprint 2.0",
     subtitle: "National Collegiate Hackathon — Official Technical Mentorship",
@@ -611,6 +672,7 @@ export const eventEntities: Entity[] = [
     id: "gandhigiri-project-showcase",
     slug: "gandhigiri-project-showcase",
     path: "/events/gandhigiri-project-showcase",
+    alternateNames: ["gandhigiri-2024", "face-recognition-sprint"],
     entityType: "event",
     name: "Gandhigiri Technical Project Showcase 2024",
     subtitle: "Catalyst Event — 6-Hour Face Recognition Sprint & Founding of CATI",
@@ -667,6 +729,7 @@ export const eventEntities: Entity[] = [
     id: "dimisi-foundation-day-2026",
     slug: "dimisi-foundation-day-2026",
     path: "/events/dimisi-foundation-day-2026",
+    alternateNames: ["dimisi-foundation-day", "incorporation-day"],
     entityType: "event",
     name: "DIMISI Foundation & Incorporation Day",
     subtitle: "Official Ministry of Corporate Affairs Incorporation (9 April 2026)",
@@ -714,31 +777,34 @@ export const eventEntities: Entity[] = [
     id: "team-id-cards-ceremony",
     slug: "team-id-cards-ceremony",
     path: "/events/team-id-cards-ceremony",
+    alternateNames: ["team-id-cards-tshirts-distribution-ceremony", "team-induction-ceremony"],
     entityType: "event",
     name: "Team ID Cards & T-Shirts Distribution Ceremony",
     subtitle: "Corporate Induction & Team Milestone",
-    image: "/images/team-id-cards-and-tshirts-ceremony.webp",
+    image: "/images/team-id-cards-and-tshirts-ceremony.jpeg",
     shortDescription:
       "Official internal ceremony distributing company ID credentials and branded corporate wear to the founding engineers, developers, interns, and leadership of DIMISI Technologies.",
     answer:
       "The Team ID Cards & T-Shirts Distribution Ceremony was a major internal milestone celebrating the growth of DIMISI Technologies. During the event, Founder & CEO Shikhar Dixit and executive leadership presented official company ID credentials and branded wear to the core team and engineering interns.",
     lifecycle: "Active",
     facts: [
-      { label: "Location", value: "DIMISI Headquarters, Kanpur, UP", status: "source-backed" },
-      { label: "Presided by", value: "Shikhar Dixit (Founder & CEO)", status: "source-backed" },
+      { label: "Date", value: "6 October 2026", status: "verified" },
+      { label: "Location", value: "DIMISI Headquarters, Kanpur, UP", status: "verified" },
+      { label: "Presided by", value: "Shikhar Dixit (Founder & CEO)", status: "verified" },
       {
         label: "Attendees",
         value: "Founding leadership, core engineers, interns",
-        status: "source-backed",
+        status: "verified",
       },
     ],
     sections: [
       {
         id: "overview",
         heading: "Team Induction & Identity Milestone",
-        status: "source-backed",
+        status: "verified",
         body: [
-          "The ceremony recognized the contributions of team members across mobile engineering, backend development, web engineering, and social marketing. Branded ID badges and apparel formalized the team's corporate identity.",
+          "On 6 October 2026, DIMISI Technologies Pvt. Ltd. organised an internal team distribution ceremony where executive leadership distributed official DIMISI-branded corporate T-shirts and company ID cards to the entire team.",
+          "Attended by executive leadership, founding directors Shikhar Dixit (Founder & CEO), Swatantra Singh (Co-Founder & CTO), Nishkarsh Mishra (Co-Founder & COO), and the full developer and operations cohort, the ceremony celebrated the growing strength and cultural unity of DIMISI Technologies.",
         ],
       },
     ],
@@ -748,8 +814,8 @@ export const eventEntities: Entity[] = [
     coverage: [
       {
         area: "Company Milestone",
-        status: "source-backed",
-        note: "Documented in internal records.",
+        status: "verified",
+        note: "Documented in corporate team records.",
       },
     ],
     sourceIds: ["src-services-portfolio"],
@@ -759,5 +825,161 @@ export const eventEntities: Entity[] = [
     seoTitle: "Team ID Cards & Induction Ceremony | DIMISIPEDIA",
     seoDescription:
       "DIMISI Technologies team credential distribution and corporate induction ceremony.",
+  },
+  {
+    id: "office-inauguration-2026",
+    slug: "office-inauguration-2026",
+    path: "/events/office-inauguration-2026",
+    alternateNames: ["headquarters-inauguration-2026", "office-launch-2026"],
+    entityType: "event",
+    name: "Headquarters Inauguration & Corporate Board Mounting",
+    subtitle: "Permanent Corporate Operating Headquarters Launch (16–17 May 2026)",
+    image: "/images/bringing dimisi home.jpeg",
+    shortDescription:
+      "The official inauguration ceremony of DIMISI Technologies Private Limited headquarters and the mounting of the corporate board following corporate incorporation.",
+    answer:
+      "Following official incorporation under the Ministry of Corporate Affairs on 9 April 2026 (CIN: U62013UP2026PTC246506), the founding leadership established a permanent operating headquarters in Kanpur. On 16 May 2026, an inauguration ceremony was held at Swarn Jayanti Vihar with founding directors Shikhar Dixit (CEO), Swatantra Singh (CTO), Nishkarsh Mishra (COO), and core associates. On 17 May 2026, the official DIMISI Technologies corporate board was mounted at the front entrance.",
+    lifecycle: "Active",
+    facts: [
+      { label: "Inauguration Date", value: "16 May 2026", status: "verified" },
+      { label: "Board Mounting Date", value: "17 May 2026", status: "verified" },
+      {
+        label: "Location",
+        value: "Swarn Jayanti Vihar, Kanpur, Uttar Pradesh",
+        status: "verified",
+      },
+      { label: "Presided by", value: "Shikhar Dixit (Founder & CEO)", status: "verified" },
+      { label: "CIN Displayed", value: "U62013UP2026PTC246506", status: "verified" },
+    ],
+    sections: [
+      {
+        id: "overview",
+        heading: "Headquarters Inauguration & Compliance Setup",
+        status: "verified",
+        body: [
+          "Following official incorporation under the Ministry of Corporate Affairs on 9 April 2026, the founding leadership established a permanent operating headquarters in Kanpur with the blessing and active support of Shikhar Dixit's family.",
+          "On 16 May 2026, an inauguration ceremony was held at the new office in Swarn Jayanti Vihar with founding directors Shikhar Dixit (CEO), Swatantra Singh (CTO), Nishkarsh Mishra (COO), and core associates.",
+          "The following day, on 17 May 2026, the official DIMISI Technologies corporate board was mounted at the front entrance to complete banking documentation, compliance verification, and client delivery readiness.",
+        ],
+      },
+    ],
+    officialLinks: [
+      { label: "DIMISI Official Website", url: "https://dimisi.tech", official: true },
+    ],
+    coverage: [
+      { area: "Corporate Facility", status: "verified", note: "Documented in corporate archives." },
+    ],
+    sourceIds: ["src-office-inauguration-2026"],
+    revisions: [{ n: 1, date: ADDED, editor: EDITOR, change: "Event entity published." }],
+    createdAt: ADDED,
+    updatedAt: ADDED,
+    seoTitle: "DIMISI Headquarters Inauguration & Corporate Board Mounting | DIMISIPEDIA",
+    seoDescription:
+      "Official inauguration and corporate board mounting of DIMISI Technologies Private Limited headquarters.",
+  },
+  {
+    id: "linkedin-30days-kalesh-contest",
+    slug: "linkedin-30days-kalesh-contest",
+    path: "/events/linkedin-30days-kalesh-contest",
+    alternateNames: ["linkedin-30-days-challenge", "kalesh-creator-contest"],
+    entityType: "event",
+    name: "LinkedIn 30-Day Kalesh Promotion & Content Creator Challenge",
+    subtitle: "30-Day Campus Creator Contest & Awards Felicitation (15 August 2026)",
+    image: "/images/first prize winner 30 days.jpeg",
+    shortDescription:
+      "A high-impact 30-day viral storytelling and campus creator contest on LinkedIn celebrating student growth, concluding on 15 August 2026 with an official award presentation ceremony.",
+    answer:
+      "The LinkedIn 30-Day Kalesh Promotion Contest was an intensive organic engagement challenge designed to build awareness for Kalesh across college campuses. Concluding on 15 August 2026, the founding directors hosted a celebratory felicitation ceremony, presenting 1st Prize Winner Prashant Umrao with an official DIMISI Technologies Certificate of Achievement.",
+    lifecycle: "Active",
+    facts: [
+      { label: "Conclusion Date", value: "15 August 2026", status: "source-backed" },
+      {
+        label: "1st Prize Winner",
+        value: "Prashant Umrao (Full Stack Intern)",
+        status: "source-backed",
+      },
+      { label: "2nd Position", value: "Harsh Mishra", status: "source-backed" },
+      { label: "3rd Position", value: "Somya Tiwari", status: "source-backed" },
+      {
+        label: "Award Presented by",
+        value: "Swatantra Singh (Co-Founder & CTO)",
+        status: "source-backed",
+      },
+    ],
+    sections: [
+      {
+        id: "overview",
+        heading: "Organic Creator Sprint & Awards Ceremony",
+        status: "source-backed",
+        body: [
+          "To drive organic user adoption and nationwide campus awareness for Kalesh (the anonymous social polling platform), the founding team launched a 30-day posting and creator challenge on LinkedIn.",
+          "Over 30 days, the campaign generated significant organic reach across engineering student networks, creating authentic buzz under the movement 'Chalo Kalesh Karey'.",
+          "On 15 August 2026, the founders hosted a felicitation ceremony presenting 1st Prize Winner Prashant Umrao with an official Certificate of Achievement and trophy.",
+        ],
+      },
+    ],
+    officialLinks: [
+      { label: "The Kalesh Platform", url: "https://thekalesh.com", official: true },
+      { label: "DIMISI Official Website", url: "https://dimisi.tech", official: true },
+    ],
+    coverage: [
+      { area: "Community Campaign", status: "source-backed", note: "Internal contest record." },
+    ],
+    sourceIds: ["src-linkedin-30days-contest"],
+    revisions: [{ n: 1, date: ADDED, editor: EDITOR, change: "Event entity published." }],
+    createdAt: ADDED,
+    updatedAt: ADDED,
+    seoTitle: "LinkedIn 30-Day Kalesh Creator Contest & Awards | DIMISIPEDIA",
+    seoDescription:
+      "Official record of the LinkedIn 30-Day Kalesh promotion contest and Prashant Umrao 1st Prize achievement.",
+  },
+  {
+    id: "iit-bombay-esummit-2025",
+    slug: "iit-bombay-esummit-2025",
+    path: "/events/iit-bombay-esummit-2025",
+    alternateNames: ["esummit-2025", "iitb-esummit"],
+    entityType: "event",
+    name: "IIT Bombay E-Summit 2025 Entrepreneurship Delegation",
+    subtitle: "National Startup Ecosystem Exposure & Founder Immersion (Jan–Feb 2025)",
+    image: "/images/THE LEARNING FROM MUMBAI.jpeg",
+    shortDescription:
+      "National startup ecosystem exposure, founder pitching, and strategic validation for the CATI / DIMISI founding trio at IIT Bombay.",
+    answer:
+      "From 28 January to 4 February 2025, founding directors Shikhar Dixit, Swatantra Singh, and Nishkarsh Mishra attended the prestigious IIT Bombay E-Summit 2025 in Mumbai. The week-long immersion exposed the team to national startup founders, venture pitch dynamics, and technical architectures, hardening their resolve to build proprietary technology enterprises.",
+    lifecycle: "Active",
+    facts: [
+      { label: "Dates", value: "28 January – 4 February 2025", status: "verified" },
+      { label: "Location", value: "IIT Bombay, Powai, Mumbai", status: "verified" },
+      { label: "Delegation Leader", value: "Shikhar Dixit (Founder & CEO)", status: "verified" },
+      {
+        label: "Founding Delegation",
+        value: "Shikhar Dixit, Swatantra Singh, Nishkarsh Mishra",
+        status: "verified",
+      },
+    ],
+    sections: [
+      {
+        id: "overview",
+        heading: "Foundational Startup Exposure at IIT Bombay",
+        status: "verified",
+        body: [
+          "The founding trio traveled from Kanpur to Mumbai to participate in the prestigious IIT Bombay E-Summit 2025.",
+          "The immersion exposed the team to national-scale startups, investor pitch dynamics, and technical product architectures, hardening their resolve to build proprietary software platforms and launch DIMISI Technologies.",
+        ],
+      },
+    ],
+    officialLinks: [
+      { label: "DIMISI Official Website", url: "https://dimisi.tech", official: true },
+    ],
+    coverage: [
+      { area: "Summit Delegation", status: "verified", note: "Documented in founder archives." },
+    ],
+    sourceIds: ["src-iit-bombay-esummit-2025"],
+    revisions: [{ n: 1, date: ADDED, editor: EDITOR, change: "Event entity published." }],
+    createdAt: ADDED,
+    updatedAt: ADDED,
+    seoTitle: "IIT Bombay E-Summit 2025 Delegation | DIMISIPEDIA",
+    seoDescription:
+      "Official record of DIMISI Technologies founders' delegation to IIT Bombay E-Summit 2025.",
   },
 ];

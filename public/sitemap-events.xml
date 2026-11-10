@@ -7,4 +7,52 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.dimisipedia.me/events/iit-kanpur-siic-avinya-2026</loc>
+    <lastmod>2026-11-10T12:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.dimisipedia.me/events/axis-hacksprint-2</loc>
+    <lastmod>2026-11-10T12:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.dimisipedia.me/events/gandhigiri-project-showcase</loc>
+    <lastmod>2026-11-10T12:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.dimisipedia.me/events/dimisi-foundation-day-2026</loc>
+    <lastmod>2026-11-10T12:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.dimisipedia.me/events/team-id-cards-ceremony</loc>
+    <lastmod>2026-11-10T12:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.dimisipedia.me/events/office-inauguration-2026</loc>
+    <lastmod>2026-11-10T12:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.dimisipedia.me/events/linkedin-30days-kalesh-contest</loc>
+    <lastmod>2026-11-10T12:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.dimisipedia.me/events/iit-bombay-esummit-2025</loc>
+    <lastmod>2026-11-10T12:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

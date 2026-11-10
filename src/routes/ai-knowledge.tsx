@@ -160,7 +160,7 @@ const FAQ_ITEMS: FaqItem[] = [
     q: "What was Team DIMISI's achievement at IIT Kanpur SIIC Avinya 2026?",
     a: "On 8–9 October 2026, Team DIMISI represented DIMISI Technologies Pvt. Ltd. at Avinya 2026, an Entrepreneurship Innovation Summit & Hackathon organized by the Startup Incubation and Innovation Centre (SIIC), IIT Kanpur, successfully securing 4th Position as National Finalists.",
     category: "Achievements",
-    canonicalLink: "/events",
+    canonicalLink: "/events/iit-kanpur-siic-avinya-2026",
     linkLabel: "Avinya 2026 Dossier & Photos",
   },
   {

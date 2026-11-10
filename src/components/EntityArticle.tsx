@@ -4,6 +4,7 @@ import type React from "react";
 import { useEffect, useState } from "react";
 import { StatusChip, isPublicStatus } from "./StatusChip";
 import { getSources, relationsFor, type Entity } from "@/data/knowledge";
+import { getEntityClaims } from "@/data/evidence";
 import { VerificationBadge } from "./VerificationBadge";
 import { CiteModal } from "./CiteModal";
 import { PrintFactsheetButton } from "./PrintFactsheetButton";
@@ -380,43 +381,58 @@ export function EntityArticle({
               </dl>
             </section>
 
-            {entity.claims && entity.claims.length > 0 ? (
-              <section id="claims" className="mt-12 scroll-mt-24">
-                <h2 className="text-2xl">Claim-level sourcing</h2>
-                <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-                  Each statement of consequence in this entry is held as an individual claim with
-                  its own type, sources and verification status.
-                </p>
-                <ul className="mt-5 divide-y divide-rule border-y border-rule">
-                  {entity.claims.map((c) => (
-                    <li key={c.claim} className="py-4">
-                      <p className="text-[15px] leading-relaxed">{c.claim}</p>
-                      <div className="mt-2 flex flex-wrap items-center gap-2">
-                        <span className="label-mono">{c.claimType}</span>
-                        <VerificationBadge
-                          claim={c.claim}
-                          sourceIds={c.sourceIds}
-                          declared={c.verification}
-                          {...(c.disputed ? { disputed: true } : {})}
-                          {...(c.lastVerified
-                            ? { lastReviewed: c.lastVerified }
-                            : { lastReviewed: c.dateAdded })}
-                        />
-                        <span className="text-xs text-muted-foreground">
-                          {c.sourceIds
-                            .map((id) => {
-                              const idx = entity.sourceIds.indexOf(id);
-                              return idx >= 0 ? `[${idx + 1}]` : null;
-                            })
-                            .filter(Boolean)
-                            .join(" ")}
-                        </span>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            ) : null}
+            {(() => {
+              const allClaims = getEntityClaims(entity);
+              if (allClaims.length === 0) return null;
+              return (
+                <section id="claims" className="mt-12 scroll-mt-24">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <h2 className="text-2xl font-serif">Verified Fact Claims &amp; Provenance</h2>
+                    <span className="font-mono text-xs text-muted-foreground">
+                      {allClaims.length} Claims Documented
+                    </span>
+                  </div>
+                  <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
+                    Every factual assertion in this dossier is mapped to a verified claim with
+                    strict provenance, source tier classification, and corroboration assessment.
+                  </p>
+                  <ul className="mt-5 divide-y divide-rule border-y border-rule">
+                    {allClaims.map((c) => (
+                      <li key={c.id} className="py-4">
+                        <p className="text-[15px] leading-relaxed text-foreground/95">{c.claim}</p>
+                        <div className="mt-2 flex flex-wrap items-center gap-2">
+                          <span className="label-mono">{c.sourceType}</span>
+                          {c.isPrimary ? (
+                            <span className="rounded-full border border-primary/40 bg-primary/10 px-2 py-0.5 font-mono text-[10px] font-bold text-primary">
+                              Primary Authority
+                            </span>
+                          ) : (
+                            <span className="rounded-full border border-border bg-surface px-2 py-0.5 font-mono text-[10px] text-muted-foreground">
+                              Secondary / Profile
+                            </span>
+                          )}
+                          <VerificationBadge
+                            claim={c.claim}
+                            sourceIds={c.sourceIds}
+                            declared={c.status}
+                            lastReviewed={c.lastVerified}
+                          />
+                          <span className="text-xs text-muted-foreground font-mono">
+                            {c.sourceIds
+                              .map((id) => {
+                                const idx = entity.sourceIds.indexOf(id);
+                                return idx >= 0 ? `[${idx + 1}]` : null;
+                              })
+                              .filter(Boolean)
+                              .join(" ")}
+                          </span>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              );
+            })()}
 
             <section id="sources" className="mt-12 scroll-mt-24">
               {srcs.length === 0 ? null : (

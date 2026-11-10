@@ -23,6 +23,8 @@ import {
   peopleEntities,
   productEntities,
   projectEntities,
+  serviceEntities,
+  eventEntities,
   technologyEntities,
   timeline,
 } from "@/data/knowledge";
@@ -206,12 +208,20 @@ export function getPagesEntries(): SitemapEntry[] {
     { path: "/blog", priority: "0.9", changefreq: "daily" },
   ];
 
-  return pagesConfig.map((p) => ({
-    loc: abs(p.path),
-    lastmod: PAGES_LASTMOD,
-    priority: p.priority,
-    changefreq: p.changefreq,
-  }));
+  return [
+    ...pagesConfig.map((p) => ({
+      loc: abs(p.path),
+      lastmod: PAGES_LASTMOD,
+      priority: p.priority,
+      changefreq: p.changefreq,
+    })),
+    ...serviceEntities.map((s) => ({
+      loc: abs(s.path),
+      lastmod: s.updatedAt || s.createdAt || PAGES_LASTMOD,
+      priority: "0.8",
+      changefreq: "monthly",
+    })),
+  ];
 }
 
 /**
@@ -325,6 +335,12 @@ export function getEventsEntries(): SitemapEntry[] {
       priority: "0.8",
       changefreq: "weekly",
     },
+    ...eventEntities.map((e) => ({
+      loc: abs(e.path),
+      lastmod: e.updatedAt || e.createdAt || "2026-10-09",
+      priority: "0.7",
+      changefreq: "monthly",
+    })),
   ];
 }
 

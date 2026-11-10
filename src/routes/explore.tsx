@@ -27,7 +27,10 @@ export const Route = createFileRoute("/explore")({
 const groups: { label: string; type: Entity["entityType"] }[] = [
   { label: "Organization", type: "organization" },
   { label: "People", type: "person" },
+  { label: "Products", type: "product" },
   { label: "Projects", type: "project" },
+  { label: "Services", type: "service" },
+  { label: "Events", type: "event" },
   { label: "Technology", type: "technology" },
 ];
 

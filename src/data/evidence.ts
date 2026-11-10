@@ -191,3 +191,92 @@ export const verificationScale: { status: InfoStatus; meaning: string }[] = [
   { status: "disputed", meaning: "Credible sources conflict; DIMISIPEDIA discloses both." },
   { status: "unverified", meaning: "No reliable source is currently recorded." },
 ];
+
+export interface FactClaim {
+  id: string;
+  entityId: string;
+  claim: string;
+  sourceIds: string[];
+  sourceType: SourceType;
+  status: InfoStatus;
+  confidence: VerificationLevel;
+  lastVerified: string;
+  verifierNotes?: string;
+  isPrimary: boolean;
+  citationUrl?: string;
+}
+
+export function getEntityClaims(entity: {
+  id: string;
+  entityType?: string;
+  sourceIds: string[];
+  facts: Array<{ label: string; value: string; status?: InfoStatus; sourceIds?: string[] }>;
+  claims?: Array<{
+    claim: string;
+    claimType: string;
+    sourceIds: string[];
+    verification: InfoStatus;
+    disputed?: boolean;
+    dateAdded: string;
+    lastVerified?: string;
+  }>;
+  updatedAt?: string;
+  verifiedAt?: string;
+}): FactClaim[] {
+  const result: FactClaim[] = [];
+
+  // 1. Explicit entity claims if present
+  if (entity.claims && entity.claims.length > 0) {
+    for (let i = 0; i < entity.claims.length; i++) {
+      const c = entity.claims[i];
+      const claimSources = getSources(c.sourceIds);
+      const primarySource = claimSources.find((s) => tierOf(s).tier === "A") || claimSources[0];
+      const assessment = assessClaim({
+        sourceIds: c.sourceIds,
+        declared: c.verification,
+        disputed: c.disputed,
+      });
+
+      result.push({
+        id: `claim-${entity.id}-${i + 1}`,
+        entityId: entity.id,
+        claim: c.claim,
+        sourceIds: c.sourceIds,
+        sourceType: primarySource?.type ?? "Company Announcement",
+        status: assessment.status,
+        confidence: assessment.level,
+        lastVerified: c.lastVerified || c.dateAdded || entity.updatedAt || "2026-10-31",
+        verifierNotes: assessment.rationale,
+        isPrimary: assessment.primaryCount > 0,
+        citationUrl: primarySource?.url,
+      });
+    }
+  } else {
+    // 2. Structured facts as claims
+    for (let i = 0; i < entity.facts.length; i++) {
+      const f = entity.facts[i];
+      const factSourceIds = f.sourceIds && f.sourceIds.length > 0 ? f.sourceIds : entity.sourceIds;
+      const factSources = getSources(factSourceIds);
+      const primarySource = factSources.find((s) => tierOf(s).tier === "A") || factSources[0];
+      const assessment = assessClaim({ sourceIds: factSourceIds, declared: f.status });
+
+      result.push({
+        id: `fact-claim-${entity.id}-${i + 1}`,
+        entityId: entity.id,
+        claim: `${f.label}: ${f.value}`,
+        sourceIds: factSourceIds,
+        sourceType:
+          primarySource?.type ??
+          (entity.entityType === "organization" ? "Government Record" : "Official Website"),
+        status: assessment.status,
+        confidence: assessment.level,
+        lastVerified: entity.verifiedAt || entity.updatedAt || "2026-10-31",
+        verifierNotes: assessment.rationale,
+        isPrimary: assessment.primaryCount > 0,
+        citationUrl: primarySource?.url,
+      });
+    }
+  }
+
+  return result;
+}

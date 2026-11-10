@@ -13,6 +13,7 @@ import {
   Trophy,
   Megaphone,
   Maximize2,
+  Award,
 } from "lucide-react";
 import { Breadcrumbs } from "@/components/EntityArticle";
 import { StatusChip } from "@/components/StatusChip";
@@ -36,8 +37,9 @@ export interface EventStanding {
 
 interface EventItem {
   id: string;
+  slug: string;
   title: string;
-  category: "Milestone" | "Campaign" | "Summit";
+  category: "Milestone" | "Campaign" | "Summit" | "Hackathon";
   date: string;
   displayDate: string;
   location: string;
@@ -56,7 +58,8 @@ interface EventItem {
 
 const documentedEvents: EventItem[] = [
   {
-    id: "siic-avinya-2026-hackathon",
+    id: "iit-kanpur-siic-avinya-2026",
+    slug: "iit-kanpur-siic-avinya-2026",
     title: "SIIC Avinya 2026 – Entrepreneurship Innovation Summit & Hackathon",
     category: "Summit",
     date: "2026-10-08",
@@ -106,13 +109,13 @@ const documentedEvents: EventItem[] = [
         position: "4th Position",
         name: "Team DIMISI",
         role: "Finalist Delegation · Entrepreneurship Innovation Summit & Hackathon",
-        path: "/dimisi-technologies",
+        path: "/organizations/dimisi-technologies",
         award: "4th Position – Finalist",
         winner: true,
       },
     ],
     relatedEntities: [
-      { label: "DIMISI Technologies", to: "/dimisi-technologies" },
+      { label: "DIMISI Technologies", to: "/organizations/dimisi-technologies" },
       { label: "Shikhar Dixit (CEO)", to: "/people/shikhar-dixit" },
       { label: "Swatantra Singh (CTO)", to: "/people/swatantra-singh" },
       { label: "Nishkarsh Mishra (COO)", to: "/people/nishkarsh-mishra" },
@@ -121,7 +124,8 @@ const documentedEvents: EventItem[] = [
     ],
   },
   {
-    id: "team-id-cards-tshirts-distribution-ceremony",
+    id: "team-id-cards-ceremony",
+    slug: "team-id-cards-ceremony",
     title: "Team ID Cards & T-Shirts Distribution Ceremony",
     category: "Milestone",
     date: "2026-10-06",
@@ -135,7 +139,7 @@ const documentedEvents: EventItem[] = [
     description: [
       "On 6th October 2026, DIMISI Technologies Pvt. Ltd. organised an internal team distribution ceremony where Nishkarsh Mishra distributed official DIMISI-branded T-shirts and company ID cards to the entire team.",
       "The event marked an important step towards strengthening team identity, professionalism, unity, and a sense of belonging within the DIMISI family.",
-      "Attended by executive leadership, founding directors Shikhar Dixit (Founder & CEO), Swatantra Singh (Co-Founder & CTO), Nishkarsh Mishra (Co-Founder & COO/CFO), and the full developer and operations cohort, the ceremony celebrated the growing strength and cultural unity of DIMISI Technologies.",
+      "Attended by executive leadership, founding directors Shikhar Dixit (Founder & CEO), Swatantra Singh (Co-Founder & CTO), Nishkarsh Mishra (Co-Founder & COO), and the full developer and operations cohort, the ceremony celebrated the growing strength and cultural unity of DIMISI Technologies.",
     ],
     highlights: [
       "Internal team distribution ceremony organised by DIMISI Technologies Pvt. Ltd. on 6 October 2026",
@@ -158,7 +162,7 @@ const documentedEvents: EventItem[] = [
       },
     ],
     relatedEntities: [
-      { label: "DIMISI Technologies", to: "/dimisi-technologies" },
+      { label: "DIMISI Technologies", to: "/organizations/dimisi-technologies" },
       { label: "Shikhar Dixit (CEO)", to: "/people/shikhar-dixit" },
       { label: "Nishkarsh Mishra", to: "/people/nishkarsh-mishra" },
       { label: "Swatantra Singh (CTO)", to: "/people/swatantra-singh" },
@@ -166,13 +170,93 @@ const documentedEvents: EventItem[] = [
     ],
   },
   {
+    id: "dimisi-foundation-day-2026",
+    slug: "dimisi-foundation-day-2026",
+    title: "DIMISI Foundation & Incorporation Day (MCA Registration)",
+    category: "Milestone",
+    date: "2026-04-09",
+    displayDate: "9 April 2026",
+    location: "Kanpur, Uttar Pradesh, India",
+    status: "verified",
+    organisedBy: "Ministry of Corporate Affairs, Government of India",
+    achievement: "Corporate Incorporation (CIN: U62013UP2026PTC246506)",
+    summary:
+      "The formal statutory incorporation of DIMISI Technologies Private Limited under the Ministry of Corporate Affairs, Government of India, following an intensive sprint from documentation to registration.",
+    description: [
+      "On 9 April 2026, DIMISI Technologies Private Limited was officially granted its Certificate of Incorporation by the Registrar of Companies, Ministry of Corporate Affairs, Government of India, under CIN U62013UP2026PTC246506.",
+      "The milestone formalized the transition of CATI (Cosmic Aura Tech Industry) into a registered corporate entity founded by Shikhar Dixit (CEO), Swatantra Singh (CTO), and Nishkarsh Mishra (COO).",
+    ],
+    highlights: [
+      "Official MCA Certificate of Incorporation issued on 9 April 2026",
+      "Corporate Identification Number (CIN): U62013UP2026PTC246506",
+      "Registered office established in Kanpur, Uttar Pradesh",
+      "Founding directors appointed: Shikhar Dixit, Swatantra Singh, Nishkarsh Mishra",
+    ],
+    images: [
+      {
+        src: "/images/bringing dimisi home.webp",
+        alt: "DIMISI Technologies founding milestone celebration",
+        caption:
+          "Foundation Archive · 9 April 2026: Corporate incorporation milestone of DIMISI Technologies Private Limited.",
+      },
+    ],
+    relatedEntities: [
+      { label: "DIMISI Technologies", to: "/organizations/dimisi-technologies" },
+      { label: "Shikhar Dixit (CEO)", to: "/people/shikhar-dixit" },
+      { label: "Swatantra Singh (CTO)", to: "/people/swatantra-singh" },
+      { label: "Nishkarsh Mishra (COO)", to: "/people/nishkarsh-mishra" },
+      { label: "Our Journey", to: "/journey" },
+    ],
+  },
+  {
+    id: "office-inauguration-2026",
+    slug: "office-inauguration-2026",
+    title: "Official Headquarters Inauguration & Corporate Board Mounting",
+    category: "Milestone",
+    date: "2026-05-16",
+    displayDate: "16 – 17 May 2026",
+    location: "Swarn Jayanti Vihar, Kanpur, Uttar Pradesh",
+    status: "verified",
+    organisedBy: "DIMISI Technologies Pvt. Ltd.",
+    summary:
+      "The official inauguration ceremony of DIMISI Technologies Private Limited headquarters and the mounting of the corporate board following corporate incorporation.",
+    description: [
+      "Following official incorporation under the Ministry of Corporate Affairs on 9 April 2026 (CIN: U62013UP2026PTC246506), the founding leadership established a permanent operating headquarters in Kanpur with the blessing and active support of Shikhar Dixit's family.",
+      "On 16 May 2026, an inauguration ceremony was held at the new office in Swarn Jayanti Vihar with founding directors Shikhar Dixit (CEO), Swatantra Singh (CTO), Nishkarsh Mishra (COO), and core associates.",
+      "The following day, on 17 May 2026, the official DIMISI Technologies corporate board was mounted at the front entrance to complete banking documentation, compliance verification, and client delivery readiness.",
+    ],
+    highlights: [
+      "Official inauguration of permanent Kanpur headquarters on 16 May 2026",
+      "Corporate board mounted on 17 May 2026 for statutory and banking compliance",
+      "Official banner unveiled displaying CIN: U62013UP2026PTC246506",
+      "Headquarters operationalized for commercial client delivery and software scaling",
+    ],
+    images: [
+      {
+        src: "/images/bringing dimisi home.jpeg",
+        alt: "The DIMISI team with the official DIMISI Technologies corporate banner at the home headquarters",
+        caption:
+          "Headquarters Archive · 16–17 May 2026: Team inauguration at Swarn Jayanti Vihar, Kanpur under the registered corporate banner.",
+      },
+    ],
+    relatedEntities: [
+      { label: "DIMISI Technologies", to: "/organizations/dimisi-technologies" },
+      { label: "Shikhar Dixit", to: "/people/shikhar-dixit" },
+      { label: "Swatantra Singh", to: "/people/swatantra-singh" },
+      { label: "Nishkarsh Mishra", to: "/people/nishkarsh-mishra" },
+      { label: "Our Journey", to: "/journey" },
+    ],
+  },
+  {
     id: "linkedin-30days-kalesh-contest",
+    slug: "linkedin-30days-kalesh-contest",
     title: "LinkedIn 30-Day Kalesh Promotion & Content Creator Challenge",
     category: "Campaign",
     date: "2026-08-15",
     displayDate: "15 August 2026",
     location: "LinkedIn & Campus Social Networks",
     status: "source-backed",
+    organisedBy: "DIMISI Technologies Pvt. Ltd.",
     summary:
       "A high-impact 30-day viral storytelling and campus creator contest on LinkedIn celebrating student growth, concluding on 15 August 2026 with an official award presentation ceremony.",
     description: [
@@ -245,45 +329,77 @@ const documentedEvents: EventItem[] = [
       { label: "Somya Tiwari (3rd)", to: "/people/somya-tiwari" },
       { label: "Anushka Tripathi (4th)", to: "/people/anushka-tripathi" },
       { label: "Amrit Awasthi (5th)", to: "/people/amrit-awasthi" },
-      { label: "Kalesh", to: "/projects/kalesh" },
-      { label: "DIMISI Technologies", to: "/dimisi-technologies" },
+      { label: "Kalesh", to: "/products/kalesh" },
+      { label: "DIMISI Technologies", to: "/organizations/dimisi-technologies" },
       { label: "Shikhar Dixit", to: "/people/shikhar-dixit" },
-      { label: "Swatantra Singh", to: "/people/swatantra-singh" },
-      { label: "Nishkarsh Mishra", to: "/people/nishkarsh-mishra" },
     ],
   },
   {
-    id: "office-inauguration-2026",
-    title: "Official Headquarters Inauguration & Corporate Board Mounting",
-    category: "Milestone",
-    date: "2026-05-16",
-    displayDate: "16 – 17 May 2026",
-    location: "Swarn Jayanti Vihar, Kanpur, Uttar Pradesh",
+    id: "axis-hacksprint-2",
+    slug: "axis-hacksprint-2",
+    title: "Axis HackSprint 2.0 — Official Technical Mentorship",
+    category: "Hackathon",
+    date: "2026-03-20",
+    displayDate: "March 2026",
+    location: "Axis Colleges, Kanpur, UP",
     status: "verified",
+    achievement: "Technical Mentorship by Shikhar Dixit",
     summary:
-      "The official inauguration ceremony of DIMISI Technologies Private Limited headquarters and the mounting of the corporate board following corporate incorporation.",
+      "Collegiate hackathon hosted at Axis Colleges where Shikhar Dixit served as official Technical Mentor, guiding student teams in systems architecture, database schemas, and product delivery.",
     description: [
-      "Following official incorporation under the Ministry of Corporate Affairs on 9 April 2026 (CIN: U62013UP2026PTC246506), the founding leadership established a permanent operating headquarters in Kanpur with the blessing and active support of Shikhar Dixit's family.",
-      "On 16 May 2026, an inauguration ceremony was held at the new office in Swarn Jayanti Vihar with founding directors Shikhar Dixit (CEO), Swatantra Singh (CTO), Nishkarsh Mishra (COO), and core associates.",
-      "The following day, on 17 May 2026, the official DIMISI Technologies corporate board was mounted at the front entrance to complete banking documentation, compliance verification, and client delivery readiness.",
-      "The headquarters was reinforced with a passionate cohort of junior contributors (Prashant, Amrit, Anushka, Nisha, Vinay) and commercial associate Somya Tiwari.",
+      "Axis HackSprint 2.0 was an intensive competitive hackathon organized to test student teams across software design, algorithms, and real-time product creation.",
+      "Shikhar Dixit participated as an official Mentor, advising participants on API design, database schemas, full-stack deployment, and venture pitching.",
     ],
     highlights: [
-      "Official inauguration of permanent Kanpur headquarters on 16 May 2026",
-      "Corporate board mounted on 17 May 2026 for statutory and banking compliance",
-      "Official banner unveiled displaying CIN: U62013UP2026PTC246506",
-      "Headquarters operationalized for commercial client delivery and software scaling",
+      "Official technical mentorship provided by Founder & CEO Shikhar Dixit",
+      "Mentored student engineering cohorts on API design and full-stack software architectures",
+      "Campus ecosystem leadership at Axis Colleges",
     ],
     images: [
       {
-        src: "/images/bringing dimisi home.jpeg",
-        alt: "The DIMISI team with the official DIMISI Technologies corporate banner at the home headquarters",
+        src: "/images/mentorship and library.webp",
+        alt: "Shikhar Dixit mentoring collegiate software developers",
         caption:
-          "Headquarters Archive · 16–17 May 2026: Team inauguration at Swarn Jayanti Vihar, Kanpur under the registered corporate banner.",
+          "Mentorship Archive · March 2026: Shikhar Dixit guiding student developers during Axis HackSprint 2.0.",
       },
     ],
     relatedEntities: [
-      { label: "DIMISI Technologies", to: "/dimisi-technologies" },
+      { label: "Shikhar Dixit", to: "/people/shikhar-dixit" },
+      { label: "DIMISI Technologies", to: "/organizations/dimisi-technologies" },
+    ],
+  },
+  {
+    id: "gandhigiri-project-showcase",
+    slug: "gandhigiri-project-showcase",
+    title: "Gandhigiri Technical Project Showcase 2024 (Catalyst Event)",
+    category: "Milestone",
+    date: "2024-10-15",
+    displayDate: "15 October 2024",
+    location: "Axis College, Kanpur, Uttar Pradesh",
+    status: "source-backed",
+    achievement: "6-Hour Face Recognition System Sprint & Founding of CATI",
+    summary:
+      "The pivotal collegiate technical presentation where Shikhar Dixit and Swatantra Singh built and demonstrated a Face Recognition System in 6 hours, leading to the creation of CATI and DIMISI Technologies.",
+    description: [
+      "Learning about the Gandhigiri technical competition on the morning of 15 October 2024, Shikhar Dixit teamed up with Swatantra Singh.",
+      "Working relentlessly over 6–7 hours at home, they trained and deployed a working facial recognition platform that earned widespread commendation from college faculty.",
+      "That evening, Dixit and Singh agreed to form a technology partnership, initiating the startup journey that resulted in the corporate incorporation of DIMISI Technologies Private Limited.",
+    ],
+    highlights: [
+      "6-hour rapid engineering sprint building a Computer Vision Face Recognition System",
+      "High commendation from engineering faculty at Axis College",
+      "Catalyzed the technology partnership between Shikhar Dixit and Swatantra Singh",
+      "Led to the founding of Cosmic Aura Tech Industry (CATI) with Nishkarsh Mishra",
+    ],
+    images: [
+      {
+        src: "/images/dimisi-logo.webp",
+        alt: "Foundational milestone of DIMISI Technologies",
+        caption:
+          "Founding Chronicle · 15 October 2024: The catalyst engineering sprint that launched the startup journey.",
+      },
+    ],
+    relatedEntities: [
       { label: "Shikhar Dixit", to: "/people/shikhar-dixit" },
       { label: "Swatantra Singh", to: "/people/swatantra-singh" },
       { label: "Nishkarsh Mishra", to: "/people/nishkarsh-mishra" },
@@ -292,6 +408,7 @@ const documentedEvents: EventItem[] = [
   },
   {
     id: "iit-bombay-esummit-2025",
+    slug: "iit-bombay-esummit-2025",
     title: "IIT Bombay E-Summit 2025 Entrepreneurship Delegation",
     category: "Summit",
     date: "2025-01-28",
@@ -318,8 +435,8 @@ const documentedEvents: EventItem[] = [
       },
     ],
     relatedEntities: [
-      { label: "Our Journey (Phase 2)", to: "/journey" },
-      { label: "DIMISI Technologies", to: "/dimisi-technologies" },
+      { label: "Our Journey", to: "/journey" },
+      { label: "DIMISI Technologies", to: "/organizations/dimisi-technologies" },
       { label: "Timeline", to: "/timeline" },
     ],
   },
@@ -327,7 +444,7 @@ const documentedEvents: EventItem[] = [
 
 const trail = [{ label: "DIMISIPEDIA", to: "/" }, { label: "Events" }];
 
-export const Route = createFileRoute("/events")({
+export const Route = createFileRoute("/events/")({
   head: () =>
     pageHead({
       title: "Documented Events & Campaigns — DIMISI Technologies | DIMISIPEDIA",
@@ -352,7 +469,7 @@ export const Route = createFileRoute("/events")({
               "@type": "ListItem",
               position: idx + 1,
               name: evt.title,
-              url: abs(`/events#${evt.id}`),
+              url: abs(`/events/${evt.slug}`),
               description: evt.summary,
               ...(evt.images && evt.images[0] ? { image: abs(evt.images[0].src) } : {}),
             })),
@@ -373,7 +490,7 @@ function EventsPage() {
 
   // Flatten all event images for the full lightbox gallery
   const allImages: LightboxImage[] = documentedEvents.flatMap((evt) =>
-    (evt.images ?? []).map((img, i) => ({
+    (evt.images ?? []).map((img) => ({
       src: img.src,
       alt: img.alt,
       caption: img.caption,
@@ -416,6 +533,7 @@ function EventsPage() {
             { id: "Milestone", label: "Corporate Milestones" },
             { id: "Campaign", label: "Marketing Campaigns" },
             { id: "Summit", label: "Summits" },
+            { id: "Hackathon", label: "Hackathons" },
           ].map((f) => (
             <button
               key={f.id}
@@ -463,7 +581,22 @@ function EventsPage() {
               </div>
             </div>
 
-            <h2 className="mt-5 font-serif text-2xl sm:text-3xl leading-snug">{event.title}</h2>
+            <div className="mt-5 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
+              <h2 className="font-serif text-2xl sm:text-3xl leading-snug">
+                <Link
+                  to={`/events/${event.slug}`}
+                  className="hover:text-primary transition-colors underline-offset-4 hover:underline"
+                >
+                  {event.title}
+                </Link>
+              </h2>
+              <Link
+                to={`/events/${event.slug}`}
+                className="inline-flex items-center gap-1 text-xs font-mono text-primary hover:underline shrink-0"
+              >
+                Canonical Dossier <ArrowRight className="size-3" />
+              </Link>
+            </div>
 
             {/* Achievement & Delegation Highlight Callout */}
             {event.achievement ? (
@@ -650,18 +783,27 @@ function EventsPage() {
               </div>
             ) : null}
 
-            {/* Related Entities */}
-            <div className="mt-6 flex flex-wrap items-center gap-2 border-t border-rule pt-4">
-              <span className="font-mono text-xs text-muted-foreground">Related Entities:</span>
-              {event.relatedEntities.map((ent) => (
-                <Link
-                  key={ent.to}
-                  to={ent.to}
-                  className="inline-flex items-center gap-1 border border-border bg-background px-2.5 py-1 font-mono text-xs text-foreground transition-colors hover:border-primary hover:text-primary"
-                >
-                  {ent.label} <ArrowRight className="size-3 opacity-60" />
-                </Link>
-              ))}
+            {/* Related Entities & Full Dossier Link */}
+            <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-rule pt-4">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="font-mono text-xs text-muted-foreground">Related Entities:</span>
+                {event.relatedEntities.map((ent) => (
+                  <Link
+                    key={ent.to}
+                    to={ent.to}
+                    className="inline-flex items-center gap-1 border border-border bg-background px-2.5 py-1 font-mono text-xs text-foreground transition-colors hover:border-primary hover:text-primary"
+                  >
+                    {ent.label} <ArrowRight className="size-3 opacity-60" />
+                  </Link>
+                ))}
+              </div>
+
+              <Link
+                to={`/events/${event.slug}`}
+                className="inline-flex items-center gap-1.5 border border-primary/30 bg-primary/10 px-3 py-1 font-mono text-xs font-medium text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+              >
+                View Full Dossier &amp; Citations <ArrowRight className="size-3.5" />
+              </Link>
             </div>
           </article>
         ))}

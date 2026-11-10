@@ -16,7 +16,6 @@ import { Route as AiKnowledgeRouteImport } from './routes/ai-knowledge'
 import { Route as CredibilityRouteImport } from './routes/credibility'
 import { Route as DimisiTechnologiesRouteImport } from './routes/dimisi-technologies'
 import { Route as EditorialPolicyRouteImport } from './routes/editorial-policy'
-import { Route as EventsRouteImport } from './routes/events'
 import { Route as ExploreRouteImport } from './routes/explore'
 import { Route as FeedDotxmlRouteImport } from './routes/feed[.]xml'
 import { Route as IndexnowKeyDottxtRouteImport } from './routes/indexnow-key[.]txt'
@@ -48,6 +47,8 @@ import { Route as ArticlesIndexRouteImport } from './routes/articles.index'
 import { Route as ArticlesSlugRouteImport } from './routes/articles.$slug'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as EventsIndexRouteImport } from './routes/events.index'
+import { Route as EventsSlugRouteImport } from './routes/events.$slug'
 import { Route as OrganizationsIndexRouteImport } from './routes/organizations.index'
 import { Route as OrganizationsSlugRouteImport } from './routes/organizations.$slug'
 import { Route as PeopleIndexRouteImport } from './routes/people.index'
@@ -108,11 +109,6 @@ const DimisiTechnologiesRoute = DimisiTechnologiesRouteImport.update({
 const EditorialPolicyRoute = EditorialPolicyRouteImport.update({
   id: '/editorial-policy',
   path: '/editorial-policy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EventsRoute = EventsRouteImport.update({
-  id: '/events',
-  path: '/events',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExploreRoute = ExploreRouteImport.update({
@@ -271,6 +267,16 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EventsIndexRoute = EventsIndexRouteImport.update({
+  id: '/events/',
+  path: '/events/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsSlugRoute = EventsSlugRouteImport.update({
+  id: '/events/$slug',
+  path: '/events/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OrganizationsIndexRoute = OrganizationsIndexRouteImport.update({
   id: '/organizations/',
   path: '/organizations/',
@@ -412,7 +418,6 @@ export interface FileRoutesByFullPath {
   '/credibility': typeof CredibilityRoute
   '/dimisi-technologies': typeof DimisiTechnologiesRoute
   '/editorial-policy': typeof EditorialPolicyRoute
-  '/events': typeof EventsRoute
   '/explore': typeof ExploreRoute
   '/feed.xml': typeof FeedDotxmlRoute
   '/indexnow-key.txt': typeof IndexnowKeyDottxtRoute
@@ -442,6 +447,7 @@ export interface FileRoutesByFullPath {
   '/timeline': typeof TimelineRoute
   '/articles/$slug': typeof ArticlesSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/events/$slug': typeof EventsSlugRoute
   '/organizations/$slug': typeof OrganizationsSlugRoute
   '/people/$slug': typeof PeopleSlugRoute
   '/products/$slug': typeof ProductsSlugRoute
@@ -450,6 +456,7 @@ export interface FileRoutesByFullPath {
   '/technology/$slug': typeof TechnologySlugRoute
   '/articles/': typeof ArticlesIndexRoute
   '/blog/': typeof BlogIndexRoute
+  '/events/': typeof EventsIndexRoute
   '/organizations/': typeof OrganizationsIndexRoute
   '/people/': typeof PeopleIndexRoute
   '/products/': typeof ProductsIndexRoute
@@ -479,7 +486,6 @@ export interface FileRoutesByTo {
   '/credibility': typeof CredibilityRoute
   '/dimisi-technologies': typeof DimisiTechnologiesRoute
   '/editorial-policy': typeof EditorialPolicyRoute
-  '/events': typeof EventsRoute
   '/explore': typeof ExploreRoute
   '/feed.xml': typeof FeedDotxmlRoute
   '/indexnow-key.txt': typeof IndexnowKeyDottxtRoute
@@ -509,6 +515,7 @@ export interface FileRoutesByTo {
   '/timeline': typeof TimelineRoute
   '/articles/$slug': typeof ArticlesSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/events/$slug': typeof EventsSlugRoute
   '/organizations/$slug': typeof OrganizationsSlugRoute
   '/people/$slug': typeof PeopleSlugRoute
   '/products/$slug': typeof ProductsSlugRoute
@@ -517,6 +524,7 @@ export interface FileRoutesByTo {
   '/technology/$slug': typeof TechnologySlugRoute
   '/articles': typeof ArticlesIndexRoute
   '/blog': typeof BlogIndexRoute
+  '/events': typeof EventsIndexRoute
   '/organizations': typeof OrganizationsIndexRoute
   '/people': typeof PeopleIndexRoute
   '/products': typeof ProductsIndexRoute
@@ -547,7 +555,6 @@ export interface FileRoutesById {
   '/credibility': typeof CredibilityRoute
   '/dimisi-technologies': typeof DimisiTechnologiesRoute
   '/editorial-policy': typeof EditorialPolicyRoute
-  '/events': typeof EventsRoute
   '/explore': typeof ExploreRoute
   '/feed.xml': typeof FeedDotxmlRoute
   '/indexnow-key.txt': typeof IndexnowKeyDottxtRoute
@@ -577,6 +584,7 @@ export interface FileRoutesById {
   '/timeline': typeof TimelineRoute
   '/articles/$slug': typeof ArticlesSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/events/$slug': typeof EventsSlugRoute
   '/organizations/$slug': typeof OrganizationsSlugRoute
   '/people/$slug': typeof PeopleSlugRoute
   '/products/$slug': typeof ProductsSlugRoute
@@ -585,6 +593,7 @@ export interface FileRoutesById {
   '/technology/$slug': typeof TechnologySlugRoute
   '/articles/': typeof ArticlesIndexRoute
   '/blog/': typeof BlogIndexRoute
+  '/events/': typeof EventsIndexRoute
   '/organizations/': typeof OrganizationsIndexRoute
   '/people/': typeof PeopleIndexRoute
   '/products/': typeof ProductsIndexRoute
@@ -616,7 +625,6 @@ export interface FileRouteTypes {
     | '/credibility'
     | '/dimisi-technologies'
     | '/editorial-policy'
-    | '/events'
     | '/explore'
     | '/feed.xml'
     | '/indexnow-key.txt'
@@ -646,6 +654,7 @@ export interface FileRouteTypes {
     | '/timeline'
     | '/articles/$slug'
     | '/blog/$slug'
+    | '/events/$slug'
     | '/organizations/$slug'
     | '/people/$slug'
     | '/products/$slug'
@@ -654,6 +663,7 @@ export interface FileRouteTypes {
     | '/technology/$slug'
     | '/articles/'
     | '/blog/'
+    | '/events/'
     | '/organizations/'
     | '/people/'
     | '/products/'
@@ -683,7 +693,6 @@ export interface FileRouteTypes {
     | '/credibility'
     | '/dimisi-technologies'
     | '/editorial-policy'
-    | '/events'
     | '/explore'
     | '/feed.xml'
     | '/indexnow-key.txt'
@@ -713,6 +722,7 @@ export interface FileRouteTypes {
     | '/timeline'
     | '/articles/$slug'
     | '/blog/$slug'
+    | '/events/$slug'
     | '/organizations/$slug'
     | '/people/$slug'
     | '/products/$slug'
@@ -721,6 +731,7 @@ export interface FileRouteTypes {
     | '/technology/$slug'
     | '/articles'
     | '/blog'
+    | '/events'
     | '/organizations'
     | '/people'
     | '/products'
@@ -750,7 +761,6 @@ export interface FileRouteTypes {
     | '/credibility'
     | '/dimisi-technologies'
     | '/editorial-policy'
-    | '/events'
     | '/explore'
     | '/feed.xml'
     | '/indexnow-key.txt'
@@ -780,6 +790,7 @@ export interface FileRouteTypes {
     | '/timeline'
     | '/articles/$slug'
     | '/blog/$slug'
+    | '/events/$slug'
     | '/organizations/$slug'
     | '/people/$slug'
     | '/products/$slug'
@@ -788,6 +799,7 @@ export interface FileRouteTypes {
     | '/technology/$slug'
     | '/articles/'
     | '/blog/'
+    | '/events/'
     | '/organizations/'
     | '/people/'
     | '/products/'
@@ -818,7 +830,6 @@ export interface RootRouteChildren {
   CredibilityRoute: typeof CredibilityRoute
   DimisiTechnologiesRoute: typeof DimisiTechnologiesRoute
   EditorialPolicyRoute: typeof EditorialPolicyRoute
-  EventsRoute: typeof EventsRoute
   ExploreRoute: typeof ExploreRoute
   FeedDotxmlRoute: typeof FeedDotxmlRoute
   IndexnowKeyDottxtRoute: typeof IndexnowKeyDottxtRoute
@@ -848,6 +859,7 @@ export interface RootRouteChildren {
   TimelineRoute: typeof TimelineRoute
   ArticlesSlugRoute: typeof ArticlesSlugRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  EventsSlugRoute: typeof EventsSlugRoute
   OrganizationsSlugRoute: typeof OrganizationsSlugRoute
   PeopleSlugRoute: typeof PeopleSlugRoute
   ProductsSlugRoute: typeof ProductsSlugRoute
@@ -856,6 +868,7 @@ export interface RootRouteChildren {
   TechnologySlugRoute: typeof TechnologySlugRoute
   ArticlesIndexRoute: typeof ArticlesIndexRoute
   BlogIndexRoute: typeof BlogIndexRoute
+  EventsIndexRoute: typeof EventsIndexRoute
   OrganizationsIndexRoute: typeof OrganizationsIndexRoute
   PeopleIndexRoute: typeof PeopleIndexRoute
   ProductsIndexRoute: typeof ProductsIndexRoute
@@ -927,13 +940,6 @@ declare module '@tanstack/react-router' {
       path: '/editorial-policy'
       fullPath: '/editorial-policy'
       preLoaderRoute: typeof EditorialPolicyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/events': {
-      id: '/events'
-      path: '/events'
-      fullPath: '/events'
-      preLoaderRoute: typeof EventsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/explore': {
@@ -1153,6 +1159,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/events/': {
+      id: '/events/'
+      path: '/events'
+      fullPath: '/events/'
+      preLoaderRoute: typeof EventsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events/$slug': {
+      id: '/events/$slug'
+      path: '/events/$slug'
+      fullPath: '/events/$slug'
+      preLoaderRoute: typeof EventsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/organizations/': {
       id: '/organizations/'
       path: '/organizations'
@@ -1346,7 +1366,6 @@ const rootRouteChildren: RootRouteChildren = {
   CredibilityRoute: CredibilityRoute,
   DimisiTechnologiesRoute: DimisiTechnologiesRoute,
   EditorialPolicyRoute: EditorialPolicyRoute,
-  EventsRoute: EventsRoute,
   ExploreRoute: ExploreRoute,
   FeedDotxmlRoute: FeedDotxmlRoute,
   IndexnowKeyDottxtRoute: IndexnowKeyDottxtRoute,
@@ -1376,6 +1395,7 @@ const rootRouteChildren: RootRouteChildren = {
   TimelineRoute: TimelineRoute,
   ArticlesSlugRoute: ArticlesSlugRoute,
   BlogSlugRoute: BlogSlugRoute,
+  EventsSlugRoute: EventsSlugRoute,
   OrganizationsSlugRoute: OrganizationsSlugRoute,
   PeopleSlugRoute: PeopleSlugRoute,
   ProductsSlugRoute: ProductsSlugRoute,
@@ -1384,6 +1404,7 @@ const rootRouteChildren: RootRouteChildren = {
   TechnologySlugRoute: TechnologySlugRoute,
   ArticlesIndexRoute: ArticlesIndexRoute,
   BlogIndexRoute: BlogIndexRoute,
+  EventsIndexRoute: EventsIndexRoute,
   OrganizationsIndexRoute: OrganizationsIndexRoute,
   PeopleIndexRoute: PeopleIndexRoute,
   ProductsIndexRoute: ProductsIndexRoute,

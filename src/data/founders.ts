@@ -10,7 +10,6 @@
  */
 
 import type { Claim, Entity, Relationship, Source, TimelineEntry } from "./knowledge";
-import { calculateAge, formatBornFact } from "@/lib/utils";
 
 const ORG = "DIMISI Technologies Private Limited";
 const ADDED = "2026-08-15";
@@ -323,19 +322,22 @@ const shikhar: Entity = {
   name: "Shikhar Dixit",
   subtitle: "Founder & CEO · DIMISI Technologies",
   image: "/images/shikhar-dixit.webp",
-  birthDate: "2004-05-06",
   shortDescription:
     "Indian technology entrepreneur and software engineer; Founder & Chief Executive Officer of DIMISI Technologies Private Limited, leading enterprise business software architecture, operations systems (DIMISI-OPS), and digital platforms.",
   answer:
     "Shikhar Dixit is an Indian technology entrepreneur, software engineer, and the Founder & Chief Executive Officer (CEO) of DIMISI Technologies Private Limited, based in Kanpur, Uttar Pradesh. He is the principal product and software architect behind DIMISI's enterprise business software solutions (including DIMISI-OPS), consumer platforms (Kalesh), the DIMISIPEDIA entity knowledge platform, and commercial digital systems.",
   facts: [
     {
-      label: "Born",
-      get value() {
-        return formatBornFact("2004-05-06", "Kanpur, Uttar Pradesh, India");
-      },
-      status: "source-backed",
+      label: "Origin / Base",
+      value: "Kanpur, Uttar Pradesh, India",
+      status: "verified",
       sourceIds: ["src-corporate-record", "src-shikhar-linkedin"],
+    },
+    {
+      label: "Nationality",
+      value: "Indian",
+      status: "verified",
+      sourceIds: ["src-corporate-record"],
     },
     {
       label: "Occupation",
@@ -735,10 +737,8 @@ const shikhar: Entity = {
   ],
   questions: [
     {
-      q: "When was Shikhar Dixit born and how old is he?",
-      get a() {
-        return `Shikhar Dixit was born on 6 May 2004 (${calculateAge("2004-05-06")} years old) in Kanpur, Uttar Pradesh, India.`;
-      },
+      q: "Where is Shikhar Dixit based and what is his leadership role?",
+      a: "Shikhar Dixit is based in Kanpur, Uttar Pradesh, India. He serves as the Founder, Chief Executive Officer (CEO), and Managing Director of DIMISI Technologies Private Limited, leading company vision, enterprise software architecture, and product engineering.",
     },
     {
       q: "Who is Shikhar Dixit?",
@@ -860,18 +860,21 @@ const nishkarsh: Entity = {
   name: "Nishkarsh Mishra",
   subtitle: "Co-Founder, Director, CMO & COO · DIMISI Technologies",
   image: "/images/nishkarsh-mishra.webp",
-  birthDate: "2000-03-15",
   shortDescription:
     "Technology entrepreneur, operations strategist and marketing executive; co-founder and director of DIMISI Technologies Private Limited.",
   answer:
     "Nishkarsh Mishra is an Indian technology entrepreneur, operations strategist, and marketing executive based in Kanpur, Uttar Pradesh. He is a co-founder and director of DIMISI Technologies Private Limited, serving as Chief Operating Officer (COO) and Chief Marketing Officer (CMO).",
   facts: [
     {
-      label: "Born",
-      get value() {
-        return formatBornFact("2000-03-15", "Kanpur, Uttar Pradesh, India");
-      },
-      status: "source-backed",
+      label: "Origin / Base",
+      value: "Kanpur, Uttar Pradesh, India",
+      status: "verified",
+      sourceIds: ["src-corporate-record"],
+    },
+    {
+      label: "Nationality",
+      value: "Indian",
+      status: "verified",
       sourceIds: ["src-corporate-record"],
     },
     {
@@ -1053,10 +1056,8 @@ const nishkarsh: Entity = {
   ],
   questions: [
     {
-      q: "When was Nishkarsh Mishra born and how old is he?",
-      get a() {
-        return `Nishkarsh Mishra was born on 15 March 2000 (${calculateAge("2000-03-15")} years old) in Kanpur, Uttar Pradesh, India.`;
-      },
+      q: "Where is Nishkarsh Mishra based and what is his role at DIMISI Technologies?",
+      a: "Nishkarsh Mishra is based in Kanpur, Uttar Pradesh, India. He serves as Co-Founder, Director, Chief Operating Officer (COO), and Chief Marketing Officer (CMO) of DIMISI Technologies Private Limited.",
     },
     {
       q: "Who is Nishkarsh Mishra?",
@@ -1065,10 +1066,8 @@ const nishkarsh: Entity = {
   ],
   faqs: [
     {
-      question: "What is Nishkarsh Mishra's date of birth and age?",
-      get answer() {
-        return `Nishkarsh Mishra was born on 15 March 2000. As of current calculation, he is ${calculateAge("2000-03-15")} years old.`;
-      },
+      question: "Where is Nishkarsh Mishra based?",
+      answer: "Nishkarsh Mishra is based in Kanpur, Uttar Pradesh, India.",
     },
     {
       question: "Who is Nishkarsh Mishra?",
@@ -1121,18 +1120,21 @@ const swatantra: Entity = {
   name: "Swatantra Singh",
   subtitle: "Co-Founder & CTO · DIMISI Technologies",
   image: "/images/swatantra-singh.webp",
-  birthDate: "2000-08-30",
   shortDescription:
     "Technology executive and engineer; co-founder, director and chief technology officer of DIMISI Technologies Private Limited.",
   answer:
     "Swatantra Singh is a technology executive and software engineer associated with DIMISI Technologies Private Limited in Kanpur, Uttar Pradesh. He is a co-founder, director and Chief Technology Officer (CTO) of the company, responsible for platform architecture, systems engineering, and technical scalability across the DIMISI product ecosystem.",
   facts: [
     {
-      label: "Born",
-      get value() {
-        return formatBornFact("2000-08-30", "Kanpur, Uttar Pradesh, India");
-      },
-      status: "source-backed",
+      label: "Origin / Base",
+      value: "Kanpur, Uttar Pradesh, India",
+      status: "verified",
+      sourceIds: ["src-corporate-record"],
+    },
+    {
+      label: "Nationality",
+      value: "Indian",
+      status: "verified",
       sourceIds: ["src-corporate-record"],
     },
     { label: "Occupation", value: "Technology executive, engineer", status: "source-backed" },
@@ -1298,10 +1300,8 @@ const swatantra: Entity = {
   ],
   questions: [
     {
-      q: "When was Swatantra Singh born and how old is he?",
-      get a() {
-        return `Swatantra Singh was born on 30 August 2000 (${calculateAge("2000-08-30")} years old) in Kanpur, Uttar Pradesh, India.`;
-      },
+      q: "Where is Swatantra Singh based and what is his technical leadership role?",
+      a: "Swatantra Singh is based in Kanpur, Uttar Pradesh, India. He serves as Co-Founder, Director, and Chief Technology Officer (CTO) of DIMISI Technologies Private Limited, leading platform architecture and engineering scalability.",
     },
     {
       q: "Who is Swatantra Singh?",
@@ -1310,10 +1310,8 @@ const swatantra: Entity = {
   ],
   faqs: [
     {
-      question: "What is Swatantra Singh's date of birth and age?",
-      get answer() {
-        return `Swatantra Singh was born on 30 August 2000. As of current calculation, he is ${calculateAge("2000-08-30")} years old.`;
-      },
+      question: "Where is Swatantra Singh based?",
+      answer: "Swatantra Singh is based in Kanpur, Uttar Pradesh, India.",
     },
     {
       question: "Who is Swatantra Singh?",

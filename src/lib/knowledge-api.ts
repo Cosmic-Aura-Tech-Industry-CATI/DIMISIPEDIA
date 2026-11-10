@@ -72,7 +72,13 @@ export function serializeEntity(e: Entity): SerializedEntity {
     shortDescription: e.shortDescription,
     answer: e.answer,
     disambiguatingDescription: e.disambiguatingDescription,
-    facts: e.facts.map((f) => ({ label: f.label, value: f.value })),
+    facts: e.facts
+      .filter((f) => {
+        const label = f.label.toLowerCase();
+        if (label === "born" && !e.isPublicBirthDateAllowed) return false;
+        return true;
+      })
+      .map((f) => ({ label: f.label, value: f.value })),
     verifiedAt: e.verifiedAt ?? e.updatedAt ?? "2026-10-31",
     updatedAt: e.updatedAt ?? "2026-10-31",
     status: e.status,
@@ -110,9 +116,19 @@ export interface PaginatedResult<T> {
   results: T[];
 }
 
-export function paginate<T>(items: T[], page = 1, limit = 50): PaginatedResult<T> {
-  const safePage = Math.max(1, page);
-  const safeLimit = Math.min(100, Math.max(1, limit));
+export function paginate<T>(
+  items: T[],
+  pageInput: unknown = 1,
+  limitInput: unknown = 50,
+): PaginatedResult<T> {
+  const pageNum =
+    typeof pageInput === "number" ? pageInput : parseInt(String(pageInput ?? "1"), 10);
+  const limitNum =
+    typeof limitInput === "number" ? limitInput : parseInt(String(limitInput ?? "50"), 10);
+
+  const safePage = Number.isNaN(pageNum) || pageNum < 1 ? 1 : pageNum;
+  const safeLimit =
+    Number.isNaN(limitNum) || limitNum < 1 ? 50 : Math.min(100, Math.max(1, limitNum));
   const startIndex = (safePage - 1) * safeLimit;
   const endIndex = startIndex + safeLimit;
   const pagedItems = items.slice(startIndex, endIndex);
@@ -146,6 +162,45 @@ export function apiJsonResponse(data: unknown, status = 200): Response {
       "X-Content-Type-Options": "nosniff",
     },
   });
+}
+
+export function apiErrorResponse(
+  message: string,
+  status = 400,
+  details?: Record<string, unknown>,
+): Response {
+  return new Response(
+    JSON.stringify(
+      {
+        "@context": "https://schema.org",
+        status,
+        error:
+          status >= 500
+            ? "InternalServerError"
+            : status === 404
+              ? "NotFoundError"
+              : status === 405
+                ? "MethodNotAllowed"
+                : "BadRequestError",
+        message,
+        timestamp: new Date().toISOString(),
+        ...details,
+      },
+      null,
+      2,
+    ),
+    {
+      status,
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
+        "Cache-Control": "no-store",
+        "X-Content-Type-Options": "nosniff",
+      },
+    },
+  );
 }
 
 /** Full machine-readable knowledge index for /knowledge.json */

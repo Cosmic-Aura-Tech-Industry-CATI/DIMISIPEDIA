@@ -38,7 +38,14 @@ import {
   type Entity,
   type EntityType,
 } from "@/data/knowledge";
-import { buildEntitySchema, pageHead, abs, SITE_URL } from "@/lib/seo";
+import {
+  buildEntitySchema,
+  buildEntityPageSchema,
+  graph,
+  pageHead,
+  abs,
+  SITE_URL,
+} from "@/lib/seo";
 
 export const Route = createFileRoute("/admin")({
   head: () =>
@@ -110,9 +117,15 @@ function AdminDashboard() {
     for (const e of entities) {
       try {
         const schema = buildEntitySchema(e);
-        const serialized = JSON.stringify(schema);
-        if (!serialized.includes("@context") || !serialized.includes("@type")) {
-          failures.push({ entityId: e.id, entityName: e.name, error: "Missing @context or @type" });
+        const pageSchema = buildEntityPageSchema(e);
+        const fullGraph = graph([schema, pageSchema]);
+        const nodeStr = JSON.stringify(schema);
+        if (
+          !fullGraph.includes("@context") ||
+          !fullGraph.includes("@graph") ||
+          !nodeStr.includes("@type")
+        ) {
+          failures.push({ entityId: e.id, entityName: e.name, error: "Missing Schema properties" });
         } else {
           validCount++;
         }

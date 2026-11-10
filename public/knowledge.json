@@ -17,15 +17,15 @@
   },
   "version": "2.0.0",
   "datePublished": "2026-04-09",
-  "dateModified": "2026-11-10T09:11:14.814Z",
+  "dateModified": "2026-11-10T20:15:44.022Z",
   "entityCounts": {
-    "total": 53,
+    "total": 56,
     "people": 15,
     "organizations": 1,
     "products": 6,
     "projects": 4,
     "services": 7,
-    "events": 5
+    "events": 8
   },
   "endpoints": {
     "allEntities": "https://www.dimisipedia.me/api/v1/knowledge/entities",
@@ -54,8 +54,12 @@
       "disambiguatingDescription": "Indian technology entrepreneur and software engineer; Founder & Chief Executive Officer of DIMISI Technologies Private Limited; principal architect of enterprise business software (DIMISI-OPS), Kalesh, and DIMISIPEDIA.",
       "facts": [
         {
-          "label": "Born",
-          "value": "6 May 2004 (age 22), Kanpur, Uttar Pradesh, India"
+          "label": "Origin / Base",
+          "value": "Kanpur, Uttar Pradesh, India"
+        },
+        {
+          "label": "Nationality",
+          "value": "Indian"
         },
         {
           "label": "Occupation",
@@ -184,20 +188,6 @@
           "targetUrl": "https://www.dimisipedia.me/events/iit-kanpur-siic-avinya-2026"
         },
         {
-          "type": "Finalist at",
-          "targetId": "iit-kanpur-siic-avinya-2026",
-          "targetName": "IIT Kanpur SIIC Avinya 2026",
-          "targetType": "event",
-          "targetUrl": "https://www.dimisipedia.me/events/iit-kanpur-siic-avinya-2026"
-        },
-        {
-          "type": "Mentor at",
-          "targetId": "axis-hacksprint-2",
-          "targetName": "Axis HackSprint 2.0",
-          "targetType": "event",
-          "targetUrl": "https://www.dimisipedia.me/events/axis-hacksprint-2"
-        },
-        {
           "type": "Participated in",
           "targetId": "gandhigiri-project-showcase",
           "targetName": "Gandhigiri Technical Project Showcase 2024",
@@ -210,6 +200,27 @@
           "targetName": "DIMISI Foundation & Incorporation Day",
           "targetType": "event",
           "targetUrl": "https://www.dimisipedia.me/events/dimisi-foundation-day-2026"
+        },
+        {
+          "type": "Participated in",
+          "targetId": "team-id-cards-ceremony",
+          "targetName": "Team ID Cards & T-Shirts Distribution Ceremony",
+          "targetType": "event",
+          "targetUrl": "https://www.dimisipedia.me/events/team-id-cards-ceremony"
+        },
+        {
+          "type": "Participated in",
+          "targetId": "office-inauguration-2026",
+          "targetName": "Headquarters Inauguration & Corporate Board Mounting",
+          "targetType": "event",
+          "targetUrl": "https://www.dimisipedia.me/events/office-inauguration-2026"
+        },
+        {
+          "type": "Participated in",
+          "targetId": "iit-bombay-esummit-2025",
+          "targetName": "IIT Bombay E-Summit 2025 Entrepreneurship Delegation",
+          "targetType": "event",
+          "targetUrl": "https://www.dimisipedia.me/events/iit-bombay-esummit-2025"
         }
       ],
       "sources": [
@@ -492,20 +503,6 @@
         },
         {
           "type": "Associated with",
-          "targetId": "sheelu-singh",
-          "targetName": "Sheelu Singh",
-          "targetType": "person",
-          "targetUrl": "https://www.dimisipedia.me/people/sheelu-singh"
-        },
-        {
-          "type": "Associated with",
-          "targetId": "mridul-mishra",
-          "targetName": "Mridul Mishra",
-          "targetType": "person",
-          "targetUrl": "https://www.dimisipedia.me/people/mridul-mishra"
-        },
-        {
-          "type": "Associated with",
           "targetId": "amrit-awasthi",
           "targetName": "Amrit Awasthi",
           "targetType": "person",
@@ -524,41 +521,6 @@
           "targetName": "Amit Kumar",
           "targetType": "person",
           "targetUrl": "https://www.dimisipedia.me/people/amit-kumar"
-        },
-        {
-          "type": "Associated with",
-          "targetId": "harsh-mishra",
-          "targetName": "Harsh Mishra",
-          "targetType": "person",
-          "targetUrl": "https://www.dimisipedia.me/people/harsh-mishra"
-        },
-        {
-          "type": "Associated with",
-          "targetId": "somya-tiwari",
-          "targetName": "Somya Tiwari",
-          "targetType": "person",
-          "targetUrl": "https://www.dimisipedia.me/people/somya-tiwari"
-        },
-        {
-          "type": "Associated with",
-          "targetId": "anushka-tripathi",
-          "targetName": "Anushka Tripathi",
-          "targetType": "person",
-          "targetUrl": "https://www.dimisipedia.me/people/anushka-tripathi"
-        },
-        {
-          "type": "Associated with",
-          "targetId": "nisha-chaudhary",
-          "targetName": "Nisha Chaudhary",
-          "targetType": "person",
-          "targetUrl": "https://www.dimisipedia.me/people/nisha-chaudhary"
-        },
-        {
-          "type": "Associated with",
-          "targetId": "krishna-tiwari",
-          "targetName": "Krishna Tiwari",
-          "targetType": "person",
-          "targetUrl": "https://www.dimisipedia.me/people/krishna-tiwari"
         },
         {
           "type": "Related to",
@@ -720,6 +682,20 @@
           "targetName": "Team ID Cards & T-Shirts Distribution Ceremony",
           "targetType": "event",
           "targetUrl": "https://www.dimisipedia.me/events/team-id-cards-ceremony"
+        },
+        {
+          "type": "Organized by",
+          "targetId": "linkedin-30days-kalesh-contest",
+          "targetName": "LinkedIn 30-Day Kalesh Promotion & Content Creator Challenge",
+          "targetType": "event",
+          "targetUrl": "https://www.dimisipedia.me/events/linkedin-30days-kalesh-contest"
+        },
+        {
+          "type": "Organized by",
+          "targetId": "office-inauguration-2026",
+          "targetName": "Headquarters Inauguration & Corporate Board Mounting",
+          "targetType": "event",
+          "targetUrl": "https://www.dimisipedia.me/events/office-inauguration-2026"
         }
       ],
       "sources": [
@@ -1040,27 +1016,6 @@
           "targetName": "Swatantra Singh",
           "targetType": "person",
           "targetUrl": "https://www.dimisipedia.me/people/swatantra-singh"
-        },
-        {
-          "type": "Technical leadership by",
-          "targetId": "swatantra-singh",
-          "targetName": "Swatantra Singh",
-          "targetType": "person",
-          "targetUrl": "https://www.dimisipedia.me/people/swatantra-singh"
-        },
-        {
-          "type": "Engineering by",
-          "targetId": "sheelu-singh",
-          "targetName": "Sheelu Singh",
-          "targetType": "person",
-          "targetUrl": "https://www.dimisipedia.me/people/sheelu-singh"
-        },
-        {
-          "type": "Engineering by",
-          "targetId": "mridul-mishra",
-          "targetName": "Mridul Mishra",
-          "targetType": "person",
-          "targetUrl": "https://www.dimisipedia.me/people/mridul-mishra"
         }
       ],
       "sources": [
@@ -1353,13 +1308,6 @@
           "targetName": "Kalesh",
           "targetType": "product",
           "targetUrl": "https://www.dimisipedia.me/products/kalesh"
-        },
-        {
-          "type": "Works at",
-          "targetId": "dimisi-technologies",
-          "targetName": "DIMISI Technologies",
-          "targetType": "organization",
-          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
         }
       ],
       "sources": [
@@ -1423,7 +1371,10 @@
       "slug": "axis-hacksprint-2",
       "canonicalUrl": "https://www.dimisipedia.me/events/axis-hacksprint-2",
       "name": "Axis HackSprint 2.0",
-      "alternateNames": [],
+      "alternateNames": [
+        "axis-colleges-hacksprint-2",
+        "hacksprint-2"
+      ],
       "entityType": "event",
       "subtitle": "National Collegiate Hackathon — Official Technical Mentorship",
       "shortDescription": "Collegiate hackathon hosted at Axis Colleges where Shikhar Dixit served as official Technical Mentor, guiding student teams in systems architecture and product delivery.",
@@ -1445,13 +1396,6 @@
       "verifiedAt": "2026-11-10",
       "updatedAt": "2026-11-10",
       "relationships": [
-        {
-          "type": "Related to",
-          "targetId": "shikhar-dixit",
-          "targetName": "Shikhar Dixit",
-          "targetType": "person",
-          "targetUrl": "https://www.dimisipedia.me/people/shikhar-dixit"
-        },
         {
           "type": "Related to",
           "targetId": "shikhar-dixit",
@@ -1857,7 +1801,10 @@
       "slug": "dimisi-foundation-day-2026",
       "canonicalUrl": "https://www.dimisipedia.me/events/dimisi-foundation-day-2026",
       "name": "DIMISI Foundation & Incorporation Day",
-      "alternateNames": [],
+      "alternateNames": [
+        "dimisi-foundation-day",
+        "incorporation-day"
+      ],
       "entityType": "event",
       "subtitle": "Official Ministry of Corporate Affairs Incorporation (9 April 2026)",
       "shortDescription": "The formal legal incorporation of DIMISI Technologies Private Limited under the Ministry of Corporate Affairs, Government of India (CIN: U62013UP2026PTC246506).",
@@ -2373,7 +2320,10 @@
       "slug": "gandhigiri-project-showcase",
       "canonicalUrl": "https://www.dimisipedia.me/events/gandhigiri-project-showcase",
       "name": "Gandhigiri Technical Project Showcase 2024",
-      "alternateNames": [],
+      "alternateNames": [
+        "gandhigiri-2024",
+        "face-recognition-sprint"
+      ],
       "entityType": "event",
       "subtitle": "Catalyst Event — 6-Hour Face Recognition Sprint & Founding of CATI",
       "shortDescription": "The pivotal collegiate technical presentation on 15 October 2024 where Shikhar Dixit and Swatantra Singh built and demonstrated a Face Recognition System in 6 hours, leading to the creation of CATI and DIMISI.",
@@ -2469,13 +2419,6 @@
           "targetName": "Kalesh",
           "targetType": "product",
           "targetUrl": "https://www.dimisipedia.me/products/kalesh"
-        },
-        {
-          "type": "Works at",
-          "targetId": "dimisi-technologies",
-          "targetName": "DIMISI Technologies",
-          "targetType": "organization",
-          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
         }
       ],
       "sources": [
@@ -2493,12 +2436,145 @@
     },
     {
       "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/events/office-inauguration-2026#event",
+      "id": "office-inauguration-2026",
+      "slug": "office-inauguration-2026",
+      "canonicalUrl": "https://www.dimisipedia.me/events/office-inauguration-2026",
+      "name": "Headquarters Inauguration & Corporate Board Mounting",
+      "alternateNames": [
+        "headquarters-inauguration-2026",
+        "office-launch-2026"
+      ],
+      "entityType": "event",
+      "subtitle": "Permanent Corporate Operating Headquarters Launch (16–17 May 2026)",
+      "shortDescription": "The official inauguration ceremony of DIMISI Technologies Private Limited headquarters and the mounting of the corporate board following corporate incorporation.",
+      "answer": "Following official incorporation under the Ministry of Corporate Affairs on 9 April 2026 (CIN: U62013UP2026PTC246506), the founding leadership established a permanent operating headquarters in Kanpur. On 16 May 2026, an inauguration ceremony was held at Swarn Jayanti Vihar with founding directors Shikhar Dixit (CEO), Swatantra Singh (CTO), Nishkarsh Mishra (COO), and core associates. On 17 May 2026, the official DIMISI Technologies corporate board was mounted at the front entrance.",
+      "facts": [
+        {
+          "label": "Inauguration Date",
+          "value": "16 May 2026"
+        },
+        {
+          "label": "Board Mounting Date",
+          "value": "17 May 2026"
+        },
+        {
+          "label": "Location",
+          "value": "Swarn Jayanti Vihar, Kanpur, Uttar Pradesh"
+        },
+        {
+          "label": "Presided by",
+          "value": "Shikhar Dixit (Founder & CEO)"
+        },
+        {
+          "label": "CIN Displayed",
+          "value": "U62013UP2026PTC246506"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "updatedAt": "2026-11-10",
+      "relationships": [
+        {
+          "type": "Related to",
+          "targetId": "shikhar-dixit",
+          "targetName": "Shikhar Dixit",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/shikhar-dixit"
+        },
+        {
+          "type": "Related to",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-office-inauguration-2026",
+          "title": "DIMISI Headquarters Inauguration & Corporate Board Mounting Records",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/events/iit-bombay-esummit-2025#event",
+      "id": "iit-bombay-esummit-2025",
+      "slug": "iit-bombay-esummit-2025",
+      "canonicalUrl": "https://www.dimisipedia.me/events/iit-bombay-esummit-2025",
+      "name": "IIT Bombay E-Summit 2025 Entrepreneurship Delegation",
+      "alternateNames": [
+        "esummit-2025",
+        "iitb-esummit"
+      ],
+      "entityType": "event",
+      "subtitle": "National Startup Ecosystem Exposure & Founder Immersion (Jan–Feb 2025)",
+      "shortDescription": "National startup ecosystem exposure, founder pitching, and strategic validation for the CATI / DIMISI founding trio at IIT Bombay.",
+      "answer": "From 28 January to 4 February 2025, founding directors Shikhar Dixit, Swatantra Singh, and Nishkarsh Mishra attended the prestigious IIT Bombay E-Summit 2025 in Mumbai. The week-long immersion exposed the team to national startup founders, venture pitch dynamics, and technical architectures, hardening their resolve to build proprietary technology enterprises.",
+      "facts": [
+        {
+          "label": "Dates",
+          "value": "28 January – 4 February 2025"
+        },
+        {
+          "label": "Location",
+          "value": "IIT Bombay, Powai, Mumbai"
+        },
+        {
+          "label": "Delegation Leader",
+          "value": "Shikhar Dixit (Founder & CEO)"
+        },
+        {
+          "label": "Founding Delegation",
+          "value": "Shikhar Dixit, Swatantra Singh, Nishkarsh Mishra"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "updatedAt": "2026-11-10",
+      "relationships": [
+        {
+          "type": "Related to",
+          "targetId": "shikhar-dixit",
+          "targetName": "Shikhar Dixit",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/shikhar-dixit"
+        },
+        {
+          "type": "Related to",
+          "targetId": "swatantra-singh",
+          "targetName": "Swatantra Singh",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/swatantra-singh"
+        },
+        {
+          "type": "Related to",
+          "targetId": "nishkarsh-mishra",
+          "targetName": "Nishkarsh Mishra",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/nishkarsh-mishra"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-iit-bombay-esummit-2025",
+          "title": "IIT Bombay E-Summit 2025 Delegation & Startup Pitch Records",
+          "publisher": "E-Cell, IIT Bombay"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
       "@id": "https://www.dimisipedia.me/events/iit-kanpur-siic-avinya-2026#event",
       "id": "iit-kanpur-siic-avinya-2026",
       "slug": "iit-kanpur-siic-avinya-2026",
       "canonicalUrl": "https://www.dimisipedia.me/events/iit-kanpur-siic-avinya-2026",
       "name": "IIT Kanpur SIIC Avinya 2026",
-      "alternateNames": [],
+      "alternateNames": [
+        "siic-avinya-2026-hackathon",
+        "avinya-2026",
+        "iit-kanpur-avinya-2026"
+      ],
       "entityType": "event",
       "subtitle": "Startup Showcase & Innovation Summit — Finalist Achievement",
       "shortDescription": "Flagship startup innovation summit hosted by the Startup Incubation and Innovation Centre (SIIC) at IIT Kanpur, where DIMISI Technologies and team leader Shikhar Dixit achieved Finalist honors.",
@@ -2528,13 +2604,6 @@
       "verifiedAt": "2026-11-10",
       "updatedAt": "2026-11-10",
       "relationships": [
-        {
-          "type": "Related to",
-          "targetId": "shikhar-dixit",
-          "targetName": "Shikhar Dixit",
-          "targetType": "person",
-          "targetUrl": "https://www.dimisipedia.me/people/shikhar-dixit"
-        },
         {
           "type": "Related to",
           "targetId": "shikhar-dixit",
@@ -2961,13 +3030,6 @@
           "targetName": "Kalesh",
           "targetType": "product",
           "targetUrl": "https://www.dimisipedia.me/products/kalesh"
-        },
-        {
-          "type": "Works at",
-          "targetId": "dimisi-technologies",
-          "targetName": "DIMISI Technologies",
-          "targetType": "organization",
-          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
         }
       ],
       "sources": [
@@ -2992,6 +3054,76 @@
         {
           "id": "src-team-roster",
           "title": "DIMISI Technologies team roster",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/events/linkedin-30days-kalesh-contest#event",
+      "id": "linkedin-30days-kalesh-contest",
+      "slug": "linkedin-30days-kalesh-contest",
+      "canonicalUrl": "https://www.dimisipedia.me/events/linkedin-30days-kalesh-contest",
+      "name": "LinkedIn 30-Day Kalesh Promotion & Content Creator Challenge",
+      "alternateNames": [
+        "linkedin-30-days-challenge",
+        "kalesh-creator-contest"
+      ],
+      "entityType": "event",
+      "subtitle": "30-Day Campus Creator Contest & Awards Felicitation (15 August 2026)",
+      "shortDescription": "A high-impact 30-day viral storytelling and campus creator contest on LinkedIn celebrating student growth, concluding on 15 August 2026 with an official award presentation ceremony.",
+      "answer": "The LinkedIn 30-Day Kalesh Promotion Contest was an intensive organic engagement challenge designed to build awareness for Kalesh across college campuses. Concluding on 15 August 2026, the founding directors hosted a celebratory felicitation ceremony, presenting 1st Prize Winner Prashant Umrao with an official DIMISI Technologies Certificate of Achievement.",
+      "facts": [
+        {
+          "label": "Conclusion Date",
+          "value": "15 August 2026"
+        },
+        {
+          "label": "1st Prize Winner",
+          "value": "Prashant Umrao (Full Stack Intern)"
+        },
+        {
+          "label": "2nd Position",
+          "value": "Harsh Mishra"
+        },
+        {
+          "label": "3rd Position",
+          "value": "Somya Tiwari"
+        },
+        {
+          "label": "Award Presented by",
+          "value": "Swatantra Singh (Co-Founder & CTO)"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "updatedAt": "2026-11-10",
+      "relationships": [
+        {
+          "type": "Related to",
+          "targetId": "prashant-umrao",
+          "targetName": "Prashant Umrao",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/prashant-umrao"
+        },
+        {
+          "type": "Related to",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Related to",
+          "targetId": "swatantra-singh",
+          "targetName": "Swatantra Singh",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/swatantra-singh"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-linkedin-30days-contest",
+          "title": "LinkedIn 30-Day Kalesh Challenge & Awards Felicitation Records",
           "publisher": "DIMISI Technologies Pvt. Ltd."
         }
       ]
@@ -3139,13 +3271,6 @@
           "targetUrl": "https://www.dimisipedia.me/products/kalesh"
         },
         {
-          "type": "Works at",
-          "targetId": "dimisi-technologies",
-          "targetName": "DIMISI Technologies",
-          "targetType": "organization",
-          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
-        },
-        {
           "type": "Technical leadership",
           "targetId": "kaand",
           "targetName": "KAAND",
@@ -3165,13 +3290,6 @@
           "targetName": "DIMISI Technologies",
           "targetType": "project",
           "targetUrl": "https://www.dimisipedia.me/projects/dimisi-corporate-platform"
-        },
-        {
-          "type": "Engineering",
-          "targetId": "kalesh",
-          "targetName": "Kalesh",
-          "targetType": "product",
-          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
         }
       ],
       "sources": [
@@ -3285,13 +3403,6 @@
           "targetName": "DIMISI Technologies",
           "targetType": "organization",
           "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
-        },
-        {
-          "type": "Works at",
-          "targetId": "dimisi-technologies",
-          "targetName": "DIMISI Technologies",
-          "targetType": "organization",
-          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
         }
       ],
       "sources": [
@@ -3316,8 +3427,12 @@
       "answer": "Nishkarsh Mishra is an Indian technology entrepreneur, operations strategist, and marketing executive based in Kanpur, Uttar Pradesh. He is a co-founder and director of DIMISI Technologies Private Limited, serving as Chief Operating Officer (COO) and Chief Marketing Officer (CMO).",
       "facts": [
         {
-          "label": "Born",
-          "value": "15 March 2000 (age 26), Kanpur, Uttar Pradesh, India"
+          "label": "Origin / Base",
+          "value": "Kanpur, Uttar Pradesh, India"
+        },
+        {
+          "label": "Nationality",
+          "value": "Indian"
         },
         {
           "label": "Occupation",
@@ -3416,6 +3531,13 @@
           "targetName": "Kalesh",
           "targetType": "product",
           "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Participated in",
+          "targetId": "iit-bombay-esummit-2025",
+          "targetName": "IIT Bombay E-Summit 2025 Entrepreneurship Delegation",
+          "targetType": "event",
+          "targetUrl": "https://www.dimisipedia.me/events/iit-bombay-esummit-2025"
         }
       ],
       "sources": [
@@ -3566,6 +3688,13 @@
           "targetName": "DIMISI-OPS",
           "targetType": "product",
           "targetUrl": "https://www.dimisipedia.me/products/dimisi-ops"
+        },
+        {
+          "type": "1st Prize Winner",
+          "targetId": "linkedin-30days-kalesh-contest",
+          "targetName": "LinkedIn 30-Day Kalesh Promotion & Content Creator Challenge",
+          "targetType": "event",
+          "targetUrl": "https://www.dimisipedia.me/events/linkedin-30days-kalesh-contest"
         }
       ],
       "sources": [
@@ -3831,25 +3960,11 @@
           "targetUrl": "https://www.dimisipedia.me/products/kalesh"
         },
         {
-          "type": "Works at",
-          "targetId": "dimisi-technologies",
-          "targetName": "DIMISI Technologies",
-          "targetType": "organization",
-          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
-        },
-        {
           "type": "Technical leadership",
           "targetId": "kaand",
           "targetName": "KAAND",
           "targetType": "product",
           "targetUrl": "https://www.dimisipedia.me/products/kaand"
-        },
-        {
-          "type": "Engineering",
-          "targetId": "kalesh",
-          "targetName": "Kalesh",
-          "targetType": "product",
-          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
         }
       ],
       "sources": [
@@ -4052,13 +4167,6 @@
           "targetName": "Rudra Tours & Travels",
           "targetType": "project",
           "targetUrl": "https://www.dimisipedia.me/projects/rudra-tours"
-        },
-        {
-          "type": "Works at",
-          "targetId": "dimisi-technologies",
-          "targetName": "DIMISI Technologies",
-          "targetType": "organization",
-          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
         }
       ],
       "sources": [
@@ -4094,8 +4202,12 @@
       "answer": "Swatantra Singh is a technology executive and software engineer associated with DIMISI Technologies Private Limited in Kanpur, Uttar Pradesh. He is a co-founder, director and Chief Technology Officer (CTO) of the company, responsible for platform architecture, systems engineering, and technical scalability across the DIMISI product ecosystem.",
       "facts": [
         {
-          "label": "Born",
-          "value": "30 August 2000 (age 26), Kanpur, Uttar Pradesh, India"
+          "label": "Origin / Base",
+          "value": "Kanpur, Uttar Pradesh, India"
+        },
+        {
+          "label": "Nationality",
+          "value": "Indian"
         },
         {
           "label": "Occupation",
@@ -4168,18 +4280,25 @@
           "targetUrl": "https://www.dimisipedia.me/products/kalesh"
         },
         {
-          "type": "Technical leadership",
-          "targetId": "kalesh",
-          "targetName": "Kalesh",
-          "targetType": "product",
-          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
-        },
-        {
           "type": "Participated in",
           "targetId": "gandhigiri-project-showcase",
           "targetName": "Gandhigiri Technical Project Showcase 2024",
           "targetType": "event",
           "targetUrl": "https://www.dimisipedia.me/events/gandhigiri-project-showcase"
+        },
+        {
+          "type": "Presented award at",
+          "targetId": "linkedin-30days-kalesh-contest",
+          "targetName": "LinkedIn 30-Day Kalesh Promotion & Content Creator Challenge",
+          "targetType": "event",
+          "targetUrl": "https://www.dimisipedia.me/events/linkedin-30days-kalesh-contest"
+        },
+        {
+          "type": "Participated in",
+          "targetId": "iit-bombay-esummit-2025",
+          "targetName": "IIT Bombay E-Summit 2025 Entrepreneurship Delegation",
+          "targetType": "event",
+          "targetUrl": "https://www.dimisipedia.me/events/iit-bombay-esummit-2025"
         }
       ],
       "sources": [
@@ -4267,12 +4386,19 @@
       "slug": "team-id-cards-ceremony",
       "canonicalUrl": "https://www.dimisipedia.me/events/team-id-cards-ceremony",
       "name": "Team ID Cards & T-Shirts Distribution Ceremony",
-      "alternateNames": [],
+      "alternateNames": [
+        "team-id-cards-tshirts-distribution-ceremony",
+        "team-induction-ceremony"
+      ],
       "entityType": "event",
       "subtitle": "Corporate Induction & Team Milestone",
       "shortDescription": "Official internal ceremony distributing company ID credentials and branded corporate wear to the founding engineers, developers, interns, and leadership of DIMISI Technologies.",
       "answer": "The Team ID Cards & T-Shirts Distribution Ceremony was a major internal milestone celebrating the growth of DIMISI Technologies. During the event, Founder & CEO Shikhar Dixit and executive leadership presented official company ID credentials and branded wear to the core team and engineering interns.",
       "facts": [
+        {
+          "label": "Date",
+          "value": "6 October 2026"
+        },
         {
           "label": "Location",
           "value": "DIMISI Headquarters, Kanpur, UP"
@@ -4295,6 +4421,13 @@
           "targetName": "DIMISI Technologies",
           "targetType": "organization",
           "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Related to",
+          "targetId": "shikhar-dixit",
+          "targetName": "Shikhar Dixit",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/shikhar-dixit"
         }
       ],
       "sources": [
