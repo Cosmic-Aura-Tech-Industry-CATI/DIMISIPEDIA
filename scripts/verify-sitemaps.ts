@@ -40,12 +40,14 @@ const expectedFiles = [
   "sitemap-pages.xml",
   "sitemap-people.xml",
   "sitemap-organizations.xml",
+  "sitemap-products.xml",
   "sitemap-projects.xml",
   "sitemap-technology.xml",
   "sitemap-articles.xml",
   "sitemap-events.xml",
   "sitemap-timeline.xml",
   "sitemap-images.xml",
+  "knowledge.json",
   "robots.txt",
 ];
 
@@ -74,9 +76,9 @@ assert(
 
 const childLocs = [...indexXml.matchAll(/<loc>(https:\/\/[^<]+)<\/loc>/g)].map((m) => m[1]);
 assert(
-  childLocs.length === 9,
+  childLocs.length === 10,
   "Child Sitemaps Count in Index",
-  `Expected 9 child sitemaps, got ${childLocs.length}`,
+  `Expected 10 child sitemaps, got ${childLocs.length}`,
 );
 
 // 3. Verify All URLs are HTTPS and Absolute
@@ -127,7 +129,7 @@ const excludedUrls = [
   "https://www.dimisipedia.me/seo-audit",
   "https://www.dimisipedia.me/offline",
   "https://www.dimisipedia.me/publications",
-  "https://www.dimisipedia.me/organizations/dimisi-technologies",
+  "https://www.dimisipedia.me/dimisi-technologies", // 301 Redirect to canonical /organizations/dimisi-technologies
   "https://www.dimisipedia.me/articles/kalesh-technology-stack", // Draft article
 ];
 
@@ -136,6 +138,24 @@ for (const ex of excludedUrls) {
     !allDiscoveredUrls.has(ex),
     `Excluded URL not in sitemap: ${ex}`,
     `Non-canonical/noindex/draft URL found in sitemap: ${ex}`,
+  );
+}
+
+// 4b. Verify Essential Canonical Inclusions
+const requiredCanonicalUrls = [
+  "https://www.dimisipedia.me/people/shikhar-dixit",
+  "https://www.dimisipedia.me/organizations/dimisi-technologies",
+  "https://www.dimisipedia.me/products/kalesh",
+  "https://www.dimisipedia.me/products",
+  "https://www.dimisipedia.me/services",
+  "https://www.dimisipedia.me/ai-knowledge",
+];
+
+for (const req of requiredCanonicalUrls) {
+  assert(
+    allDiscoveredUrls.has(req),
+    `Canonical URL present in sitemap: ${req}`,
+    `Critical canonical URL missing from sitemap: ${req}`,
   );
 }
 

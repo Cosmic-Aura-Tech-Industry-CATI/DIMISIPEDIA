@@ -21,6 +21,7 @@
 import {
   organizationEntity,
   peopleEntities,
+  productEntities,
   projectEntities,
   technologyEntities,
   timeline,
@@ -196,7 +197,10 @@ export function getPagesEntries(): SitemapEntry[] {
     { path: "/terms", priority: "0.5", changefreq: "yearly" },
     { path: "/people", priority: "0.9", changefreq: "weekly" },
     { path: "/organizations", priority: "0.9", changefreq: "weekly" },
+    { path: "/products", priority: "0.9", changefreq: "weekly" },
     { path: "/projects", priority: "0.9", changefreq: "weekly" },
+    { path: "/services", priority: "0.9", changefreq: "weekly" },
+    { path: "/ai-knowledge", priority: "1.0", changefreq: "daily" },
     { path: "/technology", priority: "0.8", changefreq: "weekly" },
     { path: "/articles", priority: "0.9", changefreq: "daily" },
     { path: "/blog", priority: "0.9", changefreq: "daily" },
@@ -261,11 +265,26 @@ export function getOrganizationsEntries(): SitemapEntry[] {
  */
 export function getProjectsEntries(): SitemapEntry[] {
   return projectEntities.map((proj) => {
-    const isPrimary = proj.id === "kalesh" || proj.id === "dimisi-ops";
     return {
       loc: abs(proj.path),
       lastmod: proj.updatedAt || proj.createdAt || "2026-08-15",
-      priority: isPrimary ? "1.0" : "0.8",
+      priority: "0.8",
+      changefreq: "weekly",
+    };
+  });
+}
+
+/**
+ * 4b. Proprietary Products (/sitemap-products.xml)
+ * Prioritizes flagship product Kalesh.
+ */
+export function getProductsEntries(): SitemapEntry[] {
+  return productEntities.map((prod) => {
+    const isPrimary = prod.id === "kalesh";
+    return {
+      loc: abs(prod.path),
+      lastmod: prod.updatedAt || prod.createdAt || "2026-10-31",
+      priority: isPrimary ? "1.0" : "0.9",
       changefreq: isPrimary ? "daily" : "weekly",
     };
   });
@@ -302,7 +321,7 @@ export function getEventsEntries(): SitemapEntry[] {
   return [
     {
       loc: abs("/events"),
-      lastmod: "2026-10-06",
+      lastmod: "2026-10-09",
       priority: "0.8",
       changefreq: "weekly",
     },
@@ -422,6 +441,25 @@ export function getImagesEntries(): ImageSitemapEntry[] {
     }
   }
 
+  // Products with images
+  for (const prod of productEntities) {
+    if (prod.image) {
+      entries.push({
+        loc: abs(prod.path),
+        lastmod: prod.updatedAt,
+        images: [
+          {
+            loc: abs(prod.image),
+            title: `${prod.name} — ${prod.subtitle || "DIMISI Technologies Proprietary Product"}`,
+            caption: `${prod.name} official software mark and product overview`,
+            geoLocation: GEO_KANPUR,
+            license: LICENSE_URL,
+          },
+        ],
+      });
+    }
+  }
+
   // Projects with images
   for (const proj of projectEntities) {
     if (proj.image) {
@@ -463,8 +501,32 @@ export function getImagesEntries(): ImageSitemapEntry[] {
   // Events images
   entries.push({
     loc: abs("/events"),
-    lastmod: "2026-10-06",
+    lastmod: "2026-10-09",
     images: [
+      {
+        loc: abs("/images/siic-avinya-2026-achievement-banner.webp"),
+        title: "SIIC Avinya 2026 4th Position Finalist Achievement — DIMISI Technologies",
+        caption:
+          "Team DIMISI 4th Position Finalist achievement banner at IIT Kanpur SIIC Avinya 2026 Entrepreneurship Summit & Hackathon",
+        geoLocation: "IIT Kanpur, Uttar Pradesh, India",
+        license: LICENSE_URL,
+      },
+      {
+        loc: abs("/images/team-dimisi-avinya-2026-group.webp"),
+        title: "Team DIMISI at IIT Kanpur SIIC Avinya 2026",
+        caption:
+          "Team DIMISI delegation at the Avinya 2026 venue backdrop, IIT Kanpur, led by Founder & CEO Shikhar Dixit",
+        geoLocation: "IIT Kanpur, Uttar Pradesh, India",
+        license: LICENSE_URL,
+      },
+      {
+        loc: abs("/images/team-dimisi-avinya-2026-full-length.webp"),
+        title: "Team DIMISI Full-Length Team Photograph at IIT Kanpur",
+        caption:
+          "Official full-length team photograph representing DIMISI Technologies Pvt. Ltd. at Avinya 2026",
+        geoLocation: "IIT Kanpur, Uttar Pradesh, India",
+        license: LICENSE_URL,
+      },
       {
         loc: abs("/images/team-id-cards-and-tshirts-distribution.webp"),
         title: "Team ID Cards & T-Shirts Distribution Ceremony — DIMISI Technologies",
@@ -512,6 +574,10 @@ export function generateOrganizationsSitemapXml(): string {
   return renderUrlset(getOrganizationsEntries());
 }
 
+export function generateProductsSitemapXml(): string {
+  return renderUrlset(getProductsEntries());
+}
+
 export function generateProjectsSitemapXml(): string {
   return renderUrlset(getProjectsEntries());
 }
@@ -540,6 +606,7 @@ export function generateSitemapIndexXml(): string {
   const pages = getPagesEntries();
   const people = getPeopleEntries();
   const orgs = getOrganizationsEntries();
+  const products = getProductsEntries();
   const projects = getProjectsEntries();
   const tech = getTechnologyEntries();
   const articles = getArticlesEntries();
@@ -551,6 +618,7 @@ export function generateSitemapIndexXml(): string {
     { loc: abs("/sitemap-pages.xml"), lastmod: maxLastmod(pages) },
     { loc: abs("/sitemap-people.xml"), lastmod: maxLastmod(people) },
     { loc: abs("/sitemap-organizations.xml"), lastmod: maxLastmod(orgs) },
+    { loc: abs("/sitemap-products.xml"), lastmod: maxLastmod(products) },
     { loc: abs("/sitemap-projects.xml"), lastmod: maxLastmod(projects) },
     { loc: abs("/sitemap-technology.xml"), lastmod: maxLastmod(tech) },
     { loc: abs("/sitemap-articles.xml"), lastmod: maxLastmod(articles) },

@@ -1,0 +1,4545 @@
+{
+  "@context": "https://schema.org",
+  "@type": "DataFeed",
+  "name": "DIMISIPEDIA Enterprise Knowledge Graph Index",
+  "description": "Machine-readable public knowledge graph for DIMISI Technologies Private Limited, Founder & CEO Shikhar Dixit, proprietary products, engineering projects, services, and corporate milestones.",
+  "url": "https://www.dimisipedia.me/knowledge.json",
+  "publisher": {
+    "@type": "Corporation",
+    "name": "DIMISI Technologies Private Limited",
+    "url": "https://www.dimisi.tech/",
+    "founder": {
+      "@type": "Person",
+      "name": "Shikhar Dixit",
+      "jobTitle": "Founder & CEO",
+      "url": "https://www.dimisipedia.me/people/shikhar-dixit"
+    }
+  },
+  "version": "2.0.0",
+  "datePublished": "2026-04-09",
+  "dateModified": "2026-11-10T09:11:14.814Z",
+  "entityCounts": {
+    "total": 53,
+    "people": 15,
+    "organizations": 1,
+    "products": 6,
+    "projects": 4,
+    "services": 7,
+    "events": 5
+  },
+  "endpoints": {
+    "allEntities": "https://www.dimisipedia.me/api/v1/knowledge/entities",
+    "people": "https://www.dimisipedia.me/api/v1/knowledge/people",
+    "organizations": "https://www.dimisipedia.me/api/v1/knowledge/organizations",
+    "products": "https://www.dimisipedia.me/api/v1/knowledge/products",
+    "projects": "https://www.dimisipedia.me/api/v1/knowledge/projects",
+    "events": "https://www.dimisipedia.me/api/v1/knowledge/events",
+    "services": "https://www.dimisipedia.me/api/v1/knowledge/services",
+    "entityBySlug": "https://www.dimisipedia.me/api/v1/knowledge/entity/{slug}",
+    "search": "https://www.dimisipedia.me/api/v1/knowledge/search?q={query}"
+  },
+  "entities": [
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/people/shikhar-dixit#person",
+      "id": "shikhar-dixit",
+      "slug": "shikhar-dixit",
+      "canonicalUrl": "https://www.dimisipedia.me/people/shikhar-dixit",
+      "name": "Shikhar Dixit",
+      "alternateNames": [],
+      "entityType": "person",
+      "subtitle": "Founder & CEO · DIMISI Technologies",
+      "shortDescription": "Indian technology entrepreneur and software engineer; Founder & Chief Executive Officer of DIMISI Technologies Private Limited, leading enterprise business software architecture, operations systems (DIMISI-OPS), and digital platforms.",
+      "answer": "Shikhar Dixit is an Indian technology entrepreneur, software engineer, and the Founder & Chief Executive Officer (CEO) of DIMISI Technologies Private Limited, based in Kanpur, Uttar Pradesh. He is the principal product and software architect behind DIMISI's enterprise business software solutions (including DIMISI-OPS), consumer platforms (Kalesh), the DIMISIPEDIA entity knowledge platform, and commercial digital systems.",
+      "disambiguatingDescription": "Indian technology entrepreneur and software engineer; Founder & Chief Executive Officer of DIMISI Technologies Private Limited; principal architect of enterprise business software (DIMISI-OPS), Kalesh, and DIMISIPEDIA.",
+      "facts": [
+        {
+          "label": "Born",
+          "value": "6 May 2004 (age 22), Kanpur, Uttar Pradesh, India"
+        },
+        {
+          "label": "Occupation",
+          "value": "Technology entrepreneur, software architect, executive engineer"
+        },
+        {
+          "label": "Organization",
+          "value": "DIMISI Technologies Private Limited"
+        },
+        {
+          "label": "Roles",
+          "value": "Founder · CEO · Director · Principal Software Architect"
+        },
+        {
+          "label": "Location",
+          "value": "Kanpur, Uttar Pradesh, India"
+        },
+        {
+          "label": "Known for",
+          "value": "DIMISI Technologies, Enterprise Business Software (DIMISI-OPS), Kalesh, DIMISIPEDIA, Face Recognition"
+        },
+        {
+          "label": "Education",
+          "value": "B.Tech, Computer Science & Engineering (Axis College / AKTU)"
+        }
+      ],
+      "verifiedAt": "2026-10-20",
+      "updatedAt": "2026-10-20",
+      "relationships": [
+        {
+          "type": "Founder of",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "CEO of",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Created by",
+          "targetId": "cati-khelghar",
+          "targetName": "CATI Khelghar",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/cati-khelghar"
+        },
+        {
+          "type": "Product leadership",
+          "targetId": "dimisi-ops",
+          "targetName": "DIMISI-OPS",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/dimisi-ops"
+        },
+        {
+          "type": "Founder of",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "CEO of",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Director of",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Product leadership",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Associated with",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Associated with",
+          "targetId": "kaand",
+          "targetName": "KAAND",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kaand"
+        },
+        {
+          "type": "Associated with",
+          "targetId": "cati-khelghar",
+          "targetName": "CATI Khelghar",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/cati-khelghar"
+        },
+        {
+          "type": "Associated with",
+          "targetId": "dimisi-ops",
+          "targetName": "DIMISI-OPS",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/dimisi-ops"
+        },
+        {
+          "type": "Mentor at",
+          "targetId": "axis-hacksprint-2",
+          "targetName": "Axis HackSprint 2.0",
+          "targetType": "event",
+          "targetUrl": "https://www.dimisipedia.me/events/axis-hacksprint-2"
+        },
+        {
+          "type": "Finalist at",
+          "targetId": "iit-kanpur-siic-avinya-2026",
+          "targetName": "IIT Kanpur SIIC Avinya 2026",
+          "targetType": "event",
+          "targetUrl": "https://www.dimisipedia.me/events/iit-kanpur-siic-avinya-2026"
+        },
+        {
+          "type": "Finalist at",
+          "targetId": "iit-kanpur-siic-avinya-2026",
+          "targetName": "IIT Kanpur SIIC Avinya 2026",
+          "targetType": "event",
+          "targetUrl": "https://www.dimisipedia.me/events/iit-kanpur-siic-avinya-2026"
+        },
+        {
+          "type": "Mentor at",
+          "targetId": "axis-hacksprint-2",
+          "targetName": "Axis HackSprint 2.0",
+          "targetType": "event",
+          "targetUrl": "https://www.dimisipedia.me/events/axis-hacksprint-2"
+        },
+        {
+          "type": "Participated in",
+          "targetId": "gandhigiri-project-showcase",
+          "targetName": "Gandhigiri Technical Project Showcase 2024",
+          "targetType": "event",
+          "targetUrl": "https://www.dimisipedia.me/events/gandhigiri-project-showcase"
+        },
+        {
+          "type": "Participated in",
+          "targetId": "dimisi-foundation-day-2026",
+          "targetName": "DIMISI Foundation & Incorporation Day",
+          "targetType": "event",
+          "targetUrl": "https://www.dimisipedia.me/events/dimisi-foundation-day-2026"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-shikhar-linkedin",
+          "title": "Shikhar Dixit — professional profile",
+          "publisher": "LinkedIn",
+          "url": "https://www.linkedin.com/in/shikhar040"
+        },
+        {
+          "id": "src-shikhar-medium",
+          "title": "Shikhar Dixit — published writing (@dixitshikhar004)",
+          "publisher": "Medium",
+          "url": "https://medium.com/@dixitshikhar004"
+        },
+        {
+          "id": "src-corporate-record",
+          "title": "DIMISI Technologies Private Limited — corporate information",
+          "publisher": "Corporate information supplied by DIMISI Technologies"
+        },
+        {
+          "id": "src-dimisi-linkedin",
+          "title": "DIMISI Technologies — company profile",
+          "publisher": "LinkedIn",
+          "url": "https://www.linkedin.com/company/dimisi-technologies"
+        },
+        {
+          "id": "src-kalesh-official",
+          "title": "Kalesh — official website",
+          "publisher": "DIMISI Technologies Pvt. Ltd.",
+          "url": "https://thekalesh.com"
+        },
+        {
+          "id": "src-shikhar-crunchbase",
+          "title": "Shikhar Dixit — Crunchbase executive profile",
+          "publisher": "Crunchbase",
+          "url": "https://www.crunchbase.com/person/shikhar-dixit-944f"
+        },
+        {
+          "id": "src-team-roster",
+          "title": "DIMISI Technologies team roster",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "id": "src-dimisi-website",
+          "title": "DIMISI Technologies — official website",
+          "publisher": "DIMISI Technologies",
+          "url": "https://dimisi.tech"
+        },
+        {
+          "id": "src-falconebiz-registry",
+          "title": "DIMISI Technologies Private Limited — corporate registry listing (MCA-derived)",
+          "publisher": "FalconEbiz",
+          "url": "https://www.falconebiz.com/company/DIMISI-TECHNOLOGIES-PRIVATE-LIMITED-U62013UP2026PTC246506"
+        },
+        {
+          "id": "src-tracxn-dimisi",
+          "title": "DIMISI Technologies — company profile and director listing",
+          "publisher": "Tracxn",
+          "url": "https://tracxn.com/d/companies/dimisi-technologies"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/organizations/dimisi-technologies#organization",
+      "id": "dimisi-technologies",
+      "slug": "dimisi-technologies",
+      "canonicalUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies",
+      "name": "DIMISI Technologies",
+      "alternateNames": [],
+      "entityType": "organization",
+      "subtitle": "Enterprise Business Software & Technology Solutions Provider",
+      "shortDescription": "Indian technology company and enterprise software provider specializing in custom business software, operations management platforms (DIMISI-OPS), cloud-native web engineering, and AI automation.",
+      "answer": "DIMISI Technologies Pvt. Ltd. (CIN: U62013UP2026PTC246506) is an incorporated software engineering firm and business technology provider headquartered in Kanpur, Uttar Pradesh, founded and led by Shikhar Dixit (Founder & CEO). The company engineers custom business software, enterprise operations systems (including DIMISI-OPS), cloud-native web architectures, and AI-driven automation workflows, alongside its digital platforms Kalesh and DIMISIPEDIA.",
+      "facts": [
+        {
+          "label": "Legal name",
+          "value": "DIMISI Technologies Private Limited"
+        },
+        {
+          "label": "CIN",
+          "value": "U62013UP2026PTC246506"
+        },
+        {
+          "label": "Founder & CEO",
+          "value": "Shikhar Dixit"
+        },
+        {
+          "label": "DPIIT Recognition",
+          "value": "Recognized Startup under Startup India (DPIIT, Ministry of Commerce & Industry)"
+        },
+        {
+          "label": "Organization type",
+          "value": "Private limited company"
+        },
+        {
+          "label": "Founded",
+          "value": "9 April 2026"
+        },
+        {
+          "label": "Location",
+          "value": "Kanpur, Uttar Pradesh, India"
+        },
+        {
+          "label": "Registered office",
+          "value": "MIG 3/131, Swarn Jayanti Vihar, Koyala Nagar, Kanpur, Uttar Pradesh, India"
+        },
+        {
+          "label": "Industry",
+          "value": "Enterprise Software & Information Technology"
+        },
+        {
+          "label": "Core business",
+          "value": "Custom Business Software, Enterprise Operations Systems & Digital Products"
+        },
+        {
+          "label": "Key specializations",
+          "value": "Enterprise ERP/Operations, Workforce Systems (DIMISI-OPS), Cloud Web Platforms, AI Automation"
+        },
+        {
+          "label": "Website",
+          "value": "dimisi.tech"
+        },
+        {
+          "label": "Founding leadership",
+          "value": "Shikhar Dixit (Founder & CEO), Swatantra Singh (Co-Founder & CTO), Nishkarsh Mishra (Co-Founder & COO/CFO)"
+        },
+        {
+          "label": "Software ecosystem",
+          "value": "DIMISI-OPS, DIMISIPEDIA, Kalesh, Commercial Client Platforms"
+        },
+        {
+          "label": "Current status",
+          "value": "Active"
+        }
+      ],
+      "verifiedAt": "2026-10-20",
+      "updatedAt": "2026-10-20",
+      "relationships": [
+        {
+          "type": "Associated with",
+          "targetId": "krishna-tiwari",
+          "targetName": "Krishna Tiwari",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/krishna-tiwari"
+        },
+        {
+          "type": "Marketing by",
+          "targetId": "krishna-tiwari",
+          "targetName": "Krishna Tiwari",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/krishna-tiwari"
+        },
+        {
+          "type": "Associated with",
+          "targetId": "sheelu-singh",
+          "targetName": "Sheelu Singh",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/sheelu-singh"
+        },
+        {
+          "type": "Associated with",
+          "targetId": "mridul-mishra",
+          "targetName": "Mridul Mishra",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/mridul-mishra"
+        },
+        {
+          "type": "Associated with",
+          "targetId": "harsh-mishra",
+          "targetName": "Harsh Mishra",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/harsh-mishra"
+        },
+        {
+          "type": "Associated with",
+          "targetId": "somya-tiwari",
+          "targetName": "Somya Tiwari",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/somya-tiwari"
+        },
+        {
+          "type": "Associated with",
+          "targetId": "anushka-tripathi",
+          "targetName": "Anushka Tripathi",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/anushka-tripathi"
+        },
+        {
+          "type": "Associated with",
+          "targetId": "nisha-chaudhary",
+          "targetName": "Nisha Chaudhary",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/nisha-chaudhary"
+        },
+        {
+          "type": "Develops",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Develops",
+          "targetId": "dimisipedia",
+          "targetName": "DIMISIPEDIA",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/dimisipedia"
+        },
+        {
+          "type": "Documented by",
+          "targetId": "dimisipedia",
+          "targetName": "DIMISIPEDIA",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/dimisipedia"
+        },
+        {
+          "type": "Develops",
+          "targetId": "rudra-tours",
+          "targetName": "Rudra Tours & Travels",
+          "targetType": "project",
+          "targetUrl": "https://www.dimisipedia.me/projects/rudra-tours"
+        },
+        {
+          "type": "Develops",
+          "targetId": "yadhuvanshi-tours",
+          "targetName": "Yadhuvanshi Tours & Travels",
+          "targetType": "project",
+          "targetUrl": "https://www.dimisipedia.me/projects/yadhuvanshi-tours"
+        },
+        {
+          "type": "Develops",
+          "targetId": "rudra-tours",
+          "targetName": "Rudra Tours & Travels",
+          "targetType": "project",
+          "targetUrl": "https://www.dimisipedia.me/projects/rudra-tours"
+        },
+        {
+          "type": "Develops",
+          "targetId": "yadhuvanshi-tours",
+          "targetName": "Yadhuvanshi Tours & Travels",
+          "targetType": "project",
+          "targetUrl": "https://www.dimisipedia.me/projects/yadhuvanshi-tours"
+        },
+        {
+          "type": "Develops",
+          "targetId": "kaand",
+          "targetName": "KAAND",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kaand"
+        },
+        {
+          "type": "Develops",
+          "targetId": "cati-khelghar",
+          "targetName": "CATI Khelghar",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/cati-khelghar"
+        },
+        {
+          "type": "Develops",
+          "targetId": "dimisi-ops",
+          "targetName": "DIMISI-OPS",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/dimisi-ops"
+        },
+        {
+          "type": "Develops",
+          "targetId": "dimisi-corporate-platform",
+          "targetName": "DIMISI Technologies",
+          "targetType": "project",
+          "targetUrl": "https://www.dimisipedia.me/projects/dimisi-corporate-platform"
+        },
+        {
+          "type": "Develops",
+          "targetId": "karyon",
+          "targetName": "KaryON",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/karyon"
+        },
+        {
+          "type": "Associated with",
+          "targetId": "sheelu-singh",
+          "targetName": "Sheelu Singh",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/sheelu-singh"
+        },
+        {
+          "type": "Associated with",
+          "targetId": "mridul-mishra",
+          "targetName": "Mridul Mishra",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/mridul-mishra"
+        },
+        {
+          "type": "Associated with",
+          "targetId": "amrit-awasthi",
+          "targetName": "Amrit Awasthi",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/amrit-awasthi"
+        },
+        {
+          "type": "Associated with",
+          "targetId": "prashant-umrao",
+          "targetName": "Prashant Umrao",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/prashant-umrao"
+        },
+        {
+          "type": "Associated with",
+          "targetId": "amit-kumar",
+          "targetName": "Amit Kumar",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/amit-kumar"
+        },
+        {
+          "type": "Associated with",
+          "targetId": "harsh-mishra",
+          "targetName": "Harsh Mishra",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/harsh-mishra"
+        },
+        {
+          "type": "Associated with",
+          "targetId": "somya-tiwari",
+          "targetName": "Somya Tiwari",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/somya-tiwari"
+        },
+        {
+          "type": "Associated with",
+          "targetId": "anushka-tripathi",
+          "targetName": "Anushka Tripathi",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/anushka-tripathi"
+        },
+        {
+          "type": "Associated with",
+          "targetId": "nisha-chaudhary",
+          "targetName": "Nisha Chaudhary",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/nisha-chaudhary"
+        },
+        {
+          "type": "Associated with",
+          "targetId": "krishna-tiwari",
+          "targetName": "Krishna Tiwari",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/krishna-tiwari"
+        },
+        {
+          "type": "Related to",
+          "targetId": "siddhant-shekhar",
+          "targetName": "Siddhant Shekhar",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/siddhant-shekhar"
+        },
+        {
+          "type": "Founded by",
+          "targetId": "shikhar-dixit",
+          "targetName": "Shikhar Dixit",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/shikhar-dixit"
+        },
+        {
+          "type": "Chief Executive Officer",
+          "targetId": "shikhar-dixit",
+          "targetName": "Shikhar Dixit",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/shikhar-dixit"
+        },
+        {
+          "type": "Director",
+          "targetId": "shikhar-dixit",
+          "targetName": "Shikhar Dixit",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/shikhar-dixit"
+        },
+        {
+          "type": "Co-founded by",
+          "targetId": "nishkarsh-mishra",
+          "targetName": "Nishkarsh Mishra",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/nishkarsh-mishra"
+        },
+        {
+          "type": "Director",
+          "targetId": "nishkarsh-mishra",
+          "targetName": "Nishkarsh Mishra",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/nishkarsh-mishra"
+        },
+        {
+          "type": "Chief Marketing Officer",
+          "targetId": "nishkarsh-mishra",
+          "targetName": "Nishkarsh Mishra",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/nishkarsh-mishra"
+        },
+        {
+          "type": "Chief Operating Officer",
+          "targetId": "nishkarsh-mishra",
+          "targetName": "Nishkarsh Mishra",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/nishkarsh-mishra"
+        },
+        {
+          "type": "Co-founded by",
+          "targetId": "swatantra-singh",
+          "targetName": "Swatantra Singh",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/swatantra-singh"
+        },
+        {
+          "type": "Director",
+          "targetId": "swatantra-singh",
+          "targetName": "Swatantra Singh",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/swatantra-singh"
+        },
+        {
+          "type": "Chief Technology Officer",
+          "targetId": "swatantra-singh",
+          "targetName": "Swatantra Singh",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/swatantra-singh"
+        },
+        {
+          "type": "Related to",
+          "targetId": "jayendra-pratap-singh",
+          "targetName": "Jayendra Pratap Singh",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/jayendra-pratap-singh"
+        },
+        {
+          "type": "Related to",
+          "targetId": "jayendra-pratap-singh",
+          "targetName": "Jayendra Pratap Singh",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/jayendra-pratap-singh"
+        },
+        {
+          "type": "Provides service",
+          "targetId": "website-development",
+          "targetName": "Website Development",
+          "targetType": "service",
+          "targetUrl": "https://www.dimisipedia.me/services/website-development"
+        },
+        {
+          "type": "Provides service",
+          "targetId": "mobile-application-development",
+          "targetName": "Mobile Application Development",
+          "targetType": "service",
+          "targetUrl": "https://www.dimisipedia.me/services/mobile-application-development"
+        },
+        {
+          "type": "Provides service",
+          "targetId": "cloud-it-solutions",
+          "targetName": "Cloud IT Solutions",
+          "targetType": "service",
+          "targetUrl": "https://www.dimisipedia.me/services/cloud-it-solutions"
+        },
+        {
+          "type": "Provides service",
+          "targetId": "ai-automation",
+          "targetName": "AI Automation",
+          "targetType": "service",
+          "targetUrl": "https://www.dimisipedia.me/services/ai-automation"
+        },
+        {
+          "type": "Provides service",
+          "targetId": "digital-transformation",
+          "targetName": "Digital Transformation",
+          "targetType": "service",
+          "targetUrl": "https://www.dimisipedia.me/services/digital-transformation"
+        },
+        {
+          "type": "Provides service",
+          "targetId": "business-software-development",
+          "targetName": "Business Software Development",
+          "targetType": "service",
+          "targetUrl": "https://www.dimisipedia.me/services/business-software-development"
+        },
+        {
+          "type": "Provides service",
+          "targetId": "digital-marketing",
+          "targetName": "Digital Marketing",
+          "targetType": "service",
+          "targetUrl": "https://www.dimisipedia.me/services/digital-marketing"
+        },
+        {
+          "type": "Participated in",
+          "targetId": "iit-kanpur-siic-avinya-2026",
+          "targetName": "IIT Kanpur SIIC Avinya 2026",
+          "targetType": "event",
+          "targetUrl": "https://www.dimisipedia.me/events/iit-kanpur-siic-avinya-2026"
+        },
+        {
+          "type": "Organized by",
+          "targetId": "dimisi-foundation-day-2026",
+          "targetName": "DIMISI Foundation & Incorporation Day",
+          "targetType": "event",
+          "targetUrl": "https://www.dimisipedia.me/events/dimisi-foundation-day-2026"
+        },
+        {
+          "type": "Organized by",
+          "targetId": "team-id-cards-ceremony",
+          "targetName": "Team ID Cards & T-Shirts Distribution Ceremony",
+          "targetType": "event",
+          "targetUrl": "https://www.dimisipedia.me/events/team-id-cards-ceremony"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-dimisi-official",
+          "title": "DIMISI Technologies — official website",
+          "publisher": "DIMISI Technologies Pvt. Ltd.",
+          "url": "https://dimisi.tech"
+        },
+        {
+          "id": "src-dimisi-business-solutions",
+          "title": "DIMISI Technologies — Enterprise & Business Software Solutions Portfolio",
+          "publisher": "DIMISI Technologies Pvt. Ltd.",
+          "url": "https://dimisi.tech"
+        },
+        {
+          "id": "src-corporate-record",
+          "title": "DIMISI Technologies Private Limited — corporate information",
+          "publisher": "Corporate information supplied by DIMISI Technologies"
+        },
+        {
+          "id": "src-incorporation",
+          "title": "Incorporation record — DIMISI Technologies Pvt. Ltd.",
+          "publisher": "Company records provided by DIMISI Technologies"
+        },
+        {
+          "id": "src-dimisi-linkedin",
+          "title": "DIMISI Technologies — company profile",
+          "publisher": "LinkedIn",
+          "url": "https://www.linkedin.com/company/dimisi-technologies"
+        },
+        {
+          "id": "src-team-roster",
+          "title": "DIMISI Technologies team roster",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "id": "src-falconebiz-registry",
+          "title": "DIMISI Technologies Private Limited — corporate registry listing (MCA-derived)",
+          "publisher": "FalconEbiz",
+          "url": "https://www.falconebiz.com/company/DIMISI-TECHNOLOGIES-PRIVATE-LIMITED-U62013UP2026PTC246506"
+        },
+        {
+          "id": "src-tracxn-dimisi",
+          "title": "DIMISI Technologies — company profile and director listing",
+          "publisher": "Tracxn",
+          "url": "https://tracxn.com/d/companies/dimisi-technologies"
+        },
+        {
+          "id": "src-zaubacorp-dimisi",
+          "title": "DIMISI Technologies Private Limited — company database record",
+          "publisher": "ZaubaCorp",
+          "url": "https://www.zaubacorp.com/company/DIMISI-TECHNOLOGIES-PRIVATE-LIMITED/U62013UP2026PTC246506"
+        },
+        {
+          "id": "src-kalesh-team",
+          "title": "Kalesh — platform team page",
+          "publisher": "Kalesh (DIMISI Technologies)",
+          "url": "https://thekalesh.com"
+        },
+        {
+          "id": "src-dimisi-ops-spec",
+          "title": "DIMISI-OPS — Internal Operations System Specifications",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "id": "src-dimisi-client-portfolio",
+          "title": "DIMISI Technologies Client Project Records",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/products/kalesh#software",
+      "id": "kalesh",
+      "slug": "kalesh",
+      "canonicalUrl": "https://www.dimisipedia.me/products/kalesh",
+      "name": "Kalesh",
+      "alternateNames": [],
+      "entityType": "product",
+      "subtitle": "Flagship DIMISI Product — Anonymous Social Media & Opinion Platform",
+      "shortDescription": "Kalesh is an anonymous opinion and social networking platform developed by DIMISI Technologies Private Limited, built around honest expression, live polls, and private anonymous chat.",
+      "answer": "Kalesh is an anonymous opinion and social networking platform developed by DIMISI Technologies Private Limited. Positioned around the core philosophy that a person's opinion matters more than their real-world identity, the platform features anonymous profiles, real-time live polling, categorized discussions, phone-verified anti-bot accounts, daily streak gamification, and private messaging.",
+      "facts": [
+        {
+          "label": "Official product name",
+          "value": "Kalesh"
+        },
+        {
+          "label": "Product type",
+          "value": "Anonymous social media, live opinion & polling platform"
+        },
+        {
+          "label": "Parent company",
+          "value": "DIMISI Technologies Private Limited"
+        },
+        {
+          "label": "Founder & CEO",
+          "value": "Shikhar Dixit"
+        },
+        {
+          "label": "Official website",
+          "value": "thekalesh.com"
+        },
+        {
+          "label": "Headquarters",
+          "value": "Kanpur, Uttar Pradesh, India"
+        },
+        {
+          "label": "Engineering stack",
+          "value": "Flutter, Dart, Node.js, Express, WebSockets, Firebase, Redis"
+        },
+        {
+          "label": "Core verified features",
+          "value": "Anonymous Profiles, Live Polls, Poll Categories, Private Chat, Daily Streaks, Verified Badges, Phone Verification"
+        },
+        {
+          "label": "Monetization model",
+          "value": "Freemium, Brand-sponsored polls, Premium memberships"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "updatedAt": "2026-11-10",
+      "relationships": [
+        {
+          "type": "Marketing by",
+          "targetId": "krishna-tiwari",
+          "targetName": "Krishna Tiwari",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/krishna-tiwari"
+        },
+        {
+          "type": "Related to",
+          "targetId": "prashant-umrao",
+          "targetName": "Prashant Umrao",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/prashant-umrao"
+        },
+        {
+          "type": "Related to",
+          "targetId": "harsh-mishra",
+          "targetName": "Harsh Mishra",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/harsh-mishra"
+        },
+        {
+          "type": "Related to",
+          "targetId": "somya-tiwari",
+          "targetName": "Somya Tiwari",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/somya-tiwari"
+        },
+        {
+          "type": "Related to",
+          "targetId": "anushka-tripathi",
+          "targetName": "Anushka Tripathi",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/anushka-tripathi"
+        },
+        {
+          "type": "Related to",
+          "targetId": "amrit-awasthi",
+          "targetName": "Amrit Awasthi",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/amrit-awasthi"
+        },
+        {
+          "type": "Developed by",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Founded by",
+          "targetId": "shikhar-dixit",
+          "targetName": "Shikhar Dixit",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/shikhar-dixit"
+        },
+        {
+          "type": "Chief Executive Officer",
+          "targetId": "shikhar-dixit",
+          "targetName": "Shikhar Dixit",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/shikhar-dixit"
+        },
+        {
+          "type": "Related to",
+          "targetId": "nishkarsh-mishra",
+          "targetName": "Nishkarsh Mishra",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/nishkarsh-mishra"
+        },
+        {
+          "type": "Technical leadership by",
+          "targetId": "swatantra-singh",
+          "targetName": "Swatantra Singh",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/swatantra-singh"
+        },
+        {
+          "type": "Engineering by",
+          "targetId": "mridul-mishra",
+          "targetName": "Mridul Mishra",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/mridul-mishra"
+        },
+        {
+          "type": "Engineering by",
+          "targetId": "sheelu-singh",
+          "targetName": "Sheelu Singh",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/sheelu-singh"
+        },
+        {
+          "type": "Uses technology",
+          "targetId": "flutter",
+          "targetName": "Flutter",
+          "targetType": "technology",
+          "targetUrl": "https://www.dimisipedia.me/technology/flutter"
+        },
+        {
+          "type": "Uses technology",
+          "targetId": "dart",
+          "targetName": "Dart",
+          "targetType": "technology",
+          "targetUrl": "https://www.dimisipedia.me/technology/dart"
+        },
+        {
+          "type": "Uses technology",
+          "targetId": "firebase",
+          "targetName": "Firebase",
+          "targetType": "technology",
+          "targetUrl": "https://www.dimisipedia.me/technology/firebase"
+        },
+        {
+          "type": "Uses technology",
+          "targetId": "react",
+          "targetName": "React",
+          "targetType": "technology",
+          "targetUrl": "https://www.dimisipedia.me/technology/react"
+        },
+        {
+          "type": "Uses technology",
+          "targetId": "node-js",
+          "targetName": "Node.js",
+          "targetType": "technology",
+          "targetUrl": "https://www.dimisipedia.me/technology/node-js"
+        },
+        {
+          "type": "Uses technology",
+          "targetId": "typescript",
+          "targetName": "TypeScript",
+          "targetType": "technology",
+          "targetUrl": "https://www.dimisipedia.me/technology/typescript"
+        },
+        {
+          "type": "Uses technology",
+          "targetId": "mongodb",
+          "targetName": "MongoDB",
+          "targetType": "technology",
+          "targetUrl": "https://www.dimisipedia.me/technology/mongodb"
+        },
+        {
+          "type": "Engineering by",
+          "targetId": "siddhant-shekhar",
+          "targetName": "Siddhant Shekhar",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/siddhant-shekhar"
+        },
+        {
+          "type": "Product leadership by",
+          "targetId": "shikhar-dixit",
+          "targetName": "Shikhar Dixit",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/shikhar-dixit"
+        },
+        {
+          "type": "Related to",
+          "targetId": "shikhar-dixit",
+          "targetName": "Shikhar Dixit",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/shikhar-dixit"
+        },
+        {
+          "type": "Product leadership by",
+          "targetId": "nishkarsh-mishra",
+          "targetName": "Nishkarsh Mishra",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/nishkarsh-mishra"
+        },
+        {
+          "type": "Marketing by",
+          "targetId": "nishkarsh-mishra",
+          "targetName": "Nishkarsh Mishra",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/nishkarsh-mishra"
+        },
+        {
+          "type": "Growth by",
+          "targetId": "nishkarsh-mishra",
+          "targetName": "Nishkarsh Mishra",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/nishkarsh-mishra"
+        },
+        {
+          "type": "Operations by",
+          "targetId": "nishkarsh-mishra",
+          "targetName": "Nishkarsh Mishra",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/nishkarsh-mishra"
+        },
+        {
+          "type": "Operational association",
+          "targetId": "swatantra-singh",
+          "targetName": "Swatantra Singh",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/swatantra-singh"
+        },
+        {
+          "type": "Technical leadership by",
+          "targetId": "swatantra-singh",
+          "targetName": "Swatantra Singh",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/swatantra-singh"
+        },
+        {
+          "type": "Engineering by",
+          "targetId": "sheelu-singh",
+          "targetName": "Sheelu Singh",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/sheelu-singh"
+        },
+        {
+          "type": "Engineering by",
+          "targetId": "mridul-mishra",
+          "targetName": "Mridul Mishra",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/mridul-mishra"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-kalesh-official",
+          "title": "Kalesh — official website",
+          "publisher": "DIMISI Technologies Pvt. Ltd.",
+          "url": "https://thekalesh.com"
+        },
+        {
+          "id": "src-kalesh-instagram",
+          "title": "The Kalesh Official Instagram Channel (@thekaleshofficial)",
+          "publisher": "Meta Platforms (Instagram) / Kalesh",
+          "url": "https://www.instagram.com/thekaleshofficial/"
+        },
+        {
+          "id": "src-kalesh-linkedin",
+          "title": "Kalesh — company page",
+          "publisher": "LinkedIn",
+          "url": "https://www.linkedin.com/company/dimisi-technologies"
+        },
+        {
+          "id": "src-dimisi-website",
+          "title": "DIMISI Technologies — official website",
+          "publisher": "DIMISI Technologies",
+          "url": "https://dimisi.tech"
+        },
+        {
+          "id": "src-shikhar-linkedin",
+          "title": "Shikhar Dixit — professional profile",
+          "publisher": "LinkedIn",
+          "url": "https://www.linkedin.com/in/shikhar040"
+        },
+        {
+          "id": "src-kalesh-msme",
+          "title": "Team Kalesh at the MSME Entrepreneurship Conclave & Exhibition",
+          "publisher": "LinkedIn — Shikhar Dixit",
+          "url": "https://www.linkedin.com/in/shikhar040"
+        },
+        {
+          "id": "src-kalesh-hiring",
+          "title": "Kalesh — Android Developer internship announcement",
+          "publisher": "LinkedIn"
+        },
+        {
+          "id": "src-kalesh-team",
+          "title": "Kalesh — platform team page",
+          "publisher": "Kalesh (DIMISI Technologies)",
+          "url": "https://thekalesh.com"
+        },
+        {
+          "id": "src-kalesh-docs",
+          "title": "Kalesh project documentation",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "id": "src-krishna-social",
+          "title": "Official Social Media Marketing & Channels — DIMISI Technologies & Kalesh",
+          "publisher": "DIMISI Technologies / Meta Platforms (Instagram)",
+          "url": "https://www.instagram.com/dimisi.tech/"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/services/ai-automation#service",
+      "id": "ai-automation",
+      "slug": "ai-automation",
+      "canonicalUrl": "https://www.dimisipedia.me/services/ai-automation",
+      "name": "AI Automation",
+      "alternateNames": [],
+      "entityType": "service",
+      "subtitle": "Workflow Automation, AI Agent Integration & Intelligent Processing",
+      "shortDescription": "Engineering custom AI automations, intelligent document analysis, LLM agent workflows, automated customer pipelines, and internal task orchestration.",
+      "answer": "AI Automation by DIMISI Technologies bridges cutting-edge machine intelligence with real-world business workflows. From computer vision systems (such as the early Gandhigiri face recognition project) to modern multi-agent systems and WebMCP integrations, the team automates repetitive enterprise operations.",
+      "facts": [
+        {
+          "label": "Service provider",
+          "value": "DIMISI Technologies Private Limited"
+        },
+        {
+          "label": "Capabilities",
+          "value": "LLM Orchestration, Computer Vision, Multi-Agent Systems, WebMCP"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "updatedAt": "2026-11-10",
+      "relationships": [
+        {
+          "type": "Related to",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-services-portfolio",
+          "title": "DIMISI Technologies — Enterprise Services Portfolio",
+          "publisher": "DIMISI Technologies Pvt. Ltd.",
+          "url": "https://dimisi.tech"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/people/amit-kumar#person",
+      "id": "amit-kumar",
+      "slug": "amit-kumar",
+      "canonicalUrl": "https://www.dimisipedia.me/people/amit-kumar",
+      "name": "Amit Kumar",
+      "alternateNames": [],
+      "entityType": "person",
+      "subtitle": "Backend Development Intern — DIMISI Technologies",
+      "shortDescription": "Backend development intern at DIMISI Technologies, building server-side logic, database integrations, and task workflows for the DIMISI-OPS platform.",
+      "answer": "Amit Kumar is a Backend Development Intern at DIMISI Technologies Private Limited, working alongside Prashant Umrao and foundation engineer Mridul Mishra on backend development, API services, and workflow automation for DIMISI-OPS.",
+      "disambiguatingDescription": "Backend development intern at DIMISI Technologies Private Limited, developing server modules and database workflows for the DIMISI-OPS platform.",
+      "facts": [
+        {
+          "label": "Role",
+          "value": "Backend Development Intern"
+        },
+        {
+          "label": "Organization",
+          "value": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "label": "Primary project",
+          "value": "DIMISI-OPS"
+        },
+        {
+          "label": "Supervision",
+          "value": "Nishkarsh Mishra (Operations), Mridul Mishra (Backend)"
+        }
+      ],
+      "verifiedAt": "2026-10-11",
+      "updatedAt": "2026-10-11",
+      "relationships": [
+        {
+          "type": "Works at",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Engineering",
+          "targetId": "dimisi-ops",
+          "targetName": "DIMISI-OPS",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/dimisi-ops"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-dimisi-ops-spec",
+          "title": "DIMISI-OPS — Internal Operations System Specifications",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "id": "src-team-roster",
+          "title": "DIMISI Technologies team roster",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/people/amrit-awasthi#person",
+      "id": "amrit-awasthi",
+      "slug": "amrit-awasthi",
+      "canonicalUrl": "https://www.dimisipedia.me/people/amrit-awasthi",
+      "name": "Amrit Awasthi",
+      "alternateNames": [],
+      "entityType": "person",
+      "subtitle": "Android Developer Intern (Flutter / DART) — DIMISI Technologies",
+      "shortDescription": "Android developer intern specializing in Flutter and Dart at DIMISI Technologies, serving as lead application developer for the KAAND news and media platform.",
+      "answer": "Amrit Awasthi is an Android Developer Intern (Flutter / DART) at DIMISI Technologies Private Limited, leading the mobile engineering of KAAND, the company's next-generation news and media platform under the technical guidance of Sheelu Singh and Mridul Mishra.",
+      "disambiguatingDescription": "Android developer intern specializing in Flutter and Dart at DIMISI Technologies Private Limited, lead application developer for KAAND, and 5th Position holder in the 30-Day LinkedIn Challenge.",
+      "facts": [
+        {
+          "label": "Role",
+          "value": "Android Developer Intern (Flutter / DART)"
+        },
+        {
+          "label": "Organization",
+          "value": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "label": "Primary project",
+          "value": "KAAND (Mobile Media Platform)"
+        },
+        {
+          "label": "Core technologies",
+          "value": "Flutter, Dart"
+        },
+        {
+          "label": "Technical mentors",
+          "value": "Sheelu Singh, Mridul Mishra"
+        },
+        {
+          "label": "Milestone award",
+          "value": "5th Position — LinkedIn 30-Day Challenge"
+        }
+      ],
+      "verifiedAt": "2026-09-12",
+      "updatedAt": "2026-09-12",
+      "relationships": [
+        {
+          "type": "Participated in",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Works at",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Engineering",
+          "targetId": "kaand",
+          "targetName": "KAAND",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kaand"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-kaand-dev",
+          "title": "KAAND — Mobile News & Media Platform Development Records",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "id": "src-team-roster",
+          "title": "DIMISI Technologies team roster",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "id": "src-linkedin-challenge-felicitation",
+          "title": "LinkedIn 30-Day Kalesh Challenge & Felicitation Ceremony Records",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/people/anushka-tripathi#person",
+      "id": "anushka-tripathi",
+      "slug": "anushka-tripathi",
+      "canonicalUrl": "https://www.dimisipedia.me/people/anushka-tripathi",
+      "name": "Anushka Tripathi",
+      "alternateNames": [],
+      "entityType": "person",
+      "subtitle": "Full Stack Web Developer Intern — DIMISI Technologies",
+      "shortDescription": "Full Stack Web Developer Intern at DIMISI Technologies and 4th Position holder in the nationwide 30-Day LinkedIn Challenge.",
+      "answer": "Anushka Tripathi is a Full Stack Web Developer Intern at DIMISI Technologies Private Limited, contributing to full stack web engineering and recognized as the 4th Position holder in DIMISI's 30-Day LinkedIn Challenge.",
+      "disambiguatingDescription": "Full Stack Web Developer Intern at DIMISI Technologies Private Limited and 4th Position holder in the nationwide 30-Day LinkedIn Challenge.",
+      "facts": [
+        {
+          "label": "Role",
+          "value": "Full Stack Web Developer Intern"
+        },
+        {
+          "label": "Organization",
+          "value": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "label": "Milestone award",
+          "value": "4th Position — LinkedIn 30-Day Challenge"
+        }
+      ],
+      "verifiedAt": "2026-10-11",
+      "updatedAt": "2026-10-11",
+      "relationships": [
+        {
+          "type": "Works at",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Participated in",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Works at",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-team-roster",
+          "title": "DIMISI Technologies team roster",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "id": "src-linkedin-challenge-felicitation",
+          "title": "LinkedIn 30-Day Kalesh Challenge & Felicitation Ceremony Records",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/technology/aws#technology",
+      "id": "aws",
+      "slug": "aws",
+      "canonicalUrl": "https://www.dimisipedia.me/technology/aws",
+      "name": "AWS",
+      "alternateNames": [],
+      "entityType": "technology",
+      "subtitle": "Technology",
+      "shortDescription": "Amazon Web Services provides cloud computing and scalable deployment infrastructure for DIMISI Technologies systems.",
+      "answer": "Amazon Web Services provides cloud computing and scalable deployment infrastructure for DIMISI Technologies systems.",
+      "facts": [
+        {
+          "label": "Category",
+          "value": "Software technology"
+        },
+        {
+          "label": "Used in",
+          "value": "DIMISI Technologies"
+        }
+      ],
+      "verifiedAt": "2026-08-15",
+      "updatedAt": "2026-08-15",
+      "relationships": [
+        {
+          "type": "Used by",
+          "targetId": "dimisi-corporate-platform",
+          "targetName": "DIMISI Technologies",
+          "targetType": "project",
+          "targetUrl": "https://www.dimisipedia.me/projects/dimisi-corporate-platform"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-kalesh-docs",
+          "title": "Kalesh project documentation",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/events/axis-hacksprint-2#event",
+      "id": "axis-hacksprint-2",
+      "slug": "axis-hacksprint-2",
+      "canonicalUrl": "https://www.dimisipedia.me/events/axis-hacksprint-2",
+      "name": "Axis HackSprint 2.0",
+      "alternateNames": [],
+      "entityType": "event",
+      "subtitle": "National Collegiate Hackathon — Official Technical Mentorship",
+      "shortDescription": "Collegiate hackathon hosted at Axis Colleges where Shikhar Dixit served as official Technical Mentor, guiding student teams in systems architecture and product delivery.",
+      "answer": "Axis HackSprint 2.0 was an intensive competitive hackathon organized to test student teams across software design, algorithms, and real-time product creation. Shikhar Dixit participated as an official Mentor, advising participants on API design, database schemas, full-stack deployment, and venture pitching.",
+      "facts": [
+        {
+          "label": "Event name",
+          "value": "Axis HackSprint 2.0"
+        },
+        {
+          "label": "Role of Shikhar Dixit",
+          "value": "Technical Mentor & Judge"
+        },
+        {
+          "label": "Venue",
+          "value": "Axis Colleges, Kanpur, UP"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "updatedAt": "2026-11-10",
+      "relationships": [
+        {
+          "type": "Related to",
+          "targetId": "shikhar-dixit",
+          "targetName": "Shikhar Dixit",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/shikhar-dixit"
+        },
+        {
+          "type": "Related to",
+          "targetId": "shikhar-dixit",
+          "targetName": "Shikhar Dixit",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/shikhar-dixit"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-axis-hacksprint-mentorship",
+          "title": "Axis HackSprint 2.0 — Mentorship & Hackathon Panel Records",
+          "publisher": "Axis Colleges / CodeVeda Community"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/services/business-software-development#service",
+      "id": "business-software-development",
+      "slug": "business-software-development",
+      "canonicalUrl": "https://www.dimisipedia.me/services/business-software-development",
+      "name": "Business Software Development",
+      "alternateNames": [],
+      "entityType": "service",
+      "subtitle": "Custom ERP, CRM, Operations Systems & DIMISI-OPS Architecture",
+      "shortDescription": "Custom business software engineering providing internal enterprise management systems, workforce tracking, operational reporting, and proprietary platforms like DIMISI-OPS.",
+      "answer": "Business Software Development by DIMISI Technologies provides organizations with bespoke software architectures that solve unique operational bottlenecks. Unlike rigid off-the-shelf SaaS, DIMISI builds custom ERP, CRM, and workforce management systems (exemplified by DIMISI-OPS) designed around the exact team hierarchies and workflows of client organizations.",
+      "facts": [
+        {
+          "label": "Service provider",
+          "value": "DIMISI Technologies Private Limited"
+        },
+        {
+          "label": "Solutions",
+          "value": "Custom ERP, Operations Management, Employee Portals, DIMISI-OPS"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "updatedAt": "2026-11-10",
+      "relationships": [
+        {
+          "type": "Related to",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-services-portfolio",
+          "title": "DIMISI Technologies — Enterprise Services Portfolio",
+          "publisher": "DIMISI Technologies Pvt. Ltd.",
+          "url": "https://dimisi.tech"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/products/cati-khelghar#software",
+      "id": "cati-khelghar",
+      "slug": "cati-khelghar",
+      "canonicalUrl": "https://www.dimisipedia.me/products/cati-khelghar",
+      "name": "CATI Khelghar",
+      "alternateNames": [],
+      "entityType": "product",
+      "subtitle": "Offline Pass-and-Play Local Multiplayer Gaming Platform",
+      "shortDescription": "CATI Khelghar is an offline-first collection of pass-and-play games designed for playing together on a single device without requiring accounts or internet connectivity.",
+      "answer": "CATI Khelghar is an experimental offline gaming platform conceived and engineered by Shikhar Dixit under DIMISI Labs (CATI). Live at cati47.tech, it delivers a curated collection of 16 classic and folk board games designed strictly for local multiplayer and pass-and-play on a single device with zero logins or network dependency.",
+      "facts": [
+        {
+          "label": "Category",
+          "value": "DIMISI Labs / Experiments"
+        },
+        {
+          "label": "Project type",
+          "value": "Offline Pass-and-Play Gaming Platform"
+        },
+        {
+          "label": "Status",
+          "value": "Live"
+        },
+        {
+          "label": "Website",
+          "value": "cati47.tech"
+        },
+        {
+          "label": "Conceived & developed by",
+          "value": "Shikhar Dixit"
+        },
+        {
+          "label": "Total games",
+          "value": "16 games"
+        },
+        {
+          "label": "Gameplay modes",
+          "value": "Pass & Play, Local Multiplayer, Play with Bot"
+        },
+        {
+          "label": "Account requirement",
+          "value": "None (Zero login required)"
+        }
+      ],
+      "verifiedAt": "2026-09-04",
+      "updatedAt": "2026-09-04",
+      "relationships": [
+        {
+          "type": "Developed by",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Related to",
+          "targetId": "shikhar-dixit",
+          "targetName": "Shikhar Dixit",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/shikhar-dixit"
+        },
+        {
+          "type": "Related to",
+          "targetId": "shikhar-dixit",
+          "targetName": "Shikhar Dixit",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/shikhar-dixit"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-khelghar-official",
+          "title": "CATI Khelghar — Official Offline Pass-and-Play Gaming Platform",
+          "publisher": "DIMISI Technologies (CATI)",
+          "url": "https://cati47.tech"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/services/cloud-it-solutions#service",
+      "id": "cloud-it-solutions",
+      "slug": "cloud-it-solutions",
+      "canonicalUrl": "https://www.dimisipedia.me/services/cloud-it-solutions",
+      "name": "Cloud IT Solutions",
+      "alternateNames": [],
+      "entityType": "service",
+      "subtitle": "Cloud Infrastructure, Containerization & Server Administration",
+      "shortDescription": "Cloud infrastructure provisioning, Linux server hardening, containerization with Docker, PM2 process management, automated backup systems, and microservices deployment.",
+      "answer": "Cloud IT Solutions from DIMISI Technologies delivers scalable cloud computing architectures across AWS, DigitalOcean, and dedicated Linux environments. Capabilities include load balancing, zero-downtime deployments, Redis caching layers, and automated cloud monitoring.",
+      "facts": [
+        {
+          "label": "Service provider",
+          "value": "DIMISI Technologies Private Limited"
+        },
+        {
+          "label": "Cloud providers",
+          "value": "AWS, DigitalOcean, Vercel, Linode"
+        },
+        {
+          "label": "Infrastructure stack",
+          "value": "Docker, Nginx, PM2, Linux, Redis, PostgreSQL, MongoDB"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "updatedAt": "2026-11-10",
+      "relationships": [
+        {
+          "type": "Related to",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-services-portfolio",
+          "title": "DIMISI Technologies — Enterprise Services Portfolio",
+          "publisher": "DIMISI Technologies Pvt. Ltd.",
+          "url": "https://dimisi.tech"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/technology/cloudinary#technology",
+      "id": "cloudinary",
+      "slug": "cloudinary",
+      "canonicalUrl": "https://www.dimisipedia.me/technology/cloudinary",
+      "name": "Cloudinary",
+      "alternateNames": [],
+      "entityType": "technology",
+      "subtitle": "Technology",
+      "shortDescription": "Cloudinary provides cloud-based image and media management services for DIMISI Technologies platforms.",
+      "answer": "Cloudinary provides cloud-based image and media management services for DIMISI Technologies platforms.",
+      "facts": [
+        {
+          "label": "Category",
+          "value": "Software technology"
+        },
+        {
+          "label": "Used in",
+          "value": "DIMISI Technologies"
+        }
+      ],
+      "verifiedAt": "2026-08-15",
+      "updatedAt": "2026-08-15",
+      "relationships": [
+        {
+          "type": "Used by",
+          "targetId": "dimisi-corporate-platform",
+          "targetName": "DIMISI Technologies",
+          "targetType": "project",
+          "targetUrl": "https://www.dimisipedia.me/projects/dimisi-corporate-platform"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-kalesh-docs",
+          "title": "Kalesh project documentation",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/technology/dart#technology",
+      "id": "dart",
+      "slug": "dart",
+      "canonicalUrl": "https://www.dimisipedia.me/technology/dart",
+      "name": "Dart",
+      "alternateNames": [],
+      "entityType": "technology",
+      "subtitle": "Technology",
+      "shortDescription": "Dart is the programming language used with Flutter, documented in public Kalesh hiring material.",
+      "answer": "Dart is the programming language used with Flutter, documented in public Kalesh hiring material.",
+      "facts": [
+        {
+          "label": "Category",
+          "value": "Software technology"
+        },
+        {
+          "label": "Used in",
+          "value": "Kalesh"
+        }
+      ],
+      "verifiedAt": "2026-08-15",
+      "updatedAt": "2026-08-15",
+      "relationships": [
+        {
+          "type": "Used by",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Used by",
+          "targetId": "kaand",
+          "targetName": "KAAND",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kaand"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-kalesh-docs",
+          "title": "Kalesh project documentation",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/services/digital-marketing#service",
+      "id": "digital-marketing",
+      "slug": "digital-marketing",
+      "canonicalUrl": "https://www.dimisipedia.me/services/digital-marketing",
+      "name": "Digital Marketing",
+      "alternateNames": [],
+      "entityType": "service",
+      "subtitle": "Search Optimization, Social Media Production & Brand Engineering",
+      "shortDescription": "Comprehensive digital marketing spanning technical search engine optimization (SEO), answer engine optimization (AEO), social media video production, and viral growth campaigns.",
+      "answer": "Digital Marketing by DIMISI Technologies combines technical SEO, generative answer engine optimization (GEO), and creative video marketing. Led by Krishna Tiwari (Social Media Marketing Head), the team produces viral reels, brand videos, and high-ranking search content for DIMISI, Kalesh, and commercial client ventures.",
+      "facts": [
+        {
+          "label": "Service provider",
+          "value": "DIMISI Technologies Private Limited"
+        },
+        {
+          "label": "Capabilities",
+          "value": "Technical SEO, AEO/GEO, Video Production, Brand Campaigns"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "updatedAt": "2026-11-10",
+      "relationships": [
+        {
+          "type": "Related to",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-services-portfolio",
+          "title": "DIMISI Technologies — Enterprise Services Portfolio",
+          "publisher": "DIMISI Technologies Pvt. Ltd.",
+          "url": "https://dimisi.tech"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/services/digital-transformation#service",
+      "id": "digital-transformation",
+      "slug": "digital-transformation",
+      "canonicalUrl": "https://www.dimisipedia.me/services/digital-transformation",
+      "name": "Digital Transformation",
+      "alternateNames": [],
+      "entityType": "service",
+      "subtitle": "Enterprise Digitization, Modernization & Commercial Platforms",
+      "shortDescription": "Transforming conventional offline commercial businesses into modern digital enterprises through bespoke web platforms, automated booking systems, and local discovery architecture.",
+      "answer": "Digital Transformation at DIMISI Technologies helps established commercial businesses transition into digital-first market leaders. Proven client case studies include Rudra Tours & Travels and Yadhuvanshi Tours & Travels, delivering measurable gains in organic web traffic and digital customer bookings.",
+      "facts": [
+        {
+          "label": "Service provider",
+          "value": "DIMISI Technologies Private Limited"
+        },
+        {
+          "label": "Deliverables",
+          "value": "Online Portals, Booking Engines, SEO/AEO/GEO Optimization"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "updatedAt": "2026-11-10",
+      "relationships": [
+        {
+          "type": "Related to",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-services-portfolio",
+          "title": "DIMISI Technologies — Enterprise Services Portfolio",
+          "publisher": "DIMISI Technologies Pvt. Ltd.",
+          "url": "https://dimisi.tech"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/technology/digital-ocean#technology",
+      "id": "digital-ocean",
+      "slug": "digital-ocean",
+      "canonicalUrl": "https://www.dimisipedia.me/technology/digital-ocean",
+      "name": "DigitalOcean",
+      "alternateNames": [],
+      "entityType": "technology",
+      "subtitle": "Technology",
+      "shortDescription": "DigitalOcean provides cloud VPS and application hosting services for DIMISI systems.",
+      "answer": "DigitalOcean provides cloud VPS and application hosting services for DIMISI systems.",
+      "facts": [
+        {
+          "label": "Category",
+          "value": "Software technology"
+        },
+        {
+          "label": "Used in",
+          "value": "DIMISI Technologies"
+        }
+      ],
+      "verifiedAt": "2026-08-15",
+      "updatedAt": "2026-08-15",
+      "relationships": [
+        {
+          "type": "Used by",
+          "targetId": "dimisi-corporate-platform",
+          "targetName": "DIMISI Technologies",
+          "targetType": "project",
+          "targetUrl": "https://www.dimisipedia.me/projects/dimisi-corporate-platform"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-kalesh-docs",
+          "title": "Kalesh project documentation",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/events/dimisi-foundation-day-2026#event",
+      "id": "dimisi-foundation-day-2026",
+      "slug": "dimisi-foundation-day-2026",
+      "canonicalUrl": "https://www.dimisipedia.me/events/dimisi-foundation-day-2026",
+      "name": "DIMISI Foundation & Incorporation Day",
+      "alternateNames": [],
+      "entityType": "event",
+      "subtitle": "Official Ministry of Corporate Affairs Incorporation (9 April 2026)",
+      "shortDescription": "The formal legal incorporation of DIMISI Technologies Private Limited under the Ministry of Corporate Affairs, Government of India (CIN: U62013UP2026PTC246506).",
+      "answer": "DIMISI Foundation Day commemorates 9 April 2026, the date DIMISI Technologies Private Limited was officially granted its Certificate of Incorporation by the Registrar of Companies, Ministry of Corporate Affairs, Government of India, under CIN U62013UP2026PTC246506 in Kanpur, Uttar Pradesh.",
+      "facts": [
+        {
+          "label": "Date of Incorporation",
+          "value": "9 April 2026"
+        },
+        {
+          "label": "CIN",
+          "value": "U62013UP2026PTC246506"
+        },
+        {
+          "label": "Registered Office",
+          "value": "Kanpur, Uttar Pradesh, India"
+        },
+        {
+          "label": "Founding Directors",
+          "value": "Shikhar Dixit, Nishkarsh Mishra, Swatantra Singh"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "updatedAt": "2026-11-10",
+      "relationships": [
+        {
+          "type": "Related to",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Related to",
+          "targetId": "shikhar-dixit",
+          "targetName": "Shikhar Dixit",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/shikhar-dixit"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-foundation-day-mca",
+          "title": "Certificate of Incorporation — Ministry of Corporate Affairs",
+          "publisher": "Ministry of Corporate Affairs, Government of India",
+          "url": "https://www.mca.gov.in"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/projects/dimisi-corporate-platform#project",
+      "id": "dimisi-corporate-platform",
+      "slug": "dimisi-corporate-platform",
+      "canonicalUrl": "https://www.dimisipedia.me/projects/dimisi-corporate-platform",
+      "name": "DIMISI Technologies",
+      "alternateNames": [],
+      "entityType": "project",
+      "subtitle": "Official Corporate Web Platform & Technology Showcase",
+      "shortDescription": "The official digital platform of DIMISI Technologies showcasing its technology capabilities, products, services and digital ecosystem.",
+      "answer": "The DIMISI Technologies official website (dimisi.tech) serves as the primary digital identity and technology showcase of DIMISI Technologies Private Limited. Engineered with Next.js, React, TypeScript, and Tailwind CSS on the frontend by Swatantra Singh, with backend infrastructure by Mridul Mishra utilizing Node.js, MongoDB, Redis, and multi-cloud deployment across AWS, DigitalOcean, and Cloudinary.",
+      "facts": [
+        {
+          "label": "Category",
+          "value": "DIMISI Internal Systems"
+        },
+        {
+          "label": "Project type",
+          "value": "Official Corporate Website"
+        },
+        {
+          "label": "Status",
+          "value": "Live"
+        },
+        {
+          "label": "Domain",
+          "value": "dimisi.tech"
+        },
+        {
+          "label": "Frontend engineering",
+          "value": "Swatantra Singh (Co-Founder & CTO)"
+        },
+        {
+          "label": "Backend engineering",
+          "value": "Mridul Mishra (Founding Engineer)"
+        },
+        {
+          "label": "Frontend stack",
+          "value": "Next.js, React, TypeScript, Tailwind CSS, TanStack"
+        },
+        {
+          "label": "Backend stack",
+          "value": "Node.js, TypeScript, MongoDB, Redis"
+        },
+        {
+          "label": "Infrastructure & media",
+          "value": "AWS, DigitalOcean, Cloudinary"
+        }
+      ],
+      "verifiedAt": "2026-09-04",
+      "updatedAt": "2026-09-04",
+      "relationships": [
+        {
+          "type": "Developed by",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Engineering by",
+          "targetId": "swatantra-singh",
+          "targetName": "Swatantra Singh",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/swatantra-singh"
+        },
+        {
+          "type": "Engineering by",
+          "targetId": "mridul-mishra",
+          "targetName": "Mridul Mishra",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/mridul-mishra"
+        },
+        {
+          "type": "Uses technology",
+          "targetId": "next-js",
+          "targetName": "Next.js",
+          "targetType": "technology",
+          "targetUrl": "https://www.dimisipedia.me/technology/next-js"
+        },
+        {
+          "type": "Uses technology",
+          "targetId": "react",
+          "targetName": "React",
+          "targetType": "technology",
+          "targetUrl": "https://www.dimisipedia.me/technology/react"
+        },
+        {
+          "type": "Uses technology",
+          "targetId": "typescript",
+          "targetName": "TypeScript",
+          "targetType": "technology",
+          "targetUrl": "https://www.dimisipedia.me/technology/typescript"
+        },
+        {
+          "type": "Uses technology",
+          "targetId": "node-js",
+          "targetName": "Node.js",
+          "targetType": "technology",
+          "targetUrl": "https://www.dimisipedia.me/technology/node-js"
+        },
+        {
+          "type": "Uses technology",
+          "targetId": "mongodb",
+          "targetName": "MongoDB",
+          "targetType": "technology",
+          "targetUrl": "https://www.dimisipedia.me/technology/mongodb"
+        },
+        {
+          "type": "Uses technology",
+          "targetId": "redis",
+          "targetName": "Redis",
+          "targetType": "technology",
+          "targetUrl": "https://www.dimisipedia.me/technology/redis"
+        },
+        {
+          "type": "Uses technology",
+          "targetId": "tailwind-css",
+          "targetName": "Tailwind CSS",
+          "targetType": "technology",
+          "targetUrl": "https://www.dimisipedia.me/technology/tailwind-css"
+        },
+        {
+          "type": "Uses technology",
+          "targetId": "aws",
+          "targetName": "AWS",
+          "targetType": "technology",
+          "targetUrl": "https://www.dimisipedia.me/technology/aws"
+        },
+        {
+          "type": "Uses technology",
+          "targetId": "digital-ocean",
+          "targetName": "DigitalOcean",
+          "targetType": "technology",
+          "targetUrl": "https://www.dimisipedia.me/technology/digital-ocean"
+        },
+        {
+          "type": "Uses technology",
+          "targetId": "cloudinary",
+          "targetName": "Cloudinary",
+          "targetType": "technology",
+          "targetUrl": "https://www.dimisipedia.me/technology/cloudinary"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-dimisi-official",
+          "title": "DIMISI Technologies — official website",
+          "publisher": "DIMISI Technologies Pvt. Ltd.",
+          "url": "https://dimisi.tech"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/products/dimisi-ops#software",
+      "id": "dimisi-ops",
+      "slug": "dimisi-ops",
+      "canonicalUrl": "https://www.dimisipedia.me/products/dimisi-ops",
+      "name": "DIMISI-OPS",
+      "alternateNames": [],
+      "entityType": "product",
+      "subtitle": "Enterprise Operations, Employee Management & Workflow System",
+      "shortDescription": "DIMISI-OPS is an enterprise operations and workforce management software platform engineered by DIMISI Technologies to streamline team administration, task allocation, and organizational workflows.",
+      "answer": "DIMISI-OPS is a proprietary enterprise business software platform developed by DIMISI Technologies to orchestrate organizational operations, employee directories, sprint workflows, task allocation, and project transparency. Conceived and architected under the leadership of Shikhar Dixit (Founder & CEO), the system is engineered by Prashant Umrao and Amit Kumar with backend infrastructure by Mridul Mishra and operational governance from Nishkarsh Mishra.",
+      "facts": [
+        {
+          "label": "Category",
+          "value": "Enterprise & Business Software"
+        },
+        {
+          "label": "Project type",
+          "value": "Enterprise Operations, Workforce Management & ERP System"
+        },
+        {
+          "label": "Status",
+          "value": "Under Active Development"
+        },
+        {
+          "label": "Concept & product architecture",
+          "value": "Shikhar Dixit (Founder & CEO)"
+        },
+        {
+          "label": "Application engineering",
+          "value": "Prashant Umrao (Full Stack & QA), Amit Kumar (Backend Development Intern)"
+        },
+        {
+          "label": "Backend infrastructure",
+          "value": "Mridul Mishra (Foundation Engineer)"
+        },
+        {
+          "label": "Operational governance",
+          "value": "Nishkarsh Mishra (CFO & COO)"
+        },
+        {
+          "label": "Target environment",
+          "value": "Enterprise Operations & High-Security Cloud"
+        }
+      ],
+      "verifiedAt": "2026-10-20",
+      "updatedAt": "2026-10-20",
+      "relationships": [
+        {
+          "type": "Developed by",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Product leadership by",
+          "targetId": "shikhar-dixit",
+          "targetName": "Shikhar Dixit",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/shikhar-dixit"
+        },
+        {
+          "type": "Engineering by",
+          "targetId": "prashant-umrao",
+          "targetName": "Prashant Umrao",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/prashant-umrao"
+        },
+        {
+          "type": "Engineering by",
+          "targetId": "amit-kumar",
+          "targetName": "Amit Kumar",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/amit-kumar"
+        },
+        {
+          "type": "Engineering by",
+          "targetId": "mridul-mishra",
+          "targetName": "Mridul Mishra",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/mridul-mishra"
+        },
+        {
+          "type": "Operations by",
+          "targetId": "nishkarsh-mishra",
+          "targetName": "Nishkarsh Mishra",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/nishkarsh-mishra"
+        },
+        {
+          "type": "Related to",
+          "targetId": "shikhar-dixit",
+          "targetName": "Shikhar Dixit",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/shikhar-dixit"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-dimisi-ops-spec",
+          "title": "DIMISI-OPS — Internal Operations System Specifications",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "id": "src-dimisi-business-solutions",
+          "title": "DIMISI Technologies — Enterprise & Business Software Solutions Portfolio",
+          "publisher": "DIMISI Technologies Pvt. Ltd.",
+          "url": "https://dimisi.tech"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/products/dimisipedia#software",
+      "id": "dimisipedia",
+      "slug": "dimisipedia",
+      "canonicalUrl": "https://www.dimisipedia.me/products/dimisipedia",
+      "name": "DIMISIPEDIA",
+      "alternateNames": [],
+      "entityType": "product",
+      "subtitle": "Project — knowledge and documentation platform",
+      "shortDescription": "The official public knowledge, documentation and credibility platform of DIMISI Technologies.",
+      "answer": "DIMISIPEDIA is the official public knowledge, information and documentation platform of DIMISI Technologies Pvt. Ltd. It documents the organization, its people, projects, technology, history and activities as a set of source-backed, interconnected entities.",
+      "facts": [
+        {
+          "label": "Type",
+          "value": "Knowledge platform"
+        },
+        {
+          "label": "Operated by",
+          "value": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "label": "Domain",
+          "value": "dimisipedia.me"
+        },
+        {
+          "label": "Status",
+          "value": "Development"
+        }
+      ],
+      "verifiedAt": "2026-08-15",
+      "updatedAt": "2026-08-15",
+      "relationships": [
+        {
+          "type": "Developed by",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Documents",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Uses technology",
+          "targetId": "react",
+          "targetName": "React",
+          "targetType": "technology",
+          "targetUrl": "https://www.dimisipedia.me/technology/react"
+        },
+        {
+          "type": "Uses technology",
+          "targetId": "typescript",
+          "targetName": "TypeScript",
+          "targetType": "technology",
+          "targetUrl": "https://www.dimisipedia.me/technology/typescript"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-dimisipedia-spec",
+          "title": "DIMISIPEDIA product requirements document",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/technology/express#technology",
+      "id": "express",
+      "slug": "express",
+      "canonicalUrl": "https://www.dimisipedia.me/technology/express",
+      "name": "Express",
+      "alternateNames": [],
+      "entityType": "technology",
+      "subtitle": "Technology",
+      "shortDescription": "Express is a Node.js web framework recorded in DIMISI project documentation.",
+      "answer": "Express is a Node.js web framework recorded in DIMISI project documentation.",
+      "facts": [
+        {
+          "label": "Category",
+          "value": "Software technology"
+        },
+        {
+          "label": "Used in",
+          "value": "Kalesh"
+        }
+      ],
+      "verifiedAt": "2026-08-15",
+      "updatedAt": "2026-08-15",
+      "relationships": [],
+      "sources": [
+        {
+          "id": "src-kalesh-docs",
+          "title": "Kalesh project documentation",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/technology/firebase#technology",
+      "id": "firebase",
+      "slug": "firebase",
+      "canonicalUrl": "https://www.dimisipedia.me/technology/firebase",
+      "name": "Firebase",
+      "alternateNames": [],
+      "entityType": "technology",
+      "subtitle": "Technology",
+      "shortDescription": "Firebase is a real-time backend platform documented in public Kalesh hiring material in connection with real-time polling features.",
+      "answer": "Firebase is a real-time backend platform documented in public Kalesh hiring material in connection with real-time polling features.",
+      "facts": [
+        {
+          "label": "Category",
+          "value": "Software technology"
+        },
+        {
+          "label": "Used in",
+          "value": "Kalesh"
+        }
+      ],
+      "verifiedAt": "2026-08-15",
+      "updatedAt": "2026-08-15",
+      "relationships": [
+        {
+          "type": "Used by",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-kalesh-docs",
+          "title": "Kalesh project documentation",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/technology/flutter#technology",
+      "id": "flutter",
+      "slug": "flutter",
+      "canonicalUrl": "https://www.dimisipedia.me/technology/flutter",
+      "name": "Flutter",
+      "alternateNames": [],
+      "entityType": "technology",
+      "subtitle": "Technology",
+      "shortDescription": "Flutter is a cross-platform application framework documented in public Kalesh hiring material as part of the Kalesh mobile stack.",
+      "answer": "Flutter is a cross-platform application framework documented in public Kalesh hiring material as part of the Kalesh mobile stack.",
+      "facts": [
+        {
+          "label": "Category",
+          "value": "Software technology"
+        },
+        {
+          "label": "Used in",
+          "value": "Kalesh"
+        }
+      ],
+      "verifiedAt": "2026-08-15",
+      "updatedAt": "2026-08-15",
+      "relationships": [
+        {
+          "type": "Used by",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Used by",
+          "targetId": "kaand",
+          "targetName": "KAAND",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kaand"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-kalesh-docs",
+          "title": "Kalesh project documentation",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/events/gandhigiri-project-showcase#event",
+      "id": "gandhigiri-project-showcase",
+      "slug": "gandhigiri-project-showcase",
+      "canonicalUrl": "https://www.dimisipedia.me/events/gandhigiri-project-showcase",
+      "name": "Gandhigiri Technical Project Showcase 2024",
+      "alternateNames": [],
+      "entityType": "event",
+      "subtitle": "Catalyst Event — 6-Hour Face Recognition Sprint & Founding of CATI",
+      "shortDescription": "The pivotal collegiate technical presentation on 15 October 2024 where Shikhar Dixit and Swatantra Singh built and demonstrated a Face Recognition System in 6 hours, leading to the creation of CATI and DIMISI.",
+      "answer": "The Gandhigiri Technical Project Showcase took place on 15 October 2024 at Axis College in Kanpur. Computer science undergraduates Shikhar Dixit and Swatantra Singh built a functioning Face Recognition System in an overnight 6-hour sprint at home. The successful demonstration catalyzed their decision to become business partners, co-founding Cosmic Aura Tech Industry (CATI) with Nishkarsh Mishra.",
+      "facts": [
+        {
+          "label": "Date",
+          "value": "15 October 2024"
+        },
+        {
+          "label": "Location",
+          "value": "Axis College, Kanpur, Uttar Pradesh"
+        },
+        {
+          "label": "Demonstrated Technology",
+          "value": "Computer Vision Face Recognition System"
+        },
+        {
+          "label": "Historical Outcome",
+          "value": "Catalyst for founding CATI and DIMISI Technologies"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "updatedAt": "2026-11-10",
+      "relationships": [
+        {
+          "type": "Related to",
+          "targetId": "shikhar-dixit",
+          "targetName": "Shikhar Dixit",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/shikhar-dixit"
+        },
+        {
+          "type": "Related to",
+          "targetId": "swatantra-singh",
+          "targetName": "Swatantra Singh",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/swatantra-singh"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-gandhigiri-showcase-2024",
+          "title": "Gandhigiri Technical Project Showcase 2024 Records",
+          "publisher": "Axis Colleges Technical Society"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/people/harsh-mishra#person",
+      "id": "harsh-mishra",
+      "slug": "harsh-mishra",
+      "canonicalUrl": "https://www.dimisipedia.me/people/harsh-mishra",
+      "name": "Harsh Mishra",
+      "alternateNames": [],
+      "entityType": "person",
+      "subtitle": "Full Stack Web Developer — DIMISI Technologies",
+      "shortDescription": "Full Stack Web Developer at DIMISI Technologies and 2nd Position holder in the 30-Day LinkedIn Challenge, with previous experience as Video Editor & Social Media Marketing Intern.",
+      "answer": "Harsh Mishra is a Full Stack Web Developer at DIMISI Technologies Private Limited. He secured 2nd Position in the nationwide LinkedIn 30-Day Challenge and previously contributed as Video Editor & Social Media Marketing Intern at the company's Sand Tank office.",
+      "disambiguatingDescription": "Full Stack Web Developer at DIMISI Technologies Private Limited, 2nd Position holder in the 30-Day LinkedIn Challenge, and former Video Editor & Social Media Marketing Intern.",
+      "facts": [
+        {
+          "label": "Role",
+          "value": "Full Stack Web Developer"
+        },
+        {
+          "label": "Organization",
+          "value": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "label": "Previous role",
+          "value": "Video Editor & Social Media Marketing Intern"
+        },
+        {
+          "label": "Milestone award",
+          "value": "2nd Position — LinkedIn 30-Day Challenge"
+        }
+      ],
+      "verifiedAt": "2026-10-11",
+      "updatedAt": "2026-10-11",
+      "relationships": [
+        {
+          "type": "Works at",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Participated in",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Works at",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-team-roster",
+          "title": "DIMISI Technologies team roster",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "id": "src-linkedin-challenge-felicitation",
+          "title": "LinkedIn 30-Day Kalesh Challenge & Felicitation Ceremony Records",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/events/iit-kanpur-siic-avinya-2026#event",
+      "id": "iit-kanpur-siic-avinya-2026",
+      "slug": "iit-kanpur-siic-avinya-2026",
+      "canonicalUrl": "https://www.dimisipedia.me/events/iit-kanpur-siic-avinya-2026",
+      "name": "IIT Kanpur SIIC Avinya 2026",
+      "alternateNames": [],
+      "entityType": "event",
+      "subtitle": "Startup Showcase & Innovation Summit — Finalist Achievement",
+      "shortDescription": "Flagship startup innovation summit hosted by the Startup Incubation and Innovation Centre (SIIC) at IIT Kanpur, where DIMISI Technologies and team leader Shikhar Dixit achieved Finalist honors.",
+      "answer": "IIT Kanpur SIIC Avinya 2026 was a major technology and venture innovation competition hosted by the Startup Incubation and Innovation Centre (SIIC) at the Indian Institute of Technology Kanpur. DIMISI Technologies, led by Founder & CEO Shikhar Dixit, competed as a Finalist, presenting its business software solutions, DIMISI-OPS operations platform, and consumer social product Kalesh before university mentors and venture evaluators.",
+      "facts": [
+        {
+          "label": "Event name",
+          "value": "SIIC Avinya 2026"
+        },
+        {
+          "label": "Organizer",
+          "value": "Startup Incubation and Innovation Centre (SIIC), IIT Kanpur"
+        },
+        {
+          "label": "Location",
+          "value": "IIT Kanpur, Uttar Pradesh, India"
+        },
+        {
+          "label": "Result",
+          "value": "Finalist — DIMISI Technologies & Shikhar Dixit"
+        },
+        {
+          "label": "Team Leader",
+          "value": "Shikhar Dixit (Founder & CEO)"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "updatedAt": "2026-11-10",
+      "relationships": [
+        {
+          "type": "Related to",
+          "targetId": "shikhar-dixit",
+          "targetName": "Shikhar Dixit",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/shikhar-dixit"
+        },
+        {
+          "type": "Related to",
+          "targetId": "shikhar-dixit",
+          "targetName": "Shikhar Dixit",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/shikhar-dixit"
+        },
+        {
+          "type": "Related to",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-siic-avinya-record",
+          "title": "IIT Kanpur SIIC Avinya 2026 — Startup Showcase & Finalist Records",
+          "publisher": "Startup Incubation and Innovation Centre (SIIC), IIT Kanpur",
+          "url": "https://siicincubator.com"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/people/jayendra-pratap-singh#person",
+      "id": "jayendra-pratap-singh",
+      "slug": "jayendra-pratap-singh",
+      "canonicalUrl": "https://www.dimisipedia.me/people/jayendra-pratap-singh",
+      "name": "Jayendra Pratap Singh",
+      "alternateNames": [],
+      "entityType": "person",
+      "subtitle": "First Mentor — DIMISI Technologies Private Limited",
+      "shortDescription": "Startup Advisor at Wadhwani Foundation, HR & People Development Consultant, Startup India National Mentor, DPIIT Platinum Badge awardee, and the First Mentor of DIMISI Technologies Private Limited.",
+      "answer": "Jayendra Pratap Singh (JP), also known as Jayant Sir, is an HR and People Development professional, consultant, corporate trainer, and startup mentor with 14 years of cross-sector experience spanning Manufacturing, Telecom, IT, Services, Higher Education, Healthcare, and Startups. An IIM Ranchi HR alumnus and JSS Noida Electronics & Communication Engineer, he serves as Startup Advisor at Wadhwani Foundation, the foundational First Mentor of DIMISI Technologies Private Limited, a National Mentor with Startup India (50+ startups mentored), an empanelled mentor with AIC-PECF (NITI Aayog), and a Platinum Badge awardee from DPIIT, Ministry of Commerce & Industry, Government of India.",
+      "disambiguatingDescription": "Indian Startup Advisor at Wadhwani Foundation, HR & People Development Consultant, Startup India National Mentor (50+ startups), DPIIT Platinum Badge awardee, and First Mentor of DIMISI Technologies Private Limited.",
+      "facts": [
+        {
+          "label": "Full Name",
+          "value": "Jayendra Pratap Singh"
+        },
+        {
+          "label": "Professional Name",
+          "value": "Jayendra Pratap Singh (JP)"
+        },
+        {
+          "label": "Also Known As",
+          "value": "Jayant Sir"
+        },
+        {
+          "label": "Current Role",
+          "value": "Startup Advisor — Wadhwani Foundation"
+        },
+        {
+          "label": "DIMISI Designation",
+          "value": "First Mentor"
+        },
+        {
+          "label": "Profession",
+          "value": "HR & People Development Consultant | Startup Advisor"
+        },
+        {
+          "label": "Experience",
+          "value": "14+ years cross-sector professional experience"
+        },
+        {
+          "label": "Industries",
+          "value": "Manufacturing, Telecom, IT, Services, Higher Education, Healthcare, Startups"
+        },
+        {
+          "label": "Postgraduate Education",
+          "value": "IIM Ranchi — PGDHRM / Human Resources (2013–2015)"
+        },
+        {
+          "label": "Undergraduate Education",
+          "value": "JSS Academy of Technical Education, Noida — B.Tech ECE"
+        },
+        {
+          "label": "Startup Mentoring",
+          "value": "50+ startups mentored"
+        },
+        {
+          "label": "Ecosystem Roles",
+          "value": "Startup Advisor (Wadhwani Foundation) · National Mentor (Startup India) · Mentor (AIC-PECF)"
+        },
+        {
+          "label": "Government Recognition",
+          "value": "Platinum Badge Awardee — DPIIT, Ministry of Commerce & Industry"
+        },
+        {
+          "label": "Location",
+          "value": "Greater Delhi Area / Noida, Uttar Pradesh, India"
+        },
+        {
+          "label": "Approach",
+          "value": "Practical + Structured + Experiential + Outcome-Oriented"
+        }
+      ],
+      "verifiedAt": "2026-09-14",
+      "updatedAt": "2026-09-14",
+      "relationships": [
+        {
+          "type": "First Mentor",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Associated with",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-jp-linkedin",
+          "title": "Jayendra Pratap Singh — Official LinkedIn Profile",
+          "publisher": "LinkedIn",
+          "url": "https://www.linkedin.com/in/jayendra-pratap-singh-81ab9375"
+        },
+        {
+          "id": "src-jp-wadhwani",
+          "title": "Wadhwani Foundation — Startup Advisor Portfolio",
+          "publisher": "Wadhwani Foundation",
+          "url": "https://www.wadhwanifoundation.org"
+        },
+        {
+          "id": "src-jp-dpiit-platinum",
+          "title": "DPIIT Mentorship Recognition — Platinum Badge Award",
+          "publisher": "Department for Promotion of Industry and Internal Trade (DPIIT), Ministry of Commerce & Industry, Government of India",
+          "url": "https://dpiit.gov.in"
+        },
+        {
+          "id": "src-jp-startup-india",
+          "title": "Startup India National Mentor Portfolio",
+          "publisher": "Startup India, DPIIT, Government of India",
+          "url": "https://www.startupindia.gov.in"
+        },
+        {
+          "id": "src-jp-aic-pecf",
+          "title": "AIC-PECF Mentor Empanelment — Atal Incubation Centre",
+          "publisher": "Atal Incubation Centre – Pondicherry Engineering College Foundation (AIC-PECF), supported by Atal Innovation Mission, NITI Aayog",
+          "url": "https://aicpecf.org"
+        },
+        {
+          "id": "src-jp-iim-ranchi",
+          "title": "IIM Ranchi Alumni Record — Post Graduate Diploma in Human Resource Management (PGDHRM)",
+          "publisher": "Indian Institute of Management Ranchi",
+          "url": "https://www.iimranchi.ac.in"
+        },
+        {
+          "id": "src-jp-carpe-diem-2014",
+          "title": "Carpe Diem 2014 — Event Winner, IIM Calcutta",
+          "publisher": "Indian Institute of Management Calcutta / IIM Ranchi Annual Record"
+        },
+        {
+          "id": "src-jp-jssaten",
+          "title": "JSS Academy of Technical Education, Noida — B.Tech Alumni Record",
+          "publisher": "JSS Academy of Technical Education, Noida (JSSATEN) / Dr. A.P.J. Abdul Kalam Technical University",
+          "url": "https://jssaten.ac.in"
+        },
+        {
+          "id": "src-jp-dimisi-appointment",
+          "title": "Official Designation: First Mentor of DIMISI Technologies Private Limited",
+          "publisher": "DIMISI Technologies Private Limited",
+          "url": "https://dimisi.tech"
+        },
+        {
+          "id": "src-jp-axis-sharktank-chronicle",
+          "title": "DIMISI Technologies Founding Chronicle — Phase 5: Mentorship, The Library Wait & Shark Tank Pitch",
+          "publisher": "DIMISI Technologies Editorial & Historical Record"
+        },
+        {
+          "id": "src-jp-consulting-portfolio",
+          "title": "Jayendra Pratap Singh — Multi-Sector Corporate HR & Consulting Record",
+          "publisher": "Professional Portfolio & Career Record"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/products/kaand#software",
+      "id": "kaand",
+      "slug": "kaand",
+      "canonicalUrl": "https://www.dimisipedia.me/products/kaand",
+      "name": "KAAND",
+      "alternateNames": [],
+      "entityType": "product",
+      "subtitle": "Next-Generation Mobile News & Media Platform (Android & iOS)",
+      "shortDescription": "KAAND is DIMISI's next-generation media and news platform being developed to create a new approach to modern news consumption.",
+      "answer": "KAAND is an internal DIMISI product focused on building a modern, mobile-first media and news experience for Android and iOS using Flutter and Dart. Engineered by rising intern Amrit Awasthi under the technical mentorship of Sheelu Singh and Mridul Mishra, the application explores a fresh approach to digital journalism, fast information discovery, and community-engaged media consumption.",
+      "facts": [
+        {
+          "label": "Category",
+          "value": "DIMISI Products"
+        },
+        {
+          "label": "Project type",
+          "value": "Next-Generation Media / News Platform"
+        },
+        {
+          "label": "Status",
+          "value": "Under Development"
+        },
+        {
+          "label": "Target platforms",
+          "value": "Android & iOS"
+        },
+        {
+          "label": "Core technologies",
+          "value": "Flutter, Dart"
+        },
+        {
+          "label": "Lead developer",
+          "value": "Amrit Awasthi (Android Developer Intern — Flutter / DART)"
+        },
+        {
+          "label": "Engineering guidance",
+          "value": "Sheelu Singh, Mridul Mishra"
+        },
+        {
+          "label": "Ownership",
+          "value": "DIMISI Technologies Pvt. Ltd."
+        }
+      ],
+      "verifiedAt": "2026-10-11",
+      "updatedAt": "2026-10-11",
+      "relationships": [
+        {
+          "type": "Developed by",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Engineering by",
+          "targetId": "amrit-awasthi",
+          "targetName": "Amrit Awasthi",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/amrit-awasthi"
+        },
+        {
+          "type": "Technical leadership by",
+          "targetId": "sheelu-singh",
+          "targetName": "Sheelu Singh",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/sheelu-singh"
+        },
+        {
+          "type": "Technical leadership by",
+          "targetId": "mridul-mishra",
+          "targetName": "Mridul Mishra",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/mridul-mishra"
+        },
+        {
+          "type": "Uses technology",
+          "targetId": "flutter",
+          "targetName": "Flutter",
+          "targetType": "technology",
+          "targetUrl": "https://www.dimisipedia.me/technology/flutter"
+        },
+        {
+          "type": "Uses technology",
+          "targetId": "dart",
+          "targetName": "Dart",
+          "targetType": "technology",
+          "targetUrl": "https://www.dimisipedia.me/technology/dart"
+        },
+        {
+          "type": "Related to",
+          "targetId": "shikhar-dixit",
+          "targetName": "Shikhar Dixit",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/shikhar-dixit"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-kaand-dev",
+          "title": "KAAND — Mobile News & Media Platform Development Records",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/products/karyon#software",
+      "id": "karyon",
+      "slug": "karyon",
+      "canonicalUrl": "https://www.dimisipedia.me/products/karyon",
+      "name": "KaryON",
+      "alternateNames": [],
+      "entityType": "product",
+      "subtitle": "Professional Home Services Platform At Your Doorstep",
+      "shortDescription": "KaryON is a professional home-services platform designed to connect customers with service professionals at their doorstep.",
+      "answer": "KaryON is an internal DIMISI product focused on simplifying access to professional home services through a digital booking and service-matching experience. Built around the customer journey 'Book Service → Get Matched → Service Done', the platform connects homeowners with vetted technicians across 8 trade categories, originated through contributions by former core member Siddhant Shekhar.",
+      "facts": [
+        {
+          "label": "Category",
+          "value": "DIMISI Products"
+        },
+        {
+          "label": "Project type",
+          "value": "Professional Home Services Platform"
+        },
+        {
+          "label": "Status",
+          "value": "Under Development"
+        },
+        {
+          "label": "Website",
+          "value": "karyon.app"
+        },
+        {
+          "label": "Customer journey",
+          "value": "Book Service → Get Matched → Service Done"
+        },
+        {
+          "label": "Service categories",
+          "value": "Plumbing, Electrical, Carpentry, Cleaning, Painting, HVAC, Moving, Gardening"
+        },
+        {
+          "label": "Project contribution",
+          "value": "Siddhant Shekhar (Former Core Member)"
+        },
+        {
+          "label": "Ownership",
+          "value": "DIMISI Technologies Pvt. Ltd."
+        }
+      ],
+      "verifiedAt": "2026-09-04",
+      "updatedAt": "2026-09-04",
+      "relationships": [
+        {
+          "type": "Developed by",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Engineering by",
+          "targetId": "siddhant-shekhar",
+          "targetName": "Siddhant Shekhar",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/siddhant-shekhar"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-karyon-official",
+          "title": "KaryON — Professional Home Services Platform",
+          "publisher": "DIMISI Technologies / KaryON",
+          "url": "https://karyon.app"
+        },
+        {
+          "id": "src-team-roster",
+          "title": "DIMISI Technologies team roster",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/people/krishna-tiwari#person",
+      "id": "krishna-tiwari",
+      "slug": "krishna-tiwari",
+      "canonicalUrl": "https://www.dimisipedia.me/people/krishna-tiwari",
+      "name": "Krishna Tiwari",
+      "alternateNames": [],
+      "entityType": "person",
+      "subtitle": "Social Media Marketing Head — DIMISI Technologies",
+      "shortDescription": "Social Media Marketing Head at DIMISI Technologies, heading video shoots, editing, and end-to-end social media marketing for Dimisi, Kalesh, and The Startup Diaries.",
+      "answer": "Krishna Tiwari is the Social Media Marketing Head at DIMISI Technologies Private Limited. He oversees complete social media marketing operations, video shoots, content production, and video editing for the parent company DIMISI and its consumer social product Kalesh, managing official Instagram channels @dimisi.tech, @thekaleshofficial, and @thestartupdiariesofficial.",
+      "disambiguatingDescription": "Social Media Marketing Head at DIMISI Technologies Private Limited, heading video production, editing, and digital campaigns across @dimisi.tech, @thekaleshofficial, and @thestartupdiariesofficial.",
+      "facts": [
+        {
+          "label": "Role",
+          "value": "Social Media Marketing Head"
+        },
+        {
+          "label": "Organization",
+          "value": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "label": "Primary initiatives",
+          "value": "DIMISI Social, Kalesh Marketing, The Startup Diaries"
+        },
+        {
+          "label": "Key responsibilities",
+          "value": "Video shoots, video editing, complete social media marketing"
+        },
+        {
+          "label": "Official channels",
+          "value": "@dimisi.tech, @thekaleshofficial, @thestartupdiariesofficial"
+        }
+      ],
+      "verifiedAt": "2026-09-24",
+      "updatedAt": "2026-09-24",
+      "relationships": [
+        {
+          "type": "Works at",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Marketing",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Marketing",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Works at",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-krishna-social",
+          "title": "Official Social Media Marketing & Channels — DIMISI Technologies & Kalesh",
+          "publisher": "DIMISI Technologies / Meta Platforms (Instagram)",
+          "url": "https://www.instagram.com/dimisi.tech/"
+        },
+        {
+          "id": "src-kalesh-instagram",
+          "title": "The Kalesh Official Instagram Channel (@thekaleshofficial)",
+          "publisher": "Meta Platforms (Instagram) / Kalesh",
+          "url": "https://www.instagram.com/thekaleshofficial/"
+        },
+        {
+          "id": "src-startup-diaries-instagram",
+          "title": "The Startup Diaries Official Instagram Channel (@thestartupdiariesofficial)",
+          "publisher": "Meta Platforms (Instagram) / The Startup Diaries",
+          "url": "https://www.instagram.com/thestartupdiariesofficial/"
+        },
+        {
+          "id": "src-team-roster",
+          "title": "DIMISI Technologies team roster",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/services/mobile-application-development#service",
+      "id": "mobile-application-development",
+      "slug": "mobile-application-development",
+      "canonicalUrl": "https://www.dimisipedia.me/services/mobile-application-development",
+      "name": "Mobile Application Development",
+      "alternateNames": [],
+      "entityType": "service",
+      "subtitle": "Cross-Platform iOS & Android Engineering with Flutter & Dart",
+      "shortDescription": "Cross-platform mobile application development delivering native-grade iOS and Android applications with Flutter, Dart, real-time sync, and fluid UX.",
+      "answer": "Mobile Application Development by DIMISI Technologies is an engineering service specializing in cross-platform mobile apps for iOS and Android. Built on Flutter and Dart, applications feature high-concurrency state management, local database caching, real-time messaging, and biometric security.",
+      "facts": [
+        {
+          "label": "Service provider",
+          "value": "DIMISI Technologies Private Limited"
+        },
+        {
+          "label": "Platforms",
+          "value": "Android, iOS, Web"
+        },
+        {
+          "label": "Core technologies",
+          "value": "Flutter, Dart, Firebase, REST APIs, WebSockets"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "updatedAt": "2026-11-10",
+      "relationships": [
+        {
+          "type": "Related to",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-services-portfolio",
+          "title": "DIMISI Technologies — Enterprise Services Portfolio",
+          "publisher": "DIMISI Technologies Pvt. Ltd.",
+          "url": "https://dimisi.tech"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/technology/mongodb#technology",
+      "id": "mongodb",
+      "slug": "mongodb",
+      "canonicalUrl": "https://www.dimisipedia.me/technology/mongodb",
+      "name": "MongoDB",
+      "alternateNames": [],
+      "entityType": "technology",
+      "subtitle": "Technology",
+      "shortDescription": "MongoDB is a document database recorded in DIMISI project documentation.",
+      "answer": "MongoDB is a document database recorded in DIMISI project documentation.",
+      "facts": [
+        {
+          "label": "Category",
+          "value": "Software technology"
+        },
+        {
+          "label": "Used in",
+          "value": "Kalesh"
+        }
+      ],
+      "verifiedAt": "2026-08-15",
+      "updatedAt": "2026-08-15",
+      "relationships": [
+        {
+          "type": "Used by",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Used by",
+          "targetId": "dimisi-corporate-platform",
+          "targetName": "DIMISI Technologies",
+          "targetType": "project",
+          "targetUrl": "https://www.dimisipedia.me/projects/dimisi-corporate-platform"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-kalesh-docs",
+          "title": "Kalesh project documentation",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/people/mridul-mishra#person",
+      "id": "mridul-mishra",
+      "slug": "mridul-mishra",
+      "canonicalUrl": "https://www.dimisipedia.me/people/mridul-mishra",
+      "name": "Mridul Mishra",
+      "alternateNames": [],
+      "entityType": "person",
+      "subtitle": "Founding Engineer — Kalesh, DIMISI Technologies",
+      "shortDescription": "Backend engineer and founding engineer for Kalesh, DIMISI Technologies' consumer social platform.",
+      "answer": "Mridul Mishra is a software engineer at DIMISI Technologies Private Limited and the founding engineer for Kalesh, the company's consumer social platform. His recorded work covers backend architecture, REST APIs, WebSocket-based real-time interaction, background job processing with BullMQ and Redis, MongoDB data optimisation and CI/CD pipelines.",
+      "disambiguatingDescription": "Backend and infrastructure systems engineer at DIMISI Technologies Private Limited, founding engineer of Kalesh, and core member of the Sinister Six founding cohort.",
+      "facts": [
+        {
+          "label": "Role",
+          "value": "Founding Engineer (Kalesh)"
+        },
+        {
+          "label": "Organization",
+          "value": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "label": "Primary project",
+          "value": "Kalesh (backend platform)"
+        },
+        {
+          "label": "Core technologies",
+          "value": "Node.js REST APIs, WebSockets, BullMQ, Redis, MongoDB"
+        }
+      ],
+      "verifiedAt": "2026-09-12",
+      "updatedAt": "2026-09-12",
+      "relationships": [
+        {
+          "type": "Works at",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Engineering",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Works at",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Technical leadership",
+          "targetId": "kaand",
+          "targetName": "KAAND",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kaand"
+        },
+        {
+          "type": "Engineering",
+          "targetId": "dimisi-ops",
+          "targetName": "DIMISI-OPS",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/dimisi-ops"
+        },
+        {
+          "type": "Engineering",
+          "targetId": "dimisi-corporate-platform",
+          "targetName": "DIMISI Technologies",
+          "targetType": "project",
+          "targetUrl": "https://www.dimisipedia.me/projects/dimisi-corporate-platform"
+        },
+        {
+          "type": "Engineering",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-kalesh-team",
+          "title": "Kalesh — platform team page",
+          "publisher": "Kalesh (DIMISI Technologies)",
+          "url": "https://thekalesh.com"
+        },
+        {
+          "id": "src-kalesh-linkedin",
+          "title": "Kalesh — company page",
+          "publisher": "LinkedIn",
+          "url": "https://www.linkedin.com/company/dimisi-technologies"
+        },
+        {
+          "id": "src-team-roster",
+          "title": "DIMISI Technologies team roster",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/technology/next-js#technology",
+      "id": "next-js",
+      "slug": "next-js",
+      "canonicalUrl": "https://www.dimisipedia.me/technology/next-js",
+      "name": "Next.js",
+      "alternateNames": [],
+      "entityType": "technology",
+      "subtitle": "Technology",
+      "shortDescription": "Next.js is a React framework for full-stack web applications, used by DIMISI Technologies for platforms including Rudra Tours & Travels, Yadhuvanshi Tours & Travels, and the official corporate site.",
+      "answer": "Next.js is a React framework for full-stack web applications, used by DIMISI Technologies for platforms including Rudra Tours & Travels, Yadhuvanshi Tours & Travels, and the official corporate site.",
+      "facts": [
+        {
+          "label": "Category",
+          "value": "Software technology"
+        },
+        {
+          "label": "Used in",
+          "value": "Rudra Tours & Travels, Yadhuvanshi Tours & Travels, DIMISI Technologies"
+        }
+      ],
+      "verifiedAt": "2026-08-15",
+      "updatedAt": "2026-08-15",
+      "relationships": [
+        {
+          "type": "Used by",
+          "targetId": "rudra-tours",
+          "targetName": "Rudra Tours & Travels",
+          "targetType": "project",
+          "targetUrl": "https://www.dimisipedia.me/projects/rudra-tours"
+        },
+        {
+          "type": "Used by",
+          "targetId": "yadhuvanshi-tours",
+          "targetName": "Yadhuvanshi Tours & Travels",
+          "targetType": "project",
+          "targetUrl": "https://www.dimisipedia.me/projects/yadhuvanshi-tours"
+        },
+        {
+          "type": "Used by",
+          "targetId": "dimisi-corporate-platform",
+          "targetName": "DIMISI Technologies",
+          "targetType": "project",
+          "targetUrl": "https://www.dimisipedia.me/projects/dimisi-corporate-platform"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-kalesh-docs",
+          "title": "Kalesh project documentation",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/people/nisha-chaudhary#person",
+      "id": "nisha-chaudhary",
+      "slug": "nisha-chaudhary",
+      "canonicalUrl": "https://www.dimisipedia.me/people/nisha-chaudhary",
+      "name": "Nisha Chaudhary",
+      "alternateNames": [],
+      "entityType": "person",
+      "subtitle": "Market Research & Analysis Intern — DIMISI Technologies",
+      "shortDescription": "Market Research & Analysis Intern at DIMISI Technologies, specializing in market intelligence, user behavior analysis, and product insights.",
+      "answer": "Nisha Chaudhary is a Market Research & Analysis Intern at DIMISI Technologies Private Limited, focusing on market research, user survey analysis, and competitor intelligence.",
+      "disambiguatingDescription": "Market Research & Analysis Intern at DIMISI Technologies Private Limited, conducting user research and competitive intelligence for Kalesh and company initiatives.",
+      "facts": [
+        {
+          "label": "Role",
+          "value": "Market Research & Analysis Intern"
+        },
+        {
+          "label": "Organization",
+          "value": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "label": "Focus areas",
+          "value": "Market research, user feedback analysis, competitor intelligence"
+        }
+      ],
+      "verifiedAt": "2026-09-12",
+      "updatedAt": "2026-09-12",
+      "relationships": [
+        {
+          "type": "Works at",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Works at",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-team-roster",
+          "title": "DIMISI Technologies team roster",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/people/nishkarsh-mishra#person",
+      "id": "nishkarsh-mishra",
+      "slug": "nishkarsh-mishra",
+      "canonicalUrl": "https://www.dimisipedia.me/people/nishkarsh-mishra",
+      "name": "Nishkarsh Mishra",
+      "alternateNames": [],
+      "entityType": "person",
+      "subtitle": "Co-Founder, Director, CMO & COO · DIMISI Technologies",
+      "shortDescription": "Technology entrepreneur, operations strategist and marketing executive; co-founder and director of DIMISI Technologies Private Limited.",
+      "answer": "Nishkarsh Mishra is an Indian technology entrepreneur, operations strategist, and marketing executive based in Kanpur, Uttar Pradesh. He is a co-founder and director of DIMISI Technologies Private Limited, serving as Chief Operating Officer (COO) and Chief Marketing Officer (CMO).",
+      "facts": [
+        {
+          "label": "Born",
+          "value": "15 March 2000 (age 26), Kanpur, Uttar Pradesh, India"
+        },
+        {
+          "label": "Occupation",
+          "value": "Technology entrepreneur, operations and marketing executive"
+        },
+        {
+          "label": "Organization",
+          "value": "DIMISI Technologies Private Limited"
+        },
+        {
+          "label": "Roles",
+          "value": "Co-Founder · Director · CMO · COO"
+        },
+        {
+          "label": "Location",
+          "value": "Kanpur, Uttar Pradesh, India"
+        },
+        {
+          "label": "Known for",
+          "value": "DIMISI Technologies, Kalesh growth and operations"
+        },
+        {
+          "label": "Education",
+          "value": "Diploma CSE (2019–2022); B.Tech CSE (expected 2026)"
+        }
+      ],
+      "verifiedAt": "2026-08-21",
+      "updatedAt": "2026-08-21",
+      "relationships": [
+        {
+          "type": "Associated with",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Operations",
+          "targetId": "dimisi-ops",
+          "targetName": "DIMISI-OPS",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/dimisi-ops"
+        },
+        {
+          "type": "Co-Founder of",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Director of",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "CMO of",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "COO of",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Product leadership",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Marketing",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Growth",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Operations",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-nishkarsh-linkedin",
+          "title": "Nishkarsh Mishra — professional profile",
+          "publisher": "LinkedIn"
+        },
+        {
+          "id": "src-corporate-record",
+          "title": "DIMISI Technologies Private Limited — corporate information",
+          "publisher": "Corporate information supplied by DIMISI Technologies"
+        },
+        {
+          "id": "src-team-roster",
+          "title": "DIMISI Technologies team roster",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "id": "src-tracxn-dimisi",
+          "title": "DIMISI Technologies — company profile and director listing",
+          "publisher": "Tracxn",
+          "url": "https://tracxn.com/d/companies/dimisi-technologies"
+        },
+        {
+          "id": "src-zaubacorp-dimisi",
+          "title": "DIMISI Technologies Private Limited — company database record",
+          "publisher": "ZaubaCorp",
+          "url": "https://www.zaubacorp.com/company/DIMISI-TECHNOLOGIES-PRIVATE-LIMITED/U62013UP2026PTC246506"
+        },
+        {
+          "id": "src-dimisi-website",
+          "title": "DIMISI Technologies — official website",
+          "publisher": "DIMISI Technologies",
+          "url": "https://dimisi.tech"
+        },
+        {
+          "id": "src-kalesh-official",
+          "title": "Kalesh — official website",
+          "publisher": "DIMISI Technologies Pvt. Ltd.",
+          "url": "https://thekalesh.com"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/technology/node-js#technology",
+      "id": "node-js",
+      "slug": "node-js",
+      "canonicalUrl": "https://www.dimisipedia.me/technology/node-js",
+      "name": "Node.js",
+      "alternateNames": [],
+      "entityType": "technology",
+      "subtitle": "Technology",
+      "shortDescription": "Node.js is a JavaScript runtime recorded in DIMISI project documentation.",
+      "answer": "Node.js is a JavaScript runtime recorded in DIMISI project documentation.",
+      "facts": [
+        {
+          "label": "Category",
+          "value": "Software technology"
+        },
+        {
+          "label": "Used in",
+          "value": "Kalesh"
+        }
+      ],
+      "verifiedAt": "2026-08-15",
+      "updatedAt": "2026-08-15",
+      "relationships": [
+        {
+          "type": "Used by",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Used by",
+          "targetId": "dimisi-corporate-platform",
+          "targetName": "DIMISI Technologies",
+          "targetType": "project",
+          "targetUrl": "https://www.dimisipedia.me/projects/dimisi-corporate-platform"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-kalesh-docs",
+          "title": "Kalesh project documentation",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/people/prashant-umrao#person",
+      "id": "prashant-umrao",
+      "slug": "prashant-umrao",
+      "canonicalUrl": "https://www.dimisipedia.me/people/prashant-umrao",
+      "name": "Prashant Umrao",
+      "alternateNames": [],
+      "entityType": "person",
+      "subtitle": "Full Stack Developer Intern & Tester — DIMISI Technologies",
+      "shortDescription": "Full stack developer intern and software tester at DIMISI Technologies, 1st Prize Winner of the nationwide LinkedIn 30-Day Kalesh Promotion Challenge, and contributor to DIMISI-OPS.",
+      "answer": "Prashant Umrao is a Full Stack Developer Intern & Tester at DIMISI Technologies Private Limited, responsible for full stack web engineering and quality testing for DIMISI-OPS. He is also recognized as the 1st Prize Winner of DIMISI's nationwide LinkedIn 30-Day Kalesh Challenge, felicitated on 15 August 2026 by co-founder Swatantra Singh.",
+      "disambiguatingDescription": "Full stack developer intern and software tester at DIMISI Technologies Private Limited, contributor to DIMISI-OPS, and 1st Prize Winner of the nationwide LinkedIn 30-Day Challenge.",
+      "facts": [
+        {
+          "label": "Role",
+          "value": "Full Stack Developer Intern & Tester"
+        },
+        {
+          "label": "Organization",
+          "value": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "label": "Primary project",
+          "value": "DIMISI-OPS"
+        },
+        {
+          "label": "Milestone award",
+          "value": "1st Prize Winner — LinkedIn 30-Day Challenge (15 August 2026)"
+        },
+        {
+          "label": "Supervision",
+          "value": "Nishkarsh Mishra (Operations), Mridul Mishra (Backend)"
+        }
+      ],
+      "verifiedAt": "2026-10-11",
+      "updatedAt": "2026-10-11",
+      "relationships": [
+        {
+          "type": "1st Prize Winner",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Works at",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Engineering",
+          "targetId": "dimisi-ops",
+          "targetName": "DIMISI-OPS",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/dimisi-ops"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-dimisi-ops-spec",
+          "title": "DIMISI-OPS — Internal Operations System Specifications",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "id": "src-team-roster",
+          "title": "DIMISI Technologies team roster",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "id": "src-linkedin-challenge-felicitation",
+          "title": "LinkedIn 30-Day Kalesh Challenge & Felicitation Ceremony Records",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/technology/react#technology",
+      "id": "react",
+      "slug": "react",
+      "canonicalUrl": "https://www.dimisipedia.me/technology/react",
+      "name": "React",
+      "alternateNames": [],
+      "entityType": "technology",
+      "subtitle": "Technology",
+      "shortDescription": "React is a JavaScript library for building user interfaces, recorded in DIMISI project documentation.",
+      "answer": "React is a JavaScript library for building user interfaces, recorded in DIMISI project documentation.",
+      "facts": [
+        {
+          "label": "Category",
+          "value": "Software technology"
+        },
+        {
+          "label": "Used in",
+          "value": "Kalesh, DIMISIPEDIA"
+        }
+      ],
+      "verifiedAt": "2026-08-15",
+      "updatedAt": "2026-08-15",
+      "relationships": [
+        {
+          "type": "Used by",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Used by",
+          "targetId": "dimisipedia",
+          "targetName": "DIMISIPEDIA",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/dimisipedia"
+        },
+        {
+          "type": "Used by",
+          "targetId": "dimisi-corporate-platform",
+          "targetName": "DIMISI Technologies",
+          "targetType": "project",
+          "targetUrl": "https://www.dimisipedia.me/projects/dimisi-corporate-platform"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-kalesh-docs",
+          "title": "Kalesh project documentation",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/technology/redis#technology",
+      "id": "redis",
+      "slug": "redis",
+      "canonicalUrl": "https://www.dimisipedia.me/technology/redis",
+      "name": "Redis",
+      "alternateNames": [],
+      "entityType": "technology",
+      "subtitle": "Technology",
+      "shortDescription": "Redis is an in-memory data store utilized by DIMISI Technologies for caching and real-time queuing.",
+      "answer": "Redis is an in-memory data store utilized by DIMISI Technologies for caching and real-time queuing.",
+      "facts": [
+        {
+          "label": "Category",
+          "value": "Software technology"
+        },
+        {
+          "label": "Used in",
+          "value": "DIMISI Technologies, The Kalesh"
+        }
+      ],
+      "verifiedAt": "2026-08-15",
+      "updatedAt": "2026-08-15",
+      "relationships": [
+        {
+          "type": "Used by",
+          "targetId": "dimisi-corporate-platform",
+          "targetName": "DIMISI Technologies",
+          "targetType": "project",
+          "targetUrl": "https://www.dimisipedia.me/projects/dimisi-corporate-platform"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-kalesh-docs",
+          "title": "Kalesh project documentation",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/projects/rudra-tours#project",
+      "id": "rudra-tours",
+      "slug": "rudra-tours",
+      "canonicalUrl": "https://www.dimisipedia.me/projects/rudra-tours",
+      "name": "Rudra Tours & Travels",
+      "alternateNames": [],
+      "entityType": "project",
+      "subtitle": "Client Project — End-to-End Digital Transformation & Web Platform",
+      "shortDescription": "High-performance Next.js travel platform and digital brand built by DIMISI Technologies with comprehensive SEO, AEO, and GEO architecture.",
+      "answer": "Rudra Tours & Travels is a Kanpur-based travel, tourism, car rental, and tour operations company whose complete digital presence and web platform was designed, engineered, and deployed by DIMISI Technologies. Built with Next.js, the platform features dedicated intent-based routing, city travel guides, vehicle fleets, 25 tour itineraries, and structured Answer Engine (AEO) and Generative Engine Optimization (GEO).",
+      "facts": [
+        {
+          "label": "Client",
+          "value": "Rudra Tours & Travels"
+        },
+        {
+          "label": "Category",
+          "value": "Client Project"
+        },
+        {
+          "label": "Project type",
+          "value": "Client Website Development + Digital Brand Building"
+        },
+        {
+          "label": "Industry",
+          "value": "Travel, Tourism, Car Rental & Tour Operations"
+        },
+        {
+          "label": "Location",
+          "value": "Kanpur, Uttar Pradesh, India"
+        },
+        {
+          "label": "Technology",
+          "value": "Next.js, React, TypeScript, Tailwind CSS"
+        },
+        {
+          "label": "Services delivered",
+          "value": "UI/UX Design, Next.js Development, SEO, AEO, GEO Optimization, Testing, Security, Production Deployment, Brand Building"
+        },
+        {
+          "label": "Status",
+          "value": "Active / Production"
+        },
+        {
+          "label": "Website",
+          "value": "toursbyrudra.com"
+        }
+      ],
+      "verifiedAt": "2026-09-04",
+      "updatedAt": "2026-09-04",
+      "relationships": [
+        {
+          "type": "Engineering by",
+          "targetId": "somya-tiwari",
+          "targetName": "Somya Tiwari",
+          "targetType": "person",
+          "targetUrl": "https://www.dimisipedia.me/people/somya-tiwari"
+        },
+        {
+          "type": "Developed by",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Developed by",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Uses technology",
+          "targetId": "next-js",
+          "targetName": "Next.js",
+          "targetType": "technology",
+          "targetUrl": "https://www.dimisipedia.me/technology/next-js"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-rudra-official",
+          "title": "Rudra Tours & Travels — official website",
+          "publisher": "Rudra Tours & Travels",
+          "url": "https://www.toursbyrudra.com"
+        },
+        {
+          "id": "src-dimisi-client-portfolio",
+          "title": "DIMISI Technologies Client Project Records",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/people/sheelu-singh#person",
+      "id": "sheelu-singh",
+      "slug": "sheelu-singh",
+      "canonicalUrl": "https://www.dimisipedia.me/people/sheelu-singh",
+      "name": "Sheelu Singh",
+      "alternateNames": [],
+      "entityType": "person",
+      "subtitle": "Android & Flutter Developer — DIMISI Technologies",
+      "shortDescription": "Mobile engineer at DIMISI Technologies; Android and Flutter developer for the Kalesh platform.",
+      "answer": "Sheelu Singh is a mobile application engineer at DIMISI Technologies Private Limited, working as the Android developer for Kalesh, the company's anonymous social platform. His recorded work covers Flutter-based cross-platform architecture, state and dependency management, payment gateway integration and mobile interface engineering.",
+      "disambiguatingDescription": "Android and Flutter mobile software engineer at DIMISI Technologies Private Limited, lead application developer for Kalesh, and member of the Sinister Six founding cohort.",
+      "facts": [
+        {
+          "label": "Role",
+          "value": "Android & Flutter Developer"
+        },
+        {
+          "label": "Organization",
+          "value": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "label": "Primary project",
+          "value": "Kalesh (mobile application)"
+        },
+        {
+          "label": "Education",
+          "value": "Computer Science Engineering — Dr. A.P.J. Abdul Kalam Technical University"
+        },
+        {
+          "label": "Core technologies",
+          "value": "Flutter, Provider, Firebase"
+        }
+      ],
+      "verifiedAt": "2026-08-15",
+      "updatedAt": "2026-08-15",
+      "relationships": [
+        {
+          "type": "Works at",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Engineering",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Works at",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Technical leadership",
+          "targetId": "kaand",
+          "targetName": "KAAND",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kaand"
+        },
+        {
+          "type": "Engineering",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-sheelu-linkedin",
+          "title": "Sheelu Singh — professional profile",
+          "publisher": "LinkedIn"
+        },
+        {
+          "id": "src-kalesh-team",
+          "title": "Kalesh — platform team page",
+          "publisher": "Kalesh (DIMISI Technologies)",
+          "url": "https://thekalesh.com"
+        },
+        {
+          "id": "src-sheelu-pulsjob",
+          "title": "Sheelu Singh — developer listing",
+          "publisher": "PulsJob"
+        },
+        {
+          "id": "src-dimisi-linkedin",
+          "title": "DIMISI Technologies — company profile",
+          "publisher": "LinkedIn",
+          "url": "https://www.linkedin.com/company/dimisi-technologies"
+        },
+        {
+          "id": "src-team-roster",
+          "title": "DIMISI Technologies team roster",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/projects/shiksha-path-ai#project",
+      "id": "shiksha-path-ai",
+      "slug": "shiksha-path-ai",
+      "canonicalUrl": "https://www.dimisipedia.me/projects/shiksha-path-ai",
+      "name": "Shiksha Path AI",
+      "alternateNames": [],
+      "entityType": "project",
+      "subtitle": "AI Career Guidance & Personalized Educational Pathway Engine",
+      "shortDescription": "An experimental AI research initiative exploring adaptive educational pathways, automated student skill mapping, and intelligent career recommendations.",
+      "answer": "Shiksha Path AI is an internal research and conceptual AI initiative under DIMISI Labs, exploring algorithmic curriculum recommendation, career navigation, and student capability mapping.",
+      "facts": [
+        {
+          "label": "Category",
+          "value": "DIMISI Labs / AI Research"
+        },
+        {
+          "label": "Project type",
+          "value": "Personalized Educational Pathway Engine"
+        },
+        {
+          "label": "Status",
+          "value": "Research & Conceptualization"
+        },
+        {
+          "label": "Technology focus",
+          "value": "Machine Learning, LLM Embeddings, Knowledge Graphs"
+        },
+        {
+          "label": "Organization",
+          "value": "DIMISI Technologies Private Limited"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "updatedAt": "2026-11-10",
+      "relationships": [],
+      "sources": [
+        {
+          "id": "src-dimisi-official",
+          "title": "DIMISI Technologies — official website",
+          "publisher": "DIMISI Technologies Pvt. Ltd.",
+          "url": "https://dimisi.tech"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/people/siddhant-shekhar#person",
+      "id": "siddhant-shekhar",
+      "slug": "siddhant-shekhar",
+      "canonicalUrl": "https://www.dimisipedia.me/people/siddhant-shekhar",
+      "name": "Siddhant Shekhar",
+      "alternateNames": [],
+      "entityType": "person",
+      "subtitle": "Former Core Member & Web Developer — DIMISI Technologies",
+      "shortDescription": "Former core member of DIMISI Technologies and web developer who contributed to early frontend platforms and developed the KaryON home services platform.",
+      "answer": "Siddhant Shekhar is a software engineer and former core team member of DIMISI Technologies (CATI), remembered as part of the 'Sinister Six' founding cohort. He contributed to the initial web deployment of Kalesh on 22 January 2026 and developed KaryON, a professional doorstep home-services platform.",
+      "disambiguatingDescription": "Web developer and former core member of DIMISI Technologies (CATI), creator of KaryON, and member of the Sinister Six founding cohort.",
+      "facts": [
+        {
+          "label": "Role",
+          "value": "Former Core Member / Web Developer"
+        },
+        {
+          "label": "Organization",
+          "value": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "label": "Associated projects",
+          "value": "KaryON, The Kalesh"
+        },
+        {
+          "label": "Founding cohort",
+          "value": "The Sinister Six (Sand Tank Phase)"
+        }
+      ],
+      "verifiedAt": "2026-09-04",
+      "updatedAt": "2026-09-04",
+      "relationships": [
+        {
+          "type": "Worked at",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Engineering",
+          "targetId": "karyon",
+          "targetName": "KaryON",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/karyon"
+        },
+        {
+          "type": "Engineering",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-team-roster",
+          "title": "DIMISI Technologies team roster",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "id": "src-karyon-official",
+          "title": "KaryON — Professional Home Services Platform",
+          "publisher": "DIMISI Technologies / KaryON",
+          "url": "https://karyon.app"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/people/somya-tiwari#person",
+      "id": "somya-tiwari",
+      "slug": "somya-tiwari",
+      "canonicalUrl": "https://www.dimisipedia.me/people/somya-tiwari",
+      "name": "Somya Tiwari",
+      "alternateNames": [],
+      "entityType": "person",
+      "subtitle": "Full Stack Developer & Client Project Manager — DIMISI Technologies",
+      "shortDescription": "Full Stack Developer and Client Project Manager at DIMISI Technologies, 3rd Position holder in the 30-Day LinkedIn Challenge, and coordinator for commercial client deliveries.",
+      "answer": "Somya Tiwari is a Full Stack Developer & Client Project Manager at DIMISI Technologies Private Limited, leading client management and web delivery for commercial projects such as Rudra Tours & Travels, and holding 3rd Position in the 30-Day LinkedIn Challenge.",
+      "disambiguatingDescription": "Full Stack Developer and Client Project Manager at DIMISI Technologies Private Limited, leading commercial web deliveries including Rudra Tours & Travels, and 3rd Position holder in the 30-Day LinkedIn Challenge.",
+      "facts": [
+        {
+          "label": "Role",
+          "value": "Full Stack Developer & Client Project Manager"
+        },
+        {
+          "label": "Organization",
+          "value": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "label": "Key client delivery",
+          "value": "Rudra Tours & Travels (Web Delivery)"
+        },
+        {
+          "label": "Milestone award",
+          "value": "3rd Position — LinkedIn 30-Day Challenge"
+        }
+      ],
+      "verifiedAt": "2026-10-11",
+      "updatedAt": "2026-10-11",
+      "relationships": [
+        {
+          "type": "Works at",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Participated in",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Engineering",
+          "targetId": "rudra-tours",
+          "targetName": "Rudra Tours & Travels",
+          "targetType": "project",
+          "targetUrl": "https://www.dimisipedia.me/projects/rudra-tours"
+        },
+        {
+          "type": "Works at",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-team-roster",
+          "title": "DIMISI Technologies team roster",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        },
+        {
+          "id": "src-rudra-official",
+          "title": "Rudra Tours & Travels — official website",
+          "publisher": "Rudra Tours & Travels",
+          "url": "https://www.toursbyrudra.com"
+        },
+        {
+          "id": "src-linkedin-challenge-felicitation",
+          "title": "LinkedIn 30-Day Kalesh Challenge & Felicitation Ceremony Records",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/people/swatantra-singh#person",
+      "id": "swatantra-singh",
+      "slug": "swatantra-singh",
+      "canonicalUrl": "https://www.dimisipedia.me/people/swatantra-singh",
+      "name": "Swatantra Singh",
+      "alternateNames": [],
+      "entityType": "person",
+      "subtitle": "Co-Founder & CTO · DIMISI Technologies",
+      "shortDescription": "Technology executive and engineer; co-founder, director and chief technology officer of DIMISI Technologies Private Limited.",
+      "answer": "Swatantra Singh is a technology executive and software engineer associated with DIMISI Technologies Private Limited in Kanpur, Uttar Pradesh. He is a co-founder, director and Chief Technology Officer (CTO) of the company, responsible for platform architecture, systems engineering, and technical scalability across the DIMISI product ecosystem.",
+      "facts": [
+        {
+          "label": "Born",
+          "value": "30 August 2000 (age 26), Kanpur, Uttar Pradesh, India"
+        },
+        {
+          "label": "Occupation",
+          "value": "Technology executive, engineer"
+        },
+        {
+          "label": "Organization",
+          "value": "DIMISI Technologies Private Limited"
+        },
+        {
+          "label": "Roles",
+          "value": "Co-Founder · Director · Chief Technology Officer"
+        },
+        {
+          "label": "Location",
+          "value": "Kanpur, Uttar Pradesh, India"
+        },
+        {
+          "label": "Known for",
+          "value": "DIMISI Technologies, Kalesh platform architecture"
+        },
+        {
+          "label": "Education",
+          "value": "B.Tech, Computer Science & Engineering — Axis Colleges (2023–2026)"
+        }
+      ],
+      "verifiedAt": "2026-08-21",
+      "updatedAt": "2026-08-21",
+      "relationships": [
+        {
+          "type": "Technical leadership",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Engineering",
+          "targetId": "dimisi-corporate-platform",
+          "targetName": "DIMISI Technologies",
+          "targetType": "project",
+          "targetUrl": "https://www.dimisipedia.me/projects/dimisi-corporate-platform"
+        },
+        {
+          "type": "Co-Founder of",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Director of",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "CTO of",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Operational association",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Technical leadership",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Participated in",
+          "targetId": "gandhigiri-project-showcase",
+          "targetName": "Gandhigiri Technical Project Showcase 2024",
+          "targetType": "event",
+          "targetUrl": "https://www.dimisipedia.me/events/gandhigiri-project-showcase"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-corporate-record",
+          "title": "DIMISI Technologies Private Limited — corporate information",
+          "publisher": "Corporate information supplied by DIMISI Technologies"
+        },
+        {
+          "id": "src-kalesh-team",
+          "title": "Kalesh — platform team page",
+          "publisher": "Kalesh (DIMISI Technologies)",
+          "url": "https://thekalesh.com"
+        },
+        {
+          "id": "src-swatantra-crunchbase",
+          "title": "Swatantra Singh — Crunchbase executive profile",
+          "publisher": "Crunchbase",
+          "url": "https://www.crunchbase.com/person/swatantra-singh-5f2b"
+        },
+        {
+          "id": "src-falconebiz-registry",
+          "title": "DIMISI Technologies Private Limited — corporate registry listing (MCA-derived)",
+          "publisher": "FalconEbiz",
+          "url": "https://www.falconebiz.com/company/DIMISI-TECHNOLOGIES-PRIVATE-LIMITED-U62013UP2026PTC246506"
+        },
+        {
+          "id": "src-planetexim-director",
+          "title": "Swatantra Singh — director profile (MCA-derived)",
+          "publisher": "PlanetExim"
+        },
+        {
+          "id": "src-tracxn-dimisi",
+          "title": "DIMISI Technologies — company profile and director listing",
+          "publisher": "Tracxn",
+          "url": "https://tracxn.com/d/companies/dimisi-technologies"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/technology/tailwind-css#technology",
+      "id": "tailwind-css",
+      "slug": "tailwind-css",
+      "canonicalUrl": "https://www.dimisipedia.me/technology/tailwind-css",
+      "name": "Tailwind CSS",
+      "alternateNames": [],
+      "entityType": "technology",
+      "subtitle": "Technology",
+      "shortDescription": "Tailwind CSS is a utility-first CSS framework used across DIMISI Technologies web platforms.",
+      "answer": "Tailwind CSS is a utility-first CSS framework used across DIMISI Technologies web platforms.",
+      "facts": [
+        {
+          "label": "Category",
+          "value": "Software technology"
+        },
+        {
+          "label": "Used in",
+          "value": "DIMISI Technologies, Rudra Tours & Travels, Yadhuvanshi Tours & Travels, DIMISIPEDIA"
+        }
+      ],
+      "verifiedAt": "2026-08-15",
+      "updatedAt": "2026-08-15",
+      "relationships": [
+        {
+          "type": "Used by",
+          "targetId": "dimisi-corporate-platform",
+          "targetName": "DIMISI Technologies",
+          "targetType": "project",
+          "targetUrl": "https://www.dimisipedia.me/projects/dimisi-corporate-platform"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-kalesh-docs",
+          "title": "Kalesh project documentation",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/events/team-id-cards-ceremony#event",
+      "id": "team-id-cards-ceremony",
+      "slug": "team-id-cards-ceremony",
+      "canonicalUrl": "https://www.dimisipedia.me/events/team-id-cards-ceremony",
+      "name": "Team ID Cards & T-Shirts Distribution Ceremony",
+      "alternateNames": [],
+      "entityType": "event",
+      "subtitle": "Corporate Induction & Team Milestone",
+      "shortDescription": "Official internal ceremony distributing company ID credentials and branded corporate wear to the founding engineers, developers, interns, and leadership of DIMISI Technologies.",
+      "answer": "The Team ID Cards & T-Shirts Distribution Ceremony was a major internal milestone celebrating the growth of DIMISI Technologies. During the event, Founder & CEO Shikhar Dixit and executive leadership presented official company ID credentials and branded wear to the core team and engineering interns.",
+      "facts": [
+        {
+          "label": "Location",
+          "value": "DIMISI Headquarters, Kanpur, UP"
+        },
+        {
+          "label": "Presided by",
+          "value": "Shikhar Dixit (Founder & CEO)"
+        },
+        {
+          "label": "Attendees",
+          "value": "Founding leadership, core engineers, interns"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "updatedAt": "2026-11-10",
+      "relationships": [
+        {
+          "type": "Related to",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-services-portfolio",
+          "title": "DIMISI Technologies — Enterprise Services Portfolio",
+          "publisher": "DIMISI Technologies Pvt. Ltd.",
+          "url": "https://dimisi.tech"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/technology/typescript#technology",
+      "id": "typescript",
+      "slug": "typescript",
+      "canonicalUrl": "https://www.dimisipedia.me/technology/typescript",
+      "name": "TypeScript",
+      "alternateNames": [],
+      "entityType": "technology",
+      "subtitle": "Technology",
+      "shortDescription": "TypeScript is a typed superset of JavaScript recorded in DIMISI project documentation.",
+      "answer": "TypeScript is a typed superset of JavaScript recorded in DIMISI project documentation.",
+      "facts": [
+        {
+          "label": "Category",
+          "value": "Software technology"
+        },
+        {
+          "label": "Used in",
+          "value": "Kalesh, DIMISIPEDIA"
+        }
+      ],
+      "verifiedAt": "2026-08-15",
+      "updatedAt": "2026-08-15",
+      "relationships": [
+        {
+          "type": "Used by",
+          "targetId": "kalesh",
+          "targetName": "Kalesh",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/kalesh"
+        },
+        {
+          "type": "Used by",
+          "targetId": "dimisipedia",
+          "targetName": "DIMISIPEDIA",
+          "targetType": "product",
+          "targetUrl": "https://www.dimisipedia.me/products/dimisipedia"
+        },
+        {
+          "type": "Used by",
+          "targetId": "dimisi-corporate-platform",
+          "targetName": "DIMISI Technologies",
+          "targetType": "project",
+          "targetUrl": "https://www.dimisipedia.me/projects/dimisi-corporate-platform"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-kalesh-docs",
+          "title": "Kalesh project documentation",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/technology/vite#technology",
+      "id": "vite",
+      "slug": "vite",
+      "canonicalUrl": "https://www.dimisipedia.me/technology/vite",
+      "name": "Vite",
+      "alternateNames": [],
+      "entityType": "technology",
+      "subtitle": "Technology",
+      "shortDescription": "Vite is a front-end build tool recorded in DIMISI project documentation.",
+      "answer": "Vite is a front-end build tool recorded in DIMISI project documentation.",
+      "facts": [
+        {
+          "label": "Category",
+          "value": "Software technology"
+        },
+        {
+          "label": "Used in",
+          "value": "Kalesh, DIMISIPEDIA"
+        }
+      ],
+      "verifiedAt": "2026-08-15",
+      "updatedAt": "2026-08-15",
+      "relationships": [],
+      "sources": [
+        {
+          "id": "src-kalesh-docs",
+          "title": "Kalesh project documentation",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/services/website-development#service",
+      "id": "website-development",
+      "slug": "website-development",
+      "canonicalUrl": "https://www.dimisipedia.me/services/website-development",
+      "name": "Website Development",
+      "alternateNames": [],
+      "entityType": "service",
+      "subtitle": "Modern, High-Performance Web Architecture & Full-Stack Solutions",
+      "shortDescription": "End-to-end full-stack website development engineering high-performance, mobile-responsive, and SEO-optimized digital web platforms using Next.js, React, and TypeScript.",
+      "answer": "Website Development at DIMISI Technologies is an engineering service focused on designing, building, and deploying fast, responsive, and secure web applications. The stack leverages Next.js, React, TypeScript, and modern headless CMS architectures with automated search engine, voice search, and AI answer engine optimizations.",
+      "facts": [
+        {
+          "label": "Service provider",
+          "value": "DIMISI Technologies Private Limited"
+        },
+        {
+          "label": "Core technologies",
+          "value": "Next.js, React, TypeScript, Tailwind CSS, Node.js"
+        },
+        {
+          "label": "Primary focus",
+          "value": "Speed, Core Web Vitals, AEO/GEO Discoverability, Mobile-First"
+        },
+        {
+          "label": "Delivery model",
+          "value": "Custom Architecture & B2B Solutions"
+        }
+      ],
+      "verifiedAt": "2026-11-10",
+      "updatedAt": "2026-11-10",
+      "relationships": [
+        {
+          "type": "Related to",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-services-portfolio",
+          "title": "DIMISI Technologies — Enterprise Services Portfolio",
+          "publisher": "DIMISI Technologies Pvt. Ltd.",
+          "url": "https://dimisi.tech"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@id": "https://www.dimisipedia.me/projects/yadhuvanshi-tours#project",
+      "id": "yadhuvanshi-tours",
+      "slug": "yadhuvanshi-tours",
+      "canonicalUrl": "https://www.dimisipedia.me/projects/yadhuvanshi-tours",
+      "name": "Yadhuvanshi Tours & Travels",
+      "alternateNames": [],
+      "entityType": "project",
+      "subtitle": "Client Project — Premium Travel, Tourism & Wedding Transportation Platform",
+      "shortDescription": "Luxury travel and wedding transportation digital platform engineered by DIMISI Technologies with Next.js, experience-led design, and multi-intent search architecture.",
+      "answer": "Yadhuvanshi Tours & Travels is a Kanpur-based luxury travel, tour operator, and wedding transportation specialist whose digital platform and brand experience were designed, developed, and deployed by DIMISI Technologies. Built with Next.js around the brand positioning 'Wander Beyond Ordinary', the platform features cinematic destination discovery, an extensive luxury and wedding fleet catalogue, and structured SEO, AEO, and GEO architectures.",
+      "facts": [
+        {
+          "label": "Client",
+          "value": "Yadhuvanshi Tours & Travels"
+        },
+        {
+          "label": "Category",
+          "value": "Client Project"
+        },
+        {
+          "label": "Project type",
+          "value": "Client Website Development + Digital Brand Building"
+        },
+        {
+          "label": "Industry",
+          "value": "Travel, Tourism, Car Rental & Wedding Travel"
+        },
+        {
+          "label": "Location",
+          "value": "Kanpur, Uttar Pradesh, India"
+        },
+        {
+          "label": "Technology",
+          "value": "Next.js, React, TypeScript, Tailwind CSS"
+        },
+        {
+          "label": "Brand positioning",
+          "value": "“Wander Beyond Ordinary”"
+        },
+        {
+          "label": "Specialization",
+          "value": "Luxury Fleet, India Tour Packages & Dedicated Wedding Travel (500+ weddings served)"
+        },
+        {
+          "label": "Services delivered",
+          "value": "UI/UX Design, Web Development, SEO, AEO, GEO Optimization, Testing, Security, Deployment, Brand Building"
+        },
+        {
+          "label": "Status",
+          "value": "Active / Production"
+        },
+        {
+          "label": "Website",
+          "value": "yadhuvanshitours.com"
+        }
+      ],
+      "verifiedAt": "2026-09-04",
+      "updatedAt": "2026-09-04",
+      "relationships": [
+        {
+          "type": "Developed by",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Developed by",
+          "targetId": "dimisi-technologies",
+          "targetName": "DIMISI Technologies",
+          "targetType": "organization",
+          "targetUrl": "https://www.dimisipedia.me/organizations/dimisi-technologies"
+        },
+        {
+          "type": "Uses technology",
+          "targetId": "next-js",
+          "targetName": "Next.js",
+          "targetType": "technology",
+          "targetUrl": "https://www.dimisipedia.me/technology/next-js"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-yadhuvanshi-official",
+          "title": "Yadhuvanshi Tours & Travels — official website",
+          "publisher": "Yadhuvanshi Tours & Travels",
+          "url": "https://www.yadhuvanshitours.com"
+        },
+        {
+          "id": "src-dimisi-client-portfolio",
+          "title": "DIMISI Technologies Client Project Records",
+          "publisher": "DIMISI Technologies Pvt. Ltd."
+        }
+      ]
+    }
+  ]
+}

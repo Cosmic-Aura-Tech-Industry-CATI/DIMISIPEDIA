@@ -34,10 +34,12 @@ export function abs(path: string): string {
 const FRAGMENT: Record<string, string> = {
   person: "person",
   organization: "organization",
+  product: "software",
   project: "project",
   technology: "technology",
   event: "event",
   article: "article",
+  service: "service",
 };
 
 /** Internal universal entity id, e.g. "person:shikhar-dixit". */
@@ -92,10 +94,16 @@ export function refNode(entity: Entity): Json {
     entity.entityType === "person"
       ? "Person"
       : entity.entityType === "organization"
-        ? "Organization"
-        : entity.entityType === "technology"
-          ? "DefinedTerm"
-          : "CreativeWork";
+        ? "Corporation"
+        : entity.entityType === "product"
+          ? "SoftwareApplication"
+          : entity.entityType === "service"
+            ? "Service"
+            : entity.entityType === "event"
+              ? "Event"
+              : entity.entityType === "technology"
+                ? "DefinedTerm"
+                : "CreativeWork";
   return clean({
     "@type": type,
     "@id": entityId(entity),
@@ -114,11 +122,11 @@ export function buildWebsiteSchema(): Json {
     inLanguage: "en",
     description:
       "DIMISIPEDIA is an authoritative entity knowledge platform documenting DIMISI Technologies Pvt. Ltd., its founders, enterprise business software solutions, products, engineering architecture, and corporate history.",
-    publisher: { "@id": `${SITE_URL}/dimisi-technologies#organization` },
+    publisher: { "@id": `${SITE_URL}/organizations/dimisi-technologies#organization` },
     author: {
-      "@type": "Organization",
-      "@id": `${SITE_URL}/dimisi-technologies#organization`,
-      name: "DIMISI Technologies Pvt. Ltd.",
+      "@type": "Corporation",
+      "@id": `${SITE_URL}/organizations/dimisi-technologies#organization`,
+      name: "DIMISI Technologies Private Limited",
     },
     datePublished: "2026-04-09T00:00:00+05:30",
     dateModified: "2026-10-31T20:30:00+05:30",
@@ -150,19 +158,25 @@ export function buildSiteNavigationSchema(): Json {
     },
     {
       name: "DIMISI Technologies",
-      url: `${SITE_URL}/dimisi-technologies`,
+      url: `${SITE_URL}/organizations/dimisi-technologies`,
       description:
         "Corporate overview, CIN: U62013UP2026PTC246506, leadership, enterprise business software solutions, and products of DIMISI Technologies Pvt. Ltd.",
     },
     {
-      name: "DIMISIPEDIA Blog",
-      url: `${SITE_URL}/blog`,
+      name: "AI Knowledge Hub",
+      url: `${SITE_URL}/ai-knowledge`,
       description:
-        "Official blog featuring engineering architecture, technology analysis, and leadership perspectives by Shikhar Dixit.",
+        "Global AI Knowledge Graph, 16-Question FAQ system, and machine-readable entity discovery center.",
+    },
+    {
+      name: "Products Directory",
+      url: `${SITE_URL}/products`,
+      description:
+        "Proprietary products including Kalesh, KAAND, CATI Khelghar, DIMISI-OPS, and KaryON.",
     },
     {
       name: "Kalesh Platform",
-      url: `${SITE_URL}/projects/kalesh`,
+      url: `${SITE_URL}/products/kalesh`,
       description:
         "Anonymous social polling and engagement platform developed by DIMISI Technologies.",
     },
@@ -332,11 +346,11 @@ export function buildPersonSchema(entity: Entity): Json {
         : `${entity.name} serves as ${entity.subtitle || "software engineering contributor"} at DIMISI Technologies Private Limited.`;
 
   const dimisiOrgNode = {
-    "@type": "Organization",
-    "@id": `${SITE_URL}/dimisi-technologies#organization`,
+    "@type": "Corporation",
+    "@id": `${SITE_URL}/organizations/dimisi-technologies#organization`,
     name: ORG_NAME,
     legalName: "DIMISI Technologies Private Limited",
-    url: `${SITE_URL}/dimisi-technologies`,
+    url: `${SITE_URL}/organizations/dimisi-technologies`,
   };
 
   const personWorksFor =
@@ -538,19 +552,27 @@ export function buildOrganizationSchema(entity: Entity): Json {
     entity.facts.find((f) => f.label.toLowerCase() === label.toLowerCase())?.value;
 
   return clean({
-    "@type": "Organization",
+    "@type": "Corporation",
     "@id": entityId(entity),
-    name: ORG_NAME,
-    alternateName: entity.name !== ORG_NAME ? entity.name : "DIMISI",
+    name: "DIMISI Technologies Private Limited",
+    alternateName: ["DIMISI Technologies", "DIMISI"],
     legalName: fact("Legal name") ?? "DIMISI Technologies Private Limited",
     logo: entity.image ? abs(entity.image) : abs("/images/dimisi-logo.png"),
     image: entity.image ? abs(entity.image) : abs("/images/dimisi-logo.png"),
     description: entity.answer || entity.shortDescription,
-    url: abs(entity.path),
+    url: "https://www.dimisi.tech/",
     mainEntityOfPage: { "@id": pageId(entity.path) },
     foundingDate: fact("Incorporated") ?? fact("Founded") ?? "2026-04-09",
     taxID: fact("CIN") ?? "U62013UP2026PTC246506",
-    identifier: fact("CIN") ?? "U62013UP2026PTC246506",
+    identifier: {
+      "@type": "PropertyValue",
+      propertyID: "CIN",
+      value: "U62013UP2026PTC246506",
+    },
+    brand: {
+      "@type": "Brand",
+      name: "DIMISI",
+    },
     slogan:
       "Engineering Scalable Business Software, Digital Products & Intelligent Enterprise Systems",
     knowsAbout: entity.knowsAbout ?? [
@@ -619,14 +641,12 @@ export function buildOrganizationSchema(entity: Entity): Json {
         },
       ],
     },
-    founder: Array.from(new Map(founders.map((r) => [r.entity.id, r.entity])).values()).map(
-      (e) => ({
-        "@type": "Person",
-        "@id": entityId(e),
-        name: e.name,
-        url: abs(e.path),
-      }),
-    ),
+    founder: {
+      "@type": "Person",
+      "@id": "https://www.dimisipedia.me/people/shikhar-dixit#person",
+      name: "Shikhar Dixit",
+      url: "https://www.dimisipedia.me/people/shikhar-dixit",
+    },
     ceo: ceo
       ? {
           "@type": "Person",
@@ -677,7 +697,7 @@ export function buildOrganizationSchema(entity: Entity): Json {
         "@type": "ContactPoint",
         contactType: "customer service",
         email: "contact@dimisi.tech",
-        telephone: "+91-XXXXXXXXXX",
+        telephone: "+91-98894-39884",
         availableLanguage: ["English", "Hindi"],
         areaServed: "Worldwide",
       },
@@ -808,6 +828,70 @@ export function toIsoDateTime(d: string | undefined): string | undefined {
   return d;
 }
 
+export function buildServiceSchema(entity: Entity): Json {
+  return clean({
+    "@type": "Service",
+    "@id": entityId(entity),
+    name: entity.name,
+    description: entity.answer || entity.shortDescription,
+    url: abs(entity.path),
+    provider: {
+      "@type": "Corporation",
+      "@id": "https://www.dimisipedia.me/organizations/dimisi-technologies#organization",
+      name: "DIMISI Technologies Private Limited",
+      url: "https://www.dimisi.tech/",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "India",
+    },
+    serviceType: entity.name,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", ".lead-paragraph", "p"],
+    },
+  });
+}
+
+export function buildEventSchema(entity: Entity): Json {
+  const fact = (label: string) =>
+    entity.facts.find((f) => f.label.toLowerCase() === label.toLowerCase())?.value;
+
+  return clean({
+    "@type": "Event",
+    "@id": entityId(entity),
+    name: entity.name,
+    description: entity.answer || entity.shortDescription,
+    url: abs(entity.path),
+    startDate: fact("Date") ?? fact("Date of Incorporation") ?? "2026-04-09",
+    location: {
+      "@type": "Place",
+      name: fact("Location") ?? fact("Venue") ?? "Kanpur, Uttar Pradesh, India",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Kanpur",
+        addressRegion: "Uttar Pradesh",
+        addressCountry: "IN",
+      },
+    },
+    organizer: {
+      "@type": "Organization",
+      name: fact("Organizer") ?? "DIMISI Technologies Private Limited",
+      url: "https://www.dimisi.tech/",
+    },
+    performer: {
+      "@type": "Person",
+      "@id": "https://www.dimisipedia.me/people/shikhar-dixit#person",
+      name: "Shikhar Dixit",
+      url: "https://www.dimisipedia.me/people/shikhar-dixit",
+    },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", ".lead-paragraph", "p"],
+    },
+  });
+}
+
 export function buildEntitySchema(entity: Entity): Json {
   switch (entity.entityType) {
     case "person":
@@ -816,6 +900,12 @@ export function buildEntitySchema(entity: Entity): Json {
       return buildOrganizationSchema(entity);
     case "technology":
       return buildTechnologySchema(entity);
+    case "service":
+      return buildServiceSchema(entity);
+    case "event":
+      return buildEventSchema(entity);
+    case "product":
+    case "project":
     default:
       return buildProjectSchema(entity);
   }
@@ -852,9 +942,9 @@ export function buildEntityPageSchema(entity: Entity): Json {
     inLanguage: "en",
     isPartOf: { "@id": `${SITE_URL}/#website` },
     author: {
-      "@type": "Organization",
-      "@id": `${SITE_URL}/dimisi-technologies#organization`,
-      name: "DIMISI Technologies Pvt. Ltd.",
+      "@type": "Corporation",
+      "@id": `${SITE_URL}/organizations/dimisi-technologies#organization`,
+      name: "DIMISI Technologies Private Limited",
     },
     datePublished: toIsoDateTime(entity.createdAt) ?? "2026-04-09T00:00:00+05:30",
     dateModified: toIsoDateTime(entity.updatedAt) ?? "2026-10-31T20:30:00+05:30",
@@ -863,7 +953,6 @@ export function buildEntityPageSchema(entity: Entity): Json {
       cssSelector: ["h1", ".speakable-summary", "p"],
     },
     dateCreated: toIsoDateTime(entity.createdAt),
-    dateModified: toIsoDateTime(entity.updatedAt),
     breadcrumb: { "@id": `${abs(entity.path)}#breadcrumb` },
     primaryImageOfPage: imageObj ? { "@id": `${abs(entity.path)}#primaryimage` } : undefined,
     image: imageObj,
@@ -991,9 +1080,9 @@ export function indexHead(opts: {
         inLanguage: "en",
         isPartOf: { "@id": `${SITE_URL}/#website` },
         author: {
-          "@type": "Organization",
-          "@id": `${SITE_URL}/dimisi-technologies#organization`,
-          name: "DIMISI Technologies Pvt. Ltd.",
+          "@type": "Corporation",
+          "@id": `${SITE_URL}/organizations/dimisi-technologies#organization`,
+          name: "DIMISI Technologies Private Limited",
         },
         datePublished: "2026-04-09T00:00:00+05:30",
         dateModified: "2026-10-31T20:30:00+05:30",
@@ -1133,7 +1222,7 @@ export function buildArticleSchema(article: Article): Json {
         name: author.name,
         url: abs(author.entity.path),
         jobTitle: author.entity.subtitle || (isShikhar ? "Founder & CEO" : "Executive"),
-        sameAs: sameAsUrls(author.entity),
+        sameAs: verifiedProfileUrls(author.entity),
       }
     : {
         "@type": "Person",
@@ -1169,10 +1258,10 @@ export function buildArticleSchema(article: Article): Json {
     },
     author: authorSchema,
     publisher: {
-      "@type": "Organization",
-      "@id": `${SITE_URL}/dimisi-technologies#organization`,
-      name: "DIMISI Technologies Pvt. Ltd.",
-      url: `${SITE_URL}/dimisi-technologies`,
+      "@type": "Corporation",
+      "@id": `${SITE_URL}/organizations/dimisi-technologies#organization`,
+      name: "DIMISI Technologies Private Limited",
+      url: `${SITE_URL}/organizations/dimisi-technologies`,
       logo: {
         "@type": "ImageObject",
         url: `${SITE_URL}/images/dimisipedia-logo.png`,

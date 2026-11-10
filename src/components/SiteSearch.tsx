@@ -53,7 +53,7 @@ export function SiteSearch({
           if (q.trim()) {
             navigate({
               to: "/search",
-              search: { q: q.trim() } as unknown as Record<string, string>,
+              search: { q: q.trim() },
             });
           }
         }}

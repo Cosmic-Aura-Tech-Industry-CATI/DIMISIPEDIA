@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Allow: /api/v1/knowledge/
+Allow: /knowledge.json
 Disallow: /search
 Disallow: /seo-audit
 Disallow: /api/

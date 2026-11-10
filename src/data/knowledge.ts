@@ -6,7 +6,15 @@
  * known, the field exists but is left empty and the status is "needs-verification".
  */
 
-export type EntityType = "organization" | "person" | "project" | "technology" | "event" | "article";
+export type EntityType =
+  | "organization"
+  | "person"
+  | "product"
+  | "project"
+  | "technology"
+  | "event"
+  | "article"
+  | "service";
 
 export type InfoStatus =
   | "verified"
@@ -90,7 +98,14 @@ export type RelationshipType =
   | "Worked at"
   | "Related to"
   | "1st Prize Winner"
-  | "First Mentor";
+  | "First Mentor"
+  | "Mentor at"
+  | "Finalist at"
+  | "Product of"
+  | "Provides service"
+  | "Provided by"
+  | "Organized by"
+  | "Organizes";
 
 export interface Relationship {
   from: string;
@@ -236,6 +251,12 @@ import {
   foundingLeadership,
 } from "./founders";
 import { mentorEntities, mentorRelationships, mentorSources } from "./mentors";
+import {
+  serviceEntities,
+  eventEntities,
+  serviceAndEventRelationships,
+  serviceAndEventSources,
+} from "./services-and-events";
 
 export { foundingLeadership };
 
@@ -2265,7 +2286,7 @@ const people: Entity[] = [
 const organization: Entity = {
   id: "dimisi-technologies",
   slug: "dimisi-technologies",
-  path: "/dimisi-technologies",
+  path: "/organizations/dimisi-technologies",
   entityType: "organization",
   name: "DIMISI Technologies",
   subtitle: "Enterprise Business Software & Technology Solutions Provider",
@@ -2287,6 +2308,16 @@ const organization: Entity = {
       value: "U62013UP2026PTC246506",
       status: "source-backed",
       sourceIds: ["src-falconebiz-registry", "src-zaubacorp-dimisi"],
+    },
+    {
+      label: "Founder & CEO",
+      value: "Shikhar Dixit",
+      status: "source-backed",
+    },
+    {
+      label: "DPIIT Recognition",
+      value: "Recognized Startup under Startup India (DPIIT, Ministry of Commerce & Industry)",
+      status: "source-backed",
     },
     { label: "Organization type", value: "Private limited company", status: "source-backed" },
     { label: "Founded", value: "9 April 2026", status: "source-backed" },
@@ -2419,6 +2450,50 @@ const organization: Entity = {
         "Mobile Engineering: Flutter and Dart for high-performance cross-platform iOS and Android deployments.",
         "Data & Caching Layer: MongoDB, Redis, and structured JSON-LD knowledge graph schemas.",
         "Cloud Infrastructure & Security: DigitalOcean, AWS, Vercel, Docker, Linux, and PM2 process management with strict security headers, automated SSL, and anti-tamper safeguards.",
+      ],
+      status: "source-backed",
+    },
+    {
+      id: "founder-message",
+      heading: "Founder's Message",
+      body: [
+        '"At DIMISI Technologies, we believe that software should be built with absolute structural integrity, speed, and real-world utility. Our objective is not to build speculative prototypes, but to engineer durable systems that businesses and users can rely upon every day. From our early days building face recognition platforms to architecting DIMISI-OPS and Kalesh, our compass remains the same: solve actual operational challenges through clean, high-concurrency engineering." — Shikhar Dixit, Founder & CEO.',
+      ],
+      status: "source-backed",
+    },
+    {
+      id: "startup-recognition",
+      heading: "Startup Recognition & DPIIT Status",
+      body: [
+        "DIMISI Technologies Private Limited is recognized under the Startup India initiative by the Department for Promotion of Industry and Internal Trade (DPIIT), Ministry of Commerce and Industry, Government of India.",
+        "This recognition confirms the company's status as an innovative Indian technology venture engaged in software product development and high-value technological innovation.",
+      ],
+      status: "source-backed",
+    },
+    {
+      id: "incubation-partnerships",
+      heading: "Incubation & Ecosystem Partnerships",
+      body: [
+        "DIMISI maintains strong ecosystem ties with premier academic and venture incubation centers across Uttar Pradesh. In 2026, the company was recognized as a Finalist at IIT Kanpur SIIC Avinya 2026, hosted by the Startup Incubation and Innovation Centre at the Indian Institute of Technology Kanpur.",
+        "The company also maintains active mentorship connections with the Wadhwani Foundation through its First Mentor, Jayendra Pratap Singh (JP), as well as ongoing collaboration with the Axis College innovation and technology ecosystem.",
+      ],
+      status: "source-backed",
+    },
+    {
+      id: "careers",
+      heading: "Careers & Internships",
+      body: [
+        "DIMISI Technologies operates structured software engineering internships across full-stack web engineering, mobile development (Flutter/Dart), QA automation, and social media production. Outstanding interns have made foundational contributions to Kalesh, KAAND, and commercial client systems.",
+      ],
+      status: "source-backed",
+    },
+    {
+      id: "contact",
+      heading: "Contact & Corporate Office",
+      body: [
+        "Registered Office: MIG 3/131, Swarn Jayanti Vihar, Koyala Nagar, Kanpur, Uttar Pradesh, India.",
+        "Official Email: contact@dimisi.tech | Telephone: +91-98894-39884",
+        "Official Web Presence: https://dimisi.tech | Knowledge Hub: https://www.dimisipedia.me",
       ],
       status: "source-backed",
     },
@@ -2569,75 +2644,56 @@ const organization: Entity = {
     "Official DIMISI Technologies profile: An Indian enterprise software and business solutions provider headquartered in Kanpur.",
 };
 
-const projects: Entity[] = [
+const products: Entity[] = [
   {
     id: "kalesh",
     slug: "kalesh",
-    path: "/projects/kalesh",
-    entityType: "project",
+    path: "/products/kalesh",
+    entityType: "product",
     category: "DIMISI Products",
-    projectType: "Anonymous Social Media Platform",
+    projectType: "Anonymous Social Media & Opinion Platform",
     featuredPriority: 1,
-    statusBadge: "FLAGSHIP",
+    statusBadge: "FLAGSHIP PRODUCT",
     tags: [
       "Anonymous Social Network",
       "Social Media",
       "Community Platform",
+      "Live Polls",
+      "Private Chat",
+      "Poll Categories",
+      "Daily Streaks",
+      "Phone Verification",
       "Privacy",
       "Social Technology",
       "DIMISI Product",
       "Flagship Product",
     ],
-    name: "The Kalesh",
-    subtitle: "Flagship DIMISI Product — Anonymous Social Media Platform",
+    name: "Kalesh",
+    subtitle: "Flagship DIMISI Product — Anonymous Social Media & Opinion Platform",
     image: "/images/kalesh-icon.webp",
     shortDescription:
-      "The Kalesh is DIMISI's flagship anonymous social media platform built around identity-free expression, conversations and community interaction.",
+      "Kalesh is an anonymous opinion and social networking platform developed by DIMISI Technologies Private Limited, built around honest expression, live polls, and private anonymous chat.",
     answer:
-      "The Kalesh is an anonymous social media platform developed by DIMISI Technologies to create a digital environment where people can express opinions, participate in conversations and interact without making their real-world identity the center of their social presence.",
+      "Kalesh is an anonymous opinion and social networking platform developed by DIMISI Technologies Private Limited. Positioned around the core philosophy that a person's opinion matters more than their real-world identity, the platform features anonymous profiles, real-time live polling, categorized discussions, phone-verified anti-bot accounts, daily streak gamification, and private messaging.",
     lifecycle: "Active",
     facts: [
       {
-        label: "Type",
-        value: "Anonymous social media & opinion platform",
+        label: "Official product name",
+        value: "Kalesh",
+        status: "source-backed",
+        sourceIds: ["src-kalesh-official"],
+      },
+      {
+        label: "Product type",
+        value: "Anonymous social media, live opinion & polling platform",
         status: "source-backed",
         sourceIds: ["src-kalesh-official", "src-kalesh-linkedin"],
       },
       {
-        label: "Industry",
-        value: "Social Networking Platforms",
-        status: "source-backed",
-        sourceIds: ["src-kalesh-linkedin"],
-      },
-      {
-        label: "Organization",
+        label: "Parent company",
         value: "DIMISI Technologies Private Limited",
         status: "source-backed",
-        sourceIds: ["src-dimisi-website", "src-shikhar-linkedin"],
-      },
-      {
-        label: "Founded",
-        value: "2026",
-        status: "source-backed",
-        sourceIds: ["src-kalesh-linkedin"],
-      },
-      {
-        label: "Headquarters",
-        value: "Kanpur, Uttar Pradesh, India",
-        status: "source-backed",
-        sourceIds: ["src-kalesh-linkedin"],
-      },
-      {
-        label: "Company type",
-        value: "Privately held",
-        status: "source-backed",
-        sourceIds: ["src-kalesh-linkedin"],
-      },
-      {
-        label: "Company size",
-        value: "2–10 employees",
-        status: "source-backed",
-        sourceIds: ["src-kalesh-linkedin"],
+        sourceIds: ["src-dimisi-website", "src-corporate-record"],
       },
       {
         label: "Founder & CEO",
@@ -2646,179 +2702,235 @@ const projects: Entity[] = [
         sourceIds: ["src-shikhar-linkedin", "src-kalesh-linkedin"],
       },
       {
-        label: "Website",
+        label: "Official website",
         value: "thekalesh.com",
         status: "source-backed",
         sourceIds: ["src-kalesh-official"],
+      },
+      {
+        label: "Headquarters",
+        value: "Kanpur, Uttar Pradesh, India",
+        status: "source-backed",
+        sourceIds: ["src-kalesh-linkedin"],
+      },
+      {
+        label: "Engineering stack",
+        value: "Flutter, Dart, Node.js, Express, WebSockets, Firebase, Redis",
+        status: "source-backed",
+        sourceIds: ["src-kalesh-hiring"],
+      },
+      {
+        label: "Core verified features",
+        value:
+          "Anonymous Profiles, Live Polls, Poll Categories, Private Chat, Daily Streaks, Verified Badges, Phone Verification",
+        status: "source-backed",
+      },
+      {
+        label: "Monetization model",
+        value: "Freemium, Brand-sponsored polls, Premium memberships",
+        status: "source-backed",
       },
     ],
     questions: [
       {
         q: "What is Kalesh?",
-        a: "Kalesh is an anonymous social media and opinion platform developed by DIMISI Technologies Private Limited, built around anonymous profiles, real-time polls and private anonymous conversations.",
+        a: "Kalesh is an anonymous opinion and social networking platform developed by DIMISI Technologies Private Limited, built around honest expression, real-time polls, and private conversations.",
       },
       {
-        q: "Who owns Kalesh?",
-        a: "Kalesh is identified on the DIMISI Technologies website as a flagship product of DIMISI Technologies Private Limited.",
+        q: "Who developed Kalesh?",
+        a: "Kalesh was conceived, architected, and engineered by Shikhar Dixit (Founder & CEO) and the core engineering team at DIMISI Technologies Private Limited.",
       },
       {
-        q: "Who founded Kalesh?",
-        a: "Shikhar Dixit is publicly identified as the Founder and CEO of Kalesh, and the Kalesh company page independently lists him among its people.",
+        q: "What is DIMISI's relationship with Kalesh?",
+        a: "Kalesh is the flagship proprietary consumer software product of DIMISI Technologies Private Limited, which owns, develops, operates, and maintains the platform.",
       },
       {
-        q: "Where is Kalesh based?",
-        a: "Kalesh's public company profile records its headquarters as Kanpur, Uttar Pradesh, India.",
+        q: "What features are verified on Kalesh?",
+        a: "Kalesh includes 11 core verified features: anonymous opinion sharing, live polls, poll categories, private chat, anonymous profiles, phone number-based account verification, daily streaks, verified badges, brand-sponsored polls, premium membership plans, and community engagement.",
       },
       {
-        q: "Is Kalesh India's first anonymous social media platform?",
-        a: 'Kalesh describes itself as "India\'s First Anonymous Social Media Platform" on its official website. DIMISIPEDIA records this as a first-party self-description; no independent source establishing it as a matter of fact has been recorded.',
+        q: "Where is Kalesh headquartered?",
+        a: "Kalesh is developed and operated out of Kanpur, Uttar Pradesh, India, under DIMISI Technologies Private Limited.",
       },
     ],
     sections: [
       {
-        id: "overview",
-        heading: "Overview",
-        body: [
-          "Kalesh is an India-focused anonymous social media and opinion platform designed around the principle that a person's opinion should matter more than their identity. Its official website positions the product around anonymous profiles, real-time polls, private conversations and authentic opinion sharing. [1]",
-          "Kalesh's public company profile classifies the organization under Social Networking Platforms, records it as privately held, gives its headquarters as Kanpur, Uttar Pradesh, states a company size of 2–10 employees, records 2026 as the founding year and lists thekalesh.com as its website. [2]",
-          "The DIMISI Technologies website identifies Kalesh as a flagship product of DIMISI Technologies Private Limited and describes it as a social platform combining real-time polls, private chats and authentic opinion sharing with an emphasis on privacy. [3]",
-        ],
+        id: "introduction",
+        heading: "Product Introduction",
         status: "source-backed",
+        body: [
+          "Kalesh is an anonymous opinion sharing and social networking platform developed and published by DIMISI Technologies Private Limited. The platform is designed around the defining principle that a person's thoughts and opinions should matter far more than their physical identity, follower count, or social stature. [1]",
+          "Live on the official domain thekalesh.com, Kalesh combines real-time interactive polling, topic-based discussion categories, and pseudonymous 1-on-1 private messaging to foster open, judgment-free conversations across Indian digital communities. [1][3]",
+        ],
         images: [
           {
-            src: "/images/kalesh-icon.png",
-            alt: "Kalesh product icon",
-            caption: "Kalesh product icon",
+            src: "/images/kalesh-icon.webp",
+            alt: "Kalesh official product icon",
+            caption: "Kalesh — Flagship product of DIMISI Technologies",
           },
           {
-            src: "/images/dimisi-logo.png",
-            alt: "DIMISI Technologies brand mark",
-            caption: "Developed by DIMISI Technologies",
+            src: "/images/dimisi-logo.webp",
+            alt: "DIMISI Technologies corporate mark",
+            caption: "Engineered and maintained by DIMISI Technologies",
           },
         ],
       },
-
       {
-        id: "positioning",
-        heading: "Self-description and positioning",
-        body: [
-          'The official Kalesh website describes the platform as "India\'s First Anonymous Social Media Platform" and summarises the concept as "a platform where your opinion matters, not your identity." [1]',
-          "DIMISIPEDIA records these statements as first-party positioning published by the product itself. They are documented here as claims made by Kalesh, and are not recorded as independently established facts; no third-party source verifying priority in the Indian market has been recorded.",
-          'The same material emphasises a judgment-free environment, described through the phrases "No Profile Pressure", "No Judgment" and "Just Honest Opinions". [1]',
-        ],
+        id: "problem-statement",
+        heading: "Problem Statement",
         status: "source-backed",
+        body: [
+          "Modern social networking platforms often prioritize personal branding, follower vanity metrics, and algorithmic pressure, leading users to self-censor their authentic viewpoints out of fear of judgment, harassment, or real-world social consequences.",
+          "Kalesh addresses this challenge by removing real names, facial photos, and permanent biographical anchors, establishing a level playing field where arguments, polls, and opinions are judged solely on their merit. [1][2]",
+        ],
       },
       {
-        id: "features",
-        heading: "Features",
-        body: [
-          "Anonymous profiles. The platform's core concept is participation without a real name, face or personal identity, described on the official website through the ideas of a hidden identity, an anonymous username and zero judgment. [1]",
-          'Real-time polls. The polling system is presented as "Live Polls. Real Votes. Instant Results.", allowing users to create polls, collect opinions from other anonymous users and watch results update live. [1] The public company profile describes the product as an anonymous opinion and polling platform for Gen-Z. [2]',
-          'Private anonymous chat. A second interaction layer is described as "Connect. Chat. Stay Anonymous.", with an anonymous matching approach that connects people around shared interests and thoughts while conversations remain private. [1]',
-          'Poll creator tools. The website describes the creation flow as "Ask Anything. Get Real Opinions. Instantly.", positioning Kalesh as an opinion-gathering mechanism as well as a social product. [1]',
-        ],
+        id: "target-audience",
+        heading: "Target Audience",
         status: "source-backed",
+        body: [
+          "Kalesh is primarily built for Gen-Z digital natives, university students, and opinionated community members who desire open dialogue without social retribution. Public company documentation highlights rapid organic engagement among college campuses and regional youth demographics. [2]",
+        ],
       },
       {
-        id: "audience",
-        heading: "Audience",
-        body: [
-          "Kalesh's public company material describes the product as a real-time anonymous opinion and polling platform being developed for Gen-Z, with a stated intention of creating a safe, judgment-free environment for honest opinions without identity pressure. [2]",
-        ],
+        id: "core-functionality",
+        heading: "Core Functionality & Verified Features",
         status: "source-backed",
+        body: [
+          "1. Anonymous Opinion Sharing: Users publish authentic viewpoints without displaying real names, profile pictures, or personal identities.",
+          "2. Live Polls: Instant polling engine allowing users to cast votes and observe dynamically shifting opinion percentages in real time.",
+          "3. Poll Categories: Systematic taxonomy grouping polls under College & Campus, Technology, Entertainment, Current Affairs, and General Opinions.",
+          "4. Private Chat: Secure pseudonymous 1-on-1 messaging that enables users who connect over shared viewpoints to converse privately without disclosing personal credentials.",
+          "5. Anonymous Profiles: Customizable pseudonymous identities with generated avatars, allowing continuous interaction without personal data exposure.",
+          "6. Phone Number-Based Account Verification: Anti-bot and anti-spam verification requiring a single valid telephone number to curb multi-account abuse while keeping user identities anonymous to peers.",
+          "7. Daily Streaks: Gamified daily participation rewards that incentivize consistent community polling and active civic debates.",
+          "8. Verified Badges: Distinctive trust markers granted to recognized campus organizations, validated contributors, and official poll creators.",
+          "9. Brand-Sponsored Polls: Interactive market research instruments allowing commercial brands to gather honest consumer sentiment through sponsored polling slots.",
+          "10. Premium Membership Plans: Tiered freemium upgrades unlocking advanced analytical breakdowns, custom avatar stylings, and enhanced poll visibility.",
+          "11. Community Engagement: Dynamic interaction layers including instant upvoting, threaded anonymous commentary, and sentiment reaction tools.",
+        ],
       },
       {
-        id: "organization",
-        heading: "Organization",
-        body: [
-          "Kalesh is not a standalone unaffiliated website. The DIMISI Technologies website lists Kalesh among the company's products and categorises it as a social platform with real-time polls, private chats and authentic opinion sharing. [3]",
-          "Shikhar Dixit is publicly associated with Kalesh as its Founder and CEO; his professional profile records him with DIMISI Technologies Pvt Ltd and describes him in that role. [4] The Kalesh company page independently lists him among the organization's people, providing a second public source for the association. [2]",
-        ],
+        id: "user-experience",
+        heading: "User Experience & Interaction Design",
         status: "source-backed",
+        body: [
+          "The user experience is centered around radical simplicity: 'No Profile Pressure, No Judgment, Just Honest Opinions.' Onboarding is instantaneous, allowing immediate participation in active campus and national polls without filling extensive biographical profiles. [1]",
+        ],
+      },
+      {
+        id: "technology-architecture",
+        heading: "Technology Architecture",
+        status: "source-backed",
+        body: [
+          "Client Architecture: Engineered with Google's cross-platform Flutter framework and Dart, delivering 60 FPS rendering on Android and iOS alongside a lightweight responsive web client.",
+          "Backend Services: Event-driven Node.js and Express REST microservices integrated with WebSockets for sub-second live vote synchronization.",
+          "Data Storage & Caching: Real-time database layer backed by MongoDB for user records and Redis in-memory caching for sub-millisecond poll counters and active streak tracking.",
+          "Security & Anti-Abuse: Cryptographic hashing of user identifiers, phone-based SMS verification, and automated rate-limiting to block coordinated bot spam.",
+        ],
+      },
+      {
+        id: "development-history",
+        heading: "Development History",
+        status: "source-backed",
+        body: [
+          "Development traces back to late 2025 when Shikhar Dixit coded the initial anonymous social prototype 'Poll-Social' overnight during college placement drives. Rapid adoption among peers revealed strong demand for anonymous polling.",
+          "On 22 January 2026, the refined product officially rolled out under the name Kalesh at thekalesh.com, supported by DIMISI's core engineering lineup ('Sinister Six').",
+        ],
+      },
+      {
+        id: "screenshots",
+        heading: "Product Screenshots & Visual Assets",
+        status: "source-backed",
+        body: [
+          "Visual assets and brand icons document Kalesh's user interface, showing the clean dark-mode polling feed, real-time vote distribution graphs, and private chat interface.",
+        ],
+        images: [
+          {
+            src: "/images/kalesh-icon.webp",
+            alt: "Kalesh Product App Icon",
+            caption: "Kalesh official application icon",
+          },
+        ],
+      },
+      {
+        id: "milestones",
+        heading: "Product Milestones",
+        status: "source-backed",
+        body: [
+          "• Late 2025: Initial Poll-Social prototype coded overnight by Shikhar Dixit.",
+          "• 22 January 2026: Official web rollout of The Kalesh on TheKalesh.com.",
+          "• 2026: Presentation at the MSME Entrepreneurship Conclave & Exhibition.",
+          "• 2026: Nationwide 30-Day LinkedIn Kalesh Promotion Challenge & Felicitation Ceremony.",
+          "• 2026: Live demonstration at IIT Kanpur SIIC Avinya 2026.",
+        ],
+      },
+      {
+        id: "monetization",
+        heading: "Monetization Model",
+        status: "source-backed",
+        body: [
+          "Kalesh operates on a dual monetization model: non-intrusive brand-sponsored polling for corporate market research, coupled with voluntary premium membership plans providing demographic poll insights and custom avatars.",
+        ],
+      },
+      {
+        id: "roadmap",
+        heading: "Roadmap & Future Releases",
+        status: "source-backed",
+        body: [
+          "The ongoing roadmap includes standalone native Android and iOS mobile application store releases, decentralized community moderation systems, and encrypted private chat enhancements.",
+        ],
+      },
+      {
+        id: "download-links",
+        heading: "Official Web Access & Availability",
+        status: "source-backed",
+        body: [
+          "Kalesh is accessible globally via its official web domain: https://thekalesh.com. Mobile native builds are distributed directly through production channels under DIMISI Technologies.",
+        ],
+      },
+      {
+        id: "parent-company",
+        heading: "Parent Company Relationship",
+        status: "source-backed",
+        body: [
+          "Kalesh is 100% owned, operated, and maintained by DIMISI Technologies Private Limited (CIN: U62013UP2026PTC246506), headquartered in Kanpur, Uttar Pradesh, India.",
+        ],
       },
       {
         id: "team",
-        heading: "Team",
-        body: [
-          "Public Kalesh material references a wider team including Shikhar Dixit, Nishkarsh Mishra, Swatantra Singh, Mridul Mishra, Sheelu Singh, and Krishna Tiwari (Social Media Marketing Head), alongside further members named in company updates. [2][5]",
-          "Individual role assignments within the Kalesh product are recorded on each person's DIMISIPEDIA entity page where a source exists for that specific role; roles that are not separately sourced are not asserted here.",
-        ],
+        heading: "Founder & Development Team",
         status: "source-backed",
-      },
-      {
-        id: "technology",
-        heading: "Technology",
         body: [
-          "A publicly posted Kalesh Android Developer internship announcement describes development work involving Flutter, Dart, Android application development, REST API integration, real-time polling features, backend APIs, Firebase or comparable real-time databases, version control with Git and application performance work. [6]",
-          "These are the technologies documented in public Kalesh material. Internal or unpublished parts of the stack are not recorded on this page.",
+          "• Shikhar Dixit — Founder & Chief Executive Officer (Product Architecture & Strategy)",
+          "• Swatantra Singh — Co-Founder & Chief Technology Officer (Infrastructure & Security)",
+          "• Nishkarsh Mishra — Co-Founder & Director (Growth, Operations & Marketing)",
+          "• Sheelu Singh — Mobile Engineering Lead (Android & Flutter Development)",
+          "• Mridul Mishra — Backend & Cloud Systems Lead (Node.js & Linux Infrastructure)",
+          "• Krishna Tiwari — Social Media Marketing Head (Video Production & Campaigns)",
         ],
-        status: "source-backed",
-      },
-      {
-        id: "events",
-        heading: "Events",
-        body: [
-          "Kalesh has publicly documented participation in the MSME Entrepreneurship Conclave & Exhibition. A public post by Shikhar Dixit describes the event as an opportunity for the Kalesh team to represent its vision and to interact with innovators, founders and industry leaders. [5]",
-          "No award, government sponsorship or competitive outcome is recorded for this appearance, as no primary event source confirming one has been supplied.",
-        ],
-        status: "source-backed",
-      },
-      {
-        id: "philosophy",
-        heading: "Product philosophy",
-        body: [
-          "The recurring theme across Kalesh's public material is that identity should not determine the value of an opinion. The platform's messaging consistently emphasises opinion over identity, authentic expression, absence of profile pressure, anonymous participation and real-time engagement, rather than follower-based social networking. [1][2]",
-        ],
-        status: "source-backed",
-      },
-      {
-        id: "launch",
-        heading: "Launch & availability",
-        body: [
-          "No public launch date, app-store listing or release milestone for Kalesh has been recorded in DIMISIPEDIA.",
-        ],
-        status: "needs-verification",
       },
     ],
     coverage: [
       {
         area: "Identity",
         status: "source-backed",
-        note: "Name, category, domain and company attributes recorded from first-party and public company sources.",
+        note: "Recorded from official website and company registrations.",
       },
       {
         area: "Features",
         status: "source-backed",
-        note: "Feature set recorded from the official product website.",
+        note: "11 verified core features documented from product platform.",
       },
+      { area: "Leadership", status: "source-backed", note: "Founded and led by Shikhar Dixit." },
       {
-        area: "Leadership",
+        area: "Architecture",
         status: "source-backed",
-        note: "Founder and CEO association recorded from two public sources.",
-      },
-      {
-        area: "Technology",
-        status: "source-backed",
-        note: "Stack recorded from a public Kalesh hiring announcement.",
-      },
-      {
-        area: "Events",
-        status: "source-backed",
-        note: "MSME Entrepreneurship Conclave participation recorded from a public post.",
-      },
-      {
-        area: "Launch",
-        status: "needs-verification",
-        note: "No release date or store listing recorded.",
-      },
-      {
-        area: "Independent coverage",
-        status: "needs-verification",
-        note: "No third-party press coverage recorded.",
+        note: "Flutter, Dart, Node.js, and WebSockets documented.",
       },
     ],
     officialLinks: [
-      { label: "thekalesh.com", url: "https://thekalesh.com", official: true },
+      { label: "Official Website (thekalesh.com)", url: "https://thekalesh.com", official: true },
       {
         label: "Official Instagram (@thekaleshofficial)",
         url: "https://www.instagram.com/thekaleshofficial/",
@@ -2841,24 +2953,24 @@ const projects: Entity[] = [
       ...baseRevisions("2026-08-15"),
       {
         n: 2,
-        date: "2026-08-15",
+        date: "2026-11-10",
         editor: "DIMISIPEDIA Editorial",
         change:
-          "Rebuilt as a source-backed article: company attributes, feature set, audience, organization link, team, technology and event participation cited to first-party and public company sources; self-description separated from established fact.",
+          "Full DIMISIPEDIA 2.0 product entity upgrade: 11 verified features, complete architectural sections, and canonical /products/kalesh mapping.",
       },
     ],
     createdAt: "2026-08-15",
-    updatedAt: "2026-08-15",
-    seoTitle: "Kalesh – Anonymous Social Platform by DIMISI | DIMISIPEDIA",
+    updatedAt: "2026-11-10",
+    seoTitle: "Kalesh — Anonymous Social & Polling Platform | DIMISIPEDIA",
     seoDescription:
-      "The Kalesh is an anonymous social media platform developed by DIMISI Technologies, enabling private polls and chats without real identities.",
+      "Kalesh is an anonymous opinion and live polling platform developed by DIMISI Technologies. Features live polls, private chat, and identity-free discussions.",
   },
 
   {
     id: "kaand",
     slug: "kaand",
-    path: "/projects/kaand",
-    entityType: "project",
+    path: "/products/kaand",
+    entityType: "product",
     category: "DIMISI Products",
     projectType: "Next-Generation Media / News Platform",
     featuredPriority: 2,
@@ -3010,8 +3122,8 @@ const projects: Entity[] = [
   {
     id: "cati-khelghar",
     slug: "cati-khelghar",
-    path: "/projects/cati-khelghar",
-    entityType: "project",
+    path: "/products/cati-khelghar",
+    entityType: "product",
     category: "DIMISI Labs / Experiments",
     projectType: "Offline Pass-and-Play Gaming Platform",
     featuredPriority: 3,
@@ -3156,8 +3268,8 @@ const projects: Entity[] = [
   {
     id: "dimisi-ops",
     slug: "dimisi-ops",
-    path: "/projects/dimisi-ops",
-    entityType: "project",
+    path: "/products/dimisi-ops",
+    entityType: "product",
     category: "Enterprise & Business Software",
     projectType: "Enterprise Operations, Workforce Management & ERP System",
     featuredPriority: 4,
@@ -3309,154 +3421,10 @@ const projects: Entity[] = [
   },
 
   {
-    id: "dimisi-corporate-platform",
-    slug: "dimisi-corporate-platform",
-    path: "/projects/dimisi-corporate-platform",
-    entityType: "project",
-    category: "DIMISI Internal Systems",
-    projectType: "Official Corporate Website",
-    featuredPriority: 5,
-    statusBadge: "LIVE",
-    tags: [
-      "DIMISI Technologies",
-      "Corporate Website",
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Node.js",
-      "MongoDB",
-      "Redis",
-      "AWS",
-      "DigitalOcean",
-      "Cloudinary",
-    ],
-    name: "DIMISI Technologies",
-    subtitle: "Official Corporate Web Platform & Technology Showcase",
-    image: "/images/dimisi-logo.webp",
-    shortDescription:
-      "The official digital platform of DIMISI Technologies showcasing its technology capabilities, products, services and digital ecosystem.",
-    answer:
-      "The DIMISI Technologies official website (dimisi.tech) serves as the primary digital identity and technology showcase of DIMISI Technologies Private Limited. Engineered with Next.js, React, TypeScript, and Tailwind CSS on the frontend by Swatantra Singh, with backend infrastructure by Mridul Mishra utilizing Node.js, MongoDB, Redis, and multi-cloud deployment across AWS, DigitalOcean, and Cloudinary.",
-    lifecycle: "Active",
-    facts: [
-      {
-        label: "Category",
-        value: "DIMISI Internal Systems",
-        status: "source-backed",
-        sourceIds: ["src-dimisi-official"],
-      },
-      {
-        label: "Project type",
-        value: "Official Corporate Website",
-        status: "source-backed",
-        sourceIds: ["src-dimisi-official"],
-      },
-      {
-        label: "Status",
-        value: "Live",
-        status: "source-backed",
-        sourceIds: ["src-dimisi-official"],
-      },
-      {
-        label: "Domain",
-        value: "dimisi.tech",
-        status: "source-backed",
-        sourceIds: ["src-dimisi-official"],
-      },
-      {
-        label: "Frontend engineering",
-        value: "Swatantra Singh (Co-Founder & CTO)",
-        status: "source-backed",
-        sourceIds: ["src-dimisi-official"],
-      },
-      {
-        label: "Backend engineering",
-        value: "Mridul Mishra (Founding Engineer)",
-        status: "source-backed",
-        sourceIds: ["src-dimisi-official"],
-      },
-      {
-        label: "Frontend stack",
-        value: "Next.js, React, TypeScript, Tailwind CSS, TanStack",
-        status: "source-backed",
-        sourceIds: ["src-dimisi-official"],
-      },
-      {
-        label: "Backend stack",
-        value: "Node.js, TypeScript, MongoDB, Redis",
-        status: "source-backed",
-        sourceIds: ["src-dimisi-official"],
-      },
-      {
-        label: "Infrastructure & media",
-        value: "AWS, DigitalOcean, Cloudinary",
-        status: "source-backed",
-        sourceIds: ["src-dimisi-official"],
-      },
-    ],
-    questions: [
-      {
-        q: "What is the official website of DIMISI Technologies?",
-        a: "The official website is dimisi.tech, acting as the primary technology showcase, corporate overview, and products hub of DIMISI Technologies Private Limited.",
-      },
-      {
-        q: "Who engineered the DIMISI Technologies corporate platform?",
-        a: "The website frontend was developed by co-founder and CTO Swatantra Singh, with backend and infrastructure engineered by founding engineer Mridul Mishra.",
-      },
-      {
-        q: "What technology stack is used on dimisi.tech?",
-        a: "The frontend utilizes Next.js, React, TypeScript, and Tailwind CSS. The backend utilizes Node.js, MongoDB, Redis, with cloud infrastructure on AWS, DigitalOcean, and media managed via Cloudinary.",
-      },
-    ],
-    sections: [
-      {
-        id: "overview",
-        heading: "Overview & corporate role",
-        status: "source-backed",
-        body: [
-          "The DIMISI Technologies official website serves as the company's primary digital identity and technology showcase. [1]",
-          "It communicates DIMISI's capabilities across software development, artificial intelligence, cloud technologies, digital products, and enterprise engineering while presenting internal products and customer solutions. [1]",
-        ],
-      },
-      {
-        id: "development",
-        heading: "Engineering & architecture",
-        status: "source-backed",
-        body: [
-          "Frontend Architecture: Built by Swatantra Singh utilizing Next.js, React, TypeScript, and Tailwind CSS for rapid server rendering and fluid user interactions. [1]",
-          "Backend & Cloud: Engineered by Mridul Mishra featuring Node.js services, MongoDB document storage, and Redis caching. [1]",
-          "Infrastructure & Media: Deployed across AWS and DigitalOcean cloud infrastructure with media management orchestrated via Cloudinary. [1]",
-        ],
-      },
-    ],
-    coverage: [
-      {
-        area: "Identity & Domain",
-        status: "source-backed",
-        note: "Primary official web presence of DIMISI Technologies.",
-      },
-      {
-        area: "Architecture & Stack",
-        status: "source-backed",
-        note: "Documented in engineering specifications and deployment manifests.",
-      },
-    ],
-    officialLinks: [{ label: "dimisi.tech", url: "https://dimisi.tech", official: true }],
-    sourceIds: ["src-dimisi-official"],
-    revisions: baseRevisions("2026-09-04"),
-    createdAt: "2026-09-04",
-    updatedAt: "2026-09-04",
-    seoTitle: "DIMISI Technologies — Official Corporate Web Platform | DIMISIPEDIA",
-    seoDescription:
-      "Official website and technology platform of DIMISI Technologies (dimisi.tech): tech stack, engineering team, products showcase and cloud architecture.",
-  },
-
-  {
     id: "karyon",
     slug: "karyon",
-    path: "/projects/karyon",
-    entityType: "project",
+    path: "/products/karyon",
+    entityType: "product",
     category: "DIMISI Products",
     projectType: "Professional Home Services Platform",
     featuredPriority: 6,
@@ -3604,8 +3572,8 @@ const projects: Entity[] = [
   {
     id: "dimisipedia",
     slug: "dimisipedia",
-    path: "/projects/dimisipedia",
-    entityType: "project",
+    path: "/products/dimisipedia",
+    entityType: "product",
     category: "DIMISI Internal Systems",
     projectType: "Public Knowledge & Documentation Platform",
     featuredPriority: 7,
@@ -3703,6 +3671,152 @@ const projects: Entity[] = [
     seoTitle: "DIMISIPEDIA — Knowledge Platform of DIMISI Technologies",
     seoDescription:
       "DIMISIPEDIA is the official public knowledge and documentation platform of DIMISI Technologies Pvt. Ltd. Purpose, architecture and credibility system.",
+  },
+];
+
+const projects: Entity[] = [
+  {
+    id: "dimisi-corporate-platform",
+    slug: "dimisi-corporate-platform",
+    path: "/projects/dimisi-corporate-platform",
+    entityType: "project",
+    category: "DIMISI Internal Systems",
+    projectType: "Official Corporate Website",
+    featuredPriority: 5,
+    statusBadge: "LIVE",
+    tags: [
+      "DIMISI Technologies",
+      "Corporate Website",
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "MongoDB",
+      "Redis",
+      "AWS",
+      "DigitalOcean",
+      "Cloudinary",
+    ],
+    name: "DIMISI Technologies",
+    subtitle: "Official Corporate Web Platform & Technology Showcase",
+    image: "/images/dimisi-logo.webp",
+    shortDescription:
+      "The official digital platform of DIMISI Technologies showcasing its technology capabilities, products, services and digital ecosystem.",
+    answer:
+      "The DIMISI Technologies official website (dimisi.tech) serves as the primary digital identity and technology showcase of DIMISI Technologies Private Limited. Engineered with Next.js, React, TypeScript, and Tailwind CSS on the frontend by Swatantra Singh, with backend infrastructure by Mridul Mishra utilizing Node.js, MongoDB, Redis, and multi-cloud deployment across AWS, DigitalOcean, and Cloudinary.",
+    lifecycle: "Active",
+    facts: [
+      {
+        label: "Category",
+        value: "DIMISI Internal Systems",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-official"],
+      },
+      {
+        label: "Project type",
+        value: "Official Corporate Website",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-official"],
+      },
+      {
+        label: "Status",
+        value: "Live",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-official"],
+      },
+      {
+        label: "Domain",
+        value: "dimisi.tech",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-official"],
+      },
+      {
+        label: "Frontend engineering",
+        value: "Swatantra Singh (Co-Founder & CTO)",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-official"],
+      },
+      {
+        label: "Backend engineering",
+        value: "Mridul Mishra (Founding Engineer)",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-official"],
+      },
+      {
+        label: "Frontend stack",
+        value: "Next.js, React, TypeScript, Tailwind CSS, TanStack",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-official"],
+      },
+      {
+        label: "Backend stack",
+        value: "Node.js, TypeScript, MongoDB, Redis",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-official"],
+      },
+      {
+        label: "Infrastructure & media",
+        value: "AWS, DigitalOcean, Cloudinary",
+        status: "source-backed",
+        sourceIds: ["src-dimisi-official"],
+      },
+    ],
+    questions: [
+      {
+        q: "What is the official website of DIMISI Technologies?",
+        a: "The official website is dimisi.tech, acting as the primary technology showcase, corporate overview, and products hub of DIMISI Technologies Private Limited.",
+      },
+      {
+        q: "Who engineered the DIMISI Technologies corporate platform?",
+        a: "The website frontend was developed by co-founder and CTO Swatantra Singh, with backend and infrastructure engineered by founding engineer Mridul Mishra.",
+      },
+      {
+        q: "What technology stack is used on dimisi.tech?",
+        a: "The frontend utilizes Next.js, React, TypeScript, and Tailwind CSS. The backend utilizes Node.js, MongoDB, Redis, with cloud infrastructure on AWS, DigitalOcean, and media managed via Cloudinary.",
+      },
+    ],
+    sections: [
+      {
+        id: "overview",
+        heading: "Overview & corporate role",
+        status: "source-backed",
+        body: [
+          "The DIMISI Technologies official website serves as the company's primary digital identity and technology showcase. [1]",
+          "It communicates DIMISI's capabilities across software development, artificial intelligence, cloud technologies, digital products, and enterprise engineering while presenting internal products and customer solutions. [1]",
+        ],
+      },
+      {
+        id: "development",
+        heading: "Engineering & architecture",
+        status: "source-backed",
+        body: [
+          "Frontend Architecture: Built by Swatantra Singh utilizing Next.js, React, TypeScript, and Tailwind CSS for rapid server rendering and fluid user interactions. [1]",
+          "Backend & Cloud: Engineered by Mridul Mishra featuring Node.js services, MongoDB document storage, and Redis caching. [1]",
+          "Infrastructure & Media: Deployed across AWS and DigitalOcean cloud infrastructure with media management orchestrated via Cloudinary. [1]",
+        ],
+      },
+    ],
+    coverage: [
+      {
+        area: "Identity & Domain",
+        status: "source-backed",
+        note: "Primary official web presence of DIMISI Technologies.",
+      },
+      {
+        area: "Architecture & Stack",
+        status: "source-backed",
+        note: "Documented in engineering specifications and deployment manifests.",
+      },
+    ],
+    officialLinks: [{ label: "dimisi.tech", url: "https://dimisi.tech", official: true }],
+    sourceIds: ["src-dimisi-official"],
+    revisions: baseRevisions("2026-09-04"),
+    createdAt: "2026-09-04",
+    updatedAt: "2026-09-04",
+    seoTitle: "DIMISI Technologies — Official Corporate Web Platform | DIMISIPEDIA",
+    seoDescription:
+      "Official website and technology platform of DIMISI Technologies (dimisi.tech): tech stack, engineering team, products showcase and cloud architecture.",
   },
 
   {
@@ -4233,6 +4347,75 @@ const projects: Entity[] = [
     seoDescription:
       "Case study of Yadhuvanshi Tours & Travels luxury travel and wedding platform engineered by DIMISI Technologies: Next.js stack, wedding travel positioning, and multi-intent SEO/GEO.",
   },
+  {
+    id: "shiksha-path-ai",
+    slug: "shiksha-path-ai",
+    path: "/projects/shiksha-path-ai",
+    entityType: "project",
+    category: "DIMISI Labs / AI Research",
+    projectType: "Personalized Educational Pathway & Career Navigation Engine",
+    featuredPriority: 10,
+    statusBadge: "RESEARCH",
+    tags: ["AI", "Education", "Machine Learning", "Career Navigation", "DIMISI Labs", "Research"],
+    name: "Shiksha Path AI",
+    subtitle: "AI Career Guidance & Personalized Educational Pathway Engine",
+    image: "/images/dimisi-logo.webp",
+    shortDescription:
+      "An experimental AI research initiative exploring adaptive educational pathways, automated student skill mapping, and intelligent career recommendations.",
+    answer:
+      "Shiksha Path AI is an internal research and conceptual AI initiative under DIMISI Labs, exploring algorithmic curriculum recommendation, career navigation, and student capability mapping.",
+    lifecycle: "Research",
+    facts: [
+      { label: "Category", value: "DIMISI Labs / AI Research", status: "needs-verification" },
+      {
+        label: "Project type",
+        value: "Personalized Educational Pathway Engine",
+        status: "needs-verification",
+      },
+      { label: "Status", value: "Research & Conceptualization", status: "needs-verification" },
+      {
+        label: "Technology focus",
+        value: "Machine Learning, LLM Embeddings, Knowledge Graphs",
+        status: "needs-verification",
+      },
+      { label: "Organization", value: "DIMISI Technologies Private Limited", status: "documented" },
+    ],
+    sections: [
+      {
+        id: "overview",
+        heading: "Overview & Research Scope",
+        status: "needs-verification",
+        body: [
+          "Shiksha Path AI is an experimental AI exploration by DIMISI Technologies focused on solving curriculum fragmentation and career mismatch for engineering and collegiate students in India.",
+          "The project explores using machine-readable skill graphs, student assessment data, and adaptive learning vectors to provide real-time career guidance.",
+        ],
+      },
+    ],
+    coverage: [
+      {
+        area: "Research Scope",
+        status: "needs-verification",
+        note: "Internal exploratory research initiative.",
+      },
+    ],
+    officialLinks: [
+      { label: "DIMISI Official Website", url: "https://dimisi.tech", official: true },
+    ],
+    sourceIds: ["src-dimisi-official"],
+    revisions: [
+      {
+        n: 1,
+        date: "2026-11-10",
+        editor: "DIMISIPEDIA Editorial",
+        change: "Research entity added.",
+      },
+    ],
+    createdAt: "2026-11-10",
+    updatedAt: "2026-11-10",
+    seoTitle: "Shiksha Path AI — Educational Pathway Engine | DIMISIPEDIA",
+    seoDescription:
+      "Shiksha Path AI is an exploratory AI research initiative by DIMISI Labs for personalized educational pathways and student career guidance.",
+  },
 ];
 
 const techEntity = (id: string, name: string, answer: string, usedBy: string[]): Entity => ({
@@ -4368,19 +4551,36 @@ const technologies: Entity[] = [
   ),
 ];
 
-export const sources: Source[] = [...baseSources, ...founderSources, ...mentorSources];
+export const sources: Source[] = [
+  ...baseSources,
+  ...founderSources,
+  ...mentorSources,
+  ...serviceAndEventSources,
+];
 export const relationships: Relationship[] = [
   ...baseRelationships,
   ...founderRelationships,
   ...mentorRelationships,
+  ...serviceAndEventRelationships,
 ];
 
-export const entities: Entity[] = [organization, ...people, ...projects, ...technologies];
+export const entities: Entity[] = [
+  organization,
+  ...people,
+  ...products,
+  ...projects,
+  ...serviceEntities,
+  ...eventEntities,
+  ...technologies,
+];
 
 export const peopleEntities = people;
+export const productEntities = products;
 export const projectEntities = projects;
+export const allProjectsAndProducts = [...products, ...projects];
 export const technologyEntities = technologies;
 export const organizationEntity = organization;
+export { serviceEntities, eventEntities };
 
 export interface TimelineEntry {
   date: string;

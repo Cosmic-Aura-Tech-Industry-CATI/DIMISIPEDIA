@@ -50,9 +50,76 @@ interface EventItem {
   standings?: EventStanding[];
   organisedBy?: string;
   distributedBy?: string;
+  participatingTeam?: string;
+  achievement?: string;
 }
 
 const documentedEvents: EventItem[] = [
+  {
+    id: "siic-avinya-2026-hackathon",
+    title: "SIIC Avinya 2026 – Entrepreneurship Innovation Summit & Hackathon",
+    category: "Summit",
+    date: "2026-10-08",
+    displayDate: "8 – 9 October 2026",
+    location: "IIT Kanpur, Uttar Pradesh, India",
+    status: "verified",
+    organisedBy: "Startup Incubation and Innovation Centre (SIIC), IIT Kanpur",
+    participatingTeam: "Team DIMISI",
+    achievement: "4th Position – Finalist",
+    summary:
+      "Team DIMISI proudly participated in Avinya 2026, an Entrepreneurship Innovation Summit and Hackathon organised by the Startup Incubation and Innovation Centre (SIIC), IIT Kanpur, successfully securing 4th Position as Finalists representing DIMISI Technologies Pvt. Ltd.",
+    description: [
+      "Team DIMISI proudly participated in Avinya 2026, an Entrepreneurship Innovation Summit and Hackathon organised by the Startup Incubation and Innovation Centre (SIIC), IIT Kanpur.",
+      "Representing DIMISI Technologies Pvt. Ltd., our team showcased its innovation, technical capabilities, entrepreneurial vision, and problem-solving approach among aspiring innovators and startups.",
+      "After competing and presenting our work, Team DIMISI successfully secured a place among the finalists and achieved 4th Position at IIT Kanpur SIIC Avinya 2026.",
+      "This achievement marks an important milestone in DIMISI's entrepreneurial journey and reflects our commitment to innovation, teamwork, and building technology-driven solutions.",
+    ],
+    highlights: [
+      "Participation in IIT Kanpur's Avinya 2026",
+      "Entrepreneurship and innovation-focused hackathon",
+      "Selected as finalists",
+      "Secured 4th Position",
+      "Represented DIMISI Technologies Pvt. Ltd.",
+    ],
+    images: [
+      {
+        src: "/images/siic-avinya-2026-achievement-banner.jpeg",
+        alt: "Team DIMISI 4th Position Finalist Achievement Banner at IIT Kanpur SIIC Avinya 2026 Entrepreneurship Summit & Hackathon",
+        caption:
+          "Official Achievement Banner · 8–9 October 2026: Team DIMISI securing 4th Position and Finalist honors at IIT Kanpur SIIC Avinya 2026 with Founder & CEO Shikhar Dixit presenting.",
+      },
+      {
+        src: "/images/team-dimisi-avinya-2026-group.jpeg",
+        alt: "Team DIMISI group photograph at the Avinya 2026 venue at IIT Kanpur",
+        caption:
+          "Venue Delegation · 8–9 October 2026: Team DIMISI group photograph at the Avinya 2026 venue backdrop, IIT Kanpur, led by Founder & CEO Shikhar Dixit.",
+      },
+      {
+        src: "/images/team-dimisi-avinya-2026-full-length.jpeg",
+        alt: "Full-length team photograph of Team DIMISI at IIT Kanpur SIIC Avinya 2026",
+        caption:
+          "Official Team Photograph · 8–9 October 2026: Full-length delegation of Team DIMISI representing DIMISI Technologies Pvt. Ltd. at IIT Kanpur.",
+      },
+    ],
+    standings: [
+      {
+        position: "4th Position",
+        name: "Team DIMISI",
+        role: "Finalist Delegation · Entrepreneurship Innovation Summit & Hackathon",
+        path: "/dimisi-technologies",
+        award: "4th Position – Finalist",
+        winner: true,
+      },
+    ],
+    relatedEntities: [
+      { label: "DIMISI Technologies", to: "/dimisi-technologies" },
+      { label: "Shikhar Dixit (CEO)", to: "/people/shikhar-dixit" },
+      { label: "Swatantra Singh (CTO)", to: "/people/swatantra-singh" },
+      { label: "Nishkarsh Mishra (COO)", to: "/people/nishkarsh-mishra" },
+      { label: "Our Journey", to: "/journey" },
+      { label: "Timeline", to: "/timeline" },
+    ],
+  },
   {
     id: "team-id-cards-tshirts-distribution-ceremony",
     title: "Team ID Cards & T-Shirts Distribution Ceremony",
@@ -265,7 +332,7 @@ export const Route = createFileRoute("/events")({
     pageHead({
       title: "Documented Events & Campaigns — DIMISI Technologies | DIMISIPEDIA",
       description:
-        "Official documented events and campaigns involving DIMISI Technologies: Team ID Cards & T-Shirts Distribution Ceremony, Office Inauguration, LinkedIn 30-Day Kalesh Promotion Contest, and IIT Bombay E-Summit.",
+        "Official documented events and campaigns involving DIMISI Technologies: SIIC Avinya 2026 Entrepreneurship Hackathon at IIT Kanpur, Team ID Cards & T-Shirts Distribution Ceremony, Office Inauguration, LinkedIn 30-Day Kalesh Promotion Contest, and IIT Bombay E-Summit.",
       path: "/events",
       schema: [
         buildBreadcrumbSchema(trail, "/events"),
@@ -275,7 +342,7 @@ export const Route = createFileRoute("/events")({
           url: abs("/events"),
           name: "Documented Events & Campaigns — DIMISI Technologies | DIMISIPEDIA",
           description:
-            "Official documented events and campaigns involving DIMISI Technologies: Team ID Cards & T-Shirts Distribution Ceremony, Office Inauguration, LinkedIn 30-Day Kalesh Promotion Contest, and IIT Bombay E-Summit.",
+            "Official documented events and campaigns involving DIMISI Technologies: SIIC Avinya 2026 Entrepreneurship Hackathon at IIT Kanpur, Team ID Cards & T-Shirts Distribution Ceremony, Office Inauguration, LinkedIn 30-Day Kalesh Promotion Contest, and IIT Bombay E-Summit.",
           isPartOf: { "@id": `${SITE_URL}/#website` },
           breadcrumb: { "@id": `${abs("/events")}#breadcrumb` },
           mainEntity: {
@@ -380,6 +447,11 @@ function EventsPage() {
                   [{event.category}]
                 </span>
                 <StatusChip status={event.status} />
+                {event.achievement ? (
+                  <span className="inline-flex items-center gap-1 border border-primary/40 bg-primary/10 px-2 py-0.5 font-mono text-[11px] font-bold uppercase tracking-wider text-primary">
+                    <Trophy className="size-3 text-primary" /> {event.achievement}
+                  </span>
+                ) : null}
               </div>
               <div className="flex flex-wrap items-center gap-4 font-mono text-xs text-muted-foreground">
                 <span className="flex items-center gap-1.5">
@@ -392,6 +464,22 @@ function EventsPage() {
             </div>
 
             <h2 className="mt-5 font-serif text-2xl sm:text-3xl leading-snug">{event.title}</h2>
+
+            {/* Achievement & Delegation Highlight Callout */}
+            {event.achievement ? (
+              <div className="mt-4 flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center gap-1.5 border border-primary bg-primary/10 px-3 py-1 font-mono text-xs font-bold uppercase tracking-wider text-primary shadow-xs">
+                  <Trophy className="size-3.5 text-primary" /> Achievement: {event.achievement}
+                </span>
+                {event.participatingTeam ? (
+                  <span className="inline-flex items-center gap-1.5 border border-border bg-surface px-3 py-1 font-mono text-xs font-medium text-foreground">
+                    <Users className="size-3.5 text-primary" /> Participating Team:{" "}
+                    {event.participatingTeam}
+                  </span>
+                ) : null}
+              </div>
+            ) : null}
+
             <p className="mt-3 text-base text-muted-foreground font-serif leading-relaxed">
               {event.summary}
             </p>
@@ -417,13 +505,21 @@ function EventsPage() {
             {event.images && event.images.length > 0 ? (
               <div
                 className={`my-6 grid gap-4 ${
-                  event.images.length > 1 ? "sm:grid-cols-2" : "grid-cols-1"
+                  event.images.length === 1
+                    ? "grid-cols-1"
+                    : event.images.length === 2
+                      ? "sm:grid-cols-2"
+                      : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
                 }`}
               >
                 {event.images.map((img, i) => (
                   <figure
                     key={i}
-                    className="overflow-hidden border border-rule bg-background flex flex-col justify-between group"
+                    className={`overflow-hidden border border-rule bg-background flex flex-col justify-between group ${
+                      event.images && event.images.length === 3 && i === 0
+                        ? "sm:col-span-2 lg:col-span-1"
+                        : ""
+                    }`}
                   >
                     <div
                       onClick={() => openLightbox(img.src)}
@@ -442,6 +538,11 @@ function EventsPage() {
                       <div className="absolute bottom-2 right-2 flex items-center gap-1 bg-black/75 px-2.5 py-1 text-[11px] font-mono text-white opacity-0 transition-opacity group-hover:opacity-100 backdrop-blur-xs">
                         <Maximize2 className="size-3" /> Zoom
                       </div>
+                      {event.images && event.images.length === 3 && i === 0 ? (
+                        <div className="absolute top-2 left-2 flex items-center gap-1 bg-primary px-2 py-0.5 text-[10px] font-mono font-bold uppercase tracking-wider text-primary-foreground shadow-xs">
+                          Primary Cover
+                        </div>
+                      ) : null}
                     </div>
                     <figcaption className="border-t border-rule p-3 font-mono text-xs text-muted-foreground leading-snug">
                       {img.caption}

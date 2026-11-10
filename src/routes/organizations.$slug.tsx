@@ -1,20 +1,28 @@
 import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
-import { organizationEntity } from "@/data/knowledge";
+import { EntityArticle } from "@/components/EntityArticle";
+import { FoundingLeadership } from "@/components/FoundingLeadership";
+import { organizationEntity as org } from "@/data/knowledge";
+import { entityHead } from "@/lib/seo";
 
-/**
- * Alias route. The canonical organization URL is /dimisi-technologies, which is
- * already published; /organizations/<slug> permanently redirects to it so no
- * duplicate entity page can be indexed.
- */
+const trail = [
+  { label: "DIMISIPEDIA", to: "/" },
+  { label: "Organizations", to: "/organizations" },
+  { label: "DIMISI Technologies" },
+];
+
 export const Route = createFileRoute("/organizations/$slug")({
   beforeLoad: ({ params }) => {
     if (params.slug === "$slug" || params.slug.startsWith("$")) {
       throw redirect({ to: "/organizations", statusCode: 301 });
     }
-    if (params.slug === organizationEntity.slug) {
-      throw redirect({ to: "/dimisi-technologies", statusCode: 301 });
+    if (params.slug !== org.slug) {
+      throw notFound();
     }
-    throw notFound();
   },
-  component: () => null,
+  head: () => entityHead(org, trail),
+  component: () => (
+    <EntityArticle entity={org} trail={trail}>
+      <FoundingLeadership />
+    </EntityArticle>
+  ),
 });

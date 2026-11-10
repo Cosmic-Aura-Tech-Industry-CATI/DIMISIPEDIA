@@ -9,7 +9,10 @@ const nav = [
   { to: "/journey", label: "Journey" },
   { to: "/people", label: "People" },
   { to: "/organizations", label: "Organizations" },
+  { to: "/products", label: "Products" },
   { to: "/projects", label: "Projects" },
+  { to: "/services", label: "Services" },
+  { to: "/ai-knowledge", label: "AI Hub" },
   { to: "/technology", label: "Technology" },
   { to: "/timeline", label: "Timeline" },
   { to: "/events", label: "Events" },
@@ -229,6 +232,21 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link to="/ai-knowledge" className="text-primary hover:underline font-medium">
+                AI Knowledge Hub &amp; Voice Engine
+              </Link>
+            </li>
+            <li>
+              <a
+                href="/knowledge.json"
+                target="_blank"
+                rel="noreferrer"
+                className="text-muted-foreground hover:text-foreground font-mono text-xs text-emerald-500"
+              >
+                knowledge.json (API)
+              </a>
+            </li>
+            <li>
               <a
                 href="/feed.xml"
                 target="_blank"
@@ -245,11 +263,26 @@ export function SiteFooter() {
           <ul className="mt-3 space-y-2 text-sm">
             <li>
               <Link
-                to="/dimisi-technologies"
+                to="/organizations/dimisi-technologies"
                 className="text-muted-foreground hover:text-foreground notranslate"
                 translate="no"
               >
                 DIMISI Technologies
+              </Link>
+            </li>
+            <li>
+              <Link to="/products" className="text-muted-foreground hover:text-foreground">
+                Products (Kalesh)
+              </Link>
+            </li>
+            <li>
+              <Link to="/services" className="text-muted-foreground hover:text-foreground">
+                Enterprise Services
+              </Link>
+            </li>
+            <li>
+              <Link to="/admin" className="text-muted-foreground hover:text-foreground">
+                Admin Console
               </Link>
             </li>
             <li>

@@ -137,7 +137,7 @@ export function EntityArticle({
           : entity.id === "dimisi-technologies"
             ? "DIMISI Technologies"
             : entity.entityType === "person" && entity.subtitle
-              ? `${entity.name} – ${entity.subtitle.split("—")[0].replace(/·.*/, "").trim()}`
+              ? `${entity.name} – ${entity.subtitle.split("—")[0]?.replace(/·.*/, "").trim() ?? entity.subtitle}`
               : entity.name;
 
   return (

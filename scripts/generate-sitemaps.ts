@@ -5,6 +5,7 @@ import {
   generatePagesSitemapXml,
   generatePeopleSitemapXml,
   generateOrganizationsSitemapXml,
+  generateProductsSitemapXml,
   generateProjectsSitemapXml,
   generateTechnologySitemapXml,
   generateArticlesSitemapXml,
@@ -13,16 +14,19 @@ import {
   generateImagesSitemapXml,
 } from "../src/lib/sitemap";
 import { generateRssFeedXml } from "../src/lib/rss";
+import { generateKnowledgeIndexJson } from "../src/lib/knowledge-api";
 
 const publicDir = path.resolve(process.cwd(), "public");
 
 const rssXml = generateRssFeedXml();
+const knowledgeJson = JSON.stringify(generateKnowledgeIndexJson(), null, 2);
 
 const files: Record<string, string> = {
   "sitemap.xml": generateSitemapIndexXml(),
   "sitemap-pages.xml": generatePagesSitemapXml(),
   "sitemap-people.xml": generatePeopleSitemapXml(),
   "sitemap-organizations.xml": generateOrganizationsSitemapXml(),
+  "sitemap-products.xml": generateProductsSitemapXml(),
   "sitemap-projects.xml": generateProjectsSitemapXml(),
   "sitemap-technology.xml": generateTechnologySitemapXml(),
   "sitemap-articles.xml": generateArticlesSitemapXml(),
@@ -31,6 +35,7 @@ const files: Record<string, string> = {
   "sitemap-images.xml": generateImagesSitemapXml(),
   "feed.xml": rssXml,
   "rss.xml": rssXml,
+  "knowledge.json": knowledgeJson,
 };
 
 console.log("Generating enterprise XML sitemaps to public/...");

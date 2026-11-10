@@ -15,7 +15,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.dimisipedia.me/dimisi-technologies</loc>
+    <loc>https://www.dimisipedia.me/organizations/dimisi-technologies</loc>
     <lastmod>2026-10-20T12:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -223,53 +223,79 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.dimisipedia.me/projects/kalesh</loc>
-    <lastmod>2026-08-15T12:00:00+05:30</lastmod>
+    <loc>https://www.dimisipedia.me/products/kalesh</loc>
+    <lastmod>2026-11-10T12:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/kalesh-icon.webp</image:loc>
-      <image:title>The Kalesh — Flagship DIMISI Product — Anonymous Social Media Platform</image:title>
-      <image:caption>The Kalesh official software mark and application overview</image:caption>
+      <image:title>Kalesh — Flagship DIMISI Product — Anonymous Social Media &amp; Opinion Platform</image:title>
+      <image:caption>Kalesh official software mark and product overview</image:caption>
       <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
       <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
     </image:image>
   </url>
   <url>
-    <loc>https://www.dimisipedia.me/projects/kaand</loc>
+    <loc>https://www.dimisipedia.me/products/kaand</loc>
     <lastmod>2026-10-11T12:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/kaand-logo.webp</image:loc>
       <image:title>KAAND — Next-Generation Mobile News &amp; Media Platform (Android &amp; iOS)</image:title>
-      <image:caption>KAAND official software mark and application overview</image:caption>
+      <image:caption>KAAND official software mark and product overview</image:caption>
       <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
       <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
     </image:image>
   </url>
   <url>
-    <loc>https://www.dimisipedia.me/projects/cati-khelghar</loc>
+    <loc>https://www.dimisipedia.me/products/cati-khelghar</loc>
     <lastmod>2026-09-04T12:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/cati-khelghar-logo.webp</image:loc>
       <image:title>CATI Khelghar — Offline Pass-and-Play Local Multiplayer Gaming Platform</image:title>
-      <image:caption>CATI Khelghar official software mark and application overview</image:caption>
+      <image:caption>CATI Khelghar official software mark and product overview</image:caption>
       <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
       <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
     </image:image>
   </url>
   <url>
-    <loc>https://www.dimisipedia.me/projects/dimisi-ops</loc>
+    <loc>https://www.dimisipedia.me/products/dimisi-ops</loc>
     <lastmod>2026-10-20T12:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/dimisi-ops-logo.webp</image:loc>
       <image:title>DIMISI-OPS — Enterprise Operations, Employee Management &amp; Workflow System</image:title>
-      <image:caption>DIMISI-OPS official software mark and application overview</image:caption>
+      <image:caption>DIMISI-OPS official software mark and product overview</image:caption>
+      <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
+      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.dimisipedia.me/products/karyon</loc>
+    <lastmod>2026-09-04T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.dimisipedia.me/images/karyon-logo.webp</image:loc>
+      <image:title>KaryON — Professional Home Services Platform At Your Doorstep</image:title>
+      <image:caption>KaryON official software mark and product overview</image:caption>
+      <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
+      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.dimisipedia.me/products/dimisipedia</loc>
+    <lastmod>2026-08-15T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.dimisipedia.me/images/dimisipedia-logo.webp</image:loc>
+      <image:title>DIMISIPEDIA — Project — knowledge and documentation platform</image:title>
+      <image:caption>DIMISIPEDIA official software mark and product overview</image:caption>
       <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
       <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
     </image:image>
@@ -283,32 +309,6 @@
       <image:loc>https://www.dimisipedia.me/images/dimisi-logo.webp</image:loc>
       <image:title>DIMISI Technologies — Official Corporate Web Platform &amp; Technology Showcase</image:title>
       <image:caption>DIMISI Technologies official software mark and application overview</image:caption>
-      <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
-      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.dimisipedia.me/projects/karyon</loc>
-    <lastmod>2026-09-04T12:00:00+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.dimisipedia.me/images/karyon-logo.webp</image:loc>
-      <image:title>KaryON — Professional Home Services Platform At Your Doorstep</image:title>
-      <image:caption>KaryON official software mark and application overview</image:caption>
-      <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
-      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.dimisipedia.me/projects/dimisipedia</loc>
-    <lastmod>2026-08-15T12:00:00+05:30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.dimisipedia.me/images/dimisipedia-logo.webp</image:loc>
-      <image:title>DIMISIPEDIA — Project — knowledge and documentation platform</image:title>
-      <image:caption>DIMISIPEDIA official software mark and application overview</image:caption>
       <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
       <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
     </image:image>
@@ -340,6 +340,19 @@
     </image:image>
   </url>
   <url>
+    <loc>https://www.dimisipedia.me/projects/shiksha-path-ai</loc>
+    <lastmod>2026-11-10T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.dimisipedia.me/images/dimisi-logo.webp</image:loc>
+      <image:title>Shiksha Path AI — AI Career Guidance &amp; Personalized Educational Pathway Engine</image:title>
+      <image:caption>Shiksha Path AI official software mark and application overview</image:caption>
+      <image:geo_location>Kanpur, Uttar Pradesh, India</image:geo_location>
+      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.dimisipedia.me/articles/the-founding-brotherhood</loc>
     <lastmod>2026-08-21T12:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
@@ -354,9 +367,30 @@
   </url>
   <url>
     <loc>https://www.dimisipedia.me/events</loc>
-    <lastmod>2026-10-06T12:00:00+05:30</lastmod>
+    <lastmod>2026-10-09T12:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.dimisipedia.me/images/siic-avinya-2026-achievement-banner.webp</image:loc>
+      <image:title>SIIC Avinya 2026 4th Position Finalist Achievement — DIMISI Technologies</image:title>
+      <image:caption>Team DIMISI 4th Position Finalist achievement banner at IIT Kanpur SIIC Avinya 2026 Entrepreneurship Summit &amp; Hackathon</image:caption>
+      <image:geo_location>IIT Kanpur, Uttar Pradesh, India</image:geo_location>
+      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dimisipedia.me/images/team-dimisi-avinya-2026-group.webp</image:loc>
+      <image:title>Team DIMISI at IIT Kanpur SIIC Avinya 2026</image:title>
+      <image:caption>Team DIMISI delegation at the Avinya 2026 venue backdrop, IIT Kanpur, led by Founder &amp; CEO Shikhar Dixit</image:caption>
+      <image:geo_location>IIT Kanpur, Uttar Pradesh, India</image:geo_location>
+      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dimisipedia.me/images/team-dimisi-avinya-2026-full-length.webp</image:loc>
+      <image:title>Team DIMISI Full-Length Team Photograph at IIT Kanpur</image:title>
+      <image:caption>Official full-length team photograph representing DIMISI Technologies Pvt. Ltd. at Avinya 2026</image:caption>
+      <image:geo_location>IIT Kanpur, Uttar Pradesh, India</image:geo_location>
+      <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
+    </image:image>
     <image:image>
       <image:loc>https://www.dimisipedia.me/images/team-id-cards-and-tshirts-distribution.webp</image:loc>
       <image:title>Team ID Cards &amp; T-Shirts Distribution Ceremony — DIMISI Technologies</image:title>

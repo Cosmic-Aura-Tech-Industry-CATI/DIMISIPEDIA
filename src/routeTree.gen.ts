@@ -11,6 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as AiKnowledgeRouteImport } from './routes/ai-knowledge'
 import { Route as CredibilityRouteImport } from './routes/credibility'
 import { Route as DimisiTechnologiesRouteImport } from './routes/dimisi-technologies'
 import { Route as EditorialPolicyRouteImport } from './routes/editorial-policy'
@@ -19,6 +21,7 @@ import { Route as ExploreRouteImport } from './routes/explore'
 import { Route as FeedDotxmlRouteImport } from './routes/feed[.]xml'
 import { Route as IndexnowKeyDottxtRouteImport } from './routes/indexnow-key[.]txt'
 import { Route as JourneyRouteImport } from './routes/journey'
+import { Route as KnowledgeDotjsonRouteImport } from './routes/knowledge[.]json'
 import { Route as MethodologyRouteImport } from './routes/methodology'
 import { Route as OfflineRouteImport } from './routes/offline'
 import { Route as PrivacyRouteImport } from './routes/privacy'
@@ -32,6 +35,7 @@ import { Route as SitemapImagesDotxmlRouteImport } from './routes/sitemap-images
 import { Route as SitemapOrganizationsDotxmlRouteImport } from './routes/sitemap-organizations[.]xml'
 import { Route as SitemapPagesDotxmlRouteImport } from './routes/sitemap-pages[.]xml'
 import { Route as SitemapPeopleDotxmlRouteImport } from './routes/sitemap-people[.]xml'
+import { Route as SitemapProductsDotxmlRouteImport } from './routes/sitemap-products[.]xml'
 import { Route as SitemapProjectsDotxmlRouteImport } from './routes/sitemap-projects[.]xml'
 import { Route as SitemapTechnologyDotxmlRouteImport } from './routes/sitemap-technology[.]xml'
 import { Route as SitemapTimelineDotxmlRouteImport } from './routes/sitemap-timeline[.]xml'
@@ -48,8 +52,12 @@ import { Route as OrganizationsIndexRouteImport } from './routes/organizations.i
 import { Route as OrganizationsSlugRouteImport } from './routes/organizations.$slug'
 import { Route as PeopleIndexRouteImport } from './routes/people.index'
 import { Route as PeopleSlugRouteImport } from './routes/people.$slug'
+import { Route as ProductsIndexRouteImport } from './routes/products.index'
+import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
 import { Route as ProjectsIndexRouteImport } from './routes/projects.index'
 import { Route as ProjectsSlugRouteImport } from './routes/projects.$slug'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 import { Route as TechnologyIndexRouteImport } from './routes/technology.index'
 import { Route as TechnologySlugRouteImport } from './routes/technology.$slug'
 import { Route as ApiPublicIndexnowRouteImport } from './routes/api/public/indexnow'
@@ -57,6 +65,15 @@ import { Route as ApiV1EntitiesRouteImport } from './routes/api/v1/entities'
 import { Route as ApiV1SourcesRouteImport } from './routes/api/v1/sources'
 import { Route as ApiV1TimelineRouteImport } from './routes/api/v1/timeline'
 import { Route as ApiV1VerifySourcesRouteImport } from './routes/api/v1/verify-sources'
+import { Route as ApiV1KnowledgeEntitiesRouteImport } from './routes/api/v1/knowledge/entities'
+import { Route as ApiV1KnowledgeEventsRouteImport } from './routes/api/v1/knowledge/events'
+import { Route as ApiV1KnowledgeOrganizationsRouteImport } from './routes/api/v1/knowledge/organizations'
+import { Route as ApiV1KnowledgePeopleRouteImport } from './routes/api/v1/knowledge/people'
+import { Route as ApiV1KnowledgeProductsRouteImport } from './routes/api/v1/knowledge/products'
+import { Route as ApiV1KnowledgeProjectsRouteImport } from './routes/api/v1/knowledge/projects'
+import { Route as ApiV1KnowledgeSearchRouteImport } from './routes/api/v1/knowledge/search'
+import { Route as ApiV1KnowledgeServicesRouteImport } from './routes/api/v1/knowledge/services'
+import { Route as ApiV1KnowledgeEntitySlugRouteImport } from './routes/api/v1/knowledge/entity.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -66,6 +83,16 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiKnowledgeRoute = AiKnowledgeRouteImport.update({
+  id: '/ai-knowledge',
+  path: '/ai-knowledge',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CredibilityRoute = CredibilityRouteImport.update({
@@ -106,6 +133,11 @@ const IndexnowKeyDottxtRoute = IndexnowKeyDottxtRouteImport.update({
 const JourneyRoute = JourneyRouteImport.update({
   id: '/journey',
   path: '/journey',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KnowledgeDotjsonRoute = KnowledgeDotjsonRouteImport.update({
+  id: '/knowledge.json',
+  path: '/knowledge.json',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MethodologyRoute = MethodologyRouteImport.update({
@@ -172,6 +204,11 @@ const SitemapPagesDotxmlRoute = SitemapPagesDotxmlRouteImport.update({
 const SitemapPeopleDotxmlRoute = SitemapPeopleDotxmlRouteImport.update({
   id: '/sitemap-people.xml',
   path: '/sitemap-people.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapProductsDotxmlRoute = SitemapProductsDotxmlRouteImport.update({
+  id: '/sitemap-products.xml',
+  path: '/sitemap-products.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapProjectsDotxmlRoute = SitemapProjectsDotxmlRouteImport.update({
@@ -254,6 +291,16 @@ const PeopleSlugRoute = PeopleSlugRouteImport.update({
   path: '/people/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductsIndexRoute = ProductsIndexRouteImport.update({
+  id: '/products/',
+  path: '/products/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsSlugRoute = ProductsSlugRouteImport.update({
+  id: '/products/$slug',
+  path: '/products/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProjectsIndexRoute = ProjectsIndexRouteImport.update({
   id: '/projects/',
   path: '/projects/',
@@ -262,6 +309,16 @@ const ProjectsIndexRoute = ProjectsIndexRouteImport.update({
 const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
   id: '/projects/$slug',
   path: '/projects/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesSlugRoute = ServicesSlugRouteImport.update({
+  id: '/services/$slug',
+  path: '/services/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TechnologyIndexRoute = TechnologyIndexRouteImport.update({
@@ -299,10 +356,59 @@ const ApiV1VerifySourcesRoute = ApiV1VerifySourcesRouteImport.update({
   path: '/api/v1/verify-sources',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiV1KnowledgeEntitiesRoute = ApiV1KnowledgeEntitiesRouteImport.update({
+  id: '/api/v1/knowledge/entities',
+  path: '/api/v1/knowledge/entities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiV1KnowledgeEventsRoute = ApiV1KnowledgeEventsRouteImport.update({
+  id: '/api/v1/knowledge/events',
+  path: '/api/v1/knowledge/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiV1KnowledgeOrganizationsRoute =
+  ApiV1KnowledgeOrganizationsRouteImport.update({
+    id: '/api/v1/knowledge/organizations',
+    path: '/api/v1/knowledge/organizations',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ApiV1KnowledgePeopleRoute = ApiV1KnowledgePeopleRouteImport.update({
+  id: '/api/v1/knowledge/people',
+  path: '/api/v1/knowledge/people',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiV1KnowledgeProductsRoute = ApiV1KnowledgeProductsRouteImport.update({
+  id: '/api/v1/knowledge/products',
+  path: '/api/v1/knowledge/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiV1KnowledgeProjectsRoute = ApiV1KnowledgeProjectsRouteImport.update({
+  id: '/api/v1/knowledge/projects',
+  path: '/api/v1/knowledge/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiV1KnowledgeSearchRoute = ApiV1KnowledgeSearchRouteImport.update({
+  id: '/api/v1/knowledge/search',
+  path: '/api/v1/knowledge/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiV1KnowledgeServicesRoute = ApiV1KnowledgeServicesRouteImport.update({
+  id: '/api/v1/knowledge/services',
+  path: '/api/v1/knowledge/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiV1KnowledgeEntitySlugRoute =
+  ApiV1KnowledgeEntitySlugRouteImport.update({
+    id: '/api/v1/knowledge/entity/$slug',
+    path: '/api/v1/knowledge/entity/$slug',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/ai-knowledge': typeof AiKnowledgeRoute
   '/credibility': typeof CredibilityRoute
   '/dimisi-technologies': typeof DimisiTechnologiesRoute
   '/editorial-policy': typeof EditorialPolicyRoute
@@ -311,6 +417,7 @@ export interface FileRoutesByFullPath {
   '/feed.xml': typeof FeedDotxmlRoute
   '/indexnow-key.txt': typeof IndexnowKeyDottxtRoute
   '/journey': typeof JourneyRoute
+  '/knowledge.json': typeof KnowledgeDotjsonRoute
   '/methodology': typeof MethodologyRoute
   '/offline': typeof OfflineRoute
   '/privacy': typeof PrivacyRoute
@@ -324,6 +431,7 @@ export interface FileRoutesByFullPath {
   '/sitemap-organizations.xml': typeof SitemapOrganizationsDotxmlRoute
   '/sitemap-pages.xml': typeof SitemapPagesDotxmlRoute
   '/sitemap-people.xml': typeof SitemapPeopleDotxmlRoute
+  '/sitemap-products.xml': typeof SitemapProductsDotxmlRoute
   '/sitemap-projects.xml': typeof SitemapProjectsDotxmlRoute
   '/sitemap-technology.xml': typeof SitemapTechnologyDotxmlRoute
   '/sitemap-timeline.xml': typeof SitemapTimelineDotxmlRoute
@@ -336,23 +444,38 @@ export interface FileRoutesByFullPath {
   '/blog/$slug': typeof BlogSlugRoute
   '/organizations/$slug': typeof OrganizationsSlugRoute
   '/people/$slug': typeof PeopleSlugRoute
+  '/products/$slug': typeof ProductsSlugRoute
   '/projects/$slug': typeof ProjectsSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
   '/technology/$slug': typeof TechnologySlugRoute
   '/articles/': typeof ArticlesIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/organizations/': typeof OrganizationsIndexRoute
   '/people/': typeof PeopleIndexRoute
+  '/products/': typeof ProductsIndexRoute
   '/projects/': typeof ProjectsIndexRoute
+  '/services/': typeof ServicesIndexRoute
   '/technology/': typeof TechnologyIndexRoute
   '/api/public/indexnow': typeof ApiPublicIndexnowRoute
   '/api/v1/entities': typeof ApiV1EntitiesRoute
   '/api/v1/sources': typeof ApiV1SourcesRoute
   '/api/v1/timeline': typeof ApiV1TimelineRoute
   '/api/v1/verify-sources': typeof ApiV1VerifySourcesRoute
+  '/api/v1/knowledge/entities': typeof ApiV1KnowledgeEntitiesRoute
+  '/api/v1/knowledge/events': typeof ApiV1KnowledgeEventsRoute
+  '/api/v1/knowledge/organizations': typeof ApiV1KnowledgeOrganizationsRoute
+  '/api/v1/knowledge/people': typeof ApiV1KnowledgePeopleRoute
+  '/api/v1/knowledge/products': typeof ApiV1KnowledgeProductsRoute
+  '/api/v1/knowledge/projects': typeof ApiV1KnowledgeProjectsRoute
+  '/api/v1/knowledge/search': typeof ApiV1KnowledgeSearchRoute
+  '/api/v1/knowledge/services': typeof ApiV1KnowledgeServicesRoute
+  '/api/v1/knowledge/entity/$slug': typeof ApiV1KnowledgeEntitySlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/ai-knowledge': typeof AiKnowledgeRoute
   '/credibility': typeof CredibilityRoute
   '/dimisi-technologies': typeof DimisiTechnologiesRoute
   '/editorial-policy': typeof EditorialPolicyRoute
@@ -361,6 +484,7 @@ export interface FileRoutesByTo {
   '/feed.xml': typeof FeedDotxmlRoute
   '/indexnow-key.txt': typeof IndexnowKeyDottxtRoute
   '/journey': typeof JourneyRoute
+  '/knowledge.json': typeof KnowledgeDotjsonRoute
   '/methodology': typeof MethodologyRoute
   '/offline': typeof OfflineRoute
   '/privacy': typeof PrivacyRoute
@@ -374,6 +498,7 @@ export interface FileRoutesByTo {
   '/sitemap-organizations.xml': typeof SitemapOrganizationsDotxmlRoute
   '/sitemap-pages.xml': typeof SitemapPagesDotxmlRoute
   '/sitemap-people.xml': typeof SitemapPeopleDotxmlRoute
+  '/sitemap-products.xml': typeof SitemapProductsDotxmlRoute
   '/sitemap-projects.xml': typeof SitemapProjectsDotxmlRoute
   '/sitemap-technology.xml': typeof SitemapTechnologyDotxmlRoute
   '/sitemap-timeline.xml': typeof SitemapTimelineDotxmlRoute
@@ -386,24 +511,39 @@ export interface FileRoutesByTo {
   '/blog/$slug': typeof BlogSlugRoute
   '/organizations/$slug': typeof OrganizationsSlugRoute
   '/people/$slug': typeof PeopleSlugRoute
+  '/products/$slug': typeof ProductsSlugRoute
   '/projects/$slug': typeof ProjectsSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
   '/technology/$slug': typeof TechnologySlugRoute
   '/articles': typeof ArticlesIndexRoute
   '/blog': typeof BlogIndexRoute
   '/organizations': typeof OrganizationsIndexRoute
   '/people': typeof PeopleIndexRoute
+  '/products': typeof ProductsIndexRoute
   '/projects': typeof ProjectsIndexRoute
+  '/services': typeof ServicesIndexRoute
   '/technology': typeof TechnologyIndexRoute
   '/api/public/indexnow': typeof ApiPublicIndexnowRoute
   '/api/v1/entities': typeof ApiV1EntitiesRoute
   '/api/v1/sources': typeof ApiV1SourcesRoute
   '/api/v1/timeline': typeof ApiV1TimelineRoute
   '/api/v1/verify-sources': typeof ApiV1VerifySourcesRoute
+  '/api/v1/knowledge/entities': typeof ApiV1KnowledgeEntitiesRoute
+  '/api/v1/knowledge/events': typeof ApiV1KnowledgeEventsRoute
+  '/api/v1/knowledge/organizations': typeof ApiV1KnowledgeOrganizationsRoute
+  '/api/v1/knowledge/people': typeof ApiV1KnowledgePeopleRoute
+  '/api/v1/knowledge/products': typeof ApiV1KnowledgeProductsRoute
+  '/api/v1/knowledge/projects': typeof ApiV1KnowledgeProjectsRoute
+  '/api/v1/knowledge/search': typeof ApiV1KnowledgeSearchRoute
+  '/api/v1/knowledge/services': typeof ApiV1KnowledgeServicesRoute
+  '/api/v1/knowledge/entity/$slug': typeof ApiV1KnowledgeEntitySlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/ai-knowledge': typeof AiKnowledgeRoute
   '/credibility': typeof CredibilityRoute
   '/dimisi-technologies': typeof DimisiTechnologiesRoute
   '/editorial-policy': typeof EditorialPolicyRoute
@@ -412,6 +552,7 @@ export interface FileRoutesById {
   '/feed.xml': typeof FeedDotxmlRoute
   '/indexnow-key.txt': typeof IndexnowKeyDottxtRoute
   '/journey': typeof JourneyRoute
+  '/knowledge.json': typeof KnowledgeDotjsonRoute
   '/methodology': typeof MethodologyRoute
   '/offline': typeof OfflineRoute
   '/privacy': typeof PrivacyRoute
@@ -425,6 +566,7 @@ export interface FileRoutesById {
   '/sitemap-organizations.xml': typeof SitemapOrganizationsDotxmlRoute
   '/sitemap-pages.xml': typeof SitemapPagesDotxmlRoute
   '/sitemap-people.xml': typeof SitemapPeopleDotxmlRoute
+  '/sitemap-products.xml': typeof SitemapProductsDotxmlRoute
   '/sitemap-projects.xml': typeof SitemapProjectsDotxmlRoute
   '/sitemap-technology.xml': typeof SitemapTechnologyDotxmlRoute
   '/sitemap-timeline.xml': typeof SitemapTimelineDotxmlRoute
@@ -437,25 +579,40 @@ export interface FileRoutesById {
   '/blog/$slug': typeof BlogSlugRoute
   '/organizations/$slug': typeof OrganizationsSlugRoute
   '/people/$slug': typeof PeopleSlugRoute
+  '/products/$slug': typeof ProductsSlugRoute
   '/projects/$slug': typeof ProjectsSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
   '/technology/$slug': typeof TechnologySlugRoute
   '/articles/': typeof ArticlesIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/organizations/': typeof OrganizationsIndexRoute
   '/people/': typeof PeopleIndexRoute
+  '/products/': typeof ProductsIndexRoute
   '/projects/': typeof ProjectsIndexRoute
+  '/services/': typeof ServicesIndexRoute
   '/technology/': typeof TechnologyIndexRoute
   '/api/public/indexnow': typeof ApiPublicIndexnowRoute
   '/api/v1/entities': typeof ApiV1EntitiesRoute
   '/api/v1/sources': typeof ApiV1SourcesRoute
   '/api/v1/timeline': typeof ApiV1TimelineRoute
   '/api/v1/verify-sources': typeof ApiV1VerifySourcesRoute
+  '/api/v1/knowledge/entities': typeof ApiV1KnowledgeEntitiesRoute
+  '/api/v1/knowledge/events': typeof ApiV1KnowledgeEventsRoute
+  '/api/v1/knowledge/organizations': typeof ApiV1KnowledgeOrganizationsRoute
+  '/api/v1/knowledge/people': typeof ApiV1KnowledgePeopleRoute
+  '/api/v1/knowledge/products': typeof ApiV1KnowledgeProductsRoute
+  '/api/v1/knowledge/projects': typeof ApiV1KnowledgeProjectsRoute
+  '/api/v1/knowledge/search': typeof ApiV1KnowledgeSearchRoute
+  '/api/v1/knowledge/services': typeof ApiV1KnowledgeServicesRoute
+  '/api/v1/knowledge/entity/$slug': typeof ApiV1KnowledgeEntitySlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
+    | '/admin'
+    | '/ai-knowledge'
     | '/credibility'
     | '/dimisi-technologies'
     | '/editorial-policy'
@@ -464,6 +621,7 @@ export interface FileRouteTypes {
     | '/feed.xml'
     | '/indexnow-key.txt'
     | '/journey'
+    | '/knowledge.json'
     | '/methodology'
     | '/offline'
     | '/privacy'
@@ -477,6 +635,7 @@ export interface FileRouteTypes {
     | '/sitemap-organizations.xml'
     | '/sitemap-pages.xml'
     | '/sitemap-people.xml'
+    | '/sitemap-products.xml'
     | '/sitemap-projects.xml'
     | '/sitemap-technology.xml'
     | '/sitemap-timeline.xml'
@@ -489,23 +648,38 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/organizations/$slug'
     | '/people/$slug'
+    | '/products/$slug'
     | '/projects/$slug'
+    | '/services/$slug'
     | '/technology/$slug'
     | '/articles/'
     | '/blog/'
     | '/organizations/'
     | '/people/'
+    | '/products/'
     | '/projects/'
+    | '/services/'
     | '/technology/'
     | '/api/public/indexnow'
     | '/api/v1/entities'
     | '/api/v1/sources'
     | '/api/v1/timeline'
     | '/api/v1/verify-sources'
+    | '/api/v1/knowledge/entities'
+    | '/api/v1/knowledge/events'
+    | '/api/v1/knowledge/organizations'
+    | '/api/v1/knowledge/people'
+    | '/api/v1/knowledge/products'
+    | '/api/v1/knowledge/projects'
+    | '/api/v1/knowledge/search'
+    | '/api/v1/knowledge/services'
+    | '/api/v1/knowledge/entity/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/admin'
+    | '/ai-knowledge'
     | '/credibility'
     | '/dimisi-technologies'
     | '/editorial-policy'
@@ -514,6 +688,7 @@ export interface FileRouteTypes {
     | '/feed.xml'
     | '/indexnow-key.txt'
     | '/journey'
+    | '/knowledge.json'
     | '/methodology'
     | '/offline'
     | '/privacy'
@@ -527,6 +702,7 @@ export interface FileRouteTypes {
     | '/sitemap-organizations.xml'
     | '/sitemap-pages.xml'
     | '/sitemap-people.xml'
+    | '/sitemap-products.xml'
     | '/sitemap-projects.xml'
     | '/sitemap-technology.xml'
     | '/sitemap-timeline.xml'
@@ -539,23 +715,38 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/organizations/$slug'
     | '/people/$slug'
+    | '/products/$slug'
     | '/projects/$slug'
+    | '/services/$slug'
     | '/technology/$slug'
     | '/articles'
     | '/blog'
     | '/organizations'
     | '/people'
+    | '/products'
     | '/projects'
+    | '/services'
     | '/technology'
     | '/api/public/indexnow'
     | '/api/v1/entities'
     | '/api/v1/sources'
     | '/api/v1/timeline'
     | '/api/v1/verify-sources'
+    | '/api/v1/knowledge/entities'
+    | '/api/v1/knowledge/events'
+    | '/api/v1/knowledge/organizations'
+    | '/api/v1/knowledge/people'
+    | '/api/v1/knowledge/products'
+    | '/api/v1/knowledge/projects'
+    | '/api/v1/knowledge/search'
+    | '/api/v1/knowledge/services'
+    | '/api/v1/knowledge/entity/$slug'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/admin'
+    | '/ai-knowledge'
     | '/credibility'
     | '/dimisi-technologies'
     | '/editorial-policy'
@@ -564,6 +755,7 @@ export interface FileRouteTypes {
     | '/feed.xml'
     | '/indexnow-key.txt'
     | '/journey'
+    | '/knowledge.json'
     | '/methodology'
     | '/offline'
     | '/privacy'
@@ -577,6 +769,7 @@ export interface FileRouteTypes {
     | '/sitemap-organizations.xml'
     | '/sitemap-pages.xml'
     | '/sitemap-people.xml'
+    | '/sitemap-products.xml'
     | '/sitemap-projects.xml'
     | '/sitemap-technology.xml'
     | '/sitemap-timeline.xml'
@@ -589,24 +782,39 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/organizations/$slug'
     | '/people/$slug'
+    | '/products/$slug'
     | '/projects/$slug'
+    | '/services/$slug'
     | '/technology/$slug'
     | '/articles/'
     | '/blog/'
     | '/organizations/'
     | '/people/'
+    | '/products/'
     | '/projects/'
+    | '/services/'
     | '/technology/'
     | '/api/public/indexnow'
     | '/api/v1/entities'
     | '/api/v1/sources'
     | '/api/v1/timeline'
     | '/api/v1/verify-sources'
+    | '/api/v1/knowledge/entities'
+    | '/api/v1/knowledge/events'
+    | '/api/v1/knowledge/organizations'
+    | '/api/v1/knowledge/people'
+    | '/api/v1/knowledge/products'
+    | '/api/v1/knowledge/projects'
+    | '/api/v1/knowledge/search'
+    | '/api/v1/knowledge/services'
+    | '/api/v1/knowledge/entity/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AdminRoute: typeof AdminRoute
+  AiKnowledgeRoute: typeof AiKnowledgeRoute
   CredibilityRoute: typeof CredibilityRoute
   DimisiTechnologiesRoute: typeof DimisiTechnologiesRoute
   EditorialPolicyRoute: typeof EditorialPolicyRoute
@@ -615,6 +823,7 @@ export interface RootRouteChildren {
   FeedDotxmlRoute: typeof FeedDotxmlRoute
   IndexnowKeyDottxtRoute: typeof IndexnowKeyDottxtRoute
   JourneyRoute: typeof JourneyRoute
+  KnowledgeDotjsonRoute: typeof KnowledgeDotjsonRoute
   MethodologyRoute: typeof MethodologyRoute
   OfflineRoute: typeof OfflineRoute
   PrivacyRoute: typeof PrivacyRoute
@@ -628,6 +837,7 @@ export interface RootRouteChildren {
   SitemapOrganizationsDotxmlRoute: typeof SitemapOrganizationsDotxmlRoute
   SitemapPagesDotxmlRoute: typeof SitemapPagesDotxmlRoute
   SitemapPeopleDotxmlRoute: typeof SitemapPeopleDotxmlRoute
+  SitemapProductsDotxmlRoute: typeof SitemapProductsDotxmlRoute
   SitemapProjectsDotxmlRoute: typeof SitemapProjectsDotxmlRoute
   SitemapTechnologyDotxmlRoute: typeof SitemapTechnologyDotxmlRoute
   SitemapTimelineDotxmlRoute: typeof SitemapTimelineDotxmlRoute
@@ -640,19 +850,32 @@ export interface RootRouteChildren {
   BlogSlugRoute: typeof BlogSlugRoute
   OrganizationsSlugRoute: typeof OrganizationsSlugRoute
   PeopleSlugRoute: typeof PeopleSlugRoute
+  ProductsSlugRoute: typeof ProductsSlugRoute
   ProjectsSlugRoute: typeof ProjectsSlugRoute
+  ServicesSlugRoute: typeof ServicesSlugRoute
   TechnologySlugRoute: typeof TechnologySlugRoute
   ArticlesIndexRoute: typeof ArticlesIndexRoute
   BlogIndexRoute: typeof BlogIndexRoute
   OrganizationsIndexRoute: typeof OrganizationsIndexRoute
   PeopleIndexRoute: typeof PeopleIndexRoute
+  ProductsIndexRoute: typeof ProductsIndexRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
   TechnologyIndexRoute: typeof TechnologyIndexRoute
   ApiPublicIndexnowRoute: typeof ApiPublicIndexnowRoute
   ApiV1EntitiesRoute: typeof ApiV1EntitiesRoute
   ApiV1SourcesRoute: typeof ApiV1SourcesRoute
   ApiV1TimelineRoute: typeof ApiV1TimelineRoute
   ApiV1VerifySourcesRoute: typeof ApiV1VerifySourcesRoute
+  ApiV1KnowledgeEntitiesRoute: typeof ApiV1KnowledgeEntitiesRoute
+  ApiV1KnowledgeEventsRoute: typeof ApiV1KnowledgeEventsRoute
+  ApiV1KnowledgeOrganizationsRoute: typeof ApiV1KnowledgeOrganizationsRoute
+  ApiV1KnowledgePeopleRoute: typeof ApiV1KnowledgePeopleRoute
+  ApiV1KnowledgeProductsRoute: typeof ApiV1KnowledgeProductsRoute
+  ApiV1KnowledgeProjectsRoute: typeof ApiV1KnowledgeProjectsRoute
+  ApiV1KnowledgeSearchRoute: typeof ApiV1KnowledgeSearchRoute
+  ApiV1KnowledgeServicesRoute: typeof ApiV1KnowledgeServicesRoute
+  ApiV1KnowledgeEntitySlugRoute: typeof ApiV1KnowledgeEntitySlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -669,6 +892,20 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-knowledge': {
+      id: '/ai-knowledge'
+      path: '/ai-knowledge'
+      fullPath: '/ai-knowledge'
+      preLoaderRoute: typeof AiKnowledgeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/credibility': {
@@ -725,6 +962,13 @@ declare module '@tanstack/react-router' {
       path: '/journey'
       fullPath: '/journey'
       preLoaderRoute: typeof JourneyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/knowledge.json': {
+      id: '/knowledge.json'
+      path: '/knowledge.json'
+      fullPath: '/knowledge.json'
+      preLoaderRoute: typeof KnowledgeDotjsonRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/methodology': {
@@ -816,6 +1060,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap-people.xml'
       fullPath: '/sitemap-people.xml'
       preLoaderRoute: typeof SitemapPeopleDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-products.xml': {
+      id: '/sitemap-products.xml'
+      path: '/sitemap-products.xml'
+      fullPath: '/sitemap-products.xml'
+      preLoaderRoute: typeof SitemapProductsDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap-projects.xml': {
@@ -930,6 +1181,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PeopleSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/products/': {
+      id: '/products/'
+      path: '/products'
+      fullPath: '/products/'
+      preLoaderRoute: typeof ProductsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/$slug': {
+      id: '/products/$slug'
+      path: '/products/$slug'
+      fullPath: '/products/$slug'
+      preLoaderRoute: typeof ProductsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/projects/': {
       id: '/projects/'
       path: '/projects'
@@ -942,6 +1207,20 @@ declare module '@tanstack/react-router' {
       path: '/projects/$slug'
       fullPath: '/projects/$slug'
       preLoaderRoute: typeof ProjectsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/$slug': {
+      id: '/services/$slug'
+      path: '/services/$slug'
+      fullPath: '/services/$slug'
+      preLoaderRoute: typeof ServicesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/technology/': {
@@ -993,12 +1272,77 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiV1VerifySourcesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/v1/knowledge/entities': {
+      id: '/api/v1/knowledge/entities'
+      path: '/api/v1/knowledge/entities'
+      fullPath: '/api/v1/knowledge/entities'
+      preLoaderRoute: typeof ApiV1KnowledgeEntitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/v1/knowledge/events': {
+      id: '/api/v1/knowledge/events'
+      path: '/api/v1/knowledge/events'
+      fullPath: '/api/v1/knowledge/events'
+      preLoaderRoute: typeof ApiV1KnowledgeEventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/v1/knowledge/organizations': {
+      id: '/api/v1/knowledge/organizations'
+      path: '/api/v1/knowledge/organizations'
+      fullPath: '/api/v1/knowledge/organizations'
+      preLoaderRoute: typeof ApiV1KnowledgeOrganizationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/v1/knowledge/people': {
+      id: '/api/v1/knowledge/people'
+      path: '/api/v1/knowledge/people'
+      fullPath: '/api/v1/knowledge/people'
+      preLoaderRoute: typeof ApiV1KnowledgePeopleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/v1/knowledge/products': {
+      id: '/api/v1/knowledge/products'
+      path: '/api/v1/knowledge/products'
+      fullPath: '/api/v1/knowledge/products'
+      preLoaderRoute: typeof ApiV1KnowledgeProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/v1/knowledge/projects': {
+      id: '/api/v1/knowledge/projects'
+      path: '/api/v1/knowledge/projects'
+      fullPath: '/api/v1/knowledge/projects'
+      preLoaderRoute: typeof ApiV1KnowledgeProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/v1/knowledge/search': {
+      id: '/api/v1/knowledge/search'
+      path: '/api/v1/knowledge/search'
+      fullPath: '/api/v1/knowledge/search'
+      preLoaderRoute: typeof ApiV1KnowledgeSearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/v1/knowledge/services': {
+      id: '/api/v1/knowledge/services'
+      path: '/api/v1/knowledge/services'
+      fullPath: '/api/v1/knowledge/services'
+      preLoaderRoute: typeof ApiV1KnowledgeServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/v1/knowledge/entity/$slug': {
+      id: '/api/v1/knowledge/entity/$slug'
+      path: '/api/v1/knowledge/entity/$slug'
+      fullPath: '/api/v1/knowledge/entity/$slug'
+      preLoaderRoute: typeof ApiV1KnowledgeEntitySlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AdminRoute: AdminRoute,
+  AiKnowledgeRoute: AiKnowledgeRoute,
   CredibilityRoute: CredibilityRoute,
   DimisiTechnologiesRoute: DimisiTechnologiesRoute,
   EditorialPolicyRoute: EditorialPolicyRoute,
@@ -1007,6 +1351,7 @@ const rootRouteChildren: RootRouteChildren = {
   FeedDotxmlRoute: FeedDotxmlRoute,
   IndexnowKeyDottxtRoute: IndexnowKeyDottxtRoute,
   JourneyRoute: JourneyRoute,
+  KnowledgeDotjsonRoute: KnowledgeDotjsonRoute,
   MethodologyRoute: MethodologyRoute,
   OfflineRoute: OfflineRoute,
   PrivacyRoute: PrivacyRoute,
@@ -1020,6 +1365,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapOrganizationsDotxmlRoute: SitemapOrganizationsDotxmlRoute,
   SitemapPagesDotxmlRoute: SitemapPagesDotxmlRoute,
   SitemapPeopleDotxmlRoute: SitemapPeopleDotxmlRoute,
+  SitemapProductsDotxmlRoute: SitemapProductsDotxmlRoute,
   SitemapProjectsDotxmlRoute: SitemapProjectsDotxmlRoute,
   SitemapTechnologyDotxmlRoute: SitemapTechnologyDotxmlRoute,
   SitemapTimelineDotxmlRoute: SitemapTimelineDotxmlRoute,
@@ -1032,19 +1378,32 @@ const rootRouteChildren: RootRouteChildren = {
   BlogSlugRoute: BlogSlugRoute,
   OrganizationsSlugRoute: OrganizationsSlugRoute,
   PeopleSlugRoute: PeopleSlugRoute,
+  ProductsSlugRoute: ProductsSlugRoute,
   ProjectsSlugRoute: ProjectsSlugRoute,
+  ServicesSlugRoute: ServicesSlugRoute,
   TechnologySlugRoute: TechnologySlugRoute,
   ArticlesIndexRoute: ArticlesIndexRoute,
   BlogIndexRoute: BlogIndexRoute,
   OrganizationsIndexRoute: OrganizationsIndexRoute,
   PeopleIndexRoute: PeopleIndexRoute,
+  ProductsIndexRoute: ProductsIndexRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
   TechnologyIndexRoute: TechnologyIndexRoute,
   ApiPublicIndexnowRoute: ApiPublicIndexnowRoute,
   ApiV1EntitiesRoute: ApiV1EntitiesRoute,
   ApiV1SourcesRoute: ApiV1SourcesRoute,
   ApiV1TimelineRoute: ApiV1TimelineRoute,
   ApiV1VerifySourcesRoute: ApiV1VerifySourcesRoute,
+  ApiV1KnowledgeEntitiesRoute: ApiV1KnowledgeEntitiesRoute,
+  ApiV1KnowledgeEventsRoute: ApiV1KnowledgeEventsRoute,
+  ApiV1KnowledgeOrganizationsRoute: ApiV1KnowledgeOrganizationsRoute,
+  ApiV1KnowledgePeopleRoute: ApiV1KnowledgePeopleRoute,
+  ApiV1KnowledgeProductsRoute: ApiV1KnowledgeProductsRoute,
+  ApiV1KnowledgeProjectsRoute: ApiV1KnowledgeProjectsRoute,
+  ApiV1KnowledgeSearchRoute: ApiV1KnowledgeSearchRoute,
+  ApiV1KnowledgeServicesRoute: ApiV1KnowledgeServicesRoute,
+  ApiV1KnowledgeEntitySlugRoute: ApiV1KnowledgeEntitySlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

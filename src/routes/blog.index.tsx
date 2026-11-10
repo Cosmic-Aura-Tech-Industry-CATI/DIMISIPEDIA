@@ -227,18 +227,18 @@ function BlogIndex() {
           >
             All
           </button>
-          {categories.map((c) => (
+          {categories.map((item) => (
             <button
-              key={c}
+              key={item.category}
               type="button"
-              onClick={() => setCategory(c)}
+              onClick={() => setCategory(item.category)}
               className={`border px-3 py-1 font-mono text-xs transition-colors cursor-pointer ${
-                category === c
+                category === item.category
                   ? "border-primary bg-primary text-primary-foreground"
                   : "border-border bg-surface text-muted-foreground hover:border-foreground hover:text-foreground"
               }`}
             >
-              {c}
+              {item.category}
             </button>
           ))}
         </div>

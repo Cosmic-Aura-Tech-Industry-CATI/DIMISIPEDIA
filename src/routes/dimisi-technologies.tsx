@@ -1,20 +1,14 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { EntityArticle } from "@/components/EntityArticle";
-import { FoundingLeadership } from "@/components/FoundingLeadership";
-import { organizationEntity as org } from "@/data/knowledge";
-import { entityHead } from "@/lib/seo";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
-const trail = [
-  { label: "DIMISIPEDIA", to: "/" },
-  { label: "Organizations", to: "/organizations" },
-  { label: "DIMISI Technologies" },
-];
-
+/**
+ * Legacy URL alias permanently redirecting to canonical /organizations/dimisi-technologies
+ */
 export const Route = createFileRoute("/dimisi-technologies")({
-  head: () => entityHead(org, trail),
-  component: () => (
-    <EntityArticle entity={org} trail={trail}>
-      <FoundingLeadership />
-    </EntityArticle>
-  ),
+  beforeLoad: () => {
+    throw redirect({
+      to: "/organizations/dimisi-technologies" as unknown as "/",
+      statusCode: 301,
+    });
+  },
+  component: () => null,
 });
