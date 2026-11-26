@@ -16,7 +16,8 @@ import { AudioNarrationBar } from "@/components/AudioNarrationBar";
 import { ImageLightbox, type LightboxImage } from "@/components/ImageLightbox";
 import { useLanguage, type LanguageOption } from "@/components/LanguageSelector";
 import { journeyTranslations } from "@/data/translations";
-import { buildBreadcrumbSchema, pageHead } from "@/lib/seo";
+import { journeyImages } from "@/data/journey-images";
+import { abs, buildBreadcrumbSchema, pageHead } from "@/lib/seo";
 
 const trail = [{ label: "DIMISIPEDIA", to: "/" }, { label: "Our Journey" }];
 
@@ -43,15 +44,22 @@ export const Route = createFileRoute("/journey")({
             url: "https://www.dimisipedia.me/people/shikhar-dixit",
           },
           publisher: {
-            "@id": "https://www.dimisipedia.me/dimisi-technologies#organization",
+            "@id": "https://www.dimisipedia.me/organizations/dimisi-technologies#organization",
           },
           about: [
             { "@id": "https://www.dimisipedia.me/people/shikhar-dixit#person" },
-            { "@id": "https://www.dimisipedia.me/dimisi-technologies#organization" },
+            { "@id": "https://www.dimisipedia.me/organizations/dimisi-technologies#organization" },
           ],
+          image: Object.values(journeyImages).map((image) => ({
+            "@type": "ImageObject",
+            contentUrl: encodeURI(abs(image.src)),
+            caption: image.caption,
+            width: image.width,
+            height: image.height,
+          })),
           mainEntityOfPage: "https://www.dimisipedia.me/journey",
           datePublished: "2026-08-21",
-          dateModified: "2026-08-21",
+          dateModified: "2026-11-26",
         },
       ],
     }),
@@ -62,7 +70,8 @@ interface PhaseImage {
   src?: string;
   alt: string;
   caption: string;
-  aspect?: string;
+  width: number;
+  height: number;
 }
 
 interface Phase {
@@ -104,12 +113,7 @@ const phases: Phase[] = [
       "Invented original company name: CATI (Cosmic Aura Tech Industry)",
       "Nishkarsh Mishra joined the founding trio in the AICTE Android lab",
     ],
-    image: {
-      src: "/images/the urgent project.jpeg",
-      alt: "Gandhigiri technical project presentation event Face Recognition project and early CATI founding team",
-      caption:
-        "Phase 1 Archive · 15 Oct 2024 — The Face Recognition system developed at home in 6 hours and presented at Axis College's Gandhigiri event.",
-    },
+    image: journeyImages["phase-1"],
   },
   {
     id: "phase-2",
@@ -134,11 +138,7 @@ const phases: Phase[] = [
       "Exposure to national-scale founders, pitching dynamics, and startup realities",
       "Return to Kanpur to face final-year B.Tech placement pressure",
     ],
-    image: {
-      src: "/images/THE LEARNING FROM MUMBAI.jpeg",
-      alt: "Shikhar, Swatantra, and Nishkarsh at IIT Bombay E-Summit 2025 in Mumbai",
-      caption: "Phase 2 Archive · Feb 2025 — The founding trio at IIT Bombay E-Summit, Mumbai.",
-    },
+    image: journeyImages["phase-2"],
   },
   {
     id: "phase-3",
@@ -165,12 +165,7 @@ const phases: Phase[] = [
       "Shikhar built and deployed the initial prototype in a single overnight sprint",
       "Live deployment on Netlify under the initial moniker 'Poll-Social'",
     ],
-    image: {
-      src: "/images/5th rejection.jpeg",
-      alt: "The original Poll-Social web application interface running on Netlify",
-      caption:
-        "Phase 3 Archive · 13 Nov 2025 — The turning point: 5th placement rejection and Poll-Social prototype.",
-    },
+    image: journeyImages["phase-3"],
   },
   {
     id: "phase-4",
@@ -197,12 +192,7 @@ const phases: Phase[] = [
       "Recruited Mridul Mishra as Backend & Linux Systems Lead",
       "Founding agreement and paperwork completed on 17 November 2025",
     ],
-    image: {
-      src: "/images/shikhar Nishkarsh Swatantra.jpeg",
-      alt: "Founders Shikhar Dixit, Nishkarsh Mishra, and Swatantra Singh in Axis College uniform assembling Project Kalesh",
-      caption:
-        "Phase 4 Archive · Mid-Nov 2025 — The founding trio (Nishkarsh, Shikhar, Swatantra) assembling the core team at Axis College.",
-    },
+    image: journeyImages["phase-4"],
   },
   {
     id: "phase-5",
@@ -229,12 +219,7 @@ const phases: Phase[] = [
       "Granted studio access for video production & guidance on startup building",
       "Filmed and submitted official Shark Tank India application video",
     ],
-    image: {
-      src: "/images/mentorship and library.jpeg",
-      alt: "Kalesh presentation and studio pitch recording at Axis College",
-      caption:
-        "Phase 5 Archive · Dec 2025 — Meeting Jayant Sir at the central library and filming the Shark Tank pitch.",
-    },
+    image: journeyImages["phase-5"],
   },
   {
     id: "phase-6",
@@ -262,12 +247,7 @@ const phases: Phase[] = [
       "Recruited 4 student interns on 22 February 2026 with college administration approval",
       "Targeted public launch scheduled for 16 March 2026",
     ],
-    image: {
-      src: "/images/sand tank and sinister six.jpeg",
-      alt: "The Sinister Six engineering team and interns working in the Sand Tank campus office",
-      caption:
-        "Phase 6 Archive · Feb 2026 — The Sand Tank campus office allocation and team expansion at Axis College.",
-    },
+    image: journeyImages["phase-6"],
   },
   {
     id: "phase-7",
@@ -296,12 +276,7 @@ const phases: Phase[] = [
       "100% MCA clearance with zero name conflicts",
       "Incorporated DIMISI Technologies Pvt. Ltd. on 9 April 2026",
     ],
-    image: {
-      src: "/images/Exam Hall Formula.jpeg",
-      alt: "The handwritten DIMISI naming formula and Ministry of Corporate Affairs incorporation certificate",
-      caption:
-        "Phase 7 Archive · April 2026 — Official incorporation of DIMISI Technologies Private Limited.",
-    },
+    image: journeyImages["phase-7"],
   },
   {
     id: "phase-8",
@@ -327,12 +302,7 @@ const phases: Phase[] = [
       "Official office inauguration on 16 May 2026",
       "Company board mounted on 17 May 2026 for banking and statutory verification",
     ],
-    image: {
-      src: "/images/bringing dimisi home.jpeg",
-      alt: "The DIMISI team with the official DIMISI Technologies Pvt. Ltd. banner (CIN: U62013UP2026PTC246506) at the home headquarters in Kanpur",
-      caption:
-        "Phase 8 Archive · 16–17 May 2026 — Inaugurating the DIMISI Technologies home headquarters under the official corporate banner in Kanpur.",
-    },
+    image: journeyImages["phase-8"],
   },
   {
     id: "phase-9",
@@ -358,12 +328,7 @@ const phases: Phase[] = [
       "Somya Tiwari joined to bolster client communications and web delivery",
       "Successfully signed two subsequent commercial software development clients",
     ],
-    image: {
-      src: "/images/first client deal.jpeg",
-      alt: "Rudra Tours & Travels website project delivery and client celebration",
-      caption:
-        "Phase 9 Archive · June 2026 — Sealing the first commercial deal with Rudra Tours & Travels.",
-    },
+    image: journeyImages["phase-9"],
   },
   {
     id: "phase-10",
@@ -390,12 +355,7 @@ const phases: Phase[] = [
       "Deep gratitude to partners, core engineers, juniors, mentors, parents, and Priya",
       "A living, evolving entrepreneurship journey continuing into the future",
     ],
-    image: {
-      src: "/images/the road ahead.jpeg",
-      alt: "Founder Shikhar Dixit looking forward into the future and the road ahead for DIMISI Technologies",
-      caption:
-        "Phase 10 Archive · August 2026 — Founder Shikhar Dixit looking forward to the road ahead for DIMISI Technologies.",
-    },
+    image: journeyImages["phase-10"],
   },
 ];
 
@@ -419,8 +379,8 @@ function PhaseImageCard({
           <img
             src={image.src}
             alt={image.alt}
-            width={800}
-            height={450}
+            width={image.width}
+            height={image.height}
             loading="lazy"
             decoding="async"
             className="max-h-[540px] w-full object-contain transition-transform duration-300 group-hover:scale-[1.01]"
@@ -715,7 +675,7 @@ function JourneyPage() {
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
-            to="/dimisi-technologies"
+            to="/organizations/$slug" params={{ slug: "dimisi-technologies" }}
             className="inline-flex items-center gap-2 border border-border bg-background px-4 py-2.5 text-sm transition-colors hover:border-primary"
           >
             Explore DIMISI Technologies <ArrowRight className="size-4" />

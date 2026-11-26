@@ -11,6 +11,7 @@
  */
 import type { Article } from "@/data/articles";
 
+import { article as tourOperator } from "./tour-operator-website";
 import { article as verification } from "./how-dimisipedia-verifies-information";
 import { article as kaleshTechnology } from "./kalesh-technology-stack";
 import { article as whoIsShikhar } from "./who-is-shikhar-dixit";
@@ -21,6 +22,7 @@ import { article as foundingBrotherhood } from "./the-founding-brotherhood";
 import { article as businessSoftware } from "./business-software-solutions-dimisi";
 
 export const articleRegistry: Article[] = [
+  tourOperator,
   businessSoftware,
   foundingBrotherhood,
   whoIsShikhar,

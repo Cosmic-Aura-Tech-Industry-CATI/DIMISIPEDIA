@@ -406,4 +406,40 @@
       <image:license>https://www.dimisipedia.me/editorial-policy</image:license>
     </image:image>
   </url>
+  <url>
+    <loc>https://www.dimisipedia.me/journey</loc>
+    <lastmod>2026-11-26T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.dimisipedia.me/images/the%20urgent%20project.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dimisipedia.me/images/THE%20LEARNING%20FROM%20MUMBAI.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dimisipedia.me/images/5th%20rejection.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dimisipedia.me/images/shikhar%20Nishkarsh%20Swatantra.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dimisipedia.me/images/mentorship%20and%20library.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dimisipedia.me/images/sand%20tank%20and%20sinister%20six.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dimisipedia.me/images/Exam%20Hall%20Formula.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dimisipedia.me/images/bringing%20dimisi%20home.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dimisipedia.me/images/first%20client%20deal.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dimisipedia.me/images/the%20road%20ahead.webp</image:loc>
+    </image:image>
+  </url>
 </urlset>

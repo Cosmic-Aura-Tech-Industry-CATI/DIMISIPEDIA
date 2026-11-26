@@ -176,16 +176,13 @@ assert(
   "Robots.txt references sitemap.xml",
   "Missing sitemap index directive",
 );
-assert(
-  robotsTxt.includes("Disallow: /search"),
-  "Robots.txt disallows /search",
-  "Missing /search disallow",
-);
-assert(
-  robotsTxt.includes("Disallow: /seo-audit"),
-  "Robots.txt disallows /seo-audit",
-  "Missing /seo-audit disallow",
-);
+for (const route of ["/search", "/seo-audit"]) {
+  assert(
+    !robotsTxt.includes("Disallow: " + route),
+    "Crawler can read noindex on " + route,
+    "Robots.txt blocks access to " + route,
+  );
+}
 assert(
   robotsTxt.includes("Disallow: /api/"),
   "Robots.txt disallows /api/",

@@ -2,6 +2,12 @@
 <?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.dimisipedia.me/articles/tour-operator-website</loc>
+    <lastmod>2026-11-26T12:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.dimisipedia.me/articles/business-software-solutions-dimisi</loc>
     <lastmod>2026-10-20T12:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
