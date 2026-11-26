@@ -2,8 +2,6 @@ User-agent: *
 Allow: /
 Allow: /api/v1/knowledge/
 Allow: /knowledge.json
-Disallow: /search
-Disallow: /seo-audit
 Disallow: /api/
 Disallow: /*$*
 Disallow: /*?q=
@@ -18,8 +16,6 @@ Allow: /*.svg
 # Search Engines
 User-agent: Googlebot
 Allow: /
-Disallow: /search
-Disallow: /seo-audit
 Disallow: /api/
 Disallow: /*$*
 

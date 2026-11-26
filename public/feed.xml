@@ -5,13 +5,22 @@
     <link>https://www.dimisipedia.me/blog</link>
     <description>Authoritative insights on enterprise software engineering, architecture, and technology from DIMISI Technologies Pvt. Ltd., authored by Shikhar Dixit and the leadership team.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 20 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://www.dimisipedia.me/feed.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://www.dimisipedia.me/images/dimisipedia-logo.png</url>
       <title>DIMISIPEDIA</title>
       <link>https://www.dimisipedia.me/blog</link>
     </image>
+    <item>
+      <title>What should a tour operator website include?</title>
+      <link>https://www.dimisipedia.me/articles/tour-operator-website</link>
+      <guid isPermaLink="true">https://www.dimisipedia.me/articles/tour-operator-website</guid>
+      <pubDate>Thu, 26 Nov 2026 00:00:00 GMT</pubDate>
+      <dc:creator>DIMISIPEDIA Editorial</dc:creator>
+      <category>Projects</category>
+      <description>Plan itinerary pages, a fleet catalogue and an enquiry flow using the Rudra Tours project in Kanpur as a worked example.</description>
+    </item>
     <item>
       <title>DIMISI Technologies: Engineering Scalable Business Software &amp; Enterprise Operations</title>
       <link>https://www.dimisipedia.me/articles/business-software-solutions-dimisi</link>

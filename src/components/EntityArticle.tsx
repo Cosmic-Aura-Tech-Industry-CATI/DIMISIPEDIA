@@ -240,7 +240,7 @@ export function EntityArticle({
                 itemProp="caption"
                 className="mt-2 max-w-44 text-[11px] leading-snug text-muted-foreground"
               >
-                {entity.name} — official portrait supplied by DIMISI Technologies.
+                {entity.name} — {entity.entityType === "person" ? "portrait" : entity.image.includes("logo") ? "logo" : "archive image"} supplied by DIMISI Technologies.
               </figcaption>
             </figure>
           ) : entity.entityType === "person" ? (
@@ -265,6 +265,16 @@ export function EntityArticle({
             </figure>
           ) : null}
         </header>
+        {(entity.id === "shikhar-dixit" || entity.id === "dimisi-technologies") && (
+          <Link to="/journey" className="my-4 inline-block text-primary underline">
+            Explore Shikhar Dixit and DIMISI’s journey in photographs
+          </Link>
+        )}
+        {entity.id === "rudra-tours" && (
+          <a className="my-4 inline-block text-primary underline" href="https://www.dimisi.tech/services?utm_source=dimisipedia&amp;utm_medium=referral&amp;utm_campaign=rudra-case-study">
+            Explore DIMISI’s website development services
+          </a>
+        )}
 
         {entity.lifecycle && !isPublicStatus(entity.lifecycle) ? (
           <aside

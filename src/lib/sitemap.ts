@@ -28,6 +28,7 @@ import {
   technologyEntities,
   timeline,
 } from "@/data/knowledge";
+import { journeyImages } from "@/data/journey-images";
 import { publishedArticles, articlePath } from "@/data/articles";
 import { abs, SITE_URL } from "@/lib/seo";
 
@@ -54,7 +55,7 @@ export interface ImageSitemapEntry {
 
 /** Formats dates into W3C ISO 8601 timestamps with IST (+05:30) offset */
 export function toW3cTimestamp(d: string | undefined): string {
-  if (!d) return "2026-10-20T12:00:00+05:30";
+  if (!d) return "";
   if (d.includes("T")) {
     if (!d.includes("+") && !d.includes("Z")) return `${d}+05:30`;
     return d;
@@ -217,7 +218,7 @@ export function getPagesEntries(): SitemapEntry[] {
     })),
     ...serviceEntities.map((s) => ({
       loc: abs(s.path),
-      lastmod: s.updatedAt || s.createdAt || PAGES_LASTMOD,
+      lastmod: s.updatedAt || s.createdAt || "",
       priority: "0.8",
       changefreq: "monthly",
     })),
@@ -249,7 +250,7 @@ export function getPeopleEntries(): SitemapEntry[] {
 
     return {
       loc: abs(person.path),
-      lastmod: person.updatedAt || person.createdAt || "2026-08-15",
+      lastmod: person.updatedAt || person.createdAt || "",
       priority,
       changefreq,
     };
@@ -263,7 +264,7 @@ export function getOrganizationsEntries(): SitemapEntry[] {
   return [
     {
       loc: abs(organizationEntity.path),
-      lastmod: organizationEntity.updatedAt || organizationEntity.createdAt || "2026-10-20",
+      lastmod: organizationEntity.updatedAt || organizationEntity.createdAt || "",
       priority: "1.0",
       changefreq: "daily",
     },
@@ -277,7 +278,7 @@ export function getProjectsEntries(): SitemapEntry[] {
   return projectEntities.map((proj) => {
     return {
       loc: abs(proj.path),
-      lastmod: proj.updatedAt || proj.createdAt || "2026-08-15",
+      lastmod: proj.updatedAt || proj.createdAt || "",
       priority: "0.8",
       changefreq: "weekly",
     };
@@ -293,7 +294,7 @@ export function getProductsEntries(): SitemapEntry[] {
     const isPrimary = prod.id === "kalesh";
     return {
       loc: abs(prod.path),
-      lastmod: prod.updatedAt || prod.createdAt || "2026-10-31",
+      lastmod: prod.updatedAt || prod.createdAt || "",
       priority: isPrimary ? "1.0" : "0.9",
       changefreq: isPrimary ? "daily" : "weekly",
     };
@@ -306,7 +307,7 @@ export function getProductsEntries(): SitemapEntry[] {
 export function getTechnologyEntries(): SitemapEntry[] {
   return technologyEntities.map((tech) => ({
     loc: abs(tech.path),
-    lastmod: tech.updatedAt || tech.createdAt || "2026-08-15",
+    lastmod: tech.updatedAt || tech.createdAt || "",
     priority: "0.8",
     changefreq: "monthly",
   }));
@@ -318,7 +319,7 @@ export function getTechnologyEntries(): SitemapEntry[] {
 export function getArticlesEntries(): SitemapEntry[] {
   return publishedArticles.map((article) => ({
     loc: abs(articlePath(article)),
-    lastmod: article.dateModified || article.datePublished || "2026-08-15",
+    lastmod: article.dateModified || article.datePublished || "",
     priority: article.featured ? "1.0" : "0.8",
     changefreq: "weekly",
   }));
@@ -337,7 +338,7 @@ export function getEventsEntries(): SitemapEntry[] {
     },
     ...eventEntities.map((e) => ({
       loc: abs(e.path),
-      lastmod: e.updatedAt || e.createdAt || "2026-10-09",
+      lastmod: e.updatedAt || e.createdAt || "",
       priority: "0.7",
       changefreq: "monthly",
     })),
@@ -363,7 +364,7 @@ export function getTimelineEntries(): SitemapEntry[] {
     },
     {
       loc: abs("/journey"),
-      lastmod: "2026-10-20",
+      lastmod: "2026-11-26",
       priority: "1.0",
       changefreq: "weekly",
     },
@@ -562,6 +563,11 @@ export function getImagesEntries(): ImageSitemapEntry[] {
     ],
   });
 
+  entries.push({
+    loc: abs("/journey"),
+    lastmod: "2026-11-26",
+    images: Object.values(journeyImages).map((image) => ({ loc: encodeURI(abs(image.src)) })),
+  });
   return entries;
 }
 
@@ -571,7 +577,7 @@ function maxLastmod(entries: { lastmod?: string }[]): string {
     .map((e) => e.lastmod)
     .filter((d): d is string => Boolean(d))
     .sort();
-  return dates.pop() || "2026-10-20";
+  return dates.pop() || "";
 }
 
 /* ------------------------------------------------------------------ */

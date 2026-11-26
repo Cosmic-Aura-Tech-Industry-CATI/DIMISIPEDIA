@@ -2575,7 +2575,6 @@ const organization: Entity = {
   sameAs: [
     "https://dimisi.tech",
     "https://www.instagram.com/dimisi.tech/",
-    "https://thekalesh.com",
     "https://www.crunchbase.com/organization/dimisi-technologies-private-limited",
     "https://www.linkedin.com/company/dimisi-technologies",
     "https://tracxn.com/d/companies/dimisi-technologies",

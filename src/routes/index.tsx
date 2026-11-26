@@ -512,6 +512,9 @@ function Home() {
             All projects →
           </Link>
         </div>
+        <Link to="/projects/$slug" params={{ slug: "rudra-tours" }} className="mt-3 inline-block text-sm text-primary underline">
+          Travel website case study · Rudra Tours &amp; Travels
+        </Link>
         <ul className="mt-6 grid gap-px border border-border bg-rule md:grid-cols-2">
           {[...projectEntities]
             .sort((a, b) => (a.featuredPriority ?? 99) - (b.featuredPriority ?? 99))

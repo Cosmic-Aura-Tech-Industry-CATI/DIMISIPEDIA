@@ -79,7 +79,7 @@ function verifiedProfileUrls(entity: Entity): string[] {
   const external = (entity.externalProfiles ?? [])
     .filter((p) => p.verified && p.url)
     .map((p) => p.url as string);
-  const official = (entity.officialLinks ?? []).filter((l) => l.official).map((l) => l.url);
+  const official = entity.entityType === "organization" ? [] : entity.officialLinks.filter((link) => link.official).map((link) => link.url);
   const explicitSameAs = entity.sameAs ?? [];
   const urls = Array.from(new Set([...explicitSameAs, ...external, ...official]));
   if (urls.length === 0) {

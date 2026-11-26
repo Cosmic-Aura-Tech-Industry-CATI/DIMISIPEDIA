@@ -8,16 +8,9 @@ const nav = [
   { to: "/explore", label: "Explore" },
   { to: "/journey", label: "Journey" },
   { to: "/people", label: "People" },
-  { to: "/organizations", label: "Organizations" },
   { to: "/products", label: "Products" },
   { to: "/projects", label: "Projects" },
-  { to: "/services", label: "Services" },
-  { to: "/ai-knowledge", label: "AI Hub" },
-  { to: "/technology", label: "Technology" },
-  { to: "/timeline", label: "Timeline" },
-  { to: "/events", label: "Events" },
   { to: "/blog", label: "Blog" },
-  { to: "/about", label: "About & Contact" },
 ];
 
 function ThemeToggle() {
@@ -72,11 +65,6 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-rule bg-background/95 backdrop-blur-sm">
-      <div className="border-b border-rule bg-surface/80 py-1.5 px-4 text-center text-[11px] text-muted-foreground">
-        Official Corporate Knowledge Platform ·{" "}
-        <span className="text-foreground font-medium">DIMISI Technologies Pvt. Ltd.</span> (CIN:
-        U62013UP2026PTC246506)
-      </div>
       <div className="mx-auto flex max-w-6xl items-center gap-4 px-5 py-3">
         <Link to="/" className="group flex shrink-0 items-center gap-2.5">
           <img
@@ -89,7 +77,7 @@ export function SiteHeader() {
           <span className="font-serif text-lg tracking-[0.02em] notranslate" translate="no">
             DIMISIPEDIA
           </span>
-          <span className="ml-2 hidden text-[11px] text-muted-foreground sm:inline">
+          <span className="ml-2 hidden text-[11px] text-muted-foreground xl:inline">
             Corporate Knowledge Base
           </span>
         </Link>
@@ -121,10 +109,11 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={() => setMenuOpen((v) => !v)}
-            aria-label="Open navigation"
+            aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+            aria-expanded={menuOpen}
             className="grid size-9 place-items-center border border-border text-muted-foreground transition-colors hover:text-foreground lg:hidden"
           >
-            <Menu className="size-4" />
+            {menuOpen ? <X className="size-4" /> : <Menu className="size-4" />}
           </button>
         </div>
       </div>
@@ -161,7 +150,7 @@ export function SiteHeader() {
 export function SiteFooter() {
   return (
     <footer className="mt-24 border-t border-rule bg-surface">
-      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
+      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-2.5">
             <img
@@ -193,6 +182,24 @@ export function SiteFooter() {
             </div>
           </div>
         </div>
+        <nav aria-label="Directory">
+          <p className="label-mono">Directory</p>
+          <ul className="mt-3 space-y-2 text-sm">
+            {([
+              ["/organizations", "Organizations"],
+              ["/technology", "Technology"],
+              ["/timeline", "Timeline"],
+              ["/events", "Events"],
+              ["/articles", "Articles"],
+            ] as const).map(([to, label]) => (
+              <li key={to}>
+                <Link to={to} className="text-muted-foreground hover:text-foreground">
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
         <div>
           <p className="label-mono">Platform &amp; Evidence</p>
           <ul className="mt-3 space-y-2 text-sm">
@@ -263,7 +270,7 @@ export function SiteFooter() {
           <ul className="mt-3 space-y-2 text-sm">
             <li>
               <Link
-                to="/organizations/dimisi-technologies"
+                to="/organizations/$slug" params={{ slug: "dimisi-technologies" }}
                 className="text-muted-foreground hover:text-foreground notranslate"
                 translate="no"
               >
